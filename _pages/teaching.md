@@ -15,6 +15,10 @@ Classes I was/am a TA for.
 
 ## 2025
 
+### Spring
+- Linear Algebra
+- Calculus II (Two sections)
+
 ### Winter
 - Discrete Math (Four Sections)
 
