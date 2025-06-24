@@ -23,18 +23,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-jordan-canonical-form-made-easier",
-        
-          title: "Jordan Canonical Form Made Easier",
-        
-        description: "not easy. just like... easier...",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/jordan2/";
-          
-        },
-      },{id: "post-why-do-we-row-reduce-what-is-a-matrix",
+        },{id: "post-why-do-we-row-reduce-what-is-a-matrix",
         
           title: "Why do we row reduce? What IS a matrix?",
         
@@ -43,17 +32,6 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2024/rref/";
-          
-        },
-      },{id: "post-jordan-canonical-form-made-easier-part-1",
-        
-          title: "Jordan Canonical Form Made Easier Part 1",
-        
-        description: "not easy. just like... easier...",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2024/jordan/";
           
         },
       },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
@@ -76,50 +54,6 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2024/leastsquarespart2/";
-          
-        },
-      },{id: "post-a-post-with-tabs",
-        
-          title: "a post with tabs",
-        
-        description: "this is what included tabs in a post could look like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2024/tabs/";
-          
-        },
-      },{id: "post-a-post-with-typograms",
-        
-          title: "a post with typograms",
-        
-        description: "this is what included typograms code could look like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2024/typograms/";
-          
-        },
-      },{id: "post-a-post-that-can-be-cited",
-        
-          title: "a post that can be cited",
-        
-        description: "this is what a post that can be cited looks like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2024/post-citation/";
-          
-        },
-      },{id: "post-a-post-with-pseudo-code",
-        
-          title: "a post with pseudo code",
-        
-        description: "this is what included pseudo code could look like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2024/pseudocode/";
           
         },
       },{id: "post-the-wonderful-world-of-projectors",
