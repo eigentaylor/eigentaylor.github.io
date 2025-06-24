@@ -35,7 +35,7 @@ i like differential equations and linear algebra.
 
 [here are some math posts ive written if you want to look at them i guess](./blog){:target="_blank"}
 
-if you want to support me, i have a [ko-fi](https://ko-fi.com/smashmath){:target="_blank"}.
+if you want to support me, i have a [ko-fi](https://ko-fi.com/eigentaylor){:target="_blank"}.
 
 ---
 

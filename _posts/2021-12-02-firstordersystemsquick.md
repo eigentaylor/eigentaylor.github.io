@@ -133,7 +133,7 @@ The columns of these matrices will give you a fundamental set of solutions. So i
 
 ## Distinct Eigenvalues Formulas
 
-If $$A$$ has distinct eigenvalues, then a matrix exponential will not be the fastest way to calculate the general solution. It is faster to just find the eigenvectors using the ["Eigenvector Columns Theorem"](https://smashmath.github.io/math/eigentricks/#the-eigenvector-columns-theorem){:target="_blank"} discussed in the [other post](../eigentricks/){:target="_blank"}.
+If $$A$$ has distinct eigenvalues, then a matrix exponential will not be the fastest way to calculate the general solution. It is faster to just find the eigenvectors using the ["Eigenvector Columns Theorem"](https://eigentaylor.github.io/math/eigentricks/#the-eigenvector-columns-theorem){:target="_blank"} discussed in the [other post](../eigentricks/){:target="_blank"}.
 
 That said, while the ECT is the fastest way for any general solution, if you want the general solution for a general initial value problem, like $$(x_0,y_0)$$, then \eqref{distinct} is actually worth the time, as it is not *too* difficult to calculate.
 
