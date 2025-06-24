@@ -1,0 +1,584 @@
+---
+layout: page
+title: Implicit Solutions to 2x2 Systems of First-Order Homogeneous Linear Differential Equations
+date: 2020-12-20 
+description: Implicit and explicit solutions for all cases.
+comments: true
+importance: 2
+category: systems of differential equations
+---
+# Solutions
+
+### Two Real Eigenvalues
+
+If $$A$$ is a real $$2\times 2$$ matrix with real eigenvalues $$\lambda_1,\lambda_2$$ associated with linearly independent eigenvectors $$v=(v_1,v_2),w=(w_1,w_2)$$ respectively, then the $$2\times2$$ system of homogeneous linear first-order differential equations
+
+$$\begin{equation} \label{sys}
+\frac{d}{dt}
+\begin{bmatrix}x\\y\end{bmatrix}
+=A \begin{bmatrix}x\\y\end{bmatrix}
+\end{equation}$$
+
+has the implicit solution
+
+$$\begin{equation} 
+\frac{\left(w_2x-w_1y\right)^{\lambda_2}}{\left(v_1y-v_2x\right)^{\lambda_1}}=C
+\end{equation}$$
+
+The solution to the initial value problem
+
+$$\begin{equation}  \label{IVP}
+\frac{d}{dt}\begin{bmatrix}x\\y\end{bmatrix}=A\begin{bmatrix}x\\y\end{bmatrix},\quad
+\begin{bmatrix}x(0)\\y(0)\end{bmatrix}=\begin{bmatrix}x_0\\y_0\end{bmatrix}
+\end{equation}$$
+
+will be
+
+$$\begin{equation} 
+\begin{bmatrix}x\\y\end{bmatrix}=
+\begin{bmatrix}v_1&w_1\\v_2&w_2\end{bmatrix}
+\begin{bmatrix}e^{\lambda _1t}&0\\0&e^{\lambda _2t}\end{bmatrix}
+\begin{bmatrix}v_1&w_1\\v_2&w_2\end{bmatrix}^{-1}
+\begin{bmatrix}x_0\\y_0\end{bmatrix}
+\end{equation}$$
+
+In the special case that $$A$$ is symmetric, the explicit solution can also be expressed in the form 
+
+$$\begin{equation}
+\begin{bmatrix}x\\y\end{bmatrix}=
+e^{\lambda_1t}\frac{v\cdot(x_0,y_0)}{|v|^2}\begin{bmatrix}v_1\\v_2\end{bmatrix}+
+e^{\lambda_2t}\frac{w\cdot(x_0,y_0)}{|w|^2}\begin{bmatrix}w_1\\w_2\end{bmatrix}
+\end{equation}$$
+
+See [here](../symmetric-exp/){:target="_blank"} for more information.
+
+### Complex Eigenvalues with a Nonzero Real Part
+
+If $$A$$ is a real $$2\times 2$$ matrix with complex eigenvalues $$\lambda=p\pm \omega i$$ where neither $$p$$ or $$\omega $$ are zero, and $$(1,\alpha+i\beta)$$ is an eigenvector associated with eigenvalue $$\lambda=p-\omega i$$, then the $$2\times2$$ system of homogeneous linear first-order differential equations \eqref{sys}
+has the implicit solution
+
+$$\begin{equation}
+\frac{y-\alpha x}{\beta x}=\tan\left(\frac{\omega }{2p}\ln[(\beta x)^2+(y-\alpha x)^2]+C\right)
+\end{equation}$$
+
+and the solution to the initial value problem \eqref{IVP}
+is
+
+$$\begin{equation} \label{explicit complex}
+\begin{bmatrix}x\\y\end{bmatrix}=e^{pt}\left(\cos(\omega t)I+\frac{\sin(\omega t)}{\omega }(A-pI)\right)
+\begin{bmatrix}x_0\\y_0\end{bmatrix}
+\end{equation}$$
+
+### Purely Imaginary Eigenvalues
+
+If $$A$$ is a real $$2\times 2$$ matrix with purely imaginary eigenvalues $$\lambda=\pm\omega i$$, then the $$2\times2$$ system of homogeneous linear first-order differential equations \eqref{sys}
+has the implicit solution
+
+$$\begin{equation} \label{quadform}
+\begin{bmatrix}-y&x\end{bmatrix}A
+\begin{bmatrix}x\\y\end{bmatrix}=C
+\end{equation}$$
+
+and the solution to the initial value problem \eqref{IVP}
+is a special case of \eqref{explicit complex} where $$p=0$$
+
+$$\begin{equation}
+\begin{bmatrix}x\\y\end{bmatrix}=\left(\cos(\omega t)I+\frac{\sin(\omega t)}{\omega}A\right)
+\begin{bmatrix}x_0\\y_0\end{bmatrix}
+\end{equation}$$
+
+It turns out when $$\operatorname{tr}(A)=0$$, the solution to \eqref{sys} can always be expressed implicitly as the quadratic form \eqref{quadform}. Conversely, any quadratic form of a $$2\times2$$ symmetric matrix $$S$$, $$x^TSx=C$$, will be the implicit solution to \eqref{sys} when $$A=QS$$ for any skew-symmetric matrix $$Q$$ (Proof below).
+
+### One Defective Eigenvalue
+
+If $$A$$ is a real $$2\times 2$$ matrix with a defective repeated eigenvalue $$\lambda$$ corresponding to  an eigenvector $$(v_1,v_2)$$ and a generalized eigenvector $$(w_1,w_2)$$, then the $$2\times2$$ system of homogeneous linear first-order differential equations \eqref{sys}
+has the implicit solution
+
+$$\begin{equation} 
+(v_1y-v_2x)\exp\left(\lambda\frac{w_1y-w_2x}{v_1y-v_2x}\right)=C
+\end{equation}$$
+
+and the solution to the initial value problem \eqref{IVP}
+will be
+
+$$\begin{equation}
+\begin{bmatrix}x\\y\end{bmatrix}=e^{\lambda t}\left(\begin{bmatrix}x_0\\y_0\end{bmatrix}+t
+\frac{v_1y_0-v_2x_0}{v_1w_2-v_2w_1}\begin{bmatrix}v_1\\v_2\end{bmatrix}\right)
+\end{equation}$$
+
+
+
+
+# Proofs
+
+## Implicit Solutions
+
+For any of the cases, we can take advantage of the fact that for any square matrix $$A$$, there is a simplest matrix $$D$$ which is similar to $$A$$. In most cases $$D$$ is diagonal, but in others, it is not. The four different cases of our implicit solutions are based entirely on what kind of matrix $$D$$ is. So we will take advantage of the fact that 
+
+$$\begin{equation} 
+A=PDP^{-1}
+\end{equation}$$
+
+and use the change of variables
+
+$$\begin{equation} \label{Pu}
+x=Pu \implies x'=Pu'
+\end{equation}$$
+
+to convert
+
+$$\begin{equation} 
+x'=Ax
+\end{equation}$$
+
+into
+
+$$\begin{equation} 
+(Pu')=(PDP^{-1})(Pu)
+\end{equation}$$
+
+$$\begin{equation} 
+Pu'=PDu
+\end{equation}$$
+
+$$\begin{equation} 
+u'=Du
+\end{equation}$$
+
+In the case of real eigenvalues, we can let $$v=(v_1,v_2)$$ be an eigenvector of $$A$$, and $$w=(w_1,w_2)$$ be either the second linearly independent eigenvector or generalized eigenvector of rank two. Then
+
+$$\begin{equation} \label{p matrix}
+P=\begin{bmatrix}v_1&w_1\\v_2&w_2\end{bmatrix}
+\end{equation}$$
+
+And by solving for $$u=\begin{bmatrix}u_1\\u_2\end{bmatrix}$$ in \eqref{Pu}
+
+$$\begin{equation} \label{usub}
+u_1=\frac{w_2x-w_1y}{v_1w_2-v_2w_1},\quad u_2=\frac{v_1y-v_2x}{v_1w_2-v_2w_1}
+\end{equation}$$
+
+In most cases, the $$v_1w_2-v_2w_1$$ in the denominator is inconsequential and can be safely ignored due to the presence of an arbitrary constant.
+
+We will also make heavy use of the fact that
+
+$$\begin{equation} \label{chainrule}
+\frac{\frac{du_2}{dt}}{\frac{du_1}{dt}}=\frac{du_2}{du_1}
+\end{equation}$$
+
+### Two Real Eigenvalues
+
+If $$A$$ is a real $$2\times2$$ matrix with two distinct real eigenvalues $$\lambda_1,\lambda_2$$ associated with linearly independent eigenvectors $$(v_1,v_2)$$ and $$(w_1,w_2)$$ respectively, then $$A$$ is similar to 
+
+$$\begin{equation} 
+D=\begin{bmatrix}\lambda_1&0\\0&\lambda_2\end{bmatrix}
+\end{equation}$$
+
+The system of differential equations $$u'=Du$$ then gives us
+
+$$\begin{align}
+\frac{du_1}{dt}&=\lambda_1u_1&\\
+\frac{du_2}{dt}&=&\lambda_2u_2
+\end{align}$$
+
+Using \eqref{chainrule}, we get
+
+$$\begin{equation} 
+\frac{du_2}{du_1}=\frac{\lambda_2u_2}{\lambda_1u_1}
+\end{equation}$$
+
+which is a simple separable first-order differential equation if we consider $$u_2$$ to be a function of $$u_1$$. The implicit solution of which is
+
+$$\begin{equation} \label{implicit u}
+\frac{u_1^{\lambda_2}}{u_2^{\lambda_1}}=C
+\end{equation}$$
+
+We may use \eqref{usub} and safely ignore the denominator terms.
+
+$$\begin{equation} 
+\frac{\left(w_2x-w_1y\right)^{\lambda_2}}{\left(v_1y-v_2x\right)^{\lambda_1}}=C\quad \blacksquare
+\end{equation}$$
+
+### Zero Trace (Purely Imaginary)
+
+Now we suppose $$A$$ is any real $$2\times2$$ with a trace of zero. This covers the case of purely imaginary eigenvalues since the sum of the eigenvalues will be zero ($$\operatorname{tr}(A)=i\omega+-i\omega=0$$). $$x'=Ax$$ is then
+
+$$\begin{equation} 
+\frac{d}{dt}\begin{bmatrix}x\\y\end{bmatrix}=
+\begin{bmatrix}a&b\\c&-a\end{bmatrix}
+\begin{bmatrix}x\\y\end{bmatrix}
+\end{equation}$$
+
+$$\begin{align}
+\frac{dx}{dt}&=ax+by\\
+\frac{dy}{dt}&=cx-ay
+\end{align}$$
+
+Using \eqref{chainrule}, we divide $$\frac{dy}{dt}$$ by $$\frac{dx}{dt}$$ to get $$\frac{dy}{dx}$$.
+
+$$\begin{equation} 
+\frac{dy}{dx}=\frac{cx-ay}{ax+by}
+\end{equation}$$
+
+We now multiply to get rid of the fraction. We will then simplify and group by letter coefficient.
+
+$$\begin{equation} 
+(ax+by)\frac{dy}{dx}=cx-ay
+\end{equation}$$
+
+We also multiply by 2 to avoid the use of any more fractions.
+
+$$\begin{equation} 
+c(2x)-2a\left(y+x\frac{dy}{dx}\right)-b\left(2y\frac{dy}{dx}\right)=0
+\end{equation}$$
+
+If we consider $$y$$ to be a function of $$x$$, then we may write each term as a derivative in terms of $$x$$.
+
+$$\begin{equation} 
+c\frac{d}{dx}(x^2)-2a\frac{d}{dx}(xy)-b\frac{d}{dx}(y^2)=0
+\end{equation}$$
+
+By the linearity of differentiation,
+
+$$\begin{equation} 
+\frac{d}{dx}(cx^2-2axy-by^2)=0
+\end{equation}$$
+
+$$\begin{equation} 
+cx^2-2axy-by^2=C
+\end{equation}$$
+
+This is indeed a quadratic form.
+
+$$\begin{equation} 
+\begin{bmatrix}x&y\end{bmatrix}
+\begin{bmatrix}c&-a\\-a&-b\end{bmatrix}
+\begin{bmatrix}x\\y\end{bmatrix}=C
+\end{equation}$$
+
+This matrix looks suspiciously familiar, doesn't it? It looks almost exactly like $$A$$. In fact, it is just $$A$$ multiplied by a skew symmetric matrix
+
+$$\begin{equation} 
+\begin{bmatrix}x&y\end{bmatrix}
+\begin{bmatrix}0&1\\-1&0\end{bmatrix}
+\begin{bmatrix}a&b\\c&-a\end{bmatrix}
+\begin{bmatrix}x\\y\end{bmatrix}=C
+\end{equation}$$
+
+$$\begin{equation} 
+\begin{bmatrix}-y&x\end{bmatrix}
+\begin{bmatrix}a&b\\c&-a\end{bmatrix}
+\begin{bmatrix}x\\y\end{bmatrix}=C
+\end{equation}$$
+
+$$\begin{equation} 
+\begin{bmatrix}-y&x\end{bmatrix}
+A
+\begin{bmatrix}x\\y\end{bmatrix}=C\quad \blacksquare
+\end{equation}$$
+
+This is quite interesting, as it implies that any quadratic form in two variables $$x^TSx=C$$ is the implicit solution to a system of differential equations $$x'=QSx$$ where $$Q$$ is any skew-symmetric matrix.
+
+### One Defective Eigenvalue
+
+
+If $$A$$ is a real $$2\times 2$$ matrix with one defective eigenvalue $$\lambda$$, then $$A$$ is similar to the matrix
+
+$$\begin{equation} 
+D=\begin{bmatrix}\lambda&1\\0&\lambda\end{bmatrix}
+\end{equation}$$
+
+The system of differential equations $$u'=Du$$ then gives us
+
+$$\begin{equation} 
+\frac{du_1}{dt}=\lambda u_1+u_2,\quad\frac{du_2}{dt}=\lambda u_2
+\end{equation}$$
+
+We know the drill by now.
+
+$$\begin{equation} 
+\frac{du_2}{du_1}=\frac{\lambda u_2}{\lambda u_1+u_2}
+\end{equation}$$
+
+$$\begin{equation} 
+u_2\frac{du_2}{du_1}-\lambda\left(u_2-u_1\frac{du_2}{du_1}\right)=0
+\end{equation}$$
+
+The $$\lambda$$ term looks vaguely reminiscent of the quotient rule $$\frac{d}{du_1}\left(\frac{u_1}{u_2}\right)$$. If we were to divide by $$u_2^2$$ we could simplify it in that way.
+
+$$\begin{equation} 
+\frac{1}{u_2}\frac{du_2}{du_1}-\lambda\left(\frac{u_2-u_1\frac{du_2}{du_1}}{u_2^2}\right)=0
+\end{equation}$$
+
+$$\begin{equation} 
+\frac{d}{du_1}\ln(u_2)-\lambda\frac{d}{du_1}\left(\frac{u_1}{u_2}\right)=0
+\end{equation}$$
+
+$$\begin{equation} 
+\frac{d}{du_1}\left(\ln(u_2)-\lambda\frac{u_1}{u_2}\right)=0
+\end{equation}$$
+
+$$\begin{equation} 
+\ln(u_2)-\lambda\frac{u_1}{u_2}=C
+\end{equation}$$
+
+Exponentiating,
+
+$$\begin{equation} 
+u_2\exp\left(-\lambda\frac{u_1}{u_2}\right)=C
+\end{equation}$$
+
+By \eqref{usub},
+
+$$\begin{equation} 
+(v_1y-v_2x)\exp\left(\frac{w_1y-w_2x}{v_1y-v_2x}\right)=C\quad \blacksquare
+\end{equation}$$
+
+### Complex Eigenvalues with a Nonzero Real Part
+
+
+If $$A$$ is a real $$2\times2$$ matrix with complex eigenvalues $$\lambda=p\pm\omega i$$, where both $$p$$ and $$\omega$$ are nonzero, and an eigenvector $$(1,\alpha+\beta i)$$ associated with eigenvalue $$\lambda=p-\omega i$$, then $$A=PDP^{-1}$$ will be
+
+$$\begin{equation} 
+A=
+\begin{bmatrix}1&0\\\alpha&\beta\end{bmatrix}
+\begin{bmatrix}p&-\omega\\\omega&p\end{bmatrix}
+\begin{bmatrix}1&0\\\alpha&\beta\end{bmatrix}^{-1}
+\end{equation}$$
+
+We make the change of variables $$x=Pu$$
+
+$$\begin{equation}  \label{complexusub}
+\begin{bmatrix}x\\y\end{bmatrix}=
+\begin{bmatrix}1&0\\\alpha&\beta\end{bmatrix}
+\begin{bmatrix}u_1\\u_2\end{bmatrix}
+\end{equation}$$
+
+to get $$u'=Du$$ which gives us
+
+$$\begin{align}
+\frac{du_1}{dt}=&pu_1-\omega u_2\\
+\frac{du_2}{dt}=&\omega u_1+pu_2
+\end{align}$$
+
+Using \eqref{chainrule}, we get
+
+$$\begin{equation} 
+\frac{du_2}{du_1}=\frac{\omega u_1+pu_2}{pu_1-\omega u_2}
+\end{equation}$$
+
+Getting everything on one side,
+
+$$\begin{equation} \label{nonzerorealmultiplied}
+(\omega u_1+pu_2)+(\omega u_2-pu_1)\frac{du_2}{du_1}=0
+\end{equation}$$
+
+In the purely imaginary case, things were pretty much already in place for us. This time, the path forward is more unclear. Since our eigenvalues are complex, perhaps another change of variables into polar would make things easier (it will).
+
+$$\begin{equation}  \label{polar1}
+u_1=r\cos(\theta),\quad u_2=r\sin(\theta)
+\end{equation}$$
+
+From \eqref{polar1} we can deduce that
+
+$$\begin{equation} \label{polar2}
+r^2=u_1^2+u_2^2,\quad\tan(\theta)=\frac{u_2}{u_1}
+\end{equation}$$
+
+$$\begin{equation} 
+\frac{du_2}{du_1}=\frac{\sin(\theta)+r\cos(\theta)\frac{d\theta}{dr}}{\cos(\theta)-r\sin(\theta)\frac{d\theta}{dr}}
+\end{equation}$$
+
+It looks like all we're doing is making an even bigger mess than we started with, but I promise it will all work out. We multiply \eqref{nonzerorealmultiplied} by $$\frac{1}{r^2}\left(\cos(\theta)-r\sin(\theta)\frac{d\theta}{dr}\right)$$ and simplify to get
+
+$$\begin{equation} 
+\omega\frac{1}{r}-p\frac{d\theta}{dr}=0
+\end{equation}$$
+
+I told you, didn't I? This is a simple separable equation which is easily solved by integration.
+
+$$\begin{equation} 
+\theta=\frac{\omega}{p}\ln(r)+C
+\end{equation}$$
+
+We manipulate this equation to get it in terms of $$u_1$$ and $$u_2$$ using what we know from \eqref{polar2}.
+
+$$\begin{equation} 
+\tan(\theta)=\tan\left(\frac{\omega}{2p}\ln(r^2)+C\right)
+\end{equation}$$
+
+$$\begin{equation} 
+\frac{u_2}{u_1}=\tan\left(\frac{\omega}{2p}\ln(u_1^2+u_2^2)+C\right)
+\end{equation}$$
+
+Returning to $$x$$ and $$y$$ by reversing \eqref{complexusub} and simplifying a bit using the arbitrary constant,
+
+\begin{equation}
+\frac{y-\alpha x}{\beta x}=\tan\left(\frac{\omega }{2p}\ln[(\beta x)^2+(y-\alpha x)^2]+C\right)\quad \blacksquare
+\end{equation}
+
+
+## Explicit Solutions
+
+As for the explicit solutions, we rely entirely on the fact that the solution to the initial value problem \eqref{IVP} is given by 
+
+$$\begin{equation}
+\begin{bmatrix}x\\y\end{bmatrix}=
+\exp(tA)
+\begin{bmatrix}x_0\\y_0\end{bmatrix}
+\end{equation}$$
+
+as well as the fact that
+
+$$\begin{equation}
+A=PDP^{-1}\implies \exp(tA)=P\exp(tD)P^{-1}
+\end{equation}$$
+
+Therefore, if we can calculate $$\exp(tD)$$ for all of our cases, then our answer is only off by a change of basis.
+
+### Two Real Eigenvalues
+
+By far the easiest case. If $$A$$ has two real eigenvalues associated with two linearly independent eigenvectors, then 
+
+$$\begin{equation} 
+D=\begin{bmatrix}\lambda_1&0\\0&\lambda_2\end{bmatrix}
+\end{equation}$$
+
+Calculating the exponential of a diagonal matrix is about as easy as it gets.
+
+$$\begin{equation} 
+\exp(tD)=\begin{bmatrix}e^{\lambda_1t}&0\\0&e^{\lambda_2t}\end{bmatrix}
+\end{equation}$$
+
+Since we already know what $$P$$ is by \eqref{p matrix} the answer is the conjugate of $$\exp(tD)$$ by $$P$$ multiplied by the initial condition.
+
+$$\begin{equation}
+\begin{bmatrix}x\\y\end{bmatrix}=
+\begin{bmatrix}v_1&w_1\\v_2&w_2\end{bmatrix}
+\begin{bmatrix}e^{\lambda _1t}&0\\0&e^{\lambda _2t}\end{bmatrix}
+\begin{bmatrix}v_1&w_1\\v_2&w_2\end{bmatrix}^{-1}
+\begin{bmatrix}x_0\\y_0\end{bmatrix}\quad\blacksquare
+\end{equation}$$
+
+### One Defective Eigenvalue
+
+This case isn't that bad either. We use the fact that
+
+$$\begin{equation}
+AB=BA \implies \exp(A+B)=\exp(A)\exp(B)
+\end{equation}$$
+
+As a corollary, 
+
+$$\begin{equation}
+\exp(kI+B)=e^{kt}\exp(B)
+\end{equation}$$
+
+Since we have that 
+
+$$\begin{equation}
+D=\begin{bmatrix}\lambda&1\\0&\lambda\end{bmatrix}=\lambda I+\begin{bmatrix}0&1\\0&0\end{bmatrix}
+\end{equation}$$
+
+calculating this exponential is very easy. Since $$B$$ is nilpotent, we can calculate the expoential directly.
+
+$$\begin{equation}
+\exp\left(t\begin{bmatrix}0&1\\0&0\end{bmatrix}\right)=\begin{bmatrix}1&t\\0&1\end{bmatrix}
+\end{equation}$$
+
+We can rewrite this matrix to get
+
+$$\begin{equation}
+\begin{bmatrix}x\\y\end{bmatrix}=e^{\lambda t}\begin{bmatrix}v_1&w_1\\v_2&w_2\end{bmatrix}
+\left(I+t
+\begin{bmatrix}1\\0\end{bmatrix}\begin{bmatrix}0&1\end{bmatrix}\right)
+\begin{bmatrix}v_1&w_1\\v_2&w_2\end{bmatrix}^{-1}
+\begin{bmatrix}x_0\\y_0\end{bmatrix}
+\end{equation}$$
+
+First thing to notice is that the $$I$$ in the middle will be unaffected by the conjugation. As for the other term, by using our big brain column and row perspective, we can see that the $$t$$ term will be the first column of $$P$$ times the second row of $$P^{-1}$$. This product would be
+
+$$\begin{equation}
+t\begin{bmatrix}v_1\\v_2\end{bmatrix}\frac{\begin{bmatrix}-v_2&v_1\end{bmatrix}}{v_1w_2-v_2w_1}
+\end{equation}$$
+
+Once we add the initial condition to the mix, however, we get a row vector multiplied on the right by a column vector, which just results in a scalar (more specifically, a dot product).
+
+$$\begin{equation}
+t\frac{1}{v_1w_2-v_2w_1}\begin{bmatrix}v_1\\v_2\end{bmatrix}\begin{bmatrix}-v_2&v_1\end{bmatrix}\begin{bmatrix}x_0\\y_0\end{bmatrix}=
+t\frac{1}{v_1w_2-v_2w_1}\begin{bmatrix}v_1\\v_2\end{bmatrix}((-v_2,v_1)\cdot(x_0,y_0))
+\end{equation}$$
+
+Therefore, to simplify, we just move the dot product to the numerator of the fraction to end up with 
+
+$$\begin{equation}
+\begin{bmatrix}x\\y\end{bmatrix}=e^{\lambda t}\left(\begin{bmatrix}x_0\\y_0\end{bmatrix}+t
+\frac{v_1y_0-v_2x_0}{v_1w_2-v_2w_1}\begin{bmatrix}v_1\\v_2\end{bmatrix}\right)\quad\blacksquare
+\end{equation}$$
+
+As a bonus, we can alternatively eliminate the generalized eigenvector from consideration and get a solution in terms of _just_ the original matrix and the eigenvalue. Observe that
+
+$$\begin{equation}
+\begin{bmatrix}0&1\\0&0\end{bmatrix}=D-\lambda I
+\end{equation}$$
+
+implies that
+
+$$\begin{equation}
+\begin{bmatrix}v_1&w_1\\v_2&w_2\end{bmatrix}\begin{bmatrix}0&1\\0&0\end{bmatrix}\begin{bmatrix}v_1&w_1\\v_2&w_2\end{bmatrix}^{-1}=A-\lambda I
+\end{equation}$$
+
+We can then simplify down to
+
+$$\begin{equation}
+\begin{bmatrix}x\\y\end{bmatrix}=e^{\lambda t}\left(\begin{bmatrix}x_0\\y_0\end{bmatrix}+t
+(A-\lambda I)\begin{bmatrix}x_0\\y_0\end{bmatrix}\right)
+\end{equation}$$
+
+### Complex Eigenvalues
+
+Here things get a bit tricky. Still not too bad, however. We can knock out both complex cases in one by letting
+
+$$\begin{equation}
+D=\begin{bmatrix}p&-\omega\\\omega&p\end{bmatrix}=pI+\omega\begin{bmatrix}0&-1\\1&0\end{bmatrix}
+\end{equation}$$
+
+Let the skew-symmetric matrix on the right be $$Q$$. Then
+
+$$\begin{equation}
+\omega PQP^{-1}=A-pI
+\end{equation}$$
+
+$$\exp(tA)$$ is then
+
+$$\begin{equation}
+\exp(tA)=P\exp(ptI+\omega tQ)P^{-1}
+\end{equation}$$
+
+$$\begin{equation}
+\exp(tA)=e^{pt}P\exp(\omega tQ)P^{-1}
+\end{equation}$$
+
+Now, let us examine $$\exp(\omega tQ)$$ more closely. One can prove, relatively easily, that 
+
+$$\begin{equation}
+\exp(\omega tQ)=\begin{bmatrix}\cos(\omega t)&-\sin(\omega t)\\\sin(\omega t)&\cos(\omega t)\end{bmatrix}=\cos(\omega t)I+\sin(\omega t)Q
+\end{equation}$$
+
+Substituting this back into what we had,
+
+$$\begin{equation}
+\exp(tA)=e^{pt}P(\cos(\omega t)I+\sin(\omega t)Q)P^{-1}
+\end{equation}$$
+
+$$\begin{equation}
+\exp(tA)=e^{pt}(\cos(\omega t)I+\sin(\omega t)PQP^{-1})
+\end{equation}$$
+
+$$\begin{equation}
+\exp(tA)=e^{pt}\left(\cos(\omega t)I+\sin(\omega t)\frac{A-pI}{\omega}\right)
+\end{equation}$$
+
+$$\begin{equation}
+\begin{bmatrix}x\\y\end{bmatrix}=e^{pt}\left(\cos(\omega t)I+\frac{\sin(\omega t)}{\omega }(A-pI)\right)
+\begin{bmatrix}x_0\\y_0\end{bmatrix}\quad\blacksquare
+\end{equation}$$

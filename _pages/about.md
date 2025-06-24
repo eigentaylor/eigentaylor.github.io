@@ -2,18 +2,18 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: i am a math phd student and tutor
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: eigenvector.png
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+  more_info: > 
+    <p>Taylor Fisher</p> 
+    <p>discord: eigentaylor</p>   
+    <p>california CA</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
@@ -27,8 +27,31 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+$$\exp(x)=\sum_{n=0}^\infty \frac{x^n}{n!}$$
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+math phd student, dork extraordinaire.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+i like differential equations and linear algebra.
+
+[here are some math posts ive written if you want to look at them i guess](./blog){:target="_blank"}
+
+if you want to support me, i have a [ko-fi](https://ko-fi.com/smashmath){:target="_blank"}.
+
+---
+
+personal favorites:
+
+- [Constant Coefficient ODEs Made Simple with Linear Operators](./blog/linalglinconstcoef){:target="_blank"}
+- [Shortcuts for Finding Eigenvalues and Eigenvectors](./blog/eigentricks){:target="_blank"}
+- [Solving systems of first-order ODEs like a baller](./blog/firstordersystemsquick){:target="_blank"}
+- [The Alpha Method (Generalized Exponential Response Formula)](./blog/alphamethod){:target="_blank"}
+
+---
+
+my research stuff:
+
+things ive ~~discovered~~ independently derived. i think they're all cool, but only a few of them are actually useful, in my opinion.
+
+- [Function Interpolation](./blog/functioninterp){:target="_blank"}: a method to get a function (which is a linear combination of some given set of basis functions) that satisfies certain conditions using determinants, given that one exists and is unique. for example, a determinant which gives the unique lowest degree polynomial that passes through a certain set of points.
+
+- [A formula for some particular solutions to certain ODEs](./blog/exppolynonhomo){:target="_blank"}: a determinant formula which gives a particular solution to any linear constant-coefficient ordinary differential equation which has a forcing function of exponential nature (ex. $$g(t)=t^ne^{\alpha t}\cos(\beta t)$$). Uses results from [Function Interpolation](./blog/functioninterp){:target="_blank"}.
