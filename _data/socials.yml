@@ -46,6 +46,6 @@ email: tayloreigenfisher@gmail.com # your email address
 # youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 # zotero_username: # your zotero username
 custom_social: # can be any name here other than the ones already defined above
-  logo: /assets/img/ko-fi-icon.png # use a relative path from the site root
+  logo: https://github.com/eigentaylor/eigentaylor.github.io/blob/main/assets/img/ko-fi-icon.png
   title: ko-fi
   url: https://ko-fi.com/smashmath
