@@ -8,7 +8,7 @@ middle_name: Eigen
 last_name: Fisher
 email: tayloreigenfisher@gmail.com
 contact_note: >
-  you can send me a DM on discord @eigentaylor (just tell me you found me on my website, so I know who you are)
+  you can send me a DM on discord @eigentaylor (just tell me you found me through my website)
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   i do math sometimes
 footer_text: >
@@ -87,7 +87,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: my math stuff # blog_name will be displayed in your blog page
+blog_name: eigentaylor # blog_name will be displayed in your blog page
 blog_description: i wrote these
 permalink: /blog/:title/
 lsi: false # produce an index for related posts
