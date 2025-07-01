@@ -41,6 +41,7 @@ if you want to support me, i have a [ko-fi](https://ko-fi.com/eigentaylor){:targ
 
 personal favorites:
 
+- [Why do we row reduce? What IS a matrix?](./blog/rref){:target="_blank"}
 - [Constant Coefficient ODEs Made Simple with Linear Operators](./blog/linalglinconstcoef){:target="_blank"}
 - [Shortcuts for Finding Eigenvalues and Eigenvectors](./blog/eigentricks){:target="_blank"}
 - [Solving systems of first-order ODEs like a baller](./blog/firstordersystemsquick){:target="_blank"}
