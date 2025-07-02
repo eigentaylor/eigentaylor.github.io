@@ -5,7 +5,6 @@ date: 2024-03-23
 description: They're cool, I promise!
 comments: true
 importance: 1
-featured: false
 tags: 
 category: linear-algebra
 authors:
