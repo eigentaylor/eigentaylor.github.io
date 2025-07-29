@@ -6,7 +6,7 @@ subtitle: i am a math phd student and tutor
 
 profile:
   align: right
-  image: eigenvector.png
+  image: pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: > 
     <p>Taylor Fisher</p> 
