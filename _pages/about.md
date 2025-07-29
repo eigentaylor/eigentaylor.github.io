@@ -12,7 +12,7 @@ profile:
     <p>Taylor Fisher</p> 
     <p>discord: eigentaylor</p>   
     <p>california CA</p>
-    <p>this isn't actually a picture of me</p>
+    <p>not actually a picture of me</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
