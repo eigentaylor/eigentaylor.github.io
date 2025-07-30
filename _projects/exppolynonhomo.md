@@ -107,7 +107,7 @@ p^{(s)}(\alpha)\binom{s}{0}&p^{(s+1)}(\alpha)\binom{s+1}{0}&0\\
 {p^{(s)}(\alpha)^{1+1}\frac{(s+1)^1(s+2)^{1-1}}{1^m2^{1-1}}}
 $$
 
-We can easily compute $$\frac{(s+1)^1(s+2)^{1-1}}{1^m2^{1-1}}=s+1$$, but most importantly we can already expand along the third column. This eliminates any need to compute binomial coefficients and reduces the determinant to be $$2\times 2$$. Then our particular soultion will be
+We can easily compute $$\frac{(s+1)^1(s+2)^{1-1}}{1^m2^{1-1}}=s+1$$, but most importantly we can already expand along the third column. This eliminates any need to compute binomial coefficients and reduces the determinant to be $$2\times 2$$. Then our particular solution will be
 
 $$
 y_ p=-\frac{t^se^t}{(s+1)p^{(s)}(\alpha)^2}
