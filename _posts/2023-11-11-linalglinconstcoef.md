@@ -179,7 +179,9 @@ $$\implies y=Ce^{\lambda t}\implies y\in\operatorname{span}(e^{\lambda t})$$
 
 Remember, $$y\in\operatorname{span}(e^{\lambda t})$$ just means that $$y$$ is some linear combination of $$e^{\lambda t}$$, which just means $$y=c_1e^{\lambda t}$$.
 
-We have demonstrated that $$y'=\lambda y\implies y\in\operatorname{span}(e^{\lambda t})$$, and I encourage you to verify that $$y'=\lambda y\impliedby y\in\operatorname{span}(e^{\lambda t})$$. However, how do we *know* this provides us with *every* solution? No, get that Picard–Lindelöf s#!% out of here (it's beautiful, yes, but not particularly intuitive). Suppose we have two solutions $$y_1,y_2$$ with $$y_1\neq0$$. Then
+We have demonstrated that $$y'=\lambda y\implies y\in\operatorname{span}(e^{\lambda t})$$, and I encourage you to verify that $$y'=\lambda y\impliedby y\in\operatorname{span}(e^{\lambda t})$$.
+
+Technically, this *proves* that $$\ker(D-\lambda)=\operatorname{span}(e^{\lambda t})$$. But, though I don't know about you, what we've shown doesn't make me viscerally *feel* like we've proved that. How do we *know* this provides us with *every* solution? No, get that Picard–Lindelöf s#!% out of here (as beautiful as it is, it's essentially a cop-out). Here's another argument that gives me a fuller feeling of confirmation: Suppose we have two solutions $$y_1,y_2$$ with $$y_1\neq0$$. Then,
 
 $$\frac{d}{dt}\left(\frac{y_2}{y_1}\right)=\frac{y_1y_2'-y_2y_1'}{y_1^2}$$
 
