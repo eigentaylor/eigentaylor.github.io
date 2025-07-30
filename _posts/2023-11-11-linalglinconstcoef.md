@@ -179,7 +179,7 @@ $$\implies y=Ce^{\lambda t}\implies y\in\operatorname{span}(e^{\lambda t})$$
 
 Remember, $$y\in\operatorname{span}(e^{\lambda t})$$ just means that $$y$$ is some linear combination of $$e^{\lambda t}$$, which just means $$y=c_1e^{\lambda t}$$.
 
-We have demonstrated that $$y'=\lambda y\implies y\in\operatorname{span}(e^{\lambda t})$$, and I encourage you to verify that $$y'=\lambda y\impliedby y\in\operatorname{span}(e^{\lambda t})$$.
+We have demonstrated that $$y'=\lambda y\implies y\in\operatorname{span}(e^{\lambda t})$$, and I encourage you to verify that $$y'=\lambda y\impliedby y\in\operatorname{span}(e^{\lambda t})$$. That is, exponentials are, trivially, eigenvectors of the differential operator.
 
 Technically, this *proves* that $$\ker(D-\lambda)=\operatorname{span}(e^{\lambda t})$$. But, though I don't know about you, what we've shown doesn't make me viscerally *feel* like we've proved that. How do we *know* this provides us with *every* solution? No, get that Picard–Lindelöf s#!% out of here (as beautiful as it is, it's essentially a cop-out). Here's another argument that gives me a fuller feeling of confirmation: Suppose we have two solutions $$y_1,y_2$$ with $$y_1\neq0$$. Then,
 
@@ -193,13 +193,13 @@ So $$\frac{y_2}{y_1}$$ is just some constant $$C$$, which implies that $$y_2=Cy_
 \ker(D-\lambda)=\operatorname{span}(e^{\lambda t})
 \end{equation}
 
-This demonstrates, without doubt, that **every eigenvector of the differential operator is an exponential function $$Ce^{\lambda t}$$**.
+This demonstrates, without doubt, that not only is any exponential function $$Ce^{\lambda t}$$ an eigenvector of the differential operator, but **every eigenvector of the differential operator is an exponential function $$Ce^{\lambda t}$$**.
 
 Now, we have answered our first question:
 
 **Why is our guess for the solution $$e^{\lambda t}$$?**
 
-*Because exponentials are the unique functions that can be eigenvectors of the differential operator*. Therefore, they will also be eigenvectors of the polynomial differential operator.
+*Because exponentials are the unique functions which act as eigenvectors of the differential operator*. Therefore, they will *also* be eigenvectors of the *polynomial* differential operator.
 
 $$p(D)e^{\lambda t}=p(\lambda)e^{\lambda t}$$
 
