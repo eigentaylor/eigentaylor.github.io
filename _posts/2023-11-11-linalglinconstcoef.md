@@ -187,7 +187,7 @@ $$\frac{d}{dt}\left(\frac{y_2}{y_1}\right)=\frac{y_1y_2'-y_2y_1'}{y_1^2}$$
 
 $$=\frac{y_1(\lambda y_2)-y_2(\lambda y_1)}{y_1^2}=0$$
 
-So $$\frac{y_2}{y_1}$$ is just some constant $$C$$, which implies that $$y_2=Cy_1$$, which implies $$y_2$$ is necessarily linearly dependent on $$y_1$$. Therefore, we've shown that the solution space of $$y'=\lambda y$$ (which is just $$(D-\lambda)y=0$$: the kernel of $$(D-\lambda)$$) has dimension exactly 1, and it has a basis $$e^{\lambda t}$$. In other words,
+So $$\frac{y_2}{y_1}$$ is just some constant $$C$$, which implies that $$y_2=Cy_1$$, which implies $$y_2$$ is necessarily linearly dependent on $$y_1$$. Therefore, we've once again shown that the solution space of $$y'=\lambda y$$ (which is just $$(D-\lambda)y=0$$: the kernel of $$(D-\lambda)$$) has dimension exactly 1, and it has a basis $$e^{\lambda t}$$. In other words,
 
 \begin{equation}\label{kerda}
 \ker(D-\lambda)=\operatorname{span}(e^{\lambda t})
