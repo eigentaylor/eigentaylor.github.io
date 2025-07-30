@@ -193,7 +193,7 @@ So $$\frac{y_2}{y_1}$$ is just some constant $$C$$, which implies that $$y_2=Cy_
 \ker(D-\lambda)=\operatorname{span}(e^{\lambda t})
 \end{equation}
 
-This demonstrates that **every eigenvector of the differential operator is an exponential function $$Ce^{\lambda t}$$**.
+This demonstrates, without doubt, that **every eigenvector of the differential operator is an exponential function $$Ce^{\lambda t}$$**.
 
 Now, we have answered our first question:
 
