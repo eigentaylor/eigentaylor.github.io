@@ -3,7 +3,7 @@ layout: page
 title: Intro To Solving Systems of First Order Differential Equations
 date: 2021-07-18 0
 description: An attempt at an intuitive derivation
-comments: true
+giscus_comments: true
 importance: 4
 categories: differential-equations
 tags: systems-of-differential-equations

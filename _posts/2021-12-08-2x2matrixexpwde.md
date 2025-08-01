@@ -3,7 +3,7 @@ layout: distill
 title: 2x2 Matrix Exponential Formulas with Differential Equations
 date: 2021-12-08
 description:
-comments: true
+giscus_comments: true
 importance: 6
 tags: matrix-exponentials
 categories: archive

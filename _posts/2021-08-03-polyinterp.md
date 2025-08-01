@@ -3,7 +3,7 @@ layout: page
 title: Polynomial Interpolation
 date: 2021-08-03 0
 description: Making your own custom polynomial.
-comments: true
+giscus_comments: true
 importance: 2
 categories: linear-algebra
 ---

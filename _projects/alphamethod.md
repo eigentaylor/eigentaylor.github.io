@@ -3,7 +3,7 @@ layout: distill
 title: The Alpha Method (Generalized Exponential Response Formula)
 date: 2021-01-04 
 description: Easy particular solutions to nonhomoegenous constant coefficient linear differential equations with simple exponential/trigonometric forcing functions.
-comments: true
+giscus_comments: true
 importance: 1
 category: differential equations
 authors:  

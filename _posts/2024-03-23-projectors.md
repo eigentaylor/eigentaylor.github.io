@@ -3,9 +3,11 @@ layout: distill
 title: The Wonderful World of Projectors
 date: 2024-03-23
 description: They're cool, I promise!
-comments: true
+giscus_comments: true
 importance: 1
 tags: 
+giscus_comments: true
+related_posts: true
 category: linear-algebra
 authors:
   - name: Taylor Fisher

@@ -3,7 +3,7 @@ layout: distill
 title: Tricks for Remembering Laplace Transforms
 date: 2021-05-22 0
 description: for students and people who forgot
-comments: true
+giscus_comments: true
 importance: 2
 category: differential equations
 authors:  

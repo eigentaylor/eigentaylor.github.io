@@ -3,7 +3,7 @@ layout: page
 title: Solving Multiple Initial Value Problems with Normalized Solutions
 date: 2021-02-10
 description: Solve one, solve them all.
-comments: true
+giscus_comments: true
 importance: 3
 category: differential equations
 ---

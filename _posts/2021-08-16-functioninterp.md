@@ -3,7 +3,7 @@ layout: distill
 title: Function Interpolation
 date: 2021-08-16
 description: Find a function that matches your requirements
-comments: true
+giscus_comments: true
 importance: 2
 categories: linear-algebra
 authors:  

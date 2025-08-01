@@ -3,7 +3,7 @@ layout: page
 title: Linear Differential Equation Interpolation
 date: 2021-01-14
 description: Linear Differential Equations with desired solutions using determinants.
-comments: true
+giscus_comments: true
 importance: 4
 category: differential equations
 ---

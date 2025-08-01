@@ -3,8 +3,9 @@ layout: distill
 title: Change of Basis
 date: 2022-10-06
 description: the most confusing thing in linear algebra (don't @ me)
-comments: true
+giscus_comments: true
 importance: 2
+related_posts: true
 categories: linear-algebra
 authors:  
   - name: Taylor F.

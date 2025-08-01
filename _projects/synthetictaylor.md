@@ -3,7 +3,7 @@ layout: page
 title: Finding Taylor Series of Polynomials Using Synthetic Division
 date: 2021-09-27 0
 description: Wait you can do that? YUP
-comments: true
+giscus_comments: true
 importance: 3
 category: calculus
 ---

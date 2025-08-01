@@ -3,7 +3,7 @@ layout: page
 title: Skew-Symmetric Matrices Are Cool
 date: 2021-01-08 
 description: top 10 things YOU didn't know about real skew-symmetric matrices!!! (GONE WRONG) (COPS CALLED)
-comments: true
+giscus_comments: true
 importance: 2
 categories: linear-algebra
 ---

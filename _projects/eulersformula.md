@@ -3,7 +3,7 @@ layout: page
 title: Introduction to Euler's Formula
 date: 2021-05-22 0
 description: the best formula
-comments: true
+giscus_comments: true
 importance: 1
 category: calculus
 ---

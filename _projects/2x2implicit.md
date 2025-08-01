@@ -3,7 +3,7 @@ layout: page
 title: Implicit Solutions to 2x2 Systems of First-Order Homogeneous Linear Differential Equations
 date: 2020-12-20 
 description: Implicit and explicit solutions for all cases.
-comments: true
+giscus_comments: true
 importance: 2
 category: systems of differential equations
 ---

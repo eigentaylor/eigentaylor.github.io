@@ -3,7 +3,7 @@ layout: page
 title: Matrix Exponentials Using Differential Equations
 date: 2021-09-13 0
 description: ok
-comments: true
+giscus_comments: true
 importance: 3
 categories: differential-equations
 tags: matrix-exponentials normalized-solutions systems-of-differential-equations

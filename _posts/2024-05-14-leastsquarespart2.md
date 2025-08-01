@@ -3,7 +3,7 @@ layout: distill
 title: Introduction to Least Squares Part 2 (Electric Boogaloo)
 date: 2024-05-14
 description: Why the heck do we multiply by the transpose
-comments: true
+giscus_comments: true
 importance: 3
 categories: linear-algebra
 authors:  

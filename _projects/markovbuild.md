@@ -3,7 +3,7 @@ layout: page
 title: Constructing 2x2 Markov Matrices
 date: 2021-01-16
 description: Build a Markov Chain with desired behavior.
-comments: true
+giscus_comments: true
 importance: 2
 category: linear algebra
 ---

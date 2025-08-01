@@ -3,7 +3,7 @@ layout: distill
 title: Title
 date: 2022-6-7
 description: desc
-comments: true
+giscus_comments: true
 importance: 3
 category:
 authors:  

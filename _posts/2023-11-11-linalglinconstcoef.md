@@ -3,10 +3,11 @@ layout: distill
 title: Constant Coefficient ODEs Made Simple with Linear Operators
 date: 2023-11-11
 description: No more guessing. Let's make it intuitive with linear algebra.
-comments: true
+giscus_comments: true
 importance: 1
 featured: true
 giscus_comments: true
+related_posts: true
 tags: best
 category: differential-equations
 authors:

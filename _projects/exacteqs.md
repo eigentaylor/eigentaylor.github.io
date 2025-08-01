@@ -3,7 +3,7 @@ layout: distill
 title: Exact Equations Done Quick
 date: 2021-09-09 0
 description: speedrun WR
-comments: true
+giscus_comments: true
 importance: 3
 category: differential equations
 authors:  

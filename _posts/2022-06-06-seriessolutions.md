@@ -3,7 +3,7 @@ layout: distill
 title: Series Solutions Done Quick
 date: 2022-06-06
 description: the fast way to do series solutions. no reindexing required.
-comments: true
+giscus_comments: true
 importance: 1
 categories: differential-equations
 tags: best 

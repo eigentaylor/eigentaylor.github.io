@@ -3,7 +3,7 @@ layout: distill
 title: Shortcuts for Finding Eigenvalues and Eigenvectors
 date: 2021-11-25 0
 description: diagonalization speedrun, let's go
-comments: true
+giscus_comments: true
 importance: 1
 categories: linear-algebra
 tags: best 

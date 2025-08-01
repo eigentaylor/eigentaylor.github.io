@@ -3,7 +3,7 @@ layout: distill
 title: Matrix Exponential Formulas for 2x2 Matrices Using Laplace Transforms
 date: 2021-04-26
 description: this has been rewritten
-comments: true
+giscus_comments: true
 importance: 6
 tags: matrix-exponentials
 categories: archive

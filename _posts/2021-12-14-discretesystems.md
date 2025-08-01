@@ -3,7 +3,7 @@ layout: distill
 title: Systems of Linear Difference Equations
 date: 2021-12-14
 description: Like systems of ODEs, but discrete 👀
-comments: true
+giscus_comments: true
 importance: 3
 categories: works-in-progress
 authors:  

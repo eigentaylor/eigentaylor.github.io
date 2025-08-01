@@ -3,7 +3,7 @@ layout: distill
 title: Title
 date: 2024-6-7
 description: desc
-comments: true
+giscus_comments: true
 importance: 3
 tags:
 category:

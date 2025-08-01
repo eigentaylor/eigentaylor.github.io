@@ -3,7 +3,7 @@ layout: distill
 title: Introduction to Least Squares
 date: 2021-10-7
 description: How to find the best solution for an inconsistent system
-comments: true
+giscus_comments: true
 importance: 3
 categories: linear-algebra
 authors:  
