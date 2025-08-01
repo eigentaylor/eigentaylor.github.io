@@ -6,6 +6,7 @@ description: No more guessing. Let's make it intuitive with linear algebra.
 comments: true
 importance: 1
 featured: true
+giscus_comments: true
 tags: best
 category: differential-equations
 authors:
