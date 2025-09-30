@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: i am a math phd student and tutor
+subtitle: i am a math grad and tutor
 
 profile:
   align: right
@@ -30,7 +30,7 @@ latest_posts:
 
 $$\exp(x)=\sum_{n=0}^\infty \frac{x^n}{n!}$$
 
-math phd student, dork extraordinaire.
+math grad, dork extraordinaire.
 
 i like differential equations and linear algebra.
 

@@ -13,6 +13,11 @@ Classes I was/am a TA for.
 
 ---
 
+## 2025 Moorpark College
+### Fall
+- Precalculus
+- Calculus I
+
 ## 2025
 
 ### Spring
