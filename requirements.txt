@@ -1,5 +1,6 @@
 nbconvert
 docker
+docker-compose
 pandas
 numpy
 matplotlib
