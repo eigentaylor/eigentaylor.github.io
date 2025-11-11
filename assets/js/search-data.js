@@ -549,166 +549,11 @@ ninja.data = [{
           description: "with background image",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
-            },},{id: "projects-constructing-systems-of-nonlinear-first-order-differential-equations-to-model-population-dynamics",
-          title: 'Constructing Systems of Nonlinear First-Order Differential Equations to Model Population Dynamics',
-          description: "Build a system with desired behavior.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/nonlinearbuild/";
-            },},{id: "projects-exponentials-of-symmetric-matrices-using-the-spectral-theorem",
-          title: 'Exponentials of Symmetric Matrices Using the Spectral Theorem',
-          description: "yeah",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/symmetric-exp/";
-            },},{id: "projects-implicit-solutions-to-2x2-systems-of-first-order-homogeneous-linear-differential-equations",
-          title: 'Implicit Solutions to 2x2 Systems of First-Order Homogeneous Linear Differential Equations',
-          description: "Implicit and explicit solutions for all cases.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/2x2implicit/";
-            },},{id: "projects-skew-symmetric-matrices-are-cool",
-          title: 'Skew-Symmetric Matrices Are Cool',
-          description: "top 10 things YOU didn&#39;t know about real skew-symmetric matrices!!! (GONE WRONG) (COPS CALLED)",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/skewsymmetric/";
-            },},{id: "projects-constructing-2x2-markov-matrices",
-          title: 'Constructing 2x2 Markov Matrices',
-          description: "Build a Markov Chain with desired behavior.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/markovbuild/";
-            },},{id: "projects-solving-multiple-initial-value-problems-with-normalized-solutions",
-          title: 'Solving Multiple Initial Value Problems with Normalized Solutions',
-          description: "Solve one, solve them all.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/normalized/";
-            },},{id: "projects-matrix-exponential-formulas-for-2x2-matrices-using-laplace-transforms",
-          title: 'Matrix Exponential Formulas for 2x2 Matrices Using Laplace Transforms',
-          description: "this has been rewritten",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/ezmatrixexp/";
-            },},{id: "projects-constructing-integer-2x2-first-order-systems-of-differential-equations-with-integer-solutions",
-          title: 'Constructing Integer 2x2 First Order Systems of Differential Equations with Integer Solutions',
-          description: "Nice solutions? Nice.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/firstordersystems/";
-            },},{id: "projects-constructing-integer-2x2-second-order-systems-of-differential-equations-with-integer-solutions",
-          title: 'Constructing Integer 2x2 Second Order Systems of Differential Equations with Integer Solutions',
-          description: "It&#39;s a lot messier.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/secondordersystems/";
-            },},{id: "projects-skipping-integration-by-parts-using-euler-39-s-formula",
-          title: 'Skipping Integration by Parts Using Euler&amp;#39;s Formula',
-          description: "skip or simplify integrals involving trig functions multiplied by exponentials",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/eulersformulabyparts/";
-            },},{id: "projects-tricks-for-remembering-laplace-transforms",
-          title: 'Tricks for Remembering Laplace Transforms',
-          description: "for students and people who forgot",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/laplacetricks/";
-            },},{id: "projects-variation-of-parameters-using-linear-algebra",
-          title: 'Variation of Parameters Using Linear Algebra',
-          description: "linear is best frend :)",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/voplinear/";
-            },},{id: "projects-intro-to-solving-systems-of-first-order-differential-equations",
-          title: 'Intro To Solving Systems of First Order Differential Equations',
-          description: "An attempt at an intuitive derivation",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/firstordersystemsolve/";
-            },},{id: "projects-polynomial-interpolation",
-          title: 'Polynomial Interpolation',
-          description: "Making your own custom polynomial.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/polyinterp/";
-            },},{id: "projects-function-interpolation",
-          title: 'Function Interpolation',
-          description: "Find a function that matches your requirements",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/functioninterp/";
-            },},{id: "projects-exact-equations-done-quick",
-          title: 'Exact Equations Done Quick',
-          description: "speedrun WR",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/exacteqs/";
-            },},{id: "projects-matrix-exponentials-using-differential-equations",
-          title: 'Matrix Exponentials Using Differential Equations',
-          description: "ok",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/matrixexpwde/";
-            },},{id: "projects-a-formula-for-some-particular-solutions",
-          title: 'A Formula for Some Particular Solutions',
-          description: "Yet another obnoxious formula for solutions to constant coefficient nonhomogeneous ODE&#39;s with common forcing functions.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/exppolynonhomo/";
-            },},{id: "projects-finding-taylor-series-of-polynomials-using-synthetic-division",
-          title: 'Finding Taylor Series of Polynomials Using Synthetic Division',
-          description: "Wait you can do that? YUP",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/synthetictaylor/";
-            },},{id: "projects-introduction-to-least-squares",
-          title: 'Introduction to Least Squares',
-          description: "How to find the best solution for an inconsistent system",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/leastsquares/";
-            },},{id: "projects-solving-systems-of-first-order-odes-like-a-baller",
-          title: 'Solving systems of first-order ODEs like a baller',
-          description: "some ballin&#39; tips and tricks",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/firstordersystemsquick/";
-            },},{id: "projects-2x2-matrix-exponential-formulas-with-differential-equations",
-          title: '2x2 Matrix Exponential Formulas with Differential Equations',
-          description: "",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/2x2matrixexpwde/";
-            },},{id: "projects-new-ways-to-calculate-normalized-solutions-to-linear-constant-coefficient-differential-equations",
-          title: 'New Ways to Calculate Normalized Solutions to Linear Constant-Coefficient Differential Equations',
-          description: "The fastest way for a computer, and a fast way by hand.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/newnormalized/";
-            },},{id: "projects-series-solutions-done-quick",
-          title: 'Series Solutions Done Quick',
-          description: "the fast way to do series solutions. no reindexing required.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/seriessolutions/";
-            },},{id: "projects-title",
-          title: 'Title',
-          description: "desc",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/template/";
-            },},{id: "projects-bases-for-the-fundamental-spaces-of-a-matrix",
-          title: 'Bases for the fundamental spaces of a matrix',
-          description: "a lot of students struggle with this so here. row space, column space, null space, and left null space.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/2022-06-11-rowcolspace/";
-            },},{id: "projects-bases-for-the-fundamental-spaces-of-a-matrix",
-          title: 'Bases for the fundamental spaces of a matrix',
-          description: "a lot of students struggle with this so here. row space, column space, null space, and left null space.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/rowcolspace/";
-            },},{id: "projects-integrating-factors-explained",
-          title: 'Integrating Factors Explained',
-          description: "the most common way to solve first order linear ODE&#39;s",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/integratingfactor/";
-            },},{id: "projects-change-of-basis",
-          title: 'Change of Basis',
-          description: "the most confusing thing in linear algebra (don&#39;t @ me)",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/2022-10-06-changeofbasis/";
             },},{id: "projects-project-2",
           title: 'project 2',
           description: "a project with a background image and giscus comments",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
-            },},{id: "projects-solving-second-order-systems-of-differential-equations",
-          title: 'Solving Second Order Systems of Differential Equations',
-          description: "ye",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/2ndordersystemsolve/";
-            },},{id: "projects-matrix-exponential-formulas-for-2x2-matrices",
-          title: 'Matrix Exponential Formulas for 2x2 Matrices',
-          description: "Who needs eigenvectors?",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/2x2ezmatrixexp/";
             },},{id: "projects-project-3-with-very-long-name",
           title: 'project 3 with very long name',
           description: "a project that redirects to another website",
@@ -744,51 +589,16 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
-            },},{id: "projects-a-different-perspective-of-diagonalization",
-          title: 'A Different Perspective of Diagonalization',
-          description: "An (atttempt at an) intuitive approach to similar matrix decomposition.",
+            },},{id: "projects-just-how-chaotic-is-the-electoral-college",
+          title: 'Just how chaotic is the electoral college?',
+          description: "An analysis of how close US elections really are",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/diagonalization/";
-            },},{id: "projects-the-alpha-method-generalized-exponential-response-formula",
-          title: 'The Alpha Method (Generalized Exponential Response Formula)',
-          description: "Easy particular solutions to nonhomoegenous constant coefficient linear differential equations with simple exponential/trigonometric forcing functions.",
+              window.location.href = "/projects/EC_margins/";
+            },},{id: "projects-title",
+          title: 'Title',
+          description: "desc",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/alphamethod/";
-            },},{id: "projects-linear-differential-equation-interpolation",
-          title: 'Linear Differential Equation Interpolation',
-          description: "Linear Differential Equations with desired solutions using determinants.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/diffeqinterp/";
-            },},{id: "projects-eigendecomposition-of-real-matrices-with-complex-eigenvalues",
-          title: 'Eigendecomposition of Real Matrices with Complex Eigenvalues',
-          description: "An attempt at an intuitive derivation.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/complexeigenvalues/";
-            },},{id: "projects-introduction-to-euler-39-s-formula",
-          title: 'Introduction to Euler&amp;#39;s Formula',
-          description: "the best formula",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/eulersformula/";
-            },},{id: "projects-easily-solving-autonomous-ivps-off-the-origin",
-          title: 'Easily Solving Autonomous IVPs Off the Origin',
-          description: "Easily solving linear homogeneous constant coefficient initial problems when the initial point is not t=0",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/autonomousivps/";
-            },},{id: "projects-shortcuts-for-finding-eigenvalues-and-eigenvectors",
-          title: 'Shortcuts for Finding Eigenvalues and Eigenvectors',
-          description: "Bodacious",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/eigentricks/";
-            },},{id: "projects-systems-of-linear-difference-equations",
-          title: 'Systems of Linear Difference Equations',
-          description: "Like systems of ODEs, but discrete 👀",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/discretesystems/";
-            },},{id: "projects-column-and-row-perspective",
-          title: 'Column and Row Perspective',
-          description: "How to simplify matrix multiplication with the best perspectives (and also find certain inverse matrices fast!)",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/columnperspective/";
+              window.location.href = "/projects/template/";
             },},{
       id: 'light-theme',
       title: 'Change theme to light',
