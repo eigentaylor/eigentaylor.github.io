@@ -21,14 +21,24 @@ if %errorlevel% equ 0 (
 )
 
 echo.
-echo 🔄 Pulling latest Docker images...
-docker compose pull
-if %errorlevel% neq 0 (
-    echo ❌ Failed to pull Docker images. Exiting.
-    pause
-    exit /b 1
+REM Accept optional first arg: skippull to avoid pulling images when offline
+set SKIP_PULL=0
+if /I "%1"=="skippull" (
+    set SKIP_PULL=1
 )
-echo ✅ Images pulled successfully
+
+if %SKIP_PULL%==1 (
+    echo ⏭️ Skipping docker image pull (skippull flag detected)
+) else (
+    echo 🔄 Pulling latest Docker images...
+    docker compose pull
+    if %errorlevel% neq 0 (
+        echo ❌ Failed to pull Docker images. Exiting.
+        pause
+        exit /b 1
+    )
+    echo ✅ Images pulled successfully
+)
 
 echo.
 echo 🚀 Starting Docker containers...

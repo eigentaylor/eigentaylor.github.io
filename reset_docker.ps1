@@ -11,6 +11,11 @@ if (-not (Test-Path "docker-compose.yml")) {
     exit 1
 }
 
+# param: allow skipping the pull step (useful for offline testing)
+param(
+    [switch]$SkipPull
+)
+
 # Stop and remove containers
 Write-Host "🔄 Stopping Docker containers..." -ForegroundColor Yellow
 try {
@@ -29,14 +34,18 @@ try {
     Write-Host "⚠️  Warning: Failed to remove images" -ForegroundColor Yellow
 }
 
-# Pull latest images
-Write-Host "`n🔄 Pulling latest Docker images..." -ForegroundColor Yellow
-try {
-    docker compose pull
-    Write-Host "✅ Images pulled successfully" -ForegroundColor Green
-} catch {
-    Write-Host "❌ Failed to pull Docker images. Exiting." -ForegroundColor Red
-    exit 1
+# Pull latest images (skip when offline)
+if ($SkipPull) {
+    Write-Host "`n⏭️ Skipping image pull because -SkipPull was specified." -ForegroundColor Yellow
+} else {
+    Write-Host "`n🔄 Pulling latest Docker images..." -ForegroundColor Yellow
+    try {
+        docker compose pull
+        Write-Host "✅ Images pulled successfully" -ForegroundColor Green
+    } catch {
+        Write-Host "❌ Failed to pull Docker images. Exiting." -ForegroundColor Red
+        exit 1
+    }
 }
 
 # Start containers in detached mode
