@@ -13,3 +13,7 @@ requests
 beautifulsoup4
 lxml
 sqlalchemy
+jupyter
+gem
+bundler
+bundle
