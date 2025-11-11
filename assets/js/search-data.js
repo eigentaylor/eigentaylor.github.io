@@ -589,11 +589,6 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
-            },},{id: "projects-just-how-chaotic-is-the-electoral-college",
-          title: 'Just how chaotic is the electoral college?',
-          description: "An analysis of how close US elections really are",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/EC_margins/";
             },},{id: "projects-title",
           title: 'Title',
           description: "desc",
