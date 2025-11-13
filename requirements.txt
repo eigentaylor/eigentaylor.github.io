@@ -1,1 +1,16 @@
 nbconvert
+jupyter
+numpy
+pandas
+matplotlib
+scipy
+scikit-learn
+seaborn
+plotly
+jupyterlab
+openpyxl
+xlrd
+requests
+beautifulsoup4
+lxml
+sqlalchemy
