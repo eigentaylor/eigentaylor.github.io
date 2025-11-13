@@ -1,15 +1,1 @@
 nbconvert
-docker
-docker-compose
-pandas
-numpy
-matplotlib
-seaborn
-scikit-learn
-jupyterlab
-openpyxl
-xlrd
-requests
-beautifulsoup4
-lxml
-sqlalchemy

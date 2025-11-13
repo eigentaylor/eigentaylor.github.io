@@ -1,6 +1,0 @@
-services:
-  eigentaylorgithub:
-    image: eigentaylorgithub
-    build:
-      context: .
-      dockerfile: ./Dockerfile
