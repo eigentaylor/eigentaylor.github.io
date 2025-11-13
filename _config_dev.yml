@@ -1,0 +1,30 @@
+# Development overrides for faster builds
+# Use with: bundle exec jekyll serve --config _config.yml,_config_dev.yml
+
+# Disable CSS/HTML minification  
+jekyll-minifier:
+  enabled: false
+
+# Imagemagick already disabled in main config, but making sure
+imagemagick:
+  enabled: false
+
+# Remove terser from plugins list to disable JS minification
+plugins:
+  - jekyll-archives-v2
+  - jekyll-email-protect
+  - jekyll-feed
+  - jekyll-get-json
+  - jekyll-imagemagick
+  - jekyll-jupyter-notebook
+  - jekyll-link-attributes
+  - jekyll-minifier
+  - jekyll-paginate-v2
+  - jekyll-regex-replace
+  - jekyll/scholar
+  - jekyll-sitemap
+  - jekyll-tabs
+  # - jekyll-terser  # DISABLED for dev
+  - jekyll-toc
+  - jekyll-twitter-plugin
+  - jemoji
