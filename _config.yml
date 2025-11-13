@@ -184,6 +184,9 @@ kramdown:
 # Includes & excludes
 include: ["_pages", "_scripts"]
 exclude:
+  - bibliography/
+  - _bibliography/
+  - _books/
   - bin/
   - CONTRIBUTING.md
   - CUSTOMIZE.md
@@ -203,6 +206,8 @@ exclude:
   - README.md
   - readme_preview/
   - vendor
+  - old-site/
+  - template.md
 keep_files:
   - CNAME
   - .nojekyll
