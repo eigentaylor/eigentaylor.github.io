@@ -7,21 +7,21 @@ ninja.data = [{
     title: "about",
     section: "Navigation",
     handler: () => {
-      window.location.href = "/al-folio/";
+      window.location.href = "/";
     },
   },{id: "nav-blog",
           title: "blog",
           description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/al-folio/blog/";
+            window.location.href = "/blog/";
           },
         },{id: "nav-teaching",
           title: "teaching",
           description: "Classes I have officially tutored or TA&#39;d for",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/al-folio/teaching/";
+            window.location.href = "/teaching/";
           },
         },{id: "post-why-do-we-row-reduce-what-is-a-matrix",
         
@@ -31,7 +31,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2024/rref/";
+            window.location.href = "/blog/rref/";
           
         },
       },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
@@ -53,7 +53,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2024/leastsquarespart2/";
+            window.location.href = "/blog/leastsquarespart2/";
           
         },
       },{id: "post-the-wonderful-world-of-projectors",
@@ -64,7 +64,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2024/projectors/";
+            window.location.href = "/blog/projectors/";
           
         },
       },{id: "post-constant-coefficient-odes-made-simple-with-linear-operators",
@@ -75,7 +75,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2023/linalglinconstcoef/";
+            window.location.href = "/blog/linalglinconstcoef/";
           
         },
       },{id: "post-in-defense-of-cramer-39-s-rule",
@@ -86,7 +86,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2023/cramers/";
+            window.location.href = "/blog/cramers/";
           
         },
       },{id: "post-change-of-basis",
@@ -97,7 +97,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2022/changeofbasis/";
+            window.location.href = "/blog/changeofbasis/";
           
         },
       },{id: "post-linear-constant-coefficient-odes",
@@ -108,7 +108,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2022/linconstcoef/";
+            window.location.href = "/blog/linconstcoef/";
           
         },
       },{id: "post-integrating-factors-explained",
@@ -119,7 +119,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2022/integratingfactor/";
+            window.location.href = "/blog/integratingfactor/";
           
         },
       },{id: "post-bases-for-the-fundamental-spaces-of-a-matrix",
@@ -130,7 +130,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2022/rowcolspace/";
+            window.location.href = "/blog/rowcolspace/";
           
         },
       },{id: "post-series-solutions-done-quick",
@@ -141,7 +141,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2022/seriessolutions/";
+            window.location.href = "/blog/seriessolutions/";
           
         },
       },{id: "post-column-and-row-perspective",
@@ -152,7 +152,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2022/columnperspective/";
+            window.location.href = "/blog/columnperspective/";
           
         },
       },{id: "post-displaying-external-posts-on-your-al-folio-blog",
@@ -174,7 +174,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2022/newnormalized/";
+            window.location.href = "/blog/newnormalized/";
           
         },
       },{id: "post-systems-of-linear-difference-equations",
@@ -185,7 +185,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/discretesystems/";
+            window.location.href = "/blog/discretesystems/";
           
         },
       },{id: "post-matrix-exponential-formulas-for-2x2-matrices",
@@ -196,7 +196,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/2x2ezmatrixexp/";
+            window.location.href = "/blog/2x2ezmatrixexp/";
           
         },
       },{id: "post-2x2-matrix-exponential-formulas-with-differential-equations",
@@ -207,7 +207,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/2x2matrixexpwde/";
+            window.location.href = "/blog/2x2matrixexpwde/";
           
         },
       },{id: "post-solving-systems-of-first-order-odes-like-a-baller",
@@ -218,7 +218,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/firstordersystemsquick/";
+            window.location.href = "/blog/firstordersystemsquick/";
           
         },
       },{id: "post-shortcuts-for-finding-eigenvalues-and-eigenvectors",
@@ -229,7 +229,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/eigentricks/";
+            window.location.href = "/blog/eigentricks/";
           
         },
       },{id: "post-easily-solving-autonomous-ivps-off-the-origin",
@@ -240,7 +240,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/autonomousivps/";
+            window.location.href = "/blog/autonomousivps/";
           
         },
       },{id: "post-introduction-to-least-squares",
@@ -251,7 +251,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/leastsquares/";
+            window.location.href = "/blog/leastsquares/";
           
         },
       },{id: "post-finding-taylor-series-of-polynomials-using-synthetic-division",
@@ -262,7 +262,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/synthetictaylor/";
+            window.location.href = "/blog/synthetictaylor/";
           
         },
       },{id: "post-a-formula-for-some-particular-solutions",
@@ -273,7 +273,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/exppolynonhomo/";
+            window.location.href = "/blog/exppolynonhomo/";
           
         },
       },{id: "post-matrix-exponentials-using-differential-equations",
@@ -284,7 +284,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/matrixexpwde/";
+            window.location.href = "/blog/matrixexpwde/";
           
         },
       },{id: "post-exact-equations-done-quick",
@@ -295,7 +295,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/exacteqs/";
+            window.location.href = "/blog/exacteqs/";
           
         },
       },{id: "post-function-interpolation",
@@ -306,7 +306,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/functioninterp/";
+            window.location.href = "/blog/functioninterp/";
           
         },
       },{id: "post-polynomial-interpolation",
@@ -317,7 +317,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/polyinterp/";
+            window.location.href = "/blog/polyinterp/";
           
         },
       },{id: "post-intro-to-solving-systems-of-first-order-differential-equations",
@@ -328,7 +328,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/firstordersystemsolve/";
+            window.location.href = "/blog/firstordersystemsolve/";
           
         },
       },{id: "post-variation-of-parameters-using-linear-algebra",
@@ -339,7 +339,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/voplinear/";
+            window.location.href = "/blog/voplinear/";
           
         },
       },{id: "post-solving-second-order-systems-of-differential-equations",
@@ -350,7 +350,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/2ndordersystemsolve/";
+            window.location.href = "/blog/2ndordersystemsolve/";
           
         },
       },{id: "post-tricks-for-remembering-laplace-transforms",
@@ -361,7 +361,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/laplacetricks/";
+            window.location.href = "/blog/laplacetricks/";
           
         },
       },{id: "post-skipping-integration-by-parts-using-euler-39-s-formula",
@@ -372,7 +372,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/eulersformulabyparts/";
+            window.location.href = "/blog/eulersformulabyparts/";
           
         },
       },{id: "post-introduction-to-euler-39-s-formula",
@@ -383,7 +383,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/eulersformula/";
+            window.location.href = "/blog/eulersformula/";
           
         },
       },{id: "post-constructing-integer-2x2-second-order-systems-of-differential-equations-with-integer-solutions",
@@ -394,7 +394,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/secondordersystems/";
+            window.location.href = "/blog/secondordersystems/";
           
         },
       },{id: "post-constructing-integer-2x2-first-order-systems-of-differential-equations-with-integer-solutions",
@@ -405,7 +405,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/firstordersystems/";
+            window.location.href = "/blog/firstordersystems/";
           
         },
       },{id: "post-matrix-exponential-formulas-for-2x2-matrices-using-laplace-transforms",
@@ -416,7 +416,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/ezmatrixexp/";
+            window.location.href = "/blog/ezmatrixexp/";
           
         },
       },{id: "post-eigendecomposition-of-real-matrices-with-complex-eigenvalues",
@@ -427,7 +427,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/complexeigenvalues/";
+            window.location.href = "/blog/complexeigenvalues/";
           
         },
       },{id: "post-solving-multiple-initial-value-problems-with-normalized-solutions",
@@ -438,7 +438,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/normalized/";
+            window.location.href = "/blog/normalized/";
           
         },
       },{id: "post-constructing-2x2-markov-matrices",
@@ -449,7 +449,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/markovbuild/";
+            window.location.href = "/blog/markovbuild/";
           
         },
       },{id: "post-linear-differential-equation-interpolation",
@@ -460,7 +460,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/diffeqinterp/";
+            window.location.href = "/blog/diffeqinterp/";
           
         },
       },{id: "post-skew-symmetric-matrices-are-cool",
@@ -471,7 +471,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/skewsymmetric/";
+            window.location.href = "/blog/skewsymmetric/";
           
         },
       },{id: "post-the-alpha-method-generalized-exponential-response-formula",
@@ -482,7 +482,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2021/alphamethod/";
+            window.location.href = "/blog/alphamethod/";
           
         },
       },{id: "post-implicit-solutions-to-2x2-systems-of-first-order-homogeneous-linear-differential-equations",
@@ -493,7 +493,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2020/2x2implicit/";
+            window.location.href = "/blog/2x2implicit/";
           
         },
       },{id: "post-exponentials-of-symmetric-matrices-using-the-spectral-theorem",
@@ -504,7 +504,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2020/symmetric-exp/";
+            window.location.href = "/blog/symmetric-exp/";
           
         },
       },{id: "post-constructing-systems-of-nonlinear-first-order-differential-equations-to-model-population-dynamics",
@@ -515,7 +515,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2020/nonlinearbuild/";
+            window.location.href = "/blog/nonlinearbuild/";
           
         },
       },{id: "post-a-different-perspective-of-diagonalization",
@@ -526,14 +526,14 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/al-folio/blog/2020/diagonalization/";
+            window.location.href = "/blog/diagonalization/";
           
         },
       },{id: "books-the-godfather",
           title: 'The Godfather',
           description: "",
           section: "Books",handler: () => {
-              window.location.href = "/al-folio/books/the_godfather/";
+              window.location.href = "/books/the_godfather/";
             },},{id: "news-a-simple-inline-announcement",
           title: 'A simple inline announcement.',
           description: "",
@@ -541,7 +541,7 @@ ninja.data = [{
           title: 'A long announcement with details',
           description: "",
           section: "News",handler: () => {
-              window.location.href = "/al-folio/news/announcement_2/";
+              window.location.href = "/news/announcement_2/";
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
@@ -555,72 +555,72 @@ ninja.data = [{
           title: 'updating posts to the distill theme',
           description: "",
           section: "News",handler: () => {
-              window.location.href = "/al-folio/news/distill1/";
+              window.location.href = "/news/distill1/";
             },},{id: "news-2x2-matrix-exponentials-post-rewritten",
           title: '2x2 matrix exponentials post rewritten',
           description: "",
           section: "News",handler: () => {
-              window.location.href = "/al-folio/news/updateezmatrix/";
+              window.location.href = "/news/updateezmatrix/";
             },},{id: "news-back-with-a-few-new-posts",
           title: 'back with a few new posts',
           description: "",
           section: "News",handler: () => {
-              window.location.href = "/al-folio/news/backin2022/";
+              window.location.href = "/news/backin2022/";
             },},{id: "projects-project-1",
           title: 'project 1',
           description: "with background image",
           section: "Projects",handler: () => {
-              window.location.href = "/al-folio/projects/1_project/";
+              window.location.href = "/projects/1_project/";
             },},{id: "projects-project-2",
           title: 'project 2',
           description: "a project with a background image and giscus comments",
           section: "Projects",handler: () => {
-              window.location.href = "/al-folio/projects/2_project/";
+              window.location.href = "/projects/2_project/";
             },},{id: "projects-project-3-with-very-long-name",
           title: 'project 3 with very long name',
           description: "a project that redirects to another website",
           section: "Projects",handler: () => {
-              window.location.href = "/al-folio/projects/3_project/";
+              window.location.href = "/projects/3_project/";
             },},{id: "projects-project-4",
           title: 'project 4',
           description: "another without an image",
           section: "Projects",handler: () => {
-              window.location.href = "/al-folio/projects/4_project/";
+              window.location.href = "/projects/4_project/";
             },},{id: "projects-project-5",
           title: 'project 5',
           description: "a project with a background image",
           section: "Projects",handler: () => {
-              window.location.href = "/al-folio/projects/5_project/";
+              window.location.href = "/projects/5_project/";
             },},{id: "projects-project-6",
           title: 'project 6',
           description: "a project with no image",
           section: "Projects",handler: () => {
-              window.location.href = "/al-folio/projects/6_project/";
+              window.location.href = "/projects/6_project/";
             },},{id: "projects-project-7",
           title: 'project 7',
           description: "with background image",
           section: "Projects",handler: () => {
-              window.location.href = "/al-folio/projects/7_project/";
+              window.location.href = "/projects/7_project/";
             },},{id: "projects-project-8",
           title: 'project 8',
           description: "an other project with a background image and giscus comments",
           section: "Projects",handler: () => {
-              window.location.href = "/al-folio/projects/8_project/";
+              window.location.href = "/projects/8_project/";
             },},{id: "projects-project-9",
           title: 'project 9',
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
-              window.location.href = "/al-folio/projects/9_project/";
+              window.location.href = "/projects/9_project/";
             },},{id: "projects-just-how-chaotic-is-the-electoral-college",
           title: 'Just how chaotic is the electoral college?',
           description: "An analysis of how close US elections really are",
           section: "Projects",handler: () => {
-              window.location.href = "/al-folio/projects/EC_margins/";
+              window.location.href = "/projects/EC_margins/";
             },},{id: "projects-title",
           title: 'Title',
           description: "desc",
           section: "Projects",handler: () => {
-              window.location.href = "/al-folio/projects/template/";
+              window.location.href = "/projects/template/";
             },},{
         id: 'social-email',
         title: 'email',
@@ -640,7 +640,7 @@ ninja.data = [{
         title: 'RSS Feed',
         section: 'Socials',
         handler: () => {
-          window.open("/al-folio/feed.xml", "_blank");
+          window.open("/feed.xml", "_blank");
         },
       },{
         id: 'social-scholar',
