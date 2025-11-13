@@ -2,14 +2,76 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Course materials, schedules, and resources for classes taught.
-nav: true
-nav_order: 6
+description: Classes I have officially tutored or TA'd for
+nav: True
+nav_order: 5
 calendar: true
 ---
 
-This page displays a collection of courses with detailed schedules, materials, and resources. You can organize your courses by years, terms, or topics.
+[my linear algebra mini-textbook solution document](/assets/pdf/linalgsolutions.pdf){:target="_blank"}
 
-{% include calendar.liquid calendar_id='test@gmail.com' timezone='Asia/Shanghai' %}
+Classes I was/am a TA for.
 
-{% include courses.liquid %}
+---
+
+## 2025 Moorpark College
+### Fall
+- Precalculus
+- Calculus I
+
+## 2025
+
+### Spring
+- Linear Algebra
+- Calculus II (Two sections)
+
+### Winter
+- Discrete Math (Four Sections)
+
+## 2024
+
+### Spring
+- Linear Algebra (Two Sections)
+
+---
+
+## 2023
+
+### Fall
+- Linear Algebra
+- Differential Equations (Two Sections)
+
+---
+
+# Moorpark College
+- PALS: Peer Assisted Learning Leader
+- CET: Course Embedded Tutor
+
+---
+
+## 2021
+
+### Spring
+- MATH M35: Differential Equations (PALS)
+
+---
+
+## 2020
+
+### Fall
+- MATH M31: Linear Algebra (PALS)
+
+### Summer
+- MATH M25C: Calculus III (Multivariable Calculus) (CET)
+
+### Spring
+- MATH M31: Linear Algebra (CET)
+- MATH M25C: Calculus III (Multivariable Calculus) (PALS)
+
+---
+
+## 2019
+
+### Fall
+- MATH M16A: Applied Calculus I (PALS)
+- MATH M25A: Calculus I (PALS)
