@@ -138,7 +138,7 @@ external_sources:
     tags: [medium]
   - name: Google Blog
     posts:
-      - url: https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/
+      - url: #https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/
         published_date: 2024-05-14
     categories: [external-posts]
     tags: [google]
