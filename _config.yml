@@ -263,7 +263,7 @@ jekyll-archives:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
 
 display_tags: ['best', 'systems-of-differential-equations','matrix-exponentials', 'normalized-solutions'] # these tags will be displayed on the front page of your blog
-display_categories: ['differential-equations', 'linear-algebra','calculus' ] # these categories will be displayed on the front page of your blog
+display_categories: ['differential-equations', 'linear-algebra','calculus','polisci' ] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
