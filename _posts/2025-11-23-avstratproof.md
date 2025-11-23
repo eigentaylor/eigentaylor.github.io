@@ -58,17 +58,17 @@ The issue is that real voter preferences are rarely dichotomous. Most voters hav
 
 Under four or more tiers of preferences, however, approval voting cannot be guaranteed to be sincere (and therefore not strategyproof). For example, consider a voter with preferences $$A > B > C > D$$. Voting for $$A$$ and $$C$$ is not sincere, since the voter is missing $$B$$, which they prefer over $$C$$. However, this strategy can be optimal in some scenarios. For example, suppose the votes before this voter's ballot are:
 
-- A: 10 votes
-- B: 10 votes
-- C: 9 votes
-- D: 9 votes
+- $$A$$: 10 votes
+- $$B$$: 10 votes
+- $$C$$: 9 votes
+- $$D$$: 9 votes
 
 If the voter votes sincerely for $$A$$ and $$B$$, then they preserve the tie, which is not as good as having $$A$$ win outright. Voting for $$C$$ also doesn't help or hurt. Consider another scenario:
 
-- A: 10 votes
-- B: 9 votes
-- C: 11 votes
-- D: 11 votes
+- $$A$$: 10 votes
+- $$B$$: 9 votes
+- $$C$$: 11 votes
+- $$D$$: 11 votes
 
 Here, the voter would definitely want to vote for $$C$$ (and of course, it wouldn't hurt to vote for $$A$$). Voting for $$A$$ or $$B$$ will have no effect, since neither can win. However, voting for $$C$$ alone would lead to $$C$$ winning outright over the less preferred $$D$$.
 
