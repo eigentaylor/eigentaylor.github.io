@@ -70,7 +70,7 @@ If the voter votes sincerely for $$A$$ and $$B$$, then they preserve the tie, wh
 - C: 11 votes
 - D: 11 votes
 
-Here, the voter would definitely want to vote for $$C$$. Voting for $$A$$ or $$B$$ will have no effect, since neither can win. However, voting for $$C$$ alone would lead to $$C$$ winning outright over the less preferred $$D$$.
+Here, the voter would definitely want to vote for $$C$$ (and of course, it wouldn't hurt to vote for $$A$$). Voting for $$A$$ or $$B$$ will have no effect, since neither can win. However, voting for $$C$$ alone would lead to $$C$$ winning outright over the less preferred $$D$$.
 
 Note: We use $$\subset$$ to denote any subset, including the possibility of equality. We use $$\subsetneq$$ to denote a proper subset, excluding equality.
 
@@ -146,7 +146,9 @@ Intuitively, this is equivalent to a voter constructing a dichotomous preference
 >
 > Consider an approval voting election with candidates $$\mathcal{C}$$. If a voter $$v$$ has the goal of having any candidate in any arbitrarily chosen non-empty subset $$S\subset \mathcal{C}$$ win, and avoiding any candidate outside of $$S$$ winning, then the only optimal strategy for voter $$v$$, under any scenario, is to vote for all candidates in $$S$$, and no candidates outside of $$S$$: $$S_v = S$$
 
-This theorem follows directly from the strategyproofness of approval voting under dichotomous preferences. Think about it this way:
+This theorem follows directly from the strategyproofness of approval voting under dichotomous preferences. By changing our goal to be dichotomous, we are essentially changing our utility function to represent a dichotomous preference for which AV is strategyproof.
+
+As for why this theorem is true, you can think about it this way:
 
 - If you vote for a candidate outside of $$S$$, you risk being the deciding vote that causes that candidate to win, which is against your goal. Therefore, $$S_v\subset S$$. You should never vote for candidates outside of $$S$$.
 - If you do not vote for a candidate inside of $$S$$, consider a case where where the candidate you omitted from your ballot is tied for first place with a candidate outside of $$S$$ (or is losing by one vote). Then it wasn't optimal to omit that candidate, since your vote could have caused an acceptable candidate to win over an unacceptable candidate. Therefore, $$S \subset S_v$$. You should always vote for all candidates inside of $$S$$.
@@ -167,7 +169,9 @@ However, if this dichotomous goal is a rational projection of a voter's nuanced 
 >
 > If a voter has a sincere strategy $$S_v$$, then choosing the dichotomous goal induced by $$S_v$$ leads to approval voting being strategyproof for that voter under that goal.
 
-Note that, again, this says nothing about how what any other voter is doing. If you, as a voter, choose your approval set $$S_v$$ sincerely, and decide to adopt the dichotomous goal induced by $$S_v$$, then there is no scenario where voting for $$S_v$$ is not optimal for you. We have essentially eliminated all strategy from your perspective. The only ballot it is rational to cast is a sincere expression of this preference.
+To be explicitly clear: this is not saying that approval voting is *properly* strategyproof in general. This is essentially a newly invented concept of being "strategyproof" but only under a *specific* goal, chosen by a voter. To "win" under this goal, there is only one optimal strategy. But this strategy is **also** *sincere* for the voter. That makes it strategyproof for them *under this goal*. There could be an alternate strategy that could be optimal under a different goal (such as trying to get one's absolute favorite candidate to win), but that strategy would also *necessarily* open the voter up to risk of not achieving the dichotomous goal.
+
+Note that, again, this says nothing about how what any other voter is doing. If you, as a voter, choose your approval set $$S_v$$ sincerely, and decide to adopt the dichotomous goal induced by $$S_v$$, then there is no scenario where voting for $$S_v$$ is not optimal for you. We have essentially eliminated all strategy from your perspective (once we have a dichotomous goal). The only ballot it is rational to cast is a sincere expression of this preference.
 
 ### Where did the strategy go?
 
