@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-a-mathematical-case-for-approval-voting",
+        },{id: "post-is-approval-voting-strategyproof",
+        
+          title: "Is Approval Voting Strategyproof?",
+        
+        description: "Well yes, but actually no. Unless...",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/avstratproof/";
+          
+        },
+      },{id: "post-a-mathematical-case-for-approval-voting",
         
           title: "A Mathematical Case for Approval Voting",
         
