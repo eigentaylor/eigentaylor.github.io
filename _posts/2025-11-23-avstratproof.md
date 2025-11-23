@@ -27,6 +27,8 @@ toc:
 
 ## Introduction
 
+Recently, I wrote a post about [approval voting](../approval/){:target="_blank"}, and I would like to go more in depth here about one of its most appealing properties: strategyproofness. Which it has under very specific and arguably unrealistic conditions.
+
 For this discussion, it's worth being explicit about the definition of the three most commonly discussed voting systems we will be referencnig: plurality (our current system, also called PV), ranked choice voting (RCV), and approval voting (AV).
 
 - **Plurality**: Each voter votes for one candidate. The candidate with the most votes wins.
