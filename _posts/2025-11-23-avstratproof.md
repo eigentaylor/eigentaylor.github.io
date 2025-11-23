@@ -39,12 +39,12 @@ However, our focus will be more on approval voting. The Gibbard-Satterthwaite th
 
 [Brams and Fishburn](https://www.jstor.org/stable/1955105) showed that approval voting satisfies a number of highly desirable properties. In particular, sincerity under two or three tiered preferences, and strategyproofness under dichotomous (two tiered) preferences. Let's first define what these terms mean.
 
-- A **strategy** is essentially a ballot that a voter casts. For example, under plurality, voting for candidate A is a strategy. Under RCV, ranking candidates as $$A > B > C$$ (which we will denote $$ABC$$) is a strategy. Under approval voting, approving of candidates A and B is a strategy. For PV and AV, we can represent the strategy of a voter $$v$$ as a subset $$S_v$$ of the candidate set $$\mathcal{C}$$. For PV, $$S_v$$ must have exactly one element, and for AV, $$S_v$$ can have any number of elements from 0 to the total number of candidates (it can be any subset of $$\mathcal{C}$$).
+- A **strategy** is essentially a ballot that a voter casts. For example, under plurality, voting for candidate $$A$$ is a strategy. Under RCV, ranking candidates as $$A > B > C$$ (which we will denote $$ABC$$) is a strategy. Under approval voting, approving of candidates A and B is a strategy. For PV and AV, we can represent the strategy of a voter $$v$$ as a subset $$S_v$$ of the candidate set $$\mathcal{C}$$. For PV, $$S_v$$ must have exactly one element, and for AV, $$S_v$$ can have any number of elements from 0 to the total number of candidates (it can be any subset of $$\mathcal{C}$$).
 - To avoid getting too bogged down in game theoretic terminology, we will call a strategy **optimal** for a voter in a given scenario if they cannot improve their outcome by changing their strategy.
 - We call a voter's preference **dichotomous** (or two-tiered) if the voter partitions the candidate set $$\mathcal{C}$$ into two tiers (ex. $$A > B=C=D > E=F$$ is not dichotomous, but $$A=B=C > D=E=F$$ is). For example, a voter might consider the two tiers to be "acceptable" and "unacceptable" candidates.
 - We call a strategy $$S_v$$ of candidates **sincere** for a voter if there is no pair of candidates $$C_1 \in S_v$$ and $$C_2 \notin S_v$$ such that the vote $$v$$ strictly prefers $$C_2$$ over $$C_1$$. Intuitively, a sincere strategy is not "missing" any candidates that the voter prefers over candidates in the set.
 
-Note that a sincere strategy doesn't need to include all candidates that the voter is indifferent to in the lowest included tier. For example, if a voter prefers $$A > B=C > D$$, then the sincere strategies are: $$\{A\}$$, $$\{A,B\}$$, $$\{A,C\}$$, and $$\{A,B,C\}$$. Including B but not C, or vice versa, is still sincere, since the voter is indifferent between B and C.
+Note that a sincere strategy doesn't need to include all candidates that the voter is indifferent to in the lowest included tier. For example, if a voter prefers $$A > B=C > D$$, then the sincere strategies are: $$\{A\}$$, $$\{A,B\}$$, $$\{A,C\}$$, and $$\{A,B,C\}$$. Including $$B$$ but not $$C$$, or vice versa, is still sincere, since the voter is indifferent between $$B$$ and $$C$$.
 
 Finally, we say that a voting system is **strategyproof** if there is always only one optimal strategy for any voter in any scenario, and that strategy is sincere.
 
@@ -78,45 +78,45 @@ Note: We use $$\subset$$ to denote any subset, including the possibility of equa
 
 ### Under Plurality
 
-Let's consider an election with three candidates: A, B, and C, and suppose you are a voter with the preference ABC. Now, let's say that your favorite candidate, A, has basically no chance of winning, and the real contest is between B and C. How you should vote highly depends on what voting system is being used.
+Let's consider an election with three candidates: $$A$$, $$B$$, and $$C$$, and suppose you are a voter with the preference $$ABC$$. Now, let's say that your favorite candidate, $$A$$, has basically no chance of winning, and the real contest is between $$B$$ and $$C$$. How you should vote highly depends on what voting system is being used.
 
-Under plurality, where you can only vote for one candidate, voting for A is effectively a wasted vote. Suppose that the final result before your vote is:
+Under plurality, where you can only vote for one candidate, voting for $$A$$ is effectively a wasted vote. Suppose that the final result before your vote is:
 
-- A: 9 votes
-- B: 21 votes
-- C: 22 votes
+- $$A$$: 9 votes
+- $$B$$: 21 votes
+- $$C$$: 22 votes
 
-And C wins by one vote. If you vote sincerely for A, the result is unchanged. You might as well have stayed home. However, if you vote strategically for B, the result becomes:
+And $$C$$ wins by one vote. If you vote sincerely for $$A$$, the result is unchanged. You might as well have stayed home. However, if you vote strategically for $$B$$, the result becomes:
 
-- A: 9 votes
-- B: 22 votes
-- C: 22 votes
+- $$A$$: 9 votes
+- $$B$$: 22 votes
+- $$C$$: 22 votes
 
-And now B and C are tied! This is a strictly better outcome for you, since you prefer B over C. Now, however the tie is broken, there's still a chance that B could win. Whether it's a coin flip (50% chance), or a runoff election is held between B and C, where A can't potentially spoil the election, your strategic vote has improved your expected outcome.
+And now $$B$$ and $$C$$ are tied! This is a strictly better outcome for you, since you prefer $$B$$ over $$C$$. Now, however the tie is broken, there's still a chance that $$B$$ could win. Whether it's a coin flip (50% chance), or a runoff election is held between $$B$$ and $$C$$, where $$A$$ can't potentially spoil the election, your strategic vote has improved your expected outcome.
 
 This is a problem, however. You as a voter had an honest preference which would have led to your least preferred candidate winning if expressed sincerely.
 
 ### Strategy under Ranked Choice Voting
 
-This can also happen under ranked choice voting (RCV). Suppose a situation with ranked ballots, where you still prefer ABC, and the votes are as follows:
+This can also happen under ranked choice voting (RCV). Suppose a situation with ranked ballots, where you still prefer $$ABC$$, and the votes are as follows:
 
-- ABC: 21 votes
-- BCA: 21 votes
-- CAB: 22 votes
+- $$ABC$$: 21 votes
+- $$BCA$$: 21 votes
+- $$CAB$$: 22 votes
 
-Before your vote, the final result depends on which candidate is determined to be eliminated first. If your favorite A is eliminated first, then your second choice B wins. However, if B is eliminated first, then C wins. Therefore, your vote is incredibly important. If you vote sincerely for A first, then you *force* B to be eliminated first, and C will win. You changed the outcome from a tie that could have gone to your second choice or worst choice, to your worst choice winning for sure.
+Before your vote, the final result depends on which candidate is determined to be eliminated first. If your favorite $$A$$ is eliminated first, then your second choice $$B$$ wins. However, if $$B$$ is eliminated first, then $$C$$ wins. Therefore, your vote is incredibly important. If you vote sincerely for $$A$$ first, then you *force* $$B$$ to be eliminated first, and $$C$$ will win. You changed the outcome from a tie that could have gone to your second choice or worst choice, to your worst choice winning for sure.
 
-However, if you vote strategically for B first, then B is safe from elimination, and you force your favorite to be eliminated, leading to B winning for sure. Again, strategically voting for your second choice has improved your outcome, at the cost of sincerity.
+However, if you vote strategically for $$B$$ first, then $$B$$ is safe from elimination, and you force your favorite to be eliminated, leading to $$B$$ winning for sure. Again, strategically voting for your second choice has improved your outcome, at the cost of sincerity.
 
 It could be even worse under RCV, however. Consider the situation:
 
-- ABC: 22 votes
-- BAC: 21 votes
-- CBA: 21 votes
+- $$ABC$$: 22 votes
+- $$BAC$$: 21 votes
+- $$CBA$$: 21 votes
 
-Now, without your vote, either B or C could be eliminated first, leading to either A or C winning. Your sincere vote for A first would be completely inconsequential, because it only matters how the votes for B and C are distributed. However, if you vote strategically for B first, then you guarantee that C is eliminated first, leading to B winning for sure.
+Now, without your vote, either $$B$$ or $$C$$ could be eliminated first, leading to either $$A$$ or $$C$$ winning. Your sincere vote for $$A$$ first would be completely inconsequential, because it only matters how the votes for $$B$$ and $$C$$ are distributed. However, if you vote strategically for $$B$$ first, then you guarantee that $$C$$ is eliminated first, leading to $$B$$ winning for sure.
 
-But if you had instead voted for your *least* favorite C first, then B would be eliminated first, leading to your favorite A winning for sure! In this case, voting for your least favorite candidate has led to your most preferred candidate winning!
+But if you had instead voted for your *least* favorite $$C$$ first, then $$B$$ would be eliminated first, leading to your favorite $$A$$ winning for sure! In this case, voting for your least favorite candidate has led to your most preferred candidate winning!
 
 ## Issues with Dichotomous Preferences
 
@@ -182,7 +182,7 @@ So where did the strategy go? The sleight of hand here is in *how* we constructe
 3. $$\{A,B,C\}$$
 4. $$\{A,B,C,D\}$$
 
-And it gets more complex if it's not a strict ranking. If the voter is actually indifferent between B and C, then $$\{A,C\}$$ is also a sincere strategy. Each of these sincere strategies induces a different dichotomous goal. Therefore, the strategy has not disappeared, it has just been moved to a much simpler decision: where to draw the line between acceptable and unacceptable candidates.
+And it gets more complex if it's not a strict ranking. If the voter is actually indifferent between $$B$$ and $$C$$, then $$\{A,C\}$$ is also a sincere strategy. Each of these sincere strategies induces a different dichotomous goal. Therefore, the strategy has not disappeared, it has just been moved to a much simpler decision: where to draw the line between acceptable and unacceptable candidates.
 
 The key is that once a voter has drawn that line, then choosing a dichotomous goal induced by that line makes approval voting strategyproof for them. There is no longer any incentive to try to game the system by including or excluding candidates in the middle tiers of their preferences. The only rational choice is to vote sincerely according to their chosen line.
 
