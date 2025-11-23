@@ -29,13 +29,13 @@ toc:
 
 Recently, I wrote a post about [approval voting](../approval/){:target="_blank"}, and I would like to go more in depth here about one of its most appealing properties: strategyproofness. Which it has under very specific and arguably unrealistic conditions.
 
-For this discussion, it's worth being explicit about the definition of the three most commonly discussed voting systems we will be referencnig: plurality (our current system, also called PV), ranked choice voting (RCV), and approval voting (AV).
+For this discussion, it's worth being explicit about the definition of the three most commonly discussed voting systems we will be referencing: plurality (our current system, also called PV), ranked choice voting (RCV), and approval voting (AV).
 
 - **Plurality**: Each voter votes for one candidate. The candidate with the most votes wins.
 - **Ranked Choice Voting (RCV)**: Each voter ranks the candidates in order of preference. If a candidate has a majority of first-choice votes, they win. If not, the candidate with the fewest first-choice votes is eliminated, and their votes are redistributed to the next choice on those ballots. This process continues until a candidate has a majority of remaining votes.
 - **Approval Voting**: Each voter can vote for (approve of) as many candidates as they like. The candidate with the most approval votes wins.
 
-However, our focus will be focused more on approval voting. The Gibbard-Satterthwaite theorem shows that no reasonable ranked voting system can be strategyproof. Indeed, RCV fails a number of other desirable properties like monotonicity, so beyond an example of strategic voting in RCV, we won't dwell on that system too much.
+However, our focus will be more on approval voting. The Gibbard-Satterthwaite theorem shows that no reasonable ranked voting system can be strategyproof. Indeed, RCV fails a number of other desirable properties like monotonicity, so beyond an example of strategic voting in RCV, we won't dwell on that system too much.
 
 [Brams and Fishburn](https://www.jstor.org/stable/1955105) showed that approval voting satisfies a number of highly desirable properties. In particular, sincerity under two or three tiered preferences, and strategyproofness under dichotomous (two tiered) preferences. Let's first define what these terms mean.
 
@@ -120,7 +120,7 @@ But if you had instead voted for your *least* favorite C first, then B would be 
 
 ## Issues with Dichotomous Preferences
 
-We have seen that under plurality and RCV, strategic voting can improve a voter's outcome, at the cost of sincerity. We have also seen examples where voting insincerely can improve a voter's outcome even undder approval voting, when the voter's preferences are not dichotomous.
+We have seen that under plurality and RCV, strategic voting can improve a voter's outcome, at the cost of sincerity. We have also seen examples where voting insincerely can improve a voter's outcome even under approval voting, when the voter's preferences are not dichotomous.
 
 In reality, voters have nuanced preferences that are rarely dichotomous. The idea that a voter can be indifferent between all candidates that they approve of versus all candidates that they disapprove of is unrealistic. Most voters have at least three tiers of preference, if not more.
 
@@ -159,7 +159,7 @@ Note that this theorem says nothing about
 
 1. How the voter feels about candidates within $$S$$. They might actually hate them! The point is that under a dichotomous goal, there is one and only one optimal strategy, regardless of how the voter feels about candidates within $$S$$.
 2. How the voter chose the set $$S$$. They could have used a random number generator to pick the candidates they put in $$S$$. Or this could be a very honest reflection of what they feel, in their heart, that "acceptable" means. Either way, there's only one optimal strategy under this goal.
-3. What any other voters are doing. Even if every candidate in $$S$$ has absolutely no chance of winning, voting for them is still the only optimal and rational strategy under this goal. If multiple candidates in $$S$$ have a chance, there's still no reason to exclude any of them from your ballot, because what if there's an upset, or a polling miss, and a witheld vote causes a candidate outside of $$S$$ to win?
+3. What any other voters are doing. Even if every candidate in $$S$$ has absolutely no chance of winning, voting for them is still the only optimal and rational strategy under this goal. If multiple candidates in $$S$$ have a chance, there's still no reason to exclude any of them from your ballot, because what if there's an upset, or a polling miss, and a withheld vote causes a candidate outside of $$S$$ to win?
 
 However, if this dichotomous goal is a rational projection of a voter's nuanced preferences (i.e. if the voter's set $$S$$ defines a sincere strategy for them), then we can in fact say
 
