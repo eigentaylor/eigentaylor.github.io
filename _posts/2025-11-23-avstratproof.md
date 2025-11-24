@@ -41,7 +41,7 @@ While Ranked Choice Voting is also a popular alternative, it is still highly sus
 
 ### Strategy Under Plurality
 
-Let's first get a feeling for what it feels like to have to vote strategically under plurality voting.
+Let's first get a sense for what it feels like to have to vote strategically under plurality voting.
 
 Let's consider an election with three candidates: $$A$$, $$B$$, and $$C$$, and suppose you are a voter with the preference $$ABC$$. Now, let's say that your favorite candidate, $$A$$, has basically no chance of winning, and the real contest is between $$B$$ and $$C$$. How you should vote highly depends on what voting system is being used.
 
