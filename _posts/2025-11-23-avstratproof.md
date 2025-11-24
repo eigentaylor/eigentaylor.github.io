@@ -89,6 +89,8 @@ But if you had instead voted for your *least* favorite $$C$$ first, then $$B$$ w
 
 Therefore, in both plurality and RCV, strategic voting can improve a voter's outcome, at the cost of sincerity. A voter sometimes has to betray their honest preferences, or even vote for their least favorite candidate, in order to achieve their best possible outcome.
 
+I would like to highlight how unfortunate it is that in both systems, the fundamental flaws in how they work result in causing voters distress about whether they should vote sincerely or strategically, and potentially being forced to vote for their least favorite candidate in order to achieve their most preferred outcome. This is a failure of the voting systems, not the voters. It does *not* have to be this way, and this is where approval voting comes in.
+
 ## Approval to the Rescue?
 
 [Brams and Fishburn](https://www.jstor.org/stable/1955105) showed that approval voting satisfies a number of highly desirable properties. In particular, sincerity under two or three tiered preferences, and strategyproofness under dichotomous (two tiered) preferences. However, they also prove that once we leave two or three tiers, even approval voting is no longer strategyproof or necessarily sincere.
