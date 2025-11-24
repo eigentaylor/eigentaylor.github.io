@@ -43,7 +43,7 @@ While Ranked Choice Voting is also a popular alternative, it is still highly sus
 
 Let's first get a sense for what it feels like to have to vote strategically under plurality voting.
 
-Let's consider an election with three candidates: $$A$$, $$B$$, and $$C$$, and suppose you are a voter with the preference $$ABC$$. Now, let's say that your favorite candidate, $$A$$, has basically no chance of winning, and the real contest is between $$B$$ and $$C$$. How you should vote highly depends on what voting system is being used.
+Let's consider an election with three candidates: $$A$$, $$B$$, and $$C$$, and suppose you are a voter with the preference $$A>B>C$$ (which we denote $$ABC$$). Now, let's say that your favorite candidate, $$A$$, has basically no chance of winning, and the real contest is between $$B$$ and $$C$$. How you should vote highly depends on what voting system is being used.
 
 Under plurality, where you can only vote for one candidate, voting for $$A$$ is effectively a wasted vote. Suppose that the final result before your vote is:
 
@@ -95,7 +95,7 @@ Therefore, in both plurality and RCV, strategic voting can improve a voter's out
 
 Let's first define what these terms mean.
 
-- A **strategy** is essentially a ballot that a voter casts. For example, under plurality, voting for candidate $$A$$ is a strategy. Under RCV, ranking candidates as $$A > B > C$$ (which we will denote $$ABC$$) is a strategy. Under approval voting, approving of candidates A and B is a strategy. For PV and AV, we can represent the strategy of a voter $$v$$ as a subset $$S_v$$ of the candidate set $$\mathcal{C}$$. For PV, $$S_v$$ must have exactly one element, and for AV, $$S_v$$ can have any number of elements from 0 to the total number of candidates (it can be any subset of $$\mathcal{C}$$).
+- A **strategy** is essentially a ballot that a voter casts. For example, under plurality, voting for candidate $$A$$ is a strategy. Under RCV, ranking candidates as $$A > B > C$$ ($$ABC$$) is a strategy. Under approval voting, approving of candidates A and B is a strategy. For PV and AV, we can represent the strategy of a voter $$v$$ as a subset $$S_v$$ of the candidate set $$\mathcal{C}$$. For PV, $$S_v$$ must have exactly one element, and for AV, $$S_v$$ can have any number of elements from 0 to the total number of candidates (it can be any subset of $$\mathcal{C}$$).
 - To avoid getting too bogged down in game theoretic terminology, we will call a strategy **optimal** for a voter in a given scenario if they cannot improve their outcome by changing their strategy.
 - We call a voter's preference **dichotomous** (or two-tiered) if the voter partitions the candidate set $$\mathcal{C}$$ into two tiers (ex. $$A > B=C=D > E=F$$ is not dichotomous, but $$A=B=C > D=E=F$$ is). For example, a voter might consider the two tiers to be "acceptable" and "unacceptable" candidates.
 - We call a strategy $$S_v$$ of candidates **sincere** for a voter if given that the strategy include $$C \in S_v$$, then the strategy also includes all candidates that $$v$$ strictly prefers to $$C$$. Intuitively, a sincere strategy is not "missing" any candidates that the voter prefers over any candidates in the set.
