@@ -30,14 +30,14 @@ toc:
 
 ## Introduction
 
-Recently, I wrote a post about [approval voting](../approval/){:target="_blank"}, and I would like to go more in depth here about one of its most appealing properties: strategyproofness. Which it has under very specific (and arguably unrealistic) conditions. However, I aim to show that by reframing how we think about our voting goals, we can in fact regain strategyproofness from the perspective of an individual voter.
+Recently, I wrote a post about [approval voting](../approval/){:target="_blank"}, and I would like to go more in depth here about one of its most appealing properties: strategyproofness, which it has under very specific (and arguably unrealistic) conditions. However, I aim to show that by reframing how we think about our voting goals, we can in fact regain strategyproofness from the perspective of an individual voter.
 
 For this discussion, it's worth being explicit up front about the definition of the voting systems we will be referencing: plurality (our current system, also called PV) and approval voting (AV).
 
 - **Plurality**: Each voter votes for one candidate. The candidate with the most votes wins.
 - **Approval Voting**: Each voter can vote for (approve of) as many candidates as they like. The candidate with the most approval votes wins.
 
-While Ranked Choice Voting is also a popular alternative, it is still highly susceptible to strategy. The Gibbard-Satterthwaite theorem shows that no reasonable ranked voting system can be strategyproof. Indeed, RCV fails a number of other desirable properties like monotonicity, so beyond examples of strategic voting in RCV [we will get to shortly](#strategy-under-ranked-choice-voting), we won't dwell on that system too much. For a more in-depth discussion of RCV's flaws (and why I believe AV to be strictly superior), see [my post on approval voting](../approval/){:target="_blank"}.
+While Ranked Choice Voting is also a popular alternative, it is still highly susceptible to strategy. The Gibbard-Satterthwaite theorem shows that no reasonable ranked voting system can be strategyproof. Indeed, RCV fails a number of other desirable properties like monotonicity, so beyond examples of strategic voting in RCV [which we will get to shortly](#strategy-under-ranked-choice-voting), we won't dwell on that system too much. For a more in-depth discussion of RCV's flaws (and why I believe AV to be strictly superior), see [my post on approval voting](../approval/){:target="_blank"}.
 
 ### Strategy Under Plurality
 
@@ -65,7 +65,7 @@ This is likely what Nader voters felt in the 2000 US presidential election. By v
 
 ### Strategy under Ranked Choice Voting
 
-Frustrating scenarios can also occur under ranked choice voting (RCV). RCV is the most popular alternative voting system being discussed today, where voters rank candidates in order of preference, and candidates are eliminated (by lowest first-choice votes) one by one until one candidate has a majority. As a ranked system, RCV is subject to the Gibbard-Satterthwaite theorem, but it comes particularly from the shortsightedness of eliminating arbitrarily by first-choice votes only. In general, elimination methods are highly susceptible to strategic voting, because it comes down to gaming the elimination order as we shall soon see.
+Frustrating scenarios can also occur under ranked choice voting (RCV). RCV is the most popular alternative voting system being discussed today, where voters rank candidates in order of preference, and candidates are eliminated (by lowest first-choice votes) one by one until one candidate has a majority. As a ranked system, RCV is subject to the Gibbard-Satterthwaite theorem, but this vulnerability particularly comes from the shortsightedness of eliminating arbitrarily by first-choice votes only. In general, elimination methods are highly susceptible to strategic voting, because it comes down to gaming the elimination order, as we shall soon see.
 
 Suppose a situation with ranked ballots, where you still prefer $$ABC$$, and the votes are as follows:
 
@@ -97,7 +97,7 @@ I would like to highlight how unfortunate it is that in both systems, the fundam
 
 Let's first define what these terms mean.
 
-- A **strategy** is essentially a ballot that a voter casts. For example, under plurality, voting for candidate $$A$$ is a strategy. Under RCV, ranking candidates as $$A > B > C$$ ($$ABC$$) is a strategy. Under approval voting, approving of candidates A and B is a strategy. For PV and AV, we can represent the strategy of a voter $$v$$ as a subset $$S_v$$ of the candidate set $$\mathcal{C}$$. For PV, $$S_v$$ must have exactly one element, and for AV, $$S_v$$ can have any number of elements from 0 to the total number of candidates (it can be any subset of $$\mathcal{C}$$).
+- A **strategy** is essentially a ballot that a voter casts. For example, under plurality, voting for candidate $$A$$ is a strategy. Under RCV, ranking candidates as $$A > B > C$$ (denoted $$ABC$$) is a strategy. Under approval voting, approving of candidates A and B is a strategy. For PV and AV, we can represent the strategy of a voter $$v$$ as a subset $$S_v$$ of the candidate set $$\mathcal{C}$$. For PV, $$S_v$$ must have exactly one element, and for AV, $$S_v$$ can have any number of elements from 0 to the total number of candidates (it can be any subset of $$\mathcal{C}$$).
 - To avoid getting too bogged down in game theoretic terminology, we will call a strategy **optimal** for a voter in a given scenario if they cannot improve their outcome by changing their strategy.
 - We call a voter's preference **dichotomous** (or two-tiered) if the voter partitions the candidate set $$\mathcal{C}$$ into two tiers (ex. $$A > (B=C=D) > (E=F)$$ is not dichotomous, but $$(A=B=C) > (D=E=F)$$ is). For example, a voter might consider the two tiers to be "acceptable" and "unacceptable" candidates.
 - We call a strategy $$S_v$$ of candidates **sincere** for a voter if given that the strategy includes $$C \in S_v$$, then the strategy also includes all candidates that $$v$$ strictly prefers to $$C$$. Intuitively, a sincere strategy is not "missing" any candidates that the voter prefers over any candidates in the set.
@@ -130,7 +130,7 @@ or
 - $$C$$: 6 votes
 - $$D$$: 6 votes
 
-Perhaps, there are three voters who are deciding between voting for $$A$$ and $$B$$, and voting for $$C$$ and $$D$$. Here, the optimal vote would be for $$A$$ and $$C$$, since if $$A$$ and $$B$$ are tied for first, then voting for $$A$$ and not $$B$$ causes $$A$$ to win (better than an $$A$$ and $$B$$ tie). And if $$C$$ and $$D$$ are tied for first, then voting for $$C$$ causes $$C$$ to win over tieing with your least favorite $$D$$. Therefore, voting for $$A$$ and $$C$$ is optimal, but not sincere, since the voter is missing $$B$$, which they prefer over $$C$$.
+Perhaps, there are three voters who are deciding between voting for $$A$$ and $$B$$, and voting for $$C$$ and $$D$$. Here, the optimal vote would be for $$A$$ and $$C$$, since if $$A$$ and $$B$$ are tied for first, then voting for $$A$$ and not $$B$$ causes $$A$$ to win (better than an $$A$$ and $$B$$ tie). And if $$C$$ and $$D$$ are tied for first, then voting for $$C$$ causes $$C$$ to win over tying with your least favorite $$D$$. Therefore, voting for $$A$$ and $$C$$ is optimal, but not sincere, since the voter is missing $$B$$, which they prefer over $$C$$.
 
 ## Issues with Dichotomous Preferences
 
@@ -152,7 +152,7 @@ Suppose we instead choose our goal to be "I just want *any* acceptable candidate
 
 > Definition:
 >
-> We call a voter's goal a **dichotomous goal** if their only concern is having any candidate in an arbitrarily chosen non-empty strict subset $$S\subsetneq \mathcal{C}$$ win, and avoiding any candidate outside of $$S$$ winning. We can call say that any subset $$S$$ of candidates induces a dichotomous goal for a voter.
+> We call a voter's goal a **dichotomous goal** if their only concern is having any candidate in an arbitrarily chosen non-empty strict subset $$S\subsetneq \mathcal{C}$$ win, and avoiding any candidate outside of $$S$$ winning. We can say that any subset $$S$$ of candidates induces a dichotomous goal for a voter.
 
 Intuitively, this is equivalent to a voter constructing a dichotomous preference where all candidates in $$S$$ are in the top tier, and all candidates outside of $$S$$ are in the bottom tier. This allows us to say:
 
