@@ -14,6 +14,8 @@ authors:
       name: None
 toc:
   - name: Introduction
+    subsections:
+      - name: Strategy in Approval Voting
   - name: Sincerity and Strategy in Voting
     subsections:
       - name: Under Plurality
@@ -56,21 +58,23 @@ In their 1978 paper, Brams and Fishburn showed that
 
 The issue is that real voter preferences are rarely dichotomous. Most voters have more nuanced preferences, with at least three tiers of preference (ex. love, like, lukewarm, weak dislike, strong dislike). Brams and Fishburn showed that under three tiers, approval voting is sincere but not strategyproof. This is because a voter should always include all candidates in their top tier, and exclude all candidates in their bottom tier, but any combination of candidates in the middle tier would still technically be sincere. Therefore, there can be multiple optimal strategies, but all of them are sincere.
 
-Under four or more tiers of preferences, however, approval voting cannot be guaranteed to be sincere (and therefore not strategyproof). For example, consider a voter with preferences $$A > B > C > D$$. Voting for $$A$$ and $$C$$ is not sincere, since the voter is missing $$B$$, which they prefer over $$C$$. However, this strategy can be optimal in some scenarios. For example, suppose the votes before this voter's ballot are:
+### Strategy in Approval Voting
 
-- $$A$$: 10 votes
-- $$B$$: 10 votes
+Under four or more tiers of preferences, however, approval voting cannot be guaranteed to be sincere (and therefore not strategyproof). For example, consider a voter with preferences $$A > B > C > D$$. Voting for $$A$$ and $$C$$ is not sincere, since the voter is missing $$B$$, which they prefer over $$C$$. However, this strategy can be optimal in some scenarios. For example, suppose that polls indicate two possible election results:
+
+- $$A$$: 11 votes
+- $$B$$: 11 votes
 - $$C$$: 9 votes
 - $$D$$: 9 votes
 
-If the voter votes sincerely for $$A$$ and $$B$$, then they preserve the tie, which is not as good as having $$A$$ win outright. Voting for $$C$$ also doesn't help or hurt. Consider another scenario:
+or
 
-- $$A$$: 10 votes
+- $$A$$: 9 votes
 - $$B$$: 9 votes
 - $$C$$: 11 votes
 - $$D$$: 11 votes
 
-Here, the voter would definitely want to vote for $$C$$ (and of course, it wouldn't hurt to vote for $$A$$). Voting for $$A$$ or $$B$$ will have no effect, since neither can win. However, voting for $$C$$ alone would lead to $$C$$ winning outright over the less preferred $$D$$.
+Here, the optimal vote would be for $$A$$ and $$C$$, since if $$A$$ and $$B$$ are tied for first, then voting for $$A$$ and not $$B$$ causes $$A$$ to win (better than an $$A$$ and $$B$$ tie). And if $$C$$ and $$D$$ are tied for first, then voting for $$C$$ causes $$C$$ to win over tieing with your least favorite $$D$$. Therefore, voting for $$A$$ and $$C$$ is optimal, but not sincere, since the voter is missing $$B$$, which they prefer over $$C$$.
 
 Note: We use $$\subset$$ to denote any subset, including the possibility of equality. We use $$\subsetneq$$ to denote a proper subset, excluding equality.
 
@@ -117,6 +121,8 @@ It could be even worse under RCV, however. Consider the situation:
 Now, without your vote, either $$B$$ or $$C$$ could be eliminated first, leading to either $$A$$ or $$C$$ winning. Your sincere vote for $$A$$ first would be completely inconsequential, because it only matters how the votes for $$B$$ and $$C$$ are distributed. However, if you vote strategically for $$B$$ first, then you guarantee that $$C$$ is eliminated first, leading to $$B$$ winning for sure.
 
 But if you had instead voted for your *least* favorite $$C$$ first, then $$B$$ would be eliminated first, leading to your favorite $$A$$ winning for sure! In this case, voting for your least favorite candidate has led to your most preferred candidate winning!
+
+Therefore, in both plurality and RCV, strategic voting can improve a voter's outcome, at the cost of sincerity. A voter sometimes has to betray their honest preferences, or even vote for their least favorite candidate, in order to achieve their best possible outcome.
 
 ## Issues with Dichotomous Preferences
 
