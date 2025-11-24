@@ -130,7 +130,7 @@ or
 - $$C$$: 6 votes
 - $$D$$: 6 votes
 
-Perhaps, there are two voters who are deciding between voting for $$A$$ and $$B$$, and voting for $$C$$ and $$D$$. Here, the optimal vote would be for $$A$$ and $$C$$, since if $$A$$ and $$B$$ are tied for first, then voting for $$A$$ and not $$B$$ causes $$A$$ to win (better than an $$A$$ and $$B$$ tie). And if $$C$$ and $$D$$ are tied for first, then voting for $$C$$ causes $$C$$ to win over tieing with your least favorite $$D$$. Therefore, voting for $$A$$ and $$C$$ is optimal, but not sincere, since the voter is missing $$B$$, which they prefer over $$C$$.
+Perhaps, there are three voters who are deciding between voting for $$A$$ and $$B$$, and voting for $$C$$ and $$D$$. Here, the optimal vote would be for $$A$$ and $$C$$, since if $$A$$ and $$B$$ are tied for first, then voting for $$A$$ and not $$B$$ causes $$A$$ to win (better than an $$A$$ and $$B$$ tie). And if $$C$$ and $$D$$ are tied for first, then voting for $$C$$ causes $$C$$ to win over tieing with your least favorite $$D$$. Therefore, voting for $$A$$ and $$C$$ is optimal, but not sincere, since the voter is missing $$B$$, which they prefer over $$C$$.
 
 ## Issues with Dichotomous Preferences
 
