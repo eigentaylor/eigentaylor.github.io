@@ -5,7 +5,7 @@ date: 2023-11-11
 description: No more guessing. Let's make it intuitive with linear algebra.
 giscus_comments: true
 importance: 1
-featured: true
+featured: false
 giscus_comments: true
 related_posts: true
 tags: best
