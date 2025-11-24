@@ -39,7 +39,11 @@ For this discussion, it's worth being explicit about the definition of the three
 
 However, our focus will be more on approval voting. The Gibbard-Satterthwaite theorem shows that no reasonable ranked voting system can be strategyproof. Indeed, RCV fails a number of other desirable properties like monotonicity, so beyond an example of strategic voting in RCV, we won't dwell on that system too much.
 
-[Brams and Fishburn](https://www.jstor.org/stable/1955105) showed that approval voting satisfies a number of highly desirable properties. In particular, sincerity under two or three tiered preferences, and strategyproofness under dichotomous (two tiered) preferences. Let's first define what these terms mean.
+[Brams and Fishburn](https://www.jstor.org/stable/1955105) showed that approval voting satisfies a number of highly desirable properties. In particular, sincerity under two or three tiered preferences, and strategyproofness under dichotomous (two tiered) preferences. However, they also prove that once we leave two or three tiers, even approval voting is no longer strategyproof or necessarily sincere.
+
+However, I will show that, indeed, hope is not lost. And, in fact, under a specific reframing of voter goals, approval voting, at least from the perspective of an individual voter, can be considered strategyproof in a meaningful way.
+
+Let's first define what these terms mean.
 
 - A **strategy** is essentially a ballot that a voter casts. For example, under plurality, voting for candidate $$A$$ is a strategy. Under RCV, ranking candidates as $$A > B > C$$ (which we will denote $$ABC$$) is a strategy. Under approval voting, approving of candidates A and B is a strategy. For PV and AV, we can represent the strategy of a voter $$v$$ as a subset $$S_v$$ of the candidate set $$\mathcal{C}$$. For PV, $$S_v$$ must have exactly one element, and for AV, $$S_v$$ can have any number of elements from 0 to the total number of candidates (it can be any subset of $$\mathcal{C}$$).
 - To avoid getting too bogged down in game theoretic terminology, we will call a strategy **optimal** for a voter in a given scenario if they cannot improve their outcome by changing their strategy.
@@ -52,7 +56,7 @@ Finally, we say that a voting system is **strategyproof** if there is always onl
 
 In their 1978 paper, Brams and Fishburn showed that
 
-1. In plurality voting, the only strategy that is never optimal is to vote for a voter's least preferred candidate. Any other strategy can be optimal in some scenario. This can include the optimal strategy being to vote for the voter's second least preferred candidate.
+1. In plurality voting, the only strategy that is never optimal is to vote for a voter's least preferred candidate. Any other strategy can be optimal in some scenario. This can potentially include the optimal strategy being to vote for the voter's second least preferred candidate.
 2. In approval voting, every optimal strategy includes voting for all candidates in the voter's top tier of preferences and no candidates in the voter's bottom tier of preferences. All strategy is always exclusively about how to handle candidates in the middle tiers.
 3. Therefore, if there are only two tiers of preferences (dichotomous), then there is one and only one optimal strategy under approval voting: vote for all candidates in the top tier, and no candidates in the other tier. That is, approval voting is strategyproof under dichotomous preferences.
 
