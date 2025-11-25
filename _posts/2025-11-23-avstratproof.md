@@ -25,6 +25,8 @@ toc:
     subsections:
       - name: Where did the strategy go?
       - name: Strategy in Approval Voting Revisited
+      - name: A Strategy Comparison
+      - name: Taylors Guide to Approval Voting Strategy
   - name: Conclusion
 ---
 
@@ -219,7 +221,47 @@ We saw that the voter found it optimal to vote for $$A$$ and $$C$$ (insincerely)
 
 Note that we can definitely see the other insincere strategies we considered earlier (like voting for $$A$$ and $$C$$ only) would be optimal under the strict, four-tiered preference we know the voter has. However, it appears that the most prudent dichotomous goal is to include $$A$$, $$B$$, and $$C$$ in the acceptable set, since that maximizes the voter's chances of achieving their goal. While bullet voting for $$A$$ only is certainly an option, and is optimal under the dichotomous goal of only wanting $$A$$ to win, by drawing the line more generously to include $$B$$ and $$C$$, the voter can increase their chances of achieving their goal to 100%.
 
-This example, in fact, gives us a lesson in how to strategically choose our dichotomous goal. While I certainly don't want to tell you how to vote, I can say that it might be prudent to draw your line to at least include the most agreeable frontrunner. For example, if I was a Nader voter in 2000, I can say that the Nader and Gore dichotomous goal appears more pragmatic than the Nader-only goal, since it increases my chances of achieving my goal from 0% to something greater than 0%. While the Nader only vote would still be optimal under the Nader-only goal, mathematically, the Nader and Gore goal is more likely to be achieved.
+This example, in fact, gives us a lesson in how to strategically choose our dichotomous goal. While I certainly don't want to tell you how to vote (though, if you're interested, I explain my approach to strategy below), I can say that it might be prudent to draw your line to at least include the most agreeable frontrunner. For example, if I was a Nader voter in 2000, I can say that the Nader and Gore dichotomous goal appears more pragmatic than the Nader-only goal, since it increases my chances of achieving my goal from 0% to something greater than 0%. While the Nader only vote would still be optimal under the Nader-only goal, mathematically, the Nader and Gore goal is more likely to be achieved.
+
+### A Strategy Comparison
+
+I would like to compare and contrast the types of strategy a voter has to employ under the three systems we have discussed: plurality, RCV, and approval voting under dichotomous goals.
+
+For plurality, regardless of the size of their dichotomous goal, the strategy is the same. They have to find the candidate in that set with the best chance of winning, and vote for them only. The dichotomous goal is, in general, very weak under plurality. Really, the only optimal strategy in plurality voting is to vote for the most preferred of the top two viable candidates. However, under a dichotomous goal induced by a single candidate, the optimal strategy is indeed to vote for that candidate only. But the success rate of achieving that goal is very low, unless that candidate is a frontrunner.
+
+For RCV, the strategy is much more complex. While the voter could naively vote sincerely according to their full ranking, this could backfire spectacularly, as we saw earlier. In terms of a dichotomous goal, the voter would think that it's obvious they want to rank all in their goal above all outside of it (or not rank them at all). However, we saw that sometimes the voter has to rank their least favorite candidate first, in order to get their most preferred candidate to win. So it's not as simple as just ranking all acceptable candidates strategically, and not ranking anyone else.
+
+They must consider who is likely to be eliminated, who their votes are likely to transfer to, and then play the game again. They might have to play three eliminations ahead! And the elimination order itself can have huge ramifications on the state of the election just a few rounds in. The strategy gets incredibly complex very fast, in terms of playing optimally. In reality, the average voter will not likely get this right in a complex election, particularly with many candidates and many necessary eliminations. But, as we saw, the paradoxes appear even with just three candidates.
+
+Thus, arguably, RCV makes it simpler by telling the voter "don't worry, this election is way too complex to strategize about. Just vote sincerely and hope there wasn't a paradox that would lead to your ballot actually leading to a worse outcome".
+
+And, in that respect, fair enough. But I can say, personally, that I don't much like the idea of squashing strategy by intimidating the voter through unnecessary complexity. It feels like a cop-out.
+
+In comparison, approval voting under dichotomous goals is much simpler. Again, the strategy is delegated to the line drawing, but this is also optional. By monotonicity, just like voting sincerely in plurality is technically the optimal strategy under a dichotomous goal induced by your favorite candidate only, approval voting gives you that same safety. The difference is that under approval voting, this sincere choice to bullet vote is a *choice*, and not "the only way to express a sincere preference".
+
+In comparison to an elimination/runoff or ranked method, the line drawing is quite straightforward (and, again, optional). No consideration needs to be made about elimination order, vote transfers, or paradoxes. Nor which candidate in the acceptable set will have to take your one vote, as under plurality. You just vote for all of them!
+
+For a more pragmatic voter, who perhaps always includes at least one viable candidate in their approval set, then the success rate of achieving their goal is much higher, and again, there is no further strategy to consider once the line is drawn.
+
+The choice not to be strategic with your line drawing and just voting with your gut also has no risk of backfiring, as it does under RCV. Granted, the success rate of achieving your goal might be low if no one in your approval set is likely to win, but least you can be sure that your sincere vote won't hurt any of them directly.
+
+In summary, the primary risk of approval voting under dichotomous goals is that you may have been too stingy or generous with your line drawing. But, I will say that I think it's far less risky to be too generous (approving too many candidates) than too stingy (approving too few candidates). The chance that being too generous is actually going to cause a less preferred, but still acceptable, candidate to win over a more preferred acceptable candidate by one single vote (yours) is extremely low, particularly in larger elections.
+
+### Taylors Guide to Approval Voting Strategy
+
+I will posit my personal approach to approval voting strategy, which is as follows:
+
+1. Identify your top favorite candidates. You never want to exclude them from your approval set.
+2. Identify any candidates you absolutely cannot stand. You never want to include them in your approval set.
+3. Among the remaining candidates, identify which ones you find genuinely acceptable. These are candidates you would be okay with winning, even if they are not your favorite. Let this be your initial approval set.
+4. Optional: consider the viability of candidates in your initial approval set.
+   - If none of the candidates in your initial approval set seem viable, consider expanding your approval set to include at least one viable candidate that you find somewhat acceptable. This increases your chances of getting a candidate you at least don't hate into office
+   - On the other hand, if your initial approval set includes many viable candidates, then great! You can choose to keep this as your final approval set, if you want to maximize your chances of getting any acceptable outcome.
+   - Alternatively, you can choose to narrow it down to your favorites among the viable candidates. Just be aware that narrowing your approval set too much could risk none of them winning.
+   - You could also expand your approval set further if you want to strengthen your vote against the candidates you really dislike (ex. an "anyone but" strategy). Just be aware that expanding your approval set too much could risk an acceptable but less preferred candidate winning over your favorites. This can be especially effective for making a statement, where you approve a non-viable candidate you're not even that crazy about, just to make candidates you dislike do worse.
+5. Once you have finalized your approval set, that's exactly your optimal ballot. Vote for all candidates in your approval set, and no candidates outside of it. This ensures that those in your approval set are maximally helped by your vote, and those outside of it are maximally hurt by your vote, in alignment with your dichotomous goal.
+
+Hopefully spelling it out like this shows that strategy under dichotomous goals in approval voting is exceptionally straightforward. The only real strategy is in step 4, which is also entirely optional. You can choose to be as strategic or as sincere as you like in drawing your line. But once that line is drawn, there is no further strategy to consider.
 
 ## Conclusion
 
