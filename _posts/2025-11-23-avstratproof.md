@@ -63,7 +63,7 @@ And now $$B$$ and $$C$$ are tied! This is a strictly better outcome for you, sin
 
 This is a problem, however. You as a voter had an honest preference which would have led to your least preferred candidate winning if expressed sincerely.
 
-This is likely what Nader voters felt in the 2000 US presidential election. By voting for their favorite Nader, instead of strategically voting for Gore, they allowed Bush to win by a mere 537 vote margin in Florida.
+This is likely what Nader voters felt in the 2000 US presidential election. By voting for their favorite, Nader, instead of strategically voting for Gore, they allowed Bush to win by a mere 537 vote margin in Florida.
 
 ### Strategy under Ranked Choice Voting
 
