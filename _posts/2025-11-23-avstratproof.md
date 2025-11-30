@@ -89,6 +89,12 @@ Now, without your vote, either $$B$$ or $$C$$ could be eliminated first, leading
 
 But if you had instead voted for your *least* favorite $$C$$ first, then $$B$$ would be eliminated first, leading to your favorite $$A$$ winning for sure! In this case, voting for your least favorite candidate has led to your most preferred candidate winning!
 
+Perhaps you think this is contrived, but this is actually a generic strategy in RCV. Take the 2022 Alaska special election. We had the Democrat Peltola, Begich the Republican (who was the condorcet winner), and Palin (another Republican [who was determined to likely be a Condorcet loser](https://arxiv.org/pdf/2209.04764v3)).
+
+Peltola won the first round (expected, since it would be the two republicans who split the first choice votes). Now, as a Peltola voter, it might actually optimal to rank Palin > Peltola > Begich (or, not rank Begich at all), even though you likely hate Palin. But you might deduce that Begich would likely beat your favorite, Peltola, in a head to head matchup. Therefore, by ranking the weaker candidate Palin first, you can contribute to the possibility that Begich is eliminated first, leading to Peltola winning in the final round against Palin. If any Peltola voters did, in fact, do this, then their strategy worked, since Begich was eliminated first, and Peltola won.
+
+That is, if your favorite $$A$$ is ahead in first place, but not close to a majority, and there is a percieved Condorcet winner $$B$$ and Condorcet loser $$C$$ (or, at least a candidate $$A$$ would likely beat head to head), then it can be optimal to rank $$CAB$$, even if you hate $$C$$, in order to get $$B$$ eliminated first, leading to $$A$$ winning.
+
 Therefore, in both plurality and RCV, strategic voting can improve a voter's outcome, at the cost of sincerity. A voter sometimes has to betray their honest preferences, or even vote for their least favorite candidate, in order to achieve their best possible outcome.
 
 I would like to highlight how unfortunate it is that in both systems, the fundamental flaws in how they work result in causing voters distress about whether they should vote sincerely or strategically, and potentially being forced to vote for their least favorite candidate in order to achieve their most preferred outcome. This is a failure of the voting systems, not the voters. It does *not* have to be this way, and this is where approval voting comes in.
