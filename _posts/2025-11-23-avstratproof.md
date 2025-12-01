@@ -27,6 +27,9 @@ toc:
       - name: Strategy in Approval Voting Revisited
       - name: A Strategy Comparison
       - name: Taylors Guide to Approval Voting Strategy
+      - name: A Diluted Vote
+      - name: A Remark on Coalitions
+  - name: Common Objections Addressed
   - name: Conclusion
 ---
 
@@ -89,11 +92,11 @@ Now, without your vote, either $$B$$ or $$C$$ could be eliminated first, leading
 
 But if you had instead voted for your *least* favorite $$C$$ first, then $$B$$ would be eliminated first, leading to your favorite $$A$$ winning for sure! In this case, voting for your least favorite candidate has led to your most preferred candidate winning!
 
-Perhaps you think this is contrived, but this is actually a generic strategy in RCV. Take the 2022 Alaska special election. We had the Democrat Peltola, Begich the Republican (who was the condorcet winner), and Palin (another Republican [who was determined to likely be a Condorcet loser](https://arxiv.org/pdf/2209.04764v3)).
+Perhaps you think this is contrived, but this is actually a generic strategy in RCV. Take the 2022 Alaska special election. We had the Democrat Peltola, Begich the Republican (who was the Condorcet winner), and Palin (another Republican [who was determined to likely be a Condorcet loser](https://arxiv.org/pdf/2209.04764v3)).
 
-Peltola won the first round (expected, since it would be the two republicans who split the first choice votes). Now, as a Peltola voter, it might actually optimal to rank Palin > Peltola > Begich (or, not rank Begich at all), even though you likely hate Palin. But you might deduce that Begich would likely beat your favorite, Peltola, in a head to head matchup. Therefore, by ranking the weaker candidate Palin first, you can contribute to the possibility that Begich is eliminated first, leading to Peltola winning in the final round against Palin. If any Peltola voters did, in fact, do this, then their strategy worked, since Begich was eliminated first, and Peltola won.
+Peltola won the first round (expected, since it would be the two republicans who split the first choice votes). Now, as a Peltola voter, it might actually optimal to rank Palin > Peltola > Begich (or, not rank Begich at all), even though you likely hate Palin. But you might deduce that Begich would likely beat your favorite, Peltola, in a head to head matchup. Therefore, by ranking the weaker candidate Palin first, you can contribute to the possibility that Begich is eliminated first, leading to Peltola winning in the final round against Palin. In fairness, the head to head results were not clear, so this would have been a very risky strategy. But, if any Peltola voters did, in fact, do this, then their high risk strategy worked, since Begich was eliminated first, and Peltola won.
 
-That is, if your favorite $$A$$ is ahead in first place, but not close to a majority, and there is a percieved Condorcet winner $$B$$ and Condorcet loser $$C$$ (or, at least a candidate $$A$$ would likely beat head to head), then it can be optimal to rank $$CAB$$, even if you hate $$C$$, in order to get $$B$$ eliminated first, leading to $$A$$ winning.
+That is, if your favorite $$A$$ is ahead in first place, but not close to a majority, and there is a perceived Condorcet winner $$B$$ and Condorcet loser $$C$$ (or, at least a candidate $$A$$ would likely beat head to head), then it can be optimal to rank $$CAB$$, even if you hate $$C$$, in order to get $$B$$ eliminated first, leading to $$A$$ winning.
 
 Therefore, in both plurality and RCV, strategic voting can improve a voter's outcome, at the cost of sincerity. A voter sometimes has to betray their honest preferences, or even vote for their least favorite candidate, in order to achieve their best possible outcome.
 
@@ -268,6 +271,59 @@ I will posit my personal approach to approval voting strategy, which is as follo
 5. Once you have finalized your approval set, that's exactly your optimal ballot. Vote for all candidates in your approval set, and no candidates outside of it. This ensures that those in your approval set are maximally helped by your vote, and those outside of it are maximally hurt by your vote, in alignment with your dichotomous goal.
 
 Hopefully spelling it out like this shows that strategy under dichotomous goals in approval voting is exceptionally straightforward. The only real strategy is in step 4, which is also entirely optional. You can choose to be as strategic or as sincere as you like in drawing your line. But once that line is drawn, there is no further strategy to consider.
+
+### A Diluted Vote
+
+One criticism of approval voting is that the nature of giving equal votes to candidate you don't feel equally about "dilutes" your vote. For example, if you approve of three candidates, but you really only care about one of them, then your vote is "weaker" than if you had only approved of your favorite candidate. However, this is not what the game theory shows us, and is also completely invalidated by the dichotomous goal framing.
+
+In particular, note that your single choice to include a less preferred acceptable candidate (say, B) as well as your favorite (A) has the following effects:
+
+- It will never help an unacceptable candidate win. In fact, choosing to expand to B will make your vote stronger against all unacceptable candidates.
+- It cannot change the outcome from your favorite winning to B winning strictly over your favorite. The scenarios before you cast your vote for A and B are:
+  1. A was winning by more than one vote over B. Then including B doesn't change anything but strengthen your vote against unacceptable candidates.
+  2. A was winning by exactly one vote over B. Then voting for A and B preserves this outcome
+  3. A and B were tied for first. Then voting for A and B preserves this outcome.
+  4. B was winning by one vote over A. Then voting for A and B preserves this outcome.
+  5. B was winning by more than one vote over A. Then including B doesn't change anything.
+
+In none of these scenarios do we cross from A winning to B winning strictly over A. At worst, we preserve ties or outcomes. Only in scenarios 3 and 4 would voting only for A technically be strictly better for a voter who prefers A over B (which leaves the Dichotomous goal framing). However, taking a step out of the dichotomous goal framing for a moment, if these outcomes are even possible, then:
+
+1. If B is unacceptable, then the voter should not have included B in their approval set in the first place. There is no incentive to extending your approval set from your favorite who is clearly viable or already in first place to an unacceptable candidate in second place. This is completely irrational.
+2. If B is not unacceptable, then B is acceptable. Perhaps you didn't realize how viable B was, and that's why you included both. But if B was a candidate you were even considering for your approval set, then you necessarily have to find them at minimum acceptable (or else, see the previous point).
+
+I have heard arguments that approving of both A and B and causing (or, rather, preserving) B winning over A would make the voter furious. Again, this is still leaving the dichotomous goal framing, but even so this is completely incoherent. If you would be furious at B winning over A, then you must find B unacceptable, and therefore should not have included them in your approval set in the first place. Case closed.
+
+### A Remark on Coalitions
+
+I have also heard claims that RCV is better for candidates trying to form coalitions. This is provably false. The concept of a coalition is *precisely* a dichotomous goal. "I want any candidate in this coalition to win, and I want any candidate outside of this coalition to lose". Based on the results outlined above, approval voting is basically the *perfect* system for coalitions. The nature of an approval vote gives the absolute most robust way to support a coalition of candidates, without worrying about vote splitting, or ranking order, or elimination order.
+
+We have already seen that to achieve an optimal result under RCV, you may need to rank an unacceptable candidate over an acceptable candidate, in order to get an acceptable candidate to win. Thus, the idea of a coalition under RCV is not guaranteed to be optimal for its members. You cannot simply say "rank us and no one else" and expect that to be optimal. You may still need to game the elimination order by ranking unacceptable candidates.
+
+In RCV, a coalition necessarily asks candidates to choose different rankings of the coalition members, which can lead to splitting votes. Sufficient splitting will likely lead to the elimination of members of the coalition. You must hope that the elimination order works out in your favor, and that the strongest candidate in the coalition is not eliminated first. This necessarily creates genuine and unavoidable risk unless the coalition is supported by a sufficient number of voters.
+
+There is no similar risk under approval voting, no matter how widely or narrowly supported a coalition is. Any voter who wants to support a coalition is necessarily adopting a dichotomous goal, and thus the only optimal strategy is to approve of all coalition members, and no non-coalition members. No risk whatsoever.
+
+You can argue that viable candidates will be wary to form coalitions under approval voting. But the result is the same under RCV. If your favorite wins in RCV, then there's nothing interesting. If your favorite is eliminated because of the coalition and then that other coalition wins, it's identical to voting in a way that supports that other member. You're doing the same thing as you would be under approval voting, but with extra steps that open you up to accidentally hurting your favorite because ranks are jank as hell. Sure, it ***feels*** better to rank candidates in a coalition, but it objectively acts as a weaker support mechanism for that coalition than you would have under approval voting.
+
+## Common Objections Addressed
+
+**Q: "But doesn't approving multiple candidates dilute your vote?"**
+A: No. See [the section above](#a-diluted-vote) for the mathematical proof. Your vote for B never helps B beat A when you approve both.
+
+**Q: "In AV, won't my vote help my second choice beat my first choice?"**
+A: No. This is mathematically impossible. See [the diluted vote section](#a-diluted-vote) for the full proof, but briefly: if you approve both A (favorite) and B (second choice), your vote gives each exactly one vote. You're not taking votes away from A or giving extra votes to B. The only way B beats A is if other voters also find B more acceptable than A, meaning B has broader support, which is exactly what the system should reward.
+
+**Q: "Won't voters be upset if their second choice wins?"**
+A: If you'd be upset with B winning, don't approve B. The same logic applies to RCV. If B winning would upset you, don't rank B second. In approval voting, just don't approve of B. Both systems let you indicate second choices; the difference is AV does it more directly.
+
+**Q: "Isn't RCV better for coalitions?"**
+A: No. See [the section above](#a-remark-on-coalitions). RCV coalitions face vote-splitting and elimination order risk. AV coalitions face neither. A coalition is precisely a dichotomous goal, and AV is strategyproof under such goals.
+
+**Q: "What if I can't decide where to draw the line?"**
+A: That's the only strategic decision you need to make, and it's entirely optional (see [step 4 in the guide](#taylors-guide-to-approval-voting-strategy)). If you don't feel you have the information to decide which candidate is viable, just go with your gut "would I find this candidate acceptable if they won?" and approve accordingly. This is the most sincere dichotomous goal and you do not have to worry about the optimal way to express it. Once you've drawn the line, voting is trivial: approve everyone above it, no one below it. This is far simpler than strategic ranking under RCV or strategic compromise under plurality.
+
+**Q: "But ranking FEELS better than approving!"**
+A: If you are okay with the rank-jank, the chances for paradoxes, the risk of your sincere ballot leading to a worse outcome, the failure to elect the Condorcet winner (which leads to frighteningly successful repeal efforts), and the cognitive load of strategizing about elimination orders, then sure. As long as you're aware of the risks.
 
 ## Conclusion
 
