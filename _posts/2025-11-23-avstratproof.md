@@ -35,6 +35,8 @@ toc:
 
 ## Introduction
 
+Updated 12/1/2025.
+
 Recently, I wrote a post about [approval voting](../approval/){:target="_blank"}, and I would like to go more in depth here about one of its most appealing properties: strategyproofness, which it has under very specific (and arguably unrealistic) conditions. However, I aim to show that by reframing how we think about our voting goals, we can in fact regain strategyproofness from the perspective of an individual voter.
 
 For this discussion, it's worth being explicit up front about the definition of the voting systems we will be referencing: plurality (our current system, also called PV) and approval voting (AV).
