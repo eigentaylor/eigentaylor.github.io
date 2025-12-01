@@ -26,7 +26,7 @@ toc:
       - name: Where did the strategy go?
       - name: Strategy in Approval Voting Revisited
       - name: A Strategy Comparison
-      - name: Taylors Guide to Approval Voting Strategy
+      - name: The Taylor Guide to Approval Voting Strategy
       - name: A Diluted Vote
       - name: A Remark on Coalitions
   - name: Common Objections Addressed
@@ -258,7 +258,7 @@ The choice not to be strategic with your line drawing and just voting with your 
 
 In summary, the primary risk of approval voting under dichotomous goals is that you may have been too stingy or generous with your line drawing. But, I will say that I think it's far less risky to be too generous (approving too many candidates) than too stingy (approving too few candidates). The chance that being too generous is actually going to cause a less preferred, but still acceptable, candidate to win over a more preferred acceptable candidate by one single vote (yours) is extremely low, particularly in larger elections.
 
-### Taylors Guide to Approval Voting Strategy
+### The Taylor Guide to Approval Voting Strategy
 
 I will posit my personal approach to approval voting strategy, which is as follows:
 
@@ -322,7 +322,7 @@ A: If you'd be upset with B winning, don't approve B. The same logic applies to 
 A: No. See [the section above](#a-remark-on-coalitions). RCV coalitions face vote-splitting and elimination order risk. AV coalitions face neither. A coalition is precisely a dichotomous goal, and AV is strategyproof under such goals.
 
 **Q: "What if I can't decide where to draw the line?"**
-A: That's the only strategic decision you need to make, and it's entirely optional (see [step 4 in the guide](#taylors-guide-to-approval-voting-strategy)). If you don't feel you have the information to decide which candidate is viable, just go with your gut "would I find this candidate acceptable if they won?" and approve accordingly. This is the most sincere dichotomous goal and you do not have to worry about the optimal way to express it. Once you've drawn the line, voting is trivial: approve everyone above it, no one below it. This is far simpler than strategic ranking under RCV or strategic compromise under plurality.
+A: That's the only strategic decision you need to make, and it's entirely optional (see [step 4 in the guide](#the-taylor-guide-to-approval-voting-strategy)). If you don't feel you have the information to decide which candidate is viable, just go with your gut "would I find this candidate acceptable if they won?" and approve accordingly. This is the most sincere dichotomous goal and you do not have to worry about the optimal way to express it. Once you've drawn the line, voting is trivial: approve everyone above it, no one below it. This is far simpler than strategic ranking under RCV or strategic compromise under plurality.
 
 **Q: "But ranking FEELS better than approving!"**
 A: If you are okay with the rank-jank, the chances for paradoxes, the risk of your sincere ballot leading to a worse outcome, the failure to elect the Condorcet winner (which leads to frighteningly successful repeal efforts), and the cognitive load of strategizing about elimination orders, then sure. As long as you're aware of the risks.
