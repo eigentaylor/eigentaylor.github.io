@@ -27,7 +27,7 @@ toc:
       - name: Strategy in Approval Voting Revisited
       - name: A Strategy Comparison
       - name: The Taylor Guide to Approval Voting Strategy
-      - name: A Diluted Vote
+      - name: The Diluted Vote Myth 
       - name: A Remark on Coalitions
   - name: Common Objections Addressed
   - name: Conclusion
@@ -274,7 +274,7 @@ I will posit my personal approach to approval voting strategy, which is as follo
 
 Hopefully spelling it out like this shows that strategy under dichotomous goals in approval voting is exceptionally straightforward. The only real strategy is in step 4, which is also entirely optional. You can choose to be as strategic or as sincere as you like in drawing your line. But once that line is drawn, there is no further strategy to consider.
 
-### A Diluted Vote
+### The Diluted Vote Myth 
 
 One criticism of approval voting is that the nature of giving equal votes to candidate you don't feel equally about "dilutes" your vote. For example, if you approve of three candidates, but you really only care about one of them, then your vote is "weaker" than if you had only approved of your favorite candidate. However, this is not what the game theory shows us, and is also completely invalidated by the dichotomous goal framing.
 
@@ -310,10 +310,10 @@ You can argue that viable candidates will be wary to form coalitions under appro
 ## Common Objections Addressed
 
 **Q: "But doesn't approving multiple candidates dilute your vote?"**
-A: No. See [the section above](#a-diluted-vote) for the mathematical proof. Your vote for B never helps B beat A when you approve both. At the absolute worst case, you preserve an existing outcome.
+A: No. See [the section above](#the-diluted-vote-myth) for the mathematical proof. Your vote for B never helps B beat A when you approve both. At the absolute worst case, you preserve an existing outcome.
 
 **Q: "In AV, won't my vote help my second choice beat my first choice?"**
-A: No. This is mathematically impossible. See [the diluted vote section](#a-diluted-vote) for the full proof, but briefly: if you approve both A (favorite) and B (second choice), your vote gives each exactly one vote. You're not taking votes away from A or giving extra votes to B. The only way B beats A is if other voters also find B more acceptable than A, meaning B has broader support, which is exactly what the system should reward.
+A: No. This is mathematically impossible. See [the diluted vote section](#the-diluted-vote-myth) for the full proof, but briefly: if you approve both A (favorite) and B (second choice), your vote gives each exactly one vote. You're not taking votes away from A or giving extra votes to B. The only way B beats A is if other voters also find B more acceptable than A, meaning B has broader support, which is exactly what the system should reward.
 
 **Q: "Won't voters be upset if their second choice wins?"**
 A: If you'd be upset with B winning, don't approve B. The same logic applies to RCV. If B winning would upset you, don't rank B second. In approval voting, just don't approve of B. Both systems let you indicate second choices; the difference is AV does it more directly.
