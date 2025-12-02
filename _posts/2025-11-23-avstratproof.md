@@ -310,7 +310,7 @@ You can argue that viable candidates will be wary to form coalitions under appro
 ## Common Objections Addressed
 
 **Q: "But doesn't approving multiple candidates dilute your vote?"**
-A: No. See [the section above](#a-diluted-vote) for the mathematical proof. Your vote for B never helps B beat A when you approve both.
+A: No. See [the section above](#a-diluted-vote) for the mathematical proof. Your vote for B never helps B beat A when you approve both. At the absolute worst case, you preserve an existing outcome.
 
 **Q: "In AV, won't my vote help my second choice beat my first choice?"**
 A: No. This is mathematically impossible. See [the diluted vote section](#a-diluted-vote) for the full proof, but briefly: if you approve both A (favorite) and B (second choice), your vote gives each exactly one vote. You're not taking votes away from A or giving extra votes to B. The only way B beats A is if other voters also find B more acceptable than A, meaning B has broader support, which is exactly what the system should reward.
