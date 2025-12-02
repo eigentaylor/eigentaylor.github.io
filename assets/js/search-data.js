@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-is-approval-voting-strategyproof",
+        },{id: "post-the-lichtman-perception-paradox",
+        
+          title: "The Lichtman Perception Paradox",
+        
+        description: "The Allan Lichtman hit piece you&#39;ve been waiting for.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/lichtman/";
+          
+        },
+      },{id: "post-is-approval-voting-strategyproof",
         
           title: "Is Approval Voting Strategyproof?",
         
