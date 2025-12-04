@@ -157,7 +157,9 @@ But what if there was an alternate framing that could make voter preferences dic
 
 ## The Game
 
-Consider a hypothetical election with three or more candidates. Perhaps we're talking about a crowded primary of 10 or more candidates. As a voter, you probably have a favorite, a few candidates you like, a few you dislike, and a few you really dislike. However, with so many options, it's unlikely that your favorite candidate can be guaranteed to win. Voting for them only would not be strategically prudent, as you could be throwing away your vote when it comes to the real contest between more viable candidates.
+![let's play a game](/assets/img/playagame.gif)
+
+Consider a hypothetical election with three or more candidates. Perhaps we're talking about a crowded primary of 10 or more candidates. As a voter, you probably have a favorite, a few candidates you like, a few you dislike, and a few you really dislike. However, with so many options, it's unlikely that your favorite candidate can be guaranteed to win. Under approval voting, voting for them only would not be strategically prudent, as you could be throwing away your vote when it comes to the real contest between more viable candidates.
 
 We might reframe the situation away from thinking about a strict ranking of 10+ candidates, and choosing among the thousand possible approval votes to get one's most favorite viable candidate to win, and instead think about which candidates we consider "acceptable" versus "unacceptable".
 
