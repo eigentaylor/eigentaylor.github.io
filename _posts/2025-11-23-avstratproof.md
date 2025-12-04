@@ -37,9 +37,13 @@ toc:
 
 Updated 12/1/2025.
 
+Recently, I wrote a post about [approval voting](../approval/){:target="_blank"}, and I would like to go more in depth here about one of its most appealing properties: strategyproofness. Which is to say, the property that a voter has one and only one optimal strategy, and that strategy is to vote honestly, with their heart. There is no benefit to trying to game the system by misrepresenting one's preferences.
+
+The question we are trying to answer is: *is approval voting strategyproof?* The short answer is:
+
 ![well yes, but actually no](/assets/img/wellyesbutactuallyno.jpg)
 
-Recently, I wrote a post about [approval voting](../approval/){:target="_blank"}, and I would like to go more in depth here about one of its most appealing properties: strategyproofness, which it has under very specific (and arguably unrealistic) conditions. However, I aim to show that by reframing how we think about our voting goals, we can in fact regain strategyproofness from the perspective of an individual voter.
+Approval voting *is* strategyproof under very specific (and arguably unrealistic) conditions. However, I aim to show that by reframing how we think about our voting goals, we can in fact regain strategyproofness from the perspective of an individual voter.
 
 For this discussion, it's worth being explicit up front about the definition of the voting systems we will be referencing: plurality (our current system, also called PV) and approval voting (AV).
 
@@ -157,7 +161,9 @@ But what if there was an alternate framing that could make voter preferences dic
 
 ## The Game
 
-Consider a hypothetical election with three or more candidates. Perhaps we're talking about a crowded primary of 10 or more candidates. As a voter, you probably have a favorite, a few candidates you like, a few you dislike, and a few you really dislike. However, with so many options, it's unlikely that your favorite candidate can be guaranteed to win. Voting for them only would not be strategically prudent, as you could be throwing away your vote when it comes to the real contest between more viable candidates.
+![let's play a game](/assets/img/playagame.gif)
+
+Consider a hypothetical election with three or more candidates. Perhaps we're talking about a crowded primary of 10 or more candidates. As a voter, you probably have a favorite, a few candidates you like, a few you dislike, and a few you really dislike. However, with so many options, it's unlikely that your favorite candidate can be guaranteed to win. Under approval voting, voting for them only would not be strategically prudent, as you could be throwing away your vote when it comes to the real contest between more viable candidates.
 
 We might reframe the situation away from thinking about a strict ranking of 10+ candidates, and choosing among the thousand possible approval votes to get one's most favorite viable candidate to win, and instead think about which candidates we consider "acceptable" versus "unacceptable".
 
