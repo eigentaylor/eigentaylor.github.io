@@ -179,7 +179,7 @@ Intuitively, this is equivalent to a voter constructing a dichotomous preference
 
 > Theorem (AV Goal-Relative Strategyproofness):
 >
-> Consider an approval voting election with candidates $$\mathcal{C}$$. If a voter $$v$$ has the goal of having any candidate in any arbitrarily chosen non-empty subset $$S\subset \mathcal{C}$$ win, and avoiding any candidate outside of $$S$$ winning, then the only optimal strategy for voter $$v$$, under any scenario, is to vote for all candidates in $$S$$, and no candidates outside of $$S$$: $$S_v = S$$
+> Consider an approval voting election with candidates $$\mathcal{C}$$. If a voter $$v$$ has the goal of having any candidate in any arbitrarily chosen non-empty subset $$S\subsetneq \mathcal{C}$$ win, and avoiding any candidate outside of $$S$$ winning, then the only optimal strategy for voter $$v$$, under any scenario, is to vote for all candidates in $$S$$, and no candidates outside of $$S$$: $$S_v = S$$
 
 This theorem follows directly from the strategyproofness of approval voting under dichotomous preferences. By changing our goal to be dichotomous, we are essentially changing our utility function to represent a dichotomous preference for which AV *is* strategyproof, as shown by Brams and Fishburn.
 
