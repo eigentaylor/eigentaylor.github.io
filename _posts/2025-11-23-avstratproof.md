@@ -35,7 +35,7 @@ toc:
 
 ## Introduction
 
-Updated 12/1/2025.
+Updated 12/7/2025.
 
 Recently, I wrote a post about [approval voting](../approval/){:target="_blank"}, and I would like to go more in depth here about one of its most appealing properties: strategyproofness. Which is to say, the property that a voter has one and only one optimal strategy, and that strategy is to vote honestly, with their heart. There is no benefit to trying to game the system by misrepresenting one's preferences.
 
