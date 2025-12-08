@@ -256,7 +256,7 @@ Thus, arguably, RCV makes it simpler by telling the voter "don't worry, this ele
 
 And, in that respect, fair enough. But I can say, personally, that I don't much like the idea of squashing strategy by intimidating the voter through unnecessary complexity. It feels like a cop-out.
 
-In comparison, approval voting under dichotomous goals is much simpler. Again, the strategy is delegated to the line drawing, but this is also optional. By monotonicity, just like voting sincerely in plurality is technically the optimal strategy under a dichotomous goal induced by your favorite candidate only, approval voting gives you that same safety. The difference is that under approval voting, this sincere choice to bullet vote is a *choice*, and not "the only way to express a sincere preference".
+In comparison, approval voting under dichotomous goals is much simpler, effective, and straightforward. Again, the strategy is delegated to the line drawing, but this is also optional. By monotonicity, just like voting sincerely in plurality is technically the optimal strategy under a dichotomous goal induced by your favorite candidate only, approval voting gives you that same safety. The difference is that under approval voting, this sincere choice to bullet vote is a *choice*, and not "the only way to express a sincere preference".
 
 In comparison to an elimination/runoff or ranked method, the line drawing is quite straightforward (and, again, optional). No consideration needs to be made about elimination order, vote transfers, or paradoxes. Nor which candidate in the acceptable set will have to take your one vote, as under plurality. You just vote for all of them!
 
