@@ -322,16 +322,16 @@ If you aren't convinced, think of it this way: in RCV, the only part of your vot
 ## Common Objections Addressed
 
 **Q: "But doesn't approving multiple candidates dilute your vote?"**
-A: No. See [the section above](#the-diluted-vote-myth) for the mathematical proof. Your vote for B never helps B beat A when you approve both. At the absolute worst case, you preserve an existing outcome.
+A: No. See [the section above](#the-diluted-vote-myth) for the mathematical proof. Your vote for A and B never helps B beat A (or vice versa) when you approve both. At the absolute worst case, you preserve an existing outcome between them. At best, you strengthen your vote against unacceptable candidates.
 
 **Q: "In AV, won't my vote help my second choice beat my first choice?"**
-A: No. This is mathematically impossible. See [the diluted vote section](#the-diluted-vote-myth) for the full proof, but briefly: if you approve both A (favorite) and B (second choice), your vote gives each exactly one vote. You're not taking votes away from A or giving extra votes to B. The only way B beats A is if other voters also find B more acceptable than A, meaning B has broader support, which is exactly what the system should reward.
+A: No. This is mathematically impossible. See [the diluted vote section](#the-diluted-vote-myth) for the full proof, but briefly: if you approve both A (favorite) and B (second choice), your vote gives each exactly one vote. You're not taking votes away from A or giving extra votes to B. The only way B beats A is if other voters already find B more acceptable than A, meaning B has broader support, which is exactly what the system should reward. The chance that your single vote could have made A win over B by withholding your approval from B is effectively zero in any realistic election, and would require both being tied for first or within one vote of each other ahead of all other candidates beforehand. And, if that were the case, and you found B unacceptable, then you shouldn't have approved B in the first place.
 
 **Q: "Won't voters be upset if their second choice wins?"**
-A: If you'd be upset with B winning, don't approve B. The same logic applies to RCV. If B winning would upset you, don't rank B second. In approval voting, just don't approve of B. Both systems let you indicate second choices; the difference is AV does it more directly.
+A: If you'd be upset with B winning, don't approve B. The same logic applies to RCV. If B winning would genuinely upset you, don't rank B second. In approval voting, just don't approve of B. Both systems let you indicate second choices; the difference is that approval voting does it more directly.
 
 **Q: "Isn't RCV better for coalitions?"**
-A: No. See [the section above](#a-remark-on-coalitions). RCV coalitions face vote-splitting and elimination order risk. AV coalitions face neither. A coalition is precisely a dichotomous goal, and AV is strategyproof under such goals.
+A: No. See [the section above](#a-remark-on-coalitions). RCV coalitions face vote-splitting and elimination order risk. Approval voting coalitions face neither. A coalition is precisely a dichotomous goal, and AV is strategyproof under such goals.
 
 **Q: "What if I can't decide where to draw the line?"**
 A: That's the only strategic decision you need to make, and it's entirely optional (see [step 4 in the guide](#the-taylor-guide-to-approval-voting-strategy)). If you don't feel you have the information to decide which candidates are viable, just go with your gut and ask "would I find this candidate acceptable if they won?" for each candidate and approve accordingly. This is the most sincere dichotomous goal and you do not have to worry about the optimal way to express it. Once you've drawn the line, voting is trivial: approve everyone above it, no one below it. You will strictly help all candidates you find acceptable, and strictly hurt all others. This is far simpler than strategic ranking under RCV or strategic compromise under plurality.
