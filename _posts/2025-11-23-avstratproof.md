@@ -282,9 +282,9 @@ I will posit my personal approach to approval voting strategy, which is as follo
 
 Hopefully spelling it out like this shows that strategy under dichotomous goals in approval voting is exceptionally straightforward. The only real strategy is in step 4, which is also entirely optional. You can choose to be as strategic or as sincere as you like in drawing your line. But once that line is drawn, there is no further strategy to consider.
 
-### The Diluted Vote Myth 
+### The Diluted Vote Myth
 
-One criticism of approval voting is that the nature of giving equal votes to candidate you don't feel equally about "dilutes" your vote. For example, if you approve of three candidates, but you really only care about one of them, then your vote is "weaker" than if you had only approved of your favorite candidate. However, this is not what the game theory shows us, and is also completely invalidated by the dichotomous goal framing.
+One criticism of approval voting is that the nature of giving equal votes to candidate you don't feel equally about "dilutes" your vote. For example, if you approve of three candidates, but you really only love one of them (your favorite), then your vote is "weaker" than if you had only approved of your favorite candidate. However, this is not what the game theory shows us, and is also completely invalidated under the dichotomous goal framing.
 
 In particular, note that your single choice to include a less preferred acceptable candidate (say, B) as well as your favorite (A) has the following effects:
 
