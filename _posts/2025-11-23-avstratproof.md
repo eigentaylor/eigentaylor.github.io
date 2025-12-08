@@ -296,7 +296,7 @@ In particular, note that your single choice to include a less preferred acceptab
   4. B was winning by one vote over A. Then voting for A and B preserves this outcome.
   5. B was winning by more than one vote over A. Then including B doesn't change anything except strengthen their lead over unacceptable candidates.
 
-In none of these scenarios do we cross from A winning to B winning strictly over A. At worst, we preserve ties or outcomes. Only in scenarios 3 and 4 would voting only for A technically be strictly better for a voter who prefers A over B (which leaves the Dichotomous goal framing). However, taking a step out of the dichotomous goal framing for a moment, if these outcomes are even possible, then:
+In none of these scenarios do we cross from A winning to B winning strictly over A. At worst, we preserve ties or outcomes. Only in scenarios 3 and 4 would voting only for A technically be strictly better for a voter who prefers A over B (which leaves the Dichotomous goal framing if you chose to put both in your approval set). However, taking a step out of the dichotomous goal framing for a moment, if these outcomes are even possible, then:
 
 1. If B is unacceptable, then the voter should not have included B in their approval set in the first place. There is no incentive to extending your approval set from your favorite who is clearly viable or already in first place to an unacceptable candidate in second place. This is completely irrational.
 2. If B is not unacceptable, then B is acceptable. Perhaps you didn't realize how viable B was, and that's why you included both. But if B was a candidate you were even considering for your approval set, then you necessarily have to find them at minimum acceptable (or else, see the previous point).
