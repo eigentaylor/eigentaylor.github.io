@@ -294,7 +294,7 @@ In particular, note that your single choice to include a less preferred acceptab
   2. A was winning by exactly one vote over B. Then voting for A and B preserves this outcome
   3. A and B were tied for first. Then voting for A and B preserves this outcome.
   4. B was winning by one vote over A. Then voting for A and B preserves this outcome.
-  5. B was winning by more than one vote over A. Then including B doesn't change anything.
+  5. B was winning by more than one vote over A. Then including B doesn't change anything except strengthen their lead over unacceptable candidates.
 
 In none of these scenarios do we cross from A winning to B winning strictly over A. At worst, we preserve ties or outcomes. Only in scenarios 3 and 4 would voting only for A technically be strictly better for a voter who prefers A over B (which leaves the Dichotomous goal framing). However, taking a step out of the dichotomous goal framing for a moment, if these outcomes are even possible, then:
 
