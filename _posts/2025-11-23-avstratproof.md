@@ -264,14 +264,14 @@ For a more pragmatic voter, who perhaps always includes at least one viable cand
 
 The choice not to be strategic with your line drawing and just voting with your gut also has no risk of backfiring, as it does under RCV. Granted, the success rate of achieving your goal might be low if no one in your approval set is likely to win, but least you can be sure that your sincere vote won't hurt any of them directly.
 
-In summary, the primary risk of approval voting under dichotomous goals is that you may have been too stingy or generous with your line drawing. But, I will say that I think it's far less risky to be too generous (approving too many candidates) than too stingy (approving too few candidates). The chance that being too generous is actually going to cause a less preferred, but still acceptable, candidate to win over a more preferred acceptable candidate by one single vote (yours) is extremely low, particularly in larger elections.
+In summary, the primary risk of approval voting under dichotomous goals is that you may have been too stingy or generous with your line drawing. But, I will say that I think it's far less risky to be too generous (approving too many candidates) than too stingy (approving too few candidates). The chance that being too generous is actually going to cause a less preferred, but still acceptable, candidate to win over a more preferred acceptable candidate by one single vote (yours) is extremely low (effectively zero), particularly in larger elections.
 
 ### The Taylor Guide to Approval Voting Strategy
 
 I will posit my personal approach to approval voting strategy, which is as follows:
 
-1. Identify your top favorite candidates. You never want to exclude them from your approval set.
-2. Identify any candidates you absolutely cannot stand. You never want to include them in your approval set.
+1. Identify your top favorite candidates. You never want to exclude them from your approval set, and it will never be optimal to do so.
+2. Identify any candidates you absolutely cannot stand. You never want to include them in your approval set, and it will never be optimal to do so.
 3. Among the remaining candidates, identify which ones you find genuinely acceptable. These are candidates you would be okay with winning, even if they are not your favorite. Let this be your initial approval set.
 4. Optional: consider the viability of candidates in your initial approval set.
    - If none of the candidates in your initial approval set seem viable, consider expanding your approval set to include at least one viable candidate that you find somewhat acceptable. This increases your chances of getting a candidate you at least don't hate into office
