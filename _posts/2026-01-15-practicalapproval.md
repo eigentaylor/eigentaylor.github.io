@@ -57,7 +57,7 @@ Note: On the other hand, a ranked method for proportional representation (like S
 
 Not to mention that the primary ranked method being pushed is IRV, which is a terrible voting system that has many well-documented flaws, and I would never recommend it for any serious use case (don't worry, we will get there). I plan to go into the serious problems with IRV in another post in the future.
 
-In contrast, the Approval voting method has *none* of these problems. It is simple to understand, simple to vote with, simple to count, simple to audit, and simple to trust.
+In contrast, the Approval voting method has *none* of these problems. It is simple to understand, simple to vote with, simple to count, simple to audit, and simple to trust. And the benefits for adopting Approval voting are *massive*.
 
 ## The Logistical Case for Approval Voting
 
