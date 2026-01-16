@@ -127,7 +127,7 @@ However, 52.5% of voters (who expressed a preference) preferred Begich over Pelt
 
 All of the voters who ranked Palin first and Begich second (56.9% of Palin-first voters) had their preferences completely ignored. They clearly preferred both Republicans over Peltola, but because of the short-sightedness of IRV, their full ordered preferences were not honored or even considered. The system eliminated the only Republican who could have won the second round, and pushed the weaker Condorcet loser instead simply because they had about . Less than 3,000 Palin-first votes ([4.94% of her first-choice total](https://substack.com/home/post/p-182659376)), if changed to Begich-first, would have changed the eliminated candidate to Palin, and elected a Republican instead of a Democrat. What is even the point of ranking candidates if your full preferences are not taken into account?
 
-The potential fix is to employ a Condorcet method instead. There are many to choose from, such as Minimax, Schulze, or Ranked Pairs. All of these methods will always elect the Condorcet winner if one exists, thus satisfying internal consistency (at least when one exists).
+The potential fix is to employ a Condorcet method instead. There are many to choose from, such as Minimax, Schulze, or Copeland. All of these methods will always elect the Condorcet winner if one exists, thus satisfying internal consistency (at least when one exists).
 
 If one is to use a ranked method, the only sane way to do so is to use a Condorcet method. If you *can* fail to elect the Condorcet winner, you *will* erode public trust in the method, and thus the entire reform effort.
 
