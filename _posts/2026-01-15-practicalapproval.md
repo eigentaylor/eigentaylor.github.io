@@ -179,12 +179,12 @@ In my other [post on Approval voting](../approval/){:target="_blank"}, I showed 
 
 If W is the winner under Approval voting, then for any other candidate C, the difference in their total approvals is exactly equal to the difference of "strict" approvals. This is because if you subtract out all the ballots that approved both W and C, you are left with only the ballots that approved W but not C (strict approvals for W) and the ballots that approved C but not W (strict approvals for C), while preserving the difference in total approvals.
 
-For example, if W got 100 approvals and C got 80 approvals, and there were 30 ballots that approved both W and C, then:
+For example, if W got 100 approvals and C got 80 approvals, and there were 70 ballots that approved both W and C, then:
 
-- W's strict approvals = 100 - 30 = 70
-- C's strict approvals = 80 - 30 = 50
+- W's strict approvals = 100 - 70 = 30
+- C's strict approvals = 80 - 70 = 10
 - Difference in total approvals = 100 - 80 = 20
-- Difference in strict approvals = 70 - 50 = 20
+- Difference in strict approvals = 30 - 10 = 20
 
 Thus, if W has more total approvals than C, then W must also have more strict approvals than C.
 
