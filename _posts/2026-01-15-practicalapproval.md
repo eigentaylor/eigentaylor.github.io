@@ -79,9 +79,9 @@ In addition to its many theoretical benefits (which I have covered in [previous 
 12. It could increase voter turnout. By making voting simpler, more intuitive, and more sincere, Approval voting could encourage more people to participate in elections.
 13. It would elect the strongest candidate broadly acceptable to the most voters, also increasing legitimacy of the winner.
 
-If you want a simple reform, that is easy to implement and has massive positive ramifications, there is literally no better choice than Approval voting. This is inarguable.
+If you want a simple reform, that is easy to implement and has massive positive ramifications, there is literally no simpler choice than Approval voting.
 
-But to really understand why Approval voting is truly the most practical and robust in practice and in theory, all the while maintaining the benefits of more robust ranked method with minimal complexity, we need to fully understand the problems with ranked methods like IRV.
+But to really understand why Approval voting is truly the most practical and robust in practice and in theory, all the while maintaining the benefits of more robust ranked method with minimal complexity, we need to fully understand the problems with ranked methods, like IRV.
 
 The question then becomes: does a ranked method provide enough additional benefit to justify its added complexity and impracticality? Particularly if the method is opaque and difficult to audit, as IRV is. Further, does the method actually deliver on its promise to take into account the more nuanced and expressive preferences that the more complex ballot allows? I argue that IRV fails to do so in a significant way.
 
