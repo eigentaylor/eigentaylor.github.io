@@ -223,7 +223,7 @@ A simpler method, more practical, Condorcet-efficient (a strong majority of the 
 
 [Cox 1987](https://www.jstor.org/stable/2111325){target="_blank"} investigated the dynamics of various voting methods in a spatial model of voting. He found that a number of voting methods tend to encourage candidates to adopt more acceptable positions, rather than extreme positions, in order to win elections. He showed that Plurality voting encourages extremist outcomes, while systems like Approval, Borda, and Condorcet methods encourage outcomes where the Candidates converge towards the median voter. That is, both Approval and Condorcet methods will likely diffuse polarization over time, but Approval does this with far greater simplicity and practicality.
 
-I have [spoken before](../approval/){target="_blank"} on my worry about the intense polarization in modern politics. Approval voting, by encouraging candidates to seek broad acceptability, can help mitigate this polarization. I believe Condorcet methods can do this as well, but again, at the cost of practicality and trustworthiness. And, after the 2020 Presidential election debacle, trustworthiness in our voting systems and election results is more important than ever.
+I have [spoken before](../approval/){target="_blank"} on my worry about the intense polarization in modern politics. Approval voting, by encouraging candidates to seek broad acceptability, can help mitigate this polarization. I believe Condorcet methods can do this as well, but again, at the cost of practicality and trustworthiness. And, after the 2020 Presidential election "stop the steal" debacle, transparency and trust in our voting systems and election results is more important than ever.
 
 ## Conclusion
 
