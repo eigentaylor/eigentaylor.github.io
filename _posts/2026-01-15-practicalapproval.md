@@ -44,7 +44,7 @@ Now, while I don't necessarily believe this is truly a well-intentioned effort t
 - "[An example in Oakland California] where mistakes were undetected that ultimately changed the outcome of an election... It took four months and a lawsuit just to see the actual winner in that particular Ranked-Choice voting election."
 - "Because it is so hard to vote, it also takes voters longer"
 - "One MIT study found that with just five people to rank, that adds an additional minute to the amount of time it takes to vote per race. And getting more candidates to run is an explicit goal of the Ranked-Choice voting lobby."
-- "There is simply no reason to put voters through that only to wind up with a result they don't fully understand."
+- "There is simply no reason to put voters through that, only to wind up with a result they don't fully understand."
 
 I cannot disagree with any of these critiques of IRV, and they are some of the primary reasons I do not consider it a serious candidate for electoral reform.
 
