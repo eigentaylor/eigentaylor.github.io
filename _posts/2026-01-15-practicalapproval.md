@@ -93,7 +93,7 @@ The ranked ballot inherently allows for this type of comparison: when a voter ra
 
 If voters are allowed to rank candidates, then it seems reasonable to expect that the voting method should necessarily take advantage of that information to find a Condorcet winner if one exists. Particularly if the ranked method is being pushed with the promise of "majority rule".
 
-The problem is that IRV does not satisfy the Condorcet criterion. This has occurred in real-world elections, such as the 2009 mayoral election in Burlington, Vermont and the 2022 Alaska U.S. House special election. Not to mention, with ballot exhaustion, the winner might not even be ranked on a majority of ballots. The promise of majority rule in IRV is literally a blatant lie.
+The problem is that IRV does not satisfy the Condorcet criterion. This has occurred in real-world elections, such as the 2009 mayoral election in Burlington, Vermont and the 2022 Alaska U.S. House special election. In both cases, strong repeal efforts were taken as a result, succeeding in Burlington and barely failing in Alaska. These failures have **real** and **serious** consequences for public trust in the method. Not to mention, with ballot exhaustion, the winner might not even be ranked on a majority of ballots. The promise of majority rule in IRV is literally a blatant lie.
 
 [Other reports](https://illinoislawreview.org/wp-content/uploads/2024/11/Atkinson-Foley-Ganz.pdf) have indicated that this problem would be far worse in bimodal swing states like Arizona and Pennsylvania, where the electorate is deeply divided.
 
