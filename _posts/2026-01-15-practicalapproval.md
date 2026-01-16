@@ -5,8 +5,8 @@ date: 2026-01-15
 description: It's not just mathematically elegant, it's the most practical voting system out there.
 giscus_comments: true
 importance: 1
-tags:
-category:
+tags: voting
+category: polisci
 authors:  
   - name: Taylor F.
     url: ""
