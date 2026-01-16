@@ -135,7 +135,9 @@ However, Condorcet methods are not foolproof. There is not always a Condorcet wi
 
 In that way, Condorcet methods are not perfectly internally consistent. However, they are far more consistent than IRV, which can fail to elect the Condorcet winner even when one clearly exists.
 
-However, the issue with Condorcet methods, is less about potential cycles (non-existence of a Condorcet winner), and more fundamentally that they are often absurdly complex and difficult to understand, audit, and trust. So while they are more internally consistent than IRV, they still have significant practical drawbacks. They still face the complexity issues of ranked ballots, which would be particularly problematic in smaller local elections with low visibility.
+However, the issue with Condorcet methods, is less about potential cycles (non-existence of a Condorcet winner), and more fundamentally that they are often absurdly complex and difficult to understand, audit, and trust. I encourage you to open the [Wikipedia page for the Schulze method](https://en.wikipedia.org/wiki/Schulze_method) and explain it to a layperson or ballot worker. I know someone who tried to explain Schulze to the board members of Mensa, and they could not understand it. If Mensa *leaders* cannot understand it, how can we expect the average voter to trust it?
+
+So while they are more internally consistent than IRV, they still have significant practical drawbacks. They still face the complexity issues of ranked ballots, which would be particularly problematic in smaller local elections with low visibility.
 
 Some [reports have indicated that Copeland](https://www.mathematica.org/api/sitecore/MediaLibrary/ActualDownload?fileId=%7BE313E9D5-F43B-4B45-B774-790034A48935%7D&fileName=Mathematica_VotingSim_FINAL_Sep2025.pdf&fileData=Mathematica_VotingSim_FINAL_Sep2025.pdf%20-%20%7BE313E9D5-F43B-4B45-B774-790034A48935%7D&fileMime=application%2Fpdf){:target="_blank"} (Mathematica) may be the most robust Condorcet method. However, I am partial to Minimax for its simplicity (if you haven't guessed, simplicity and practicality are my main priorities).
 
@@ -143,7 +145,7 @@ Approval voting, on the other hand, is both ultimately simple, ultimately logica
 
 ## Approval Voting and Internal Consistency
 
-No matter what voting system you use, you must destroy some information. But, since it is simply impractical to ask every voter to write an essay about which candidates they like and should win, and aggregate that into a single coherent decision, we must settle for some compromise.
+No matter what voting system you use, you must destroy some information. But, since it is simply impractical to ask every voter to write an essay about which candidates they like and should win, and aggregate that into a single coherent decision, we must settle for some compromise, such as ranking, scoring, or approving candidates.
 
 - Plurality requires the voter to pick only one candidate they (supposedly) want the most, throwing out all other information about alternatives they would have preferred or find acceptable.
 - Ranked methods get the *ordinal* information about preferences, but fail to capture intensity or acceptability. A voter who ranked A > B > C cannot express if they would find B acceptable or not. We can only know that they prefer A more than B, and B more than C.
@@ -152,7 +154,7 @@ No matter what voting system you use, you must destroy some information. But, si
 
 However, I believe that Approval asks the most practical and, arguably, *important* question: who do you actually want to win? This is a question that voters must give an unambiguous answer to for each candidate.
 
-Out of all of these compromises, I think the most easy to justify are Approval voting and ranked methods (which are Condorcet consistent). Both are unambiguous about the expressed preferences of the voter. However, in addition to the objective greater simplicity of Approval over a ranked method, I also argue that Approval voting is *more* internally consistent than ranked methods, while also being "*good enough*".
+Out of all of these compromises, I think the most easy to justify are Approval voting and ranked methods (but only if the way the rankings are aggregated is Condorcet consistent). Both are unambiguous about the expressed preferences of the voter. However, in addition to the objective greater simplicity of Approval over a ranked method, I also argue that Approval voting is *more* internally consistent than ranked methods, while also being "*good enough*".
 
 ### You can't prove it's not Condorcet
 
@@ -167,9 +169,9 @@ While both are internally consistent under these assumptions, it's hard to argue
 
 My favorite example is the 2000 U.S. Presidential election in Florida. George W. Bush got 537 more votes than Al Gore, giving Bush the presidency, despite losing the national popular vote. Out of the approximately 6 million votes cast in Florida, Ralph Nader got about 97,000 votes. As a more left-leaning alternative to Gore, it is reasonable to assume that most of Nader's voters would have preferred Gore over Bush if Nader were not on the ballot. In particular, it's very plausible that *at least* 538 of Nader's voters would have preferred Gore over Bush, which would have swung the election to Gore.
 
-Further, the fact that voters must pick only one candidate forces them into strategic dilemmas. To have an impact on the election, a voter must pick only a viable candidate, even if they find other candidates more acceptable. This means that we can trust their expressed preference far less.
+Further, the fact that voters must pick only one candidate forces them into strategic dilemmas. To have an impact on the election, a voter must pick only a viable candidate, even if they find other candidates more acceptable. This means that we can trust their expressed plurality preference far less.
 
-Approval, on the other hand, arguably captures the fact that if you force voters to say "yes" or "no" to each candidate, they will be able to answer that question. Further, the sincerity incentives under Approval voting are very strong, so we can trust that the expressed preferences are *at least* more accurate, and truer to the voter's actual preferences.
+Approval, on the other hand, arguably captures the fact that if you force voters to say "yes" or "no" to each candidate, they will be able to answer that question. Further, the sincerity incentives under Approval voting are very strong, so we can trust that the expressed preferences are *at least* more accurate, and truer to the voter's actual preferences. We can reasonably assume that the candidates they approve of are at least preferable to those they do not approve of.
 
 I cannot argue against the fact that this is still information destruction. It is not realistic to assume that voters feel equally about all those they approve, and all those they disapprove of. But it still asks, in my view, the most important question: who would you be okay with winning? And it does so in a way that is unambiguous and easy to understand. By simply finding the candidate that the most voters say "yes" to, this makes Approval voting a compromise that attempts to satisfy the most voters, while still being practical.
 
@@ -188,11 +190,11 @@ Thus, if W has more total approvals than C, then W must also have more strict ap
 
 That is, the Approval winner must necessarily have more strict approvals than any other candidate, and thus must win every head-to-head matchup based on the expressed dichotomous preferences of the electorate.
 
-This is inherently more legitimate than the idea that the plurality winner is the candidate who had the most voters choose them than all others. Like, duh. This is because plurality necessarily takes voters hostage (particularly those who hate both major party candidates) and forces them to pick only one candidate (forcing them to be strategic about which candidate they should pick to have any impact on the results), with no way to express acceptability of alternatives. Approval allowed them to express an unambiguous signal of *some* level of acceptability for as many candidates as they wanted to.
+This is inherently more legitimate than the idea that the plurality winner is the candidate who had the most voters choose them than all others. This is because plurality necessarily takes voters hostage (particularly those who hate both major party candidates) and forces them to pick only one candidate (forcing them to be strategic about which candidate they should pick to have any impact on the results), with no way to express acceptability of alternatives. Approval allows them to express an unambiguous signal of *some* level of acceptability for as many candidates as they want to.
 
-That is, Approval voting is necessarily a compromise, yes, but the sacrifice makes the system far *more* practical than any ranked system. While being internally consistent, and reaping most of the benefits of the far more complicated Condorcet methods.
+That is, Approval voting is necessarily a compromise, yes, but the sacrifice makes the system far *more* practical than any ranked system. All the while being internally consistent, and reaping most of the benefits of the far more complicated Condorcet methods.
 
-That's right, Approval is not just 100% Condorcet-consistent with the expressed preferences, but is also surprisingly effective at electing the ranked Condorcet winner in practice!
+You see, Approval is not just 100% Condorcet-consistent with the expressed preferences, but is also surprisingly effective at electing the ranked Condorcet winner in practice!
 
 ## The Condorcet Approximation of Approval Voting
 
@@ -208,9 +210,9 @@ Other research has shown that Approval voting has a high likelihood of electing 
 
 Approval outcomes are inherently indeterminate with respect to the ranked preferences of the electorate. Even if you do not change the rankings that voters have, different approval thresholds can lead to different winners. This means that the Approval winner is not necessarily the "true" Condorcet winner, but rather the candidate who is most acceptable to the electorate given a certain level of acceptability.
 
-If a Condorcet winner fails to be sufficiently acceptable to the electorate, then perhaps they should not win. There is a persistent myth that Approval voting elects the bland, milquetoast, inoffensive, "everyone's second choice" candidate who stands for nothing. This is simply not true. While having broad, widespread acceptability is important, you should also aim to have sufficient intensity of support, to excite that broad base to actually approve you on their ballots. The candidate who can inspire passionate support while also building bridges to a wide audience is the candidate who would ultimately win under Approval voting.
+If a Condorcet winner fails to be sufficiently acceptable to the electorate, then perhaps they should not win. There is a persistent myth that Approval voting elects the bland, milquetoast, inoffensive, "everyone's second choice" candidate who stands for nothing. This is simply not true. While having broad, widespread acceptability is important, you should also aim to have sufficient intensity of support, to excite that broad base to actually approve you on their ballots. The candidate who can inspire passionate support while also building bridges to be appealing to a broad audience is the candidate who would ultimately win under Approval voting.
 
-Like a bland Condorcet winner, a polarizing candidate A who is the Condorcet winner through first choice preferences of 51% of voters, but is found completely unacceptable by the other 49%, may not be the best candidate to elect. Does another candidate B, who is instead found acceptable by 60% of voters, not have a stronger claim to victory?
+Like a bland Condorcet winner, a polarizing Condorcet winner may not be the best candidate to elect either. Suppose candidate A, who is the Condorcet winner through first choice preferences of 51% of voters, but is found completely unacceptable by the other 49%. Does another candidate B, who is instead found acceptable by 60% of voters, not have a stronger claim to victory?
 
 Not necessarily. This is ultimately a philosophical question about what we want from our elections. I cannot claim that B is a provably better candidate than A. However, here is the kicker: nobody can claim that A *is* a Condorcet winner in the first place, because Approval voting does not capture that information.
 
@@ -218,23 +220,23 @@ The internal consistency instead will show that 9% more voters found B acceptabl
 
 One might object that this is a weakness. That we have swindled the true Condorcet winner out of their rightful victory by destroying information. However, this cuts both ways. A Condorcet method might elect a candidate who is truly unacceptable to a large portion of the electorate, just because they are preferred by a slight majority in head-to-head match-ups. Ranked ballots destroy acceptability information, and thus cannot guarantee that the Condorcet winner is actually acceptable to the electorate. We must choose which information to preserve, and which to destroy.
 
-I extend my hand to those who argue for Condorcet methods: even *if* you are not convinced that a non-Condorcet winner, who manages to be more broadly acceptable than the true ranked Condorcet winner, Approval still manages to elect the true Condorcet winner a majority of the time in practice, in return for the benefit of far greater simplicity, practicality, and trustworthiness. That is, I argue Approval voting is "good enough" of a "Condorcet approximation", while being far more practical.
+I extend my hand to those who argue for Condorcet methods: even *if* you are not convinced that a non-Condorcet winner, who manages to be more broadly acceptable than the true ranked Condorcet winner isn't the right candidate to win, Approval still manages to elect the true Condorcet winner a majority of the time in practice, in return for the benefit of far greater simplicity, practicality, and trustworthiness. That is, I argue Approval voting is "good enough" of a "Condorcet approximation", while being far more practical.
 
 A simpler method, more practical, Condorcet-efficient (a strong majority of the time), all the while maintaining that strong internal consistency, guaranteeing the legitimacy just as a Condorcet method would, while being simple enough that voters would *actually be able to TRUST it*. This is the ultimate compromise.
 
 ## Polarization Diffusion
 
-[Cox 1987](https://www.jstor.org/stable/2111325){:target="_blank"} investigated the dynamics of various voting methods in a spatial model of voting. He found that a number of voting methods tend to encourage candidates to adopt more acceptable positions, rather than extreme positions, in order to win elections. He showed that Plurality voting encourages extremist outcomes, while systems like Approval, Borda, and Condorcet methods encourage outcomes where the Candidates converge towards the median voter. That is, both Approval and Condorcet methods will likely diffuse polarization over time, but Approval does this with far greater simplicity and practicality.
-
 I have [spoken before](../approval/){:target="_blank"} on my worry about the intense polarization in modern politics. Approval voting, by encouraging candidates to seek broad acceptability, can help mitigate this polarization. I believe Condorcet methods can do this as well, but again, at the cost of practicality and trustworthiness. And, after the 2020 Presidential election "stop the steal" debacle, transparency and trust in our voting systems and election results is more important than ever.
+
+[Cox 1987](https://www.jstor.org/stable/2111325){:target="_blank"} investigated the dynamics of various voting methods in a spatial model of voting. He found that a number of voting methods tend to encourage candidates to adopt more acceptable positions, rather than extreme positions, in order to win elections. He showed that Plurality voting encourages extremist outcomes, while systems like Approval, Borda, and Condorcet methods encourage outcomes where the Candidates converge towards the median voter. That is, both Approval and Condorcet methods will likely diffuse polarization over time, but Approval does this with far greater simplicity and practicality.
 
 ## Conclusion
 
-Approval voting is not just theoretically elegant, it is also the most practical voting system for real-world use. If you want a simple voting reform, which is easy to implement, and would be trusted by voters, there is literally no better choice than Approval voting.
+Approval voting is not just theoretically elegant, it is also the most practical voting system for real-world use. If you want a simple voting reform, which is easy to implement, and would be trusted by voters, there is literally no simpler choice than Approval voting.
 
 The proposed ranked systems like IRV (which are not Condorcet-consistent) are needlessly complicated, difficult to understand, difficult to count, difficult to audit, difficult to trust, fail to deliver on their promises of majority rule, and fail to be internally consistent.
 
-Condorcet methods, while more internally consistent, are still needlessly complicated and difficult to understand, audit, and trust.
+Condorcet methods, while more internally consistent, are still needlessly complicated and difficult to understand, count, audit, and trust.
 
 Approval voting strikes the perfect balance between simplicity, practicality, internal consistency, and (sufficient in practice) Condorcet-efficiency. It is the best choice for real-world elections.
 
@@ -242,7 +244,7 @@ In summary, Approval voting is
 
 - Practical: The acceptability question is **simple to ask and tally**. Approval voting is logistically practical and far simpler to understand, administrate, and interact with than any ranked system.
 - Internally consistent and robust: Approval voting always respects the expressed preferences of the electorate in a consistent manner, guaranteeing legitimacy of the winner.
-- Empirically Condorcet-efficient: Approval voting elects the ranked Condorcet winner a strong majority of the time in practice, while being far simpler and more practical than any ranked Condorcet method. Further, failures are invisible to the public, preserving trust in the system.
+- Empirically Condorcet-efficient: Approval voting elects the ranked Condorcet winner a strong majority of the time in practice, while being far simpler and more practical than any ranked method. Further, failures are invisible to the public, preserving trust in the system.
 
 The choice is clear.
 
