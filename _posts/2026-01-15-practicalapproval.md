@@ -250,4 +250,4 @@ The choice is clear.
 
 ---
 
-[hyperlink](https://www.youtube.com/watch?v=9bSxOhoM9pE){:target="_blank"}
+[hyperlink](https://youtu.be/vEcwHiTSRWM){:target="_blank"}
