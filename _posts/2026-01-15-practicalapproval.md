@@ -28,13 +28,13 @@ toc:
 
 The focus of this post is less about *why* we need electoral reform, and more about *how* we should go about it in a practical manner. For one unconvinced of the issues with our current system, I recommend reading my [previous post on the theoretical case for Approval voting](../approval/){:target="_blank"}. This post assumes you are already convinced that plurality voting is deeply flawed, and that we need to adopt a better voting system.
 
-I wanted to make this post because of [a video I saw where Jason Snead testified before the Indiana Senate Elections Committee in favor of preemptively banning "Ranked Choice Voting" (AKA Instant Runoff Voting or IRV) in the state of Indiana](https://x.com/jasonwsnead/status/2011085198478266677).
+I wanted to make this post because of [a video I saw, where Jason Snead testified before the Indiana Senate Elections Committee in favor of preemptively banning "Ranked Choice Voting" (AKA Instant Runoff Voting or IRV) in the state of Indiana](https://x.com/jasonwsnead/status/2011085198478266677).
 
 > In IRV (Instant Runoff Voting), voters rank candidates in order of preference. If no candidate wins a majority of first-choice votes, the candidate with the fewest first-choice votes is eliminated, and their votes are redistributed to the remaining candidates based on the voters' next preferences. This process continues until a candidate wins a majority (of active ballots, which rank at least one remaining candidate).
 
 Note: I refuse to call IRV "Ranked Choice Voting", since I believe that creates expectations that are not met by the method.
 
-Now, while I don't necessarily believe this is truly a well-intentioned effort to protect "free and fair elections", the worst part about the video is that basically everything he says about IRV is 100% correct.
+Now, while I don't necessarily believe this is truly a well-intentioned effort to protect "free and fair elections", the worst part about the video is that basically everything he says about IRV is 100% correct. Here are some of his most convincing arguments:
 
 - "Ranked choice voting makes every aspect of the election system more complicated"
 - "It makes it harder to vote"
@@ -44,7 +44,7 @@ Now, while I don't necessarily believe this is truly a well-intentioned effort t
 - "[An example in Oakland California] where mistakes were undetected that ultimately changed the outcome of an election... It took four months and a lawsuit just to see the actual winner in that particular Ranked-Choice voting election."
 - "Because it is so hard to vote, it also takes voters longer"
 - "One MIT study found that with just five people to rank, that adds an additional minute to the amount of time it takes to vote per race. And getting more candidates to run is an explicit goal of the Ranked-Choice voting lobby."
-- "There is simply not reason to put voters through that only to wind up with a result they don't fully understand."
+- "There is simply no reason to put voters through that only to wind up with a result they don't fully understand."
 
 I cannot disagree with any of these critiques of IRV, and they are some of the primary reasons I do not consider it a serious candidate for electoral reform.
 
