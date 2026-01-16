@@ -139,7 +139,7 @@ However, the issue with Condorcet methods, is less about potential cycles (non-e
 
 So while they are more internally consistent than IRV, they still have significant practical drawbacks. They still face the complexity issues of ranked ballots, which would be particularly problematic in smaller local elections with low visibility.
 
-Some [reports have indicated that Copeland](https://www.mathematica.org/api/sitecore/MediaLibrary/ActualDownload?fileId=%7BE313E9D5-F43B-4B45-B774-790034A48935%7D&fileName=Mathematica_VotingSim_FINAL_Sep2025.pdf&fileData=Mathematica_VotingSim_FINAL_Sep2025.pdf%20-%20%7BE313E9D5-F43B-4B45-B774-790034A48935%7D&fileMime=application%2Fpdf){:target="_blank"} (Mathematica) may be the most robust Condorcet method. However, I am partial to Minimax for its simplicity (if you haven't guessed, simplicity and practicality are my main priorities).
+Some [reports have indicated that Copeland (Source: Mathematica)](https://www.mathematica.org/api/sitecore/MediaLibrary/ActualDownload?fileId=%7BE313E9D5-F43B-4B45-B774-790034A48935%7D&fileName=Mathematica_VotingSim_FINAL_Sep2025.pdf&fileData=Mathematica_VotingSim_FINAL_Sep2025.pdf%20-%20%7BE313E9D5-F43B-4B45-B774-790034A48935%7D&fileMime=application%2Fpdf){:target="_blank"} may be the most robust Condorcet method. However, I am partial to Minimax for its simplicity (if you haven't guessed, simplicity and practicality are my main priorities).
 
 Approval voting, on the other hand, is both ultimately simple, ultimately logically practical, and ultimately internally consistent.
 
