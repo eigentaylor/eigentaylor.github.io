@@ -115,7 +115,7 @@ This makes choosing a robust method imperative. The idea that we can pick a "tra
 
 But what does it truly mean to be "internally consistent"? Well, for a ranked method, for which the entire point is to obtain ordinal (ordered) preferences from voters, then the result should reflect those preferences in a consistent manner.
 
-In Alaska 2022, we had a three way race between Mary Peltola (D), Sarah Palin (R), and Nick Begich III (R). We had in round 1:
+In [Alaska 2022](https://ranked.vote/report/us/ak/2022/08/cd), we had a three way race between Mary Peltola (D), Sarah Palin (R), and Nick Begich III (R). We had in round 1:
 
 - Peltola: ~40%
 - Palin: ~32%
@@ -125,7 +125,7 @@ Clearly, approximately 60% of the electorate preferred a Republican over a Democ
 
 However, 52.5% of voters (who expressed a preference) preferred Begich over Peltola. Further, 61.4% of voters (who expressed a preference) preferred Begich over Palin as well. Begich was the Condorcet winner, and yet he lost. The system failed in both delivering majority rule, and also failed to honor the expressed preferences of the electorate.
 
-All of the voters who ranked Palin first and Begich second (56.9% of Palin-first voters) had their preferences completely ignored. They clearly preferred both Republicans over Peltola, but because of the short-sightedness of IRV, their full ordered preferences were not honored or even considered. What is even the point of ranking candidates if your full preferences are not taken into account?
+All of the voters who ranked Palin first and Begich second (56.9% of Palin-first voters) had their preferences completely ignored. They clearly preferred both Republicans over Peltola, but because of the short-sightedness of IRV, their full ordered preferences were not honored or even considered, because the system eliminated the only Republican who could have won the second round, and pushed the weaker Condorcet loser instead. Less than 3,000 Palin-first votes, if changed to Begich-first, would have changed the eliminated candidate to Palin, and elected a Republican instead of a Democrat. What is even the point of ranking candidates if your full preferences are not taken into account?
 
 The potential fix is to employ a Condorcet method instead. There are many to choose from, such as Minimax, Schulze, or Ranked Pairs. All of these methods will always elect the Condorcet winner if one exists, thus satisfying internal consistency (at least when one exists).
 
