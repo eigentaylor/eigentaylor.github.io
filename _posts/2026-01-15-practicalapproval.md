@@ -126,7 +126,7 @@ However, 52.5% of voters (who expressed a preference) preferred Begich over Pelt
 
 All of the voters who ranked Palin first and Begich second (56.9% of Palin-first voters) had their preferences completely ignored. They clearly preferred both Republicans over Peltola, but because of the short-sightedness of IRV, their full ordered preferences were not honored or even considered. What is even the point of ranking candidates if your full preferences are not taken into account?
 
-The potential fix is to use a Condorcet method instead. There are many to choose from, such as Minimax, Schulze, or Ranked Pairs. All of these methods will always elect the Condorcet winner if one exists, thus satisfying internal consistency (at least when one exists).
+The potential fix is to employ a Condorcet method instead. There are many to choose from, such as Minimax, Schulze, or Ranked Pairs. All of these methods will always elect the Condorcet winner if one exists, thus satisfying internal consistency (at least when one exists).
 
 If one is to use a ranked method, the only sane way to do so is to use a Condorcet method. If you *can* fail to elect the Condorcet winner, you *will* erode public trust in the method, and thus the entire reform effort.
 
@@ -168,11 +168,11 @@ My favorite example is the 2000 U.S. Presidential election in Florida. George W.
 
 Further, the fact that voters must pick only one candidate forces them into strategic dilemmas. To have an impact on the election, a voter must pick only a viable candidate, even if they find other candidates more acceptable. This means that we can trust their expressed preference far less.
 
-Approval, on the other hand, arguably captures the fact that if you force voters to say "yes" or "no" to each candidate, they will be able to answer that question. Further, the sincerity incentives under approval voting are very strong, so we can trust that the expressed preferences are *at least* more accurate, and truer to the voter's actual preferences.
+Approval, on the other hand, arguably captures the fact that if you force voters to say "yes" or "no" to each candidate, they will be able to answer that question. Further, the sincerity incentives under Approval voting are very strong, so we can trust that the expressed preferences are *at least* more accurate, and truer to the voter's actual preferences.
 
-I cannot argue against he fact that this is still information destruction. It is not realistic to assume that voters feel equally about all those they approve, and all those they disapprove of. But it still asks, in my view, the most important question: who would you be okay with winning? And it does so in a way that is unambiguous and easy to understand. By simply finding the candidate that the most voters say "yes" to, this makes Approval voting a compromise that attempts to satisfy the most voters, while still being practical.
+I cannot argue against the fact that this is still information destruction. It is not realistic to assume that voters feel equally about all those they approve, and all those they disapprove of. But it still asks, in my view, the most important question: who would you be okay with winning? And it does so in a way that is unambiguous and easy to understand. By simply finding the candidate that the most voters say "yes" to, this makes Approval voting a compromise that attempts to satisfy the most voters, while still being practical.
 
-In my other [post on approval voting](../approval/){:target="_blank"}, I showed that Approval is Condorcet-consistent with the expressed dichotomous preferences of the electorate. The proof is simple:
+In my other [post on Approval voting](../approval/){:target="_blank"}, I showed that Approval is Condorcet-consistent with the expressed dichotomous preferences of the electorate. The proof is simple:
 
 If W is the winner under Approval voting, then for any other candidate C, the difference in their total approvals is exactly equal to the difference of "strict" approvals. This is because if you subtract out all the ballots that approved both W and C, you are left with only the ballots that approved W but not C (strict approvals for W) and the ballots that approved C but not W (strict approvals for C), while preserving the difference in total approvals.
 
@@ -223,9 +223,9 @@ A simpler method, more practical, Condorcet-efficient (a strong majority of the 
 
 ## Polarization Diffusion
 
-[Cox 1987](https://www.jstor.org/stable/2111325){target="_blank"} investigated the dynamics of various voting methods in a spatial model of voting. He found that a number of voting methods tend to encourage candidates to adopt more acceptable positions, rather than extreme positions, in order to win elections. He showed that Plurality voting encourages extremist outcomes, while systems like Approval, Borda, and Condorcet methods encourage outcomes where the Candidates converge towards the median voter. That is, both Approval and Condorcet methods will likely diffuse polarization over time, but Approval does this with far greater simplicity and practicality.
+[Cox 1987](https://www.jstor.org/stable/2111325){:target="_blank"} investigated the dynamics of various voting methods in a spatial model of voting. He found that a number of voting methods tend to encourage candidates to adopt more acceptable positions, rather than extreme positions, in order to win elections. He showed that Plurality voting encourages extremist outcomes, while systems like Approval, Borda, and Condorcet methods encourage outcomes where the Candidates converge towards the median voter. That is, both Approval and Condorcet methods will likely diffuse polarization over time, but Approval does this with far greater simplicity and practicality.
 
-I have [spoken before](../approval/){target="_blank"} on my worry about the intense polarization in modern politics. Approval voting, by encouraging candidates to seek broad acceptability, can help mitigate this polarization. I believe Condorcet methods can do this as well, but again, at the cost of practicality and trustworthiness. And, after the 2020 Presidential election "stop the steal" debacle, transparency and trust in our voting systems and election results is more important than ever.
+I have [spoken before](../approval/){:target="_blank"} on my worry about the intense polarization in modern politics. Approval voting, by encouraging candidates to seek broad acceptability, can help mitigate this polarization. I believe Condorcet methods can do this as well, but again, at the cost of practicality and trustworthiness. And, after the 2020 Presidential election "stop the steal" debacle, transparency and trust in our voting systems and election results is more important than ever.
 
 ## Conclusion
 
