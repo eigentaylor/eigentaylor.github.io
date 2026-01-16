@@ -34,7 +34,7 @@ I wanted to make this post because of [a video I saw, where Jason Snead testifie
 
 Note: I refuse to call IRV "Ranked Choice Voting", since I believe that creates expectations that are not met by the method.
 
-Now, while I don't necessarily believe this is truly a well-intentioned effort to protect "free and fair elections", the worst part about the video is that basically everything he says about IRV is 100% correct. Here are some of his most convincing arguments:
+Now, while I don't necessarily believe this is truly a well-intentioned effort to protect "free and fair elections", the worst part about the video is that basically everything he says about IRV is, in my estimation, entirely correct. Here are some of his most convincing arguments:
 
 - "Ranked choice voting makes every aspect of the election system more complicated"
 - "It makes it harder to vote"
