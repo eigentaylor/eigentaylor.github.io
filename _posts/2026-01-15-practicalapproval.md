@@ -26,7 +26,9 @@ toc:
 
 ## Introduction
 
-The focus of this post is less about *why* we need electoral reform, and more about *how* we should go about it in a practical manner. For one unconvinced of the issues with our current system, I recommend reading this [fantastic post](https://substack.com/@akorky/p-180772748) by Amanda Mahlendorf, or my [previous post on the theoretical case for Approval voting](../approval/){:target="_blank"} (which also explains the incredible mathematical elegance of Approval voting). This post assumes you are already convinced that plurality voting is deeply flawed, and that we need to adopt a better voting system.
+The focus of this post is less about *why* we need electoral reform, and more about *how* we should go about it in a practical manner. This post assumes you are already convinced that plurality voting is deeply flawed, and that we need to adopt a better voting system.
+
+For one unconvinced of the issues with our current system, I recommend reading this [fantastic post](https://substack.com/@akorky/p-180772748) by Amanda Mahlendorf, or my [previous post on the theoretical case for Approval voting](../approval/){:target="_blank"} (which also explains the incredible mathematical elegance of Approval voting). Rather than focus on the theoretical benefits and mathematical properties of Approval voting (as that post did), or the [nuances of strategy](../avstratproof){:target="_blank"}, this post will focus on the practical logistical case for Approval voting, and why it is the most sensible choice for real-world use.
 
 I wanted to make this post because of [a video I saw, where Jason Snead testified before the Indiana Senate Elections Committee in favor of preemptively banning "Ranked Choice Voting" (AKA Instant Runoff Voting or IRV) in the state of Indiana](https://x.com/jasonwsnead/status/2011085198478266677).
 
