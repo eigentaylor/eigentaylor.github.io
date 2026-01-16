@@ -242,7 +242,7 @@ In summary, Approval voting is
 
 - Practical: The acceptability question is **simple to ask and tally**. Approval voting is logistically practical and far simpler to understand, administrate, and interact with than any ranked system.
 - Internally consistent and robust: Approval voting always respects the expressed preferences of the electorate in a consistent manner, guaranteeing legitimacy of the winner.
-- Empirically Condorcet-efficient: Approval voting elects the ranked Condorcet winner a strong majority of the time in practice, while being far simpler and more practical than any ranked Condorcet method.
+- Empirically Condorcet-efficient: Approval voting elects the ranked Condorcet winner a strong majority of the time in practice, while being far simpler and more practical than any ranked Condorcet method. Further, failures are invisible to the public, preserving trust in the system.
 
 The choice is clear.
 
