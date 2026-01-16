@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-the-lichtman-perception-paradox",
+        },{id: "post-a-practical-case-for-approval-voting",
+        
+          title: "A Practical Case for Approval Voting",
+        
+        description: "It&#39;s not just mathematically elegant, it&#39;s the most practical voting system out there.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/practicalapproval/";
+          
+        },
+      },{id: "post-the-lichtman-perception-paradox",
         
           title: "The Lichtman Perception Paradox",
         
