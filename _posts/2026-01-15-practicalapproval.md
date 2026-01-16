@@ -190,15 +190,15 @@ That is, the Approval winner must necessarily have more strict approvals than an
 
 This is inherently more legitimate than the idea that the plurality winner is the candidate who had the most voters choose them than all others. Like, duh. This is because plurality necessarily takes voters hostage (particularly those who hate both major party candidates) and forces them to pick only one candidate (forcing them to be strategic about which candidate they should pick to have any impact on the results), with no way to express acceptability of alternatives. Approval allowed them to express an unambiguous signal of *some* level of acceptability for as many candidates as they wanted to.
 
-That is, Approval voting is a compromise which destroys the least amount of information while still being practical. It is necessarily a compromise, yes, but the sacrifice makes the system far *more* practical than any ranked system, while being internally consistent, and reaping most of the benefits of the far more complicated Condorcet methods.
+That is, Approval voting is necessarily a compromise, yes, but the sacrifice makes the system far *more* practical than any ranked system. While being internally consistent, and reaping most of the benefits of the far more complicated Condorcet methods.
 
 That's right, Approval is not just 100% Condorcet-consistent with the expressed preferences, but is also surprisingly effective at electing the ranked Condorcet winner in practice!
 
 ## The Condorcet Approximation of Approval Voting
 
-In Calculus and Physics, and other STEM fields, there is a concept of a "linear approximation". This is where you take a complicated function, that is difficult to compute or evaluate, and approximate it with a simpler linear function (a straight line) that is far easier to compute and evaluate. This line captures the local information with relatively high fidelity, while being far simpler to work with.
+In Calculus and Physics, and other STEM fields, there is a concept of a "linear approximation". This is where you take a complicated function, that is difficult to compute or evaluate, and approximate it locally, near a location, with a simpler linear function (a straight line) that is far easier to compute and evaluate. This line captures the local information with relatively high fidelity, while being far simpler to work with.
 
-I claim that Approval voting is the "linear approximation" of Condorcet methods. It has high fidelity to the true Condorcet winner, without being beholden to them in every case. In my view, this makes it *better* than Condorcet methods in practice, because I am not convinced that the true Condorcet winner is always the best candidate to elect in every case.
+I claim that Approval voting is the "linear approximation" of Condorcet methods: simpler, easier to work with, far less expensive, more practical, and less opaque. It has high fidelity to the true Condorcet winner, without being beholden to them in every case. In my view, this makes it *better* than Condorcet methods in practice, because I am not convinced that the true Condorcet winner is always the best candidate to elect in every case.
 
 Simulations put the true Condorcet-efficiency of Approval voting at around [67% to 84%](https://www.degruyterbrill.com/document/doi/10.1515/9781400859504.15/html), depending on the model and parameters used. Real world data is limited, but even more positive. With [certain strategic voting models](https://journals.sagepub.com/doi/10.1177/0951629808097286) paradoxically increasing the efficiency.
 
