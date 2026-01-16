@@ -26,7 +26,7 @@ toc:
 
 ## Introduction
 
-The focus of this post is less about *why* we need electoral reform, and more about *how* we should go about it in a practical manner. For one unconvinced of the issues with our current system, I recommend reading my [previous post on the theoretical case for Approval voting](../approval/){:target="_blank"}. This post assumes you are already convinced that plurality voting is deeply flawed, and that we need to adopt a better voting system.
+The focus of this post is less about *why* we need electoral reform, and more about *how* we should go about it in a practical manner. For one unconvinced of the issues with our current system, I recommend reading this [fantastic post](https://substack.com/@akorky/p-180772748) by Amanda Mahlendorf, or my [previous post on the theoretical case for Approval voting](../approval/){:target="_blank"}. This post assumes you are already convinced that plurality voting is deeply flawed, and that we need to adopt a better voting system.
 
 I wanted to make this post because of [a video I saw, where Jason Snead testified before the Indiana Senate Elections Committee in favor of preemptively banning "Ranked Choice Voting" (AKA Instant Runoff Voting or IRV) in the state of Indiana](https://x.com/jasonwsnead/status/2011085198478266677).
 
@@ -175,9 +175,7 @@ Approval, on the other hand, arguably captures the fact that if you force voters
 
 I cannot argue against the fact that this is still information destruction. It is not realistic to assume that voters feel equally about all those they approve, and all those they disapprove of. But it still asks, in my view, the most important question: who would you be okay with winning? And it does so in a way that is unambiguous and easy to understand. By simply finding the candidate that the most voters say "yes" to, this makes Approval voting a compromise that attempts to satisfy the most voters, while still being practical.
 
-In my other [post on Approval voting](../approval/){:target="_blank"}, I showed that Approval is Condorcet-consistent with the expressed dichotomous preferences of the electorate. The proof is simple:
-
-If W is the winner under Approval voting, then for any other candidate C, the difference in their total approvals is exactly equal to the difference of "strict" approvals. This is because if you subtract out all the ballots that approved both W and C, you are left with only the ballots that approved W but not C (strict approvals for W) and the ballots that approved C but not W (strict approvals for C), while preserving the difference in total approvals.
+In my other [post on Approval voting](../approval/){:target="_blank"}, I showed that Approval is Condorcet-consistent with the expressed dichotomous preferences of the electorate. The proof is simple, but best illustrated with an example:
 
 For example, if W got 100 approvals and C got 80 approvals, and there were 70 ballots that approved both W and C, then:
 
