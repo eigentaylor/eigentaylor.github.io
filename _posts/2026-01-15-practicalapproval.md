@@ -209,7 +209,7 @@ I claim that Approval voting is the "linear approximation" of Condorcet methods:
 
 Simulations put the true Condorcet-efficiency of Approval voting at around [67% to 84%](https://www.degruyterbrill.com/document/doi/10.1515/9781400859504.15/html), depending on the model and parameters used. Real world data is limited, but even more positive. With [certain strategic voting models](https://journals.sagepub.com/doi/10.1177/0951629808097286) paradoxically increasing the efficiency (potentially up to 100%).
 
-Brams proves in his 2008 book ["Mathematics and Democracy"](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy) (pg 39) that Approval voting outcomes are "strongly stable" if and only if the winner is a unique Condorcet winner. That is, if the Approval winner is not the Condorcet winner, then there exists some coalition of voters who could change their votes to elect a different winner, while no coalition can topple the actual Condorcet winner (through sincere strategies).
+Brams proves in his 2008 book ["Mathematics and Democracy"](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy) (pg 39) that Approval voting outcomes are "strongly stable" if and only if the winner is a unique Condorcet winner. That is, if the Approval winner is not the Condorcet winner, then there exists some coalition of voters who could change their votes to elect a different winner, while no coalition can topple the actual Condorcet winner (through sincere strategies) in a way that leads to a preferable outcome.
 
 Other research has shown that Approval voting has a high likelihood of electing the Condorcet winner in practice, even if it does not do so every time. I argue this is a feature, not a bug.
 
