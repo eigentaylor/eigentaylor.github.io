@@ -43,6 +43,7 @@ Note: I am not going to call IRV "Ranked Choice Voting", since I believe that cr
 
 Now, while I don't necessarily believe this is truly a well-intentioned effort to protect "free and fair elections", the worst part about the video is that basically everything he says about IRV is, in my estimation, entirely correct. Here are some of his most convincing points:
 
+>
 - "Ranked choice voting makes every aspect of the election system more complicated"
 - "It makes it harder to vote"
 - "It makes it harder to count the votes"
