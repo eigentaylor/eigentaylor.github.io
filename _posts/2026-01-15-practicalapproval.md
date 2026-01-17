@@ -193,6 +193,8 @@ I cannot argue against the fact that this is still information destruction. It i
 
 ### You can't prove it's not Condorcet
 
+When discussing the technical Condorcet consistency of Approval voting, based on assumed dichotomous preferences, someone said it's a "You can't prove it's not Condorcet" method, and I found that hilarious and apt.
+
 In my other [post on Approval voting](../approval/){:target="_blank"}, I showed that Approval is Condorcet-consistent with the expressed dichotomous preferences of the electorate. The proof is simple, but best illustrated with an example:
 
 For example, if W got 100 approvals and C got 80 approvals, and there were 70 ballots that approved both W and C, then:
@@ -222,7 +224,9 @@ Simulations put the true Condorcet-efficiency of Approval voting at around [67% 
 
 Other research has shown that Approval voting has a high likelihood of electing the Condorcet winner in practice, even if it does not do so every time. I argue this is a feature, not a bug.
 
-Brams proves in his 2008 book ["Mathematics and Democracy"](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy) (pg 39) that Approval voting outcomes are "strongly stable" if and only if the winner is a unique Condorcet winner. That is, if the Approval winner is not the Condorcet winner, then there exists some coalition of voters who could coordinate to change their votes and elect a different winner while making all coalition members better off. However, when the winner IS the Condorcet winner, no such improving coalition exists. While coalitions could potentially topple the Condorcet winner through coordination, doing so would require some coalition members to accept a worse outcome, making such coordination unstable. Further, [certain intuitive strategies (Laslier)](https://journals.sagepub.com/doi/10.1177/0951629808097286) paradoxically increase the efficiency (potentially up to 100%), only requiring knowledge of the top two viable candidates.
+Brams proves in his 2008 book ["Mathematics and Democracy"](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy) (pg 39) that Approval voting outcomes are "strongly stable" if and only if the winner is a unique Condorcet winner. That is, if the Approval winner is not the Condorcet winner, then there exists some coalition of voters who could coordinate to change their votes and elect a different winner while making all coalition members better off. However, when the winner IS the Condorcet winner, no such improving coalition exists. While coalitions could potentially topple the Condorcet winner through coordination, doing so would require some coalition members to accept a worse outcome, making such coordination unstable.
+
+Further, [certain intuitive strategies (Laslier)](https://journals.sagepub.com/doi/10.1177/0951629808097286) paradoxically increase the efficiency (potentially up to 100%), only requiring knowledge of the top two viable candidates.
 
 This means that Condorcet winners have a sort of stability and gravitational pull in Approval voting, if they can manage to be acceptable enough to be voted for by the electorate. An inoffensive Condorcet winner, who is such only because they are everyone's second choice, may not be able to win if they cannot inspire sufficient approval.
 
