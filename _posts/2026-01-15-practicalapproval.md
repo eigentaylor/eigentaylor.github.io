@@ -2,7 +2,7 @@
 layout: distill
 title: A Practical Case for Approval Voting
 date: 2026-01-15
-description: It's not just mathematically elegant, it's the most practical solution for solving our voting system problems.
+description: It's not just mathematically elegant, it's the most practical solution for solving our voting system's problems.
 giscus_comments: true
 importance: 1
 tags: voting
@@ -234,7 +234,7 @@ I claim that Approval voting is the "linear approximation" of Condorcet methods:
 
 Simulations put the true Condorcet-efficiency of Approval voting at around [67% to 84%](https://www.degruyterbrill.com/document/doi/10.1515/9781400859504.15/html), depending on the model and parameters used. Real world data is limited because there are not many real-world elections that collect both approval and ranked data. But a [1985 professional society election](https://www.jstor.org/stable/2632078) where both approval and ranking data were collected showed approval voting elected a candidate with substantially broader support than the plurality winner, despite a near-tie in pairwise comparisons.
 
-Critically, the plurality winner C, won by 8 first-place votes over candidate B. However, in inferred pairwise matchups of those who expressed preference, C ended up winning over B by only 1 vote (B > C: 900, C > B: 901), with 27 voters who expressed indifference and thus not counted in the pairwise comparison. However, B won strongly over C in Approval voting with 1,038 for B to 908 for C (based on actual ballots cast; the lead expanded to almost 200 using extrapolated votes). This shows that Approval voting was able to capture the broader acceptability of B over C, despite the near-tie in pairwise matchups. Running this election with a Condorcet method (or plurality) would have produced bedlam, due to the absurdly close pairwise matchup based on incomplete expressed preferences, but Approval instead produced a clear and unambiguous winner with strong legitimacy. I argue this is a feature, not a bug.
+Critically, the plurality winner C, won by 8 first-place votes over candidate B. However, in inferred pairwise matchups of those who expressed preference, C ended up winning over B by only 1 vote (B > C: 900, C > B: 901), with 27 voters who expressed indifference and thus not counted in the pairwise comparison (see the [Appendix](#appendix) for how these numbers were arrived at). However, B won strongly over C in Approval voting with 1,038 for B to 908 for C (based on actual ballots cast; the lead expanded to almost 200 using extrapolated votes). This shows that Approval voting was able to capture the broader acceptability of B over C, despite the near-tie in pairwise matchups. Running this election with a Condorcet method (or plurality) would have produced bedlam, due to the absurdly close pairwise matchup based on incomplete expressed preferences, but Approval instead produced a clear and unambiguous winner with strong legitimacy. I argue this is a feature, not a bug.
 
 Brams proves in his 2008 book ["Mathematics and Democracy"](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy) (pg 39) that Approval voting outcomes are "strongly stable" if and only if the winner is a unique Condorcet winner. That is, if the Approval winner is not the Condorcet winner, then there exists some coalition of voters who could coordinate to change their votes and elect a different winner while making all coalition members better off. However, when the winner IS the Condorcet winner, no such improving coalition exists. While coalitions could potentially topple the Condorcet winner through coordination, doing so would require some coalition members to accept a worse outcome, making such coordination unstable.
 
@@ -321,6 +321,23 @@ Is it realistic to assume that 60% of voters wouldn't rate anyone higher than a 
 2. Guaranteed internal consistency with the expressed preferences of the electorate.
 
 In that the purpose of this post is to argue that Approval voting is uniquely positioned as the simultaneously simplest, most practical, and most robust method we could adopt, I do believe potential for such pathologies, and the lack of the major logistical advantages that Approval voting offers, is disqualifying.
+
+**1985 Professional Society Election Example**: Candidate A was not at all competitive, so we focus on candidates B and C.
+
+In first choice votes, B received 827 votes, and C received 835 votes, a difference of 8 votes in favor of C. When examining the expressed ranked preferences, we find:
+
+- 70 voters ranked ABC (B > C)
+- 66 voters ranked ACB (C > B)
+
+This results in a net difference of 4 votes in favor of B (70 - 66 = 4), which closes the lead of C to just 4 votes (B > C: 897, B > C: 901). However, there were 3 voters who approved both A and B, which naturally implies a preference of B > C. Adding these 3 votes to B's total gives us B > C: 900, C > B: 901. With 27 voters not expressing a preference between B and C (voting only for A, and neglecting to provide any further information), we arrive at a dead heat based on expressed preferences.
+
+It gets even closer if we assume that the 27 voters who only voted for A match the proportion of preferences expressed by the other 139 (70+66+3) voters:
+
+$$ \frac{70+3}{139}\cdot 27 =14.2\approx 14 \text{ voters for }B>C $$
+
+$$ \frac{66}{139}\cdot 27 =12.8\approx 13 \text{ voters for }C>B $$
+
+Gives both B and C 914 votes in the inferred pairwise matchup, a perfect tie. This makes it really difficult to determine who the true Condorcet winner is based on the expressed preferences.
 
 ## References
 
