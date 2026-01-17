@@ -55,6 +55,8 @@ Now, while I don't necessarily believe this is truly a well-intentioned effort t
 - "You're going to see voting times potentially double, on your ballot. That means longer lines at the polling place. That means people dropping off, possibly not even getting the opportunity to vote because they have to drop their kids off at soccer practice, or they simply can't stand that long in line."
 - "There is simply no reason to put voters through that, only to wind up with a result they don't fully understand."
 
+[(Source: Jason Snead, 2026)](https://x.com/jasonwsnead/status/2011085198478266677)
+
 That MIT study also indicated that respondents reported significantly lower levels of overall satisfaction with the voting process and a marked decrease in confidence regarding the integrity of the election results. The data also showed a heightened perception among voters that the the process was "slanted" against their specific political party.
 
 I cannot disagree with any of these critiques of IRV, and they are some of the primary reasons I do not consider it a serious candidate for electoral reform.
