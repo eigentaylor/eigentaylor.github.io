@@ -7,6 +7,8 @@ giscus_comments: true
 importance: 1
 tags: voting
 category: polisci
+featured: true
+related_posts: true
 authors:  
   - name: Taylor F.
     url: ""
@@ -23,6 +25,8 @@ toc:
       - name: You can't prove it's not Condorcet
   - name: The Condorcet Approximation of Approval Voting
   - name: Conclusion
+  - name: Appendix
+  - name: References
 ---
 
 ## Introduction
@@ -135,7 +139,9 @@ Clearly, approximately 60% of the electorate preferred a Republican over a Democ
 
 However, 52.5% of voters (who expressed a preference) preferred Begich over Peltola. Further, 61.4% of voters (who expressed a preference) preferred Begich over Palin as well. Begich was the Condorcet winner, and yet he lost. The system failed in both delivering majority rule, and also failed to honor the expressed preferences of the electorate.
 
-All of the voters who ranked Palin first and Begich second (56.9% of Palin-first voters) had their preferences completely ignored. They clearly preferred both Republicans over Peltola, but because of the short-sightedness of IRV, their full ordered preferences were not honored or even considered. The system eliminated the only Republican who could have won the second round, and pushed the weaker Condorcet loser instead, simply because they had slightly more first-choice votes. Just 2,893 Palin-first votes, less than 3,000, ([4.94% of her first-choice total](https://substack.com/home/post/p-182659376) and 8.67% of the 33,308 voters who ranked Palin-first and Begich-second), if changed to Begich-first, would have changed the eliminated candidate to Palin, and elected a Republican instead of a Democrat. That is 2,893 Republican voters, who would just switch the order of the Republican candidates they like, without changing their ranking of the Democrat, changing the outcome from a Democrat to a Republican. That isn't solving the spoiler problem. That's not honoring majority rule. What is even the point of ranking candidates if your full preferences are not taken into account?
+All of the voters who ranked Palin first and Begich second (56.9% of Palin-first voters) had their preferences completely ignored. They clearly preferred both Republicans over Peltola, but because of the short-sightedness of IRV, their full ordered preferences were not honored or even considered. The system eliminated the only Republican who could have won the second round, and pushed the weaker Condorcet loser instead, simply because they had slightly more first-choice votes.
+
+Just 2,893 Palin-first votes, less than 3,000, ([4.94% of her first-choice total](https://substack.com/home/post/p-182659376) and 8.67% of the 33,308 voters who ranked Palin-first and Begich-second), if changed to Begich-first, would have changed the eliminated candidate to Palin, and elected a Republican instead of a Democrat. That is 2,893 Republican voters, who would just switch the order of the Republican candidates they like, without changing their ranking of the Democrat, changing the outcome from a Democrat to a Republican. That isn't solving the spoiler problem. That's not honoring majority rule. What is even the point of ranking candidates if your full preferences are not taken into account?
 
 The potential fix is to employ a Condorcet method instead. There are many to choose from, such as Minimax, Schulze, or Copeland. All of these methods will always elect the Condorcet winner if one exists, thus satisfying internal consistency (at least when one exists).
 
@@ -145,7 +151,7 @@ However, Condorcet methods are not foolproof. There is not always a Condorcet wi
 
 In that way, Condorcet methods are not perfectly internally consistent. However, they are far more consistent than IRV, which can fail to elect the Condorcet winner even when one clearly exists.
 
-However, the issue with Condorcet methods, is less about potential cycles (non-existence of a Condorcet winner), and more fundamentally that they are often absurdly complex and difficult to understand, audit, and trust. I encourage you to open the [Wikipedia page for the Schulze method](https://en.wikipedia.org/wiki/Schulze_method) and explain it to a layperson or ballot worker. I know someone who tried to explain Schulze to the board members of Mensa, and they rejected it for being too complex. If Mensa *leaders*, certified *geniuses*, find it too complex for practical use, how can we expect the average voter to trust it in a high stakes political election? Simplicity is a prerequisite for trust. We cannot rely on a blackbox, theoretically perfect but opaque method, to run our elections. Not in the era of "stop the steal" and rampant election conspiracy theories.
+However, the issue with Condorcet methods, is less about potential cycles (non-existence of a Condorcet winner), and more fundamentally that they are often absurdly complex and difficult to understand, audit, and trust. I encourage you to open the [Wikipedia page for the Schulze method](https://en.wikipedia.org/wiki/Schulze_method) and explain it to a layperson or ballot worker. I know someone who tried to explain Schulze to the board members of Mensa, and they rejected it for being too complex. If Mensa *leaders*, certified *geniuses*, find it too complex for practical use, how can we expect the average voter to trust it in a high stakes political election? **Simplicity is a prerequisite for trust.** We cannot rely on a blackbox, theoretically perfect but opaque method, to run our elections. Not in the era of "stop the steal" and rampant election conspiracy theories.
 
 So while they are more internally consistent than IRV, they still have significant practical drawbacks. They still face the complexity issues of ranked ballots, which would be particularly problematic in smaller local elections with low visibility.
 
@@ -195,7 +201,7 @@ I cannot argue against the fact that this is still information destruction. It i
 
 When discussing the technical Condorcet consistency of Approval voting, based on assumed dichotomous preferences, someone said it's a "You can't prove it's not Condorcet" method, and I found that hilarious and apt.
 
-In my other [post on Approval voting](../approval/){:target="_blank"}, I showed that Approval is Condorcet-consistent with the expressed dichotomous preferences of the electorate. The proof is simple, but best illustrated with an example:
+In my other [post on Approval voting](../approval/){:target="_blank"}, I showed that Approval is Condorcet-consistent with the expressed dichotomous preferences of the electorate. The proof is simple, but best illustrated with an example (though, a general proof is given in the [Appendix](#appendix)).:
 
 For example, if W got 100 approvals and C got 80 approvals, and there were 70 ballots that approved both W and C, then:
 
@@ -211,6 +217,12 @@ That is, the Approval winner must necessarily have more strict approvals than an
 This is inherently more legitimate than the idea that the plurality winner is the candidate who had the most voters choose them than all others. This is because plurality necessarily takes voters hostage (particularly those who hate both major party candidates) and forces them to pick only one candidate (forcing them to be strategic about which candidate they should pick to have any impact on the results), with no way to express acceptability of alternatives. Approval allows them to express an unambiguous signal of *some* level of acceptability for as many candidates as they want to.
 
 That is, Approval voting is necessarily a compromise, yes, but the sacrifice makes the system far *more* practical than any ranked system. All the while being internally consistent, and reaping most of the benefits of the far more complicated Condorcet methods.
+
+Despite technically being a cardinal SCORE system (where voters rate a candidate out of either 0 or 1), Approval is actually the only SCORE system that IS internally consistent. If you allow just one more tier (like being able to rate candidates 0, 1, or 2), then you lose internal consistency and ballot-based Condorcet consistency. This is something STAR tries to solve with a runoff, but it still fails to be internally (Condorcet) consistent in all cases. See the [Appendix](#appendix) for a detailed proof and example of this for both SCORE and STAR voting.
+
+Now, I don't want to strawman, and argue that absurd pathological examples mean SCORE or STAR would not be fine in practice. But, again, in a "stop the steal" era, I do not believe we can afford to allow any such internal inconsistencies that could erode public trust in the method. Not to mention, these systems would fail to have all the logistical benefits of Approval voting, since they require more complex ballots and counting, and can't be run on existing infrastructure as easily. But, I feel I must at least address these systems, as they are often in the conversation of electoral reform.
+
+In this way, Approval voting is uniquely positioned at the nexus of Ranked and Cardinal methods. It avoids the complexity of ranked methods, by being a cardinal method. But it's also the uniquely internally consistent cardinal method through its simplicity. Simplicity begets internal consistency. And, while it does achieve simplicity through reduced expressiveness, it still manages to capture the most important information about voter preferences: acceptability, while also being ultimately practical.
 
 You see, Approval is not just 100% Condorcet-consistent with the expressed preferences, but is also surprisingly effective at electing the ranked Condorcet winner in practice!
 
@@ -273,6 +285,42 @@ In summary, Approval voting is
 The choice is clear.
 
 ---
+
+## Appendix
+
+The post is over, but here I wish to include some mathematical proofs and examples for some of the claims made in this post, for interested readers.
+
+**Approval Condorcet Consistency Proof**: Suppose candidate W is the Approval winner, and candidate C is any other candidate. If $$\gamma$$ is the number of ballots that approve both W and C, and $$x_W$$ and $$x_C$$ are the total approvals for W and C respectively, then $$x_W - \gamma$$ is the number of strict approvals for W (ballots that approve W but not C), and $$x_C - \gamma$$ is the number of strict approvals for C (ballots that approve C but not W).
+
+The difference in strict approvals is:
+
+$$(x_W - \gamma) - (x_C - \gamma) = x_W - x_C$$
+
+Therefore, if W has more total approvals than C ($$x_W > x_C$$), then W must also have more strict approvals than C. Thus, W wins the head-to-head matchup against C based on the expressed dichotomous preferences of the electorate. Since this holds for any candidate C, W is the Condorcet winner based on the expressed dichotomous preferences.
+
+**Score internal inconsistency example**: Suppose we have two candidates, A and B, and 101 voters, and assume that we are using a SCORE voting system with more than 2 levels. If there were only two levels, this would be Approval voting which is consistent, as proven above. Without loss of generality, let's assume we have just three levels. The following example works regardless of how many levels there are. If the 101 voters have the following scores:
+
+- 51 voters scored candidate A as 1, and candidate B as 0.
+- 50 voters scored candidate A as 0, and candidate B as 2.
+  
+Candidate A would lose with 51 points to B's 100 points, despite being preferred over B by a majority of voters. To avoid this, A voters might strategically score A as 2 instead of 1, and now it's just Approval voting again. A SCORE system with more than two levels is actually just Approval voting, but voters can give fractional approvals.
+
+This is something STAR voting tries to solve by adding a runoff at the end, but doesn't fix (while also adding complexity).
+
+**STAR internal inconsistency example**: STAR voting uses a score ballot (0-5), but then has a runoff between the top two scoring candidates, where each ballot counts as one vote for whichever of the two runoff candidates was scored higher.
+Take this example:
+
+- 30 voters score A:2, B:1, C:0
+- 20 voters score A:0, B:2, C:5
+
+In total, A has 60 points, B has 70 points, and C has 100 points. So C and B go to the runoff, and B wins the runoff 30 to 20. But A was preferred over B and C by a majority of voters. This is a particularly nefarious example, since not only did the Condorcet winner not win, but the candidate with the highest total score didn't win either. Both losing candidates have a valid claim to victory.
+
+Is it realistic to assume that 60% of voters wouldn't rate anyone higher than a 2/5? I would never claim such a thing. The purpose of this example is that by allowing voters to be *more* expressive than just "approve" (1) or "disapprove" (0), we lose both:
+
+1. Simplicity and the ability to run on existing infrastructure
+2. Guaranteed internal consistency with the expressed preferences of the electorate.
+
+In that the purpose of this post is to argue that Approval voting is uniquely positioned as the simultaneously simplest, most practical, and most robust method we could adopt, I do believe potential for such pathologies, and the lack of the major logistical advantages that Approval voting offers, is disqualifying.
 
 ## References
 
