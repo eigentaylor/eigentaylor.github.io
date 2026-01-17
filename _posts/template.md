@@ -7,6 +7,8 @@ giscus_comments: true
 importance: 3
 tags:
 category:
+featured: false
+related_posts: true
 authors:  
   - name: Taylor F.
     url: ""
