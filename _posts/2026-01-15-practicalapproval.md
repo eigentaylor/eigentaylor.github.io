@@ -16,6 +16,7 @@ toc:
   - name: Introduction
   - name: The Logistical Case for Approval Voting
   - name: The Condorcet Criterion
+  - name: The Information Problem
   - name: Internal Consistency
   - name: Approval Voting and Internal Consistency
     subsections:
@@ -152,9 +153,9 @@ Some [reports have indicated that Copeland (Source: Mathematica)](https://www.ma
 
 Approval voting, on the other hand, is both ultimately simple, ultimately logically practical, and ultimately internally consistent.
 
-## Approval Voting and Internal Consistency
+## The Information Problem
 
-No matter what voting system you use, you must destroy some information. But, since it is simply impractical to ask every voter to write an essay about which candidates they like and should win, and aggregate that into a single coherent decision, we must settle for some compromise, such as ranking, scoring, or approving candidates.
+No matter what voting system you use, you must destroy some information. But, since it is simply impractical to ask every voter to write an essay about which candidates they like and should win, and aggregate that into a single coherent decision, we must settle for some compromise, such as ranking, scoring, or approving candidates. Remember, we are taking potentially millions of ballots and trying to aggregate them into a single winner. This is inherently lossy.
 
 Every system has its trade-offs, and destroys some information about voter preferences. On one hand, we want to maximize expressiveness of what the voter can express, but we also need to balance that with practicality. In that end, we have to decide which information is most important to preserve, and what information we are willing to destroy.
 
@@ -165,9 +166,11 @@ Every system has its trade-offs, and destroys some information about voter prefe
 
 I believe that Approval asks the most practical and, arguably, *important* question: who do you actually want to win? This is a question that voters must give an unambiguous answer to for each candidate.
 
-Out of all of these compromises, I think the most easy to justify are Approval voting and ranked methods (but only if the way the rankings are aggregated is Condorcet consistent). Both are unambiguous about the expressed preferences of the voter. However, in addition to the objective greater simplicity of Approval over a ranked method, I also argue that Approval voting is *more* internally consistent than ranked methods, while also being "*good enough*".
+Out of all of these compromises, I think the most easy to justify are Approval voting and ranked methods (but only if the way the rankings are aggregated is Condorcet consistent). Both are unambiguous about the expressed preferences of the voter.
 
-### You can't prove it's not Condorcet
+However, in addition to the objective greater simplicity of Approval over a ranked Condorcet method, Approval voting maintains the internal consistency of a Condorcet method, while also being "*good enough*".
+
+## Approval Voting and Internal Consistency
 
 Both Approval voting and plurality voting, if the ballots are taken to be perfectly accurate expressions of voter preferences, are necessarily internally consistent.
 
@@ -176,17 +179,19 @@ Both Approval voting and plurality voting, if the ballots are taken to be perfec
 
 In this way, both systems reduce the true preferences of all voters into simpler worlds where they always select the best candidate.
 
-While both are internally consistent under these assumptions, it's hard to argue that the assumption for plurality voting--the simpler world it induces--is not far less reasonable or realistic than that of Approval voting. Voters can naturally like more than one alternative, and it's unreasonable to assume that they find literally all but one candidate completely unacceptable.
+While both are internally consistent under these assumptions, it's hard to deny that the simpler world plurality pretends we live in is far less reasonable or realistic than that of Approval voting. Voters can naturally like more than one alternative, and it's unreasonable to assume that they find literally all but one candidate completely unacceptable.
 
 Further, the fact that voters must pick only one candidate forces them into strategic dilemmas. To have an impact on the election, a voter must pick only a viable candidate, even if they find other candidates more acceptable. This means that we can trust their expressed plurality preference far less.
 
 My favorite example is the 2000 U.S. Presidential election in Florida. George W. Bush got 537 more votes than Al Gore, giving Bush the presidency, despite losing the national popular vote. Out of the approximately 6 million votes cast in Florida, Ralph Nader got about 97,000 votes. As a more left-leaning alternative to Gore, it is reasonable to assume that most of Nader's voters would have preferred Gore over Bush if Nader were not on the ballot. In particular, it's very plausible that *at least* 538 of Nader's voters would have preferred Gore over Bush, which would have swung the election to Gore. All such voters chose sincerity, voting for the candidate they most preferred, and it gave them their least preferred outcome.
 
-Under Approval voting, those Nader voters could have approved both Nader and Gore, expressing their sincere preferences while still contributing to the main contest between Gore and Bush. Not only is this a solution to the spoiler problem, but it also gives voters a powerful way to express their honest and sincere preferences without fear of "wasting" their vote.
+Under Approval voting, those Nader voters could have approved both Nader and Gore, expressing their sincere preferences while still contributing to the main contest between Gore and Bush. Not only is this a solution to the spoiler problem, but it also gives voters a powerful way to express their honest and sincere preferences without fear of "wasting" or "splitting" their vote.
 
-Approval, on the other hand, arguably captures the fact that if you force voters to say "yes" or "no" to each candidate, they will be able to answer that question. Further, the sincerity incentives under Approval voting are very strong, so we can trust that the expressed preferences are *at least* more accurate, and truer to the voter's actual preferences. We can reasonably assume that the candidates they approve of are at least preferable to those they do not approve of.
+Approval, on the other hand, arguably captures the fact that if you ask voters if they consent to be governed by a candidate, they will be able to answer that question. Further, the sincerity incentives under Approval voting are very strong, so we can trust that the expressed preferences are *at least* more accurate, and truer to the voter's actual preferences. We can reasonably assume that the candidates they approve of are at least preferable to those they do not approve of. This is a compromise between a lossy plurality world, and an ideal ranked world.
 
-I cannot argue against the fact that this is still information destruction. It is not realistic to assume that voters feel equally about all those they approve, and all those they disapprove of. But it still asks, in my view, the most important question: who would you be okay with winning? And it does so in a way that is unambiguous and easy to understand. By simply finding the candidate that the most voters say "yes" to, this makes Approval voting a compromise that attempts to satisfy the most voters, while still being practical.
+I cannot argue against the fact that this is still information destruction. It is not realistic to assume that voters feel equally about all those they approve, and equally dislike all those they disapprove of. But it still asks, in my view, the most important question: who would you be okay with winning? Who do you consent to govern you? And it does so in a way that is unambiguous and easy to understand. By simply finding the candidate that the most voters say "yes" to, this makes Approval voting a compromise that attempts to satisfy the most voters, while still being practical.
+
+### You can't prove it's not Condorcet
 
 In my other [post on Approval voting](../approval/){:target="_blank"}, I showed that Approval is Condorcet-consistent with the expressed dichotomous preferences of the electorate. The proof is simple, but best illustrated with an example:
 
@@ -195,7 +200,7 @@ For example, if W got 100 approvals and C got 80 approvals, and there were 70 ba
 - W's strict approvals = 100 - 70 = 30
 - C's strict approvals = 80 - 70 = 10
 - Difference in total approvals = 100 - 80 = 20
-- Difference in strict approvals = 30 - 10 = 20
+- Difference in strict approvals = 30 - 10 = 20. It's exactly the same!
 
 Thus, if W has more total approvals than C, then W must also have more strict approvals than C.
 
