@@ -220,7 +220,7 @@ In Calculus and Physics, and other STEM fields, there is a concept of a "linear 
 
 I claim that Approval voting is the "linear approximation" of Condorcet methods: simpler, easier to work with, far less expensive, more practical, and less opaque. It has high fidelity to the true Condorcet winner, without being beholden to them in every case. In my view, this makes it *better* than Condorcet methods in practice, because I am not convinced that the true Condorcet winner is always the best candidate to elect in every case.
 
-Simulations put the true Condorcet-efficiency of Approval voting at around [67% to 84%](https://www.degruyterbrill.com/document/doi/10.1515/9781400859504.15/html), depending on the model and parameters used. Real world data is limited, but even more positive.
+Simulations put the true Condorcet-efficiency of Approval voting at around [67% to 84%](https://www.degruyterbrill.com/document/doi/10.1515/9781400859504.15/html), depending on the model and parameters used. Real world data is limited because there are not many real-world elections that collect both approval and ranked data. But a [1985 professional society election](https://www.jstor.org/stable/2632078) where both approval and ranking data were collected showed approval voting elected a candidate with substantially broader support than the plurality winner, despite a near-tie in pairwise comparisons.
 
 Other research has shown that Approval voting has a high likelihood of electing the Condorcet winner in practice, even if it does not do so every time. I argue this is a feature, not a bug.
 
@@ -283,6 +283,8 @@ Brams, S. J. (2008). *Mathematics and Democracy: Designing Better Voting and Fai
 Brams, S. J., & Fishburn, P. C. (2007). Approval Voting in Scientific and Engineering Societies. In *Approval Voting* (pp. 211-228). Boston, MA: Birkhäuser Boston. [https://www.degruyterbrill.com/document/doi/10.1515/9781400859504.15/html](https://www.degruyterbrill.com/document/doi/10.1515/9781400859504.15/html){:target="_blank"}
 
 Cox, G. W. (1987). The Uncovered Set and the Core. *American Journal of Political Science*, 31(2), 408-422. [https://www.jstor.org/stable/2111325](https://www.jstor.org/stable/2111325){:target="_blank"}
+
+Fishburn, P. C., & Little, J. D. C. (1988). An experiment in approval voting. Management Science, 34(5), 555-568. [https://www.jstor.org/stable/2632078](https://www.jstor.org/stable/2632078){:target="_blank"}
 
 Laslier, J. F. (2009). The Leader Rule: A Model of Strategic Approval Voting in a Large Electorate. *Journal of Theoretical Politics*, 21(1), 113-136. [https://journals.sagepub.com/doi/10.1177/0951629808097286](https://journals.sagepub.com/doi/10.1177/0951629808097286){:target="_blank"}
 
