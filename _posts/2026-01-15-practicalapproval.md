@@ -60,7 +60,7 @@ Note: On the other hand, a ranked method for proportional representation (like S
 
 Not to mention that the primary ranked method being pushed is IRV, which is a terrible voting system that has many well-documented flaws, and I would never recommend it for any serious use case (don't worry, we will get there). I plan to go into the serious problems with IRV in another post in the future.
 
-In contrast, the Approval voting method has *none* of these problems. It is simple to understand, simple to vote with, simple to count, simple to audit, and simple to trust. And the benefits for adopting Approval voting are *massive*.
+In contrast, the Approval voting method has *none* of these problems. It is simple to understand, simple to vote with, simple to count, simple to audit, and simple to trust. And the benefits for adopting Approval voting are substantial.
 
 In your mind, I want you to picture a ranked voting system like a complex curve, which is hard to work with, and Approval voting as a simple straight line that approximates that curve. Approval is essentially the engineering solution: the simple and practical, but still robust straight line "approximation" of the most robust ranked methods, while avoiding all the complexity.
 
@@ -135,7 +135,7 @@ Clearly, approximately 60% of the electorate preferred a Republican over a Democ
 
 However, 52.5% of voters (who expressed a preference) preferred Begich over Peltola. Further, 61.4% of voters (who expressed a preference) preferred Begich over Palin as well. Begich was the Condorcet winner, and yet he lost. The system failed in both delivering majority rule, and also failed to honor the expressed preferences of the electorate.
 
-All of the voters who ranked Palin first and Begich second (56.9% of Palin-first voters) had their preferences completely ignored. They clearly preferred both Republicans over Peltola, but because of the short-sightedness of IRV, their full ordered preferences were not honored or even considered. The system eliminated the only Republican who could have won the second round, and pushed the weaker Condorcet loser instead simply because they had about . Less than 3,000 Palin-first votes ([4.94% of her first-choice total](https://substack.com/home/post/p-182659376)), if changed to Begich-first, would have changed the eliminated candidate to Palin, and elected a Republican instead of a Democrat. What is even the point of ranking candidates if your full preferences are not taken into account?
+All of the voters who ranked Palin first and Begich second (56.9% of Palin-first voters) had their preferences completely ignored. They clearly preferred both Republicans over Peltola, but because of the short-sightedness of IRV, their full ordered preferences were not honored or even considered. The system eliminated the only Republican who could have won the second round, and pushed the weaker Condorcet loser instead, simply because they had slightly more first-choice votes. Less than 3,000 Palin-first votes ([4.94% of her first-choice total](https://substack.com/home/post/p-182659376)), if changed to Begich-first, would have changed the eliminated candidate to Palin, and elected a Republican instead of a Democrat. What is even the point of ranking candidates if your full preferences are not taken into account?
 
 The potential fix is to employ a Condorcet method instead. There are many to choose from, such as Minimax, Schulze, or Copeland. All of these methods will always elect the Condorcet winner if one exists, thus satisfying internal consistency (at least when one exists).
 
@@ -164,7 +164,7 @@ Every system has its trade-offs, and destroys some information about voter prefe
 - Cardinal methods with more than two possible scores (like Score voting) are ambiguous about what the scores mean. Is a 3/5 candidate "acceptable" or not? Different voters may interpret the scores differently.
 - Approval voting, requires the voter to split the candidates into exactly two tiers: which are "acceptable" (approved) and which are "not acceptable" (not approved). This collapses all the information of their potentially nuanced preferences into a binary choice for each candidate.
 
-I believe that Approval asks the most practical and, arguably, *important* question: who do you actually want to win? This is a question that voters must give an unambiguous answer to for each candidate.
+I believe that Approval asks the most practical and, arguably, *important* question: which candidates would you find acceptable as the winner? Who do you consent to govern you? This is a question that voters must give an unambiguous answer to for each candidate.
 
 Out of all of these compromises, I think the most easy to justify are Approval voting and ranked methods (but only if the way the rankings are aggregated is Condorcet consistent). Both are unambiguous about the expressed preferences of the voter.
 
@@ -218,15 +218,19 @@ In Calculus and Physics, and other STEM fields, there is a concept of a "linear 
 
 I claim that Approval voting is the "linear approximation" of Condorcet methods: simpler, easier to work with, far less expensive, more practical, and less opaque. It has high fidelity to the true Condorcet winner, without being beholden to them in every case. In my view, this makes it *better* than Condorcet methods in practice, because I am not convinced that the true Condorcet winner is always the best candidate to elect in every case.
 
-Simulations put the true Condorcet-efficiency of Approval voting at around [67% to 84%](https://www.degruyterbrill.com/document/doi/10.1515/9781400859504.15/html), depending on the model and parameters used. Real world data is limited, but even more positive. With [certain strategic voting models](https://journals.sagepub.com/doi/10.1177/0951629808097286) paradoxically increasing the efficiency (potentially up to 100%).
-
-Brams proves in his 2008 book ["Mathematics and Democracy"](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy) (pg 39) that Approval voting outcomes are "strongly stable" if and only if the winner is a unique Condorcet winner. That is, if the Approval winner is not the Condorcet winner, then there exists some coalition of voters who could change their votes to elect a different winner, while no coalition can topple the actual Condorcet winner (through sincere strategies) in a way that leads to a preferable outcome.
+Simulations put the true Condorcet-efficiency of Approval voting at around [67% to 84%](https://www.degruyterbrill.com/document/doi/10.1515/9781400859504.15/html), depending on the model and parameters used. Real world data is limited, but even more positive.
 
 Other research has shown that Approval voting has a high likelihood of electing the Condorcet winner in practice, even if it does not do so every time. I argue this is a feature, not a bug.
 
+Brams proves in his 2008 book ["Mathematics and Democracy"](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy) (pg 39) that Approval voting outcomes are "strongly stable" if and only if the winner is a unique Condorcet winner. That is, if the Approval winner is not the Condorcet winner, then there exists some coalition of voters who could coordinate to change their votes and elect a different winner while making all coalition members better off. However, when the winner IS the Condorcet winner, no such improving coalition exists. While coalitions could potentially topple the Condorcet winner through coordination, doing so would require some coalition members to accept a worse outcome, making such coordination unstable. Further, [certain intuitive strategies (Laslier)](https://journals.sagepub.com/doi/10.1177/0951629808097286) paradoxically increase the efficiency (potentially up to 100%), only requiring knowledge of the top two viable candidates.
+
+This means that Condorcet winners have a sort of stability and gravitational pull in Approval voting, if they can manage to be acceptable enough to be voted for by the electorate. An inoffensive Condorcet winner, who is such only because they are everyone's second choice, may not be able to win if they cannot inspire sufficient approval.
+
 Approval outcomes are inherently indeterminate with respect to the ranked preferences of the electorate. Even if you do not change the rankings that voters have, different approval thresholds can lead to different winners. This means that the Approval winner is not necessarily the "true" Condorcet winner, but rather the candidate who is most acceptable to the electorate given a certain level of acceptability.
 
-If a Condorcet winner fails to be sufficiently acceptable to the electorate, then perhaps they should not win. There is a persistent myth that Approval voting elects the bland, milquetoast, inoffensive, "everyone's second choice" candidate who stands for nothing. This is simply not true. While having broad, widespread acceptability is important, you should also aim to have sufficient intensity of support, to excite that broad base to actually approve you on their ballots. The candidate who can inspire passionate support while also building bridges to be appealing to a broad audience is the candidate who would ultimately win under Approval voting.
+If a Condorcet winner fails to be sufficiently acceptable to the electorate, then perhaps they should not win. There is a persistent myth that Approval voting elects the bland, milquetoast, inoffensive, "everyone's second choice" candidate who stands for nothing. This is simply not true. While having broad, widespread acceptability is important, you should also aim to have sufficient intensity of support, to excite that broad base to actually approve you on their ballots. The candidate who can inspire passionate support while also building bridges to be appealing to a broad audience is the candidate who would ultimately win under Approval voting. 
+
+I personally believe Zohran Mamdani is an excellent example of such a candidate, who managed to excite a passionate base of support, while also framing his campaign in terms of affordability, which made him broadly acceptable to a wide range of voters in New York City. Some claim Brad Lander, who was less exciting but not strongly disliked by anyone, would have won the primary under Approval voting, but I disagree. I think Mamdani's ability to excite a passionate base while also being broadly acceptable would have won him the day.
 
 A polarizing Condorcet winner may not be the best candidate to elect either. Suppose candidate A, who is the Condorcet winner through first choice preferences of 51% of voters, but is found completely unacceptable by the other 49%. Does another candidate B, who is instead found acceptable by 60% of voters, not have a stronger claim to victory?
 
@@ -263,6 +267,34 @@ In summary, Approval voting is
 - Empirically Condorcet-efficient: Approval voting elects the ranked Condorcet winner a strong majority of the time in practice, while being far simpler and more practical than any ranked method. Regardless, even when it does not, it still without fail elects the most broadly acceptable candidate, preserving legitimacy of the winner.
 
 The choice is clear.
+
+---
+
+## References
+
+Atkinson, M. L., Foley, E. B., & Ganz, S. M. (2024). *The Center Squeeze in Instant Runoff Voting: Simulations of the 2024 Presidential Election in Swing States*. Illinois Law Review. [https://illinoislawreview.org/wp-content/uploads/2024/11/Atkinson-Foley-Ganz.pdf](https://illinoislawreview.org/wp-content/uploads/2024/11/Atkinson-Foley-Ganz.pdf){:target="_blank"}
+
+Brams, S. J. (2008). *Mathematics and Democracy: Designing Better Voting and Fair-Division Procedures*. Princeton University Press. [https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy){:target="_blank"}
+
+Brams, S. J., & Fishburn, P. C. (2007). Approval Voting in Scientific and Engineering Societies. In *Approval Voting* (pp. 211-228). Boston, MA: Birkhäuser Boston. [https://www.degruyterbrill.com/document/doi/10.1515/9781400859504.15/html](https://www.degruyterbrill.com/document/doi/10.1515/9781400859504.15/html){:target="_blank"}
+
+Cox, G. W. (1987). The Uncovered Set and the Core. *American Journal of Political Science*, 31(2), 408-422. [https://www.jstor.org/stable/2111325](https://www.jstor.org/stable/2111325){:target="_blank"}
+
+Laslier, J. F. (2009). The Leader Rule: A Model of Strategic Approval Voting in a Large Electorate. *Journal of Theoretical Politics*, 21(1), 113-136. [https://journals.sagepub.com/doi/10.1177/0951629808097286](https://journals.sagepub.com/doi/10.1177/0951629808097286){:target="_blank"}
+
+Mahlendorf, A. (2024). The Case for Electoral Reform. Substack. [https://substack.com/@akorky/p-180772748](https://substack.com/@akorky/p-180772748){:target="_blank"}
+
+Mathematica Policy Research. (2025). *Voting System Simulations*. [https://www.mathematica.org/api/sitecore/MediaLibrary/ActualDownload?fileId=%7BE313E9D5-F43B-4B45-B774-790034A48935%7D&fileName=Mathematica_VotingSim_FINAL_Sep2025.pdf](https://www.mathematica.org/api/sitecore/MediaLibrary/ActualDownload?fileId=%7BE313E9D5-F43B-4B45-B774-790034A48935%7D&fileName=Mathematica_VotingSim_FINAL_Sep2025.pdf&fileData=Mathematica_VotingSim_FINAL_Sep2025.pdf%20-%20%7BE313E9D5-F43B-4B45-B774-790034A48935%7D&fileMime=application%2Fpdf){:target="_blank"}
+
+MIT Election Data and Science Lab. (2023). *The Effect of Ranked Choice Voting in Maine*. [https://electionlab.mit.edu/articles/effect-ranked-choice-voting-maine](https://electionlab.mit.edu/articles/effect-ranked-choice-voting-maine){:target="_blank"}
+
+Ranked.Vote. (2022). *Alaska 2022 U.S. House Special Election Results*. [https://ranked.vote/report/us/ak/2022/08/cd](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"}
+
+Ranked.Vote. (2021). *Minneapolis Ward 2 Council Member Election Results*. [https://ranked.vote/report/us/mn/2021/11/ward-2](https://ranked.vote/report/us/mn/2021/11/ward-2){:target="_blank"}
+
+Snead, J. (2025). Testimony Before Indiana Senate Elections Committee on Ranked Choice Voting. [Video]. Twitter/X. [https://x.com/jasonwsnead/status/2011085198478266677](https://x.com/jasonwsnead/status/2011085198478266677){:target="_blank"}
+
+Wikipedia Contributors. (2025). *Schulze method*. Wikipedia. [https://en.wikipedia.org/wiki/Schulze_method](https://en.wikipedia.org/wiki/Schulze_method){:target="_blank"}
 
 ---
 
