@@ -44,7 +44,7 @@ Now, while I don't necessarily believe this is truly a well-intentioned effort t
 - "It makes it harder to count the votes"
 - "It makes it harder to audit the elections"
 - "It makes it harder for voters to have confidence in the results"
-- "[An example in Oakland California] where mistakes were undetected that ultimately changed the outcome of an election... It took four months and a lawsuit just to see the actual winner in that particular Ranked-Choice voting election."
+- "[[An example in Oakland California](https://oaklandside.org/2023/01/05/recount-for-real-county-supervisor-calls-for-an-independent-recount-of-oaklands-ranked-choice-elections/)] where mistakes were undetected that ultimately changed the outcome of an election... It took four months and a lawsuit just to see the actual winner in that particular Ranked-Choice voting election."
 - "Because it is so hard to vote, it also takes voters longer"
 - "[One MIT study](https://electionlab.mit.edu/articles/effect-ranked-choice-voting-maine) found that with just five people to rank, that adds an additional minute to the amount of time it takes to vote per race. And getting more candidates to run is an explicit goal of the Ranked-Choice voting lobby."
 - "You're going to see voting times potentially double, on your ballot. That means longer lines at the polling place. That means people dropping off, possibly not even getting the opportunity to vote because they have to drop their kids off at soccer practice, or they simply can't stand that long in line."
@@ -70,7 +70,7 @@ In your mind, I want you to picture a ranked voting system like a complex curve,
 
 It really is that simple.
 
-In addition to its many theoretical benefits (which I have covered in [previous posts](../approval/){:target="_blank"}), Approval voting is *objectively* the most practical voting system for real-world use.
+In addition to its *many* theoretical benefits (which I have covered in [previous posts](../approval/){:target="_blank"}), Approval voting is *objectively* the most practical voting system for real-world use.
 
 1. Ballots require minimal changes. Mere wording changes are sufficient to convert a plurality ballot into an Approval ballot. Instead of requiring voters to vote for only one, and throwing out the ballot if they vote for more than one, we simply change the wording to allow voters to vote for as many candidates as they like. Making it basically impossible to spoil or screw up filling out a ballot. Ranked ballots, on the other hand are a huge hassle to design, print, and explain to voters, and are much more prone to voter error.
 2. It works on existing voting machines. Since Approval ballots are functionally identical to plurality ballots in terms of how they are marked, existing voting machines can be used, and only minor software changes are needed to change the counting logic. The cost of infrastructure to accommodate a ranked ballot is significant and expensive, often requiring entirely new voting machines to be purchased.
@@ -276,21 +276,25 @@ The choice is clear.
 
 ## References
 
-Atkinson, M. L., Foley, E. B., & Ganz, S. M. (2024). *The Center Squeeze in Instant Runoff Voting: Simulations of the 2024 Presidential Election in Swing States*. Illinois Law Review. [https://illinoislawreview.org/wp-content/uploads/2024/11/Atkinson-Foley-Ganz.pdf](https://illinoislawreview.org/wp-content/uploads/2024/11/Atkinson-Foley-Ganz.pdf){:target="_blank"}
+Atkinson, M. L., Foley, E. B., & Ganz, S. M. (2024). *Beyond the Spoiler Effect: Can Ranked-Choice Voting Solve the Problem of Political Polarization*. Illinois Law Review. [https://illinoislawreview.org/wp-content/uploads/2024/11/Atkinson-Foley-Ganz.pdf](https://illinoislawreview.org/wp-content/uploads/2024/11/Atkinson-Foley-Ganz.pdf){:target="_blank"}
+
+BondGraham, D. (2023). *Recount for real? County supervisor calls for an independent recount of Oakland’s ranked-choice elections*. [https://oaklandside.org/2023/01/05/recount-for-real-county-supervisor-calls-for-an-independent-recount-of-oaklands-ranked-choice-elections/](https://oaklandside.org/2023/01/05/recount-for-real-county-supervisor-calls-for-an-independent-recount-of-oaklands-ranked-choice-elections/){:target="_blank"}
 
 Brams, S. J. (2008). *Mathematics and Democracy: Designing Better Voting and Fair-Division Procedures*. Princeton University Press. [https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy){:target="_blank"}
 
-Brams, S. J., & Fishburn, P. C. (2007). Approval Voting in Scientific and Engineering Societies. In *Approval Voting* (pp. 211-228). Boston, MA: Birkhäuser Boston. [https://www.degruyterbrill.com/document/doi/10.1515/9781400859504.15/html](https://www.degruyterbrill.com/document/doi/10.1515/9781400859504.15/html){:target="_blank"}
+Cox, G. W. (1987). Electoral Equilibrium under Alternative Voting Institutions. American Journal of Political Science, 31(1), 82–108. [https://doi.org/10.2307/2111325](https://doi.org/10.2307/2111325){:target="_blank"}
 
-Cox, G. W. (1987). The Uncovered Set and the Core. *American Journal of Political Science*, 31(2), 408-422. [https://www.jstor.org/stable/2111325](https://www.jstor.org/stable/2111325){:target="_blank"}
-
-Fishburn, P. C., & Little, J. D. C. (1988). An experiment in approval voting. Management Science, 34(5), 555-568. [https://www.jstor.org/stable/2632078](https://www.jstor.org/stable/2632078){:target="_blank"}
+Fishburn, Peter C., and John D. C. Little. “An Experiment in Approval Voting.” Management Science, vol. 34, no. 5, 1988, pp. 555–68. JSTOR, [https://www.jstor.org/stable/2632078](https://www.jstor.org/stable/2632078){:target="_blank"}
 
 Laslier, J. F. (2009). The Leader Rule: A Model of Strategic Approval Voting in a Large Electorate. *Journal of Theoretical Politics*, 21(1), 113-136. [https://journals.sagepub.com/doi/10.1177/0951629808097286](https://journals.sagepub.com/doi/10.1177/0951629808097286){:target="_blank"}
 
-Mahlendorf, A. (2024). The Case for Electoral Reform. Substack. [https://substack.com/@akorky/p-180772748](https://substack.com/@akorky/p-180772748){:target="_blank"}
+Mahlendorf, A. (2025). Why Some Voters Seek Alternatives to Plurality Voting. Substack. [https://substack.com/@akorky/p-180772748](https://substack.com/@akorky/p-180772748){:target="_blank"}
 
-Mathematica Policy Research. (2025). *Voting System Simulations*. [https://www.mathematica.org/api/sitecore/MediaLibrary/ActualDownload?fileId=%7BE313E9D5-F43B-4B45-B774-790034A48935%7D&fileName=Mathematica_VotingSim_FINAL_Sep2025.pdf](https://www.mathematica.org/api/sitecore/MediaLibrary/ActualDownload?fileId=%7BE313E9D5-F43B-4B45-B774-790034A48935%7D&fileName=Mathematica_VotingSim_FINAL_Sep2025.pdf&fileData=Mathematica_VotingSim_FINAL_Sep2025.pdf%20-%20%7BE313E9D5-F43B-4B45-B774-790034A48935%7D&fileMime=application%2Fpdf){:target="_blank"}
+Mahlendorf, A. (2026). Fear of Vote Splitting. Substack. [https://substack.com/@akorky/p-182659376](https://substack.com/@akorky/p-182659376){:target="_blank"}
+
+Mathematica Policy Research. (2025). *A Head-to-Head Comparison of Alternative Voting Rules*. [https://www.mathematica.org/api/sitecore/MediaLibrary/ActualDownload?fileId=%7BE313E9D5-F43B-4B45-B774-790034A48935%7D&fileName=Mathematica_VotingSim_FINAL_Sep2025.pdf](https://www.mathematica.org/api/sitecore/MediaLibrary/ActualDownload?fileId=%7BE313E9D5-F43B-4B45-B774-790034A48935%7D&fileName=Mathematica_VotingSim_FINAL_Sep2025.pdf&fileData=Mathematica_VotingSim_FINAL_Sep2025.pdf%20-%20%7BE313E9D5-F43B-4B45-B774-790034A48935%7D&fileMime=application%2Fpdf){:target="_blank"}
+
+Merrill, Samuel. "CHAPTER 2. Condorcet Efficiency". Making Multicandidate Elections More Democratic, Princeton: Princeton University Press, 1988, pp. 15-29. [https://doi.org/10.1515/9781400859504.15](https://doi.org/10.1515/9781400859504.15){:target="_blank"}
 
 MIT Election Data and Science Lab. (2023). *The Effect of Ranked Choice Voting in Maine*. [https://electionlab.mit.edu/articles/effect-ranked-choice-voting-maine](https://electionlab.mit.edu/articles/effect-ranked-choice-voting-maine){:target="_blank"}
 
@@ -300,7 +304,7 @@ Ranked.Vote. (2021). *Minneapolis Ward 2 Council Member Election Results*. [http
 
 Ranked.Vote. (2024). *San Francisco Supervisor District 11 Election Results*. [https://ranked.vote/report/us/ca/sfo/2024/11/supervisor-d11](https://ranked.vote/report/us/ca/sfo/2024/11/supervisor-d11){:target="_blank"}
 
-Snead, J. (2025). Testimony Before Indiana Senate Elections Committee on Ranked Choice Voting. [Video]. Twitter/X. [https://x.com/jasonwsnead/status/2011085198478266677](https://x.com/jasonwsnead/status/2011085198478266677){:target="_blank"}
+Snead, J. (2026). Testimony Before Indiana Senate Elections Committee on Ranked Choice Voting. [Video]. Twitter/X. [https://x.com/jasonwsnead/status/2011085198478266677](https://x.com/jasonwsnead/status/2011085198478266677){:target="_blank"}
 
 Wikipeida Contributors. (2025). *2025 New York City mayoral election*. Wikipedia. [https://en.wikipedia.org/wiki/2025_New_York_City_mayoral_election](https://en.wikipedia.org/wiki/2025_New_York_City_mayoral_election){:target="_blank"}
 
