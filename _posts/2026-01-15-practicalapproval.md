@@ -100,6 +100,8 @@ If voters are allowed to rank candidates, then it seems reasonable to expect tha
 
 The problem is that IRV does not satisfy the Condorcet criterion. This has occurred in real-world elections, such as the 2009 mayoral election in Burlington, Vermont and the 2022 Alaska U.S. House special election. In both cases, strong repeal efforts were taken as a result, succeeding in Burlington and barely failing in Alaska. These failures have **real** and **serious** consequences for public trust in the method. Not to mention, with ballot exhaustion, the winner might not even be ranked on a majority of ballots. The promise of majority rule in IRV is literally a blatant lie.
 
+The primary mechanism for which this happens is called the "Center Squeeze". When a moderate and acceptable candidate is sandwiched between two more extreme option, the more extreme options can "squeeze out" the moderate option in first place votes, leading to an early elimination of the moderate candidate, even if that moderate would beat both extremes in head-to-head match-ups.
+
 [Other reports](https://illinoislawreview.org/wp-content/uploads/2024/11/Atkinson-Foley-Ganz.pdf) have indicated that this problem would be far worse in bimodal swing states like Arizona, Wisconsin, and Pennsylvania, where the electorate is deeply divided.
 
 > "While it has been offered as a solution to polarization, our results show that IRV cannot be expected to effectively lead to representative outcomes relative to other election systems. Reformers concerned with polarization should look to other ranked-choice methods. As shown in our simulations, a Condorcet electoral method will tend to elect candidates much closer to the state’s median and mean voter, especially for highly polarized states with bimodal electorates." -(Atkinson, Foley, Ganz 2024)
@@ -108,7 +110,7 @@ Also in the report,
 
 > "As we will see, the center squeeze is generally more severe in the states with more polarized partisanship distributions." -(Atkinson, Foley, Ganz 2024)
 
-IRV may actually *accelerate* polarization, rather than mitigate it, and Condorcet failures may be far more common in the most politically relevant swing states.
+IRV may actually *exacerbate* polarized outcomes, rather than mitigate them, and Condorcet failures may be far more common in the most politically relevant swing states.
 
 It seems only reasonable that *if* we must adopt a ranked method (which I am not convinced that we should), we should at least choose one that satisfies the Condorcet criterion.
 
