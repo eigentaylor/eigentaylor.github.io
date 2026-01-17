@@ -280,7 +280,7 @@ Condorcet methods, while more internally consistent, are still needlessly compli
 Any ranked method necessarily falls into at least one of the following categories:
 
 1. Too complicated for the average voter to understand or verify the results.
-2. A blackbox that is necessarily less trustworthy than our existing dead-simple plurality system (which is already distrusted enough as is).
+2. A conspiracy-breeding blackbox that is necessarily less trustworthy than our existing dead-simple plurality system (which is already distrusted enough as is).
 3. Fails to be internally consistent with the expressed preferences of the electorate (ex. any non-Condorcet method)
 4. Too logistically impractical and expensive to implement and **audit** in large scale elections.
 
