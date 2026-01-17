@@ -277,6 +277,15 @@ The proposed ranked systems like IRV (which are not Condorcet-consistent) are ne
 
 Condorcet methods, while more internally consistent, are still needlessly complicated and difficult to understand, count, audit, and trust.
 
+Any ranked method necessarily falls into at least one of the following categories:
+
+1. Too complicated for the average voter to understand or verify the results.
+2. A blackbox that is necessarily less trustworthy than our existing dead-simple plurality system (which is already distrusted enough as is).
+3. Fails to be internally consistent with the expressed preferences of the electorate (ex. any non-Condorcet method)
+4. Too logistically impractical and expensive to implement and **audit** in large scale elections.
+
+Any one of these reasons is, in my view, disqualifying for real-world use.
+
 Approval voting strikes the perfect balance between simplicity, practicality, internal consistency, and (sufficient in practice) Condorcet-efficiency. It is the best choice for real-world elections.
 
 In summary, Approval voting is
