@@ -251,7 +251,9 @@ Approval outcomes are inherently indeterminate with respect to the ranked prefer
 
 If a Condorcet winner fails to be sufficiently acceptable to the electorate, then perhaps they should not win. There is a persistent myth that Approval voting elects the bland, milquetoast, inoffensive, "everyone's second choice" candidate who stands for nothing. This is simply not true. While having broad, widespread acceptability is important, you should also aim to have sufficient intensity of support, to excite that broad base to actually approve you on their ballots. The candidate who can inspire passionate support while also building bridges to be appealing to a broad audience is the candidate who would ultimately win under Approval voting. 
 
-I personally believe Zohran Mamdani is an excellent example of such a candidate, who managed to excite a passionate base of support, while also framing his campaign in terms of affordability, which made him broadly acceptable to a wide range of voters in New York City. He ended up winning the general election for Mayor in 2025 [with over 50% of the votes](https://en.wikipedia.org/wiki/2025_New_York_City_mayoral_election). Some claim Brad Lander, who was less exciting but not strongly disliked by anyone, would have won the primary under Approval voting, but I disagree. I think Mamdani's ability to excite a passionate base while also being broadly acceptable would have won him the day.
+I personally believe Zohran Mamdani is an excellent example of such a candidate, who managed to excite a passionate base of support, while also framing his campaign in terms of affordability, which made him broadly acceptable to a wide range of voters in New York City. He ended up winning the general election for Mayor in 2025 [with over 50% of the votes](https://en.wikipedia.org/wiki/2025_New_York_City_mayoral_election).
+
+Some claim Brad Lander, who was less exciting but not strongly disliked by anyone, would have won the primary under Approval voting. However, the ballot data makes this a possible but unlikely claim. [Mamdani's unexpected and strong first-round win (43.6%)](https://ranked.vote/report/us/ny/nyc/2025/07/mayor) over Cuomo's 35.9% gives Mamdani a very strong floor of support. In addition, the combination of Mamdani's astounding 69.6% head-to-head win over Lander (in ballots that expressed a preference) and Lander's weak 11.2% first choice votes suggests an insufficient intensity of support for Lander. To close the gap, Lander would have needed to excite enough of Mamdani's supporters to also approve Lander on their ballots, while enough of Lander's own supporters would have had to find Mamdani unacceptable enough to withhold approval. Given the 69.6% to 30.4% asymmetry in pairwise preferences, this outcome is highly unlikely.
 
 A polarizing Condorcet winner may not be the best candidate to elect either. Suppose candidate A, who is the Condorcet winner through first choice preferences of 51% of voters, but is found completely unacceptable by the other 49%. Does another candidate B, who is instead found acceptable by 60% of voters, not have a stronger claim to victory?
 
@@ -377,9 +379,11 @@ Merrill, Samuel. "CHAPTER 2. Condorcet Efficiency". Making Multicandidate Electi
 
 MIT Election Data and Science Lab. (2023). *The Effect of Ranked Choice Voting in Maine*. [https://electionlab.mit.edu/articles/effect-ranked-choice-voting-maine](https://electionlab.mit.edu/articles/effect-ranked-choice-voting-maine){:target="_blank"}
 
-Ranked.Vote. (2022). *Alaska 2022 U.S. House Special Election Results*. [https://ranked.vote/report/us/ak/2022/08/cd](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"}
+Ranked.Vote. (2022). *Alaska At-large Congressional District*. [https://ranked.vote/report/us/ak/2022/08/cd](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"}
 
-Ranked.Vote. (2021). *Minneapolis Ward 2 Council Member Election Results*. [https://ranked.vote/report/us/mn/2021/11/ward-2](https://ranked.vote/report/us/mn/2021/11/ward-2){:target="_blank"}
+Ranked.Vote. (2021). *Minneapolis City Council Ward 2*. [https://ranked.vote/report/us/mn/2021/11/ward-2](https://ranked.vote/report/us/mn/2021/11/ward-2){:target="_blank"}
+
+Ranked.Vote. (2025). *New York City DEM Mayor*. [https://ranked.vote/report/us/ny/nyc/2025/07/mayor](https://ranked.vote/report/us/ny/nyc/2025/07/mayor){:target="_blank"}
 
 Ranked.Vote. (2024). *San Francisco Supervisor District 11 Election Results*. [https://ranked.vote/report/us/ca/sfo/2024/11/supervisor-d11](https://ranked.vote/report/us/ca/sfo/2024/11/supervisor-d11){:target="_blank"}
 
@@ -391,4 +395,4 @@ Wikipedia Contributors. (2025). *Schulze method*. Wikipedia. [https://en.wikiped
 
 ---
 
-[hyperlink](https://youtu.be/vEcwHiTSRWM){:target="_blank"}
+[hyperlink](https://youtu.be/gvBYskU8zkU?si=A0Y_kPpYXt7nUUbW){:target="_blank"}
