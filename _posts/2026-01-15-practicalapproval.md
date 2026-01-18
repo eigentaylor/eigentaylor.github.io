@@ -389,4 +389,4 @@ Wikipedia Contributors. (2025). *Schulze method*. Wikipedia. [https://en.wikiped
 
 ---
 
-[hyperlink](https://youtu.be/vEcwHiTSRWM){:target="_blank"}
+[hyperlink](https://youtu.be/gvBYskU8zkU?si=A0Y_kPpYXt7nUUbW){:target="_blank"}
