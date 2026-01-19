@@ -71,13 +71,15 @@ Not to mention that the primary ranked method being pushed is IRV, which is a te
 
 In contrast, the Approval voting method has *none* of these problems. It is simple to understand, simple to vote with, simple to count, simple to audit, and simple to trust. And the benefits for adopting Approval voting are substantial.
 
-In your mind, I want you to picture a ranked voting system like a complex curve, which is hard to work with, and Approval voting as a simple straight line that approximates that curve. Approval is essentially the engineering solution: the simple and practical, but still robust straight line "approximation" of the most robust ranked methods, while avoiding all the complexity.
+What we will see in this post is that the promises that IRV makes about "majority rule" and "honoring voter's complex granular preferences" are simply not delivered in practice, those issues would likely exacerbate if adopted more widely in the US, and the methods which can guarantee those promises (called Condorcet methods) are far too complex and opaque to be practical or trustworthy for real-world use, particularly in the United States.
+
+In your mind, I want you to picture the ideal ranked voting system like a complex curve, which is hard to work with and, and Approval voting as a simple straight line that approximates that curve. Approval is essentially the engineering solution: the simple and practical, but still robust straight line "approximation" of the most robust ranked methods, while avoiding all the complexity.
 
 ## The Logistical Case for Approval Voting
 
 > Approval voting allows voters to approve of (vote for) as many candidates as they like. Simply put a check mark next to each candidate you approve of. The candidate with the most approval votes wins.
 
-It really is that simple.
+It really is that simple. But that simplicity is its greatest strength.
 
 In addition to its *many* theoretical benefits (which I have covered in [previous posts](../approval/){:target="_blank"}), Approval voting is *objectively* the most practical voting system for real-world use.
 
