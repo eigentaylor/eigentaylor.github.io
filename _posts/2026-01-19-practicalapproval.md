@@ -61,13 +61,13 @@ As a strong proponent of electoral reform, and someone who believes that plurali
 
 That MIT study also indicated that respondents reported significantly lower levels of overall satisfaction with the voting process and a marked decrease in confidence regarding the integrity of the election results. The data also showed a heightened perception among voters that the the process was "slanted" against their specific political party.
 
-I cannot disagree with any of these critiques of IRV, and they are some of the primary reasons I do not consider it a serious candidate for electoral reform.
+I cannot disagree with any of these critiques of IRV, and they are some of the primary reasons I do not consider it a serious candidate for lasting electoral reform.
 
 The simple fact is that ranked methods for a single-winner election are needlessly complicated, and they introduce a host of problems that make them impractical for real-world use.
 
 Note: On the other hand, a ranked method for proportional representation (like Single Transferable Vote) makes a lot more sense, since a complicated method and ballot is more justified for a more complicated type of election.
 
-Not to mention that the primary ranked method being pushed is IRV, which is a terrible voting system that has many well-documented flaws, and I would never recommend it for any serious use case (don't worry, we will get there). I plan to go into the serious problems with IRV in another post in the future.
+Not to mention that the primary ranked method being pushed is IRV, which is inconsistent and has many well-documented flaws, and I would never recommend it for any serious use case (don't worry, we will get there). I plan to go into the serious problems with IRV in another post in the future.
 
 In contrast, the Approval voting method has *none* of these problems. It is simple to understand, simple to vote with, simple to count, simple to audit, and simple to trust. And the benefits for adopting Approval voting are substantial.
 
@@ -112,7 +112,7 @@ The ranked ballot inherently allows for this type of comparison: when a voter ra
 
 If voters are allowed to rank candidates, then it seems reasonable to expect that the voting method should necessarily take advantage of that information to find a Condorcet winner if one exists. Particularly if the ranked method is being pushed with the promise of "majority rule".
 
-The problem is that IRV does not satisfy the Condorcet criterion. This has occurred in real-world elections, such as the 2009 mayoral election in Burlington, Vermont and the 2022 Alaska U.S. House special election. In both cases, strong repeal efforts were taken as a result, succeeding in Burlington and barely failing in Alaska. These failures have **real** and **serious** consequences for public trust in the method. Not to mention, with ballot exhaustion, the winner might not even be ranked on a majority of ballots. The promise of majority rule in IRV is literally a blatant lie. Take [this IRV election](https://ranked.vote/report/us/ca/sfo/2024/11/supervisor-d11){:target="_blank"} where the winner got only 37.2% of the total ballots cast.
+The problem is that IRV does not satisfy the Condorcet criterion. This has occurred in real-world elections, such as the 2009 mayoral election in Burlington, Vermont and the 2022 Alaska U.S. House special election. In both cases, strong repeal efforts were taken as a result, succeeding in Burlington and barely failing in Alaska. These failures have **real** and **serious** consequences for public trust in the method. Not to mention, with ballot exhaustion, the winner might not even be ranked on a majority of ballots. The promise of majority rule in IRV is at best a misleading claim made from ignorance, and at worst a blatant lie. Take [this IRV election](https://ranked.vote/report/us/ca/sfo/2024/11/supervisor-d11){:target="_blank"} where the winner got only 37.2% of the total ballots cast.
 
 The primary mechanism for which this happens is called the "Center Squeeze". When a moderate and acceptable candidate is sandwiched between two more extreme option, the more extreme options can "squeeze out" the moderate option in first place votes, leading to an early elimination of the moderate candidate, even if that moderate would beat both extremes in head-to-head match-ups.
 
