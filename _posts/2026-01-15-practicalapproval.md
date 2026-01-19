@@ -114,7 +114,7 @@ The problem is that IRV does not satisfy the Condorcet criterion. This has occur
 
 The primary mechanism for which this happens is called the "Center Squeeze". When a moderate and acceptable candidate is sandwiched between two more extreme option, the more extreme options can "squeeze out" the moderate option in first place votes, leading to an early elimination of the moderate candidate, even if that moderate would beat both extremes in head-to-head match-ups.
 
-[Other reports](https://illinoislawreview.org/wp-content/uploads/2024/11/Atkinson-Foley-Ganz.pdf) have indicated that this problem would be far worse in bimodal swing states like Arizona, Wisconsin, and Pennsylvania, where the electorate is deeply divided.
+[Other reports](https://illinoislawreview.org/wp-content/uploads/2024/11/Atkinson-Foley-Ganz.pdf) have indicated that this problem would be far worse in bimodal swing states like Arizona, Nevada, and Georgia, where the electorate is deeply divided. But also in states like South Carolina, Mississippi, and Alabama.
 
 > "While it has been offered as a solution to polarization, our results show that IRV cannot be expected to effectively lead to representative outcomes relative to other election systems. Reformers concerned with polarization should look to other ranked-choice methods. As shown in our simulations, a Condorcet electoral method will tend to elect candidates much closer to the state’s median and mean voter, especially for highly polarized states with bimodal electorates." -(Atkinson, Foley, Ganz 2024)
 
