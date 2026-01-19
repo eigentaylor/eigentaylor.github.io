@@ -57,6 +57,8 @@ Now, while I don't necessarily believe this is truly a well-intentioned effort t
 
 [(Source: Jason Snead, 2026)](https://x.com/jasonwsnead/status/2011085198478266677)
 
+As a strong proponent of electoral reform, and someone who believes that plurality voting is deeply flawed, and a threat to the stability of our democracy, I was not expecting to listen to testimony against reform and realize that it's almost completely on point.
+
 That MIT study also indicated that respondents reported significantly lower levels of overall satisfaction with the voting process and a marked decrease in confidence regarding the integrity of the election results. The data also showed a heightened perception among voters that the the process was "slanted" against their specific political party.
 
 I cannot disagree with any of these critiques of IRV, and they are some of the primary reasons I do not consider it a serious candidate for electoral reform.
@@ -249,7 +251,7 @@ This means that Condorcet winners have a sort of stability and gravitational pul
 
 Approval outcomes are inherently indeterminate with respect to the ranked preferences of the electorate. Even if you do not change the rankings that voters have, different approval thresholds can lead to different winners. This means that the Approval winner is not necessarily the "true" Condorcet winner, but rather the candidate who is most acceptable to the electorate given a certain level of acceptability.
 
-If a Condorcet winner fails to be sufficiently acceptable to the electorate, then perhaps they should not win. There is a persistent myth that Approval voting elects the bland, milquetoast, inoffensive, "everyone's second choice" candidate who stands for nothing. This is simply not true. While having broad, widespread acceptability is important, you should also aim to have sufficient intensity of support, to excite that broad base to actually approve you on their ballots. The candidate who can inspire passionate support while also building bridges to be appealing to a broad audience is the candidate who would ultimately win under Approval voting. 
+If a Condorcet winner fails to be sufficiently acceptable to the electorate, then perhaps they should not win. There is a persistent myth that Approval voting elects the bland, milquetoast, inoffensive, beige wall, "everyone's second choice" candidate who stands for nothing. This is simply not true. While having broad, widespread acceptability is important, you should also aim to have sufficient intensity of support, to excite that broad base to actually approve you on their ballots. The candidate who can inspire passionate support while also building bridges to be appealing to a broad audience is the candidate who would ultimately win under Approval voting.
 
 I personally believe Zohran Mamdani is an excellent example of such a candidate, who managed to excite a passionate base of support, while also framing his campaign in terms of affordability, which made him broadly acceptable to a wide range of voters in New York City. He ended up winning the general election for Mayor in 2025 [with over 50% of the votes](https://en.wikipedia.org/wiki/2025_New_York_City_mayoral_election).
 
