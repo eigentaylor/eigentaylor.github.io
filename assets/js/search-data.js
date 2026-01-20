@@ -27,7 +27,7 @@ ninja.data = [{
         
           title: "A Practical Case for Approval Voting",
         
-        description: "It&#39;s not just mathematically elegant, it&#39;s the most practical solution for solving our voting system&#39;s problems.",
+        description: "It&#39;s not just mathematically elegant, it&#39;s the most practical solution for our electoral problems.",
         section: "Posts",
         handler: () => {
           
