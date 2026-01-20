@@ -20,6 +20,8 @@ toc:
   - name: The Condorcet Criterion
   - name: The Information Problem
   - name: Internal Consistency
+    subsections:
+      - name: The Alaska Failure
   - name: Approval Voting and Internal Consistency
     subsections:
       - name: You can't prove it's not Condorcet
@@ -112,11 +114,22 @@ The ranked ballot inherently allows for this type of comparison: when a voter ra
 
 If voters are allowed to rank candidates, then it seems reasonable to expect that the voting method should necessarily take advantage of that information to find a Condorcet winner if one exists. Particularly if the ranked method is being pushed with the promise of "majority rule".
 
-The problem is that IRV does not satisfy the Condorcet criterion. This has occurred in real-world elections, such as the 2009 mayoral election in Burlington, Vermont and the 2022 Alaska U.S. House special election. In both cases, strong repeal efforts were taken as a result, succeeding in Burlington and barely failing in Alaska. These failures have **real** and **serious** consequences for public trust in the method. Not to mention, with ballot exhaustion, the winner might not even be ranked on a majority of ballots. The promise of majority rule in IRV is at best a misleading claim made from ignorance, and at worst a blatant lie. Take [this IRV election](https://ranked.vote/report/us/ca/sfo/2024/11/supervisor-d11){:target="_blank"} where the winner got only 37.2% of the total ballots cast.
+The problem is that IRV does not satisfy the Condorcet criterion. This has occurred in real-world elections, such as the 2009 mayoral election in Burlington, Vermont and the 2022 Alaska U.S. House special election (which we will dissect in the [next section](#the-alaska-failure)). In both cases, strong repeal efforts were taken as a result, succeeding in Burlington and barely failing in Alaska. These failures have **real** and **serious** consequences for public trust in the method. And when you fail to elect the Condorcet winner, you necessarily fail to deliver on majority rule.
 
 The primary mechanism for which this happens is called the "Center Squeeze". When a moderate and acceptable candidate is sandwiched between two more extreme option, the more extreme options can "squeeze out" the moderate option in first place votes, leading to an early elimination of the moderate candidate, even if that moderate would beat both extremes in head-to-head match-ups.
 
-[Other reports (Atkinson, Foley, Ganz)](https://illinoislawreview.org/wp-content/uploads/2024/11/Atkinson-Foley-Ganz.pdf) have indicated that this problem would be far worse in bimodal swing states like Arizona, Nevada, and Georgia, where the electorate is deeply divided. But also in states like South Carolina, Mississippi, Alabama, and Delaware. The distance between where the IRV winners and Condorcet winners lie is significantly larger in these states. In the report, Alaska actually appears to be one of the better states (near the middle of the distribution), relatively speaking. If Alaska has already had a Condorcet failure with IRV, then it seems like this may be a sign of what could happen far more frequently if IRV is adopted in more places, rather than an isolated, rare event.
+It should also be mentioned that, with ballot exhaustion, the winner might not even be ranked on a majority of ballots. This is the mechanism in which IRV achieves it's so-called "majority". If all candidates a voter ranked are eliminated, their ballot is thrown out and has no say in the rest of the process. The promise of majority rule in IRV is at best a misleading claim made from ignorance, and at worst a blatant lie. Take [this San Francisco IRV election](https://ranked.vote/report/us/ca/sfo/2024/11/supervisor-d11){:target="_blank"} where the winner was only ranked on 37.2% of the total ballots cast. That is not majority rule in any meaningful sense.
+
+Setting aside the fact that being Condorcet-inconsistent means you fail majority rule to begin with, if you believe that IRV actually delivers on its promise of majority rule through eliminations, then we can play that game with Approval as well. You can eliminate candidates with the lowest approval totals, exhausting ballots that do not approve of any remaining candidates, until one candidate has a majority of the remaining active ballots. The difference between this and IRV is that nobody ever gains or loses votes at any point in the process, so the winner always remains the same. The only difference is the percent of active ballots the winner has at any given round. It's a purely artificial majority of the remaining active ballots, just like in IRV. But why stop there? We could just eliminate candidates until only one candidate remains and gets 100% of the vote! Isn't that an even *more* powerful artificial majority?
+
+If you wish to claim to deliver majority rule in any meaningful sense, you must choose one of the following:
+
+1. Force every voter to rank all candidates, so that no ballots are ever exhausted, and the winner will inevitably win with over 50% of the total ballots cast. This exacerbates all the logistical problems with ranked ballots, making them even more impractical.
+2. Decide that voters who did not rank any of the candidates who make it to the final round should not count or have a voice in the outcome. In which case, this "majority" is a completely artificial construct that has no meaningful relation to the total electorate.
+
+In IRV, they made the latter choice: if you did not rank any of the final remaining candidates, your ballot does not count, and the winner can be elected with a minority of the total ballots cast.
+
+It's often claimed that Condorcet failure are rare in IRV elections. Little blips that should be ignored. But [a report by Atkinson, Foley, and Ganz](https://illinoislawreview.org/wp-content/uploads/2024/11/Atkinson-Foley-Ganz.pdf) suggests that this problem would be far worse in bimodal swing states like Arizona, Nevada, and Georgia, where the electorate is deeply divided. But also in states like South Carolina, Mississippi, Alabama, and Delaware. The distance between where the IRV winners and Condorcet winners lie is significantly larger in these states. In the report, Alaska actually appears to be, relatively speaking, one of the better states (near the middle of the distribution). If Alaska has already had a Condorcet failure with IRV, then it seems like this may be a sign of what could happen far more frequently if IRV is adopted in more places, rather than an isolated, rare event.
 
 > "While it has been offered as a solution to polarization, our results show that IRV cannot be expected to effectively lead to representative outcomes relative to other election systems. Reformers concerned with polarization should look to other ranked-choice methods. As shown in our simulations, a Condorcet electoral method will tend to elect candidates much closer to the state’s median and mean voter, especially for highly polarized states with bimodal electorates." -(Atkinson, Foley, Ganz 2024)
 
@@ -126,15 +139,19 @@ Also in the report,
 
 IRV may actually *exacerbate* polarized outcomes, rather than mitigate them, and Condorcet failures may be far more common in the most politically relevant swing states. The simulations done in the report had Condorcet failures in approximately **40% of all elections**.
 
+The honest proposition becomes: "Let voters be more expressive by being able to rank candidates! But we cannot guarantee that there won't be a loser who was preferred to the winner by a majority of voters." That is, the ranked ballot allows for more expressive preferences, but the method does not actually honor those preferences in a consistent manner.
+
 It seems only reasonable that *if* we must adopt a ranked method (which I am not convinced that we should), we should at least choose one that satisfies the Condorcet criterion.
 
 The key reason for this is ***internal consistency***. If a ranked method fails to elect the Condorcet winner, then it both fails to deliver on its promise of majority rule, *and* erodes (if not destroys) public confidence and trust in the method, setting back the electoral reform movement as a whole. If the electorate becomes disillusioned with IRV, are they going to be willing to try another method?
 
-This makes choosing a robust method imperative. The idea that we can pick a "transitional", flawed method like IRV, and then "fix it later" is a dangerous gamble that may backfire spectacularly. If we wish to have trust in our elections and democracy, and have the reform method stick, we **must** have a method that is internally consistent.
+This makes choosing a robust method *imperative*. The idea that we can pick a "transitional", flawed method like IRV, and then "fix it later" is a dangerous gamble that may backfire spectacularly. If we wish to have trust in our elections and democracy, and have the reform method stick, we **must** have a method that is internally consistent.
 
 ## Internal Consistency
 
 But what does it truly mean to be "internally consistent"? Well, for a ranked method, for which the entire point is to obtain ordinal (ordered) preferences from voters, then the result should reflect those preferences in a consistent manner.
+
+### The Alaska Failure
 
 In [Alaska 2022](https://ranked.vote/report/us/ak/2022/08/cd), we had a three way race between Mary Peltola (D), Sarah Palin (R), and Nick Begich III (R). We had in round 1:
 
