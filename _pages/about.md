@@ -32,7 +32,7 @@ $$\exp(x)=\sum_{n=0}^\infty \frac{x^n}{n!}$$
 
 math grad, dork extraordinaire.
 
-i like differential equations and linear algebra.
+i like differential equations and linear algebra. my current obsession is approval voting and electoral systems.
 
 [here are some math posts ive written if you want to look at them i guess](./blog){:target="_blank"}
 
@@ -48,6 +48,11 @@ personal favorites:
 - [Solving systems of first-order ODEs like a baller](./blog/firstordersystemsquick){:target="_blank"}
 - [The Alpha Method (Generalized Exponential Response Formula)](./blog/alphamethod){:target="_blank"}
 
+my posts related to approval voting:
+
+- [A Mathematical Case for Approval Voting](./blog/approval){:target="_blank"}
+- [Is Approval Voting Strategyproof?](./blog/avstratproof){:target="_blank"}
+- [A Practical Case for Approval Voting](./blog/practicalapproval){:target="_blank"}
 ---
 
 my research stuff:
