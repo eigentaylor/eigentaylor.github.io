@@ -102,6 +102,8 @@ In addition to its *many* theoretical benefits (which I have covered in [previou
 
 If you want a simple reform, that is easy to implement and has massive positive ramifications, there is literally no simpler choice than Approval voting.
 
+The myth that voters don't or wouldn't take advantage of the ability to approve multiple candidates is just that: a myth. In the most [recent approval election in Utah's Senate District 11](https://approval.vote/report/us/ut/senate_district_11/2025/12/utah-senate-district-11){:target="_blank"}, the average approvals per ballot was 1.7 in a field of five candidates. Voters are very willing to approve multiple candidates when given the opportunity, while not being forced to do so.
+
 But to really understand why Approval voting is truly the most practical and robust in practice and in theory, all the while maintaining the benefits of more robust ranked method with minimal complexity, we need to fully understand the problems with ranked methods, like IRV.
 
 The question then becomes: does a ranked method provide enough additional benefit to justify its added complexity and impracticality? Particularly if the method is opaque and difficult to audit, as IRV is. Further, does the method actually deliver on its promise to take into account the more nuanced and expressive preferences that the more complex ballot allows? I argue that IRV fails to do so in a significant way.
@@ -381,6 +383,8 @@ $$ \frac{66}{139}\cdot 27 =12.8\approx 13 \text{ voters for }C>B $$
 This gives both B and C 914 votes in the inferred pairwise matchup, a perfect tie. This makes it really difficult to determine who the true Condorcet winner is based on the expressed preferences.
 
 ## References
+
+approval.vote. (2025). *Utah Senate District 11*. [https://approval.vote/report/us/ut/2024/11/senate-district-11](https://approval.vote/report/us/ut/2024/11/senate-district-11){:target="_blank"}
 
 Atkinson, M. L., Foley, E. B., & Ganz, S. M. (2024). *Beyond the Spoiler Effect: Can Ranked-Choice Voting Solve the Problem of Political Polarization*. Illinois Law Review. [https://illinoislawreview.org/wp-content/uploads/2024/11/Atkinson-Foley-Ganz.pdf](https://illinoislawreview.org/wp-content/uploads/2024/11/Atkinson-Foley-Ganz.pdf){:target="_blank"}
 
