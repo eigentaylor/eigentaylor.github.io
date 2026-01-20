@@ -2,7 +2,7 @@
 layout: distill
 title: A Practical Case for Approval Voting
 date: 2026-01-19
-description: It's not just mathematically elegant, it's the most practical solution for solving our voting system's problems.
+description: It's not just mathematically elegant, it's the most practical solution for our electoral problems.
 giscus_comments: true
 importance: 1
 tags: voting
