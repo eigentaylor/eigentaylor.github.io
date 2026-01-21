@@ -285,7 +285,7 @@ Any ranked method necessarily falls into at least one of the following categorie
 3. Fails to be internally consistent with the expressed preferences of the electorate (ex. any non-Condorcet method)
 4. Too logistically impractical and expensive to implement and efficiently audit in large scale elections.
 
-Any one of these reasons is, in my view, disqualifying for real-world use. And, it appears that people are catching on. In Snead's testimony, he mentions the $100 million dollar effort to put IRV on the ballot in six states in 2024, and all failed by "overwhelming bipartisan margins". Alaska is going to attempt to repeal it again in 2026. If it's repealed, that may signal the death knell for IRV in the United States. And those pushing for Approval voting or STAR voting are going to be saying "We told you this would happen". If IRV fails, we must learn from its mistakes and pick a robust, practical, and trustworthy method next time.
+Any one of these reasons is, in my view, disqualifying for real-world use. And, it appears that people are catching on. In Snead's testimony, he mentions the $100 million dollar effort to put IRV on the ballot in six states in 2024, and all failed by "overwhelming bipartisan margins". [Alaska is going to attempt to repeal it again in 2026](https://ballotpedia.org/Alaska_Repeal_Top-Four_Ranked-Choice_Voting_Initiative_(2026)){:target="_blank"}. If it's repealed, that may signal the death knell for IRV in the United States. And those pushing for Approval voting or STAR voting are going to be saying "We told you this would happen". If IRV fails, we must learn from its mistakes and pick a robust, practical, and trustworthy method next time.
 
 Approval voting strikes the perfect balance between simplicity, practicality, internal consistency, and (sufficient in practice) Condorcet-efficiency. It is the best choice for real-world elections.
 
@@ -360,6 +360,8 @@ This gives both B and C 914 votes in the inferred pairwise matchup, a perfect ti
 approval.vote. (2025). *Utah Senate District 11*. [https://approval.vote/report/us/ut/2024/11/senate-district-11](https://approval.vote/report/us/ut/2024/11/senate-district-11){:target="_blank"}
 
 Atkinson, M. L., Foley, E. B., & Ganz, S. M. (2024). *Beyond the Spoiler Effect: Can Ranked-Choice Voting Solve the Problem of Political Polarization*. Illinois Law Review. [https://illinoislawreview.org/wp-content/uploads/2024/11/Atkinson-Foley-Ganz.pdf](https://illinoislawreview.org/wp-content/uploads/2024/11/Atkinson-Foley-Ganz.pdf){:target="_blank"}
+
+Ballotpedia. (2026). *Alaska Repeal Top-Four Ranked-Choice Voting Initiative (2026)*. [https://ballotpedia.org/Alaska_Repeal_Top-Four_Ranked-Choice_Voting_Initiative_(2026)](https://ballotpedia.org/Alaska_Repeal_Top-Four_Ranked-Choice_Voting_Initiative_(2026)){:target="_blank"}
 
 BondGraham, D. (2023). *Recount for real? County supervisor calls for an independent recount of Oakland’s ranked-choice elections*. [https://oaklandside.org/2023/01/05/recount-for-real-county-supervisor-calls-for-an-independent-recount-of-oaklands-ranked-choice-elections/](https://oaklandside.org/2023/01/05/recount-for-real-county-supervisor-calls-for-an-independent-recount-of-oaklands-ranked-choice-elections/){:target="_blank"}
 
