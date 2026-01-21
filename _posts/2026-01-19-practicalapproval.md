@@ -387,13 +387,9 @@ Ranked.Vote. (2022). *Alaska At-large Congressional District*. [https://ranked.v
 
 Ranked.Vote. (2021). *Minneapolis City Council Ward 2*. [https://ranked.vote/report/us/mn/2021/11/ward-2](https://ranked.vote/report/us/mn/2021/11/ward-2){:target="_blank"}
 
-Ranked.Vote. (2025). *New York City DEM Mayor*. [https://ranked.vote/report/us/ny/nyc/2025/07/mayor](https://ranked.vote/report/us/ny/nyc/2025/07/mayor){:target="_blank"}
-
 Ranked.Vote. (2024). *San Francisco Supervisor District 11 Election Results*. [https://ranked.vote/report/us/ca/sfo/2024/11/supervisor-d11](https://ranked.vote/report/us/ca/sfo/2024/11/supervisor-d11){:target="_blank"}
 
 Snead, J. (2026). Testimony Before Indiana Senate Elections Committee on Ranked Choice Voting. [Video]. Twitter/X. [https://x.com/jasonwsnead/status/2011085198478266677](https://x.com/jasonwsnead/status/2011085198478266677){:target="_blank"}
-
-Wikipedia Contributors. (2025). *2025 New York City mayoral election*. Wikipedia. [https://en.wikipedia.org/wiki/2025_New_York_City_mayoral_election](https://en.wikipedia.org/wiki/2025_New_York_City_mayoral_election){:target="_blank"}
 
 Wikipedia Contributors. (2025). *Schulze method*. Wikipedia. [https://en.wikipedia.org/wiki/Schulze_method](https://en.wikipedia.org/wiki/Schulze_method){:target="_blank"}
 
