@@ -64,10 +64,6 @@
       </d-title>
       {% if page.authors %}
         <d-byline></d-byline>
-        {%- assign read_time = page.content | number_of_words | divided_by: 180 | plus: 1 -%}
-        <div class="post distill" style="grid-column: text; margin-top: -1rem; margin-bottom: 1rem; font-size: 0.875rem; color: rgba(0, 0, 0, 0.6);">
-          <p style="margin: 0;">{{ read_time }} min read</p>
-        </div>
       {% endif %}
 
       <d-article>
