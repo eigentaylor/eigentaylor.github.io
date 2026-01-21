@@ -106,7 +106,9 @@ In [Alaska 2022](https://ranked.vote/report/us/ak/2022/08/cd), we had a three wa
 - Palin: ~31%
 - Begich: ~28%
 
-Clearly, approximately 60% of the electorate preferred a Republican over a Democrat. However, since no candidate had a majority, Begich (the last place candidate) was eliminated, and his votes were transferred to the second choice on those ballots. However, in the end, Peltola maintained her lead and won the election without even a majority of the ballots cast (only 47.5% over Palin's 44.8%, with 7.7% of ballots exhausted).
+Clearly, approximately 60% of the electorate preferred a Republican over a Democrat in their first choice preferences. Highly plausible, given this election was to replace the late Don Young, the longest-serving Republican in House history, who represented Alaska for nearly 49 years. Fun fact: Don Young was elected in his own Special Election in 1973 after Nick Begich Sr. (D) (Nick Begich III's grandfather) disappeared in a plane crash and was declared dead. Sorry, the history is just too good to not mention.
+
+However, since no single candidate had a majority, Begich (the last place candidate) was eliminated, and his votes were transferred to the second choice on those ballots. However, in the end, Peltola maintained her lead and won the election without even a majority of the ballots cast (only 47.5% over Palin's 44.8%, with 7.7% of ballots exhausted).
 
 However, 52.5% of voters who expressed a preference between Peltola and Begich preferred Begich over Peltola (that is, only 41.3% of all ballots cast preferred Peltola to Begich). Further, 61.4% of voters (who expressed a preference) preferred Begich over Palin as well. Begich was the Condorcet winner, and yet he lost. This is not majority rule.
 
