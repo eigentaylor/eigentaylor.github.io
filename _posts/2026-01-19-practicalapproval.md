@@ -17,6 +17,11 @@ authors:
 toc:
   - name: Introduction
   - name: The Logistical Case for Approval Voting
+    subsections:
+      - name: Implementation
+      - name: Voter Experience
+      - name: Administration and Auditing
+      - name: Democratic Quality
   - name: The Condorcet Criterion
     subsections:
       - name: The Alaska Failure
@@ -68,19 +73,39 @@ In your mind, I want you to picture the ideal ranked voting system like a comple
 
 In addition to its *many* theoretical benefits (which I have covered in [previous posts](../approval/){:target="_blank"}), Approval voting is *objectively* the most practical voting system for real-world use.
 
-1. Ballots require minimal changes. Mere wording changes are sufficient to convert a plurality ballot into an Approval ballot. Instead of requiring voters to vote for only one, and throwing out the ballot if they vote for more than one, we simply change the wording to allow voters to vote for as many candidates as they like.
-2. It works on existing voting machines. Since Approval ballots are functionally identical to plurality ballots in terms of how they are marked, existing voting machines can be used, and only minor software changes are needed to change the counting logic. The cost of infrastructure to accommodate a ranked ballot is significant and expensive, often requiring entirely new voting machines to be purchased.
-3. It is simple to understand. Voters simply vote for all the candidates they approve of. Listing all acceptable options from a list is a far simpler and more intuitive task than ranking options in order of preference. Ranked ballots can be confusing, particularly for less-educated voters, and can lead to mistakes and spoiled ballots. An overvote in our current system, where one accidentally bubbles in too many candidates and their ballot is entirely thrown out, is now simply a valid vote. It's essentially impossible to spoil.
-4. It allows for more expressive voting than plurality, and promotes sincerity and reduces the need for strategic voting. "Strategy" boils down to [a simple threshold decision](../avstratproof){:target="_blank"} of "where to draw the line" between acceptable and not acceptable candidates. Voters can simply approve all candidates they find acceptable, without needing to worry about ranking or ordering them. They also need not take advantage of the complexity and still vote for just one candidate if they wish.
-5. It is simple and fast to count. Counting Approval votes is as simple as counting plurality votes. It is also "precinct summable": every precinct can count their own votes and report the totals, and then the overall winner can be determined by simply summing the totals from each precinct. You can actually get the election results *quickly*, using the optimized infrastructure we've been developing and improving for our current plurality elections. This is NOT true for ranked methods like IRV.
-6. It is simple to audit. Since counting is so simple, auditing is also simple. Approval voting elections can be audited using simple hand counts of random samples of ballots, just like plurality elections. The same statistical methods apply with no additional complexity. Ranked methods, on the other hand, are generally much more difficult to audit due to conditional eliminations, vote transfers, or the need to compute all head-to-head matchups.
-7. It is simple to trust. Because the method is so simple and transparent, voters can easily understand how their votes are counted and how the winner is determined. This leads to greater trust in the election results. There is no need to collect all ballots centrally and run a complex blackbox algorithm (which have been shown to have bugs and errors in real-world use, like in [Oakland](https://oaklandside.org/2023/01/05/recount-for-real-county-supervisor-calls-for-an-independent-recount-of-oaklands-ranked-choice-elections/){:target="_blank"}). "Stop the steal" happened in a system as simple and transparent as plurality voting. We cannot afford to make our elections any more opaque or difficult to understand.
-8. It is "internally consistent". We will dive into this in depth later, but in short, Approval voting always respects the expressed preferences given by the ballots in a consistent manner, unlike IRV. For example, Nick Begich III lost the [Alaska 2022 House Special election](#the-alaska-failure) (which we dive deep into later) to Mary Peltola, despite more voters ranking Begich over Peltola than vice versa. Approval voting is entirely consistent.
-9. It reduces negative campaigning and polarization. Since candidates want to be approved by as many voters as possible, they have an incentive to appeal to a broader audience, rather than just firing up a loud minority base. This can lead to more positive campaigning and less polarization.
-10. It encourages more candidates to run, giving voters more diverse options. Since voters can approve of multiple candidates, they can express honest preference to long-shot or niche candidates without fear of "wasting" their vote, by also voting for a front-runner they find acceptable. Adding more candidates does not change the fundamental dynamics of the election, and requires only a binary choice (approve or not approve) for each added candidate for each voter. Thus, it is insensitive to more candidates, vote-splitting, and the spoiler effect, minority candidates can get their full due, rather than being shut out due to vote-splitting and strategic betrayal.
-11. It would elect the strongest candidate broadly acceptable to the most voters, also increasing legitimacy of the winner.
+### Implementation
 
-If you want a simple reform, that is easy to implement and has massive positive ramifications, there is literally no simpler choice than Approval voting.
+The beauty of Approval voting lies in its seamless integration with existing electoral infrastructure. Ballots require only minimal changes: mere wording adjustments convert a plurality ballot into an Approval ballot. Instead of instructing voters to "vote for only one" and invalidating overvotes, we simply allow voters to approve as many candidates as they like. An overvote in our current system (accidentally bubbling in too many candidates, causing the ballot to be thrown out entirely) becomes a valid vote under Approval voting. It's essentially impossible to spoil a ballot.
+
+This simplicity extends to the machinery itself: Approval voting works on existing voting machines. Since Approval ballots are functionally identical to plurality ballots in how they're marked, existing hardware can be repurposed with only minor software changes to the counting logic. In contrast, ranked ballot systems require significant, expensive infrastructure investments, often demanding entirely new (and expensive) voting machines.
+
+If you want simple reform that's easy to implement with massive positive ramifications, there is literally no simpler choice than Approval voting.
+
+### Voter Experience
+
+For voters, Approval voting strikes an ideal balance between simplicity and expressiveness. The system is trivially simple to understand: voters approve all candidates they find acceptable. Listing acceptable options from a set is far more intuitive than ranking preferences, a task that can confuse less-educated voters and lead to mistakes or spoiled ballots.
+
+Yet this simplicity doesn't sacrifice expressiveness. Approval voting allows more expressive voting than plurality while promoting sincerity. Voters can approve all candidates they find acceptable without strategic anguish about "wasting" votes on long-shots. The strategic calculation reduces to [a simple threshold decision](../avstratproof){:target="_blank"}: "where to draw the line" between acceptable and unacceptable candidates. And voters who prefer the traditional approach can still approve just one candidate if they wish. Choosing to approve an additional candidate can never hurt a voter's preferred candidate, at worst preserving an existing outcome.
+
+This design encourages more candidates to run, giving voters more diverse options. Since voters can approve multiple candidates, they can express honest preference for niche or long-shot candidates while also supporting acceptable frontrunners. Adding candidates doesn't fundamentally alter the election dynamics: each new candidate requires only a binary choice (approve or not) from each voter. The system is thus insensitive to vote-splitting and the spoiler effect, allowing minority candidates their full due rather than being shut out by strategic concerns.
+
+### Administration and Auditing
+
+From an administrative perspective, Approval voting is a dream. Counting is simple and fast, essentially identical to counting plurality votes. Crucially, Approval voting is "precinct summable": each precinct counts its own votes and reports totals, then the overall winner emerges from simple summation across precincts. You get election results quickly, leveraging the optimized infrastructure we've developed for plurality elections. This stands in stark contrast to ranked methods like IRV, which require centralized tallying. [In Venezuela](https://havanatimes.org/news/final-report-on-the-stolen-venezuelan-presidential-election/), the absence of officially published precinct results became central to the claim that the Presidential election was stolen.
+
+This simplicity makes auditing straightforward. Approval elections can be audited using simple hand counts of random ballot samples, just like plurality elections. The same statistical methods apply with no additional complexity. Ranked methods, conversely, are far more difficult to audit due to conditional eliminations, vote transfers, or the need to compute all head-to-head matchups.
+
+Perhaps most importantly, Approval voting is simple to trust. The method's transparency allows voters to easily understand how votes are counted and how winners are determined, fostering confidence in results. There's no need to collect all ballots centrally and run a complex black-box algorithm algorithms that have demonstrably failed in real-world use, like in [Oakland](https://oaklandside.org/2023/01/05/recount-for-real-county-supervisor-calls-for-an-independent-recount-of-oaklands-ranked-choice-elections/){:target="_blank"}, where a mistakenly checked box caused counting errors that yielded the wrong winner and took four months and a lawsuit to resolve. "Stop the steal" happened under a system as simple and transparent as plurality voting. We cannot afford to make our elections more opaque or difficult to understand.
+
+### Democratic Quality
+
+Beyond logistics, Approval voting delivers superior democratic outcomes. The system is internally consistent, always respecting expressed preferences in a coherent manner — unlike IRV. For example, Nick Begich III lost the [Alaska 2022 House Special election](#the-alaska-failure) to Mary Peltola despite more voters ranking Begich over Peltola than vice versa. Approval voting avoids such contradictions entirely. We'll dive deep into this concept of internal consistency later.
+
+The incentive structure of Approval voting reduces negative campaigning and polarization. Since candidates want approval from as many voters as possible, they're incentivized to appeal to broader audiences rather than merely firing up loud minority bases. This promotes more positive campaigning and less polarization.
+
+Ultimately, Approval voting elects the strongest candidate broadly acceptable to the most voters, enhancing winner legitimacy. The candidate who wins is one who successfully convinced the largest portion of the electorate that they were acceptable, a more robust mandate than plurality's "most intense plurality support" or IRV's complex elimination dynamics.
+
+---
 
 The myth that voters don't or wouldn't take advantage of the ability to approve multiple candidates is just that: a myth. In the most [recent approval election in Utah's Senate District 11](https://approval.vote/report/us/ut/senate_district_11/2025/12/utah-senate-district-11){:target="_blank"}, the average approvals per ballot was 1.7 in a field of five candidates. We have consistently seen in Fargo and St. Louis that voters are very willing to approve multiple candidates when given the opportunity, while not being forced to do so.
 
@@ -387,6 +412,8 @@ Big Think. (2012). *Could Approval Voting Prevent Electoral Disaster? | Steven B
 BondGraham, D. (2023). *Recount for real? County supervisor calls for an independent recount of Oakland’s ranked-choice elections*. [https://oaklandside.org/2023/01/05/recount-for-real-county-supervisor-calls-for-an-independent-recount-of-oaklands-ranked-choice-elections/](https://oaklandside.org/2023/01/05/recount-for-real-county-supervisor-calls-for-an-independent-recount-of-oaklands-ranked-choice-elections/){:target="_blank"}
 
 Brams, S. J. (2008). *Mathematics and Democracy: Designing Better Voting and Fair-Division Procedures*. Princeton University Press. [https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy){:target="_blank"}
+
+Cocuyo, E. (2024). *Final Report on the Stolen Venezuelan Presidential Election*. Havana Times. [https://havanatimes.org/news/final-report-on-the-stolen-venezuelan-presidential-election/](https://havanatimes.org/news/final-report-on-the-stolen-venezuelan-presidential-election/){:target="_blank"}
 
 Cox, G. W. (1987). Electoral Equilibrium under Alternative Voting Institutions. American Journal of Political Science, 31(1), 82–108. [https://doi.org/10.2307/2111325](https://doi.org/10.2307/2111325){:target="_blank"}
 
