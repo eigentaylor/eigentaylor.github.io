@@ -50,9 +50,9 @@ That MIT study also indicated that respondents reported significantly lower leve
 
 As a strong proponent of electoral reform, and someone who believes that plurality voting is deeply flawed, and a threat to the stability of our democracy, I was not expecting to listen to testimony against reform and realize that it's almost completely on point. The conclusion, however, is wrong. It's not that reform is bad, it's that if we want reform, we *must* choose reform which preserves the practicality, simplicity, and transparency of our current system, while fixing its major, structural flaws that cause the rot that permeates through our political and electoral institutions. Approval voting does *exactly* that.
 
-> **Approval voting** allows voters to approve of (vote for) as many candidates as they like. Simply put a check mark next to each candidate you consent to govern you. The candidate with the most votes wins.
+> **Approval voting** allows voters to approve of (vote for) as many candidates as they like. Simply put a check mark next to each candidate you approve of. The candidate with the most votes wins.
 
-In short, it's our current system, but you can cast multiple votes. It really is that simple. But that simplicity is its greatest strength.
+In short, it's our current system, but you can cast multiple votes. It really is that simple. But that simplicity is its greatest strength. It also asks the most important question for a democracy: who do you consent to govern you?
 
 The simple fact is that ranked methods for a single-winner election, rather than a more complicated (but representative) goal like proportional representation, are needlessly complicated, and they introduce a host of problems that make them impractical for real-world use.
 
@@ -110,13 +110,13 @@ Clearly, approximately 60% of the electorate preferred a Republican over a Democ
 
 However, since no single candidate had a majority, Begich (the last place candidate) was eliminated, and his votes were transferred to the second choice on those ballots. However, in the end, Peltola maintained her lead and won the election without even a majority of the ballots cast (only 47.5% over Palin's 44.8%, with 7.7% of ballots exhausted).
 
-However, 52.5% of voters who expressed a preference between Peltola and Begich preferred Begich over Peltola (that is, only 41.3% of all ballots cast preferred Peltola to Begich). Further, 61.4% of voters (who expressed a preference) preferred Begich over Palin as well. Begich was the Condorcet winner, and yet he lost. This is not majority rule.
+However, 52.5% of voters who expressed a preference between Peltola and Begich preferred Begich over Peltola (that is, only 41.3% of all ballots cast preferred Peltola to Begich). Further, 61.4% of voters (who expressed a preference) preferred Begich over Palin as well. Begich was the Condorcet winner, and yet he lost. This is not majority rule. And the system left evidence of its own failure in the results, for all to see.
 
 Palin thus loses head-to-head match-ups against both other candidates (making her a "Condorcet loser"), but the system failed to eliminate her first, allowing her to spoil the race for the other Republican. The system failed in both delivering majority rule, and also failed to honor the expressed preferences of the electorate.
 
 All of the voters who ranked Palin first and Begich second (56.9% of Palin-first voters) had their preferences completely ignored. They clearly preferred both Republicans over Peltola, but because of the short-sightedness of IRV, their full ordered preferences were not honored or even considered. The system eliminated the only Republican who could have won the second round, simply because they had slightly more first-choice votes.
 
-33,308 voters ranked Palin-first and Begich-second. If just 2,893 (8.67%) of those voters ([4.94% of Palin's 58,545 first-choice total](https://substack.com/home/post/p-182659376){:target="_blank"}) changed their vote to Begich-first and Palin-second, it would have changed the eliminated candidate to Palin, and elected a Republican instead of a Democrat. That is, 2,893 Republican voters, could insincerely lie, and switch the order of the Republican candidates they like, without changing their ranking of the Democrat, and change the outcome from a Democrat to a Republican. That isn't solving the spoiler problem. That's not honoring majority rule. What is even the point of ranking candidates if your full preferences are not taken into account?
+33,308 voters ranked Palin-first and Begich-second. If just 2,893 (8.67%) of those voters changed their vote to Begich-first and Palin-second, it would have changed the eliminated candidate to Palin, and elected a Republican instead of a Democrat (see [the Appendix](#appendix) for how we arrive at that number). That is, 2,893 Republican voters, could insincerely lie, and switch the order of the Republican candidates they like, without changing their ranking of the Democrat, and change the outcome from a Democrat to a Republican. That isn't solving the spoiler problem. That's not honoring majority rule. What is even the point of ranking candidates if your full preferences are not taken into account?
 
 In approval, the Palin-first and Begich-second voters could have simply approved both Republicans, expressing their sincere preferences simultaneously and not conditionally. No need to worry that ranking the less electable candidate *first* might eliminate your viable second choice. Since a large majority of the Peltola-first voters preferred Begich to Palin, as well, it's very likely that Begich would have won in Approval voting, earning second-choice support from both Palin-first voters and Peltola-first voters.
 
@@ -126,7 +126,7 @@ It's often claimed that Condorcet failures are rare in IRV elections. Little bli
 
 The primary mechanism by which this happens is called the "Center Squeeze". When a moderate and acceptable candidate (like Begich) is sandwiched between two more extreme option, the more extreme options can "squeeze out" the moderate option in first place votes, leading to an early elimination of the moderate candidate, even if that moderate would beat both extremes in head-to-head match-ups. The system is too short-sighted and does not properly utilize the information it's actually collecting from voters.
 
-It should also be mentioned that, with ballot exhaustion, the winner might not even be ranked on a majority of ballots (as Peltola was not). This is how IRV achieves its so-called "majority". If all candidates a voter ranked are eliminated, their ballot is thrown out and has no say in the rest of the process. The promise of majority rule in IRV is at best a misleading claim made from ignorance, and at worst a blatant lie. Take [this San Francisco IRV election](https://ranked.vote/report/us/ca/sfo/2024/11/supervisor-d11){:target="_blank"} where the winner was only ranked on 37.2% of the total ballots cast. That is not majority rule in any meaningful sense. It is entirely artificial.
+It should also be mentioned that, with ballot exhaustion, the winner might not even be ranked on a majority of ballots (as Peltola was not). This is how IRV achieves its so-called "majority". If all candidates a voter ranked are eliminated, their ballot is thrown out and has no say in the rest of the process. The promise of majority rule in IRV is at best a misleading claim made from ignorance, and at worst a blatant lie. Take [this San Francisco IRV election](https://ranked.vote/report/us/ca/sfo/2024/11/supervisor-d11){:target="_blank"} where the winner won the final round by being ranked higher on just 37.2% of the total ballots cast. That is not majority rule in any meaningful sense. It is entirely artificial.
 
 But [a report by Atkinson, Foley, and Ganz](https://illinoislawreview.org/wp-content/uploads/2024/11/Atkinson-Foley-Ganz.pdf) suggests that this problem would be far worse in bimodal swing states like Arizona, Nevada, and Georgia, where the electorate is deeply divided. But also in states like South Carolina, Mississippi, Alabama, and Delaware. The distance between where the IRV winners and Condorcet winners lie is significantly larger in these states. In the report, Alaska actually appears to be, relatively speaking, one of the better states (near the middle of the distribution). If Alaska has already had a Condorcet failure with IRV, then it seems like this may be a sign of what could happen far more frequently if IRV is adopted in more places, rather than an isolated, rare event.
 
@@ -136,7 +136,7 @@ Also in the report,
 
 > "As we will see, the center squeeze is generally more severe in the states with more polarized partisanship distributions." -(Atkinson, Foley, Ganz 2024)
 
-IRV may actually *exacerbate* polarized outcomes, rather than mitigate them, and Condorcet failures may be far more common in the most politically relevant swing states. The simulations done in the report had Condorcet failures in approximately **40% of all elections across all states**.
+IRV may actually *exacerbate* polarized outcomes, rather than mitigate them, and Condorcet failures may be far more common in the most politically relevant swing states. But it was bad across the board: simulations done in the report had Condorcet failures in approximately **40% of all elections across all states**.
 
 It seems only reasonable that *if* we must adopt a ranked method (which I am not convinced that we should), we should at least choose one that satisfies the Condorcet criterion. Otherwise, the system is not internally consistent, which erodes (if not destroys) public confidence and trust in the method, setting back the electoral reform movement as a whole. If the electorate becomes disillusioned with IRV, are they going to be willing to try another method?
 
@@ -148,7 +148,7 @@ The clear fix if we want to keep ranking candidates is to employ a Condorcet met
 
 If one is to use a ranked method, the only sane way to do so is to use a Condorcet method. If you *can* fail to elect the Condorcet winner, you *will* erode public trust in the method, and thus the entire reform effort.
 
-A running theme of the post is that expressiveness often comes at a cost of consistency and practicality. One issue with Condorcet methods is that the more complex ranked ballot can fail to create a Condorcet winner, due to cycles in preferences (e.g., A beats B, B beats C, and C beats A). We have seen this in real elections: for example, in [Minnesota](https://ranked.vote/report/us/mn/2021/11/ward-2){:target="_blank"}. In such cases, we must have a reasonable and justifiable way to break the cycle.
+A running theme of the post is that expressiveness often comes at a cost of consistency and practicality. One issue with Condorcet methods is that the more complex ranked ballot can fail to create a Condorcet winner, due to cycles in preferences (e.g., A beats B, B beats C, and C beats A). We have seen this in real elections: for example, in [Minnesota](https://ranked.vote/report/us/mn/2021/11/ward-2){:target="_blank"}. In such cases, we must have a reasonable and justifiable way to break the cycle. In that way, we still lose guaranteed internal consistency. In the case of a cycle, no matter who you pick, another candidate was preferred by more voters in a head-to-head matchup.
 
 However, the issue with Condorcet methods, is much less about potential cycles (non-existence of a Condorcet winner), and more fundamentally that they are often absurdly complex and difficult to understand, audit, and trust. Can a rushed voter in line open the [Wikipedia page for the Schulze method](https://en.wikipedia.org/wiki/Schulze_method){:target="_blank"} and understand how their ballot will be counted? Can you explain it simply to your grandmother who worries the election will be stolen? What about to a legislator who needs to be able to write it into law in a way that is understandable and unambiguous?
 
@@ -162,9 +162,9 @@ Condorcet methods like Copeland or Minimax are probably the least difficult to l
 
 A Condorcet method is at least slightly more precinct-summable than IRV, since each precinct can report the head-to-head tallies between each pair of candidates: the ballots with A > B, the ballots with B > A, and ballots indifferent ($$N^2(N-1)$$ numbers for $$N$$ candidates, though just $$N(N-1)+1$$ is needed), and then the overall winner can be determined from those tallies. However, this is still significantly more complex than Approval voting, which only requires $$N$$ numbers to be reported from each precinct. Also losing the benefits of utilizing existing plurality infrastructure for quick counts and audits.
 
-If your goal is to have a practical, simple, and cost-effective reform that can be widely adopted and trusted, then Condorcet methods are still far too complex and expensive to be practical for widespread real-world use in the United States.
+If your goal is to have a practical and cost-effective reform that can be widely adopted and trusted, then Condorcet methods are still far too complex and expensive to be practical for widespread real-world use in the United States.
 
-The primary benefit of a ranked method is that greater expressiveness. The question is if that greater expressiveness actually translate into better outcomes, in a practical sense, that would make it worth the costs? Or is it just theoretical?
+The primary benefit of a ranked method is that greater expressiveness. The only case to be made that a ranked Condorcet method would be better than Approval voting is if that expressiveness is worth the costs by actually delivering superior outcomes. But do they?
 
 ## The Information Problem
 
@@ -172,7 +172,7 @@ No matter what voting system you use, you must destroy some information. But, si
 
 Every system has its trade-offs, and destroys some information about voter preferences. On one hand, we want to maximize expressiveness of what the voter can express, but we also need to balance that with practicality. In that end, we have to decide which information is most important to preserve, and what information we are willing to destroy.
 
-- Plurality requires the voter to pick only one candidate they (supposedly) want the most, throwing out all other information about alternatives they would have preferred or find acceptable.
+- Plurality requires the voter to pick exactly one candidate to provide support, throwing out all other information about alternatives they would have preferred, find acceptable, or even *like*.
 - Ranked methods get the *ordinal* information about preferences, but fail to capture intensity or acceptability. A voter who ranked A > B > C cannot express if they would find B acceptable or not. We can only know that they prefer A more than B, and B more than C.
 - Cardinal methods with more than two possible scores (like Score voting) are ambiguous about what the scores mean. Is a 3/5 candidate "acceptable" or not? Different voters may interpret the scores differently.
 - Approval voting requires the voter to split the candidates into exactly two tiers: which are "acceptable" (approved) and which are "not acceptable" (not approved). This collapses all the information of their potentially nuanced preferences into a binary choice for each candidate.
@@ -181,7 +181,7 @@ I believe that Approval asks the most practical and, arguably, *important* quest
 
 Out of all of these compromises, I think the easiest to justify are Approval voting and ranked methods (but only if the way the rankings are aggregated is Condorcet consistent). Both are unambiguous about the expressed preferences of the voter.
 
-However, in addition to the objective greater simplicity of Approval over a ranked Condorcet method, and the fact that it asks the more important question, Approval voting maintains the internal consistency of a Condorcet method, while also being "*good enough*".
+However, in addition to the objective greater simplicity of Approval over a ranked Condorcet method, and the fact that it asks the more important question, Approval voting maintains greater internal consistency than a Condorcet method, while also being "*good enough*".
 
 ## Approval Voting and Internal Consistency
 
@@ -250,7 +250,7 @@ Approval outcomes are inherently indeterminate with respect to the ranked prefer
 
 If a Condorcet winner fails to be sufficiently acceptable to the electorate, then perhaps they should not win. There is a persistent myth that Approval voting elects the bland, milquetoast, inoffensive, beige wall, "everyone's second choice" candidate who stands for nothing. This is simply not true. While having broad, widespread acceptability is important, you should also aim to have sufficient intensity of support, to excite that broad base to actually approve you on their ballots. The candidate who can inspire passionate support while also building bridges to be appealing to a broad audience is the candidate who would ultimately win under Approval voting. [Steven Brams suggests that Ronald Reagan would likely do very well under Approval voting](https://www.youtube.com/watch?v=BZiS3U7EG0M){:target="_blank"}, and is not at all a bland candidate. I think Eisenhower, FDR, Theodore Roosevelt, and Obama would also do very well in an Approval system by being both exciting and widely appealing.
 
-A polarizing Condorcet winner may not be the best candidate to elect either. Consider the following example, an extreme version of the 1985 TIMS election, where the Condorcet winner has only minority support:
+A polarizing Condorcet winner may not be the best candidate to elect either. Consider the following example, where the Condorcet winner has only minority support:
 
 - 45% of voters rank A > B, and approve both A and B.
 - 35% of voters rank B > A, and approve only B.
@@ -337,6 +337,25 @@ The purpose of this example is that by allowing voters to be *more* expressive t
 2. Guaranteed internal consistency with the expressed preferences of the electorate.
 
 In that the purpose of this post is to argue that Approval voting is uniquely positioned as the simultaneously simplest, most practical, and most robust method we could adopt, I do believe potential for such pathologies, and the lack of the major logistical advantages that Approval voting offers, is disqualifying.
+
+**Alaska Failure Numbers**: In the [2022 Alaska special election for US House](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"}, the candidates had the following first choice votes:
+
+- Mary Peltola (D): 74,840
+- Sarah Palin (R): 58,582
+- Nick Begich (R): 52,798
+
+The difference between Palin and Begich is 5,784 votes. To flip the result, we need
+
+$$ \frac{5,784}{2} + 1 = 2,893 \text{ votes} $$
+
+to go from Palin-first ballots to Begich-first ballots. This would change the totals to:
+
+- Sarah Palin (R): 58,582 - 2,893 = 55,689
+- Nick Begich (R): 52,798 + 2,893 = 55,691
+
+Since 33,308 ballots ranked Palin-first and Begich-second, that makes it just 8.69% of those voters to change the result (and [4.94% of Palin's 58,582 first-choice total](https://substack.com/home/post/p-182659376){:target="_blank"}). Since swapping Palin and Begich at the top of the ballot does not change the head-to-head matchups with Peltola, the final rounds would still be identical: Begich would beat Peltola, but Palin would have lost to Peltola.
+
+This highlights the path-dependence of IRV, due to its Condorcet-inconsistency. These swaps would only weaken the head-to-head of Palin vs Begich. It doesn't change that Palin is a Condorcet loser, or that Begich is the Condorcet winner. Nor does it change the head-to-head results of Peltola against either candidate. At least with a Condorcet method we could just count the head-to-head tallies directly, and Begich's victory would be very clear and obvious, and robust to small changes in voter preferences. Therefore, IRV is less robust than a Condorcet method, while being harder to administer. It's the worst of both worlds.
 
 **1985 Professional Society Election Example**: Candidate A was not at all competitive, so we focus on candidates B and C.
 
