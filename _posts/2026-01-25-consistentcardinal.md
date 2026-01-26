@@ -197,8 +197,10 @@ If a system can point to the data it collected and show that no other candidate,
 
 Approval voting has no such issues. Since there is no spoiler effect, and since the winner always has the highest total approvals, no other candidate can have a legitimate claim to victory. If Jones wins with 600 approvals, and Bob has 550 approvals, then Bob can't claim that he was somehow robbed of victory.
 
-There's no ranked data to pour through, to see if maybe those who approved both actually preferred Bob to Jones. Exactly 50 more voters approved Jones and not Bob than Bob and not Jones. Those 50 voters weren't held hostage, or forced to only vote for one, or discouraged from approving Bob. They had the choice to approve Bob alongside Jones, and they chose not to. Jones can rightly say, "Skill issue, Bob. Try being more acceptable next time."
+There's no ranked data to pour through, to see if maybe those who approved both actually preferred Bob to Jones. Exactly 50 more voters approved Jones and not Bob than Bob and not Jones. Those 50 voters weren't held hostage, or forced to only vote for one, or discouraged from approving Bob. They had the choice to approve Bob alongside Jones, they had the pen in their hand and looked at he box, and they chose not to. Jones can rightly say, "Skill issue, Bob. Try being more acceptable next time."
 
 In an age where trust in our institutions and elections are at an all-time low, having a voting system that can provide such a guarantee is invaluable. Approval Voting is not just [mathematically elegant](../approval/){:target="_blank"}, it's not just [the most practical and cost-effective solution for our electoral problems](../practicalapproval/){:target="_blank"}, it is the only voting system that can guarantee an unassailable claim to victory for its winners in ALL elections.
+
+---
 
 [hyperlink](https://youtu.be/saoSEaSDsrY?si=3-8d_6_kd72_WTYR){:target="_blank"}
