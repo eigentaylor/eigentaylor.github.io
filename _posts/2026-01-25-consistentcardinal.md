@@ -2,7 +2,7 @@
 layout: distill
 title: Approval Voting is the Only Internally Consistent Cardinal Method
 date: 2026-01-25
-description: A proof that Approval voting is the unique cardinal voting method that satisfies "Ballot-Condorcet-Consistency", a necessary property for a trustworthy voting system.
+description: A proof that Approval voting is the unique cardinal voting method that satisfies "Score-Condorcet-Consistency", a necessary property for a trustworthy voting system.
 giscus_comments: true
 importance: 2
 tags: voting
@@ -17,12 +17,13 @@ authors:
 toc:
   - name: Introduction
   - name: Internal Consistency
-  - name: Ballot-Condorcet-Consistency
+  - name: Score-Condorcet-Consistency
     subsections:
-      - name: Approval is BCC
+      - name: Approval is SCC
       - name: Uniqueness of Approval Voting
       - name: An Example
-  - name: STAR is Not BCC
+  - name: STAR is Not SCC
+  - name: Caveats
   - name: The Importance of Legitimacy
 ---
 
@@ -46,7 +47,7 @@ This is a relatively intuitive definition, particularly if we're asking voters t
 
 However, due to the general [issues with ranked voting systems](../practicalapproval/){:target="_blank"}, many (but certainly not all) in the electoral reform community have shifted focus to cardinal voting systems, where voters can give candidates scores rather than rankings. This allows voters to express more nuanced preferences, such as intensity of support or opposition. I personally believe in Approval voting as it asks what I believe is the most important question: "Which candidates do you consent to govern you?" This is inherently a cardinal question that cannot be properly inferred from rankings alone.
 
-## Ballot-Condorcet-Consistency
+## Score-Condorcet-Consistency
 
 For a cardinal system, we need to adjust the definition for the vague notion of "internal consistency" slightly, since we're collecting a different flavor of data. However, it still makes sense to ask if the actual winner would have won in head-to-head match-ups against every other candidate, based on the data collected. Thus, I define internal consistency for cardinal systems as follows:
 
@@ -55,15 +56,15 @@ For a cardinal system, we need to adjust the definition for the vague notion of 
 - Let $$T(X>Y)$$ be the number of voters who give candidate X a strictly higher score than candidate Y. This is the number of voters who prefer X over Y based on their provided ballot data.
 - Let $$S(X)$$ be the total score given to candidate X by all voters.
 
-Then, we say a cardinal voting system is **Ballot-Condorcet-Consistent** (BCC) if, whenever $$T(X>Y) > T(Y>X)$$, then $$S(X) > S(Y)$$. That is, if more voters give X a higher score than Y than vice versa, then the total score given to X must be greater than the total score given to Y.
+Then, we say a cardinal voting system is **Score-Condorcet-Consistent** (SCC) if, whenever $$T(X>Y) > T(Y>X)$$, then $$S(X) > S(Y)$$. That is, if more voters give X a higher score than Y than vice versa, then the total score given to X must be greater than the total score given to Y.
 
-If this is not satisfied, then we can have a situation where more voters prefer X over Y, but Y has a higher total score than X, meaning that Y could be declared the winner over X, despite more voters preferring X. This would give X a legitimate claim to victory over Y, particularly if this is true against all other candidates, making them the Condorcet winner "induced by the ballots". It is sufficient to check this is a general condition that holds for any arbitrary pair of candidates, since the winner of a typical cardinal system is the candidate with the highest total score. Thus, being BCC is necessary to guarantee that the Condorcet winner induced by the ballots must have the highest total score.
+If this is not satisfied, then we can have a situation where more voters prefer X over Y, but Y has a higher total score than X, meaning that Y could be declared the winner over X, despite more voters preferring X. This would give X a legitimate claim to victory over Y, particularly if this is true against all other candidates, making them the Condorcet winner "induced by the ballots". It is sufficient to check this is a general condition that holds for any arbitrary pair of candidates, since the winner of a typical cardinal system is the candidate with the highest total score. Thus, being SCC is necessary to guarantee that the Condorcet winner induced by the ballots must have the highest total score.
 
-### Approval is BCC
+### Approval is SCC
 
 > **Approval voting** allows voters to approve of (vote for) as many candidates as they like. Simply put a check mark next to each candidate you approve of. The candidate with the most votes wins.
 
-The proof that Approval Voting is BCC is straightforward, since the total score for each candidate is precisely the number of voters who approved them.
+The proof that Approval Voting is SCC is straightforward, since the total score for each candidate is precisely the number of voters who approved them.
 
 $$
 S(X)-S(Y) = T(X>Y) - T(Y>X)
@@ -77,7 +78,7 @@ $$=T(X>Y)-T(Y>X)$$
 
 where $$T(X=Y)=T(Y=X)$$ are the number of voters who approved both candidates.
 
-Subtracting the total approvals cancels out the common approvals. Thus, if $$T(X>Y)>T(Y>X)$$, then $$S(X)>S(Y)$$, satisfying the BCC condition. The difference in total approvals is exactly equal to the difference in "strict approvals", so Approval Voting is BCC.
+Subtracting the total approvals cancels out the common approvals. Thus, if $$T(X>Y)>T(Y>X)$$, then $$S(X)>S(Y)$$, satisfying the SCC condition. The difference in total approvals is exactly equal to the difference in "strict approvals", so Approval Voting is SCC.
 
 ### Uniqueness of Approval Voting
 
@@ -85,7 +86,7 @@ While most cardinal systems usually give voters integer scores such as from 0 to
 
 From this perspective, every score system is just Approval voting but with fractional approvals. The common 0 to 5 system is just Approval voting where voters can also give 0.2, 0.4, 0.6, or 0.8 of an approval to each candidate.
 
-**Theorem:** The only cardinal voting system that is Ballot-Condorcet-Consistent is Approval Voting.
+**Theorem:** The only cardinal voting system that is Score-Condorcet-Consistent is Approval Voting.
 
 **Proof:** Suppose that we have a non-Approval cardinal voting system. That is, there is some possible score s with $$0 < s < 1$$ that a voter can give to a candidate.
 
@@ -108,13 +109,13 @@ $$
 S(B) = t\cdot1 + (t+1)\cdot s = t + (t+1)s=t + ts + s
 $$
 
-However, since $$ts\geq 1$$, we have that $$S(B)\geq t+1+s > S(A)$$. Thus, B has a higher total score than A, despite more voters preferring A over B. This violates the BCC condition, so any non-Approval voting system is not BCC. QED.
+However, since $$ts\geq 1$$, we have that $$S(B)\geq t+1+s > S(A)$$. Thus, B has a higher total score than A, despite more voters preferring A over B. This violates the SCC condition, so any non-Approval voting system is not SCC. QED.
 
 The key insight here is that by allowing fractional approvals, we can create situations where a minority-preferred candidate snakes ahead in total score by accumulating many small fractional approvals from voters who prefer the other candidate. This is impossible in Approval voting, where each voter can only give a full approval or disapproval.
 
 ### An Example
 
-In the appendix of my [other post](../practicalapproval/){:target="_blank"}, I gave an example for a BCC failure in a 0, 1, 2 scoring system. And, of course, thd above construction works for any non-Approval cardinal system. But let's do something less conventional to illustrate the generality of the above proof.
+In the appendix of my [other post](../practicalapproval/){:target="_blank"}, I gave an example for a SCC failure in a 0, 1, 2 scoring system. And, of course, thd above construction works for any non-Approval cardinal system. But let's do something less conventional to illustrate the generality of the above proof.
 
 As an example, consider a system where voters can give scores 0, 1, or 100. We can normalize this to scores 0, 0.01, and 1, giving us $$s=0.01$$. Then, we have $$t=\text{ceil}(100)=100$$. Thus, we have the following profile when we un-normalize:
 
@@ -133,11 +134,11 @@ $$
 S(B) = 100\cdot100 + 101\cdot1 = 10,101
 $$
 
-Thus, B has a higher total score than A, despite more voters preferring A over B. This violates the BCC condition, so this non-Approval voting system is not BCC.
+Thus, B has a higher total score than A, despite more voters preferring A over B. This violates the SCC condition, so this non-Approval voting system is not SCC.
 
 What happens after an election like this? Well, the supporters of A might realize that giving B any score except 0 is dangerous. By being "generous" or "nice" and being honest about how they feel about B, they actually caused their preferred candidate to lose! This creates a perverse incentive to instead just give 0 to every candidate you don't want to win, and the maximum score to the candidates you do want to win, bringing us right back to Approval voting with extra steps and unnecessary complexity.
 
-## STAR is Not BCC
+## STAR is Not SCC
 
 STAR voting is a popular cardinal-esque voting system that seems to attempt to fix this issue with score methods, by injecting in some majority rule. It is a 0 to 5 score system, where the winner is chosen by adding an additional runoff step: take the top two candidates by total score and then choose the winner by majority runoff between them (based on voters who gave them different scores). This helps it from some particularly damning examples, but it does not fix the underlying problem.
 
@@ -181,17 +182,21 @@ In STAR voting, however, we take the top two candidates by total score (B and C)
 
 This creates a legitimacy-crisis where every candidate has a legitimate claim to victory. A is the majority's favorite, C got the highest total score, but B won by the system's rules. This would create serious trust issues with the system, since it can't guarantee the winner a bulletproof claim to victory based on the preferences expressed by the voters.
 
+## Caveats
+
+There are [systems](https://electowiki.org/wiki/Smith//Score){:target="_blank"} that attempt to make cardinal systems Condorcet-consistent by electing Condorcet winners when they exist, or eliminating candidates outside the Smith set (which we will not get into here). However, they are not SCC, as the above proof shows that any non-Approval cardinal system is not SCC. Thus, they can still produce winners with legitimate claims to victory from other candidates.
+
 ## The Importance of Legitimacy
 
 The point of this post is not to try to claim that non-Approval cardinal systems are unusable. The point of these systems is to give voters greater ability to express their preferences of the candidates. And, thus, not being tied to the Condorcet criterion is arguably a strength, as I have argued in other posts. I don't believe that the ranked Condorcet winner is necessarily the best candidate to always win.
 
-However, being Ballot-Condorcet-Consistent is, in my estimation, an incredibly important property for a voting system to have. Without it, the system cannot maintain or hold trust with its voters, since it can give losing candidates legitimate claims to victory, resulting in distrust and anger from the electorate. People like majority rule, and when it appears that a majority preferred one candidate over another, only for the other candidate to win, that destroys trust in the system.
+However, being Score-Condorcet-Consistent is, in my estimation, an incredibly important property for a voting system to have. Without it, the system cannot maintain or hold trust with its voters, since it can give losing candidates legitimate claims to victory, resulting in distrust and anger from the electorate. People like majority rule, and when it appears that a majority preferred one candidate over another, only for the other candidate to win, that destroys trust in the system.
 
-If a system can point to the data it collected and show that no other candidate, besides the declared victor, has a claim that they were swindled out of victory by the system, then that builds trust. Approval Voting is uniquely positioned to provide that guarantee in a cardinal voting system. In fact, plurality voting and even Condorcet methods, designed precisely to be BCC, fail this to some extent:
+If a system can point to the data it collected and show that no other candidate, besides the declared victor, has a claim that they were swindled out of victory by the system, then that builds trust. Approval Voting is uniquely positioned to provide that guarantee in a cardinal voting system. In fact, plurality voting and even Condorcet methods, designed precisely to be SCC, fail this to some extent:
 
 - In a Condorcet method, it's possible that the Condorcet winner is not the plurality (first-choice) winner, so the plurality winner could argue that they should have won, since they had the most intense support. There can be no Condorcet winner at all, leading to ambiguity and distrust in the particular cycle-breaking method used.
 - In a plurality system, it's commonplace for a third-party candidate to have far more votes than the difference between the two main candidates. This give the runner-up a claim that they were robbed of victory by the spoiler effect.
-- Any non-Condorcet ranked method is trivially not BCC, leading to trust-destroying elections like Alaska 2022 and Burlington 2009.
+- Any non-Condorcet ranked method is trivially not SCC, leading to trust-destroying elections like Alaska 2022 and Burlington 2009.
 
 Approval voting has no such issues. Since there is no spoiler effect, and since the winner always has the highest total approvals, no other candidate can have a legitimate claim to victory. If Jones wins with 600 approvals, and Bob has 550 approvals, then Bob can't claim that he was somehow robbed of victory.
 
