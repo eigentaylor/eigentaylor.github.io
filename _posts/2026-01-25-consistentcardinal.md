@@ -2,7 +2,7 @@
 layout: distill
 title: Approval voting is the Only Internally Consistent Cardinal Method
 date: 2026-01-25
-description: A proof that Approval voting is the unique cardinal voting method that satisfies "Score-Condorcet-Consistency", a necessary property for a trustworthy voting system.
+description: A proof that Approval voting is the unique score aggregation voting method that satisfies "Score-Condorcet-Consistency", an arguably necessary property for a trustworthy voting system.
 giscus_comments: true
 importance: 2
 tags: voting
@@ -266,6 +266,8 @@ There are [systems](https://electowiki.org/wiki/Smith//Score){:target="_blank"} 
 
 This highlights the commonality between non-Approval cardinal systems and ranked systems: by allowing more complex expressions of preference, we open the door to internal consistency failures, where winners can be challenged based on the data collected by the ballots. Approval voting uniquely avoids this issue by entirely eliminating Condorcet cycles by having the score encode the head-to-head preferences directly.
 
+One can rightly argue that the SCC property is too strict, and the fact that non-Approval systems can violate it is not a fatal flaw. After all, the purpose of cardinal systems is to allow voters to express more nuanced preferences, and sometimes that may lead to situations where the majority's preference is not reflected in the total scores. I claim not that a minority preferred, but widely acceptable candidate is necessarily a bad outcome, but rather than when voters can see that their favorite candidate was majority-preferred over the winner and still lost, that destroys trust in the system. Those are the outcomes that lead to repeal efforts, setting back electoral reform as a whole.
+
 ## The Importance of Legitimacy
 
 The point of this post is not to try to claim that non-Approval cardinal systems are unusable. The point of these systems is to give voters greater ability to express their preferences of the candidates. Thus, not being tied to the Condorcet criterion is arguably a strength, as I have argued in other posts. I don't believe that the ranked Condorcet winner is necessarily the best candidate to always win.
@@ -276,13 +278,13 @@ If a system can point to the data it collected and show that no other candidate,
 
 - In a Condorcet method, it's possible that the Condorcet winner is not the plurality (first-choice) winner, so the plurality winner could argue that they should have won, since they had the most intense support. There can also be no Condorcet winner at all, leading to ambiguity and distrust in the particular cycle-breaking method used. Whoever wins was beaten head-to-head by someone else, giving that candidate a legitimate claim to victory.
 - In a plurality system, it's commonplace for a third-party candidate to have far more votes than the difference between the two main candidates. This give the runner-up a claim that they were robbed of victory by the spoiler effect.
-- Any non-Condorcet ranked method is exactly that: not Condorcet-consistent. This leads to trust-destroying elections like Alaska 2022 and Burlington 2009, which both fueled massive repeal efforts against ranked choice voting.
+- Any non-Condorcet ranked method is exactly that: not Condorcet-consistent. This leads to trust-destroying elections like Alaska 2022 and Burlington 2009, which both fueled massive repeal efforts against ranked choice voting. Since the 2022 Alaska failure, a strong repeal effort in 2024 barely failed by less than 1% of the vote, and it appears that it will be on the ballot again in 2026.
 
-Approval voting has no such issues. Since there is no spoiler effect, and since the winner always has the highest total approvals, no other candidate can have a legitimate claim to victory. If Jones wins with 600 approvals, and Bob has 550 approvals, then Bob can't claim that he was somehow robbed of victory.
+Approval voting has no such issues. Since there is no spoiler effect, and since the winner always has the highest total approvals, no other candidate can have a legitimate claim to victory. If Jones wins with 600 approvals, and Bob has 550 approvals, then Bob can't convincingly claim that he was somehow robbed of victory.
 
-There's no ranked data to pour through, to see if maybe those who approved both or neither actually preferred Bob to Jones. The 100 votes a third candidate Alice got weren't votes that "could have gone to Bob instead", as could be claimed under plurality. Exactly 50 more voters approved Jones and not Bob than Bob and not Jones. 50 more voters had the choice to approve Bob alongside Jones, they had the pen in their hand and looked at the box, and they chose not to. Jones can rightly say, "Skill issue, Bob. Try being more acceptable next time."
+There's no ranked data to pour through, to see if maybe those who approved both or neither actually preferred Bob to Jones. The 100 votes a third candidate Alice got weren't votes that "could have gone to Bob instead", as could be claimed under plurality. Exactly 50 more voters approved Jones-and-not-Bob than Bob-and-not-Jones. 50 more voters had the choice to approve Bob alongside Jones. They had the pen in their hand, looked at the box, and they chose not to. Jones can rightly say, "Skill issue, Bob. Try being more acceptable next time."
 
-In an age where trust in our institutions and elections are at an all-time low, having a voting system that can provide such a guarantee is invaluable. Approval voting is not just [mathematically elegant](../approval/){:target="_blank"}, it's not just [the most practical and cost-effective solution for our electoral problems](../practicalapproval/){:target="_blank"}, it is the only voting system that can guarantee an unassailable claim to victory for its winners in ALL elections.
+In an age where trust in our institutions and elections are at an all-time low, having a voting system that can provide such a guarantee is invaluable. Approval voting is not just [mathematically elegant](../approval/){:target="_blank"}, it's not just [the most practical and cost-effective solution for our electoral problems](../practicalapproval/){:target="_blank"}, it is the only voting system that can guarantee an unassailable claim to victory for its winners in ALL non-tied elections.
 
 ## Appendix
 
