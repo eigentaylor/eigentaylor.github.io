@@ -25,7 +25,7 @@ ninja.data = [{
           },
         },{id: "post-approval-voting-is-the-only-internally-consistent-cardinal-method",
         
-          title: "Approval Voting is the Only Internally Consistent Cardinal Method",
+          title: "Approval voting is the Only Internally Consistent Cardinal Method",
         
         description: "A proof that Approval voting is the unique cardinal voting method that satisfies &quot;Score-Condorcet-Consistency&quot;, a necessary property for a trustworthy voting system.",
         section: "Posts",
