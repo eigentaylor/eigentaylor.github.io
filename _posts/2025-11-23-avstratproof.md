@@ -8,7 +8,7 @@ importance: 2
 tags: voting
 category: polisci
 authors:  
-  - name: Taylor F.
+  - name: Taylor Eigen Fisher
     url: ""
     affiliations:
       name: None
