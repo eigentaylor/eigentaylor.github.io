@@ -25,6 +25,7 @@ toc:
   - name: STAR is Not SCC
   - name: Caveats
   - name: The Importance of Legitimacy
+  - name: Appendix
 ---
 
 ## Introduction
@@ -80,6 +81,18 @@ where $$T(X=Y)=T(Y=X)$$ are the number of voters who approved both candidates.
 
 Subtracting the total approvals cancels out the common approvals. Thus, if $$T(X>Y)>T(Y>X)$$, then $$S(X)>S(Y)$$, satisfying the SCC condition. The difference in total approvals is exactly equal to the difference in "strict approvals", so Approval Voting is SCC.
 
+**Corollary:** Approval voting always elects the Condorcet winner induced by the ballots, if one exists.
+
+**Proof:** Suppose candidate A wins the election under Approval voting. Then, for any other candidate B, we have that $$S(A) > S(B)$$. By the SCC property, this implies that $$T(A>B) > T(B>A)$$. Thus, A beats every other candidate in head-to-head match-ups, making them the Condorcet winner induced by the ballots.
+
+The only other case is if there is a tie for highest total approvals, in which case all tied candidates are weak Condorcet winners induced by the ballots. That is, $$S(A) > S(B)$$ implies $$T(A>B) > T(B>A)$$ for all candidates A tied for first and B any other candidate not tied for first, with $$S(A)=S(B)$$ implying $$T(A>B)=T(B>A)$$ for all candidates A and B tied for first. Therefore, the Approval winner(s) are always at least weak Condorcet winner(s) induced by the ballots. QED.
+
+The only way for a losing candidate to have a legitimate claim to victory over the Approval winner is if they tied in total approvals with the winner.
+
+**Corollary:** There can be no Condorcet cycles induced by the ballots in Approval voting.
+
+**Proof:** Since Approval voting is SCC, if $$T(A>B) > T(B>A)$$, and $$T(B>C) > T(C>B)$$, then we have that $$S(A) > S(B)$$ and $$S(B) > S(C)$$, implying that $$S(A) > S(C)$$, and thus $$T(A>C) > T(C>A)$$. Therefore, there can be no cycles of the form $$A>B>C>A$$. QED.
+
 ### Uniqueness of Approval Voting
 
 While most cardinal systems usually give voters integer scores such as from 0 to 5 or 0 to 10, we can without loss of generality assume that voters can only give scores between and including 0 and 1. This is because if we, say, allowed voters to score from 0 to 10, we could simply divide all scores by 10 to get scores from 0 to 1 without changing any relative comparisons.
@@ -112,6 +125,28 @@ $$
 However, since $$ts\geq 1$$, we have that $$S(B)\geq t+1+s > S(A)$$. Thus, B has a higher total score than A, despite more voters preferring A over B. This violates the SCC condition, so any non-Approval voting system is not SCC. QED.
 
 The key insight here is that by allowing fractional approvals, we can create situations where a minority-preferred candidate snakes ahead in total score by accumulating many small fractional approvals from voters who prefer the other candidate. This is impossible in Approval voting, where each voter can only give a full approval or disapproval.
+
+**Theorem:** Every non-Approval cardinal voting system can produce a Condorcet cycle induced by the ballots.
+
+**Proof:** As per the above construction, suppose voters can give a score s with $$0 < s < 1$$. Then, consider three candidates A, B, and C, and the following profile of voters:
+
+| Number of Voters | Score for A | Score for B | Score for C | Preference |
+|------------------|-------------|-------------|-------------|------------|
+| 1 | 1 | s | 0 | A > B > C |
+| 1 | 0 | 1 | s | B > C > A |
+| 1 | s | 0 | 1 | C > A > B |
+
+In this profile, we have that:
+
+| Match-up | Winner | Vote Count |
+|---------|--------|------------|
+| A vs B | A | 2 to 1 |
+| B vs C | B | 2 to 1 |
+| C vs A | C | 2 to 1 |
+
+Thus, we have a Condorcet cycle A > B > C > A induced by the ballots. QED.
+
+This is quite straightforward: by allowing just a third level of preference intensity, we can create a rock-paper-scissors style cycle among three candidates. As shown above, Approval voting cannot produce such cycles. SCC guarantees a transitive ordering of candidates based on head-to-head match-ups, preventing cycles.
 
 ### An Example
 
@@ -182,9 +217,50 @@ In STAR voting, however, we take the top two candidates by total score (B and C)
 
 This creates a legitimacy-crisis where every candidate has a legitimate claim to victory. A is the majority's favorite, C got the highest total score, but B won by the system's rules. This would create serious trust issues with the system, since it can't guarantee the winner a bulletproof claim to victory based on the preferences expressed by the voters.
 
+## How bad it can get
+
+As it turns out, the closer the fractional score s is to 1, the worse the SCC violation can get. We can make the head-to-head win of A over B arbitrarily large, while B's total score over A is still greater. For example, let s=0.9999. Consider the following profile (after un-normalizing):
+
+| Number of Voters | Score for A | Score for B | Preference |
+|------------------|-------------|-------------|------------|
+| 1 | 0 | 10,000 | B > A |
+| 9,999 | 10,000 | 9,999 | A > B |
+
+Here, A beats B by 9,999 to 1 (99.99% of voters prefer A over B), but B has a higher total score:
+
+$$
+S(A) = 1\cdot0 + 9,999\cdot10,000 = 99,990,000
+$$
+
+$$
+S(B) = 1\cdot10,000 + 9,999\cdot9,999 = 10,000 + 99,980,001 = 99,990,001
+$$
+
+giving B a higher total score than A by 1 point, despite nearly all voters preferring A over B. The greater the granularity of the scoring system (the closer s is to 1), the worse majority rule can be violated.
+
+In general, to achieve a head-to-head win of size $$r=\frac{T(A>B)}{T(A>B)+T(B>A)}\in(0.5,1)$$ (where r is rational), while having B get a higher total score than A, we need:
+
+$$
+2-\frac1r < s < 1
+$$
+
+If $$\frac{r}{1-r}=\frac{p}{q}$$ then the following profile will do the trick:
+
+| Number of Voters | Score for A | Score for B | Preference |
+|------------------|-------------|-------------|------------|
+| q | 0 | 1 | B > A |
+| p | 1 | $$s$$ | A > B |
+
+A proof is given in the [appendix](#appendix).
+
 ## Caveats
 
-There are [systems](https://electowiki.org/wiki/Smith//Score){:target="_blank"} that attempt to make cardinal systems Condorcet-consistent by electing Condorcet winners when they exist, or eliminating candidates outside the Smith set (which we will not get into here). However, they are not SCC, as the above proof shows that any non-Approval cardinal system is not SCC. Thus, they can still produce winners with legitimate claims to victory from other candidates.
+There are [systems](https://electowiki.org/wiki/Smith//Score){:target="_blank"} that attempt to make cardinal systems Condorcet-consistent by electing Condorcet winners when they exist based on the ballot data, or eliminating candidates outside the Smith set (which we will not get into here). However, they are not SCC, as the above proof shows that no non-Approval cardinal system can be. That is, they cannot encode the head-to-head preferences of voters into the scores. Thus, they can still produce losers with legitimate claims to victory:
+
+1. The highest scoring candidate can still fail to be the Condorcet winner induced by the ballots, and not be elected. This is the SCC violation shown above. They can claim that they had the highest total score, so they should have won.
+2. No candidate may be a Condorcet winner induced by the ballots, leading the eventual winner to necessarily have been beaten head-to-head by some other candidate, giving that candidate a legitimate claim to victory.
+
+This highlights the commonality between non-Approval cardinal systems and ranked systems: by allowing more complex expressions of preference, we open the door to internal consistency failures, where winners can be challenged based on the data collected by the ballots. Approval voting uniquely avoids this issue by entirely eliminating Condorcet cycles by having the score encode the head-to-head preferences directly.
 
 ## The Importance of Legitimacy
 
@@ -203,6 +279,46 @@ Approval voting has no such issues. Since there is no spoiler effect, and since 
 There's no ranked data to pour through, to see if maybe those who approved both or neither actually preferred Bob to Jones. The 100 votes a third candidate Alice got weren't votes that "could have gone to Bob instead", as could be claimed under plurality. Exactly 50 more voters approved Jones and not Bob than Bob and not Jones. 50 more voters had the choice to approve Bob alongside Jones, they had the pen in their hand and looked at the box, and they chose not to. Jones can rightly say, "Skill issue, Bob. Try being more acceptable next time."
 
 In an age where trust in our institutions and elections are at an all-time low, having a voting system that can provide such a guarantee is invaluable. Approval Voting is not just [mathematically elegant](../approval/){:target="_blank"}, it's not just [the most practical and cost-effective solution for our electoral problems](../practicalapproval/){:target="_blank"}, it is the only voting system that can guarantee an unassailable claim to victory for its winners in ALL elections.
+
+## Appendix
+
+Here we prove the claim from the ["How bad it can get"](#how-bad-it-can-get) section.
+
+Suppose we have a rational number $$r\in(0.5,1)$$, and let $$\frac{r}{1-r}=\frac{p}{q}$$ for some positive integers p and q. Then, consider the following profile of voters:
+
+| Number of Voters | Score for A | Score for B | Preference |
+|------------------|-------------|-------------|------------|
+| q | 0 | 1 | B > A |
+| p | 1 | $$s$$ | A > B |
+
+Note that $$f(x)=\frac{x}{1-x}$$ is a continuous increasing function on (0,1). Since $$f(0.5)=1$$, we have that for any $$r\in(0.5,1)$$, we have that $$f(r)$$ is a rational number greater than 1. Therefore, if $$\frac{r}{1-r}=\frac{p}{q}$$, then $$p>q>0$$. This guarantees that $$T(A>B)=p$$ and $$T(B>A)=q$$ are positive integers with $$p>q$$, so more voters prefer A over B.
+
+The precise head-to-head ratio for A over B, further, is
+
+$$\begin{align*}
+\frac{T(A>B)}{T(A>B)+T(B>A)} &= \frac{p}{p+q} \\
+&= \frac{p/q}{1+p/q} \\
+&= \frac{\frac{r}{1-r}}{1+\frac{r}{1-r}} \\
+&= \frac{r}{(1-r) + r} \\
+&= r
+\end{align*}$$
+
+This gives us the desired head-to-head win of size r for A over B.
+
+We now show that B has a higher total score than A whenever $$2-\frac1r < s < 1$$. That is, we want to show that $$S(A)=p<q +ps=S(B)$$.
+
+We prove this using a chain of equivalent inequalities:
+
+$$\begin{align*}
+s > 2-\frac1r & \iff rs>2r-1  \\
+&\iff 1 - r + rs > r \\
+&\iff 1 + \frac{rs}{1-r} > \frac{r}{1-r} \\
+&\iff 1 + \frac{sp}{q} > \frac{p}{q} \\
+&\iff q + sp > p\\
+&\iff S(B) > S(A)
+\end{align*}$$
+
+Therefore, B has a higher total score than A and more voters prefer A over B, completing the proof. QED.
 
 ---
 
