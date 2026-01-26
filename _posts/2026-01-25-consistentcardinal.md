@@ -67,7 +67,7 @@ If this is not satisfied, then we can have a situation where more voters prefer 
 
 > **Approval voting** allows voters to approve of (vote for) as many candidates as they like. Simply put a check mark next to each candidate you approve of. The candidate with the most votes wins.
 
-**Theorem:** Approval voting is Score-Condorcet-Consistent.
+**Theorem 1:** Approval voting is Score-Condorcet-Consistent.
 
 The proof is straightforward, since the total score for each candidate is precisely the number of voters who approved them.
 
@@ -87,7 +87,7 @@ where $$T(X=Y)=T(Y=X)$$ are the number of voters who approved both candidates.
 
 Subtracting the total approvals cancels out the common approvals. Thus, if $$T(X>Y)>T(Y>X)$$, then $$S(X)>S(Y)$$, satisfying the SCC condition. The difference in total approvals is exactly equal to the difference in "strict approvals", so Approval voting is SCC. 
 
-**Corollary:** Approval voting always elects the Condorcet winner induced by the ballots, if one exists.
+**Corollary 1:** Approval voting always elects the Condorcet winner induced by the ballots, if one exists.
 
 **Proof:** Suppose candidate A wins the election under Approval voting. Then, for any other candidate B, we have that $$S(A) > S(B)$$. By the SCC property, this implies that $$T(A>B) > T(B>A)$$. Thus, A beats every other candidate in head-to-head match-ups, making them the Condorcet winner induced by the ballots.
 
@@ -95,7 +95,7 @@ The only other case is if there is a tie for highest total approvals, in which c
 
 The only way for a losing candidate to have a legitimate claim to victory over the Approval winner is if they tied in total approvals with the winner.
 
-**Corollary:** There can be no Condorcet cycles induced by the ballots in Approval voting.
+**Corollary 2:** There can be no Condorcet cycles induced by the ballots in Approval voting.
 
 **Proof:** Since Approval voting is SCC, if $$T(A>B) > T(B>A)$$, and $$T(B>C) > T(C>B)$$, then we have that $$S(A) > S(B)$$ and $$S(B) > S(C)$$, implying that $$S(A) > S(C)$$, and thus $$T(A>C) > T(C>A)$$. Therefore, there can be no cycles of the form $$A>B>C>A$$. QED.
 
@@ -105,7 +105,7 @@ While most cardinal systems usually give voters integer scores such as from 0 to
 
 From this perspective, every score system is just Approval voting but with fractional approvals. The common 0 to 5 system is just Approval voting where voters can also give 0.2, 0.4, 0.6, or 0.8 of an approval to each candidate.
 
-**Theorem:** The only cardinal voting system that is Score-Condorcet-Consistent is Approval voting.
+**Theorem 2:** The only cardinal voting system that is Score-Condorcet-Consistent is Approval voting.
 
 **Proof:** Suppose that we have a non-Approval cardinal voting system. That is, there is some possible score s with $$0 < s < 1$$ that a voter can give to a candidate.
 
@@ -132,7 +132,7 @@ However, since $$ts\geq 1$$, we have that $$S(B)\geq t+1+s > S(A)$$. Thus, B has
 
 The key insight here is that by allowing fractional approvals, we can create situations where a minority-preferred candidate snakes ahead in total score by accumulating many small fractional approvals from voters who prefer the other candidate. This is impossible in Approval voting, where each voter can only give a full approval or disapproval.
 
-**Theorem:** Every non-Approval cardinal voting system can produce a Condorcet cycle induced by the ballots.
+**Theorem 3:** Every non-Approval cardinal voting system can produce a Condorcet cycle induced by the ballots.
 
 **Proof:** As per the above construction, suppose voters can give a score s with $$0 < s < 1$$. Then, consider three candidates A, B, and C, and the following profile of voters:
 
@@ -244,6 +244,10 @@ $$
 
 giving B a higher total score than A by 1 point, despite nearly all voters preferring A over B. The greater the granularity of the scoring system (the closer s is to 1), the worse majority rule can be violated.
 
+**Theorem 4:** For any rational number $$r\in(0.5,1)$$, there exists a cardinal score aggregation voting system that allows a candidate B to have a higher total score than candidate A, despite more voters giving A a higher score than B by a head-to-head ratio of $$r$$. That is, the head-to-head ratio of A over B in the ballot data can get arbitrarily close to 100% of voters declaring a preference for A over B, while B still has a higher total score than A.
+
+A formal proof is given in the [appendix](#appendix).
+
 In general, to achieve a head-to-head win of size $$r=\frac{T(A>B)}{T(A>B)+T(B>A)}\in(0.5,1)$$ (where r is rational), while having B get a higher total score than A, we need:
 
 $$
@@ -256,8 +260,6 @@ If $$\frac{r}{1-r}=\frac{p}{q}$$ then the following profile will do the trick:
 |------------------|-------------|-------------|------------|
 | q | 0 | 1 | B > A |
 | p | 1 | $$s$$ | A > B |
-
-A proof is given in the [appendix](#appendix).
 
 ## Caveats
 
@@ -292,7 +294,9 @@ In an age where trust in our institutions and elections are at an all-time low, 
 
 Here we prove the claim from the ["How bad it can get"](#how-bad-it-can-get) section.
 
-Suppose we have a rational number $$r\in(0.5,1)$$, and let $$\frac{r}{1-r}=\frac{p}{q}$$ for some positive integers p and q. Then, consider the following profile of voters:
+**Theorem 4:** For any rational number $$r\in(0.5,1)$$, there exists a cardinal score aggregation voting system that allows a candidate B to have a higher total score than candidate A, despite more voters giving A a higher score than B by a head-to-head ratio of $$r$$. That is, the head-to-head ratio of A over B in the ballot data can get arbitrarily close to 100%, while B still has a higher total score than A.
+
+**Proof:** Suppose we have a rational number $$r\in(0.5,1)$$, and let $$\frac{r}{1-r}=\frac{p}{q}$$ for some positive integers p and q. Then, consider the following profile of voters:
 
 | Number of Voters | Score for A | Score for B | Preference |
 |------------------|-------------|-------------|------------|
