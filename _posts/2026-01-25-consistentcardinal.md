@@ -81,7 +81,7 @@ $$S(X)-S(Y)=(T(X>Y)+T(X=Y))-(T(Y>X)+T(Y=X))$$
 
 $$=T(X>Y)-T(Y>X)$$
 
-cancelling out the common approvals, since $$T(X=Y)=T(Y=X)$$. Thus, if $$T(X>Y)>T(Y>X)$$, then $$S(X)>S(Y)$$, satisfying the BCC condition. The difference in total approvals is exactly equal to the difference in "strict approvals", so Approval Voting is BCC.
+canceling out the common approvals, since $$T(X=Y)=T(Y=X)$$. Thus, if $$T(X>Y)>T(Y>X)$$, then $$S(X)>S(Y)$$, satisfying the BCC condition. The difference in total approvals is exactly equal to the difference in "strict approvals", so Approval Voting is BCC.
 
 ### Uniqueness of Approval Voting
 
@@ -115,6 +115,8 @@ $$
 
 However, since $$ts>1$$, we have that $$S(B) > S(A)$$. Thus, B has a higher total score than A, despite more voters preferring A over B. This violates the BCC condition, so any non-Approval voting system is not BCC. QED.
 
+The key insight here is that by allowing fractional approvals, we can create situations where a minority-preferred candidate snakes ahead in total score by accumulating many small fractional approvals from voters who prefer the other candidate. This is impossible in Approval voting, where each voter can only give a full approval or disapproval.
+
 ### An Example
 
 As an example, consider a system where voters can give scores 0, 1, or 100. A very silly system, but it illustrates the point. We can normalize this to scores 0, 0.01, and 1, giving us $$s=0.01$$. Then, we have $$t=\text{ceil}(100)+1=101$$. Thus, we have the following profile when we un-normalize:
@@ -137,6 +139,8 @@ $$
 
 Thus, B has a higher total score than A, despite more voters preferring A over B. This violates the BCC condition, so this non-Approval voting system is not BCC.
 
+What happens after an election like this? Well, the supporters of A might realize that giving B any score except 0 is dangerous. By being "generous" or "nice" and being honest about how they feel about B, they actually caused their preferred candidate to lose! This creates a perverse incentive to instead just give 0 to every candidate you don't want to win, and the maximum score to the candidates you do want to win, bringing us right back to Approval voting with extra steps and unnecessary complexity.
+
 ## STAR is Not BCC
 
 STAR voting is a popular pseudo-cardinal voting system that seems to attempt to fix this issue. It is a 0 to 5 score system, where the winner is chosen by adding an additional runoff step: take the top two candidates by total score and then choose the winner by majority runoff between them. This helps it from some particularly damning examples, but it does not fix the underlying problem.
@@ -150,7 +154,7 @@ Take this particular example with three candidates A, B, and C, and 5 voters:
 
 Clearly, if we look at the head-to-head match-ups:
 
-| Matchup | Winner | Vote Count |
+| Match-up | Winner | Vote Count |
 |---------|--------|------------|
 | A vs B | A | 3 to 2 |
 | A vs C | A | 3 to 2 |
