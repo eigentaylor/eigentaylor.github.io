@@ -38,13 +38,13 @@ I gave proofs in that post and my other [post on Approval Voting](../approval/){
 
 ## Internal Consistency
 
-For a ranked system, I defined internal consistency as follows, using the idea of a "Condorcet winner":
+For a ranked system, I define internal consistency as follows, using the idea of a "Condorcet winner":
 
 > A ranked voting system is internally consistent if, whenever there is a candidate who would beat every other candidate in a head-to-head matchup (called a Condorcet winner), that candidate is declared the overall winner.
 
-This is a relatively intuitive definition, particularly if we're asking voters to rank candidates and are thus collecting data about their ordinal preferences. Thus, if there's a candidate who is preferred by a majority over every other candidate, that candidate should win.
+This is a relatively intuitive definition, particularly if we're asking voters to rank candidates and are thus collecting data about their ordinal preferences. If there's a candidate who is preferred by a majority over every other candidate, that candidate should win.
 
-However, due to the general [issues with ranked voting systems](../practicalapproval/){:target="_blank"}, many in the electoral reform community have shifted focus to cardinal voting systems, where voters can give candidates scores rather than rankings. This allows voters to express more nuanced preferences, such as intensity of support or opposition. I personally believe in Approval voting as it asks what I believe is the most important question: "Which candidates do you consent to govern you?" This is inherently a cardinal question that cannot be properly inferred from rankings alone.
+However, due to the general [issues with ranked voting systems](../practicalapproval/){:target="_blank"}, many (but certainly not all) in the electoral reform community have shifted focus to cardinal voting systems, where voters can give candidates scores rather than rankings. This allows voters to express more nuanced preferences, such as intensity of support or opposition. I personally believe in Approval voting as it asks what I believe is the most important question: "Which candidates do you consent to govern you?" This is inherently a cardinal question that cannot be properly inferred from rankings alone.
 
 ## Ballot-Condorcet-Consistency
 
