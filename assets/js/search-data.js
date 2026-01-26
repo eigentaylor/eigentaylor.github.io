@@ -27,7 +27,7 @@ ninja.data = [{
         
           title: "Approval voting is the Only Internally Consistent Cardinal Method",
         
-        description: "A proof that Approval voting is the unique cardinal voting method that satisfies &quot;Score-Condorcet-Consistency&quot;, a necessary property for a trustworthy voting system.",
+        description: "A proof that Approval voting is the unique score aggregation voting method that satisfies &quot;Score-Condorcet-Consistency&quot;, an arguably necessary property for a trustworthy voting system.",
         section: "Posts",
         handler: () => {
           
