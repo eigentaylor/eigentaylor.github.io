@@ -17,7 +17,7 @@ authors:
 toc:
   - name: Introduction
   - name: Internal Consistency
-  - name: Ballot Condorcet Consistency
+  - name: Ballot-Condorcet-Consistency
     subsections:
       - name: Approval is BCC
       - name: Uniqueness of Approval Voting
@@ -30,11 +30,11 @@ toc:
 
 In my [last post](../practicalapproval/){:target="_blank"}, I focused a lot on the concept of internal consistency as a desirable property for voting methods. The primary purpose of a voting system is to aggregate potentially millions of complex individual preferences into a single name: the winner. This is done by collecting a simpler, easier to aggregate, set of inputs from each voter (ballots), which gives data about their preferences. I define the concept of internal consistency as using the data collected "properly", in a way that is consistent with the preferences expressed by the voters. That is, it does not produce a winner, where another candidate has a legitimate claim to victory based on the data collected.
 
-For example, a ranked system collects ordinal preferences from each voter. If 51 voters rank candidate A over candidate B, while only 49 voters rank candidate B over candidate A, then it's clear that a majority of voters prefer A over B. If the system were to declare B the winner, then A would have a legitimate claim to victory, and the expressed will of the voters would have been ignored. This would mean the system improperly used the data it collected, which destroys trust in the system. IRV, AKA "Ranked Choice Voting", is infamous for this exact failure (e.g. the 2022 Alaska special election). See my [previous post](../practicalapproval/){:target="_blank"} for more details.
+For example, a ranked system collects ordinal preferences from each voter. If 51 voters rank candidate A over candidate B, while only 49 voters rank candidate B over candidate A, then it's clear that a majority of voters prefer A over B. If the system were to declare B the winner, then A would have a legitimate claim to victory, and the expressed will of the voters would have been ignored. If it can be further shown that A beats every other candidate, this would mean the system improperly used the data it collected, which destroys trust in the system. IRV, AKA "Ranked Choice Voting", is infamous for this exact failure (e.g. the 2022 Alaska special election). See my [previous post](../practicalapproval/){:target="_blank"} for more details.
 
-It seems to be a desirable property for a voting system to produce a winner, where no other candidate has a legitimate claim to victory based on the preferences expressed by the voters. This is what I mean by internal consistency.
+It seems to be a desirable property for a voting system to produce a winner, where no other candidate has a legitimate claim to victory based on the preferences expressed by the voters. This is the essential idea behind what I mean by internal consistency.
 
-I gave proofs in that post and my other [post on Approval Voting](../approval/){:target="_blank"} that Approval Voting is internally consistent. However, I am actually going to prove that Approval voting is the *uniquely* internally consistent cardinal voting method. That is, if you want a system where voters can score candidates (cardinal voting), then the only such system that is internally consistent is Approval Voting.
+I gave proofs in that post and my other [post on Approval Voting](../approval/){:target="_blank"} that Approval Voting is internally consistent. However, I am actually going to prove that Approval voting is the *uniquely* internally consistent cardinal voting method. That is, if you want a system where voters can score candidates (cardinal voting), then the only such system that is internally consistent is Approval Voting: where the only scores are 0 (disapprove) and 1 (approve).
 
 ## Internal Consistency
 
@@ -44,19 +44,18 @@ For a ranked system, I defined internal consistency as follows, using the idea o
 
 This is a relatively intuitive definition, particularly if we're asking voters to rank candidates and are thus collecting data about their ordinal preferences. Thus, if there's a candidate who is preferred by a majority over every other candidate, that candidate should win.
 
-## Ballot Condorcet Consistency
+## Ballot-Condorcet-Consistency
 
 For a cardinal system, we need to adjust this definition slightly, since we're collecting different data. However, it still makes sense to ask if the actual winner would have won in head-to-head match-ups against every other candidate, based on the data collected. Thus, I define internal consistency for cardinal systems as follows:
 
 **Definition:** We define the following notational shorthands:
 
-- Let $$P(X>Y)$$ be the set of all voters who give candidate X a strictly higher score than candidate Y. Further, let
-- Let $$T(X>Y)=|P(X>Y)|$$ be the number of such voters.
+- Let $$T(X>Y)$$ be the number of voters who give candidate X a strictly higher score than candidate Y. This is the number of voters who prefer X over Y based on their provided ballots.
 - Let $$S(X)$$ be the total score given to candidate X by all voters. However, we can without loss of generality assume that no voters give X and Y the same score, since that has no effect on head-to-head comparisons.
 
 Then, we say a cardinal voting system is **Ballot-Condorcet-Consistent** (BCC) if, whenever $$T(X>Y) > T(Y>X)$$, then $$S(X) > S(Y)$$. That is, if more voters give X a higher score than Y than vice versa, then the total score given to X must be greater than the total score given to Y.
 
-If this is not satisfied, then we have a situation where more voters prefer X over Y, but Y has a higher total score than X, meaning that Y could be declared the winner over X, despite more voters preferring X. This would give X a legitimate claim to victory over Y, violating internal consistency. It is sufficient to check this is a general condition that holds for any arbitrary pair of candidates, since the winner of a typical cardinal system is the candidate with the highest total score.
+If this is not satisfied, then we have a situation where more voters prefer X over Y, but Y has a higher total score than X, meaning that Y could be declared the winner over X, despite more voters preferring X. This would give X a legitimate claim to victory over Y, particularly if this is true against all other candidates, making them the Condorcet winner "induced by the ballots". It is sufficient to check this is a general condition that holds for any arbitrary pair of candidates, since the winner of a typical cardinal system is the candidate with the highest total score. Thus, being BCC is necessary to guarantee that the Condorcet winner induced by the ballots must have the highest total score.
 
 ### Approval is BCC
 
@@ -64,16 +63,24 @@ The proof that Approval Voting is BCC is straightforward, since the total score 
 
 $$
 S(X) = T(X>Y) + T(X=Y)
-\implies S(A)-S(B) = S(A>B) - S(B>A)
+\implies S(X)-S(Y) = T(X>Y) - T(Y>X)
 $$
 
-This is because $$S(A)-S(B)=(T(A>B)+T(A=B))-(T(B>A)+T(B=A))=T(A>B)-T(B>A)$$, since $$T(A=B)=T(B=A)$$. Thus, if $$T(A>B)>T(B>A)$$, then $$S(A)>S(B)$$, satisfying the BCC condition. The difference in total approvals is exactly equal to the difference in "strict approvals", so Approval Voting is BCC.
+where $$T(X=Y)=T(Y=X)$$ is the number of voters who gave both candidates the same score (either both approved or both disapproved).
+
+This is because
+
+$$S(X)-S(Y)=(T(X>Y)+T(X=Y))-(T(Y>X)+T(Y=X))$$
+
+$$=T(X>Y)-T(Y>X)$$
+
+cancelling out the common approvals, since $$T(X=Y)=T(Y=X)$$. Thus, if $$T(X>Y)>T(Y>X)$$, then $$S(X)>S(Y)$$, satisfying the BCC condition. The difference in total approvals is exactly equal to the difference in "strict approvals", so Approval Voting is BCC.
 
 ### Uniqueness of Approval Voting
 
 While most cardinal systems usually give voters integer scores from 0 to 5 or 0 to 10, we can without loss of generality assume that voters can only give scores between and including 0 and 1. This is because if we, say, allowed voters to score from 0 to 10, we could simply divide all scores by 10 to get scores from 0 to 1 without changing any relative comparisons.
 
-From this perspective, every score system is just Approval voting but with fractional approvals. The common 0 to 5 system is just Approval voting where voters can give 0, 0.2, 0.4, 0.6, 0.8, or 1 approval to each candidate.
+From this perspective, every score system is just Approval voting but with fractional approvals. The common 0 to 5 system is just Approval voting where voters can also give 0.2, 0.4, 0.6, or 0.8 of an approval to each candidate.
 
 **Theorem:** The only cardinal voting system that is Ballot-Condorcet-Consistent is Approval Voting.
 
@@ -97,7 +104,7 @@ $$
 S(B) = t\cdot1 + t\cdot s + 1\cdot0 = t + ts
 $$
 
-However, since $$ts>1$$, we have that $$S(B) > S(A)$$. Thus, B has a higher total score than A, despite more voters preferring A over B. This violates the BCC condition, so this non-Approval voting system is not BCC.
+However, since $$ts>1$$, we have that $$S(B) > S(A)$$. Thus, B has a higher total score than A, despite more voters preferring A over B. This violates the BCC condition, so any non-Approval voting system is not BCC.
 
 ---
 
@@ -112,11 +119,11 @@ As an example, consider a system where voters can give scores 0, 1, or 100. A ve
 We still have more voters preferring A over B (102 to 101), but the total scores are:
 
 $$
-S(A) = 101\cdot0 + 101\cdot100 + 1\cdot100 = 10200
+S(A) = 101\cdot0 + 101\cdot100 + 1\cdot100 = 10,200
 $$
 
 $$
-S(B) = 101\cdot100 + 101\cdot1 + 1\cdot0 = 10201
+S(B) = 101\cdot100 + 101\cdot1 + 1\cdot0 = 10,201
 $$
 
 Thus, B has a higher total score than A, despite more voters preferring A over B. This violates the BCC condition, so this non-Approval voting system is not BCC.
