@@ -192,11 +192,11 @@ The point of this post is not to try to claim that non-Approval cardinal systems
 
 However, being Score-Condorcet-Consistent is, in my estimation, an incredibly important property for a voting system to have. Without it, the system cannot maintain or hold trust with its voters, since it can give losing candidates legitimate claims to victory, resulting in distrust and anger from the electorate. People like majority rule, and when it appears that a majority preferred one candidate over another, only for the other candidate to win, that destroys trust in the system.
 
-If a system can point to the data it collected and show that no other candidate, besides the declared victor, has a claim that they were swindled out of victory by the system, then that builds trust. Approval Voting is uniquely positioned to provide that guarantee in a cardinal voting system. In fact, plurality voting and even Condorcet methods, designed precisely to be SCC, fail this to some extent:
+If a system can point to the data it collected and show that no other candidate, besides the declared victor, has a claim that they were swindled out of victory by the system, then that builds trust. Approval Voting is uniquely positioned to provide that guarantee in a cardinal voting system. In fact, plurality voting and even Condorcet methods, designed precisely to have this bulletproof legitimacy for the winner, fail this to some extent:
 
 - In a Condorcet method, it's possible that the Condorcet winner is not the plurality (first-choice) winner, so the plurality winner could argue that they should have won, since they had the most intense support. There can be no Condorcet winner at all, leading to ambiguity and distrust in the particular cycle-breaking method used.
 - In a plurality system, it's commonplace for a third-party candidate to have far more votes than the difference between the two main candidates. This give the runner-up a claim that they were robbed of victory by the spoiler effect.
-- Any non-Condorcet ranked method is trivially not SCC, leading to trust-destroying elections like Alaska 2022 and Burlington 2009.
+- Any non-Condorcet ranked method is exactly that: not Condorcet-consistent. This leads to trust-destroying elections like Alaska 2022 and Burlington 2009, which both fueled massive repeal efforts against ranked choice voting.
 
 Approval voting has no such issues. Since there is no spoiler effect, and since the winner always has the highest total approvals, no other candidate can have a legitimate claim to victory. If Jones wins with 600 approvals, and Bob has 550 approvals, then Bob can't claim that he was somehow robbed of victory.
 
