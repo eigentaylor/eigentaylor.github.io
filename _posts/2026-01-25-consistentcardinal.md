@@ -89,27 +89,26 @@ From this perspective, every score system is just Approval voting but with fract
 
 **Proof:** Suppose that we have a non-Approval cardinal voting system. That is, there is some possible score s with $$0 < s < 1$$ that a voter can give to a candidate.
 
-Let $$t=\text{ceil}\left(\frac1s\right)+1$$. Note that this means that $$st=\text{ceil}\left(\frac1s\right)s+s>1+s>1$$, since $$s>0$$.
+Let $$t=\text{ceil}\left(\frac1s\right)$$. Note that this means that $$st=\text{ceil}\left(\frac1s\right)s\geq 1$$, since $$s>0$$.
 
 It suffices to show one counterexample where more voters prefer candidate A over candidate B, but B has a higher total score than A. Consider the following profile of voters:
 
 | Number of Voters | Score for A | Score for B | Preference |
 |------------------|-------------|-------------|------------|
 | $$t$$ | 0 | 1 | B > A |
-| $$t$$ | 1 | $$s$$ | A > B |
-| 1 | 1 | 0 | A > B |
+| $$t+1$$ | 1 | $$s$$ | A > B |
 
 It is clear that more voters prefer A over B, since $$T(A>B)=t+1$$ and $$T(B>A)=t$$. However, the total scores are as follows:
 
 $$
-S(A) = t\cdot0 + t\cdot1 + 1\cdot1 = t+1
+S(A) = t\cdot0 + (t+1)\cdot1 = t+1
 $$
 
 $$
-S(B) = t\cdot1 + t\cdot s + 1\cdot0 = t + ts
+S(B) = t\cdot1 + (t+1)\cdot s = t + (t+1)s=t + ts + s
 $$
 
-However, since $$ts>1$$, we have that $$S(B) > S(A)$$. Thus, B has a higher total score than A, despite more voters preferring A over B. This violates the BCC condition, so any non-Approval voting system is not BCC. QED.
+However, since $$ts\geq 1$$, we have that $$S(B)\geq t+1+s > S(A)$$. Thus, B has a higher total score than A, despite more voters preferring A over B. This violates the BCC condition, so any non-Approval voting system is not BCC. QED.
 
 The key insight here is that by allowing fractional approvals, we can create situations where a minority-preferred candidate snakes ahead in total score by accumulating many small fractional approvals from voters who prefer the other candidate. This is impossible in Approval voting, where each voter can only give a full approval or disapproval.
 
@@ -122,17 +121,16 @@ As an example, consider a system where voters can give scores 0, 1, or 100. A ve
 | Number of Voters | Score for A | Score for B | Preference |
 |------------------|-------------|-------------|------------|
 | 101 | 0 | 100 | B > A |
-| 101 | 100 | 1 | A > B |
-| 1 | 100 | 0 | A > B |
+| 102 | 100 | 1 | A > B |
 
 We still have more voters preferring A over B (102 to 101), but the total scores are:
 
 $$
-S(A) = 101\cdot0 + 101\cdot100 + 1\cdot100 = 10,200
+S(A) = 101\cdot0 + 102\cdot100 = 10,200
 $$
 
 $$
-S(B) = 101\cdot100 + 101\cdot1 + 1\cdot0 = 10,201
+S(B) = 101\cdot100 + 102\cdot1 = 10,202
 $$
 
 Thus, B has a higher total score than A, despite more voters preferring A over B. This violates the BCC condition, so this non-Approval voting system is not BCC.
