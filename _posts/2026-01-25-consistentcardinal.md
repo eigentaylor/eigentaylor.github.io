@@ -274,7 +274,7 @@ However, being Score-Condorcet-Consistent is, in my estimation, an incredibly im
 
 If a system can point to the data it collected and show that no other candidate, besides the declared victor, has a claim that they were swindled out of victory by the system, then that builds trust. Approval voting is uniquely positioned to provide that guarantee in a cardinal voting system. In fact, plurality voting and even Condorcet methods, designed precisely to have this bulletproof legitimacy for the winner, fail this to some extent:
 
-- In a Condorcet method, it's possible that the Condorcet winner is not the plurality (first-choice) winner, so the plurality winner could argue that they should have won, since they had the most intense support. There can be no Condorcet winner at all, leading to ambiguity and distrust in the particular cycle-breaking method used.
+- In a Condorcet method, it's possible that the Condorcet winner is not the plurality (first-choice) winner, so the plurality winner could argue that they should have won, since they had the most intense support. There can also be no Condorcet winner at all, leading to ambiguity and distrust in the particular cycle-breaking method used. Whoever wins was beaten head-to-head by someone else, giving that candidate a legitimate claim to victory.
 - In a plurality system, it's commonplace for a third-party candidate to have far more votes than the difference between the two main candidates. This give the runner-up a claim that they were robbed of victory by the spoiler effect.
 - Any non-Condorcet ranked method is exactly that: not Condorcet-consistent. This leads to trust-destroying elections like Alaska 2022 and Burlington 2009, which both fueled massive repeal efforts against ranked choice voting.
 
