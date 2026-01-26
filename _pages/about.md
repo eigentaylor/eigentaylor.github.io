@@ -53,6 +53,7 @@ my posts related to approval voting:
 - [A Mathematical Case for Approval Voting](./blog/approval){:target="_blank"}
 - [Is Approval Voting Strategyproof?](./blog/avstratproof){:target="_blank"}
 - [A Practical Case for Approval Voting](./blog/practicalapproval){:target="_blank"}
+- [Approval Voting is the Only Internally Consistent Cardinal Method](./blog/consistentcardinal){:target="_blank"}
 
 ---
 
