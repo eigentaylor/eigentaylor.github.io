@@ -48,7 +48,7 @@ However, due to the general [issues with ranked voting systems](../practicalappr
 
 ## Ballot-Condorcet-Consistency
 
-For a cardinal system, we need to adjust the definition for the vague notion of "internal consistency" slightly, since we're collecting different data. However, it still makes sense to ask if the actual winner would have won in head-to-head match-ups against every other candidate, based on the data collected. Thus, I define internal consistency for cardinal systems as follows:
+For a cardinal system, we need to adjust the definition for the vague notion of "internal consistency" slightly, since we're collecting a different flavor of data. However, it still makes sense to ask if the actual winner would have won in head-to-head match-ups against every other candidate, based on the data collected. Thus, I define internal consistency for cardinal systems as follows:
 
 **Definition:** We define the following notational shorthands:
 
@@ -57,7 +57,7 @@ For a cardinal system, we need to adjust the definition for the vague notion of 
 
 Then, we say a cardinal voting system is **Ballot-Condorcet-Consistent** (BCC) if, whenever $$T(X>Y) > T(Y>X)$$, then $$S(X) > S(Y)$$. That is, if more voters give X a higher score than Y than vice versa, then the total score given to X must be greater than the total score given to Y.
 
-If this is not satisfied, then we have a situation where more voters prefer X over Y, but Y has a higher total score than X, meaning that Y could be declared the winner over X, despite more voters preferring X. This would give X a legitimate claim to victory over Y, particularly if this is true against all other candidates, making them the Condorcet winner "induced by the ballots". It is sufficient to check this is a general condition that holds for any arbitrary pair of candidates, since the winner of a typical cardinal system is the candidate with the highest total score. Thus, being BCC is necessary to guarantee that the Condorcet winner induced by the ballots must have the highest total score.
+If this is not satisfied, then we can have a situation where more voters prefer X over Y, but Y has a higher total score than X, meaning that Y could be declared the winner over X, despite more voters preferring X. This would give X a legitimate claim to victory over Y, particularly if this is true against all other candidates, making them the Condorcet winner "induced by the ballots". It is sufficient to check this is a general condition that holds for any arbitrary pair of candidates, since the winner of a typical cardinal system is the candidate with the highest total score. Thus, being BCC is necessary to guarantee that the Condorcet winner induced by the ballots must have the highest total score.
 
 ### Approval is BCC
 
@@ -66,14 +66,8 @@ If this is not satisfied, then we have a situation where more voters prefer X ov
 The proof that Approval Voting is BCC is straightforward, since the total score for each candidate is precisely the number of voters who approved them.
 
 $$
-S(X) = T(X>Y) + T(X=Y)
+S(X)-S(Y) = T(X>Y) - T(Y>X)
 $$
-
-$$
-\implies S(X)-S(Y) = T(X>Y) - T(Y>X)
-$$
-
-where $$T(X=Y)=T(Y=X)$$ is the number of voters who gave both candidates the same score (either both approved or both disapproved).
 
 This is because
 
@@ -81,7 +75,9 @@ $$S(X)-S(Y)=(T(X>Y)+T(X=Y))-(T(Y>X)+T(Y=X))$$
 
 $$=T(X>Y)-T(Y>X)$$
 
-canceling out the common approvals, since $$T(X=Y)=T(Y=X)$$. Thus, if $$T(X>Y)>T(Y>X)$$, then $$S(X)>S(Y)$$, satisfying the BCC condition. The difference in total approvals is exactly equal to the difference in "strict approvals", so Approval Voting is BCC.
+where $$T(X=Y)=T(Y=X)$$ are the number of voters who approved both candidates.
+
+Subtracting the total approvals cancels out the common approvals. Thus, if $$T(X>Y)>T(Y>X)$$, then $$S(X)>S(Y)$$, satisfying the BCC condition. The difference in total approvals is exactly equal to the difference in "strict approvals", so Approval Voting is BCC.
 
 ### Uniqueness of Approval Voting
 
