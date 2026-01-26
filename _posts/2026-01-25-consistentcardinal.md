@@ -44,14 +44,16 @@ For a ranked system, I defined internal consistency as follows, using the idea o
 
 This is a relatively intuitive definition, particularly if we're asking voters to rank candidates and are thus collecting data about their ordinal preferences. Thus, if there's a candidate who is preferred by a majority over every other candidate, that candidate should win.
 
+However, due to the general [issues with ranked voting systems](../practicalapproval/){:target="_blank"}, many in the electoral reform community have shifted focus to cardinal voting systems, where voters can give candidates scores rather than rankings. This allows voters to express more nuanced preferences, such as intensity of support or opposition. I personally believe in Approval voting as it asks what I believe is the most important question: "Which candidates do you consent to govern you?" This is inherently a cardinal question that cannot be properly inferred from rankings alone.
+
 ## Ballot-Condorcet-Consistency
 
-For a cardinal system, we need to adjust this definition slightly, since we're collecting different data. However, it still makes sense to ask if the actual winner would have won in head-to-head match-ups against every other candidate, based on the data collected. Thus, I define internal consistency for cardinal systems as follows:
+For a cardinal system, we need to adjust the definition for the vague notion of "internal consistency" slightly, since we're collecting different data. However, it still makes sense to ask if the actual winner would have won in head-to-head match-ups against every other candidate, based on the data collected. Thus, I define internal consistency for cardinal systems as follows:
 
 **Definition:** We define the following notational shorthands:
 
-- Let $$T(X>Y)$$ be the number of voters who give candidate X a strictly higher score than candidate Y. This is the number of voters who prefer X over Y based on their provided ballots.
-- Let $$S(X)$$ be the total score given to candidate X by all voters. However, we can without loss of generality assume that no voters give X and Y the same score, since that has no effect on head-to-head comparisons.
+- Let $$T(X>Y)$$ be the number of voters who give candidate X a strictly higher score than candidate Y. This is the number of voters who prefer X over Y based on their provided ballot data.
+- Let $$S(X)$$ be the total score given to candidate X by all voters.
 
 Then, we say a cardinal voting system is **Ballot-Condorcet-Consistent** (BCC) if, whenever $$T(X>Y) > T(Y>X)$$, then $$S(X) > S(Y)$$. That is, if more voters give X a higher score than Y than vice versa, then the total score given to X must be greater than the total score given to Y.
 
