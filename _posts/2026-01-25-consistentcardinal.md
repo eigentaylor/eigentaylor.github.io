@@ -34,7 +34,7 @@ For example, a ranked system collects ordinal preferences from each voter. If 51
 
 It seems to be a desirable property for a voting system to produce a winner, where no other candidate has a legitimate claim to victory based on the preferences expressed by the voters. This is the essential idea behind what I mean by internal consistency.
 
-I gave proofs in that post and my other [post on Approval Voting](../approval/){:target="_blank"} that Approval Voting is internally consistent. However, I am actually going to prove that Approval voting is the *uniquely* internally consistent cardinal voting method. That is, if you want a system where voters can score candidates (cardinal voting), then the only such system that is internally consistent is Approval Voting: where the only scores are 0 (disapprove) and 1 (approve).
+I gave proofs in that post and my other [post on Approval Voting](../approval/){:target="_blank"} that Approval Voting is internally consistent. However, I am actually going to prove that Approval voting is the *uniquely* internally consistent cardinal voting method. That is, if you want a system where voters can score candidates (cardinal voting), then the only such system that is internally consistent is Approval Voting: where the only scores are 0 (disapprove) and 1 (approve). This cannot be fixed by adding a runoff step, as in STAR voting, either.
 
 ## Internal Consistency
 
@@ -193,7 +193,7 @@ However, being Ballot-Condorcet-Consistent is, in my estimation, an incredibly i
 
 If a system can point to the data it collected and show that no other candidate, besides the declared victor, has a claim that they were swindled out of victory by the system, then that builds trust. Approval Voting is uniquely positioned to provide that guarantee in a cardinal voting system. In fact, plurality voting and even Condorcet methods, designed precisely to be BCC, fail this to some extent:
 
-- In a Condorcet method, it's possible that the Condorcet winner is not the plurality (first-choice) winner, so the plurality winner could argue that they should have won, since they had the most intense support. There can also not be a Condorcet winner at all, leading to ambiguity and distrust in the particular cycle-breaking method used.
+- In a Condorcet method, it's possible that the Condorcet winner is not the plurality (first-choice) winner, so the plurality winner could argue that they should have won, since they had the most intense support. There can be no Condorcet winner at all, leading to ambiguity and distrust in the particular cycle-breaking method used.
 - In a plurality system, it's commonplace for a third-party candidate to have far more votes than the difference between the two main candidates. This give the runner-up a claim that they were robbed of victory by the spoiler effect.
 - Any non-Condorcet ranked method is trivially not BCC, leading to trust-destroying elections like Alaska 2022 and Burlington 2009.
 
