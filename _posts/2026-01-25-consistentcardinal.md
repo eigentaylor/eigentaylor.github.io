@@ -114,23 +114,23 @@ The key insight here is that by allowing fractional approvals, we can create sit
 
 ### An Example
 
-In the appendix of my [other post](../practicalapproval/){:target="_blank"}, I gave an example for a BCC failure in a 0, 1, 2 scoring system. But let's do something less conventional to illustrate the generality of the above proof.
+In the appendix of my [other post](../practicalapproval/){:target="_blank"}, I gave an example for a BCC failure in a 0, 1, 2 scoring system. And, of course, thd above construction works for any non-Approval cardinal system. But let's do something less conventional to illustrate the generality of the above proof.
 
-As an example, consider a system where voters can give scores 0, 1, or 100. A very silly system, but it illustrates the point. We can normalize this to scores 0, 0.01, and 1, giving us $$s=0.01$$. Then, we have $$t=\text{ceil}(100)+1=101$$. Thus, we have the following profile when we un-normalize:
+As an example, consider a system where voters can give scores 0, 1, or 100. We can normalize this to scores 0, 0.01, and 1, giving us $$s=0.01$$. Then, we have $$t=\text{ceil}(100)=100$$. Thus, we have the following profile when we un-normalize:
 
 | Number of Voters | Score for A | Score for B | Preference |
 |------------------|-------------|-------------|------------|
-| 101 | 0 | 100 | B > A |
-| 102 | 100 | 1 | A > B |
+| 100 | 0 | 100 | B > A |
+| 101 | 100 | 1 | A > B |
 
-We still have more voters preferring A over B (102 to 101), but the total scores are:
-
-$$
-S(A) = 101\cdot0 + 102\cdot100 = 10,200
-$$
+We still have more voters preferring A over B (101 to 100), but the total scores are:
 
 $$
-S(B) = 101\cdot100 + 102\cdot1 = 10,202
+S(A) = 100\cdot0 + 101\cdot100 = 10,100
+$$
+
+$$
+S(B) = 100\cdot100 + 101\cdot1 = 10,101
 $$
 
 Thus, B has a higher total score than A, despite more voters preferring A over B. This violates the BCC condition, so this non-Approval voting system is not BCC.
@@ -139,7 +139,7 @@ What happens after an election like this? Well, the supporters of A might realiz
 
 ## STAR is Not BCC
 
-STAR voting is a popular pseudo-cardinal voting system that seems to attempt to fix this issue. It is a 0 to 5 score system, where the winner is chosen by adding an additional runoff step: take the top two candidates by total score and then choose the winner by majority runoff between them. This helps it from some particularly damning examples, but it does not fix the underlying problem.
+STAR voting is a popular cardinal-esque voting system that seems to attempt to fix this issue with score methods, by injecting in some majority rule. It is a 0 to 5 score system, where the winner is chosen by adding an additional runoff step: take the top two candidates by total score and then choose the winner by majority runoff between them (based on voters who gave them different scores). This helps it from some particularly damning examples, but it does not fix the underlying problem.
 
 Take this particular example with three candidates A, B, and C, and 5 voters:
 
@@ -179,7 +179,7 @@ In STAR voting, however, we take the top two candidates by total score (B and C)
 1. The Condorcet winner A still loses, despite having a legitimate claim to victory over both B and C.
 2. C got the highest total score, but lost in the runoff. This gives them a legitimate claim to victory over B, since they got a higher total score, despite fewer voters preferring them over B.
 
-This creates a mess where every candidate has a legitimate claim to victory. A is the majority's favorite, C got the highest total score, but B won by the system's rules. This would create serious trust issues with the system, since it can't guarantee the winner a bulletproof claim to victory based on the preferences expressed by the voters.
+This creates a legitimacy-crisis where every candidate has a legitimate claim to victory. A is the majority's favorite, C got the highest total score, but B won by the system's rules. This would create serious trust issues with the system, since it can't guarantee the winner a bulletproof claim to victory based on the preferences expressed by the voters.
 
 ## The Importance of Legitimacy
 
