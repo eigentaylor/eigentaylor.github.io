@@ -81,7 +81,7 @@ Subtracting the total approvals cancels out the common approvals. Thus, if $$T(X
 
 ### Uniqueness of Approval Voting
 
-While most cardinal systems usually give voters integer scores from 0 to 5 or 0 to 10, we can without loss of generality assume that voters can only give scores between and including 0 and 1. This is because if we, say, allowed voters to score from 0 to 10, we could simply divide all scores by 10 to get scores from 0 to 1 without changing any relative comparisons.
+While most cardinal systems usually give voters integer scores such as from 0 to 5 or 0 to 10, we can without loss of generality assume that voters can only give scores between and including 0 and 1. This is because if we, say, allowed voters to score from 0 to 10, we could simply divide all scores by 10 to get scores from 0 to 1 without changing any relative comparisons.
 
 From this perspective, every score system is just Approval voting but with fractional approvals. The common 0 to 5 system is just Approval voting where voters can also give 0.2, 0.4, 0.6, or 0.8 of an approval to each candidate.
 
@@ -91,7 +91,7 @@ From this perspective, every score system is just Approval voting but with fract
 
 Let $$t=\text{ceil}\left(\frac1s\right)+1$$. Note that this means that $$st=\text{ceil}\left(\frac1s\right)s+s>1+s>1$$, since $$s>0$$.
 
-It suffices to show exactly one counterexample where more voters prefer candidate A over candidate B, but B has a higher total score than A. Consider the following profile of voters:
+It suffices to show one counterexample where more voters prefer candidate A over candidate B, but B has a higher total score than A. Consider the following profile of voters:
 
 | Number of Voters | Score for A | Score for B | Preference |
 |------------------|-------------|-------------|------------|
