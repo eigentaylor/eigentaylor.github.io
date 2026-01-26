@@ -61,6 +61,8 @@ If this is not satisfied, then we have a situation where more voters prefer X ov
 
 ### Approval is BCC
 
+> **Approval voting** allows voters to approve of (vote for) as many candidates as they like. Simply put a check mark next to each candidate you approve of. The candidate with the most votes wins.
+
 The proof that Approval Voting is BCC is straightforward, since the total score for each candidate is precisely the number of voters who approved them.
 
 $$
