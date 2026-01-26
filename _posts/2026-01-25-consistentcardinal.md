@@ -115,6 +115,8 @@ The key insight here is that by allowing fractional approvals, we can create sit
 
 ### An Example
 
+In the appendix of my [other post](../practicalapproval/){:target="_blank"}, I gave an example for a BCC failure in a 0, 1, 2 scoring system. But let's do something less conventional to illustrate the generality of the above proof.
+
 As an example, consider a system where voters can give scores 0, 1, or 100. A very silly system, but it illustrates the point. We can normalize this to scores 0, 0.01, and 1, giving us $$s=0.01$$. Then, we have $$t=\text{ceil}(100)+1=101$$. Thus, we have the following profile when we un-normalize:
 
 | Number of Voters | Score for A | Score for B | Preference |
