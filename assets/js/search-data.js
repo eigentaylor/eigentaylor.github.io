@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-a-practical-case-for-approval-voting",
+        },{id: "post-approval-voting-is-the-only-internally-consistent-cardinal-method",
+        
+          title: "Approval Voting is the Only Internally Consistent Cardinal Method",
+        
+        description: "A proof that Approval voting is the unique cardinal voting method that satisfies &quot;Ballot-Condorcet-Consistency&quot;, a necessary property for a trustworthy voting system.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/consistentcardinal/";
+          
+        },
+      },{id: "post-a-practical-case-for-approval-voting",
         
           title: "A Practical Case for Approval Voting",
         
