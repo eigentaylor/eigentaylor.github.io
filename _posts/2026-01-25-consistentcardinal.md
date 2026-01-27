@@ -30,15 +30,15 @@ toc:
 
 ## Introduction
 
-In my [last post](../practicalapproval/){:target="_blank"}, I focused a lot on the concept of internal consistency as a desirable property for voting methods. The primary purpose of a voting system is to aggregate potentially millions of complex individual preferences into a single name: the winner. This is done by collecting a simpler, easier to aggregate, set of inputs from each voter (ballots), which gives data about their preferences. I define the concept of internal consistency as using the data collected "properly", in a way that is consistent with the preferences expressed by the voters. That is, it does not produce a winner, where another candidate has a legitimate claim to victory based on the data collected.
+In my [last post](../practicalapproval/){:target="_blank"}, I focused a lot on the concept of internal consistency as a desirable property for voting methods. The primary purpose of a voting system is to aggregate potentially millions of complex individual preferences into a single name: the winner. This is done by collecting a simpler, easier to aggregate, set of inputs from each voter (ballots), which gives data about their preferences. I define the concept of internal consistency as using the data collected "properly", in a way that is consistent with the preferences expressed by the voters. That is, it does not produce a winner, where another candidate has a legitimate claim to victory based on the data collected in a non-tied election.
 
 For example, a ranked system collects ordinal preferences from each voter. If 51 voters rank candidate A over candidate B, while only 49 voters rank candidate B over candidate A, then it's clear that a majority of voters prefer A over B. If the system were to declare B the winner, then A would have a legitimate claim to victory, and the expressed will of the voters would have been ignored. If it can be further shown that A beats every other candidate, this would mean the system improperly used the data it collected, which destroys trust in the system. IRV, AKA "Ranked Choice Voting", is infamous for this exact failure (e.g. Burlington 2009 or the 2022 Alaska House special election). See my [previous post](../practicalapproval/){:target="_blank"} for more details. However, these failures led to repeal efforts that succeeded in Burlington and narrowly failed in Alaska.
 
-It seems to be a desirable property for a voting system to produce a winner, where no other candidate has a legitimate claim to victory based on the preferences expressed by the voters. This is the essential idea behind what I mean by internal consistency. In this post, I define an analogous concept for cardinal voting systems, which I call "Score-Condorcet-Consistency" (SCC), which requires the highest scoring candidate to be the one who is preferred by a majority of concerned voters over every other candidate, based on the scores given.
+It seems to be a desirable property for a voting system, whenever it produces a unique winner, to have no other candidate with a legitimate claim to victory based on the preferences expressed by the voters. This is the essential idea behind what I mean by internal consistency. In this post, I define an analogous concept for cardinal voting systems, "Score-Condorcet-Consistency" (SCC), which requires the highest scoring candidate to be the one who is preferred by a majority of concerned voters over every other candidate, based on the scores given.
 
 I gave proofs in that post and my other [post on Approval voting](../approval/){:target="_blank"} that Approval voting is internally consistent. However, I am actually going to prove that Approval voting is the *uniquely* internally consistent cardinal voting method. That is, if you want a system where voters can score candidates (cardinal voting), and elect the candidate with the highest score, then the only such system that is fully internally consistent is Approval voting: where the only scores are 0 (disapprove) and 1 (approve). As we shall see, this cannot be simply fixed by adding a runoff step, as in STAR voting, either.
 
-Note: We focus primarily on score aggregation methods here, where the candidate with the highest total score wins, alongside the popular STAR voting method which adds a runoff step. There are less popular cardinal methods that do not simply elect the candidate with the highest total score, and satisfy majority rule as best as a score method can. But such systems run into a different set of legitimacy issues, which I briefly discuss in the [Caveats](#caveats) section. In this post, we focus our attention on score aggregation methods and STAR, which are the most commonly proposed cardinal voting systems.
+Note: We focus primarily on score aggregation methods here, where the candidate with the highest total score wins, alongside the popular STAR voting method which adds a runoff step. There are lesser-known cardinal methods that do not simply elect the candidate with the highest total score, and satisfy majority rule as best as a score method can. But such systems run into a different set of legitimacy issues, which I briefly discuss in the [Caveats](#caveats) section. In this post, we focus our attention on score aggregation methods and STAR, which are the most commonly proposed cardinal voting systems.
 
 ## Internal Consistency
 
@@ -75,7 +75,7 @@ $$
 S(X)-S(Y) = T(X>Y) - T(Y>X)
 $$
 
-we have that $$S(X) > S(Y)$$ if and only if $$T(X>Y) > T(Y>X)$$.
+We have that $$S(X) > S(Y)$$ if and only if $$T(X>Y) > T(Y>X)$$.
 
 This is because
 
@@ -101,36 +101,15 @@ The only way for a losing candidate to have a legitimate claim to victory over t
 
 ### Uniqueness of Approval voting
 
-While most cardinal systems usually give voters integer scores such as from 0 to 5 or 0 to 10, we can without loss of generality assume that voters can only give scores between and including 0 and 1. This is because if we, say, allowed voters to score from 0 to 10, we could simply divide all scores by 10 to get scores from 0 to 1 without changing any relative comparisons.
+While most cardinal systems usually give voters integer scores such as from 0 to 5 or 0 to 10, we can without loss of generality assume that voters can only give scores between 0 and 1, inclusive. This is because if we, say, allowed voters to score from 0 to 10, we could simply divide all scores by 10 to get scores from 0 to 1 without changing any relative comparisons.
 
 From this perspective, every score system is just Approval voting but with fractional approvals. The common 0 to 5 system is just Approval voting where voters can also give 0.2, 0.4, 0.6, or 0.8 of an approval to each candidate.
 
-**Theorem 2:** The only cardinal voting system that is Score-Condorcet-Consistent is Approval voting.
+**Theorem 2:** The only cardinal voting system that is Score-Condorcet-Consistent is Approval voting. That is, if there exists a score s with $$0 < s < 1$$ that voters can give to candidates, then candidates X and Y can be constructed such that X beats Y in head-to-head match-ups, but Y has a higher total score than X.
 
-**Proof:** Suppose that we have a non-Approval cardinal voting system. That is, there is some possible score s with $$0 < s < 1$$ that a voter can give to a candidate.
+Proof of Theorem 2 is given in the [appendix](#appendix). However, a concrete example is given [in the next section](#an-example).
 
-Let $$t=\text{ceil}\left(\frac1s\right)$$. Note that this means that $$st=\text{ceil}\left(\frac1s\right)s\geq 1$$, since $$s>0$$.
-
-It suffices to show one counterexample where more voters prefer candidate A over candidate B, but B has a higher total score than A. Consider the following profile of voters:
-
-| Number of Voters | Score for A | Score for B | Preference |
-|------------------|-------------|-------------|------------|
-| $$t$$ | 0 | 1 | B > A |
-| $$t+1$$ | 1 | $$s$$ | A > B |
-
-It is clear that more voters prefer A over B, since $$T(A>B)=t+1$$ and $$T(B>A)=t$$. However, the total scores are as follows:
-
-$$
-S(A) = t\cdot0 + (t+1)\cdot1 = t+1
-$$
-
-$$
-S(B) = t\cdot1 + (t+1)\cdot s = t + (t+1)s=t + ts + s
-$$
-
-However, since $$ts\geq 1$$, we have that $$S(B)\geq t+1+s > S(A)$$. Thus, B has a higher total score than A, despite more voters preferring A over B. This violates the SCC condition, so any non-Approval voting system is not SCC. QED.
-
-The key insight here is that by allowing fractional approvals, we can create situations where a minority-preferred candidate snakes ahead in total score by accumulating many small fractional approvals from voters who prefer the other candidate. This is impossible in Approval voting, where each voter can only give a full approval or disapproval.
+The key insight is that by allowing fractional approvals (anything between the minimum and maximum score), we can create situations where a minority-preferred candidate snakes ahead in total score by accumulating many small fractional approvals from voters who prefer the other candidate. This is impossible in Approval voting, where each voter can only give a full approval or disapproval.
 
 **Theorem 3:** Every non-Approval cardinal voting system can produce a Condorcet cycle induced by the ballots.
 
@@ -153,6 +132,8 @@ In this profile, we have that:
 Thus, we have a Condorcet cycle A > B > C > A induced by the ballots. QED.
 
 This is quite straightforward: by allowing just a third level of preference intensity, we can create a rock-paper-scissors style cycle among three candidates. As shown above, Approval voting cannot produce such cycles. SCC guarantees a transitive ordering of candidates based on head-to-head match-ups, preventing cycles.
+
+Any system which allows a Condorcet cycle necessarily fails to be completely internally consistent, since no candidate can be declared the winner without another candidate having a legitimate claim to victory over them. This makes Approval voting uniquely internally consistent, even among ranked systems, since any ranked system with three or more candidates can produce Condorcet cycles.
 
 ### An Example
 
@@ -298,7 +279,32 @@ In an age where trust in our institutions and elections are at an all-time low, 
 
 ## Appendix
 
-Here we prove the claim from the ["How bad it can get"](#how-bad-it-can-get) section.
+Here we include formal proofs of the two major theorems stated above.
+
+**Theorem 2:** The only cardinal voting system that is Score-Condorcet-Consistent is Approval voting. That is, if there exists a score s with $$0 < s < 1$$ that voters can give to candidates, then a candidate X and Y can be constructed such that X beats Y in head-to-head match-ups, but Y has a higher total score than X.
+
+**Proof:** Suppose that we have a non-Approval cardinal voting system. That is, there is some possible score s with $$0 < s < 1$$ that a voter can give to a candidate.
+
+Let $$t=\text{ceil}\left(\frac1s\right)$$. Note that this means that $$st=\text{ceil}\left(\frac1s\right)s\geq 1$$.
+
+It suffices to show one counterexample where more voters prefer candidate A over candidate B, but B has a higher total score than A. Consider the following profile of voters:
+
+| Number of Voters | Score for A | Score for B | Preference |
+|------------------|-------------|-------------|------------|
+| $$t$$ | 0 | 1 | B > A |
+| $$t+1$$ | 1 | $$s$$ | A > B |
+
+It is clear that more voters prefer A over B, since $$T(A>B)=t+1$$ and $$T(B>A)=t$$. However, the total scores are as follows:
+
+$$
+S(A) = t\cdot0 + (t+1)\cdot1 = t+1
+$$
+
+$$
+S(B) = t\cdot1 + (t+1)\cdot s = t + (t+1)s=t + ts + s
+$$
+
+However, since $$ts\geq 1$$, we have that $$S(B)\geq t+1+s > S(A)$$. Thus, B has a higher total score than A, despite more voters preferring A over B. This violates the SCC condition, so any non-Approval voting system is not SCC. QED.
 
 **Theorem 4:** For any rational number $$r\in(0.5,1)$$, there exists a cardinal score aggregation voting system that allows a candidate B to have a higher total score than candidate A, despite more voters giving A a higher score than B by a head-to-head ratio of $$r$$. That is, the head-to-head ratio of A over B in the ballot data can get arbitrarily close to 100%, while B still has a higher total score than A.
 
