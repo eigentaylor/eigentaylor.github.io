@@ -158,7 +158,9 @@ This is quite straightforward: by allowing just a third level of preference inte
 
 In the appendix of my [other post](../practicalapproval/){:target="_blank"}, I gave an example for a SCC failure in a 0, 1, 2 scoring system. And, of course, the above construction works for any non-Approval cardinal system. But let's do something less conventional to illustrate the generality of the above proof.
 
-As an example, consider a system where voters can give scores 0, 1, or 100. We can normalize this to scores 0, 0.01, and 1, giving us $$s=0.01$$. Then, we have $$t=\text{ceil}(100)=100$$. Thus, we have the following profile when we un-normalize:
+As an example, consider a system where voters can give scores 0, 1, or 100. We can normalize this to scores 0, 0.01, and 1, giving us $$s=0.01$$. Then, we have $$t=\text{ceil}(100)=100$$. 
+
+We focus on the points of the two frontrunner candidates, A and B. Let us assume that there is an unpopular third candidate C, that both A and B voters dislike strongly, and that is why they give B a nonzero score. In a two candidate race, there is no rational reason for A voters to give B any score other than 0. Thus, we have the following profile when we un-normalize:
 
 | Number of Voters | Score for A | Score for B | Preference |
 |------------------|-------------|-------------|------------|
@@ -225,7 +227,9 @@ This creates a legitimacy-crisis where every candidate has a legitimate claim to
 
 ## How bad it can get
 
-As it turns out, the closer the fractional score s is to 1, the worse the SCC violation can get. We can make the head-to-head win of A over B arbitrarily large, while B's total score over A is still greater. For example, let s=0.9999. Consider the following profile (after un-normalizing):
+As it turns out, the closer the fractional score s is to 1, the worse the SCC violation can get. We can make the head-to-head win of A over B arbitrarily large, while B's total score over A is still greater. For example, let s=0.9999. Similar to the above proof, let us assume we have some nonviable third candidate C that both A and B voters dislike strongly, and that is why A voters give B a nonzero score.
+
+Consider the following profile (after un-normalizing):
 
 | Number of Voters | Score for A | Score for B | Preference |
 |------------------|-------------|-------------|------------|
