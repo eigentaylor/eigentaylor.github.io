@@ -44,9 +44,9 @@ Note: We focus primarily on score aggregation methods here, where the candidate 
 
 For a ranked system, I define internal consistency as follows, using the idea of a "Condorcet winner":
 
-> A ranked voting system is internally consistent if, whenever there is a candidate who would beat every other candidate in a head-to-head matchup (called a Condorcet winner), that candidate is declared the overall winner.
+> A ranked voting system is internally consistent if, whenever there is a candidate who would be preferred to every other candidate in a head-to-head matchup (called a Condorcet winner), that candidate is declared the overall winner.
 
-This is a relatively intuitive definition, particularly if we're asking voters to rank candidates and are thus collecting data about their ordinal preferences. If there's a candidate who is preferred by a majority over every other candidate, that candidate should win.
+This is a relatively intuitive definition, particularly if we're asking voters to rank candidates and are thus collecting data about their ordinal preferences. If there's a candidate who is preferred by a majority over every other candidate, that candidate should win. If you pick anyone else, that candidate can not only say "I was preferred by a majority over the winner", but they can also say "I was preferred by a majority over *every other candidate*".
 
 However, due to the general [issues with ranked voting systems](../practicalapproval/){:target="_blank"}, many (but certainly not all) in the electoral reform community have shifted focus to cardinal voting systems, where voters can give candidates scores rather than rankings. This allows voters to express more nuanced preferences, such as intensity of support or opposition. I personally believe in Approval voting as it asks what I believe is the most important question: "Which candidates do you consent to govern you?" This is inherently a cardinal question that cannot be properly inferred from rankings alone.
 
@@ -85,13 +85,13 @@ $$=T(X>Y)-T(Y>X)$$
 
 where $$T(X=Y)=T(Y=X)$$ are the number of voters who approved both candidates.
 
-Subtracting the total approvals cancels out the common approvals. Thus, if $$T(X>Y)>T(Y>X)$$, then $$S(X)>S(Y)$$, satisfying the SCC condition. The difference in total approvals is exactly equal to the difference in "strict approvals", so Approval voting is SCC. 
+Subtracting the total approvals cancels out the common approvals. Thus, if $$T(X>Y)>T(Y>X)$$, then $$S(X)>S(Y)$$, satisfying the SCC condition. The difference in total approvals is exactly equal to the difference in "strict approvals", so Approval voting is SCC. QED.
 
-**Corollary 1:** Approval voting always elects the Condorcet winner induced by the ballots, if one exists.
+**Corollary 1:** Approval voting always elects the Condorcet winner induced by the ballots, if one exists. A unique Condorcet winner induced by the ballots exists whenever one candidate gets the highest total approvals (without a tie).
 
 **Proof:** Suppose candidate A wins the election under Approval voting. Then, for any other candidate B, we have that $$S(A) > S(B)$$. By the SCC property, this implies that $$T(A>B) > T(B>A)$$. Thus, A beats every other candidate in head-to-head match-ups, making them the Condorcet winner induced by the ballots.
 
-The only other case is if there is a tie for highest total approvals, in which case all tied candidates are weak Condorcet winners induced by the ballots. That is, $$S(A) > S(B)$$ implies $$T(A>B) > T(B>A)$$ for all candidates A tied for first and B any other candidate not tied for first, with $$S(A)=S(B)$$ implying $$T(A>B)=T(B>A)$$ for all candidates A and B tied for first. Therefore, the Approval winner(s) are always at least weak Condorcet winner(s) induced by the ballots. QED.
+The only other case is if there is a tie for highest total approvals, in which case all tied candidates are weak Condorcet winners induced by the ballots. That is, $$S(A) > S(B)$$ implies $$T(A>B) > T(B>A)$$ for all candidates A tied for first and B any other candidate not tied for first, with $$S(A)=S(B)$$ implying $$T(A>B)=T(B>A)$$ for all candidates A and B tied for first. Therefore, the Approval winner(s) are always at least weak Condorcet winner(s) induced by the ballots. But if the election is not tied, then the candidate with the most approvals will be a unique strong Condorcet winner. QED.
 
 The only way for a losing candidate to have a legitimate claim to victory over the Approval winner is if they tied in total approvals with the winner.
 
