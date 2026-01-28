@@ -157,7 +157,7 @@ We still have more voters preferring A over B (101 to 100), but the total scores
 
 Thus, B has a higher total score than A, despite more voters preferring A over B. This violates the SCC condition, so this non-Approval voting system is not SCC.
 
-What happens after an election like this? Well, the supporters of A might realize that giving B any score except 0 is dangerous. By being "generous" or "nice" and being honest about how they feel about B, they actually caused their preferred candidate to lose! This creates a perverse incentive to instead just give 0 to every candidate you don't want to win, and the maximum score to the candidates you do want to win, bringing us right back to Approval voting with extra steps and unnecessary complexity.
+What happens after an election like this? Well, candidate A can step up to the podium and refuse to concede. They may claim that they were the rightful winner, since a majority of voters preferred them over B. They can point to the ballot data and say, "if we were still using plurality, I would have won!". Regardless of whether or not this claim is compelling to the electorate, it plants a seed of doubt in the minds of voters. Candidate B is seen as having won only because of the strange and unfamiliar scoring system, a technicality for anti-reform advocates to point to, rather than being a proper representative of the electorate. Supporters of A might feel cheated, and when A asks them for signatures to put a repeal effort on the ballot next cycle, they might just listen.
 
 ## STAR is Not SCC
 
