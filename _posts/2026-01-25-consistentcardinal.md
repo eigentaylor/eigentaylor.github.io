@@ -145,8 +145,8 @@ We focus on the points of the two frontrunner candidates, A and B. Let us assume
 
 | Number of Voters | Score for A | Score for B | Preference |
 |------------------|-------------|-------------|------------|
-| 100 | 0 | 100 | B > A |
 | 101 | 100 | 1 | A > B |
+| 100 | 0 | 100 | B > A |
 
 We still have more voters preferring A over B (101 to 100), but the total scores are:
 
@@ -207,8 +207,8 @@ Consider the following profile (after un-normalizing):
 
 | Number of Voters | Score for A | Score for B | Preference |
 |------------------|-------------|-------------|------------|
-| 1 | 0 | 10,000 | B > A |
 | 9,999 | 10,000 | 9,999 | A > B |
+| 1 | 0 | 10,000 | B > A |
 
 Here, A beats B by 9,999 to 1 (99.99% of voters prefer A over B), but B has a higher total score:
 
@@ -235,8 +235,8 @@ If $$\frac{r}{1-r}=\frac{p}{q}$$ then the following profile will do the trick:
 
 | Number of Voters | Score for A | Score for B | Preference |
 |------------------|-------------|-------------|------------|
-| q | 0 | 1 | B > A |
 | p | 1 | $$s$$ | A > B |
+| q | 0 | 1 | B > A |
 
 One might ask the maximum head-to-head win size r achievable for a given score s. Rearranging the above inequality, we have that:
 
@@ -289,8 +289,8 @@ It suffices to show one counterexample where more voters prefer candidate A over
 
 | Number of Voters | Score for A | Score for B | Preference |
 |------------------|-------------|-------------|------------|
-| $$t$$ | 0 | 1 | B > A |
 | $$t+1$$ | 1 | $$s$$ | A > B |
+| $$t$$ | 0 | 1 | B > A |
 
 It is clear that more voters prefer A over B, since $$T(A>B)=t+1$$ and $$T(B>A)=t$$. However, the total scores are as follows:
 
@@ -310,8 +310,8 @@ However, since $$ts\geq 1$$, we have that $$S(B)\geq t+1+s > S(A)$$. Thus, B has
 
 | Number of Voters | Score for A | Score for B | Preference |
 |------------------|-------------|-------------|------------|
-| q | 0 | 1 | B > A |
 | p | 1 | $$s$$ | A > B |
+| q | 0 | 1 | B > A |
 
 Note that $$f(x)=\frac{x}{1-x}$$ is a continuous increasing function on (0,1). Since $$f(0.5)=1$$, we have that for any $$r\in(0.5,1)$$, we have that $$f(r)$$ is a rational number greater than 1. Therefore, if $$\frac{r}{1-r}=\frac{p}{q}$$, then $$p>q>0$$. This guarantees that $$T(A>B)=p$$ and $$T(B>A)=q$$ are positive integers with $$p>q$$, so more voters prefer A over B.
 
