@@ -163,6 +163,8 @@ What happens after an election like this? Well, candidate A can step up to the p
 
 STAR voting is a popular cardinal-esque voting system that seems to attempt to fix this issue with score methods, by injecting in some majority rule. It is a 0 to 5 score system, where the winner is chosen by adding an additional runoff step: take the top two candidates by total score and then choose the winner by majority runoff between them (based on voters who gave them different scores). This helps it from some particularly damning examples, but it does not fix the underlying problem.
 
+Since STAR voting is a 0 to 5 score system, by the above theorem, it is not SCC. However, we can show that the runoff does not fix the underlying legitimacy issues that arise from SCC violations, nor does it guarantee that the Condorcet winner induced by the ballots will win.
+
 Take this particular example with three candidates A, B, and C, and 5 voters:
 
 | Number of Voters | Score for A | Score for B | Score for C | Ranking |
