@@ -150,13 +150,10 @@ We focus on the points of the two frontrunner candidates, A and B. Let us assume
 
 We still have more voters preferring A over B (101 to 100), but the total scores are:
 
-$$
-S(A) = 100\cdot0 + 101\cdot100 = 10,100
-$$
-
-$$
-S(B) = 100\cdot100 + 101\cdot1 = 10,101
-$$
+| Candidate | Total Score |
+|-----------|-------------|
+| A | $$100\cdot0 + 101\cdot100 = 10,100$$ |
+| B | $$100\cdot100 + 101\cdot1 = 10,101$$ |
 
 Thus, B has a higher total score than A, despite more voters preferring A over B. This violates the SCC condition, so this non-Approval voting system is not SCC.
 
@@ -173,7 +170,7 @@ Take this particular example with three candidates A, B, and C, and 5 voters:
 | 3 | 5 | 4 | 3 | A > B > C |
 | 2 | 0 | 3 | 5 | C > B > A |
 
-Clearly, if we look at the head-to-head match-ups:
+If we look at the head-to-head match-ups:
 
 | Match-up | Winner | Vote Count |
 |---------|--------|------------|
@@ -185,24 +182,18 @@ Therefore, A is the Condorcet winner and C is the Condorcet loser.
 
 When we add up the scores, however, something odd happens:
 
-$$
-S(A) = 3\cdot5 + 2\cdot0 = 15
-$$
-
-$$
-S(B) = 3\cdot4 + 2\cdot3 = 18
-$$
-
-$$
-S(C) = 3\cdot3 + 2\cdot5 = 19
-$$
+| Candidate | Total Score |
+|-----------|-------------|
+| A | $$3\cdot5 + 2\cdot0 = 15$$ |
+| B | $$3\cdot4 + 2\cdot3 = 18$$ |
+| C | $$3\cdot3 + 2\cdot5 = 19$$ |
 
 We get that the Condorcet loser C has the highest total score, while the Condorcet winner A has the lowest total score. Thus, in a regular cardinal system, C would be declared the winner, despite being the Condorcet loser induced by the ballots. This would be an extreme violation of internal consistency, since a majority of voters would have preferred both A and B over C.
 
 In STAR voting, however, we take the top two candidates by total score (B and C) and have a runoff. In the runoff, B beats C by a vote of 3 to 2, so B is declared the winner. While this prevents the Condorcet loser from ever winning, we still have two major problems:
 
 1. The Condorcet winner A still loses, despite having a legitimate claim to victory over both B and C.
-2. C got the highest total score, but lost in the runoff. This gives them a legitimate claim to victory over B, since they got a higher total score, despite fewer voters preferring them over B.
+2. C got the highest total score, but lost in the runoff. This gives them a legitimate claim to victory over A and B, since they got the highest total score, despite fewer voters preferring them over the other two alternatives.
 
 This creates a legitimacy-crisis where every candidate has a legitimate claim to victory. A is the majority's favorite, C got the highest total score, but B won by the system's rules. This would create serious trust issues with the system, since it can't guarantee the winner a bulletproof claim to victory based on the preferences expressed by the voters.
 
@@ -219,13 +210,10 @@ Consider the following profile (after un-normalizing):
 
 Here, A beats B by 9,999 to 1 (99.99% of voters prefer A over B), but B has a higher total score:
 
-$$
-S(A) = 1\cdot0 + 9,999\cdot10,000 = 99,990,000
-$$
-
-$$
-S(B) = 1\cdot10,000 + 9,999\cdot9,999 = 10,000 + 99,980,001 = 99,990,001
-$$
+| Candidate | Total Score |
+|-----------|-------------|
+| A | $$1\cdot0 + 9,999\cdot10,000 = 99,990,000$$ |
+| B | $$1\cdot10,000 + 9,999\cdot9,999 = 99,990,001$$ |
 
 giving B a higher total score than A by 1 point, despite nearly all voters preferring A over B. The greater the granularity of the scoring system (the closer s is to 1), the worse majority rule can be violated.
 
@@ -273,7 +261,7 @@ The point of this post is not to try to claim that non-Approval cardinal systems
 
 However, being Score-Condorcet-Consistent is, in my estimation, an incredibly important property for a voting system to have. Without it, the system cannot maintain or hold trust with its voters, since it can give losing candidates legitimate claims to victory, resulting in distrust and anger from the electorate. People like majority rule, and when it appears that a majority preferred one candidate over another, only for the other candidate to win, that destroys trust in the system.
 
-If a system can point to the data it collected and show that no other candidate, besides the declared victor, has a claim that they were swindled out of victory by the system, then that builds trust. Approval voting is uniquely positioned to provide that guarantee in a cardinal voting system. In fact, plurality voting and even Condorcet methods, designed precisely to have this bulletproof legitimacy for the winner, fail this to some extent:
+If a system can point to the data it collected and show that no losing candidate has a claim that they were swindled out of victory by the system, then that builds trust. Approval voting is uniquely positioned to provide that guarantee in a cardinal voting system. In fact, plurality voting and even Condorcet methods, designed precisely to have this bulletproof legitimacy for the winner, fail this to some extent:
 
 - In a Condorcet method, it's possible that the Condorcet winner is not the plurality (first-choice) winner, so the plurality winner could argue that they should have won, since they had the most intense support. There can also be no Condorcet winner at all, leading to ambiguity and distrust in the particular cycle-breaking method used. Whoever wins was beaten head-to-head by someone else, giving that candidate a legitimate claim to victory.
 - In a plurality system, it's commonplace for a third-party candidate to have far more votes than the difference between the two main candidates. This give the runner-up a claim that they were robbed of victory by the spoiler effect.
@@ -281,7 +269,7 @@ If a system can point to the data it collected and show that no other candidate,
 
 Approval voting has no such issues. Since there is no spoiler effect, and since the winner always has the highest total approvals, no other candidate can have a legitimate claim to victory. If Alice wins with 600 approvals, and Bob has 550 approvals, then Bob can't convincingly claim that he was somehow robbed of victory.
 
-There's no ranked data to pour through, to see if maybe those who approved both or neither actually preferred Bob to Alice. The 100 votes a third candidate Carl got weren't votes that "could have gone to Bob instead", as could be claimed under plurality. Exactly 50 more voters approved Alice-and-not-Bob than Bob-and-not-Alice. 50 more voters had the choice to approve Bob alongside Alice. They had the pen in their hand, looked at the box, and they chose not to. Alice can rightly say, "Skill issue, Bob. Try being more acceptable next time."
+There's no ranked data to pour through, to see if maybe those who approved both or neither actually preferred Bob to Alice. The 100 votes a third candidate Carl got weren't votes that "could have gone to Bob *instead*", as could be claimed under plurality. Exactly 50 more voters approved Alice-and-not-Bob than Bob-and-not-Alice. 50 more voters had the choice to approve Bob alongside Alice. They had the pen in their hand, looked at the box, and they chose not to. Alice can rightly say, "Skill issue, Bob. Try being more acceptable next time."
 
 In an age where trust in our institutions and elections are at an all-time low, having a voting system that can provide such a guarantee is invaluable. Approval voting is not just [mathematically elegant](../approval/){:target="_blank"}, it's not just [the most practical and cost-effective solution for our electoral problems](../practicalapproval/){:target="_blank"}, it is the only voting system that can guarantee an unassailable claim to victory for its winners in ALL non-tied elections.
 
@@ -352,6 +340,4 @@ s > 2-\frac1r & \iff rs>2r-1  \\
 
 Therefore, B has a higher total score than A and more voters prefer A over B, completing the proof. QED.
 
----
-
-[hyperlink](https://youtu.be/saoSEaSDsrY?si=3-8d_6_kd72_WTYR){:target="_blank"}
+[hyperlink](https://www.youtube.com/watch?v=JwKTy959n8o){:target="_blank"}
