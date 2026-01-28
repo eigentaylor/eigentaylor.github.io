@@ -248,6 +248,14 @@ If $$\frac{r}{1-r}=\frac{p}{q}$$ then the following profile will do the trick:
 | q | 0 | 1 | B > A |
 | p | 1 | $$s$$ | A > B |
 
+One might ask the maximum head-to-head win size r achievable for a given score s. Rearranging the above inequality, we have that:
+
+$$
+r < \frac{1}{2 - s}
+$$
+
+Which gives us one upper bound on the head-to-head win size achievable for a given score s, in this structure of profile. As s approaches 1, this upper bound approaches 1 as well, allowing for arbitrarily large head-to-head wins.
+
 ## Caveats
 
 There are [systems](https://electowiki.org/wiki/Smith//Score){:target="_blank"} that attempt to make cardinal systems Condorcet-consistent by electing Condorcet winners when they exist based on the ballot data, or eliminating candidates outside the Smith set (which we will not get into here). However, they are not SCC, as the above proof shows that no non-Approval cardinal system can be. That is, they cannot encode the head-to-head preferences of voters into the scores. Thus, they can still produce losers with legitimate claims to victory:
