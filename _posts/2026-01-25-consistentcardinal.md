@@ -24,6 +24,7 @@ toc:
       - name: An Example
   - name: STAR is Not SCC
   - name: Caveats
+  - name: But does Approval elect the best candidates?
   - name: The Importance of Legitimacy
   - name: Appendix
 ---
