@@ -257,6 +257,18 @@ This highlights the commonality between non-Approval cardinal systems and ranked
 
 One can rightly argue that the SCC property is too strict, and the fact that non-Approval systems can violate it is not a fatal flaw. After all, the purpose of cardinal systems is to allow voters to express more nuanced preferences, and sometimes that may lead to situations where the majority's preference is not reflected in the total scores. I claim not that a minority preferred, but widely acceptable candidate is necessarily a bad outcome, but rather than when voters can see that their favorite candidate was majority-preferred over the winner and still lost, that destroys trust in the system. Those are the outcomes that lead to repeal efforts, setting back electoral reform as a whole.
 
+## But does Approval elect the best candidates?
+
+There is, in my estimation, a common misconception that is pervasive in the electoral reform community: that Approval voting is too "simple" or "blunt" to elect better candidates. That we need more expressiveness in our ballots to elect the "best" candidates. How can a system that looks just like plurality voting, where voters only check boxes, elect better candidates than a ranked system or a system that allows for granular scoring?
+
+I have argued in [previous posts](../practicalapproval/){:target="_blank"} that Approval voting does not elect milquetoast, beige wall candidates, but rather candidates that are both broadly acceptable and can inspire passionate support. But it still seems counterintuitive to many that increasing the granularity or expressiveness of ballots does not necessarily lead to better outcomes.
+
+The literature, however, shows otherwise. Approval voting has a [strong pull towards the median voter](https://www.jstor.org/stable/2111214){:target="_blank"} (Cox 1985), promoting representative outcomes. Simulations put Approval voting at 89-95% VSE (Voter Satisfaction Efficiency), depending on the model used (see [here](https://electionscience.github.io/vse-sim/VSEbasic){:target="_blank"}).
+
+Compared to STAR's 91-98% VSE, and SCORE's 84-96%, Approval voting is extremely comparable. And the extremely minor improvement from Approval to STAR comes at [serious costs beyond the SCC property](../practicalapproval/){:target="_blank"}, in terms of complexity, cost, and trustworthiness. Plurality voting, by comparison, scores around 75% and IRV around 79% ("better than plurality, but worse than all the other methods above").
+
+Given Approval's simplicity, logistical ease of implementation, the bulletproof legitimacy it yields the winner, and strong performance in electing representative candidates, the burden of proof lies on the more complex systems to show that their added complexity, and loss of internal consistency, is worth the trade-off. So far, I have not seen convincing evidence that it is.
+
 ## The Importance of Legitimacy
 
 The point of this post is not to try to claim that non-Approval cardinal systems are unusable. The point of these systems is to give voters greater ability to express their preferences of the candidates. Thus, not being tied to the Condorcet criterion is arguably a strength, as I have argued in other posts. I don't believe that the ranked Condorcet winner is necessarily the best candidate to always win.
@@ -273,7 +285,9 @@ Approval voting has no such issues. Since there is no spoiler effect, and since 
 
 There's no ranked data to pour through, to see if maybe those who approved both or neither actually preferred Bob to Alice. The 100 votes a third candidate Carl got weren't votes that "could have gone to Bob *instead*", as could be claimed under plurality. Exactly 50 more voters approved Alice-and-not-Bob than Bob-and-not-Alice. 50 more voters had the choice to approve Bob alongside Alice. They had the pen in their hand, looked at the box, and they chose not to. Alice can rightly say, "Skill issue, Bob. Try being more acceptable next time."
 
-In an age where trust in our institutions and elections are at an all-time low, having a voting system that can provide such a guarantee is invaluable. Approval voting is not just [mathematically elegant](../approval/){:target="_blank"}, it's not just [the most practical and cost-effective solution for our electoral problems](../practicalapproval/){:target="_blank"}, it is the only voting system that can guarantee an unassailable claim to victory for its winners in ALL non-tied elections.
+In an age where trust in our institutions and elections are at an all-time low, having a voting system that can provide such a guarantee is invaluable. Approval voting is not just [mathematically elegant](../approval/){:target="_blank"}, it's not just [the most practical and cost-effective solution for our electoral problems](../practicalapproval/){:target="_blank"}, it is the only voting system (cardinal or otherwise) that can guarantee an unassailable claim to victory for its winners in ALL non-tied elections.
+
+---
 
 ## Appendix
 
@@ -341,5 +355,13 @@ s > 2-\frac1r & \iff rs>2r-1  \\
 \end{align*}$$
 
 Therefore, B has a higher total score than A and more voters prefer A over B, completing the proof. QED.
+
+---
+
+# References
+
+Cox, Gary W. “Electoral Equilibrium under Approval Voting.” American Journal of Political Science, vol. 29, no. 1, 1985, pp. 112–18. JSTOR, [https://doi.org/10.2307/2111214](https://doi.org/10.2307/2111214){:target="_blank"}.
+
+Quinn, J. (2017). Voter Satisfaction Efficiency (VSE) summary. Center for Election Science. [https://electionscience.github.io/vse-sim/VSEbasic/](https://electionscience.github.io/vse-sim/VSEbasic/){:target="_blank"}.
 
 [hyperlink](https://www.youtube.com/watch?v=JwKTy959n8o){:target="_blank"}
