@@ -41,7 +41,7 @@ toc:
 
 The focus of this post is less about *why* we need electoral reform, and more about *how* we should go about it in a practical manner. This post assumes you are already convinced that plurality voting is deeply flawed, and that we need to adopt a better voting system.
 
-For one unconvinced of the issues with our current system, I recommend reading this [fantastic post](https://substack.com/@akorky/p-180772748) by Amanda Mahlendorf, or my [previous post on the theoretical case for Approval voting](../approval/){:target="_blank"} (which also explains its incredible mathematical elegance). Rather than focus on the mathematically cute aspects of Approval voting (as that post did), or the [nuances of the benefits for sincerity](../avstratproof){:target="_blank"}, this post will focus on the strong practical logistical case for Approval voting, and why it is the most sensible choice for real-world use.
+For one unconvinced of the issues with our current system, I recommend reading this [fantastic post](https://substack.com/@akorky/p-180772748) by Amanda Mahlendorf. Rather than focus on the mathematically cute aspects of Approval voting, or the [nuances of the benefits for sincerity](../avstratproof){:target="_blank"}, this post will focus on the strong practical logistical case for Approval voting, and why it is the most sensible choice for real-world use.
 
 I wanted to make this post because of [testimony by Jason Snead to the Indiana Senate Elections Committee in favor of preemptively banning "Ranked Choice Voting" (AKA Instant Runoff Voting or IRV) in the state of Indiana](https://x.com/jasonwsnead/status/2011085198478266677){:target="_blank"}.
 
@@ -71,7 +71,7 @@ In your mind, I want you to picture the ideal ranked voting system like a comple
 
 ## The Logistical Case for Approval Voting
 
-In addition to its *many* theoretical benefits (which I have covered in [previous posts](../approval/){:target="_blank"}), Approval voting is *objectively* the most practical voting system for real-world use.
+In addition to its *many* theoretical benefits, Approval voting is *objectively* the most practical voting system for real-world use.
 
 ### Implementation
 
@@ -226,7 +226,7 @@ Further, the sincerity incentives under Approval voting are very strong, so we c
 
 When discussing the technical Condorcet consistency of Approval voting, based on assumed dichotomous preferences, someone said it's a "You can't prove it's not Condorcet" method, and I found that hilarious and apt.
 
-In my other [post on Approval voting](../approval/){:target="_blank"}, I showed that Approval is Condorcet-consistent with the expressed dichotomous preferences of the electorate. The proof is simple, but best illustrated with an example (though, a general proof is given in the [Appendix](#appendix)).:
+In my other post on Approval voting, I showed that Approval is Condorcet-consistent with the expressed dichotomous preferences of the electorate. The proof is simple, but best illustrated with an example (though, a general proof is given in the [Appendix](#appendix)).:
 
 For example, if W got 100 approvals and C got 80 approvals, and there were 70 ballots that approved both W and C, then:
 

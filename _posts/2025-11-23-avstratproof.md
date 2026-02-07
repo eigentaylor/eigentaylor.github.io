@@ -37,7 +37,7 @@ toc:
 
 Updated 12/7/2025.
 
-Recently, I wrote a post about [approval voting](../approval/){:target="_blank"}, and I would like to go more in depth here about one of its most appealing properties: strategyproofness. Which is to say, the property that a voter has one and only one optimal strategy, and that strategy is to vote honestly, with their heart. There is no benefit to trying to game the system by misrepresenting one's preferences.
+Recently, I wrote a post about approval voting, and I would like to go more in depth here about one of its most appealing properties: strategyproofness. Which is to say, the property that a voter has one and only one optimal strategy, and that strategy is to vote honestly, with their heart. There is no benefit to trying to game the system by misrepresenting one's preferences.
 
 The question we are trying to answer is: *is approval voting strategyproof?* The short answer is:
 
@@ -50,7 +50,7 @@ For this discussion, it's worth being explicit up front about the definition of 
 - **Plurality**: Each voter votes for one candidate. The candidate with the most votes wins.
 - **Approval Voting**: Each voter can vote for (approve of) as many candidates as they like. The candidate with the most approval votes wins.
 
-While Ranked Choice Voting is also a popular alternative, it is still highly susceptible to strategy. The Gibbard-Satterthwaite theorem shows that no reasonable ranked voting system can be strategyproof. Indeed, RCV fails a number of other desirable properties like monotonicity, so beyond examples of strategic voting in RCV [which we will get to shortly](#strategy-under-ranked-choice-voting), we won't dwell on that system too much. For a more in-depth discussion of RCV's flaws (and why I believe AV to be strictly superior), see [my post on approval voting](../approval/){:target="_blank"}.
+While Ranked Choice Voting is also a popular alternative, it is still highly susceptible to strategy. The Gibbard-Satterthwaite theorem shows that no reasonable ranked voting system can be strategyproof. Indeed, RCV fails a number of other desirable properties like monotonicity, so beyond examples of strategic voting in RCV [which we will get to shortly](#strategy-under-ranked-choice-voting), we won't dwell on that system too much. For a more in-depth discussion of RCV's flaws (and why I believe AV to be strictly superior), see [my post on approval voting](../practicalapproval/){:target="_blank"}.
 
 ### Strategy Under Plurality
 
