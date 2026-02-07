@@ -71,7 +71,7 @@ ninja.data = [{
         
           title: "A Mathematical Case for Approval Voting",
         
-        description: "Approval voting is the best voting system (AKA, Taylor gets political)",
+        description: "Approval voting is the best voting system (AKA, Taylor gets political). (Somewhat outdated.)",
         section: "Posts",
         handler: () => {
           
