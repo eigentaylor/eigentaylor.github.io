@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-approval-voting-is-the-only-internally-consistent-cardinal-method",
+        },{id: "post-it-39-s-time-to-ditch-rcv-embrace-approval-voting",
+        
+          title: "It&#39;s Time to Ditch RCV, Embrace Approval Voting",
+        
+        description: "It has been tried, and it has failed. Ranked-choice voting must go before it poisons the well for all electoral reform.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/ditch-rcv/";
+          
+        },
+      },{id: "post-approval-voting-is-the-only-internally-consistent-cardinal-method",
         
           title: "Approval voting is the Only Internally Consistent Cardinal Method",
         
