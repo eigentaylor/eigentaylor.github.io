@@ -675,6 +675,13 @@ ninja.data = [{
           window.open("mailto:%74%61%79%6C%6F%72%65%69%67%65%6E%66%69%73%68%65%72@%67%6D%61%69%6C.%63%6F%6D", "_blank");
         },
       },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/eigentaylor", "_blank");
+        },
+      },{
         id: 'social-rss',
         title: 'RSS Feed',
         section: 'Socials',
