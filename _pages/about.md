@@ -51,8 +51,9 @@ personal favorites:
 my best blog posts related to approval voting:
 
 - [A Practical Case for Approval Voting](./blog/practicalapproval){:target="_blank"}
-- [Is Approval Voting Strategyproof?](./blog/avstratproof){:target="_blank"}
+- [It's Time to Ditch RCV, Embrace Approval Voting](./blog/ditch-rcv){:target="_blank"}
 - [Approval Voting is the Only Internally Consistent Cardinal Method](./blog/consistentcardinal){:target="_blank"}
+- [Is Approval Voting Strategyproof?](./blog/avstratproof){:target="_blank"}
 
 ---
 
