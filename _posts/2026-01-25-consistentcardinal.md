@@ -138,23 +138,23 @@ Any system which allows a Condorcet cycle necessarily fails to be completely int
 
 ### An Example
 
-In the appendix of my [other post](../practicalapproval/){:target="_blank"}, I gave an example for a SCC failure in a 0, 1, 2 scoring system. And, of course, the above construction works for any non-Approval cardinal system. But let's do something less conventional to illustrate the generality of the above proof.
+In the appendix of my [other post](../practicalapproval/){:target="_blank"}, I gave an example for a SCC failure in a 0, 1, 2 scoring system. And, of course, the above construction works for any non-Approval cardinal system. But let's use the more common 0-5 system, and I'll leave you with a less conventional example to work through, which illustrates the generality of the proof for Theorem 2 in the [appendix](#appendix).
 
-As an example, consider a system where voters can give scores 0, 1, or 100. We can normalize this to scores 0, 0.01, and 1, giving us $$s=0.01$$. Then, we have $$t=\text{ceil}(100)=100$$. 
+Consider the general SCORE system where voters can rate a candidate 0,1,2,3,4,5. But let's just focus on 0, 1, and 5. We can normalize this to scores 0, 0.2, and 1, giving us $$s=0.2$$. Then, we have $$t=\text{ceil}(5)=5$$.
 
 We focus on the points of the two frontrunner candidates, A and B. Let us assume that there is an unpopular third candidate C, that both A and B voters dislike strongly, and that is why they give B a nonzero score. In a two candidate race, there is no rational reason for A voters to give B any score other than 0. Thus, we have the following profile when we un-normalize:
 
 | Number of Voters | Score for A | Score for B | Preference |
 |------------------|-------------|-------------|------------|
-| 101 | 100 | 1 | A > B |
-| 100 | 0 | 100 | B > A |
+| 6 | 5 | 1 | A > B |
+| 5 | 0 | 5 | B > A |
 
 We still have more voters preferring A over B (101 to 100), but the total scores are:
 
 | Candidate | Total Score |
 |-----------|-------------|
-| A | $$100\cdot0 + 101\cdot100 = 10,100$$ |
-| B | $$100\cdot100 + 101\cdot1 = 10,101$$ |
+| A | $$6\cdot5 + 5\cdot0 = 30$$ |
+| B | $$6\cdot1 + 5\cdot5 = 31$$ |
 
 Thus, B has a higher total score than A, despite more voters preferring A over B. This violates the SCC condition, so this non-Approval voting system is not SCC.
 
@@ -318,6 +318,22 @@ S(B) = t\cdot1 + (t+1)\cdot s = t + (t+1)s=t + ts + s
 $$
 
 However, since $$ts\geq 1$$, we have that $$S(B)\geq t+1+s > S(A)$$. Thus, B has a higher total score than A, despite more voters preferring A over B. This violates the SCC condition, so any non-Approval voting system is not SCC. QED.
+
+**Example:** Consider a system where voters can give scores 0, 1, or 100. We can normalize this to scores 0, 0.01, and 1, giving us $$s=0.01$$. Then, we have $$t=\text{ceil}(100)=100$$. This gives the profile
+
+| Number of Voters | Score for A | Score for B | Preference |
+|------------------|-------------|-------------|------------|
+| 101 | 100 | 1 | A > B |
+| 100 | 0 | 100 | B > A |
+
+We still have more voters preferring A over B (101 to 100), but the total scores are:
+
+| Candidate | Total Score |
+|-----------|-------------|
+| A | $$100\cdot0 + 101\cdot100 = 10,100$$ |
+| B | $$100\cdot100 + 101\cdot1 = 10,101$$ |
+
+Once agaim B wins by one point despite a majority preferring A.
 
 **Theorem 4:** For any rational number $$r\in(0.5,1)$$, there exists a cardinal score aggregation voting system that allows a candidate B to have a higher total score than candidate A, despite more voters giving A a higher score than B by a head-to-head ratio of $$r$$. That is, the head-to-head ratio of A over B in the ballot data can get arbitrarily close to 100%, while B still has a higher total score than A.
 
