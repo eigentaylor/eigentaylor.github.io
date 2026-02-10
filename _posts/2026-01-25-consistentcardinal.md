@@ -149,7 +149,7 @@ We focus on the points of the two frontrunner candidates, A and B. Let us assume
 | 6 | 5 | 1 | A > B |
 | 5 | 0 | 5 | B > A |
 
-We still have more voters preferring A over B (101 to 100), but the total scores are:
+We still have more voters preferring A over B (6 to 5), but the total scores are:
 
 | Candidate | Total Score |
 |-----------|-------------|
