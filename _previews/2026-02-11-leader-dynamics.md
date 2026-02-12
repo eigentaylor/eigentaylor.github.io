@@ -122,9 +122,14 @@ We give a proof by construction, using [McGarvey's theorem](https://www.jstor.or
 To ensure that $$X_i > Y_i$$ is the $$i+1$$th strongest match-up, we add $$\frac{\ell}2-i$$ voters of the following two types:
 
 1. $$X_iY_iZ_1\ldots Z_{m-2}$$, for $$Z_1\ldots Z_{m-2}$$ being any arbitrary ordering of the remaining candidates.
-2. $$Z_{m-2}\ldots Z_1X_i_Y_i$$
+2. $$Z_{m-2}\ldots Z_1X_iY_i$$
 
-By reversing the other candidates, these two voters types cancel out all pairwise match-ups except it gives +2 to $$X_i>Y_i$$ for each pair of voters of these types.
+By reversing the other candidates, these two voters types cancel out all pairwise match-ups except it gives +2 to $$X_i>Y_i$$ for each pair of voters of these types:
+
+1. For $$X_i$$ versus $$Z_j$$, the first type of voter gives +1 to $$X_i>Z_j$$, while the second type of voter gives -1 to $$X_i>Z_j$$, so they cancel out.
+2. For $$Y_i$$ versus $$Z_j$$, the first type of voter gives -1 to $$Y_i>Z_j$$, while the second type of voter gives +1 to $$Y_i>Z_j$$, so they cancel out.
+3. For $$Z_j$$ versus $$Z_k$$, the first type of voter gives +1 to $$Z_j>Z_k$$, while the second type of voter gives -1 to $$Z_j>Z_k$$, so they cancel out.
+4. For $$X_i$$ versus $$Y_i$$, both types of voters give +1 to $$X_i>Y_i$$, so they add up to +2.
 
 As an example, take the following CPRO on three candidates.
 
@@ -182,7 +187,7 @@ Let us consider the (A,B) node. We look for A>B or X>A, since A is the leader. W
 
 **Theorem 6:** With three candidates, if a Condorcet winner and equilibrium exists, the leader rule always converges to that equilibrium, from any starting node, in a maximum of three steps. However, the Condorcet winner will win after at most two steps.
 
-**Proof:** Note that the CPRO is uniquely determined by three pairwise match-ups. Suppose that candidate A is a Condorcet winner. That is, we have A>B and A>C in the first half of the CPRO. By previous lemmas, we know that any node where A is the leader has an edge to the equilibrium. Therefore, we prove the theorem by 
+**Proof:** Note that the CPRO is uniquely determined by three pairwise match-ups. Suppose that candidate A is a Condorcet winner. That is, we have A>B and A>C in the first half of the CPRO. By previous lemmas, we know that any node where A is the leader has an edge to the equilibrium. Therefore, we prove the theorem by
 
 We have two cases:
 
@@ -207,9 +212,30 @@ If we have a leader who is not D, then at least one candidate will have a strong
 
 In particular, we can see that there will be a cycle (A,D) to (C,D) to (B,D) and back to (A,D). QED
 
-## Conclusion
+## Discussion
 
 What we can see from these theorems and results is that the leader rule leads to strongly majoritarian outcomes. At least one candidate will have over 50%, including the Condorcet winner if they exist. While the Condorcet winner may not be the final winner, the winner is always the candidate whom the voters most strongly prefer over the expected outcome. That is, the outcome is always either the same or strictly better, to the collective voters, than the expectation of voters going into the voting booth.
+
+### The Chicken Dilemma Explored
+
+Many criticize Approval voting for being susceptible to strategic voting, and a chicken dilemma between supporters of two similar candidates. The leader rule actually provides a direct answer to this.
+
+The claim is that if we have two candidates, L and C, who perhaps are leftists running in a generally left-leaning electorate, then their supporters might bullet vote sufficiently such that a right leaning candidate R might snake in and win. However, the leader rule reframes this scenario.
+
+Let us suppose that one of L, a more extremist left candidate, and C, a center left candidate, are is the leader. And let R be a right-leaning candidate who is neither the leader or challenger. We will analyze the case in which one of the two left candidates is the leader and the other is the challenger. Let us assume a generally 1-dimensional spatial model where L voters prefer L>C>R, R voters prefer R>C>L, and C voters split with some preferring C>L>R and others preferring C>R>L. Consider the cases:
+
+| Leader | Challenger | LCR | CLR | CRL | RCL |
+|--------|------------|-----|-----|-----|-----|
+| L      | C          | L   | C   | C,R | R,C |
+| C      | L          | L   | C   | C   | R,C |
+
+We notice something very interesting. The criticism of the chicken dilemma is that L and C voters *might* bullet vote and cause R to win. The claim is that sufficient bullet voting might end up breaking up the coalition and resulting in plurality-style vote splitting. However, the leader rule actually says that L and C voters (who rank R last) *should* bullet vote, and that this is the optimal strategy. The missing consideration of the criticism is what R voters would do: if they know their candidate is nonviable or unlikely to win, it is optimal to also give an approval to the more agreeable viable candidate, C. Thus, C, in all cases, gets approvals from the moderate C supporters *and* the conservative R supporters, while L only gets approvals from the more extreme L supporters. If C is the Condorcet winner, then the moderate and conservative blocs will coalesce around C, outnumbering the more extreme L, resulting in a C win.
+
+However, against the other criticism that Approval elects only bland candidates, there is another consideration to make. If the median voter is more extreme, and closer to L, then the L supporting wing will be larger than the combined C and R supporting wings, and thus L will still win. The outcome from the Leader rule is not always on the *middle* candidate, but rather strongly favors the Condorcet winner. It is entirely possible for one of the "outside" candidates to be the Condorcet winner if the electorate leans sufficiently towards that candidate.
+
+It should be acknowledged, however, that this is not any sort of guarantee that voters would or should bullet vote. While it may be optimal for L and C voters to bullet vote when both are ahead, we do see in real Approval elections in Fargo (TODO: include source) and St. Louis that voters are willing to approve multiple candidates, and support a coalition. Rather, this example should illustrate that Approval would not likely suddenly collapse when voters are strategic. Instead, it is actually robust to strategy when voters are prudent (ex. if their favorite candidate is trailing behind the top two). If a sufficient number of both L and CLR voters choose to approve L and C--say due to the candidates forming a coalition and encouraging their voters to do so--it's even more likely that either L or C will win, strengthening their lead over R. If the electorate is sufficiently left-leaning, then this is a highly representative outcome.
+
+## Other Considerations and Further Research
 
 Some considerations must be made to the plausibility or realism of the axioms. For one, this analysis does not take into account sincere voters who do not adjust their acceptability line strategically. It also does allow for the possibility that some voters may not agree on the perceived leader and challenger. In our increasingly divisive media bubbles, the perception of a race to one bloc of voters could be significantly different from another.
 
