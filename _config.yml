@@ -153,6 +153,9 @@ collections:
     output: true
   projects:
     output: false
+  previews:
+    output: true
+    permalink: /preview/:title/
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
@@ -228,6 +231,13 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+  - scope:
+      path: "_previews"
+      type: "previews"
+    values:
+      sitemap: false
+      feed: false
+      draft_preview: true
 
 sass:
   style: compressed

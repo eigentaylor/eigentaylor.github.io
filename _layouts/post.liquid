@@ -14,6 +14,11 @@ layout: default
 {% endif %}
 
 <div class="post">
+  {% if page.draft_preview %}
+    <div class="draft-preview-banner" style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 12px 20px; margin-bottom: 20px; text-align: center; font-size: 0.95rem; color: #664d03;">
+      📝 <strong>Draft Preview</strong> — This post is not yet published. Please don't share this link widely.
+    </div>
+  {% endif %}
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
     <p class="post-meta">
