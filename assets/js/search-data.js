@@ -602,6 +602,51 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/backin2022/";
+            },},{id: "previews-a-mathematical-case-for-approval-voting",
+          title: 'A Mathematical Case for Approval Voting',
+          description: "Approval voting is the best voting system",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/approval/";
+            },},{id: "previews-a-mathematical-case-for-approval-voting",
+          title: 'A Mathematical Case for Approval Voting',
+          description: "Approval voting is the best voting system (AKA, Taylor gets political)",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/approval/";
+            },},{id: "previews-irv-inconsistencies",
+          title: 'IRV Inconsistencies',
+          description: "It&#39;s much worse than you think.",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/not-irv/";
+            },},{id: "previews-a-practical-case-for-approval-voting",
+          title: 'A Practical Case for Approval Voting',
+          description: "It&#39;s not just mathematically elegant, it&#39;s the most practical solution for our electoral problems.",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/practicalapproval/";
+            },},{id: "previews-deducing-possible-approval-outcomes-from-ranked-ballots",
+          title: 'Deducing Possible Approval Outcomes from Ranked Ballots',
+          description: "A theoretical and practical exploration of cutting through the inherent indeterminacy of approval voting using ranked ballots. Exploring AK 2022 and a notable Minnesota election.",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/ranked-to-av/";
+            },},{id: "previews-a-guide-to-approval-voting-strategy",
+          title: 'A Guide to Approval Voting Strategy',
+          description: "An explanation of &quot;the leader rule&quot; strategy in approval voting, and its positive ramifications.",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/avstrategy/";
+            },},{id: "previews-the-approval-dynamics-of-laslier-39-s-leader-rule",
+          title: 'The Approval Dynamics of Laslier&amp;#39;s Leader Rule',
+          description: "How the leader rule induces a graph and dynamical system on candidate perceptions.",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/leader-dynamics/";
+            },},{id: "previews-jordan-canonical-form-made-easier-part-1",
+          title: 'Jordan Canonical Form Made Easier Part 1',
+          description: "not easy. just like... easier...",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/jordan/";
+            },},{id: "previews-jordan-canonical-form-made-easier",
+          title: 'Jordan Canonical Form Made Easier',
+          description: "not easy. just like... easier...",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/jordan2/";
             },},{id: "projects-project-1",
           title: 'project 1',
           description: "with background image",
