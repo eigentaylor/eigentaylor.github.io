@@ -16,12 +16,16 @@ authors:
       name: None
 toc:
   - name: Introduction
-  - name: The Leader Rule
+  - name: Pairwise Rankings
+  - name: Equilibrium Paths
   - name: Case Studies
     subsections:
       - name: Alaska House Special Election 2022
       - name: NYC Democratic Mayoral Primary 2025
       - name: Minneapolis City Council Ward 2 2021
+  - name: Discussion
+    subsections:
+      - name: The Chicken Dilemma Explored
   - name: Appendix 
     subsections:
       - name: Alaska House Special Election 2022 Table
@@ -34,7 +38,20 @@ WIP DRAFT (not finished)
 
 ## Introduction
 
-The Leader Rule is a strategy under approval voting by Jean-François Laslier where voters choose their sincere strategy based on who the perceived frontrunners are:
+In plurality voting, the optimal strategy for a voter is often to vote for the most preferred frontrunner, even if that candidate is not their most preferred candidate. A vote for a strongly preferred but nonviable candidate is often seen as a "wasted vote", and can even lead to the election of a least preferred candidate. This is the classic "spoiler effect" and "vote splitting" problem of plurality voting.
+
+Approval voting is a simple and practical change to plurality voting, where voters can choose to vote for as many candidates as they like. This simple change has profound implications for voter strategy, as the spoiler effect and fear of vote splitting are greatly reduced. However, there is still a strategic element to approval voting, as voters must decide which candidates to approve of.
+
+For a voter who prefers candidates A > B > C > D, there are four possible sincere ballots they could cast:
+
+1. Approve A only
+2. Approve A and B
+3. Approve A, B, and C
+4. Approve A, B, C, and D
+
+A common criticism of approval voting is that even a sincere voter may have to be strategic and decide where to draw their line of approval. While an approval for A and B may be sincere, and does not narrow the margin between A and B, it could lead to a situation where the voter could have instead approved only A, and had A win instead of B. The claim is that this would lead to regret for the voter, and thus the voter may feel compelled to approve of only their most preferred candidate, reducing approval voting to plurality voting in practice.
+
+This fear has not materialized in practice, as voters consistently approved of multiple candidates in real elections in Fargo and St. Louis. However, the myth of the "regretful approval voter" has persisted. Jean-François Laslier, in his 2009 paper "[The Leader Rule: A Model of Strategic Approval Voting in a Large Electorate.](https://journals.sagepub.com/doi/10.1177/0951629808097286){:target="_blank"}", presents a strategy for approval voting that helps optimally draw the line for a sincere strategy to minimize regret, based on who the perceived frontrunners are. Paradoxically, this strategy, which we call the "leader rule", can actually lead to significantly more majoritarian outcomes.
 
 > **The Leader Rule**: Call the candidate perceived most likely to win the "leader", and the second most likely candidate to win the "challenger". The leader rule strategy is as follows:
 >
@@ -42,9 +59,9 @@ The Leader Rule is a strategy under approval voting by Jean-François Laslier wh
 > 2. Approve the leader if and only if you prefer them to the challenger
 > 3. Approve no other candidates
 
-We will not delve into the weeds of why this is an optimal strategy, but our analysis focuses on what happens when every voter applies the leader rule simultaneously.
+We will not delve into the weeds of why this is an optimal strategy. Intuitively, the primary idea is to prioritize the impact on the most likely ties. The most important race is between the leader and challenger, so the voter should choose exactly one of them to approve. In the unlikely case that a non-frontrunner ties for first, it's most likely to be with the leader, so the voter should approve of all candidates they prefer to the leader. Our analysis here focuses on what happens when every voter applies the leader rule simultaneously.
 
-**Definition**: We denote the proportion of voters who prefer X>Y as $$P(X>Y)$$, as a shorthand for the probability that a randomly selected voter prefers X over Y given the complete profile of voter preferences. Note that $$P(Y>X)=1-P(X>Y)$$.
+**Definition**: We denote the proportion of voters who prefer X over Y as $$P(X>Y)$$, as a shorthand for the probability that a randomly selected voter prefers X over Y given the complete profile of voter preferences. Note that $$P(Y>X)=1-P(X>Y)$$.
 
 For our axioms of this analysis, we assume
 
@@ -83,6 +100,8 @@ Suppose that X is the leader and Y is the challenger. Since $$P(Z>X)<0.5$$ for a
 **Proof:** By the lemma, if X is a unique Condorcet winner, then X will remain the leader after every voter applies the leader rule. Therefore, we know that (X,Y) has an edge to (X,Y') for some Y' such that the votes $$P(Y'>X) > P(Z>X)$$ for all $$Z \notin\{X,Y'\}$$. That is, Y' must have the best pairwise matchup against X. Therefore, if Y is the candidate with the best pairwise matchup against X, then (X,Y) is an equilibrium.
 
 Suppose now that (X,Y) is an equilibrium. Then we must have that $$P(X>Y) > P(Y>X) > P(Z>X)$$ for all $$Z \neq X$$. Since $$P(X>Y) > 0.5 > P(Y>X)$$, we must have that $$P(Z>X) < 0.5$$ for all $$Z \neq X$$, meaning X is a unique Condorcet winner. Since $$P(Y>X) > P(Z>X)$$ for all $$Z \notin\{X,Y\}$$, we must have that Y is the candidate with the best pairwise matchup against X. QED
+
+The following Corollary is an immediate consequence of the previous theorem.
 
 **Corollary 1:** If there is no unique Condorcet winner, then there is no equilibrium.
 
@@ -250,7 +269,7 @@ In particular, we can see that there will be a cycle (A,D) to (C,D) to (B,D) and
 
 ## Case Studies
 
-We shall analyze three elections using ranked.vote pairwise data, to see what the leader rule dynamics would have looked like in those elections. The percentages are based on the head-to-head matchups of voters who expressed a preferences, which may not extend to the entire electorate. For example, in the 2025 NYC election, a large proportion of voters who voted for Cuomo bullet voted for him, and thus did not express a preference between Zohran Mamdani and Brad Lander. Therefore, the nearly 70% head-to-head result for Mamdani vs. Lander may not be representative of the entire electorate, but rather only of the subset of voters who expressed a preference between those two candidates. However, we use a simplifying assumption that the head-to-head results are representative of the entire electorate, to get a rough picture of the leader rule dynamics in these elections, along with the other axioms we have laid out in the introduction.
+We shall analyze three elections using ranked.vote pairwise data, to see what the leader rule dynamics would have looked like in those elections. The percentages are based on the head-to-head matchups of voters who expressed a preferences, which may not extend to the entire electorate. For example, in the 2025 NYC election, a large proportion of voters bullet voted for Cuomo, and thus did not express a preference between Zohran Mamdani and Brad Lander. Therefore, the nearly 70% head-to-head result for Mamdani vs. Lander may not be representative of the entire electorate, but rather only of the subset of voters who expressed a preference between those two candidates. However, we use the simplifying assumption that the head-to-head results are representative of the entire electorate, to get a rough picture of the leader rule dynamics in these elections, along with the other axioms we have laid out in the introduction.
 
 ### Alaska House Special Election 2022
 
@@ -268,7 +287,7 @@ Using the head-to-head results from Alaska 2022, we can simulate the leader rule
 | Begich vs. Peltola | Begich      | 52.5% : 47.5% |
 | Peltola vs. Palin  | Peltola     | 51.4% : 48.6% |
 
-Based on the results above, Palin's Condorcet loser status would have made it impossible for her to win under the leader rule, even if she had been the perceived leader. Further, Begich's strong head-to-heads against both Palin and Peltola would have given him an extremely strong pull. In fact, he is the only Leader Rule Outcome. If every voter applied the leader rule, and these head to heads extend to the entire electorate, Begich would be the only candidate who could have won.
+Based on Corollary 2, Palin's Condorcet loser status would have made it impossible for her to win under the leader rule, even if she had been the perceived leader. Further, Begich's strong head-to-heads against both Palin and Peltola would have given him an extremely strong pull. In fact, he is the only Leader Rule Outcome. If every voter applied the leader rule, and these head to heads extend to the entire electorate, Begich would be the only candidate who could have won.
 
 The directed graph of leader-challenger pairs is as follows:
 
@@ -364,28 +383,36 @@ What we can see from these theorems and results is that the leader rule leads to
 
 Many criticize Approval voting for being susceptible to strategic voting, and a chicken dilemma between supporters of two similar candidates. The leader rule actually provides a direct answer to this.
 
-The claim is that if we have two candidates, L and C, who perhaps are leftists running in a generally left-leaning electorate, then their supporters might bullet vote sufficiently such that a right leaning candidate R might snake in and win. However, the leader rule reframes this scenario.
+The claim is that if we have two candidates, R and C, who perhaps are conservatives running in a generally right-leaning electorate, then their supporters might bullet vote sufficiently such that a left-leaning candidate L might snake in and win. However, the leader rule reframes this scenario.
 
-Let us suppose that one of L, a more extremist left candidate, and C, a center left candidate, are is the leader. And let R be a right-leaning candidate who is neither the leader or challenger. We will analyze the case in which one of the two left candidates is the leader and the other is the challenger. Let us assume a generally 1-dimensional spatial model where L voters prefer L>C>R, R voters prefer R>C>L, and C voters split with some preferring C>L>R and others preferring C>R>L. Consider the cases:
+Let us suppose that one of R, a more extremist right candidate, and C, a center right candidate, is the leader. And let L be a left-leaning candidate who is neither the leader or challenger. We will analyze the case in which one of the two right candidates is the leader and the other is the challenger. Let us assume a generally 1-dimensional spatial model where L voters prefer L>C>R, R voters prefer R>C>L, and C voters split with some preferring C>L>R and others preferring C>R>L. Consider the cases:
 
-| Leader | Challenger | LCR | CLR | CRL | RCL |
+| Leader | Challenger | RCL | CRL | CLR | LCR |
 |--------|------------|-----|-----|-----|-----|
-| L      | C          | L   | C   | C,R | R,C |
-| C      | L          | L   | C   | C   | R,C |
+| R      | C          | R   | C   | C,L | L,C |
+| C      | R          | R   | C   | C   | L,C |
 
-We notice something very interesting. The criticism of the chicken dilemma is that L and C voters *might* bullet vote and cause R to win. The claim is that sufficient bullet voting might end up breaking up the coalition and resulting in plurality-style vote splitting. However, the leader rule actually says that L and C voters (who rank R last) *should* bullet vote, and that this is the optimal strategy. The missing consideration of the criticism is what R voters would do: if they know their candidate is nonviable or unlikely to win, it is optimal to also give an approval to the more agreeable viable candidate, C. Thus, C, in all cases, gets approvals from the moderate C supporters *and* the conservative R supporters, while L only gets approvals from the more extreme L supporters. If C is the Condorcet winner, then the moderate and conservative blocs will coalesce around C, outnumbering the more extreme L, resulting in a C win.
+We notice something very interesting. The criticism of the chicken dilemma is that R and C voters *might* bullet vote and cause L to win. The claim is that sufficient bullet voting might end up breaking up the coalition and resulting in plurality-style vote splitting. However, the leader rule actually says that R and C voters (who rank L last) *should* bullet vote, and that this is the optimal strategy. The missing consideration of the criticism is what L voters would do: if they know their candidate is nonviable or unlikely to win, it is optimal to also give an approval to the more agreeable viable candidate, C. Thus, C, in all cases, gets approvals from the moderate C supporters *and* the liberal L supporters, while R only gets approvals from the more extreme R supporters. If C is the Condorcet winner, then the moderate and liberal blocs will coalesce around C, outnumbering the more extreme R, resulting in a C win.
 
-However, against the other criticism that Approval elects only bland candidates, there is another consideration to make. If the median voter is more extreme, and closer to L, then the L supporting wing will be larger than the combined C and R supporting wings, and thus L will still win. The outcome from the Leader rule is not always on the *middle* candidate, but rather strongly favors the Condorcet winner. It is entirely possible for one of the "outside" candidates to be the Condorcet winner if the electorate leans sufficiently towards that candidate.
+However, against the other criticism that Approval elects only bland candidates, there is another consideration to make. If the median voter is more extreme, and closer to R, then the R supporting wing will be larger than the combined C and L supporting wings, and thus R will still win. The outcome from the Leader rule is not always on the *middle* candidate, but rather strongly favors the Condorcet winner. It is entirely possible for one of the "outside" candidates to be the Condorcet winner if the electorate leans sufficiently towards that candidate.
 
-It should be acknowledged, however, that this is not any sort of guarantee that voters would or should bullet vote. While it may be optimal for L and C voters to bullet vote when both are ahead, we do see in real Approval elections in Fargo (TODO: include source) and St. Louis that voters are willing to approve multiple candidates, and support a coalition. Rather, this example should illustrate that Approval would not likely suddenly collapse when voters are strategic. Instead, it is actually robust to strategy when voters are prudent (ex. if their favorite candidate is trailing behind the top two). If a sufficient number of both L and CLR voters choose to approve L and C--say due to the candidates forming a coalition and encouraging their voters to do so--it's even more likely that either L or C will win, strengthening their lead over R. If the electorate is sufficiently left-leaning, then this is a highly representative outcome.
+It should be acknowledged, however, that this is not any sort of guarantee that voters would or should bullet vote. While it may be optimal for R and C voters to bullet vote when both are ahead, we do see in real Approval elections in Fargo (TODO: include source) and St. Louis that voters are willing to approve multiple candidates, and support a coalition. Rather, this example should illustrate that Approval would not likely suddenly collapse when voters are strategic. Instead, it is actually robust to strategy when voters are prudent (ex. if their favorite candidate is trailing behind the top two). If a sufficient number of both R and CRL voters choose to approve R and C--say due to the candidates forming a coalition and encouraging their voters to do so--it's even more likely that either R or C will win, strengthening their lead over L. If the electorate is sufficiently right-leaning, then this is a highly representative outcome.
+
+In short, we have a balance between the risk-minimizing strategy of the Leader rule, which is not compatible with coalitions of candidates who are both viable, and the fact that we do, in fact, see coalitions in real Approval elections. In real elections, it's likely we will, in fact, see coalitions between viable candidates and bullet voting for non-viable candidates, which would weaken the strongly majoritarian guarantees of the leader rule. However, the leader rule still shows that strategy and majoritarian outcomes are not necessarily at odds, and that strategic voting can actually lead to more majoritarian outcomes, rather than less.
 
 ## Other Considerations and Further Research
 
 Some considerations must be made to the plausibility or realism of the axioms. For one, this analysis does not take into account sincere voters who do not adjust their acceptability line strategically. It also does allow for the possibility that some voters may not agree on the perceived leader and challenger. In our increasingly divisive media bubbles, the perception of a race to one bloc of voters could be significantly different from another.
 
+Some potential questions to explore in future research include:
+
+- If we allow ties in the pairwise match-ups, and allow one node to have edges to multiple nodes probabilistically, how does this affect the dynamics?
+- How many sincere voters would it take to break the convergence to the equilibrium?
+- If we suppose that voters of different demographics have different perceptions of the leader and challenger, or suppose that polls are intentionally misleading, can the outcome be manipulated by a malicious actor who controls the polls?
+
 ## Appendix
 
-Here is an example where the Leader rule does not converge to the Condorcet winner: (Credit to Rob LeGrand)
+Here is the original example by Rob LeGrand where the Leader rule does not converge to the Condorcet winner:
 
 | Voter Type     | Count |
 |----------------|-------|
@@ -402,12 +429,12 @@ The head-to-head results are:
 
 | Head-to-Head| Winner | Percentage |
 |-------------|--------|------------|
+| A vs. D     | A      | 73% : 27%  |
+| C vs. A     | C      | 66% : 34%  |
+| D vs. C     | D      | 61% : 39%  |
+| B vs. D     | B      | 56% : 44%  |
 | B vs. A     | B      | 52% : 48%  |
 | B vs. C     | B      | 51% : 49%  |
-| B vs. D     | B      | 56% : 44%  |
-| A vs. D     | A      | 73% : 27%  |
-| D vs. C     | D      | 61% : 39%  |
-| C vs. A     | C      | 66% : 34%  |
 
 The Condorcet winner is B, and there is an equilibrium under the leader rule with B as the leader and C as the challenger:
 
@@ -431,8 +458,6 @@ The key observation is that while B is the Condorcet winner, we have a cycle amo
 Here is a graph of the leader-challenger pairs in this example:
 
 <img src="/assets/img/leader_rule/island.png" alt="Leader Rule Non-Convergence Example" style="max-width: 600px;">
-
-We can see that if B is the initial leader, we converge to the equilibrium in one step (colored red). However, otherwise we get stuck in the cycle between A, C, and D (colored orange).
 
 ---
 
