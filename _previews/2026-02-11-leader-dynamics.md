@@ -40,14 +40,15 @@ The Leader Rule is a strategy under approval voting by Jean-François Laslier wh
 >
 > 1. Approve all candidates strictly preferred to the leader
 > 2. Approve the leader if and only if you prefer them to the challenger
+> 3. Approve no other candidates
 
 We will not delve into the weeds of why this is an optimal strategy, but our analysis focuses on what happens when every voter applies the leader rule simultaneously.
 
-**Definition**: We denote the proportion of voters who prefer X>Y as $$P(X>Y)$$, as a shorthand for $$P(X>Y|\text{profile})$$. Note that $$P(Y>X)=1-P(X>Y)$$.
+**Definition**: We denote the proportion of voters who prefer X>Y as $$P(X>Y)$$, as a shorthand for the probability that a randomly selected voter prefers X over Y given the complete profile of voter preferences. Note that $$P(Y>X)=1-P(X>Y)$$.
 
 For our axioms of this analysis, we assume
 
-1. Voters have complete and transitive preferences over candidates. They do not prefer any candidates equally.
+1. Voters have complete and transitive preferences over candidates. Given any pair of candidates, a voter strictly prefers one over the other, and is not indifferent between them.
 2. Voters always use sincere strategies. That is, if they prefer candidate X over Y, then whenever they approve candidate Y, they must approve candidate X.
 3. Voters have common knowledge of the perceived front-runners. That is, every voter knows who the leader and challenger are perceived to be.
 4. Every voter applies the leader rule simultaneously.
