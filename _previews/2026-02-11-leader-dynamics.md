@@ -95,11 +95,17 @@ Note that for any candidate X, after every voter applies the leader rule, the pe
 
 Suppose that X is the leader and Y is the challenger. Since $$P(Z>X)<0.5$$ for all $$Z \neq X$$, we must have that $$P(X>Y) > P(Z>X)$$ for all $$Z \neq X$$, meaning X has strictly more votes than any other candidate. QED
 
+**Definition:** A node (X,Y) has an edge to a node (X',Y') if after every voter applies the leader rule at node (X,Y), X' has the most votes and Y' has the second most votes. We then declare them the new leader and challenger. An equilibrium is a node that has an edge to itself.
+
+Intuitively, this could be thought of as either 1. the election results based on every voter applying the leader rule based on the perception of (X,Y), or 2. the new perception of the leader and challenger after every voter applies the leader rule based on the perception of (X,Y), in a poll or in the media. For example, if all voters think X is the leader and Y is the challenger, then we suppose that voters apply the leader rule based on that perception to determine their expected strategy on election day. If another poll was taken, then X' would rise to the top of the polls, and Y' would be the second most popular candidate in the polls, leading to a new perception of (X',Y') as the leader and challenger.
+
 **Theorem 2:** (X,Y) is an equilibrium if and only if X is a unique Condorcet winner and Y is the candidate with the best pairwise matchup against X.
 
 **Proof:** By the lemma, if X is a unique Condorcet winner, then X will remain the leader after every voter applies the leader rule. Therefore, we know that (X,Y) has an edge to (X,Y') for some Y' such that the votes $$P(Y'>X) > P(Z>X)$$ for all $$Z \notin\{X,Y'\}$$. That is, Y' must have the best pairwise matchup against X. Therefore, if Y is the candidate with the best pairwise matchup against X, then (X,Y) is an equilibrium.
 
 Suppose now that (X,Y) is an equilibrium. Then we must have that $$P(X>Y) > P(Y>X) > P(Z>X)$$ for all $$Z \neq X$$. Since $$P(X>Y) > 0.5 > P(Y>X)$$, we must have that $$P(Z>X) < 0.5$$ for all $$Z \neq X$$, meaning X is a unique Condorcet winner. Since $$P(Y>X) > P(Z>X)$$ for all $$Z \notin\{X,Y\}$$, we must have that Y is the candidate with the best pairwise matchup against X. QED
+
+In the language of our assumed reality, this means that if voters go into the voting booth expecting X to win and Y to be in second place, and they apply the leader rule based on that perception, then the expectation matches the reality if and only if X is a unique Condorcet winner and Y is the candidate with the best pairwise matchup against X. In a sense, this implies that the polling is accurate to the results if and only if the winner is a unique Condorcet winner, and the second place candidate was actually the strongest candidate to challenge them.
 
 The following Corollary is an immediate consequence of the previous theorem.
 
@@ -142,9 +148,11 @@ In short, we have essentially two archetypes for a candidate to be a Leader Rule
 1. A candidate on the offense (TODO: is this the best intuitive phrasing?): they beat some candidate by a stronger margin than any candidate beats them. This is the case of a unique Condorcet winner, but it can also be the case for a non-Condorcet winner if they have a sufficiently strong match-up against some candidate.
 2. A candidate who strongly counters another candidate: they have the strongest match-up against some candidate, and that match-up is stronger than that candidate's match-up against some other candidate. Intuitively, this means that the electorate may have a strong "reaction" against some leader Y, and X is more strongly preferred to Y than Y is to whoever the challenger is.
 
+If the polling is incorrect in who the leader is, then the leader rule can cause an upset, where the candidate most preferred to the expected winner will win instead. However, by Lemma 1, if the Condorcet winner does not win, they still at least get 50%. Thus, even if the Condorcet winner is not elected, the actual winner necessarily gets over 50% of the vote and the mandate that comes with that, and the Condorcet winner gets at least 50% of the vote. The public perception of this result would not be that the Condorcet winner lost (which the voters could not discern from the ballot data), but instead it would look like the electorate was in strong agreement and multiple candidates had earned a majority of the vote.
+
 ## Pairwise Rankings
 
-**Definition:** A "Pairwise Ranked Ordering" is an ordered list: 1. $$X_1 > Y_1$$. 2. $$X_2>Y_2$$. etc. A "Coherent Pairwise Ranked Ordering" (CPRO) is one that does not contain contradictions. For example, if A>B is the strongest pairwise margin at the top of the list, then B>A must be the weakest, at the bottom of the list. More generally, if we have m total candidates, and a list of the $$\ell=m(m-1)$$ pairwise match-ups, then if item $$i$$ is $$X>Y$$, then $$Y>X$$ must be item $$\ell-i+1$$. Since a CPRO is uniquely determined by the first half of the list, we sometimes omit the second half for brevity.
+**Definition:** A "Pairwise Ranked Ordering" is an ordered list: 1. $$X_1 > Y_1$$. 2. $$X_2>Y_2$$. etc. A "Coherent Pairwise Ranked Ordering" (CPRO) is one that does not contain contradictions. For example, if A>B is the strongest pairwise margin at the top of the list, then B>A must be the weakest, at the bottom of the list. More generally, if we have m total candidates, and a list of the $$\ell=m(m-1)$$ pairwise match-ups, then if item $$i=0,1,\ldots,\ell-1$$ is $$X>Y$$, then $$Y>X$$ must be item $$\ell-i$$. Since a CPRO is uniquely determined by the first half of the list, we sometimes omit the second half for brevity.
 
 **Theorem 3:** The graph of state nodes is determined uniquely by the ranked ordering of pairwise match-up strengths (the CPRO).
 
@@ -165,6 +173,8 @@ def node_target_from_ranking(ranking_list, leader, challenger):
             else:
                 return (new_leader, i)
 ```
+
+Intuitively, we look for either 'leader > challenger' or 'some candidate > leader' in the ranked list of pairwise match-ups. The first time we see one of those, we set the new leader to be the candidate that is listed first in that match-up. The second time we see one of those, we set the new challenger to be the candidate that is listed first in that match-up, and then we are done.
 
 **Theorem 4:** Any CPRO of pairwise match-ups can be realized.
 
@@ -231,7 +241,7 @@ Let us apply the algorithm on the CPRO to determine the edges of the graph, for 
 
 Let us consider the (A,B) node. We look for A>B or X>A, since A is the leader. We see that the first entry is A>B, so A will be the leader. The second entry is C>A, so C will be the challenger. Thus, (A,B) has an edge to (A,C).
 
-**Theorem 5:** The pairwise matrix can be used to determine the precise votes or percents that each candidate will get after voters apply the leader rule at a particular node.
+**Theorem 5:** The pairwise matrix can be used to determine the precise votes or percents that each candidate will get after all voters apply the leader rule at a particular node.
 
 1. Take the column corresponding to the leader X. The non-diagonal entries will be the precise share that each non-leader candidate Z receives. That is because the entry (Z,X) in the pairwise matrix represents the probability that Z is preferred over X.
 2. Replace the diagonal entry (which is zero) with the entry in the same row corresponding to the challenger. That is because the entry (Y,X) in the pairwise matrix represents the probability that X is preferred over Y.
@@ -244,13 +254,13 @@ Let us consider the (A,B) node. We look for A>B or X>A, since A is the leader. W
 
 We have two cases:
 
-Case 1: If the top two match-ups involve A, then without loss of generality suppose that it is A>B and then A>C. This means C has the best pairwise match-up against A, so (A,C) is the unique equilibrium. If A is the leader, and B is the challenger, then the node must have an edge to (A,C), since B>A is the weakest pairwise match-up, B must have the fewest approvals.
+Case 1: If the top two match-ups involve A, then without loss of generality suppose that it is A>B and then A>C. This means C has the best pairwise match-up against A, so (A,C) is the unique equilibrium. If A is the leader, and B is the challenger, then the node must have an edge to (A,C), since B>A is the weakest pairwise match-up, B must have the fewest approvals. If B is the leader, then A>B is the strongest pairwise match-up, so any node where B is the leader must have an edge to a node where A is the leader. If C is the leader, then A>C is the strongest relevant pairwise match-up, since A>B is not possibly relevant. Thus, any node where C is the leader must have an edge to a node where A is the leader. In either case, we have that A will be the leader after at most one step. We have already established that any node where A is the leader has an edge to the equilibrium, so we have that the equilibrium will be reached after at most two steps.
 
-Case 2: If there exists any match-up not involving A that is stronger than one of A's match-ups against another candidate, then that induces a possible non Condorcet Leader Rule Outcome. Without loss of generality, suppose that B>C is one of the top two strongest match-ups, making C a Condorcet loser. If the B>C match-up is stronger than A>C, then (C,B) will have an edge to (B,A). If B>C is not stronger than A>C (meaning A>C is the strongest pairwise match-up), then (B,C) will have an edge to (B,A). In either case, B must have fewer than 50% approvals in the outcome after (B,A), while A must have more than 50% approvals. Since C is a Condorcet loser, they must also have less than 50% approvals, so A will be the leader in at most two steps. This node may not be the equilibrium, but must have an edge to the equilibrium, giving it at most three steps.
+Case 2: If there exists any match-up not involving A that is stronger than one of A's match-ups against another candidate, then that induces a possible non-Condorcet Leader Rule Outcome. Without loss of generality, suppose that B>C is one of the top two strongest match-ups, making C a Condorcet loser. If the B>C match-up is stronger than A>C, then (C,B) will have an edge to (B,A). If B>C is not stronger than A>C (meaning A>C is the strongest pairwise match-up), then (B,C) will have an edge to (B,A). In either case, B must have fewer than 50% approvals in the outcome after (B,A), while A must have more than 50% approvals. Since C is a Condorcet loser, they must also have less than 50% approvals, so A will be the leader in at most two steps. This node may not be the equilibrium, but must have an edge to the equilibrium, giving it at most three steps.
 
 **Theorem 7:** With four or more candidates, even if a unique Condorcet winner and equilibrium exist, it may not be reachable by every starting node.
 
-**Proof:** We present a counterexample based on a profile created by Rob LeGrand. Suppose we have the CPRO:
+**Proof:** We present a counterexample based on a profile created by Rob LeGrand. Their example is included in the [appendix](#appendix). Suppose we have the CPRO:
 
 1. A>B
 2. B>C
@@ -259,7 +269,7 @@ Case 2: If there exists any match-up not involving A that is stronger than one o
 5. D>C
 6. D>A
 
-Here, we clearly have a Condorcet winner, D. However, they have the weakest pairwise wins, and thus we can show that D will never be the leader unless D starts as the leader. All nodes where D is the leader will have an edge to (D,A), since A is the candidate with the best pairwise match-up against B.
+Here, we clearly have a Condorcet winner, D. However, they have the weakest pairwise wins, and thus we can show that D will never be the leader unless D starts as the leader. All nodes where D is the leader will have an edge to (D,A), since A is the candidate with the best pairwise match-up against B, and by Lemma 1, a Condorcet winner stays the leader when starting as the leader.
 
 If we have a leader who is not D, then at least one candidate will have a stronger margin against that leader than D. Therefore, D cannot become the leader unless D starts as the leader.
 
@@ -267,9 +277,11 @@ In particular, we can see that there will be a cycle (A,D) to (C,D) to (B,D) and
 
 <img src="/assets/img/leader_rule/alt_profile.png" alt="Leader Rule Non-Convergence Example" style="max-width: 600px;">
 
+The primary aspect of this pathology is when the Condorcet winner has the weakest pairwise wins. If every other candidate has a stronger pairwise win against some candidate than all of the Condorcet winner's pairwise wins, then the Condorcet winner will never be the leader unless they start as the leader. Thus, if a Condorcet winner is "lukewarm" and only very minimally preferred to the other candidates, then by failing to inspire passionate support, they may fail to win despite being the Condorcet winner, and thus always earning over 50% of the vote by Lemma 1.
+
 ## Case Studies
 
-We shall analyze three elections using ranked.vote pairwise data, to see what the leader rule dynamics would have looked like in those elections. The percentages are based on the head-to-head matchups of voters who expressed a preferences, which may not extend to the entire electorate. For example, in the 2025 NYC election, a large proportion of voters bullet voted for Cuomo, and thus did not express a preference between Zohran Mamdani and Brad Lander. Therefore, the nearly 70% head-to-head result for Mamdani vs. Lander may not be representative of the entire electorate, but rather only of the subset of voters who expressed a preference between those two candidates. However, we use the simplifying assumption that the head-to-head results are representative of the entire electorate, to get a rough picture of the leader rule dynamics in these elections, along with the other axioms we have laid out in the introduction.
+We shall analyze three elections using ranked.vote pairwise data, to see what the leader rule dynamics would have looked like in those elections. The percentages are based on the head-to-head match-ups of voters who expressed a preferences, which may not extend to the all voters if asked directly. For example, in the 2025 NYC election, a large proportion of voters bullet voted for Andrew Cuomo, and thus did not express a preference between Zohran Mamdani and Brad Lander. Therefore, the nearly 70% head-to-head result for Mamdani vs. Lander may not be representative of the entire electorate, but rather only of the subset of voters who expressed a preference between those two candidates. However, we use the simplifying assumption that the head-to-head results are representative of the entire electorate, to get a rough picture of the leader rule dynamics in these elections, along with the other axioms we have laid out in the introduction.
 
 ### Alaska House Special Election 2022
 
@@ -277,7 +289,15 @@ We shall analyze three elections using ranked.vote pairwise data, to see what th
 
 Alaska's 2022 House Special Election was a controversial election where the IRV winner, Mary Peltola, was not the Condorcet winner, and lost to the Condorcet winner, Nick Begich III, in a head-to-head match-up. The third candidate, Sarah Palin, was the Condorcet loser. The election was widely seen as a failure of IRV, and led to a backlash against IRV in Alaska, with the state failing to repeal it by only about 700 voters out of over 320,000 votes cast in the 2024 ballot measure. Another repeal effort is currently underway in 2026.
 
-An aspect of the pathology was the uninutive vote splitting and spoiler effect that occured between the Republican candidates. The voters who sincerely voted for Palin first and Begich second managed to get themselves their least preferred candidate, Peltola, elected. By voting first for Palin, the Condorcet loser, they kept her in the race long enough to eliminate the only viable Republican candidate, Begich.
+An aspect of the pathology was the uninutive vote splitting and spoiler effect that occured between the Republican candidates. The voters who sincerely voted for Palin first and Begich second managed to get themselves their least preferred candidate, Peltola, elected. By voting first for Palin, the Condorcet loser, they kept her in the race long enough to eliminate the only viable Republican candidate, Begich. Thus, Peltola was able to win the final round since an insufficient number of Begich voters had Palin as their second choice.
+
+The actual first round results were:
+
+| Candidate | First Round Percentage (Approximate) |
+|-----------------|--------------------------------|
+| Mary Peltola    | 38.9% |
+| Sarah Palin     | 30.5% |
+| Nick Begich III | 27.5% |
 
 Using the head-to-head results from Alaska 2022, we can simulate the leader rule. The head-to-head results were:
 
@@ -313,7 +333,18 @@ If the voter went into the voting booth expecting Palin to win, voted for both P
 
 [ranked.vote page for this election](https://ranked.vote/report/us/ny/nyc/2025/07/mayor){:target="_blank"}.
 
-Here we reduce the field to the top four candidates: Zohran Mamdani, Brad Lander, Andrew Cuomo, and Adrienne Adams. In the actual election, Cuomo was seen as the leader, with Mamdani as the main challenger. Lander and Adams were seen as long-shot candidates.
+The 2025 NYC Democratic Mayoral Primary was a very crowded field, with over 10 candidates. Before the election, it was widely perceived that Andrew Cuomo was the frontrunner, with Zohran Mamdani as the main challenger. It was expected that Cuomo would win the first round under IRV, but that Mamdani might get enough transfers to win in the final round.
+
+Here we reduce the field to the top four candidates: Zohran Mamdani, Brad Lander, Andrew Cuomo, and Adrienne Adams.
+
+The first round results were:
+
+| Candidate | First Round Percentage (Approximate) |
+|-----------------|--------------------------------|
+| Zohran Mamdani  | 43.6% |
+| Andrew Cuomo    | 35.9% |
+| Brad Lander     | 11.2% |
+| Adrienne Adams   | 4.1%  |
 
 The head-to-head results were:
 
@@ -326,7 +357,7 @@ The head-to-head results were:
 | Lander vs. Cuomo    | Lander      | 54.4% : 45.6% |
 | Adams vs. Cuomo     | Adams       | 50.3% : 49.7% |
 
-We can see that, in fact, the perceived leader Cuomo was actually a Condorcet loser, while the perceived challenger Mamdani was the Condorcet winner. Lander was a strong contender, with strong head-to-head results against both Cuomo and Adams, but was not the Condorcet winner due to his weaker head-to-head against Mamdani. Adams, while narrowly beating Cuomo head-to-head, was not perceived as a particularly strong candidate, and had very weak head-to-head results against both Mamdani and Lander.
+We can see that, in fact, the perceived leader Cuomo was actually a Condorcet loser (when compared among the top four candidates), while the perceived challenger Mamdani was the Condorcet winner. Lander was a strong contender, with strong head-to-head results against both Cuomo and Adams, but was not the Condorcet winner due to his weaker head-to-head against Mamdani. Adams, while narrowly beating Cuomo head-to-head, was not perceived as a particularly strong candidate, and had very weak head-to-head results against both Mamdani and Lander.
 
 The two leader rule outcomes are Mamdani and Lander, with Mamdani being the equilibrium, as the Condorcet winner. Lander is a Leader Rule Outcome because of his strong head-to-head against Adams. The node with Lander as the leader and Adams as the challenger has an edge to the node with Lander as the leader and Mamdani as the challenger, since Lander's head-to-head against Adams is stronger than Mamdani's head-to-head against Lander. However, the plausibility of this node being the perception of voters is extremely low, since Adams was perceived as a very weak candidate. Therefore, it's extremely likely that Mamdani would win in any reasonable perception of the race, assuming voters vote strategically using the leader rule and the head-to-head results extend to the entire electorate.
 
@@ -341,6 +372,14 @@ We see the red equilibrium node with Mamdani as the leader and Cuomo as the chal
 [ranked.vote page for this election](https://ranked.vote/report/us/mn/2021/11/ward-2){:target="_blank"}.
 
 This was a very notable election because it actually had a Condorcet cycle. The cycle was between Cam Gordon, Robin Wonsley, and Yusra Arab. The actual winner was Robin Wonsley, who defeated Yusra Arab in the final round of IRV. However, Cam Gordon beat Robin Wonsley head-to-head, and Yusra Arab beat Cam Gordon head-to-head, creating a Condorcet cycle.
+
+The first round results were:
+
+| Candidate | First Round Percentage |
+|-----------------|----------------------|
+| Robin Wonsley  | 28.1% |
+| Yusra Arab     | 27.7% |
+| Cam Gordon     | 25.6% |
 
 The head-to-head results were:
 
@@ -495,27 +534,27 @@ Here are the full tables for the three example elections analyzed above.
 
 | Leader | Challenger | Approvals | Target |
 |--------|------------|-----------|--------|
-| Wonsley | Arab | Gordon: 50.5%, Wonsley: 50.1%, Arab: 49.9%, Anderson: 36.2% | (Gordon, Wonsley) |
-| Wonsley | Gordon | Gordon: 50.5%, Arab: 49.9%, Wonsley: 49.5%, Anderson: 36.2% | (Gordon, Arab) |
-| Wonsley | Anderson | Wonsley: 63.8%, Gordon: 50.5%, Arab: 49.9%, Anderson: 36.2% | (Wonsley, Gordon) |
-| Arab | Wonsley | Wonsley: 50.1%, Arab: 49.9%, Gordon: 48.7%, Anderson: 26.7% | (Wonsley, Arab) |
-| Arab | Gordon | Arab: 51.3%, Wonsley: 50.1%, Gordon: 48.7%, Anderson: 26.7% | (Arab, Wonsley) |
-| Arab | Anderson | Arab: 73.3%, Wonsley: 50.1%, Gordon: 48.7%, Anderson: 26.7% | (Arab, Wonsley) |
-| Gordon | Wonsley | Arab: 51.3%, Gordon: 50.5%, Wonsley: 49.5%, Anderson: 35.5% | (Arab, Gordon) |
-| Gordon | Arab | Arab: 51.3%, Wonsley: 49.5%, Gordon: 48.7%, Anderson: 35.5% | (Arab, Wonsley) |
-| Gordon | Anderson | Gordon: 64.5%, Arab: 51.3%, Wonsley: 49.5%, Anderson: 35.5% | (Gordon, Arab) |
-| Anderson | Wonsley | Arab: 73.3%, Gordon: 64.5%, Wonsley: 63.8%, Anderson: 36.2% | (Arab, Gordon) |
-| Anderson | Arab | Arab: 73.3%, Gordon: 64.5%, Wonsley: 63.8%, Anderson: 26.7% | (Arab, Gordon) |
-| Anderson | Gordon | Arab: 73.3%, Gordon: 64.5%, Wonsley: 63.8%, Anderson: 35.5% | (Arab, Gordon) |
+| Wonsley | Arab | Gordon: 50.5%, Wonsley: 50.1%, Arab: 49.9% | (Gordon, Wonsley) |
+| Wonsley | Gordon | Gordon: 50.5%, Arab: 49.9%, Wonsley: 49.5% | (Gordon, Arab) |
+| Wonsley | Anderson | Wonsley: 63.8%, Gordon: 50.5%, Arab: 49.9% | (Wonsley, Gordon) |
+| Arab | Wonsley | Wonsley: 50.1%, Arab: 49.9%, Gordon: 48.7% | (Wonsley, Arab) |
+| Arab | Gordon | Arab: 51.3%, Wonsley: 50.1%, Gordon: 48.7% | (Arab, Wonsley) |
+| Arab | Anderson | Arab: 73.3%, Wonsley: 50.1%, Gordon: 48.7% | (Arab, Wonsley) |
+| Gordon | Wonsley | Arab: 51.3%, Gordon: 50.5%, Wonsley: 49.5% | (Arab, Gordon) |
+| Gordon | Arab | Arab: 51.3%, Wonsley: 49.5%, Gordon: 48.7% | (Arab, Wonsley) |
+| Gordon | Anderson | Gordon: 64.5%, Arab: 51.3%, Wonsley: 49.5% | (Gordon, Arab) |
+| Anderson | Wonsley | Arab: 73.3%, Gordon: 64.5%, Wonsley: 63.8% | (Arab, Gordon) |
+| Anderson | Arab | Arab: 73.3%, Gordon: 64.5%, Wonsley: 63.8% | (Arab, Gordon) |
+| Anderson | Gordon | Arab: 73.3%, Gordon: 64.5%, Wonsley: 63.8% | (Arab, Gordon) |
 
 The cycle, in particular, is between the nodes:
 
 | Leader | Challenger | Approvals | Target |
 |--------|------------|-----------|--------|
-| Arab | Wonsley | Wonsley: 50.1%, Arab: 49.9%, Gordon: 48.7%, Anderson: 26.7% | (Wonsley, Arab) |
-| Wonsley | Arab | Gordon: 50.5%, Wonsley: 50.1%, Arab: 49.9%, Anderson: 36.2% | (Gordon, Wonsley) |
-| Gordon | Wonsley | Arab: 51.3%, Gordon: 50.5%, Wonsley: 49.5%, Anderson: 35.5% | (Arab, Gordon) |
-| Arab | Gordon | Arab: 51.3%, Wonsley: 50.1%, Gordon: 48.7%, Anderson: 26.7% | (Arab, Wonsley) |
+| Arab | Wonsley | Wonsley: 50.1%, Arab: 49.9%, Gordon: 48.7% | (Wonsley, Arab) |
+| Wonsley | Arab | Gordon: 50.5%, Wonsley: 50.1%, Arab: 49.9% | (Gordon, Wonsley) |
+| Gordon | Wonsley | Arab: 51.3%, Gordon: 50.5%, Wonsley: 49.5% | (Arab, Gordon) |
+| Arab | Gordon | Arab: 51.3%, Wonsley: 50.1%, Gordon: 48.7% | (Arab, Wonsley) |
 
 ## References
 
