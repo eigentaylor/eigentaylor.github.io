@@ -42,12 +42,11 @@ In plurality voting, the optimal strategy for a voter is often to vote for the m
 
 Approval voting is a simple and practical change to plurality voting, where voters can choose to vote for as many candidates as they like. This simple change has profound implications for voter strategy, as the spoiler effect and fear of vote splitting are greatly reduced. However, there is still a strategic element to approval voting, as voters must decide which candidates to approve of.
 
-For a voter who prefers candidates A > B > C > D, there are four possible sincere ballots they could cast:
+For a voter who prefers candidates A > B > C, there are three possible sincere ballots they could cast:
 
 1. Approve A only
 2. Approve A and B
 3. Approve A, B, and C
-4. Approve A, B, C, and D
 
 A common criticism of approval voting is that even a sincere voter may have to be strategic and decide where to draw their line of approval. While an approval for A and B may be sincere, and does not narrow the margin between A and B, it could lead to a situation where the voter could have instead approved only A, and had A win instead of B. The claim is that this would lead to regret for the voter, and thus the voter may feel compelled to approve of only their most preferred candidate, reducing approval voting to plurality voting in practice.
 
@@ -66,7 +65,7 @@ We will not delve into the weeds of why this is an optimal strategy. Intuitively
 For our axioms of this analysis, we assume
 
 1. Voters have complete and transitive preferences over candidates. Given any pair of candidates, a voter strictly prefers one over the other, and is not indifferent between them.
-2. Voters always use sincere strategies. That is, if they prefer candidate X over Y, then whenever they approve candidate Y, they must approve candidate X.
+2. Voters always use sincere strategies. That is, if they prefer candidate X over Y, then whenever they approve candidate Y, they must approve candidate X. Laslier proves that this is optimal in his paper.
 3. Voters have common knowledge of the perceived front-runners. That is, every voter knows who the leader and challenger are perceived to be.
 4. Every voter applies the leader rule simultaneously.
 5. No two pairwise match-ups have the same margin, and no two candidates tie. That is, for any two pairs of candidates, $$(X_1, Y_1) \neq (X_2, Y_2)$$, then $$P(X_1>Y_1)\neq P(X_2>Y_2)$$, and $$P(X_1>Y_1)\neq 0.5$$. In a "large electorate",  which is the setting Laslier focuses on in his paper, this is a reasonable assumption, since the probability of ties goes to zero as the number of voters increases.
