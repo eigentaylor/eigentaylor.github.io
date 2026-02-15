@@ -35,7 +35,7 @@ toc:
 
 ## Introduction
 
-Updated 12/7/2025.
+Updated ~~12/7/2025~~. Updated 2/15/2026.
 
 Recently, I wrote a post about approval voting, and I would like to go more in depth here about one of its most appealing properties: strategyproofness. Which is to say, the property that a voter has one and only one optimal strategy, and that strategy is to vote honestly, with their heart. There is no benefit to trying to game the system by misrepresenting one's preferences.
 
@@ -273,11 +273,11 @@ I will posit my personal approach to approval voting strategy, which is as follo
 1. Identify your top favorite candidates. You never want to exclude them from your approval set, and it will never be optimal to do so.
 2. Identify any candidates you absolutely cannot stand. You never want to include them in your approval set, and it will never be optimal to do so.
 3. Among the remaining candidates, identify which ones you find genuinely acceptable. These are candidates you would be okay with winning, even if they are not your favorite. Let this be your initial approval set.
-4. Optional: consider the viability of candidates in your initial approval set.
-   - If none of the candidates in your initial approval set seem viable, consider expanding your approval set to include at least one viable candidate that you find somewhat acceptable. This increases your chances of getting a candidate you at least don't hate into office
-   - On the other hand, if your initial approval set includes one or more viable candidates, then great! You can choose to keep this as your final approval set, if you want to maximize your chances of getting any acceptable outcome.
-   - Alternatively, you can choose to narrow it down to your favorites among the viable candidates. Just be aware that narrowing your approval set too much could risk none of them winning.
-   - You could also expand your approval set further if you want to strengthen your vote against the candidates you really dislike (ex. an "anyone but" strategy). Just be aware that expanding your approval set too much could risk an acceptable but less preferred candidate winning over your favorites. This can be especially effective for making a statement, where you approve a non-viable candidate you're not even that crazy about, just to make candidates you dislike do worse.
+4. Optional: If you want to be strategic, then you can consider the viability of candidates in your initial approval set. This is an [optimal strategy called the Leader Rule](../avstrategy){:target="_blank"} by Rob LeGrand and Jean François Laslier (post coming soon), which helps to optimaly draw the line if you are unsure, and want the most optimal dichotomous goal. In general, the strategy is as follows:
+   - Suppose there's a candidate you think is most likely to win. You should include all candidates you prefer to them in your goal. That strictly helps your chances of getting a better than expected outcome.
+   - If that most likely winner is better than the candidate you think is the second most likely to win, then you should also include that most likely winner, to reinforce their lead over that strongest challenger.
+   - If you want to maximize your chance of impacting the election towards a better outcome, then you should not include any candidates that you prefer less than the most likely winner.
+   - In essence, the leader rule says to draw your line of acceptability right under or right over the one you expect is most likely to win.
 5. Once you have finalized your approval set, that's exactly your optimal ballot. Vote for all candidates in your approval set, and no candidates outside of it. This ensures that those in your approval set are maximally helped by your vote, and those outside of it are maximally hurt by your vote, in alignment with your dichotomous goal.
 
 Hopefully spelling it out like this shows that strategy under dichotomous goals in approval voting is exceptionally straightforward. The only real strategy is in step 4, which is also entirely optional. You can choose to be as strategic or as sincere as you like in drawing your line. But once that line is drawn, there is no further strategy to consider.
