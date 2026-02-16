@@ -23,9 +23,10 @@ toc:
   - name: The Florida Tremble
   - name: Consistency with Practical Voter Psychology
   - name: Condorcet-efficiency of the Leader Rule
-  - name: Can the leader rule fail?
+  - name: What if my information is faulty?
     subsections:
-      - name: Not Following the Leader Rule
+      - name: The Power of the Honest Ballot
+  - name: Conclusion
   - name: Appendix 
     subsections:
       - name: The Descending Chain of Unlikely Ties
@@ -286,7 +287,7 @@ The leader rule is precisely the optimized balance of these two risks, by essent
 
 But when you have no idea who the leader and challenger are, then it's very hard to know which races are the most likely to be pivotal. In that case, you might as well just draw your line of approval based on your gut feeling of who you *actually approve* of, and not worry about the strategic implications of your vote. Let's call this the "honest ballot", which is a particular choice of a sincere ballot that is based on your gut feeling of who is acceptable to you, and who is not.
 
-## The Power of the Honest Ballot
+### The Power of the Honest Ballot
 
 When you choose an "honest ballot", you optimize away from getting the *most* preferred candidate possible, and instead optimize on getting any *acceptable* candidate. For some, like myself, this is just as good. As long as an acceptable candidate wins, I don't really care so much about which one wins.
 
