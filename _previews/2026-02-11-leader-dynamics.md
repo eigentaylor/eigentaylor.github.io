@@ -135,8 +135,8 @@ Further, due to the nature of the Approval ballot data, the winner is always the
 
 **Lemma 4:** Candidate X is a Leader Rule Outcome if and only if one of the following holds:
 
-1. X has a pairwise match-up against some candidate Y that is stronger than any pairwise match-up against X. That is, there exists some Y such that $$P(X>Y) > P(Z>X)$$ for all $$Z \neq X$$.
-2. X has the strongest pairwise match-up against some candidate $$Y \neq X$$, and that match-up is stronger than Y's match-up against some candidate $$Y'\neq Y$$. That is, there exists some Y such that $$P(X>Y) > P(Z>Y)$$ for all $$Z \neq X$$ and there exists some Y' such that $$P(X>Y) > P(Y>Y')$$ for some Y'.
+1. X has a pairwise match-up against some candidate Y that is stronger than any pairwise match-up against X. That is, there exists some Y such that $$P(X>Y) > P(Z>X)$$ for all $$Z \neq X$$. Then (X,Y) has an edge to a node where X is the leader, making X a Leader Rule Outcome.
+2. X has the strongest pairwise match-up against some candidate $$Y \neq X$$, and that match-up is stronger than Y's match-up against some candidate $$Y'\neq Y$$. That is, there exists some Y such that $$P(X>Y) > P(Z>Y)$$ for all $$Z \neq X$$ and there exists some Y' such that $$P(X>Y) > P(Y>Y')$$ for some Y'. Then (Y,Y') has an edge to a node where X is the leader, making X a Leader Rule Outcome.
 
 **Proof:** If condition 1 holds, then consider the node (X,Y). We have that $$P(X>Y) > P(Z>X)$$ for all $$Z \neq X$$, so X will have the most votes after every voter applies the leader rule, making X the leader. Note that condition 1 holds when X is a unique Condorcet winner, since $$P(X>Z) > 0.5 > P(Z>X)$$ for all $$Z \neq X$$. If condition 1 does not hold, then for all Y, there exists some Z such that $$P(Z>X) > P(X>Y)$$, meaning that (X,Y) cannot have an edge to any node where X is the leader. That is, no node where X is the leader can have an edge to a node where X is the leader.
 
