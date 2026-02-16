@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: A Guide to Approval Voting Strategy
-date: 2026-02-04
+date: 2026-02-16
 description: An explanation of "the leader rule" strategy in approval voting, and its positive ramifications.
 giscus_comments: true
 importance: 2
@@ -307,8 +307,6 @@ In essence, we have two different mindsets for how to approach Approval voting s
 
 1. Optimizing for getting an outcome that is better than what you expect, which is achieved by the leader rule.
 2. Optimizing for getting an outcome that is acceptable, which is achieved by the honest ballot and dichotomous goal mindset.
-
-
 
 ## Appendix
 
