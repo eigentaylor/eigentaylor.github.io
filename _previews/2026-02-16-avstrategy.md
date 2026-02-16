@@ -237,21 +237,24 @@ The leader rule boils down to ranking the pivotal scenarios by their likelihood,
 
 The most likely pivotal scenario is the leader vs. the challenger. Therefore, the voter focuses on approving exactly one of these two candidates based on their preference. The next most likely scenarios involve the leader vs. other candidates, leading the voter to approve all candidates they prefer to the leader.
 
+However, from another perspective, the leader rule can also be intuitively (but loosely) understood as voting for a strictly better than the expected outcome. The expected outcome is the leader winning. Therefore, you want to vote in a way that promotes any outcome that is better than the leader winning, and does not promote any outcome that is worse than the leader winning. Thus, you approve of all candidates you prefer to the leader, and none of the candidates you prefer less than the leader. The decision for the leader comes down to considering that the next expected outcome is the challenger winning, so you approve of the leader if you prefer them to the challenger.
+
 Therefore, the leader rule aligns well with the "mental shortcuts" that voters naturally use when making decisions. It provides a clear and straightforward strategy that maximizes the voter's impact on the election outcome, while also being consistent with how people typically think about choices.
 
-The most surprising aspect of the leader rule, however, is its majoritarian properties, which we will explore next.
+In my view, however, the most surprising aspect of the leader rule is its majoritarian properties, which we will explore next.
 
 ## Condorcet-efficiency of the Leader Rule
 
 One might ask "what happens if everyone uses the leader rule, all at once?" Laslier analyzes this in his paper, and [I tackle this question in more depth in a future post](../leader-dynamics){:target="_blank"}, but the short answer is that
 
-1. The leader rule only has an equilibrium when there exists a unique Condorcet winner, and the leader is that Condorcet winner. If the leader is not a unique Condorcet winner, then a new candidate (who beats the leader head-to-head) will get more approvals than the current leader, and overtake them.
-2. If there is no unique Condorcet winner, then there is no equilibrium under the leader rule.
-3. After any iteration of everyone using the leader rule, if a unique Condorcet winner exists, they will have over 50% approvals.
+1. First, we have to assume that all voters have the same common perception of the leader and challenger.
+2. The leader rule only has one unique equilibrium when there exists a unique Condorcet winner, and the leader is that Condorcet winner. If the leader is not a unique Condorcet winner, then a new candidate (who beats the leader head-to-head) will get more approvals than the current leader, and overtake them.
+3. If there is no unique Condorcet winner, then there is no equilibrium under the leader rule.
+4. After any iteration of everyone using the leader rule, if a unique Condorcet winner exists, they will have over 50% approvals.
 
-However, credit to Rob LeGrand for pointing out to me that it is not necessarily the case that the leader rule converges to the Condorcet winner under all initial conditions. See [the appendix](#appendix) for a pathological (but intriguing) example of this.
+However, credit to Rob LeGrand for pointing out to me that it is not necessarily the case that the leader rule converges to the Condorcet winner under all initial conditions. See [my forthcoming post](../leader-dynamics){:target="_blank"} for a pathological (but intriguing) example of this.
 
-The proof and explanation of this is actually relatively straightforward. Consider what happens when everyone uses the leader rule at the same time:
+The proof and explanation of these ideas is actually relatively straightforward. Consider what happens when everyone uses the leader rule at the same time:
 
 - For any candidate X who is not the leader, the voters who approve them will be precisely those who rank X above the leader. Therefore, X's total approval percentage will be equal to the percentage of voters who prefer X to the leader. That is, the head-to-head result of X vs. the leader.
 - The leader's approval percentage will be equal to the percentage of voters who prefer the leader to the challenger (since only those voters approve the leader). Thus, the leader's approval percentage is equal to the head-to-head result of the leader vs. the challenger.
