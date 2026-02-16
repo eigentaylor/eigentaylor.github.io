@@ -58,30 +58,50 @@ The key insights I want to convey in this post are that
 
 ## The Leader Rule
 
+First, we should establish that this strategy is not about impacting the "share" or percentage of votes that a candidate gets, but rather about impacting who wins. The goal under the leader rule is to maximize the chance that a more preferred candidate wins over a less preferred candidate, not to maximize number of votes one candidate gets over another. This is a subtle but important distinction, and it is the key to understanding the strategy.
+
 > **The Leader Rule**: Identify the top two front-runners in the election: the leader (most likely to win) and the "challenger" (the most likely to overtake the leader). You, as the voter, then
 >
-> 1. approve all candidates that you prefer to the leader
+> 1. approve all candidates that you prefer strictly to the leader
 > 2. only approve the leader if you prefer them to the challenger.
 >
-> Do not approve of any other candidates (i.e. those you like  less than the leader).
+> Do not approve of any other candidates (i.e. those you like less than the leader).
 
-That's the entire strategy! You could stop reading here and go apply this strategy in any Approval voting election. But if you want to understand *why* this strategy is optimal, and you're here for the practical examples and theory, read on.
+That's the entire strategy! You could stop reading here and go apply this strategy in any Approval voting election. But if you want to understand *why* this strategy is optimal, how to apply it in real examples, and you're here for the practical examples and theory, read on.
 
-The basic idea is to maximize the impact of your vote on the most likely pivotal outcomes of the election.
+The basic idea is
 
-- By approving of all candidates you prefer to the leader, you strictly increase the chances of a more preferred candidate winning. Even if they have no chance, you still strictly help them by monotonicity. It's a "what the hell" vote that can't hurt you. Who knows, maybe other voters find them more appealing than the leader, like you, and when you all approve of them, they get a boost that helps them overtake the leader.
+1. to maximize the impact of your vote on the most likely pivotal outcomes of the election
+2. vote in a way that promotes precisely better than expected outcomes
+
+- By approving of all candidates you prefer to the leader, you strictly increase the chances of a more preferred candidate winning. Even if they have no chance, you still strictly help them by monotonicity. It's a "what the hell" vote that can't hurt you. Who knows, maybe other voters find them more appealing than the leader, like you, and when you all approve of them, they get a boost that helps them overtake the leader!
 - If you prefer the challenger to the leader, then you approve of the challenger since you prefer them to the leader, and do not approve of the leader.
 - If you prefer the leader to the challenger, you approve of the leader by the rule. And since the challenger is below the leader, you do not approve of the challenger.
 
 The ultimate effect is that you have an impact on the most important race: between the leader and the challenger. You also help push forward any candidates you prefer to the leader.
 
-As an example, let's take my favorite election to yap about: Alaska 2022. In this election, we had the following candidates:
+I was recently talking to someone in the electoral reform space. They mentioned that they would be conflicted about how to vote under Approval voting in the 2012 US Presidential election. They said that they preferred Gary Johnson > Mitt Romney > Barack Obama, and thus voted for Romney under plurality. But there's ambiguity in Approval over how they should vote, if they actually want to vote for a winning candidate. Here was a loose summary of their thought process:
+
+- Only voting for Johnson was a long shot, and so there's regret in not influencing the most important race.
+- Voting for Johnson and Romney could lead to mixed success. If Romney loses, they would be disappointed that nobody they voted for won. But if Romney wins, then why not have just voted for Romney?
+- Voting insincerely for Johnson and Obama could be technically a "success" if Obama wins, but it would be a betrayal of their preferences, which does not feel good.
+- Voting for Romney and Obama would mean they "can't lose", but that wouldn't be honest either.
+- Voting for all three would mean their ballot is basically pointless.
+
+The leader rule cuts through all of this ambiguity and says that their optimal strategy, in any reasonable scenario (where we assume Romney and Obama are the two front-runners), is to vote for both Johnson and Romney. Here's why:
+
+1. Johnson is a long shot, yes, but there's absolutely no reason *not* to approve of him. Approving of him can't hurt, and it could help. If they approve of him, and other voters who prefer him also approve of him, then he could get a boost that helps him overtake the leader leading to a "come from behind" victory. Regardless of who the leader is out of Romney and Obama, they prefer Johnson to the leader, so they should approve of him.
+2. Obama versus Romney is the most important race. Therefore, they should always approve of exactly one of them, and never approve of both (or neither), if they want to maximize their impact. This means approving of Romney and not approving of Obama.
+
+### Applying the Leader Rule to Alaska 2022
+
+Let's also take my favorite election to discuss: Alaska 2022 (it wouldn't be an eigentaylor post about voting if we didn't mention Alaska 2022). In this election, we had the following candidates:
 
 - Mary Peltola (D)
 - Sarah Palin (R)
 - Nick Begich III (R)
 
-In this election under IRV, Peltola won after Begich was eliminated, despite most of his votes transferring to Palin. Further, this election was controversial because the ballot data showed that Begich was actually the Condorcet winner, beating both Peltola and Palin head-to-head, but was eliminated first under IRV.
+In this election under IRV, Peltola won after Begich was eliminated, despite most of his votes transferring to Palin. Further, this election was controversial partially because the ballot data showed that Begich was actually the Condorcet winner, meaning that he would have beaten both Peltola and Palin head-to-head, but was eliminated first under IRV. Further, there was anger that despite nearly 60% of voters ranking a Republican candidate first, the Democrat won.
 
 I want to go through how different voters might apply the leader rule in this election. In this race, the front-runner was Peltola (~40%), with Palin as the primary challenger (~31%). Begich was a relatively close third at (~28%). The most common voter types were:
 
@@ -103,7 +123,7 @@ These four groups show us the way that different voter groups might optimally ut
 
 - The Republican voters who rank both Palin and Begich above Peltola approve of both candidates, showing how the Republican voters can unite behind both candidates against the Democrat. Despite Begich not being in the top two, even voters who rank him second still approve him. Together, these voters form a coalition that essentially acts as a single vote *against* Peltola.
 - The Begich > Peltola > Palin voters approve of Begich and Peltola. They prefer Begich the most, so there's no harm in approving him. They also prefer Peltola over the challenger Palin, so voting for Peltola as well helps maintain her lead over Palin, this bloc's least preferred candidate.
-- The Peltola > Begich > Palin voters only approve of Peltola, as she is both their most preferred candidate and the leader. Since Peltola is already the frontrunner, it's not optimal for them to extend their approval to Begich, who is less preferred than Peltola.
+- The Peltola > Begich > Palin voters only approve of Peltola, as she is both their most preferred candidate and the leader. Since Peltola is already the front-runner, it's not optimal for them to extend their approval to Begich, who is less preferred than Peltola.
 
 The leader rule thus encourages voters to focus their approvals on the candidates that matter most in the election, helping to ensure that their votes have the maximum possible impact on the outcome. But notice something interesting: all blocs except the ones that rank Peltola first end up extending their approval to Begich.
 
@@ -127,12 +147,12 @@ In other words, if Peltola is not in the top two, or if their least preferred ca
 
 We see that extending approval to that second least preferred candidate is optimal only when
 
-1. Your favorite candidate is not in the top two, and
-2. Your least favorite candidate is the leader.
+1. Your two least preferred candidates are the front-runners, and you want to help the lesser evil win over the worse evil, or
+2. Your least favorite candidate is the leader. Regardless of if your most preferred candidate is the challenger or not, you want to help push the leader down by approving every candidate over them.
 
 The leader rule thus provides a clear and effective strategy for voters to maximize their impact in Approval voting elections, by focusing their approvals on the most relevant candidates and helping to ensure that their votes have the maximum possible impact on the outcome.
 
-In a future post, I analyze Alaska 2022 using the leader rule, and I found something interesting. Under certain assumptions, Begich is the only candidate who could possibly win if every voter applies the leader rule. This basically comes down to the fact that Begich is the Condorcet winner, and his match-ups against the other candidates are the strongest ones. Therefore, in response to any other leader, a majority would approve of Begich because they prefer him to any other leader. Further, the data also indicates that Palin, as the Condorcet loser, could never win under the leader rule.
+In [a future post](../leader-dynamics){:target="_blank"}, I analyze Alaska 2022 using the leader rule, and I found something interesting. Under certain assumptions, Begich is the only candidate who could possibly win if every voter applies the leader rule. This basically comes down to the fact that Begich is the Condorcet winner, and his match-ups against the other candidates are the strongest ones. Therefore, in response to any other leader, a majority would approve of Begich because they prefer him to any other leader. Further, the data also indicates that Palin, as the Condorcet loser, could never win under the leader rule.
 
 The question is if Democratic voters might "regret" also approving Begich in the case where their support of Begich is what pushes him to victory. I argue no. Suppose that Palin is the leader the morning of the election. Regardless of who the challenger is, if the Peltola supporters go into the voting both expecting Palin to win, they will vote defensively for Peltola and Begich in response to that expectation. My analysis indicates that Palin would get less than 50%, Peltola would get a meek majority of ballots, but Begich would get potentially over 60% of ballots, which would be a landslide victory. See [this post](../leader-dynamics){:target="_blank"} for the proof of this claim when it comes out.
 
@@ -208,13 +228,13 @@ The most surprising aspect of the leader rule, however, is its majoritarian prop
 
 ## Condorcet-efficiency of the Leader Rule
 
-One might ask "what happens if everyone uses the leader rule, all at once?" Laslier analyzes this in his paper, and there are some interesting results:
+One might ask "what happens if everyone uses the leader rule, all at once?" Laslier analyzes this in his paper, and [I tackle this question in more depth in a future post](../leader-dynamics){:target="_blank"}, but the short answer is that
 
-1. The leader rule only has an equilibrium when the leader is also the unique Condorcet winner. If the leader is not a unique Condorcet winner, then a new candidate (who beats the leader head-to-head) will get more approvals than the current leader, and overtake them.
+1. The leader rule only has an equilibrium when there exists a unique Condorcet winner, and the leader is that Condorcet winner. If the leader is not a unique Condorcet winner, then a new candidate (who beats the leader head-to-head) will get more approvals than the current leader, and overtake them.
 2. If there is no unique Condorcet winner, then there is no equilibrium under the leader rule.
 3. After any iteration of everyone using the leader rule, if a unique Condorcet winner exists, they will have over 50% approvals.
 
-However, credit to Rob LeGrand for pointing out to me that it is not necessarily the case that the leader rule converges to the Condorcet winner under all initial conditions. See [the appendix](#appendix) for a pathological (but intruiging) example of this.
+However, credit to Rob LeGrand for pointing out to me that it is not necessarily the case that the leader rule converges to the Condorcet winner under all initial conditions. See [the appendix](#appendix) for a pathological (but intriguing) example of this.
 
 The proof and explanation of this is actually relatively straightforward. Consider what happens when everyone uses the leader rule at the same time:
 
@@ -225,9 +245,7 @@ This means that after an iteration of every voter using the leader rule, the app
 
 Thus, if the leader is a unique Condorcet winner, then after the iteration they will have over 50% approvals, and everyone else will have under 50% approvals. Therefore, the leader remains the leader, and must strictly win. The equilibrium challenger will be the candidate with the least bad head-to-head result against the leader.
 
-In conjunction with the previous section, what we see is that the way approval voting reacts with the way humans make decisions leads to a natural majoritarian outcome when everyone uses the leader rule. In that way, Approval voting is more majoritarian when voters are strategic, which significantly dampens the common criticism that Approval voting is both non-majoritarian and susceptible to strategic voting.
-
-Note that this means that we can loosely simulate the leader rule iteratively by simply looking at pairwise matrix of head-to-head results. However, first we should talk about the "failure" cases of the leader rule.
+In conjunction with the previous section, what we see is that the way approval voting reacts with the way humans make decisions leads to a natural majoritarian outcome when everyone uses the leader rule. In that way, Approval voting is more majoritarian when voters are strategic, which significantly dampens the common criticism that Approval voting is both non-majoritarian and susceptible to strategic voting. In particular, if every voter applies the leader rule, then the outcome is the same or strictly better than the expectation of the voters going into the election.
 
 ## Can the leader rule fail?
 
@@ -271,7 +289,7 @@ The following is my attempt at an intuitive explanation of the mathematical proo
 
 We imagine that we have a front-runner $$x_1$$, who we call the leader, and a challenger $$x_2$$. The challenger is the most likely candidate to beat the leader (ex. the most likely candidate for the leader to tie or lose to). We imagine that every other candidate $$x_3, x_4, \ldots$$ is less likely to beat the leader than the challenger is.
 
-However, let's keep it concrete with a recent example: the 2025 NYC Mayoral Democratic Primary. In that race, Andrew Cuomo was seen as the clear frontrunner (leader), and the challenger was Zohran Mamdani (who ended up winning in an upset victory). We also have other candidates like Brad Lander, Adrienne Adams, and others. Let's assume that the order is based on their first choice vote shares in the actual election. That gives the ordering $$x_1 = \text{Cuomo}$$, $$x_2 = \text{Mamdani}$$, $$x_3 = \text{Lander}$$, $$x_4 = \text{Adams}$$, etc. all the way down to the last place candidates like Paperboy Love Prince.
+However, let's keep it concrete with a recent example: the 2025 NYC Mayoral Democratic Primary. In that race, Andrew Cuomo was seen as the clear front-runner (leader), and the challenger was Zohran Mamdani (who ended up winning in an upset victory). We also have other candidates like Brad Lander, Adrienne Adams, and others. Let's assume that the order is based on their first choice vote shares in the actual election. That gives the ordering $$x_1 = \text{Cuomo}$$, $$x_2 = \text{Mamdani}$$, $$x_3 = \text{Lander}$$, $$x_4 = \text{Adams}$$, etc. all the way down to the last place candidates like Paperboy Love Prince.
 
 We then have the following events in decreasing order of likelihood (by ignoring three or more way ties), assuming our identification of the leader and challenger is correct:
 
