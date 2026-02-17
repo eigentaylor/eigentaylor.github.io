@@ -36,8 +36,6 @@ i like differential equations and linear algebra. my current obsession is approv
 
 [here are some math posts ive written if you want to look at them i guess](./blog){:target="_blank"}
 
-if you want to support me, i have a [ko-fi](https://ko-fi.com/eigentaylor){:target="_blank"}.
-
 the best way to contact me is through discord (@eigentaylor) but feel free to [email me](mailto:tayloreigenfisher@gmail.com){:target="_blank"}.
 
 ---
@@ -70,6 +68,7 @@ things ive ~~discovered~~ independently derived. i think they're all cool, but o
 - [Constructing integer systems of differential equations with integer solutions](./blog/firstordersystems){:target="_blank"}: methods to construct nice systems with nice solutions. useful for professors/textbook authors to make good lecture examples or exam problems. somewhat of a work in progress. i also have a post for [second order systems](./blog/secondordersystems){:target="_blank"}.
 
 - matrix exponential stuff: i really love matrix exponentials.
+
 1. [Matrix Exponential Formulas for 2x2 Matrices](./blog/2x2ezmatrixexp){:target="_blank"}
 2. [Matrix Exponentials Using Differential Equations](./blog/matrixexpwde){:target="_blank"}
 3. [Exponentials of Symmetric Matrices Using the Spectral Theorem](./blog/symmetric-exp){:target="_blank"}
