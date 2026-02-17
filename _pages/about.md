@@ -38,6 +38,8 @@ i like differential equations and linear algebra. my current obsession is approv
 
 if you want to support me, i have a [ko-fi](https://ko-fi.com/eigentaylor){:target="_blank"}.
 
+the best way to contact me is through discord (@eigentaylor) but feel free to [email me](mailto:tayloreigenfisher@gmail.com){:target="_blank"}.
+
 ---
 
 personal favorites:
