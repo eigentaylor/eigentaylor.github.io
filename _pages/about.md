@@ -6,13 +6,12 @@ subtitle: i am a math grad and tutor
 
 profile:
   align: right
-  image: pic.jpg
+  image: rpic.png
   image_circular: false # crops the image to make it circular
   more_info: > 
     <p>Taylor Fisher</p> 
     <p>discord: eigentaylor</p>   
     <p>california CA</p>
-    <p>not actually a picture of me</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
