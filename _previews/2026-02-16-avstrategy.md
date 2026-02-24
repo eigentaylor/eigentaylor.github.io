@@ -300,7 +300,7 @@ By approving only Peltola, you either strengthen her lead or narrow the gap betw
 
 In short: the leader rule optimally pushes the election towards a more **preferable** outcome, but by the monotonicity of Approval voting, the Dichotomous goal guarantee says that this "honest ballot" strictly and optimally pushes the election towards an **acceptable** outcome.
 
-This may seem obvious, but this is not the case in other voting methods. For example, in RCV/IRV, the Republican voters who sincerely ranked Palin first and Begich second did not help get a Republican elected. In fact, they actually elected Peltola, their least preferred candidate indirectly. If [less than 3,000 of the approximately 33,000 voters who did so](https://substack.com/@akorky/p-182659376){:target="_blank"}, had instead insincerely ranked Begich first and Palin second, then Palin would have been eliminated instead and Begich would have won, which is a much more preferable outcome for those voters. Approval has no such pathologies. Your ballot can only ever help elect someone you consciously vote for, and will *never* help someone you did *not* vote for.
+This may seem obvious, but this is not the case in other voting methods. For example, in RCV/IRV, the Republican voters who sincerely ranked Palin first and Begich second did not help get a Republican elected. In fact, they actually elected Peltola, their least preferred candidate indirectly. If [less than 3,000 of the approximately 33,000 voters who did so](https://substack.com/@whelmedcitizen/p-182659376){:target="_blank"}, had instead insincerely ranked Begich first and Palin second, then Palin would have been eliminated instead and Begich would have won, which is a much more preferable outcome for those voters. Approval has no such pathologies. Your ballot can only ever help elect someone you consciously vote for, and will *never* help someone you did *not* vote for.
 
 Therefore, even when you have no idea who the leader and challenger are, you can still vote sincerely based on your gut feeling of who is acceptable to you, and know that you are playing optimally in the sense that you are maximizing the chance of electing an acceptable candidate.
 
@@ -343,7 +343,7 @@ Note that this actually means that your optimal ballot under the leader rule is 
 
 Laslier, J. F. (2009). The Leader Rule: A Model of Strategic Approval Voting in a Large Electorate. *Journal of Theoretical Politics*, 21(1), 113-136. [https://journals.sagepub.com/doi/10.1177/0951629808097286](https://journals.sagepub.com/doi/10.1177/0951629808097286){:target="_blank"}
 
-Mahlendorf, A. (2026). Fear of Vote Splitting. Substack. [https://substack.com/@akorky/p-182659376](https://substack.com/@akorky/p-182659376){:target="_blank"}
+Mahlendorf, A. (2026). Fear of Vote Splitting. Substack. [https://substack.com/@whelmedcitizen/p-182659376](https://substack.com/@whelmedcitizen/p-182659376){:target="_blank"}
 
 [ranked.vote](https://ranked.vote){:target="_blank"} Election Reports:
 
