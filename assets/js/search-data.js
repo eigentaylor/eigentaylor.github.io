@@ -637,6 +637,11 @@ ninja.data = [{
           description: "An explanation of &quot;the leader rule&quot; strategy in approval voting, and its positive ramifications.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/avstrategy/";
+            },},{id: "previews-a-proof-of-the-gibbard-satterthwaite-theorem",
+          title: 'A Proof of the Gibbard-Satterthwaite Theorem',
+          description: "A detailed proof of the Gibbard-Satterthwaite theorem, based on W.D. Wallis&#39; work.",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/gibbard-satt/";
             },},{id: "previews-jordan-canonical-form-made-easier-part-1",
           title: 'Jordan Canonical Form Made Easier Part 1',
           description: "not easy. just like... easier...",
