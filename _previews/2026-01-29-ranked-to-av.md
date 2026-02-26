@@ -47,7 +47,7 @@ Approval voting is often criticized for its lack of granularity in its ballot an
 
 If this sounds absurd, it has happened. In [Alaska's 2022 special election for US House](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"}, voters who expressed an honest preference for Sarah Palin (R)-first and Nick Begich III (R)-second *did* in fact elect Mary Peltola (D) because of that sincerity. If 2,893 of voters who ranked Palin first and Begich second had simply switched the order of their first two rankings, the weaker candidate Palin would have been eliminated instead of the only Republican who could have beaten Peltola in the final round, Begich. Begich would have won because 52.5% of ballots expressing a preference between Begich and Peltola preferred Begich.
 
-The issue is that a system like IRV (instant-runoff voting, AKA "ranked-choice voting") does not solve the [vote-splitting problem](https://substack.com/@akorky/p-182659376){:target="_blank"} since it does not properly consider the full rankings of voters. Who is eliminated first or second can entirely decide the winner, electing a candidate that a majority of voters would find someone else more preferable to.
+The issue is that a system like IRV (instant-runoff voting, AKA "ranked-choice voting") does not solve the [vote-splitting problem](https://substack.com/@whelmedcitizen/p-182659376){:target="_blank"} since it does not properly consider the full rankings of voters. Who is eliminated first or second can entirely decide the winner, electing a candidate that a majority of voters would find someone else more preferable to.
 
 Only a ranked Condorcet method can truly solve this vote-splitting problem, *generally* [at the cost of realistic practicality](../practicalapproval){:target="_blank"} (in the case of the particularly complicated methods, at least). But Approval voting also solves this problem because it counts all voters equally and simultaneously, rather than sequentially or conditionally, and does so while being eminently practical.
 
@@ -94,6 +94,7 @@ In this way, every candidate has a path to victory under Approval voting, depend
 Steven Brams in *Mathematics and Democracy* describes a particular strategy profile for Approval voting that can be deduced from ranked ballots, called the "AV Critical Strategy Profile." This strategy profile is designed to essentially maximize the performance of a particular candidate assuming sincere strategies.
 
 > Given a set of full candidate rankings, the **AV Critical Strategy Profile** (AVCSP) for candidate X is defined as follows:
+>
 > 1. If a voter ranks X last, then that voter only approves their top choice.
 > 2. Otherwise, the voter approves X and all candidates they rank above x.
 
@@ -112,6 +113,7 @@ This gives us a way to analyze ranked ballots and deduce whether a particular ca
 While the AVCSP is a theoretical tool used by Brams to pove properties of Approval voting, we can take the fundamental idea and apply it to analyze real-world elections that use ranked ballots.
 
 > **Definition**: We say that a candidate X is **implicitly ranked** above candidate Y on a given voter's ranked ballot if either:
+>
 > 1. Both X and Y are ranked on the ballot, and X is ranked higher than Y.
 > 2. X is ranked on the ballot, and Y is not ranked on the ballot.
 
@@ -120,6 +122,7 @@ This requires the assumption that unranked candidates are less preferred than an
 We define the "Ranked AV Upper Bound" (RAVUB) for candidate X based on the ballot data of an election as follows:
 
 > Let M denote the set of major candidates in the election. The **Ranked AV Upper Bound** (RAVUB) for candidate X is defined as follows:
+>
 > 1. If candidate X is ranked on a voter's ballot, and X is implicitly ranked above some candidate Y in $$M\setminus\{X\}$$, then the voter approves X and all candidates they rank above X.
 > 2. Otherwise, the voter only approves their top ranked candidate.
 
@@ -155,17 +158,17 @@ I've spoken in-depth about this election in previous posts, so I won't rehash ev
 
 | Candidate | First-Choice Votes | RAVUB Approvals |
 |-----------|--------------------|-----------------|
-| Begich    | 52,844 (27.48%)	| 135,457 (70.44%) |
-| Peltola   | 74,867 (38.93%)	| 95,051 (49.43%) |
-| Palin     | 58,620 (30.49%)	| 90,773 (47.21%) |
+| Begich    | 52,844 (27.48%) | 135,457 (70.44%) |
+| Peltola   | 74,867 (38.93%) | 95,051 (49.43%) |
+| Palin     | 58,620 (30.49%) | 90,773 (47.21%) |
 
 This being in their respective RAVUBs. I want to highlight the results for each RAVUB, because they are quite telling:
 
 | Candidate | Begich RAVUB Approvals | Percentage |
 |-----------|------------------------|------------|
 | Begich    | 135,457                | 70.44%     |
-| Peltola   | 75,500	               | 39.26%     |
-| Palin     | 58,873	               | 30.62%     |
+| Peltola   | 75,500                | 39.26%     |
+| Palin     | 58,873                | 30.62%     |
 
 <img src="/assets/img/RAVUB/alaska_2022_Begich_Nick_ravub.png" alt="Alaska 2022 Begich RAVUB" style="width:100%; max-width:600px;">
 
@@ -197,6 +200,6 @@ Keep in mind that this is an **upper bound** on Begich's performance under Appro
 
 Brams, S. J. (2008). *Mathematics and Democracy: Designing Better Voting and Fair-Division Procedures*. Princeton University Press. [https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy){:target="_blank"}
 
-Mahlendorf, A. (2026). Fear of Vote Splitting. Substack. [https://substack.com/@akorky/p-182659376](https://substack.com/@akorky/p-182659376){:target="_blank"}
+Mahlendorf, A. (2026). Fear of Vote Splitting. Substack. [https://substack.com/@whelmedcitizen/p-182659376](https://substack.com/@whelmedcitizen/p-182659376){:target="_blank"}
 
 Ranked.Vote. (2022). *Alaska At-large Congressional District*. [https://ranked.vote/report/us/ak/2022/08/cd](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"}

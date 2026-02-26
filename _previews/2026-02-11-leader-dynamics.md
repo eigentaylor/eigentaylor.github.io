@@ -261,22 +261,22 @@ Case 2: If there exists any match-up not involving A that is stronger than one o
 
 **Proof:** We present a counterexample based on a profile created by Rob LeGrand. Their example is included in the [appendix](#appendix). Suppose we have the CPRO:
 
-1. A>B
-2. B>C
-3. C>A
-4. D>B
-5. D>C
-6. D>A
+1. A>D
+2. C>A
+3. D>C
+4. B>D
+5. B>A
+6. B>C
 
-Here, we clearly have a Condorcet winner, D. However, they have the weakest pairwise wins, and thus we can show that D will never be the leader unless D starts as the leader. All nodes where D is the leader will have an edge to (D,A), since A is the candidate with the best pairwise match-up against B, and by Lemma 1, a Condorcet winner stays the leader when starting as the leader.
+Here, we clearly have a Condorcet winner, B. However, they have the weakest pairwise wins, and thus we can show that B will never be the leader unless B starts as the leader. All nodes where B is the leader will have an edge to (B,C), since C is the candidate with the best pairwise match-up against B, and by Lemma 1, a Condorcet winner stays the leader when starting as the leader.
 
-If we have a leader who is not D, then at least one candidate will have a stronger margin against that leader than D. Therefore, D cannot become the leader unless D starts as the leader.
+If we have a leader who is not B, then at least one candidate will have a stronger margin against that leader than B. Therefore, B cannot become the leader unless B starts as the leader.
 
-In particular, we can see that there will be a cycle (A,D) to (C,D) to (B,D) and back to (A,D). QED
+In particular, we can see that there will be a cycle (A,B) to (C,B) to (D,B) and back to (A,B). QED
 
-<img src="/assets/img/leader_rule/alt_profile.png" alt="Leader Rule Non-Convergence Example" style="max-width: 600px;">
+<img src="/assets/img/leader_rule/island.png" alt="Leader Rule Non-Convergence Example" style="max-width: 600px;">
 
-The primary aspect of this pathology is when the Condorcet winner has the weakest pairwise wins. If every other candidate has a stronger pairwise win against some candidate than all of the Condorcet winner's pairwise wins, then the Condorcet winner will never be the leader unless they start as the leader. Thus, if a Condorcet winner is "lukewarm" and only very minimally preferred to the other candidates, then by failing to inspire passionate support, they may fail to win despite being the Condorcet winner, and thus always earning over 50% of the vote by Lemma 1.
+The primary aspect of this pathology is when the Condorcet winner has the weakest pairwise wins. If every other candidate has a stronger pairwise win against some candidate than all of the Condorcet winner's pairwise wins (particularly, if there is a cycle "below" the Condorcet winner), then the Condorcet winner will never be the leader, and remain the challenger, unless they start as the leader. Thus, if a Condorcet winner is "lukewarm" and only very minimally preferred to the other candidates, then by failing to inspire passionate support, they may fail to win despite being the Condorcet winner, and always earning over 50% of the vote by Lemma 1.
 
 ## Case Studies
 
@@ -292,11 +292,11 @@ An aspect of the pathology was the uninutive vote splitting and spoiler effect t
 
 The actual first round results were:
 
-| Candidate | First Round Percentage (Approximate) |
-|-----------------|--------------------------------|
-| Mary Peltola    | 38.9% |
-| Sarah Palin     | 30.5% |
-| Nick Begich III | 27.5% |
+| Candidate       | First Round Percentage (Approximate) |
+|-----------------|--------------------------------------|
+| Mary Peltola    | 38.9%                                |
+| Sarah Palin     | 30.5%                                |
+| Nick Begich III | 27.5%                                |
 
 Using the head-to-head results from Alaska 2022, we can simulate the leader rule. The head-to-head results were:
 
@@ -305,6 +305,14 @@ Using the head-to-head results from Alaska 2022, we can simulate the leader rule
 | Begich vs. Palin   | Begich      | 61.4% : 38.6% |
 | Begich vs. Peltola | Begich      | 52.5% : 47.5% |
 | Peltola vs. Palin  | Peltola     | 51.4% : 48.6% |
+
+Thus, the CPRO is as follows:
+
+1. Begich > Palin
+2. Begich > Peltola
+3. Peltola > Palin
+
+A reader may confirm by Lemma 4 that Begich is the only Leader Rule Outcome, since no other candidate has a pairwise match-up against some candidate that is stronger than Begich's match-ups.
 
 Based on Corollary 2, Palin's Condorcet loser status would have made it impossible for her to win under the leader rule, even if she had been the perceived leader. Further, Begich's strong head-to-heads against both Palin and Peltola would have given him an extremely strong pull. In fact, he is the only Leader Rule Outcome. If every voter applied the leader rule, and these head to heads extend to the entire electorate, Begich would be the only candidate who could have won.
 
@@ -320,13 +328,17 @@ Here is how to read this graph:
 
 The equilibrium has Begich as the leader and Peltola as the challenger. This is consistent with Begich being the Condorcet winner, and Peltola having the best head-to-head result against Begich.
 
-Notice that after any starting point, Begich becomes the leader. However, interestingly, in the case where Peltola is the leader and Begich is the challenger, the next iteration has Begich as the leader and Palin as the challenger. This is because Palin's head-to-head against Peltola was stronger than Peltola's head-to-head against Begich. Therefore, if Peltola was the leader, and Begich the challenger, and every voter voted using the leader rule, the result would actually have the leader come in last place in approval percentage.
+Notice that after any starting point, Begich becomes the leader,as confirmed by Lemma 4. However, interestingly, in the case where Peltola is the leader and Begich is the challenger, the next iteration has Begich as the leader and Palin as the challenger. This is because Palin's head-to-head against Peltola was stronger than Peltola's head-to-head against Begich. Therefore, if Peltola was the leader, and Begich the challenger, and every voter voted using the leader rule, the result would actually have the leader come in last place in approval percentage.
 
 However, this does mean that, potentially, in the case where Palin is the leader, a Democratic voter who prefers Peltola and Begich to Palin should approve of both Peltola and Begich, to help push Palin down (even if Peltola is the challenger). But the result *would*, under this analysis, be a Begich victory. Would this cause "regret" among Democratic voters? It is hard to say for sure, especially because the ballot data we have seems to indicate that Palin would have done quite poorly in an Approval election.
 
 But suppose we assume poor quality polls, that had the Condorcet loser Palin as the leader, and then suppose that Begich won (as his Condorcet winner status would make very likely to have done by over 60%), then from their perspective, they would have successfully prevented Palin from winning. This was their primary goal, and a Palin victory appeared to be the most likely outcome.
 
-If the voter went into the voting booth expecting Palin to win, voted for both Peltola and Begich, and then Begich won with over 60% and Peltola in second place with 51%, they might feel satisfied that they prevented Palin from winning. And such a strong victory for Begich would make it difficult to second guess their strategy. It would simply look like *both* Peltola and Begich were broadly acceptable to the electorate, that Palin was not, but that Begich was the most preferred candidate overall. This would be a strong majoritarian outcome, unlikely to fuel the massive repeal efforts that have plagued Alaska in the years since the 2022 Condorcet failure of IRV there in 2024 and now again in 2026.
+If the voter went into the voting booth expecting Palin to win, voted for both Peltola and Begich, and then Begich won with over 60% and Peltola in second place with 51%, they might feel satisfied that they prevented Palin from winning. And such a strong victory for Begich would make it difficult to second guess their strategy. It would simply look like *both* Peltola and Begich were broadly acceptable to the electorate, that Palin was not, but that Begich was the most preferred candidate overall.
+
+In the case that Peltola is the leader, as well, Begich would get an approximate 52.5% victory with Palin getting approximately 48.6%. Peltola's share would depend on who was seen as the challenger, but would be either 47.5% or 51.4%. In either case, Begich would win with a majority.
+
+Both of these would be strong majoritarian outcomes, unlikely to fuel the massive repeal efforts that have plagued Alaska in the years since the 2022 Condorcet failure of IRV there in 2024 and now again in 2026.
 
 ### NYC Democratic Mayoral Primary 2025
 
@@ -338,12 +350,12 @@ Here we reduce the field to the top four candidates: Zohran Mamdani, Brad Lander
 
 The first round results were:
 
-| Candidate | First Round Percentage (Approximate) |
-|-----------------|--------------------------------|
-| Zohran Mamdani  | 43.6% |
-| Andrew Cuomo    | 35.9% |
-| Brad Lander     | 11.2% |
-| Adrienne Adams   | 4.1%  |
+| Candidate       | First Round Percentage (Approximate) |
+|-----------------|--------------------------------------|
+| Zohran Mamdani  | 43.6%                                |
+| Andrew Cuomo    | 35.9%                                |
+| Brad Lander     | 11.2%                                |
+| Adrienne Adams  | 4.1%                                 |
 
 The head-to-head results were:
 
@@ -374,11 +386,11 @@ This was a very notable election because it actually had a Condorcet cycle. The 
 
 The first round results were:
 
-| Candidate | First Round Percentage |
-|-----------------|----------------------|
-| Robin Wonsley  | 28.1% |
-| Yusra Arab     | 27.7% |
-| Cam Gordon     | 25.6% |
+| Candidate       | First Round Percentage |
+|-----------------|------------------------|
+| Robin Wonsley   | 28.1%                  |
+| Yusra Arab      | 27.7%                  |
+| Cam Gordon      | 25.6%                  |
 
 The head-to-head results were:
 
@@ -398,7 +410,7 @@ Observe the four-node cycle between Wonsley, Arab, and Gordon:
 
 | Leader | Challenger | Approvals | Target |
 |--------|------------|-----------|--------|
-| Arab | Wonsley | Wonsley: 50.1%, Arab: 49.9%, Gordon: 48.7% | (Wonsley, Arab) |
+| Arab   | Wonsley    | Wonsley: 50.1%, Arab: 49.9%, Gordon: 48.7% | (Wonsley, Arab) |
 | Wonsley | Arab | Gordon: 50.5%, Wonsley: 50.1%, Arab: 49.9% | (Gordon, Wonsley) |
 | Gordon | Wonsley | Arab: 51.3%, Gordon: 50.5%, Wonsley: 49.5% | (Arab, Gordon) |
 | Arab | Gordon | Arab: 51.3%, Wonsley: 50.1%, Gordon: 48.7% | (Arab, Wonsley) |
@@ -411,7 +423,7 @@ If we interpret nodes as possible perceptions of the race, and suppose voters up
 - Week 4: Arab remains the leader, but Wonsley shoots up to be the challenger, since she has the strongest head-to-head against Arab. Arab's strong head-to-head against Gordon keeps Arab in first place.
 - Week 5: Wonsley becomes the leader again, since she has the strongest head-to-head against Arab. Arab falls to challenger, and Gordon falls out of the top two again. And now we're back to week 1.
 
-If we were to imagine this happening in a campaign cycle, we would still eventually have to run the election at some point. And depending on who the perceived leader and challenger are at that moment, we would end up with one of the three candidates winning. Since Approval voting is consistent with its ballot data, the actual winner would be the Condorcet winner of the implied preferences expressed by the ballots, flattening out the cycle. The ballots won't catch fire, the machines won't explode, and no loser will be able to credibly claim they would have beaten the actual winner in a head-to-head match-up, because the ballots won't show that. The result will be legitimate, but close. Someone will get over 50% approvals, and
+If we were to imagine this happening in a campaign cycle, we would still eventually have to run the election at some point. And depending on who the perceived leader and challenger are at that moment, we would end up with one of the three candidates winning. Since Approval voting is consistent with its ballot data, the actual winner would be the Condorcet winner of the implied preferences expressed by the ballots, flattening out the cycle. The ballots won't catch fire, the machines won't explode, and no loser will be able to credibly claim they would have beaten the actual winner in a head-to-head match-up, because the ballots won't show that. The result will be legitimate, but close. The winner will get over 50% approvals.
 
 ## Discussion
 
@@ -423,29 +435,40 @@ Many criticize Approval voting for being susceptible to strategic voting, and a 
 
 The claim is that if we have two candidates, R and C, who perhaps are conservatives running in a generally right-leaning electorate, then their supporters might bullet vote sufficiently such that a left-leaning candidate L might snake in and win. However, the leader rule reframes this scenario.
 
-Let us suppose that one of R, a more extremist right candidate, and C, a center right candidate, is the leader. And let L be a left-leaning candidate who is neither the leader or challenger. We will analyze the case in which one of the two right candidates is the leader and the other is the challenger. Let us assume a generally 1-dimensional spatial model where L voters prefer L>C>R, R voters prefer R>C>L, and C voters split with some preferring C>L>R and others preferring C>R>L. Consider the cases:
+Let us assume a generally 1-dimensional spatial model where L voters prefer L>C>R, R voters prefer R>C>L, and C voters split with some preferring C>L>R and others preferring C>R>L. Consider the cases:
 
 | Leader | Challenger | RCL | CRL | CLR | LCR |
 |--------|------------|-----|-----|-----|-----|
 | R      | C          | R   | C   | C,L | L,C |
 | C      | R          | R   | C   | C   | L,C |
+| R      | L          | R   | C,R | C,L | L,C |
+| C      | L          | R,C | C   | C   | L   |
+| L      | C          | R,C | C,R | C   | L   |
+| L      | R          | R,C | C,R | C,L | L   |
 
-We notice something very interesting. The criticism of the chicken dilemma is that R and C voters *might* bullet vote and cause L to win. The claim is that sufficient bullet voting might end up breaking up the coalition and resulting in plurality-style vote splitting. However, the leader rule actually says that R and C voters (who rank L last) *should* bullet vote, and that this is the optimal strategy. The missing consideration of the criticism is what L voters would do: if they know their candidate is nonviable or unlikely to win, it is optimal to also give an approval to the more agreeable viable candidate, C. Thus, C, in all cases, gets approvals from the moderate C supporters *and* the liberal L supporters, while R only gets approvals from the more extreme R supporters. If C is the Condorcet winner, then the moderate and liberal blocs will coalesce around C, outnumbering the more extreme R, resulting in a C win.
+We notice something very interesting.
+
+- When L is not considered a serious candidate (first two rows), the criticism of the chicken dilemma is that R and C voters *might* bullet vote and cause L to win. The claim is that sufficient bullet voting might end up breaking up the coalition and resulting in plurality-style vote splitting. However, the leader rule actually says that R and C voters (who rank L last) *should* bullet vote, and that this is the optimal strategy. The missing consideration of the criticism is what L voters would do: if they know their candidate is nonviable or unlikely to win, it is optimal to also give an approval to the more agreeable viable candidate, C. Thus, C, in all cases, gets approvals from the moderate C supporters *and* the liberal L supporters, while R only gets approvals from the more extreme R supporters. If C is the Condorcet winner, then the moderate and liberal blocs will coalesce around C, outnumbering the more extreme R, resulting in a C win.
+- If L is the leader, however, then the conservative voters who rank L last both team up and form a coalition around both R and C, giving them both a strong pull against L. Therefore, the Chicken dilemma also falls apart here. Assuming that their least favorite candidate is the leader, the optimal strategy for both R and C voters is to approve of both R and C. The game of chicken and bullet voting become non-optimal when they expect the outside candidate to be the most likely winner.
+- When L is the challenger, then the leader rule does say that one group of the coalition of R and C voters should bullet vote and defect. The supporters of the likely winner bullet vote to maintain their lead, but the supporters of the candidate who is trailing behind both the leader and the challenger should approve of both candidates to try to push their least preferred candidate down.
+
+In every case, however, the centrist C gets a boost from one side of the more extreme R and L voters, depending on who the leader and challenger are. If C is the Condorcet winner, then the system will settle down with C as the leader, the challenger supporters bullet voting, and the last place supporters also approving C.
 
 However, against the other criticism that Approval elects only bland candidates, there is another consideration to make. If the median voter is more extreme, and closer to R, then the R supporting wing will be larger than the combined C and L supporting wings, and thus R will still win. The outcome from the Leader rule is not always on the *middle* candidate, but rather strongly favors the Condorcet winner. It is entirely possible for one of the "outside" candidates to be the Condorcet winner if the electorate leans sufficiently towards that candidate.
 
 It should be acknowledged, however, that this is not any sort of guarantee that voters would or should bullet vote. While it may be optimal for R and C voters to bullet vote when both are ahead, we do see in real Approval elections in Fargo (TODO: include source) and St. Louis that voters are willing to approve multiple candidates, and support a coalition. Rather, this example should illustrate that Approval would not likely suddenly collapse when voters are strategic. Instead, it is actually robust to strategy when voters are prudent (ex. if their favorite candidate is trailing behind the top two). If a sufficient number of both R and CRL voters choose to approve R and C--say due to the candidates forming a coalition and encouraging their voters to do so--it's even more likely that either R or C will win, strengthening their lead over L. If the electorate is sufficiently right-leaning, then this is a highly representative outcome.
 
-In short, we have a balance between the risk-minimizing strategy of the Leader rule, which is not compatible with coalitions of candidates who are both viable, and the fact that we do, in fact, see coalitions in real Approval elections. In real elections, it's likely we will, in fact, see coalitions between viable candidates and bullet voting for non-viable candidates, which would weaken the strongly majoritarian guarantees of the leader rule. However, the leader rule still shows that strategy and majoritarian outcomes are not necessarily at odds, and that strategic voting can actually lead to more majoritarian outcomes, rather than less.
+In short, we have a balance between the risk-minimizing strategy of the Leader rule, which is not compatible with coalitions of candidates who are both viable, and the fact that we do, in fact, see coalitions in real Approval elections. In real elections, it's likely we will, in fact, see coalitions between viable candidates and bullet voting for non-viable candidates, which would weaken the strongly majoritarian guarantees of the leader rule. However, the leader rule still shows that widespread strategy and majoritarian outcomes are not necessarily at odds, and that strategic voting can actually lead to more majoritarian outcomes, rather than less.
 
 ## Other Considerations and Further Research
 
-Some considerations must be made to the plausibility or realism of the axioms. For one, this analysis does not take into account sincere voters who do not adjust their acceptability line strategically. It also does allow for the possibility that some voters may not agree on the perceived leader and challenger. In our increasingly divisive media bubbles, the perception of a race to one bloc of voters could be significantly different from another.
+Some considerations must be made to the plausibility or realism of the axioms. For one, this analysis does not take into account sincere voters who do not adjust their acceptability line strategically. It also does allow for the possibility that some voters may not agree on the perceived leader and challenger. In our increasingly divisive media bubbles, the perception of a race to one bloc of voters could be significantly different from another. If the supporters of the two major candidates believe their candidate is the leader, then that would result in more bullet voting, and less support for the more moderate candidates who might be the compromise candidate often ranked between the two major candidates. This could lead to more extreme outcomes, and less majoritarian outcomes, than the leader rule would predict.
 
 Some potential questions to explore in future research include:
 
 - If we allow ties in the pairwise match-ups, and allow one node to have edges to multiple nodes probabilistically, how does this affect the dynamics?
 - How many sincere voters would it take to break the convergence to the equilibrium?
+- If, instead of all voters applying the leader rule simultaneously, we have voter adjusting their strategy based on some probability (ex. 50% of voters apply the leader rule, while 50% maintain their current strategy), will the edges of the graph stay the same, or will they change? If they change, how do they change?
 - If we suppose that voters of different demographics have different perceptions of the leader and challenger, or suppose that polls are intentionally misleading, can the outcome be manipulated by a malicious actor who controls the polls?
 
 ## Appendix
