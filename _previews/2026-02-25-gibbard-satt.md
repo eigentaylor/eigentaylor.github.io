@@ -41,18 +41,18 @@ We will start with two very limited assumptions about our social choice function
 
 First, we assume the social choice function respects "citizen sovereignty".
 
-**Definition 1:** We say a social choice function respects *citizen sovereignty* if any candidate can win under some profile. For example, if every voter ranks that candidate first.
+> **Definition 1:** We say a social choice function respects *citizen sovereignty* if any candidate can win under some profile. For example, if every voter ranks that candidate first.
 
 This may seem like an absurdly weak assumption that any voting system would satisfy, but there are (admittedly very absurd) examples. Take a voting system that chooses the winner based on alphabetical order of candidates. Then, no matter how voters vote, the same candidate will always win. This is a voting system that does not respect citizen sovereignty.
 
 We now define the key property of strategyproofness.
 
-**Definition 2:** We call $$f$$ *strategyproof* if the following is satisfied.
-
-Suppose that in a given profile $$P_1$$ we have $$f(P_1)=A$$, and suppose in $$P_1$$ we have a voter $$v$$ with their honest ranking $$R_1$$. If we obtain $$P_2$$ from changing $$P_1$$ only by adjusting the vote of $$v$$ (to a dishonest ranking), then one of the following two cases must occur:
-
-1. $$f(P_1)=f(P_2)=A$$. The winner is preserved.
-2. If $$f(P_2)=B\neq A$$, then $$A>_{R_1}B$$ in $$v$$'s honest $$P_1$$ ranking.
+> **Definition 2:** We call $$f$$ *strategyproof* if the following is satisfied.
+>
+> Suppose that in a given profile $$P_1$$ we have $$f(P_1)=A$$, and suppose in $$P_1$$ we have a voter $$v$$ with their honest ranking $$R_1$$. If we obtain $$P_2$$ from changing $$P_1$$ only by adjusting the vote of $$v$$ (to a dishonest ranking), then one of the following two cases must occur:
+>
+> 1. $$f(P_1)=f(P_2)=A$$. The winner is preserved.
+> 2. If $$f(P_2)=B\neq A$$, then $$A>_{R_1}B$$ in $$v$$'s honest $$P_1$$ ranking.
 
 More concisely, the winner in the honest case is at least weakly preferred to the winner in the dishonest case:
 
@@ -60,18 +60,18 @@ $$f(P_1)\geq_{R_1}f(P_2)$$
 
 We give a more useful formulation via the contrapositive.
 
-**Lemma 1:** Suppose we can move from one profile $$P_1\to P_2$$ via changing only a single voter $$v$$'s vote from $$R_1\to R_2$$ such that
-
-- $$f(P_1)=A\neq f(P_2)=B$$: The winner changes from $$A\to B$$.
-- $$v$$ originally ranked $$B>_{R_1}A$$
-
-then $f$ is not strategyproof.
+> **Lemma 1:** Suppose we can move from one profile $$P_1\to P_2$$ via changing only a single voter $$v$$'s vote from $$R_1\to R_2$$ such that
+>
+> - $$f(P_1)=A\neq f(P_2)=B$$: The winner changes from $$A\to B$$.
+> - $$v$$ originally ranked $$B>_{R_1}A$$
+>
+> then $f$ is not strategyproof.
 
 Intuitively, if I change my vote, then the winner can't change to something I like better. Otherwise, I have a beneficial strategy, and the system is not strategyproof.
 
 All we need is to assume strategyproofness alongside the absurdly minimal assumption of citizen sovereignty, and we will show that this forces the existence of a dictator.
 
-**Lemma 2:** If $$f$$ is strategyproof, then $$f$$ is monotonic. That is, if a voter moves a candidate $$X$$ strictly up in their ranking, keeping all else fixed, then either the winner is unchanged, or $$X$$ is the new winner.
+> **Lemma 2:** If $$f$$ is strategyproof, then $$f$$ is monotonic. That is, if a voter moves a candidate $$X$$ strictly up in their ranking, keeping all else fixed, then either the winner is unchanged, or $$X$$ is the new winner.
 
 **Proof:** Take a profile $$P_1$$ and suppose that $$f(P_1)=A$$. Consider a voter $$v$$ with honest ranking $$R_1$$. Suppose that $$v$$ moves $$X$$ strictly up in their ranking to get ranking $$R_2$$ that induces profile $$P_2$$, and suppose that $$f(P_2)=B$$. If $$A=B$$, then there is nothing to show. So we will show that if $$A\neq B$$, then $$B=X$$.
 
@@ -84,10 +84,10 @@ Thus, we cannot have $$X$$ be distinct from both $$A$$ and $$B$$. Therefore, $$B
 
 We now establish a very useful lemma that limits the effects of monotonicity.
 
-**Lemma 3:** If $$f$$ is strategyproof, and we have a profile $$P_1$$ where $$f(P_1)=A$$, then if we move from $$P_1\to P_2$$ by moving a candidate $$X$$ up in the ranking of a single voter, then
-
-1. If $$X>_{R_1}A$$, then $$f(P_2)=A$$.
-2. If $$A>_{R_2}X$$, then $$f(P_2)=A$$.
+> **Lemma 3:** If $$f$$ is strategyproof, and we have a profile $$P_1$$ where $$f(P_1)=A$$, then if we move from $$P_1\to P_2$$ by moving a candidate $$X$$ up in the ranking of a single voter, then
+>
+> 1. If $$X>_{R_1}A$$, then $$f(P_2)=A$$.
+> 2. If $$A>_{R_2}X$$, then $$f(P_2)=A$$.
 
 **Proof:** Suppose that the voter prefers $$X$$ to $$A$$ in $$P_1$$. Then, if the voter tries to make $$X$$ win by moving $$X$$ up, then either $$A$$ still wins or $$X$$ wins by monotonicity. If $$X$$ wins, then the voter has a beneficial strategy, contradicting strategyproofness. Thus, $$A$$ must still win.
 
@@ -103,9 +103,9 @@ Strategyproofness therefore strongly restricts the effects of moving a candidate
 
 Finally, we show another useful consequence of monotonicity.
 
-**Definition 3:** We say that a voting system is *Pareto efficient* if whenever every voter ranks candidate $$A$$ above candidate $$B$$, then $$B$$ cannot win. In particular, if every voter ranks $$A$$ first, then $$A$$ must win.
+> **Definition 3:** We say that a voting system is *Pareto efficient* if whenever every voter ranks candidate $$A$$ above candidate $$B$$, then $$B$$ cannot win. In particular, if every voter ranks $$A$$ first, then $$A$$ must win.
 
-**Lemma 4:** If $$f$$ is monotonic and respects citizen sovereignty, then $$f$$ is Pareto efficient. Therefore, by lemma 2, if $$f$$ is strategyproof and respects citizen sovereignty, then $$f$$ is Pareto efficient.
+> **Lemma 4:** If $$f$$ is monotonic and respects citizen sovereignty, then $$f$$ is Pareto efficient. Therefore, by lemma 2, if $$f$$ is strategyproof and respects citizen sovereignty, then $$f$$ is Pareto efficient.
 
 **Proof:** By citizen sovereignty, there exists a profile $$P$$ where $$A$$ wins. By monotonicity, if every voter moves $$A$$ to the top of their ranking, inducing profile $$P\to P'$$, then $$A$$ must still win. QED.
 
@@ -113,23 +113,23 @@ Essentially, we know any candidate *can* win by citizen sovereignty. By monotoni
 
 ## Blocking Sets
 
-**Definition 4:** We say that a set of voters "$$S$$ can block candidate $$B$$ with candidate $$A$$", denoted $$A>_SB$$, if whenever every voter in $$S$$ ranks $$A>B$$, then $$B$$ does not win.
+> **Definition 4:** We say that a set of voters "$$S$$ can block candidate $$B$$ with candidate $$A$$", denoted $$A>_SB$$, if whenever every voter in $$S$$ ranks $$A>B$$, then $$B$$ does not win.
 
 For example, if $$S$$ is the set of all voters and every voter ranks $$A>B$$, then $$f$$ will prefer $$A>B$$. As another example, though it technically does not fall under the purview of our assumptions (but may benefit for intuition), under plurality voting, a strict majority (ex. 61 Senators out of 100) can block any bill by voting no.
 
 The idea we are building up to is that under the strategyproof assumption, any blocking set must contain a dictator.
 
-**Remark 1:**
+> **Remark 1:**
+>
+> - An empty set cannot block. That is, if $$S=\varnothing$$, then we cannot have $$A>_\varnothing B$$.
+> - The set of all voters is a blocking set.
 
-- An empty set cannot block. That is, if $$S=\varnothing$$, then we cannot have $$A>_\varnothing B$$.
-- The set of all voters is a blocking set.
-
-**Lemma 5:** If $B$ loses for all profiles where
-
-1. All voters in $S$ rank $A>B$
-2. All voters outside of $S$ rank $B$ first
-
-then $$A>_SB$$. \label{weakblock}
+> **Lemma 5:** If $B$ loses for all profiles where
+>
+> 1. All voters in $S$ rank $A>B$
+> 2. All voters outside of $S$ rank $B$ first
+>
+> then $$A>_SB$$. \label{weakblock}
 
 **Proof:** Suppose $$B$$ loses whenever all voters in $$S$$ rank $$A>B$$ and all voters outside of $$S$$ rank $$B$$ first. Assume for contradiction that we have another profile $$P$$ where $$S$$ ranks $$A>B$$ but $$B$$ wins. Then, by monotonicity, if every voter outside of $$S$$ moves $$B$$ to the top, inducing profile $$P\to P'$$, then $$B$$ must still win in $$P'$$. This contradicts our assumption that $$B$$ loses whenever all voters outside of $$S$$ rank $$B$$ first and all voters in $$S$$ rank $$A>B$$. Thus, we must have that $$A>_SB$$. QED.
 
@@ -137,13 +137,13 @@ Again, since we aim to eventually show that $$S$$ contains a dictator, if every 
 
 The following lemma characterizes the actual best possible case for $$B$$. If satisfied, then we will be able to conclude that lemma 5 is true.
 
-**Lemma 6:** (The Blocking Criterion) If there exists a single profile $$P$$ where
-
-1. Every voter in $$S$$ ranks $$A$$ first and $$B$$ second
-2. Every voter outside of $$S$$ ranks $$B$$ first
-3. $$B$$ loses
-
-then $$A>_SB$$. \label{blockcriterion}
+> **Lemma 6:** (The Blocking Criterion) If there exists a single profile $$P$$ where
+>
+> 1. Every voter in $$S$$ ranks $$A$$ first and $$B$$ second
+> 2. Every voter outside of $$S$$ ranks $$B$$ first
+> 3. $$B$$ loses
+>
+> then $$A>_SB$$. \label{blockcriterion}
 
 **Proof:** We aim to show that if $$P$$ exist then it implies that Lemma 5 must be true.
 
@@ -157,10 +157,10 @@ The intuitive idea of this lemma is that profile in Lemma 6 is the absolute best
 
 We now come to the most important lemma in the proof, which will be the key to showing that blocking implies dictatorship. This is a tough proof, so I will try to give as much intuition as possible.
 
-**Lemma 7:** If $$A>_SB$$ and $$S=M\sqcup N$$ is a partition of $$S$$, and $$S'$$ is the complement of $$S$$, then either
-
-- $$A>_MC$$
-- $$C>_NB$$ \label{partitionblock}
+> **Lemma 7:** If $$A>_SB$$ and $$S=M\sqcup N$$ is a partition of $$S$$, and $$S'$$ is the complement of $$S$$, then either
+>
+> - $$A>_MC$$
+> - $$C>_NB$$ \label{partitionblock}
 
 **Proof:** Suppose that we have a profile $P_0$ where the reported rankings are
 
@@ -204,7 +204,7 @@ The intuitive idea here is that if $$S$$ can block $$B$$ with $$A$$, then we can
 
 Monotonicity and strategyproofness then allow us to adjust the profile to get the best possible case for whichever relevant candidate is not the winner, and show that they still lose.
 
-**Lemma 8:** If $$A>_SB$$ and $$C$$ is any other candidate, then $$A>_SC$$ or $$C>_SB$$. \label{thirdblock}
+> **Lemma 8:** If $$A>_SB$$ and $$C$$ is any other candidate, then $$A>_SC$$ or $$C>_SB$$. \label{thirdblock}
 
 That is, if $$A>_SB$$, then $$S$$ can block any third candidate $$C$$ with $$A$$, and $$S$$ can block $$B$$ with any third candidate $$C$$.
 
@@ -215,7 +215,7 @@ That is, if $$A>_SB$$, then $$S$$ can block any third candidate $$C$$ with $$A$$
 
 QED.
 
-**Lemma 9:** If $$A>_SB$$, then $$B>_SA$$. \label{flipblock}
+> **Lemma 9:** If $$A>_SB$$, then $$B>_SA$$. \label{flipblock}
 
 **Proof:** By Lemma 8 \ref{thirdblock},
 
@@ -237,11 +237,11 @@ However, lemma 6 \ref{partitionblock} will land the crushing blow: any partition
 
 ## Dictating Sets
 
-**Definition 5:** We call $$S$$ a *dictating set* if $$A>_SB$$ for any pair of candidates $$A,B$$. That is, if $$S$$ can block any candidate from winning using any other.
+> **Definition 5:** We call $$S$$ a *dictating set* if $$A>_SB$$ for any pair of candidates $$A,B$$. That is, if $$S$$ can block any candidate from winning using any other.
 
-**Remark 2:** The set of all electors is a dictating set, by Pareto efficiency, and a dictating set with a single voter must have that voter as a dictator.
+> **Remark 2:** The set of all electors is a dictating set, by Pareto efficiency, and a dictating set with a single voter must have that voter as a dictator.
 
-**Lemma 10:** If $$A>_SB$$ for any single pair of two candidates, then $$S$$ is a dictating set.
+> **Lemma 10:** If $$A>_SB$$ for any single pair of two candidates, then $$S$$ is a dictating set.
 
 **Proof:** We must show that given $$A>_SB$$, then $$C>_SD$$ for any other pair of candidates.
 
@@ -253,7 +253,7 @@ Therefore, we have made the connection to blocking and dictatorship. The particu
 
 The final lemmas are as follows.
 
-**Lemma 11:** If $$S$$ is a dictating set, and $$S=M\sqcup N$$ is any partition of $$S$$, then either $$M$$ is a dictating set or $$N$$ is a dictating set. \label{dictatepartition}
+> **Lemma 11:** If $$S$$ is a dictating set, and $$S=M\sqcup N$$ is any partition of $$S$$, then either $$M$$ is a dictating set or $$N$$ is a dictating set. \label{dictatepartition}
 
 **Proof:** Suppose $$S$$ is a dictating set and $$S=M\sqcup N$$ is a partition.  Then $$A>_SB$$ for any two candidates $$A,B$$. By lemma \ref{partitionblock}, we must have
 
@@ -262,13 +262,13 @@ The final lemmas are as follows.
 
 Thus, at least one must be a dictating set.
 
-**Lemma 12:** If $$S$$ is a dictating set, then it contains a dictator. \label{dictator}
+> **Lemma 12:** If $$S$$ is a dictating set, then it contains a dictator. \label{dictator}
 
 **Proof:** Let $$S=\left\{v_1,\ldots,v_n\right\}$$ be a dictating set.
 
 Take the partition $$S=\left\{v_1\right\}\sqcup S_{1}$$ (where $$S_1=S\setminus\left\{v_1\right\}$$). Then by lemma 11 \ref{dictatepartition}, either $$\{v_1\}$$ or $$S_1$$ is a dictating set with a strictly lower cardinality. If $$\{v_1\}$$ is a dictating set, $$v_1$$ is a dictator and we are done. Otherwise, let
 
-$$S_i\defeq S_{i-1}\setminus\{v_i\}$$
+$$S_i:= S_{i-1}\setminus\{v_i\}$$
 
 Then, eventually we will reach $$S_{n-1}=\{v_{n-1}\}\sqcup \{v_n\}$$. If no $$v_i$$ was a dictator for $$i<n-1$$, then one of $$\{v_{n-1}\}, \{v_n\}$$ must be a dictating set, in which case $$v_{n-1}$$ or $$v_n$$ is a dictator. Therefore $$S$$ must contain a dictator. QED.
 
@@ -278,7 +278,7 @@ We can finally prove the theorem.
 
 ## The Gibbard-Satterthwaite Theorem
 
-**Theorem 1 (Gibbard-Satterthwaite):** Suppose that we have a ranked voting system, where voters must strictly rank candidates without ties, which is unanimous, Pareto efficient, and strategyproof. Then it must be a dictatorship.
+> **Theorem 1 (Gibbard-Satterthwaite):** Suppose that we have a ranked voting system, where voters must strictly rank candidates without ties, which is unanimous, Pareto efficient, and strategyproof. Then it must be a dictatorship.
 
 **Proof:** We will show that there must exist a dictating set, and thus by lemma 12 \ref{dictator} there must be a dictator.
 
