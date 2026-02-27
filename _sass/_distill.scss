@@ -53,6 +53,18 @@ d-article {
     border-left: 2px solid var(--global-theme-color) !important;
   }
 
+  // Theorem auto-numbering
+  .theorem-block {
+    scroll-margin-top: 80px;
+  }
+  a.thm-ref {
+    color: var(--global-theme-color) !important;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   // Style taken from code blocks
   details {
     color: var(--global-text-color);
