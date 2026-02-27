@@ -80,7 +80,7 @@ $$f(P_2)=B\geq_{R_2}A=f(P_1)$$
 
 Now we suppose the first condition: that $$X>_{R_1}A$$. Then, we have $$X>_{R_1}A\geq_{R_1}B$$, so $$X>_{R_1}B$$. Therefore, $$X\neq B$$, so the relative ordering of $$A$$ and $$B$$ is unchanged, so $$B\geq_{R_2}A$$ implies that $$B\geq_{R_1}A\geq_{R_1}B$$, so $$f(P_2)=B=A=f(P_1)$$.
 
-Suppose the second condition now: that $$A>_{R_2}X$$. Then, we have $$B\geq_{R_2}A>_{R_2}X$$, so $$B\neq X$$, again. So the relative ordering of $$A$$ and $$B$$ is unchanged, so $$B\geq_{R_1}A$$ implies that $$B\geq_{R_2}A>_{R_2}B$$, so $$f(P_2)=B=A=f(P_1)$$. QED.
+Suppose the second condition instead now: that $$A>_{R_2}X$$. Then, we have $$B\geq_{R_2}A>_{R_2}X$$, so $$B\neq X$$, again. So the relative ordering of $$A$$ and $$B$$ is unchanged, so $$B\geq_{R_1}A$$ implies that $$B\geq_{R_2}A\geq_{R_2}B$$, so $$f(P_2)=B=A=f(P_1)$$. QED.
 
 Suppose that the voter prefers $$X$$ to $$A$$ in $$P_1$$. Then, if the voter tries to make $$X$$ win by moving $$X$$ up, then either $$A$$ still wins or $$X$$ wins by monotonicity. If $$X$$ wins, then the voter has a beneficial strategy, contradicting strategyproofness. Thus, $$A$$ must still win.
 
