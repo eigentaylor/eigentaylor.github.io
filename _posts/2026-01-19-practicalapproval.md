@@ -41,7 +41,7 @@ toc:
 
 The focus of this post is less about *why* we need electoral reform, and more about *how* we should go about it in a practical manner. This post assumes you are already convinced that plurality voting is deeply flawed, and that we need to adopt a better voting system.
 
-For one unconvinced of the issues with our current system, I recommend reading this [fantastic post](https://substack.com/@akorky/p-180772748) by Amanda Mahlendorf. Rather than focus on the mathematically cute aspects of Approval voting, or the [nuances of the benefits for sincerity](../avstratproof){:target="_blank"}, this post will focus on the strong practical logistical case for Approval voting, and why it is the most sensible choice for real-world use.
+For one unconvinced of the issues with our current system, I recommend reading this [fantastic post](https://substack.com/@whelmedcitizen/p-180772748) by Amanda Mahlendorf. Rather than focus on the mathematically cute aspects of Approval voting, or the [nuances of the benefits for sincerity](../avstratproof){:target="_blank"}, this post will focus on the strong practical logistical case for Approval voting, and why it is the most sensible choice for real-world use.
 
 I wanted to make this post because of [testimony by Jason Snead to the Indiana Senate Elections Committee in favor of preemptively banning "Ranked Choice Voting" (AKA Instant Runoff Voting or IRV) in the state of Indiana](https://x.com/jasonwsnead/status/2011085198478266677){:target="_blank"}.
 
@@ -421,9 +421,9 @@ Fishburn, Peter C., and John D. C. Little. â€œAn Experiment in Approval Voting.â
 
 Laslier, J. F. (2009). The Leader Rule: A Model of Strategic Approval Voting in a Large Electorate. *Journal of Theoretical Politics*, 21(1), 113-136. [https://journals.sagepub.com/doi/10.1177/0951629808097286](https://journals.sagepub.com/doi/10.1177/0951629808097286){:target="_blank"}
 
-Mahlendorf, A. (2025). Why Some Voters Seek Alternatives to Plurality Voting. Substack. [https://substack.com/@akorky/p-180772748](https://substack.com/@akorky/p-180772748){:target="_blank"}
+Mahlendorf, A. (2025). Why Some Voters Seek Alternatives to Plurality Voting. Substack. [https://substack.com/@whelmedcitizen/p-180772748](https://substack.com/@whelmedcitizen/p-180772748){:target="_blank"}
 
-Mahlendorf, A. (2026). Fear of Vote Splitting. Substack. [https://substack.com/@akorky/p-182659376](https://substack.com/@akorky/p-182659376){:target="_blank"}
+Mahlendorf, A. (2026). Fear of Vote Splitting. Substack. [https://substack.com/@whelmedcitizen/p-182659376](https://substack.com/@whelmedcitizen/p-182659376){:target="_blank"}
 
 Mathematica Policy Research. (2025). *A Head-to-Head Comparison of Alternative Voting Rules*. [https://www.mathematica.org/api/sitecore/MediaLibrary/ActualDownload?fileId=%7BE313E9D5-F43B-4B45-B774-790034A48935%7D&fileName=Mathematica_VotingSim_FINAL_Sep2025.pdf](https://www.mathematica.org/api/sitecore/MediaLibrary/ActualDownload?fileId=%7BE313E9D5-F43B-4B45-B774-790034A48935%7D&fileName=Mathematica_VotingSim_FINAL_Sep2025.pdf&fileData=Mathematica_VotingSim_FINAL_Sep2025.pdf%20-%20%7BE313E9D5-F43B-4B45-B774-790034A48935%7D&fileMime=application%2Fpdf){:target="_blank"}
 
