@@ -9,6 +9,8 @@ tags: voting
 category: polisci
 featured: false
 related_posts: true
+theorems: true
+pretty_table: true
 authors:  
   - name: Taylor Eigen Fisher
     url: ""
