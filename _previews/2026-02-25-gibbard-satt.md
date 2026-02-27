@@ -17,9 +17,14 @@ authors:
       name: None
 toc:
   - name: Introduction
-  - name: Definitions and Monotonicity
-  - name: Blocking Sets
-  - name: Dictating Sets
+  - name: Preliminaries
+    subsections:
+      - name: Strategyproofness
+  - name: Monotonicity and Pareto Efficiency
+  - name: Blocking Sets and Their Properties
+    subsections:
+      - name: Partitioning Blocking Sets
+  - name: From Blocking to Dictatorship
   - name: The Gibbard-Satterthwaite Theorem
   - name: Conclusion
   - name: The Approval Voting Exception
@@ -34,7 +39,7 @@ The Gibbard-Satterthwaite theorem is a fundamental result in social choice theor
 
 Similar to Arrow's impossibility theorem, the intuition is "If we have a voting system that has this nice property, then it must be a dictatorship". That is, seemingly obvious or desirable properties of a voting system are actually extremely difficult to satisfy when you must aggregate the preferences of multiple voters. The Gibbard-Satterthwaite theorem is focused on the inevitability of strategic voting in ranked voting systems.
 
-## Definitions and Monotonicity
+## Preliminaries
 
 A social choice function is a function that takes in a profile of votes (a list of voters' rankings of candidates) and outputs a single winner. We will be working with ranked voting systems, where voters must strictly rank candidates without ties.
 
@@ -45,6 +50,8 @@ First, we assume the social choice function respects "citizen sovereignty".
 > **Definition:** We say a social choice function respects *citizen sovereignty* if any candidate can win under some profile. For example, if every voter ranks that candidate first.
 
 This may seem like an absurdly weak assumption that any voting system would satisfy, but there are (admittedly very absurd) examples. Take a voting system that chooses the winner based on alphabetical order of candidates. Then, no matter how voters vote, the same candidate will always win. This is a voting system that does not respect citizen sovereignty. Intuitively, this property can be interpreted as "reachability" of candidates. Any candidate can be the winner if voters rank them in the right way. This is one measure of "responsiveness" for a voting system.
+
+### Strategyproofness
 
 We now define the key property of strategyproofness.
 
@@ -100,6 +107,8 @@ If $$X$$ *was* the winner in $$P_2$$, and $$A$$ was the winner in $$P_1$$, then 
 
 Strategyproofness therefore strongly restricts the effects of moving a candidate up or down in a single voter's ranking. This lack of responsiveness is what will eventually lead us to the conclusion that the only way to satisfy strategyproofness is to have a dictatorship.
 
+## Monotonicity and Pareto Efficiency
+
 > **Definition:** We say that a voting system is *monotonic* if whenever a voter moves a candidate up in their ranking, keeping all else fixed, then either the winner is unchanged, or that moved candidate is the new winner.
 
 This is a very natural property to expect from a voting system, which is not satisfied by many common voting systems. For example, Ranked Choice Voting or IRV is famously not monotonic. If a voter moves the current winner up to the top of their ranking, then that can take away votes from someone else and change the elimination order.
@@ -132,7 +141,7 @@ Each has its own intuitive interpretation. As mentioned previously, citizen sove
 
 Essentially, we know any candidate *can* win by citizen sovereignty. By monotonicity, we can move that winning candidate above any other candidate, and preserve the winner. Thus, we very easily get Pareto efficiency.
 
-## Blocking Sets
+## Blocking Sets and Their Properties
 
 > **Definition:** We say that a set of voters "$$S$$ can block candidate $$B$$ with candidate $$A$$", denoted $$A\triangleright_SB$$, if whenever every voter in $$S$$ ranks $$A>B$$, then $$B$$ does not win.
 
@@ -185,6 +194,8 @@ $$P_3\to P$$: Every voter outside of $$S$$ moves $$A$$ to their place in $$P$$. 
 At every step, $$B$$ still wins, so $$B$$ must win in profile $$P$$. Therefore, if $$B$$ loses in any profile satisfying the conditions of Lemma \ref{blockcriterion}, then $$B$$ must lose in any profile satisfying the conditions of Lemma \ref{weakblock}, and thus $$A\triangleright_SB$$. **QED**.
 
 The intuitive idea of this Lemma is that profile in Lemma \ref{blockcriterion} is the absolute best case for $$B$$ while still satisfying that $$S$$ ranks $$A>B$$. If $$B$$ loses in this profile, then $$B$$ must lose in any other profile where $$S$$ ranks $$A>B$$.
+
+### Partitioning Blocking Sets
 
 We now come to the most important Lemma in the proof, which will be the key to showing that blocking implies dictatorship. This is a tough proof, so I will try to give as much intuition as possible.
 
@@ -266,7 +277,7 @@ At this point, we have essentially shown that the ability to block a single cand
 
 However, Lemma \ref{partitionblock} will land the crushing blow: any partition of a blocking set contains a blocking set. Perhaps the reader can see where this is going!
 
-## Dictating Sets
+## From Blocking to Dictatorship
 
 > **Definition:** We call $$S$$ a *dictating set* if $$A\triangleright_S B$$ for any pair of candidates $$A,B$$. That is, if $$S$$ can block any candidate from winning using any other.
 
