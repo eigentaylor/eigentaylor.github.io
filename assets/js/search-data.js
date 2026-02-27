@@ -639,7 +639,7 @@ ninja.data = [{
               window.location.href = "/preview/avstrategy/";
             },},{id: "previews-the-gibbard-satterthwaite-theorem",
           title: 'The Gibbard-Satterthwaite Theorem',
-          description: "A walkthrough and proof of the theorem that proves reasonable ranked voting systems must be susceptible to strategic voting.",
+          description: "A walkthrough and proof of the theorem that proves ranked voting systems must be susceptible to strategic voting.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/gibbard-satt/";
             },},{id: "previews-jordan-canonical-form-made-easier-part-1",
