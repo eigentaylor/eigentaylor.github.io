@@ -9,6 +9,7 @@ tags: voting
 category: polisci
 featured: false
 related_posts: true
+pretty_table: true
 authors:  
   - name: Taylor Eigen Fisher
     url: ""
@@ -55,12 +56,12 @@ However, due to the general [issues with ranked voting systems](../practicalappr
 
 For a cardinal system, we need to adjust the definition for the vague notion of "internal consistency" slightly, since we're collecting a different flavor of data. However, it still makes sense to ask if the actual winner would have won in head-to-head match-ups against every other candidate, based on the data collected. Thus, I define internal consistency for cardinal systems as follows:
 
-**Definition:** We define the following notational shorthands:
-
-- Let $$T(X>Y)$$ be the number of voters who give candidate X a strictly higher score than candidate Y. This is the number of voters who prefer X over Y based on their provided ballot data.
-- Let $$S(X)$$ be the total score given to candidate X by all voters.
-
-Then, we say a cardinal voting system is **Score-Condorcet-Consistent** (SCC) if, whenever $$T(X>Y) > T(Y>X)$$, then $$S(X) > S(Y)$$. That is, if more voters give X a higher score than Y than vice versa, then the total score given to X must be greater than the total score given to Y.
+> **Definition:** We define the following notational shorthands:
+>
+> - Let $$T(X>Y)$$ be the number of voters who give candidate X a strictly higher score than candidate Y. This is the number of voters who prefer X over Y based on their provided ballot data.
+> - Let $$S(X)$$ be the total score given to candidate X by all voters.
+>
+> Then, we say a cardinal voting system is **Score-Condorcet-Consistent** (SCC) if, whenever $$T(X>Y) > T(Y>X)$$, then $$S(X) > S(Y)$$. That is, if more voters give X a higher score than Y than vice versa, then the total score given to X must be greater than the total score given to Y.
 
 If this is not satisfied, then we can have a situation where more voters prefer X over Y, but Y has a higher total score than X, meaning that Y could be declared the winner over X, despite more voters preferring X. This would give X a legitimate claim to victory over Y, particularly if this is true against all other candidates, making them the Condorcet winner "induced by the ballots". It is sufficient to check that this condition holds for any arbitrary pair of candidates, since the winner of a typical cardinal system is the candidate with the highest total score. Thus, being SCC is necessary to guarantee that the Condorcet winner induced by the ballots must have the highest total score.
 
@@ -68,7 +69,7 @@ If this is not satisfied, then we can have a situation where more voters prefer 
 
 > **Approval voting** allows voters to approve of (vote for) as many candidates as they like. Simply put a check mark next to each candidate you approve of. The candidate with the most votes wins.
 
-**Theorem 1:** Approval voting is Score-Condorcet-Consistent.
+> **Theorem 1:** Approval voting is Score-Condorcet-Consistent.
 
 The proof is straightforward, since the total score for each candidate is precisely the number of voters who approved them.
 
@@ -88,7 +89,7 @@ where $$T(X=Y)=T(Y=X)$$ are the number of voters who approved both candidates.
 
 Subtracting the total approvals cancels out the common approvals. Thus, if $$T(X>Y)>T(Y>X)$$, then $$S(X)>S(Y)$$, satisfying the SCC condition. The difference in total approvals is exactly equal to the difference in "strict approvals", so Approval voting is SCC. QED.
 
-**Corollary 1:** Approval voting always elects the Condorcet winner induced by the ballots, if one exists. A unique Condorcet winner induced by the ballots exists whenever one candidate gets the highest total approvals (without a tie).
+> **Corollary 1:** Approval voting always elects the Condorcet winner induced by the ballots, if one exists. A unique Condorcet winner induced by the ballots exists whenever one candidate gets the highest total approvals (without a tie).
 
 **Proof:** Suppose candidate A wins the election under Approval voting. Then, for any other candidate B, we have that $$S(A) > S(B)$$. By the SCC property, this implies that $$T(A>B) > T(B>A)$$. Thus, A beats every other candidate in head-to-head match-ups, making them the Condorcet winner induced by the ballots.
 
@@ -106,13 +107,13 @@ While most cardinal systems usually give voters integer scores such as from 0 to
 
 From this perspective, every score system is just Approval voting but with fractional approvals. The common 0 to 5 system is just Approval voting where voters can also give 0.2, 0.4, 0.6, or 0.8 of an approval to each candidate.
 
-**Theorem 2:** The only cardinal voting system that is Score-Condorcet-Consistent is Approval voting. That is, if there exists a score s with $$0 < s < 1$$ that voters can give to candidates, then candidates X and Y can be constructed such that X beats Y in head-to-head match-ups, but Y has a higher total score than X.
+> **Theorem 2:** The only cardinal voting system that is Score-Condorcet-Consistent is Approval voting. That is, if there exists a score s with $$0 < s < 1$$ that voters can give to candidates, then candidates X and Y can be constructed such that X beats Y in head-to-head match-ups, but Y has a higher total score than X.
 
 Proof of Theorem 2 is given in the [appendix](#appendix). However, a concrete example is given [in the next section](#an-example).
 
 The key insight is that by allowing fractional approvals (anything between the minimum and maximum score), we can create situations where a minority-preferred candidate snakes ahead in total score by accumulating many small fractional approvals from voters who prefer the other candidate. This is impossible in Approval voting, where each voter can only give a full approval or disapproval.
 
-**Theorem 3:** Every non-Approval cardinal voting system can produce a Condorcet cycle induced by the ballots.
+> **Theorem 3:** Every non-Approval cardinal voting system can produce a Condorcet cycle induced by the ballots.
 
 **Proof:** As per the above construction, suppose voters can give a score s with $$0 < s < 1$$. Then, consider three candidates A, B, and C, and the following profile of voters:
 
@@ -294,7 +295,7 @@ In an age where trust in our institutions and elections are at an all-time low, 
 
 Here we include formal proofs of the two major theorems stated above.
 
-**Theorem 2:** The only cardinal voting system that is Score-Condorcet-Consistent is Approval voting. That is, if there exists a score s with $$0 < s < 1$$ that voters can give to candidates, then a candidate X and Y can be constructed such that X beats Y in head-to-head match-ups, but Y has a higher total score than X.
+> **Theorem 2:** The only cardinal voting system that is Score-Condorcet-Consistent is Approval voting. That is, if there exists a score s with $$0 < s < 1$$ that voters can give to candidates, then a candidate X and Y can be constructed such that X beats Y in head-to-head match-ups, but Y has a higher total score than X.
 
 **Proof:** Suppose that we have a non-Approval cardinal voting system. That is, there is some possible score s with $$0 < s < 1$$ that a voter can give to a candidate.
 
@@ -335,7 +336,7 @@ We still have more voters preferring A over B (101 to 100), but the total scores
 
 Once agaim B wins by one point despite a majority preferring A.
 
-**Theorem 4:** For any rational number $$r\in(0.5,1)$$, there exists a cardinal score aggregation voting system that allows a candidate B to have a higher total score than candidate A, despite more voters giving A a higher score than B by a head-to-head ratio of $$r$$. That is, the head-to-head ratio of A over B in the ballot data can get arbitrarily close to 100%, while B still has a higher total score than A.
+> **Theorem 4:** For any rational number $$r\in(0.5,1)$$, there exists a cardinal score aggregation voting system that allows a candidate B to have a higher total score than candidate A, despite more voters giving A a higher score than B by a head-to-head ratio of $$r$$. That is, the head-to-head ratio of A over B in the ballot data can get arbitrarily close to 100%, while B still has a higher total score than A.
 
 **Proof:** Suppose we have a rational number $$r\in(0.5,1)$$, and let $$\frac{r}{1-r}=\frac{p}{q}$$ for some positive integers p and q. Then, consider the following profile of voters:
 
