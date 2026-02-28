@@ -27,7 +27,8 @@ toc:
   - name: From Blocking to Dictatorship
   - name: The Gibbard-Satterthwaite Theorem
   - name: Conclusion
-  - name: The Approval Voting Exception
+    subsections:
+      - name: The Approval Voting Exception
   - name: References
 ---
 
@@ -88,7 +89,7 @@ And moving from $$P_2\to P_1$$,
 
 $$f(P_2)=X\geq_{R_2}A=f(P_1)$$
 
-But if the relative position of $$A$$ and $$X$$ is unchanged, then $$X\geq_{R_2}A$$ if and only if $$X\geq_{R_1}A$$. Therefore,
+But if the relative position of $$A$$ and $$X$$ is unchanged, then that precisely means that $$X\geq_{R_2}A$$ if and only if $$X\geq_{R_1}A$$. That is, $$X$$ is now ranked above $$A$$ in $$R_2$$ if and only if it was ranked above $$A$$ in $$R_1$$. Otherwise, $$A$$ is above $$X$$ in both. Therefore,
 
 $$X\geq_{R_2}A\implies X\geq_{R_1}A\geq_{R_1}X$$
 
@@ -119,7 +120,7 @@ Strategyproofness therefore strongly restricts the effects of moving a candidate
 
 Note that this is technically "strong monotonicity", but we will simply call it "monotonicity".
 
-This is a very natural property to expect from a voting system, which is not satisfied by many in common use. For example, Ranked Choice Voting or IRV is famously not monotonic. If a voter moves the current winner up to the top of their ranking, then that can take away votes from someone else and change the elimination order, which can result in a candidate losing by getting more votes.
+This is a very natural property to expect from a voting system, which is not satisfied by many in common use. For example, Ranked Choice Voting or IRV is famously not monotonic. If a voter moves the current winner up to the top of their ranking, then that can change the elimination order, which can result in a previously eliminated candidate defeating the previous winner.
 
 We will show that the relative positioning properties we have shown in the previous results imply that our strategyproof voting system *must* be monotonic.
 
@@ -280,6 +281,10 @@ That is, if $$A\triangleright_S B$$, then $$S$$ can block any third candidate $$
 
 **QED**.
 
+Essentially, in Lemma \ref{partitionblock}, we said that at least one of the two conditions must hold. This Corollary says that actually *both* conditions must hold. The key is that Lemma \ref{partitionblock} is so powerful because it applies to *any* partition. We can choose the partition to be the trivial one where one side is empty, and since an empty set cannot block, then the other side must block.
+
+Now, we bring it back around, and show that the "veto power" goes both ways.
+
 > **Corollary:** If $$A\triangleright_S B$$, then $$B\triangleright_S A$$. \label{flipblock}
 
 **Proof:** Corollary \ref{thirdblock} applies to any third candidate, so we can make this argument by relabeling candidates.
@@ -308,7 +313,7 @@ By Corollary \ref{thirdblock}, if $$A\triangleright_S B$$, then $$S$$ can use $$
 
 Also by Corollary \ref{thirdblock}, $$S$$ can block $$D$$ with any other candidate. Say, $$C\triangleright_S D$$. **QED**.
 
-Therefore, we have made the connection to blocking and dictatorship. The particular specification of which candidates $$S$$ can block with which are mostly irrelevant. Being able to block once implies dictatorial power.
+Therefore, we have made the connection to blocking and dictatorship. The particular specification of which candidates $$S$$ can block with which are mostly irrelevant.
 
 The final results are as follows.
 
@@ -321,15 +326,17 @@ The final results are as follows.
 
 Thus, at least one must be a dictating set. **QED**.
 
+> **Corollary:** If $$S$$ can be partitioned into $$S=S_1\sqcup\ldots\sqcup S_k$$, then at least one of the $$S_i$$ is a dictating set. \label{dictatepartitionk}
+
+**Proof:** We prove this by induction. Corollary \ref{dictatepartition} gives us the base case for $k=2$. For the inductive step, we can take the partition $$S=S_1\sqcup (S_2\sqcup\ldots\sqcup S_k)$$. By Corollary \ref{dictatepartition}, either $$S_1$$ is a dictating set, or $$S_2\sqcup\ldots\sqcup S_k$$ is a dictating set. In the former case, we are done. In the latter case, we can apply the inductive hypothesis to conclude that at least one of the $$S_i$$ for $i>1$ is a dictating set. **QED**.
+
 > **Theorem:** If $$S$$ is a dictating set, then it contains a dictator. \label{dictator}
+
+This is where it all starts coming together. Everything we have done has led up to this. The crucial idea is that we have established that blocking sets can be shrunk by splitting, and one of the splits must still be a blocking set. Therefore, what if we do our partitions by removing a single voter at a time? Eventually, we will be left with a single voter, and that voter must be a dictator. The following proof is simply a rigorous formalization of this idea.
 
 **Proof:** Let $$S=\left\{v_1,\ldots,v_n\right\}$$ be a dictating set.
 
-Take the partition $$S=\left\{v_1\right\}\sqcup S_{1}$$ (where $$S_1=S\setminus\left\{v_1\right\}$$). Then by Corollary \ref{dictatepartition}, either $$\{v_1\}$$ or $$S_1$$ is a dictating set with a strictly lower cardinality. If $$\{v_1\}$$ is a dictating set, $$v_1$$ is a dictator and we are done. Otherwise, let
-
-$$S_i:= S_{i-1}\setminus\{v_i\}$$
-
-Then, eventually we will reach $$S_{n-1}=\{v_{n-1}\}\sqcup \{v_n\}$$. If no $$v_i$$ was a dictator for $$i<n-1$$, then one of $$\{v_{n-1}\}, \{v_n\}$$ must be a dictating set, in which case $$v_{n-1}$$ or $$v_n$$ is a dictator. Therefore $$S$$ must contain a dictator. **QED**.
+Take the partition $$S=\{v_1\}\sqcup\{v_2\}\sqcup\ldots\sqcup\{v_n\}$$. By Corollary \ref{dictatepartitionk}, at least one of the $$\{v_i\}$$ is a dictating set, which means that $$v_i$$ is a dictator. Therefore, $$S$$ contains a dictator. **QED**.
 
 Therefore, we can equate the existence of a blocking set with that of a dictating set and therefore with that of a dictator.
 
@@ -362,20 +369,26 @@ The initial desire for strategyproofness comes from the idea that the "original 
 
 Strategyproofness therefore implies a strong lack of responsiveness to ranked ballots in general, requiring the need for a dictator.
 
-## The Approval Voting Exception
+### The Approval Voting Exception
+
+We conclude the post with an informal discussion of Approval voting.
 
 Now, Gibbard-Satterthwaite only applies to ranked voting systems. But there are other types of voting systems, such as approval voting, where voters can give independent votes to candidates. Although Gibbard's more general theorem still applies to Approval voting, [Approval in particular has been proven to be strategyproof under a strict assumption about voter preferences](https://www.jstor.org/stable/1955105){:target="_blank"}, which is that voters have "dichotomous preferences". That is, voters have a set of candidates they approve of and a set of candidates they disapprove of, and they are indifferent between all candidates in the same set.
 
-The key is that Approval is strictly monotonic. If a voter approves of a candidate, then that candidate is strictly better off than if the voter disapproves of that candidate. Voting for that candidate can break any tie in their favor, push them into a tie with first place, increase their winning margin, or fail to help them win. But it can never make them go from winning to losing. The optimal strategy, then, is to approve all acceptable candidates and disapprove of all unacceptable candidates. This is strategyproof under the dichotomous preferences assumption, but does not apply when voters have three or more levels of preference.
+The key is that Approval is also strictly monotonic. If a voter approves of a candidate, then that candidate is strictly better off than if the voter disapproves of that candidate. Voting for that candidate can break any tie in their favor, push them into a tie with first place, increase their winning margin, or fail to help them win. But it can never make them go from winning to losing. The optimal strategy, then, is to approve all acceptable candidates and disapprove of all unacceptable candidates. This is strategyproof under the dichotomous preferences assumption, but does not apply when voters have three or more levels of preference.
 
-The proof for this is relatively straightforward. If a voter has dichotomous preferences, then
+The intuition for the proof of this is relatively straightforward. If a voter has dichotomous preferences, then
 
 1. Not voting for an acceptable candidate can lead to them losing by one vote to an unacceptable candidate, which is a worse outcome. Therefore, the voter should approve of all acceptable candidates.
 2. Voting for an unacceptable candidate can lead to them winning by one vote over an acceptable candidate, which is a worse outcome. Therefore, the voter should disapprove of all unacceptable candidates.
 
-Therefore, there is only one optimal strategy, which is to approve of all acceptable candidates and disapprove of all unacceptable candidates, which is a sincere strategy. Thus, approval voting is strategyproof under the dichotomous preferences assumption.
+Therefore, there is only one optimal strategy under the dichotomous assumption, which is to approve of all acceptable candidates and disapprove of all unacceptable candidates, which is a sincere strategy. Thus, approval voting is strategyproof under the dichotomous preferences assumption.
 
 This can be extended slightly further, however. If you [decide that, as a voter, your only goal is to elect **any** candidate you deem "acceptable", and no other candidates, then approval voting is strategyproof even if you have more than two levels of preference](../avstratproof){:target="_blank"}. That is, you essentially pretend you have dichotomous preferences by treating all candidates you deem "acceptable" as equally good, and all candidates you deem "unacceptable" as equally bad. This is an obviously very strong assumption about voter preferences, but it is a framing that any voter can choose to adopt.
+
+Calling Approval strategyproof in practice is a bit of a stretch. However, I find it endlessly fascinating that there is indeed a non-dictatorial voting system that is strategyproof, albeit under a very strong assumption about voter preferences.
+
+A common theme of voting theory is that aggregating ranked preferences is extremely difficult to do so fairly and without potential for manipulation. Trying to impose stability, or make manipulation suboptimal collapses into needing to project onto the preferences of just one voter. By simply allowing voters to give independent votes, and restricting to a simple two-tiered preference, Approval voting makes expressing honest two-tiered preferences the optimal strategy. But only for exactly that: two-tiered preferences. If voters have more complex preferences, then deciding where to draw the line between "acceptable" and "unacceptable" becomes a strategic question, and the strategyproofness of Approval voting breaks down.
 
 ## References
 
