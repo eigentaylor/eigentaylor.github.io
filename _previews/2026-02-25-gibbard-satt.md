@@ -33,7 +33,7 @@ toc:
 
 ## Introduction
 
-Based primarily on the proof include in W.D. Wallis' [The Mathematics of Elections and Voting](https://link.springer.com/book/10.1007/978-3-319-09810-4){:target="_blank"}, with more detail. I also referenced [these lecture notes](https://web.stanford.edu/~ashishg/msande336/aut2021/handouts/lecture5_notes.pdf){:target="_blank"} from Ashish Goel's course at Stanford, and this ["simple proof" by Andrew C. Eggers](https://andy.egge.rs/papers/Eggers_GibbardSatterthwaite.pdf){:target="_blank"}.
+Based primarily on the proof included in W.D. Wallis' [The Mathematics of Elections and Voting](https://link.springer.com/book/10.1007/978-3-319-09810-4){:target="_blank"}, with more detail. I also referenced [these lecture notes](https://web.stanford.edu/~ashishg/msande336/aut2021/handouts/lecture5_notes.pdf){:target="_blank"} from Ashish Goel's course at Stanford, and this ["simple proof" by Andrew C. Eggers](https://andy.egge.rs/papers/Eggers_GibbardSatterthwaite.pdf){:target="_blank"}.
 
 The Gibbard-Satterthwaite theorem is a fundamental result in social choice theory, which loosely states that no "reasonable" ranked voting system can be strategyproof. That is, there can always be a situation where a voter can get a better result by voting dishonestly. The exception is a "dictatorship", where the whole election is decided by a single voter, and all other ballots are ignored.
 
@@ -68,7 +68,7 @@ $$f(P_1)\geq_{R_1}f(P_2)$$
 
 Intuitively, if I change my vote, then the winner can't change to something I like better. Otherwise, I have a beneficial strategy, and the system is not strategyproof.
 
-All we need is to assume strategyproofness alongside the absurdly minimal assumption of citizen sovereignty, and we will show over the course of this post that this forces the existence of a dictator.
+All we need is to assume strategyproofness alongside the absurdly minimal assumption of citizen sovereignty, and we will show over the course of this post that this forces the existence of a dictator. To keep things in context, I'm going to be highlighting that fact *constantly*. And I suggest that to keep the motivations of the theorems strong, you should try to play "Where's Waldo" with the dictator. Every step of the proof narrows down where the dictator is hiding.
 
 > **Lemma:** A dictatorship is strategyproof and respects citizen sovereignty.
 
@@ -117,19 +117,21 @@ Strategyproofness therefore strongly restricts the effects of moving a candidate
 
 > **Definition:** We say that a voting system is *monotonic* if whenever a voter moves a candidate up in their ranking, keeping all else fixed, then either the winner is unchanged, or that moved candidate is the new winner.
 
-This is a very natural property to expect from a voting system, which is not satisfied by many common voting systems. For example, Ranked Choice Voting or IRV is famously not monotonic. If a voter moves the current winner up to the top of their ranking, then that can take away votes from someone else and change the elimination order.
+Note that this is technically "strong monotonicity", but we will simply call it "monotonicity".
 
-For example, say a very strong candidate with broad but shallow support $$B$$ is originally eliminated in the first round. If voters, who were originally ranking candidate $$C$$ first, move the current winner $$A$$ to the top of their rankings, that can take away votes from $$C$$ until $$C$$ is eliminated before $$B$$, allowing $$B$$ to beat $$A$$ in a later round. Thus, moving $$A$$ up can actually cause $$A$$ to lose, which is a violation of monotonicity.
+This is a very natural property to expect from a voting system, which is not satisfied by many in common use. For example, Ranked Choice Voting or IRV is famously not monotonic. If a voter moves the current winner up to the top of their ranking, then that can take away votes from someone else and change the elimination order, which can result in a candidate losing by getting more votes.
 
 We will show that the relative positioning properties we have shown in the previous Lemmas imply that our strategyproof voting system *must* be monotonic.
 
 > **Proposition:** If $$f$$ is strategyproof and respects citizen sovereignty, then $$f$$ is **monotonic**.
 
-**Proof:** If $$X$$ is the only candidate moved, then the relative position of $$A$$ with all candidates, besides potentially $$X$$, is unchanged. Therefore, no candidate apart from $$X$$ or $$A$$ *can* be the new winner by Lemma \ref{relativepositionlemma}. **QED**
+**Proof:** If $$X$$ is the only candidate moved, then the relative position of $$A$$ with all candidates, besides potentially $$X$$, is unchanged. Therefore, no candidate apart from $$X$$ or $$A$$ *can* be the new winner by Lemma \ref{relativepositionlemma}. That is, if $$B$$ is the new winner, then $$B\in\{X,A\}$$. **QED**
 
 We see that monotonicity actually follows *extremely* straightforwardly from strategyproofness because of how important the relative position of the winner is between candidates, when moving between profiles.
 
 Further, we can make the observation that moving $$X$$ up can only *possibly* make $$X$$ win if $$X$$ is moved from *under* the current winner to *above* that current winner.
+
+> **Remark:** Monotonicity allows us to have multiple voters move the same candidate up in their rankings and the winner will either be preserved, or change to the moved candidate. This works by applying the monotonicity sequentially to each voter.
 
 Finally, we show another useful consequence of monotonicity.
 
@@ -182,7 +184,11 @@ The following Lemma characterizes the actual best possible case for $$B$$. If sa
 >
 > and $$B$$ loses, then $$A\triangleright_SB$$. \label{blockcriterion}
 
-We remark that Pareto efficiency implies that, since $$B$$ is ranked over all candidates, except $$A$$, by every voter, then only $$B$$ or $$A$$ can possibly win in such a profile. Further, the difference between the conditions of this Lemma versus Lemma \ref{weakblock} is that voters in $$S$$ do not merely rank $$A>B$$, but have moved $$A$$ and $$B$$ to the top of their rankings. Intuitively, this is the best possible case for $$B$$ in a profile satisfying the conditoins of Lemma \ref{weakblock}.
+We remark that Pareto efficiency implies that, since $$B$$ is ranked over all candidates, except $$A$$, by every voter, then only $$B$$ or $$A$$ can possibly win in such a profile. Further, the difference between the conditions of this Lemma versus Lemma \ref{weakblock} is that voters in $$S$$ do not merely rank $$A>B$$, but have moved $$A$$ and $$B$$ to the top of their rankings. Intuitively, this is the best possible case for $$B$$ in a profile satisfying the conditions of Lemma \ref{weakblock}.
+
+This proof is a bit more involved, so I'll preface it with a short roadmap.
+
+**Roadmap:** We'll call the profile described in the conditions of Lemma \ref{blockcriterion} as the "best case" blocking profile for $$B$$: where every voter ranks $$B$$ as highly as they possibly can while $$S$$ still ranks $$A>B$$. We want to show that if $$B$$ loses in their "best case", then they have to lose in any profile satisfying Lemma \ref{weakblock}. It's easier to show that if $$B$$ wins in any profile satisfying Lemma \ref{weakblock}, then they also have to win in their "best case" profile. Since moving from a profile satisfying Lemma \ref{weakblock} to the "best case" profile either maintains relative positioning or involves monotonically increasing $$B$$'s standing, we can guarantee $$B$$ must still win.
 
 **Proof:** We aim to show that if $$P$$ exists then it implies that Lemma \ref{weakblock} must be satisfied. We do this by contrapositive, showing that if $$B$$ can win in some profile $$P'$$ satisfying the conditions of Lemma \ref{weakblock}, then $$B$$ must win in any profile satisfying the conditions of Lemma \ref{blockcriterion}.
 
@@ -192,7 +198,7 @@ We create transitionary profiles.
 
 $$P'\to P_1$$: Every voter in $$S$$ moves candidate $$A$$ to the top of their ranking. Since voters in $$S$$ already rank $$A$$ over $$B$$, then by Lemma \ref{monotonelemma}, we must preserve the winner.
 
-$$P_1\to P_2$$: Every voter in $$S$$ moves candidate $$B$$ up to their second rank. Since voters in $$S$$ rank $$A>B$$, then $$B$$ is already ranked at most second, so moving from $$P_1\to P_2$$ only potentially involves moving $$B$$ up. By monotonicity, this can only preserve $$B$$'s win.
+$$P_1\to P_2$$: Every voter in $$S$$ moves candidate $$B$$ up to their second rank. Since voters in $$S$$ rank $$A>B$$, then the maximum rank of $$B$$ is second on the ballots of voters in $$S$$, so moving from $$P_1\to P_2$$ only potentially involves moving $$B$$ up. By monotonicity, this can only preserve $$B$$'s win.
 
 $$P_2\to P_3$$: For every other candidate $$X$$ distinct from $$A$$ and $$B$$, every voter moves $$X$$ to their place in $$P$$. Since every voter in $$P_2$$ ranks $$B$$ over $$X$$, then by Lemma \ref{relativepositionlemma}, we must preserve the winner.
 
@@ -202,12 +208,18 @@ At every step, $$B$$ still wins, so $$B$$ must win in profile $$P$$. Therefore, 
 
 ### Partitioning Blocking Sets
 
-We now come to the most important Lemma in the proof, which will be the key to showing that blocking implies dictatorship. This is a tough proof, so I will try to give as much intuition as possible. My suggestion is to keep in mind that we are building up to showing that if $$S$$ can block $$B$$ with $$A$$, then $$S$$ must contain a dictator. Therefore, try to follow in which set the dictator must be in at each step.
+We now come to the most important Lemma in the proof, which will be the key to showing that blocking implies dictatorship. This is a tough proof, so I will try to give as much intuition as possible. My suggestion is to keep in mind that we are building up to showing that if $$S$$ can block $$B$$ with $$A$$, then $$S$$ must contain a dictator.
 
 > **Lemma:** If $$A\triangleright_SB$$ and $$S=M\sqcup N$$ is a partition of $$S$$, then either
 >
 > - $$A\triangleright_M C$$ or
 > - $$C\triangleright_N B$$ \label{partitionblock}
+
+This is the most crucial step in proving the Gibbard-Satterthwaite theorem, so it's worth explaining the underlying mechanics, so that the proof doesn't seem so mysterious.
+
+**Under the hood**: We split $$S$$ into two sets: $$M$$ and $$N$$. We tell the voters in $$M$$ to rank $$A$$ first, and those in $$N$$ to vote for $$C$$ first. We will eventually show that as a blocking set, $$S$$ contains a dictator. Therefore, if we tell the voters in $$M$$ and $$N$$ to do this, then the winner tells us which set has the dictator. If $$A$$ wins, then we know $$M$$ has the dictator. We can then have all the voters outside of $$M$$ move $$C$$ up to their top spot and that won't change the fact that the dictator in $$M$$ still ranks $$A$$ first. We can also ask the $$M$$ voters to raise $$C$$ to second place, and that won't change $$A$$ winning either. The Blocking Criterion ensures that $$A$$ blocks $$C$$.
+
+Similarly, if $$C$$ wins, then we know $$N$$ has the dictator. We can repeat the same process, moving $$B$$ up, to show that $$C$$ blocks $$B$$ with $$N$$.
 
 **Proof:** Suppose that $$S=M\sqcup N$$ is a partition of $$S$$, $$S'$$ is the complement of $$S$$, and we have a profile $P_0$ where the reported rankings are
 
@@ -245,13 +257,19 @@ This creates a profile $$P_C$$ where
 - $$N:C>B>A$$
 - $$S':B>C>A$$
 
-which has $$N$$ ranking $$C$$ first and $$B$$ second, every voter outside of $$N$$ ranking $$B$$ first, and $$B$$ losing. By Lemma \ref{blockcriterion}, we must have that $$C\triangleright_N B$$. **QED**.
+which has $$N$$ ranking $$C$$ first and $$B$$ second, every voter outside of $$N$$ ranking $$B$$ first, and $$B$$ losing. By the Blocking Criterion, Lemma \ref{blockcriterion}, we must have that $$C\triangleright_N B$$. **QED**.
 
-The intuitive idea here is that if $$S$$ can block $$B$$ with $$A$$, then we can split $$S$$ into two parts which place $$A$$ over $$B$$: one part that has $$A$$ first, and the other part that has $$C$$ first. Keeping in mind that we are building up to a dictator in $$S$$, so the winner must be either $$A$$ or $$C$$, depending on if the dictator is in the first part or the second part, respectively.
+## From Blocking to Dictatorship
 
-Monotonicity and strategyproofness then allow us to adjust the profile to get the best possible case for whichever relevant candidate is not the winner, and show that they still lose.
+> **Definition:** We call $$S$$ a *dictating set* if $$A\triangleright_S B$$ for any pair of candidates $$A,B$$. That is, if $$S$$ can block any candidate from winning using any other.
 
-> **Corollary:** If $$A\triangleright_S B$$ and $$C$$ is any other candidate, then $$A\triangleright_S C$$ or $$C\triangleright_S B$$. \label{thirdblock}
+By interpreting "blocking" as a sort of "veto power", we can see that a dictator has a similar sort of power. The ability to choose the winner by simply ranking them first is equivalent to making any candidate lose by ranking them below someone else. Our goal is to show that being able to block *one* candidate means the set can block *all* candidates.
+
+> **Remark:** The set of all electors is a dictating set, by Pareto efficiency, and a dictating set with a single voter must have that voter as a dictator.
+
+The power of Lemma \ref{partitionblock} is that we can choose *any* partition. Later we will use partitions where we remove a single voter, but for this next proof we will use the trivial partition $$S=\varnothing\sqcup S$$, and the inability for the empty set to block.
+
+> **Corollary:** If $$A\triangleright_S B$$ and $$C$$ is any other candidate, then $$A\triangleright_S C$$ and $$C\triangleright_S B$$. \label{thirdblock}
 
 That is, if $$A\triangleright_S B$$, then $$S$$ can block any third candidate $$C$$ with $$A$$, and $$S$$ can block $$B$$ with any third candidate $$C$$.
 
@@ -264,7 +282,7 @@ That is, if $$A\triangleright_S B$$, then $$S$$ can block any third candidate $$
 
 > **Corollary:** If $$A\triangleright_S B$$, then $$B\triangleright_S A$$. \label{flipblock}
 
-**Proof:** By Lemma \ref{thirdblock},
+**Proof:** Lemma \ref{thirdblock} applies to any third candidate, so we can make this argument by relabeling candidates.
 
 $$A\triangleright_S B\implies A\triangleright_S C$$
 
@@ -282,12 +300,6 @@ At this point, we have essentially shown that the ability to block a single cand
 
 However, Lemma \ref{partitionblock} will land the crushing blow: any partition of a blocking set contains a blocking set. Perhaps the reader can see where this is going!
 
-## From Blocking to Dictatorship
-
-> **Definition:** We call $$S$$ a *dictating set* if $$A\triangleright_S B$$ for any pair of candidates $$A,B$$. That is, if $$S$$ can block any candidate from winning using any other.
-
-> **Remark:** The set of all electors is a dictating set, by Pareto efficiency, and a dictating set with a single voter must have that voter as a dictator.
-
 > **Proposition:** If $$A\triangleright_S B$$ for any single pair of two candidates, then $$S$$ is a dictating set. Therefore, $$S$$ is a dictating set if and only if $$A\triangleright_S B$$ for any single pair of two candidates. \label{dictateiffsingleblock}
 
 **Proof:** We must show that given $$A\triangleright_S B$$, then $$C\triangleright_S D$$ for any other pair of candidates.
@@ -304,8 +316,8 @@ The final Lemmas are as follows.
 
 **Proof:** Suppose $$S$$ is a dictating set and $$S=M\sqcup N$$ is a partition.  Then $$A\triangleright_S B$$ for any two candidates $$A,B$$. By Lemma \ref{partitionblock}, we must have
 
-- $$A\triangleright_M C \iff M$$ is a dictating set
-- $$C\triangleright_N B \iff N$$ is a dictating set.
+- $$A\triangleright_M C \implies M$$ is a dictating set
+- $$C\triangleright_N B \implies N$$ is a dictating set.
 
 Thus, at least one must be a dictating set. **QED**.
 
@@ -352,7 +364,7 @@ Strategyproofness therefore implies a strong lack of responsiveness to ranked ba
 
 ## The Approval Voting Exception
 
-Now, Gibbard-Satterthwaite only applies to ranked voting systems. But there are other types of voting systems, such as approval voting, where voters can give independent votes to candidates. [Approval voting in particular has been proven to be strategyproof under an extremely strict assumption about voter preferences](https://www.jstor.org/stable/1955105){:target="_blank"}, which is that voters have "dichotomous preferences". That is, voters have a set of candidates they approve of and a set of candidates they disapprove of, and they are indifferent between all candidates in the same set.
+Now, Gibbard-Satterthwaite only applies to ranked voting systems. But there are other types of voting systems, such as approval voting, where voters can give independent votes to candidates. Although Gibbard's more general theorem still applies to Approval voting, [Approval in particular has been proven to be strategyproof under a strict assumption about voter preferences](https://www.jstor.org/stable/1955105){:target="_blank"}, which is that voters have "dichotomous preferences". That is, voters have a set of candidates they approve of and a set of candidates they disapprove of, and they are indifferent between all candidates in the same set.
 
 The key is that Approval is strictly monotonic. If a voter approves of a candidate, then that candidate is strictly better off than if the voter disapproves of that candidate. Voting for that candidate can break any tie in their favor, push them into a tie with first place, increase their winning margin, or fail to help them win. But it can never make them go from winning to losing. The optimal strategy, then, is to approve all acceptable candidates and disapprove of all unacceptable candidates. This is strategyproof under the dichotomous preferences assumption, but does not apply when voters have three or more levels of preference.
 
