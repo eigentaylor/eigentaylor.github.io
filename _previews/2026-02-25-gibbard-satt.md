@@ -74,7 +74,7 @@ All we need is to assume strategyproofness alongside the absurdly minimal assump
 
 **Proof:** If voter $$v$$ is a dictator, then the winner is always the candidate ranked first by the dictator, regardless of how other voters vote. Therefore, the dictator can place any candidate in their first ranking and that candidate will win. Therefore, dictatorship respects citizen sovereignty.
 
-For all voters besides the dictator, ballot adjustments preserve the winner, making dictatorship strategyproof for all voters besides the dictator. The winner can only change if the dictator moves some candidate $$B$$ over their first choice, which we can call $$A$$. If $$R_1$$ has $$A$$ ranked first, and $$R_2$$ has $$B$$ ranked first, then we satisfy that $$f(P_1)=A\geq_{R_1}B=f(P_2)$$. Therefore, dictatorship is strategyproof. That is, the dictatorship can only make a lower ranked candidate win over their top choice. **QED**.
+For all voters besides the dictator, ballot adjustments preserve the winner, making dictatorship strategyproof for all voters besides the dictator. The winner can only change if the dictator moves some candidate $$B$$ over their first choice, which we can call $$A$$. If $$R_1$$ has $$A$$ ranked first, and $$R_2$$ has $$B$$ ranked first, then we satisfy that $$f(P_1)=A\geq_{R_1}B=f(P_2)$$. Therefore, dictatorship is strategyproof. That is, the dictator can only make a lower ranked candidate win over their top choice. **QED**.
 
 However, first, it will be helpful to establish a very useful consequence of strategyproofness on what happens when a voter moves a candidate up or down in their ranking.
 
@@ -107,7 +107,7 @@ We can articulate this more precisely with this Corollary:
 
 It's worth emphasizing the intuition of this Corollary, as it will be crucial to the proof. The first part of the Corollary says that we can't get a better result by moving a candidate preferred to the winner up. That is, lying about how much you like a better candidate can't topple the current winner.
 
-The second part of the Corollary comes down, intuitively, from the fact that burial strategies can't work. On the surface, the second part of the Lemma does not seem particularly useful. If $$A>_{R_2}X$$, then $$A>_{R_1}X$$ as well, since the voter moved $$X$$ up. So the voter is just moving someone worse than the current winner up but still below that current winner. It would be strange if this could topple the current winner, but it's not immediately obvious why this cannot occur. But the reverse framing where we move from $$R_2\to R_1$$ is more intuitive, where $$X$$ is below $$A$$ and then is moved further down.
+The second part of the Corollary comes down, intuitively, from the fact that burial strategies can't work. On the surface, the second part of the Corollary does not seem particularly useful. If $$A>_{R_2}X$$, then $$A>_{R_1}X$$ as well, since the voter moved $$X$$ up. So the voter is just moving someone worse than the current winner up but still below that current winner. It would be strange if this could topple the current winner, but it's not immediately obvious why this cannot occur. But the reverse framing where we move from $$R_2\to R_1$$ is more intuitive, where $$X$$ is below $$A$$ and then is moved further down.
 
 If $$X$$ *was* the winner in $$P_2$$, and $$A$$ was the winner in $$P_1$$, then that would be a successful burial strategy. By moving the winner $$X$$ down, we managed to get a more preferred candidate $$A$$ to win. This essentially tells us that $$f(P_2)\neq A \implies f(P_1)\neq A$$, or equivalently, $$f(P_1)=A\implies f(P_2)=A$$.
 
@@ -121,7 +121,7 @@ Note that this is technically "strong monotonicity", but we will simply call it 
 
 This is a very natural property to expect from a voting system, which is not satisfied by many in common use. For example, Ranked Choice Voting or IRV is famously not monotonic. If a voter moves the current winner up to the top of their ranking, then that can take away votes from someone else and change the elimination order, which can result in a candidate losing by getting more votes.
 
-We will show that the relative positioning properties we have shown in the previous Lemmas imply that our strategyproof voting system *must* be monotonic.
+We will show that the relative positioning properties we have shown in the previous results imply that our strategyproof voting system *must* be monotonic.
 
 > **Proposition:** If $$f$$ is strategyproof and respects citizen sovereignty, then $$f$$ is **monotonic**.
 
@@ -194,7 +194,7 @@ This proof is a bit more involved, so I'll preface it with a short roadmap.
 
 Take a profile $$P'$$ satisfying Lemma \ref{weakblock} where $$B$$ wins. That is, in $$P'$$ we have that $$S$$ ranks $$A>B$$ and every voter outside of $$S$$ ranks $$B$$ first. We will show that moving from $$P'$$ to $$P$$ must maintain $$B$$'s win. It suffices to show that an arbitrary voter, in or outside of $$S$$, can change their ballot from that from $$P'$$ to that of $$P$$.
 
-We create transitionary profiles.
+We create intermediate profiles.
 
 $$P'\to P_1$$: Every voter in $$S$$ moves candidate $$A$$ to the top of their ranking. Since voters in $$S$$ already rank $$A$$ over $$B$$, then by Corollary \ref{monotonelemma}, we must preserve the winner.
 
@@ -354,7 +354,7 @@ The proof comes down to a few essential elements:
 5. A blocking set doesn't just block a single candidate, but can block all candidates, making it dictatorial.
 6. Since we can reduce any dictating (blocking) set into a strictly smaller dictating set, we can show the existence of a single dictator.
 
-While most Lemmas follow relatively straightforwardly from the intuitive idea of a blocking set, the real key to the proof is that any blocking set contains a strictly smaller blocking set. This heavily relied on the fact that strategyproofness is so strict.
+While most steps follow relatively straightforwardly from the intuitive idea of a blocking set, the real key to the proof is that any blocking set contains a strictly smaller blocking set. This heavily relied on the fact that strategyproofness is so strict.
 
 Eggers puts it in an interesting way: "strategy-proofness implies preference-proofness". The way strategyproofness is often framed is that being dishonest can't get you a better result. But what does being "honest" or "dishonest" even mean? If you watch a debate between the candidates and decide to adjust your vote based on what you learn, then which vote is the honest one?
 
