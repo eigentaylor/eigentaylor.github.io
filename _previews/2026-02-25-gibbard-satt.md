@@ -177,6 +177,8 @@ The following Lemma characterizes the actual best possible case for $$B$$. If sa
 >
 > then $$A\triangleright_SB$$. \label{blockcriterion}
 
+We remark that Pareto efficiency implies that, since $$B$$ is ranked over all candidates, except $$A$$, by every voter, then only $$B$$ or $$A$$ can possibly win in such a profile.
+
 **Proof:** We aim to show that if $$P$$ exists then it implies that Lemma \ref{weakblock} must be satisfied. We do this by contrapositive, showing that if $$B$$ can win in any profile satisfying the conditions of Lemma \ref{weakblock}, then $$B$$ must win in any profile satisfying the conditions of Lemma \ref{blockcriterion}.
 
 Take any profile $$P'$$ satisfying Lemma \ref{weakblock}. That is, in $$P'$$ we have that $$S$$ ranks $$A>B$$ and every voter outside of $$S$$ ranks $$B$$ first. Now suppose that $$B$$ wins in profile $$P'$$. We will show that moving from $$P'$$ to $$P$$ must maintain $$B$$'s win. It suffices to show that an arbitrary voter, in or outside of $$S$$, can change their ballot from that from $$P$$ to that of $$P'$$.
