@@ -69,7 +69,9 @@ $$f(P_1)\geq_{R_1}f(P_2)$$
 
 Intuitively, if I change my vote, then the winner can't change to something I like better. Otherwise, I have a beneficial strategy, and the system is not strategyproof.
 
-All we need is to assume strategyproofness alongside the absurdly minimal assumption of citizen sovereignty, and we will show over the course of this post that this forces the existence of a dictator. To keep things in context, I'm going to be highlighting that fact *constantly*. And I suggest that to keep the motivations of the theorems strong, you should try to play "Where's Waldo" with the dictator. Every step of the proof narrows down where the dictator is hiding. Imagine Waldo wearing a military uniform just standing in line for the voting booth. 
+All we need is to assume strategyproofness alongside the absurdly minimal assumption of citizen sovereignty, and we will show over the course of this post that this forces the existence of a dictator. To keep things in context, I'm going to be highlighting that fact *constantly*. And I suggest that to keep the motivations of the theorems strong, you should try to play "Where's Waldo" with the dictator. Every step of the proof narrows down where the dictator is hiding.
+
+<img src="/assets/img/waldo_dictator.png" alt="Dictator Waldo standing in line to vote" style="width:100%; max-width:600px;">
 
 > **Lemma:** A dictatorship is strategyproof and respects citizen sovereignty.
 
