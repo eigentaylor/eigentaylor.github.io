@@ -42,13 +42,13 @@ Similar to Arrow's impossibility theorem, the intuition is "If we have a voting 
 
 ## Preliminaries
 
-A social choice function is a function that takes in a profile of votes (a list of voters' rankings of candidates) and outputs a single winner. We will be working with ranked voting systems, where voters must strictly rank candidates without ties.
+A social choice function is a function that takes in a profile of votes (a list of voters' rankings of candidates) and outputs a single winner. However, we can think of this as a voting system, where voters input their ballots and the voting system spits out a winner. We will be working with ranked voting systems, where voters must strictly rank candidates without ties.
 
-We will start with two very limited assumptions about our social choice function, including the key strategyproofness property, and show that strategyproofness is so strict that it forces the existence of a dictator.
+We will start with two very limited assumptions about our voting system, including the key strategyproofness property, and show that strategyproofness is so strict that it forces the existence of a dictator.
 
-First, we assume the social choice function respects "citizen sovereignty".
+First, we assume the voting system respects "citizen sovereignty".
 
-> **Definition:** We say a social choice function respects **citizen sovereignty** if any candidate can win under some profile. For example, if every voter ranks that candidate first.
+> **Definition:** We say a voting system respects **citizen sovereignty** if any candidate can win under some profile. For example, if every voter ranks that candidate first.
 
 This may seem like an absurdly weak assumption that any voting system would satisfy, but there are (admittedly very absurd) examples. Take a voting system that chooses the winner based on alphabetical order of candidates. Then, no matter how voters vote, the same candidate will always win. This is a voting system that does not respect citizen sovereignty. This property can be interpreted as "reachability" of candidates: any candidate can be the winner if voters rank them the right way. It is one measure of "responsiveness" for a voting system.
 
@@ -158,11 +158,11 @@ Essentially, we know any candidate *can* win by citizen sovereignty. By monotoni
 
 For this section, we assume that we are using a strategyproof voting system that respects citizen sovereignty.
 
-> **Definition:** We say that a set of voters $$S$$ can block candidate $$B$$ with candidate $$A$$", denoted $$A\triangleright_SB$$, whenever every voter in $$S$$ ranks $$A>B$$, then $$B$$ does not win. We call such a set a **blocking set**.
+> **Definition:** We say that a set of voters "$$S$$ can block candidate $$B$$ with candidate $$A$$", denoted $$A\triangleright_SB$$, whenever every voter in $$S$$ ranks $$A>B$$, then $$B$$ does not win. We call such a set a **blocking set**.
 
 In other words, the voters in $$S$$ can "veto" candidate $$B$$ by ranking some other candidate $$A$$ above $$B$$.
 
-For example, if $$S$$ is the set of all voters and every voter ranks $$A>B$$, then $$f$$ will prefer $$A>B$$. As another example, though it technically does not fall under the purview of our assumptions (but may benefit for intuition), under plurality voting, a strict majority (ex. 61 Senators out of 100) can block any bill by voting no. While many voting systems have a notion of a blocking set, many of the results we prove will rely on the strategyproof assumptions, and results proved in the previous section, such as monotonicity and Pareto efficiency.
+For example, if $$S$$ is the set of all voters and every voter ranks $$A>B$$, then $$f$$ will prefer $$A>B$$. As another example, though it technically does not fall under the purview of our assumptions (but may benefit for intuition), under plurality voting, a strict majority (e.g. 61 Senators out of 100) can block any bill by voting no. While many voting systems have a notion of a blocking set, many of the results we prove will rely on the strategyproof assumptions, and results proved in the previous section, such as monotonicity and Pareto efficiency.
 
 The idea we are building up to is that under the strategyproof assumption, any blocking set must contain a dictator. While many other systems allow a group of voters to veto an outcome, strategyproofness forces one of those voters to be the Waldo we're looking for: the dictator.
 
@@ -219,7 +219,7 @@ At every step, $$B$$ still wins, so $$B$$ must win in profile $$P$$. Therefore, 
 
 We now come to the most important Lemma in the proof, which will be the key to showing that blocking implies dictatorship. This is a tough proof, so I will try to give as much intuition as possible. My suggestion is to keep in mind that we are building up to showing that if $$S$$ can block $$B$$ with $$A$$, then $$S$$ must contain a dictator. This section is, in essence, trying to narrow down where Waldo is.
 
-> **Lemma:** Suppose we have a strategyproof social choice function respecting citizen sovereignty. If $$A\triangleright_S B$$ and $$S=M\sqcup N$$ is a partition of $$S$$, then either
+> **Lemma:** Suppose we have a strategyproof voting system respecting citizen sovereignty. If $$A\triangleright_S B$$ and $$S=M\sqcup N$$ is a partition of $$S$$, then either
 >
 > - $$A\triangleright_M C$$ or
 > - $$C\triangleright_N B$$ \label{partitionblock}
@@ -323,7 +323,7 @@ By Corollary \ref{thirdblock}, if $$A\triangleright_S B$$, then $$S$$ can use $$
 
 Also by Corollary \ref{thirdblock}, $$S$$ can block $$D$$ with any other candidate. Say, $$C\triangleright_S D$$. **QED**.
 
-Therefore, we have made the connection to blocking and dictatorship. The particular specification of which candidates $$S$$ can block with which are mostly irrelevant.
+Therefore, we have made the connection between blocking and dictatorship. The particular specification of which candidates $$S$$ can block with which are mostly irrelevant.
 
 The final results are as follows.
 
@@ -396,7 +396,7 @@ This can be extended slightly further, however. If you [decide that, as a voter,
 
 Calling Approval strategyproof in practice is a bit of a stretch. However, I find it endlessly fascinating that there is indeed a non-dictatorial voting system that is strategyproof, albeit under a very strong assumption about voter preferences.
 
-A common theme of voting theory is that aggregating ranked preferences is extremely difficult to do so fairly and without potential for manipulation. Trying to impose stability, or make manipulation suboptimal collapses into needing to project onto the preferences of just one voter. By simply allowing voters to give independent votes, and restricting to a simple two-tiered preference, Approval voting makes expressing honest two-tiered preferences, like acceptable and unacceptable, the optimal strategy. But only for exactly that: two-tiered preferences. If voters have more complex preferences, then deciding where to draw the line between "acceptable" and "unacceptable" becomes a strategic question, and the strategyproofness of Approval voting breaks down. However, Approval is indeed one of the most sincere voting systems out there. In practice, it's never optimal to vote for one candidate, and not vote for all those candidates you strictly prefer to that candidate.
+A common theme of voting theory is that aggregating ranked preferences is extremely difficult to do so fairly and without potential for manipulation. Trying to impose stability, or make manipulation suboptimal, collapses into needing to project onto the preferences of just one voter. By simply allowing voters to give independent votes, and restricting to a simple two-tiered preference, Approval voting makes expressing honest two-tiered preferences, like acceptable and unacceptable, the optimal strategy. But only for exactly that: two-tiered preferences. If voters have more complex preferences, then deciding where to draw the line between "acceptable" and "unacceptable" becomes a strategic question, and the strategyproofness of Approval voting breaks down. However, Approval is indeed one of the most sincere voting systems out there. In practice, it's never optimal to vote for one candidate, and not vote for all those candidates you strictly prefer to that candidate.
 
 ## References
 
