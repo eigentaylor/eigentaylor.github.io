@@ -201,7 +201,7 @@ This proof is a bit more involved, so I'll preface it with a short roadmap.
 
 **Proof:** We aim to show that if $$P$$ exists then it implies that Lemma \ref{weakblock} must be satisfied. We do this by contrapositive, showing that if $$B$$ can win in some profile $$P'$$ satisfying the conditions of Lemma \ref{weakblock}, then $$B$$ must win in any profile satisfying the conditions of Lemma \ref{blockcriterion}, our new blocking criterion.
 
-Take a profile $$P'$$ satisfying Lemma \ref{weakblock} where $$B$$ wins. That is, in $$P'$$ we have that $$S$$ ranks $$A>B$$ and every voter outside of $$S$$ ranks $$B$$ first. We will show that moving from $$P'$$ to $$P$$ must maintain $$B$$'s win. It suffices to show that an arbitrary voter, in or outside of $$S$$, can change their ballot from that of $$P'$$ to that of $$P$$.
+Take a profile $$P'$$ satisfying Lemma \ref{weakblock} where $$B$$ wins. That is, in $$P'$$ we have that $$S$$ ranks $$A>B$$ and every voter outside of $$S$$ ranks $$B$$ first. Let us denote $$S'$$ to be the set of all voters outside of $$S$$. We will show that moving from $$P'$$ to $$P$$ must maintain $$B$$'s win. It suffices to show that an arbitrary voter, in or outside of $$S$$, can change their ballot from that of $$P'$$ to that of $$P$$.
 
 We create intermediate profiles.
 
