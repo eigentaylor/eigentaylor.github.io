@@ -158,7 +158,7 @@ Essentially, we know any candidate *can* win by citizen sovereignty. By monotoni
 
 For this section, we assume that we are using a strategyproof voting system that respects citizen sovereignty.
 
-> **Definition:** We say that a set of voters "$$S$$ can block candidate $$B$$ with candidate $$A$$", denoted $$A\triangleright_SB$$, whenever every voter in $$S$$ ranks $$A>B$$, then $$B$$ does not win. We call such a set a **blocking set**.
+> **Definition:** We say that a set of voters "$$S$$ can block candidate $$B$$ with candidate $$A$$", denoted $$A\triangleright_S B$$, whenever every voter in $$S$$ ranks $$A>B$$, then $$B$$ does not win. We call such a set a **blocking set**.
 
 In other words, the voters in $$S$$ can "veto" candidate $$B$$ by ranking some other candidate $$A$$ above $$B$$.
 
