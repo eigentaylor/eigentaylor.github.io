@@ -126,6 +126,8 @@ Note that this is technically "strong monotonicity", but we will simply call it 
 
 This is a very natural property to expect from a voting system, which is not satisfied by many in common use. For example, Ranked Choice Voting or IRV is famously not monotonic. If a voter moves the current winner up to the top of their ranking, then that can change the elimination order, which can result in a previously eliminated candidate defeating the previous winner.
 
+For example, say that, initially, Clark gets the fewest number of votes, and his votes transfer to Alice to make her win. If a Bob supporter moves their votes to Alice, then that might make Bob get last place instead, and his votes may transfer to Clark. Therefore, more support for Alice can make her lose.
+
 We will show that the relative positioning properties we have shown in the previous results imply that our strategyproof voting system *must* be monotonic.
 
 > **Proposition:** If $$f$$ is strategyproof and respects citizen sovereignty, then $$f$$ is **monotonic**.
