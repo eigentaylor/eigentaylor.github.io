@@ -73,7 +73,7 @@ Take an example. If I love Alice, find Bob acceptable, but hate Clark, then my h
 
 All we need is to assume strategyproofness alongside the absurdly minimal assumption of citizen sovereignty, and we will show over the course of this post that this forces the existence of a dictator. To keep things in context, I'm going to be highlighting that fact *constantly*. And I suggest that to keep the motivations of the theorems strong, you should try to play "Where's Waldo" with the dictator. Every step of the proof narrows down where the dictator is hiding.
 
-<img src="/assets/img/waldo_dictator.png" alt="Dictator Waldo standing in line to vote" style="width:100%; max-width:600px;">
+<img src="/assets/img/waldo_dictator.png" alt="Our glorious leader, Dictator Waldo, standing in line to vote" style="width:100%; max-width:600px;">
 
 > **Lemma:** A dictatorship is strategyproof and respects citizen sovereignty.
 
