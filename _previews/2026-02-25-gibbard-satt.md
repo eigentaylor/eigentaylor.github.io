@@ -36,7 +36,7 @@ toc:
 
 Based primarily on the proof included in W.D. Wallis' [The Mathematics of Elections and Voting](https://link.springer.com/book/10.1007/978-3-319-09810-4){:target="_blank"}, with more detail. I also referenced [these lecture notes](https://web.stanford.edu/~ashishg/msande336/aut2021/handouts/lecture5_notes.pdf){:target="_blank"} from Ashish Goel's course at Stanford, and this ["simple proof" by Andrew C. Eggers](https://andy.egge.rs/papers/Eggers_GibbardSatterthwaite.pdf){:target="_blank"}.
 
-The Gibbard-Satterthwaite theorem is a fundamental result in social choice theory, which loosely states that no "reasonable" ranked voting system can be strategyproof. That is, there can always be a situation where a voter can get a better result by voting dishonestly. The exception is a "dictatorship", where the whole election is decided by a single voter, and all other ballots are ignored.
+The Gibbard-Satterthwaite theorem is a fundamental result in social choice theory, which loosely states that no "reasonable" ranked voting system can be strategyproof — there can always be a situation where a voter can get a better result by voting dishonestly. The exception is a "dictatorship", where the whole election is decided by a single voter, and all other ballots are ignored.
 
 Similar to Arrow's impossibility theorem, the intuition is "If we have a voting system that has this nice property, then it's either absurdly undemocratic or must be a dictatorship". In other words, seemingly obvious or desirable properties of a voting system are actually extremely difficult to satisfy when you must aggregate the preferences of multiple voters. The Gibbard-Satterthwaite theorem is focused on the inevitability of strategic voting in ranked voting systems.
 
