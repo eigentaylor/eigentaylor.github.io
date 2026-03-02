@@ -50,7 +50,7 @@ First, we assume the voting system respects "citizen sovereignty".
 
 > **Definition:** We say a voting system respects **citizen sovereignty** if any candidate can win under some profile. For example, if every voter ranks that candidate first.
 
-This may seem like an absurdly weak assumption that any voting system would satisfy, but there are (admittedly very absurd) examples. Take a voting system that chooses the winner based on alphabetical order of candidates. Then, no matter how voters vote, the same candidate will always win. This is a voting system that does not respect citizen sovereignty. This property can be interpreted as "reachability" of candidates: any candidate can be the winner if voters rank them the right way. It is one measure of "responsiveness" for a voting system.
+This may seem like an absurdly weak assumption that any voting system would satisfy, but there are (admittedly very absurd) examples. Take a voting system that chooses the winner based on alphabetical order of candidates. Then, no matter how voters vote, the same candidate will always win. This is a voting system that does not respect citizen sovereignty, but it is technically strategyproof, since no voter can change the outcome by voting differently. This property can be interpreted as "reachability" of candidates: any candidate can be the winner if voters rank them the right way. It is one measure of "responsiveness" for a voting system.
 
 ### Strategyproofness
 
