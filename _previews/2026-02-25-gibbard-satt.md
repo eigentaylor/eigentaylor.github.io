@@ -50,7 +50,7 @@ First, we assume the social choice function respects "citizen sovereignty".
 
 > **Definition:** We say a social choice function respects **citizen sovereignty** if any candidate can win under some profile. For example, if every voter ranks that candidate first.
 
-This may seem like an absurdly weak assumption that any voting system would satisfy, but there are (admittedly very absurd) examples. Take a voting system that chooses the winner based on alphabetical order of candidates. Then, no matter how voters vote, the same candidate will always win. This is a voting system that does not respect citizen sovereignty. Intuitively, this property can be interpreted as "reachability" of candidates. Any candidate can be the winner if voters rank them in the right way. This is one measure of "responsiveness" for a voting system.
+This may seem like an absurdly weak assumption that any voting system would satisfy, but there are (admittedly very absurd) examples. Take a voting system that chooses the winner based on alphabetical order of candidates. Then, no matter how voters vote, the same candidate will always win. This is a voting system that does not respect citizen sovereignty. This property can be interpreted as "reachability" of candidates: any candidate can be the winner if voters rank them the right way. It is one measure of "responsiveness" for a voting system.
 
 ### Strategyproofness
 
@@ -67,7 +67,7 @@ More concisely, the winner in the honest case is at least weakly preferred to th
 
 $$f(P_1)\geq_{R_1}f(P_2)$$
 
-Intuitively, if I change my vote, then the winner can't change to something I like better. Otherwise, I have a beneficial strategy, and the system is not strategyproof.
+The idea is simple: if I change my vote, the winner can't change to something I like better. Otherwise, I have a beneficial strategy, and the system is not strategyproof.
 
 Take an example. If I love Alice, find Bob acceptable, but hate Clark, then my honest ballot would be Alice > Bob > Clark. Now, suppose that Bob is currently winning. If I strategically try to lower Bob, and submit Alice > Clark > Bob, then strategyproofness would mean that doing so could only result in Bob *still* winning, or Clark becoming the new winner. If Alice *could* win by doing that, then that would be a violation of strategyproofness. Any modification of my ballot can only result in a winner who is the same or worse.
 
@@ -79,7 +79,7 @@ All we need is to assume strategyproofness alongside the absurdly minimal assump
 
 **Proof:** If voter $$v$$ is a dictator, then the winner is always the candidate ranked first by the dictator, regardless of how other voters vote. Therefore, the dictator can place any candidate in their first ranking and that candidate will win. Therefore, dictatorship respects citizen sovereignty.
 
-For all voters besides the dictator, ballot adjustments preserve the winner, making dictatorship strategyproof for all voters besides the dictator. The winner can only change if the dictator moves some candidate $$B$$ over their first choice, which we can call $$A$$. If $$R_1$$ has $$A$$ ranked first, and $$R_2$$ has $$B$$ ranked first, then we satisfy that $$f(P_1)=A\geq_{R_1}B=f(P_2)$$. Therefore, dictatorship is strategyproof. That is, the dictator can only make a lower ranked candidate win over their top choice. **QED**.
+For all voters besides the dictator, ballot adjustments preserve the winner, making dictatorship strategyproof for all voters besides the dictator. The winner can only change if the dictator moves some candidate $$B$$ over their first choice, which we can call $$A$$. If $$R_1$$ has $$A$$ ranked first, and $$R_2$$ has $$B$$ ranked first, then we satisfy that $$f(P_1)=A\geq_{R_1}B=f(P_2)$$. Therefore, dictatorship is strategyproof. In other words, the dictator can only make a lower-ranked candidate win over their top choice. **QED**.
 
 However, first, it will be helpful to establish a very useful consequence of strategyproofness on what happens when a voter moves a candidate up or down in their ranking.
 
@@ -110,7 +110,7 @@ We can articulate this more precisely with this Corollary:
 
 **Proof:** We use Lemma \ref{relativepositionlemma} directly. If $$X>_{R_1}A$$, then moving $$X$$ up will not change the relative position of $$A$$ with $$X$$, and by extension any other candidate, so $$A$$ must still win. If $$A>_{R_2}X$$, then moving $$X$$ up did not change the relative position of $$A$$ and $$X$$, since we would need that $$A>_{R_1}X$$, so $$A$$ must still win. **QED**.
 
-It's worth emphasizing the intuition of this Corollary, as it will be crucial to the proof. The first part of the Corollary says that we can't get a better result by moving a candidate preferred to the winner up. That is, lying about how much you like a better candidate can't topple the current winner. For example, if my least favorite candidate, Clark, is currently winning, then adjusting the general order of who I have above Clark can't get me anyone better than Clark. Even if Bob is my second choice, but the best chance I have to beat Clark, then strategically raising him above my favorite Alice, to try to get him some extra points to beat Clark, is not allowed to get me Bob or Alice.
+It's worth emphasizing the intuition of this Corollary, as it will be crucial to the proof. The first part of the Corollary says that we can't get a better result by moving a candidate preferred to the winner up. Concretely, lying about how much you like a better candidate can't topple the current winner. For example, if my least favorite candidate, Clark, is currently winning, then adjusting the general order of who I have above Clark can't get me anyone better than Clark. Even if Bob is my second choice, but the best chance I have to beat Clark, then strategically raising him above my favorite Alice, to try to get him some extra points to beat Clark, is not allowed to get me Bob or Alice.
 
 The second part of the Corollary comes down, intuitively, from the fact that burial strategies can't work. On the surface, the second part of the Corollary does not seem particularly useful. If $$A>_{R_2}X$$, then $$A>_{R_1}X$$ as well, since the voter moved $$X$$ up. So the voter is just moving someone worse than the current winner up but still below that current winner. It would be strange if this could topple the current winner, but it's not immediately obvious why this cannot occur. But the reverse framing where we move from $$R_2\to R_1$$ is more intuitive, where $$X$$ is below $$A$$ and then $$X$$ is moved further down.
 
@@ -132,7 +132,7 @@ We will show that the relative positioning properties we have shown in the previ
 
 **Proof:** If $$X$$ is the only candidate moved, then the relative position of $$A$$ with all candidates, besides potentially $$X$$, is unchanged. Therefore, no candidate apart from $$X$$ or $$A$$ *can* be the new winner by Lemma \ref{relativepositionlemma}. That is, if $$B$$ is the new winner, then $$B\in\{X,A\}$$. **QED**
 
-We see that monotonicity actually follows *extremely* straightforwardly from strategyproofness because of how important the relative position of the winner is between candidates, when moving between profiles.
+Monotonicity falls out quite directly from strategyproofness, driven by how tightly the relative position of the winner between candidates is constrained when moving between profiles.
 
 Further, we can make the observation that moving $$X$$ up can only *possibly* make $$X$$ win if $$X$$ is moved from *under* the current winner to *above* that current winner.
 
@@ -160,11 +160,11 @@ For this section, we assume that we are using a strategyproof voting system that
 
 > **Definition:** We say that a set of voters $$S$$ can block candidate $$B$$ with candidate $$A$$", denoted $$A\triangleright_SB$$, whenever every voter in $$S$$ ranks $$A>B$$, then $$B$$ does not win. We call such a set a **blocking set**.
 
-That is, the voters in $$S$$ can "veto" candidate $$B$$ by ranking some other candidate $$A$$ above $$B$$.
+In other words, the voters in $$S$$ can "veto" candidate $$B$$ by ranking some other candidate $$A$$ above $$B$$.
 
 For example, if $$S$$ is the set of all voters and every voter ranks $$A>B$$, then $$f$$ will prefer $$A>B$$. As another example, though it technically does not fall under the purview of our assumptions (but may benefit for intuition), under plurality voting, a strict majority (ex. 61 Senators out of 100) can block any bill by voting no. While many voting systems have a notion of a blocking set, many of the results we prove will rely on the strategyproof assumptions, and results proved in the previous section, such as monotonicity and Pareto efficiency.
 
-The idea we are building up to is that under the strategyproof assumption, any blocking set must contain a dictator. That is, while many other systems might allow a group of voters to be able to veto an outcome, strategyproofness will force one of those voters to be the Waldo we're looking for: the dictator.
+The idea we are building up to is that under the strategyproof assumption, any blocking set must contain a dictator. While many other systems allow a group of voters to veto an outcome, strategyproofness forces one of those voters to be the Waldo we're looking for: the dictator.
 
 > **Remark:**
 >
@@ -201,7 +201,7 @@ This proof is a bit more involved, so I'll preface it with a short roadmap.
 
 **Proof:** We aim to show that if $$P$$ exists then it implies that Lemma \ref{weakblock} must be satisfied. We do this by contrapositive, showing that if $$B$$ can win in some profile $$P'$$ satisfying the conditions of Lemma \ref{weakblock}, then $$B$$ must win in any profile satisfying the conditions of Lemma \ref{blockcriterion}, our new blocking criterion.
 
-Take a profile $$P'$$ satisfying Lemma \ref{weakblock} where $$B$$ wins. That is, in $$P'$$ we have that $$S$$ ranks $$A>B$$ and every voter outside of $$S$$ ranks $$B$$ first. Let us denote $$S'$$ to be the set of all voters outside of $$S$$. We will show that moving from $$P'$$ to $$P$$ must maintain $$B$$'s win. It suffices to show that an arbitrary voter, in or outside of $$S$$, can change their ballot from that of $$P'$$ to that of $$P$$.
+Take a profile $$P'$$ satisfying Lemma \ref{weakblock} where $$B$$ wins, meaning $$S$$ ranks $$A>B$$ and every voter outside of $$S$$ ranks $$B$$ first. Let us denote $$S'$$ to be the set of all voters outside of $$S$$. We will show that moving from $$P'$$ to $$P$$ must maintain $$B$$'s win. It suffices to show that an arbitrary voter, in or outside of $$S$$, can change their ballot from that of $$P'$$ to that of $$P$$.
 
 We create intermediate profiles.
 
@@ -272,7 +272,7 @@ which has $$N$$ ranking $$C$$ first and $$B$$ second, every voter outside of $$N
 
 ## From Blocking to Dictatorship
 
-> **Definition:** We call $$S$$ a *dictating set* if $$A\triangleright_S B$$ for any pair of candidates $$A,B$$. That is, if $$S$$ can block any candidate from winning using any other.
+> **Definition:** We call $$S$$ a *dictating set* if $$A\triangleright_S B$$ for any pair of candidates $$A,B$$. Equivalently, $$S$$ can block any candidate from winning using any other.
 
 By interpreting "blocking" as a sort of "veto power", we can see that a dictator has a similar sort of power. The ability to choose the winner by simply ranking them first is equivalent to making any candidate lose by ranking them below someone else. Our goal is to show that being able to block *one* candidate means the set can block *all* candidates.
 
@@ -282,7 +282,7 @@ The power of Lemma \ref{partitionblock} is that we can choose *any* partition. L
 
 > **Corollary:** If $$A\triangleright_S B$$ and $$C$$ is any other candidate, then $$A\triangleright_S C$$ and $$C\triangleright_S B$$. \label{thirdblock}
 
-That is, if $$A\triangleright_S B$$, then $$S$$ can block any third candidate $$C$$ with $$A$$, and $$S$$ can block $$B$$ with any third candidate $$C$$.
+More precisely, if $$A\triangleright_S B$$, then $$S$$ can block any third candidate $$C$$ with $$A$$, and $$S$$ can block $$B$$ with any third candidate $$C$$.
 
 **Proof:** Using Lemma \ref{partitionblock}:
 
@@ -311,7 +311,7 @@ $$B\triangleright_S C\implies B\triangleright_S A$$
 
 **QED**.
 
-At this point, we have essentially shown that the ability to block a single candidate with another actually implies far more power, when we have strategyproofness. In fact, it can block any candidate with any other. In that sense, $$S$$ can make all candidates lose. Therefore, if $$S$$ ranks a candidate $$A$$ over all others, then all other candidates must lose, and so $$A$$ wins. That is, $$S$$ exactly chooses the result of the election, making it a sort of collection of voters who together act as a dictator.
+At this point, we have essentially shown that the ability to block a single candidate with another actually implies far more power, when we have strategyproofness. In fact, it can block any candidate with any other. In that sense, $$S$$ can make all candidates lose. Therefore, if $$S$$ ranks a candidate $$A$$ over all others, then all other candidates must lose, and so $$A$$ wins. In effect, $$S$$ completely determines the outcome of the election, acting as a coalition that collectively dictates the result.
 
 However, Lemma \ref{partitionblock} will land the crushing blow: any partition of a blocking set contains a blocking set. Perhaps you can see where this is going!
 
@@ -348,7 +348,7 @@ Waldo is cornered now. If $$S$$ is a dictating set, we can place each member in 
 
 Take the partition $$S=\{v_1\}\sqcup\{v_2\}\sqcup\ldots\sqcup\{v_n\}$$. By Corollary \ref{dictatepartitionk}, at least one of the $$\{v_i\}$$ is a dictating set, which means that $$v_i$$ is a dictator. Therefore, $$S$$ contains a dictator. **QED**.
 
-Therefore, we can equate the existence of a blocking set with that of a dictating set and therefore with that of a dictator.
+This lets us equate the existence of a blocking set with that of a dictating set, and hence with the existence of a dictator.
 
 We can finally prove the theorem.
 
@@ -369,7 +369,7 @@ The proof of the Gibbard-Satterthwaite theorem comes down to a few essential ele
 5. A blocking set doesn't just block a single candidate, but can block all candidates, making it dictatorial.
 6. Since we can reduce any dictating (blocking) set into a strictly smaller dictating set, we can show the existence of a single dictator.
 
-While most steps follow relatively straightforwardly from the intuitive idea of a blocking set, the real key to the proof is that any blocking set contains a strictly smaller blocking set when we have strategyproofness. This heavily relied on the fact that strategyproofness is so strict.
+While most steps follow naturally from the notion of a blocking set, the real key to the proof is that any blocking set contains a strictly smaller blocking set under strategyproofness. This heavily relied on the fact that strategyproofness is so strict.
 
 Eggers puts it in an interesting way: "strategy-proofness implies preference-proofness". The way strategyproofness is often framed is that being dishonest can't get you a better result. But what does being "honest" or "dishonest" even mean? If you watch a debate between the candidates and decide to adjust your vote based on what you learn, then which vote is the honest one?
 
@@ -381,7 +381,7 @@ Strategyproofness therefore implies a strong lack of responsiveness to ranked ba
 
 We conclude the post with an informal discussion of Approval voting. I have discussed [the nuances of "strategyproofness" in Approval voting](../avstratproof){:target="_blank"} in a previous post, but I think it warrants a discussion here as well, since it is an interesting exception to the Gibbard-Satterthwaite theorem.
 
-Gibbard-Satterthwaite only applies to ranked voting systems. But there are other types of voting systems, such as approval voting, where voters can give independent votes to candidates. Although Gibbard's more general theorem still applies to Approval voting, [Approval in particular has been proven to be strategyproof under a strict assumption about voter preferences](https://www.jstor.org/stable/1955105){:target="_blank"}, which is that voters have "dichotomous preferences". That is, voters have a set of candidates they approve of and a set of candidates they disapprove of, and they are indifferent between all candidates in the same set.
+Gibbard-Satterthwaite only applies to ranked voting systems. But there are other types of voting systems, such as approval voting, where voters can give independent votes to candidates. Although Gibbard's more general theorem still applies to Approval voting, [Approval in particular has been proven to be strategyproof under a strict assumption about voter preferences](https://www.jstor.org/stable/1955105){:target="_blank"}, which is that voters have "dichotomous preferences": they have a set of candidates they approve of and a set they disapprove of, and are indifferent between all candidates within each group.
 
 The key is that Approval is also strictly monotonic. If a voter approves of a candidate, then that candidate is strictly better off than if the voter disapproves of that candidate. Voting for that candidate can break any tie in their favor, push them into a tie with first place, increase their winning margin, or fail to help them win. But it can never make them go from winning to losing. The optimal strategy, then, is to approve all acceptable candidates and disapprove of all unacceptable candidates. This is strategyproof under the dichotomous preferences assumption, but does not apply when voters have three or more levels of preference.
 
@@ -392,7 +392,7 @@ The intuition for the proof of this is relatively straightforward. If a voter ha
 
 Therefore, there is only one optimal strategy under the dichotomous assumption, which is to approve of all acceptable candidates and disapprove of all unacceptable candidates, which is a sincere strategy. Thus, approval voting is strategyproof under the dichotomous preferences assumption.
 
-This can be extended slightly further, however. If you [decide that, as a voter, your only goal is to elect **any** candidate you deem "acceptable", and no other candidates, then approval voting is strategyproof even if you have more than two levels of preference](../avstratproof){:target="_blank"}. That is, you essentially pretend you have dichotomous preferences by treating all candidates you deem "acceptable" as equally good, and all candidates you deem "unacceptable" as equally bad. This is an obviously very strong assumption about voter preferences, but it is a framing that any voter can choose to adopt.
+This can be extended slightly further, however. If you [decide that, as a voter, your only goal is to elect **any** candidate you deem "acceptable", and no other candidates, then approval voting is strategyproof even if you have more than two levels of preference](../avstratproof){:target="_blank"}. You essentially adopt dichotomous preferences by treating all candidates you deem "acceptable" as equally good and all candidates you deem "unacceptable" as equally bad. This is an obviously very strong assumption about voter preferences, but it is a framing that any voter can choose to adopt.
 
 Calling Approval strategyproof in practice is a bit of a stretch. However, I find it endlessly fascinating that there is indeed a non-dictatorial voting system that is strategyproof, albeit under a very strong assumption about voter preferences.
 
