@@ -91,7 +91,7 @@ And moving from $$P_2\to P_1$$,
 
 $$f(P_2)=X\geq_{R_2}A=f(P_1)$$
 
-But if the relative position of $$A$$ and $$X$$ is unchanged, then that precisely means that $$X\geq_{R_2}A$$ if and only if $$X\geq_{R_1}A$$. That is, $$X$$ is now ranked above $$A$$ in $$R_2$$ if and only if it was ranked above $$A$$ in $$R_1$$. Otherwise, $$A$$ is above $$X$$ in both. Therefore,
+But if the relative position of $$A$$ and $$X$$ is unchanged, then that precisely means that $$X\geq_{R_2}A$$ if and only if $$X\geq_{R_1}A$$. That is, $$X$$ is now ranked above $$A$$ in $$R_2$$ if and only if it was ranked above $$A$$ in $$R_1$$. Otherwise, $$A$$ is above $$X$$ in both. Thus, since moving from $$P_2$$ to $$P_1$$ implies $$X\geq_{R_2}A$$, and the relative position of $$A$$ and $$X$$ is unchanged, we also have $$X\geq_{R_1}A$$. Therefore, since we also know from moving from $$P_1$$ to $$P_2$$ that we have $$X\geq_{R_1}A$$, we have both
 
 $$X\geq_{R_2}A\implies X\geq_{R_1}A\geq_{R_1}X$$
 
@@ -313,7 +313,7 @@ At this point, we have essentially shown that the ability to block a single cand
 
 However, Lemma \ref{partitionblock} will land the crushing blow: any partition of a blocking set contains a blocking set. Perhaps you can see where this is going!
 
-> **Proposition:** If $$A\triangleright_S B$$ for any single pair of two candidates, then $$S$$ is a dictating set. Therefore, $$S$$ is a dictating set if and only if $$A\triangleright_S B$$ for any single pair of two candidates. \label{dictateiffsingleblock}
+> **Proposition:** If $$A\triangleright_S B$$ for any single pair of two candidates, then $$S$$ is a dictating set. Therefore, $$S$$ is a dictating set if and only if $$A\triangleright_S B$$ for any single pair of two candidates. In other words, being able to block one candidate with another is equivalent to being able to block any candidate with any other. \label{dictateiffsingleblock}
 
 **Proof:** We must show that given $$A\triangleright_S B$$, then $$C\triangleright_S D$$ for any other pair of candidates.
 
@@ -377,9 +377,9 @@ Strategyproofness therefore implies a strong lack of responsiveness to ranked ba
 
 ### The Approval Voting Exception
 
-We conclude the post with an informal discussion of Approval voting.
+We conclude the post with an informal discussion of Approval voting. I have discussed [the nuances of "strategyproofness" in Approval voting](../avstratproof){:target="_blank"} in a previous post, but I think it warrants a discussion here as well, since it is an interesting exception to the Gibbard-Satterthwaite theorem.
 
-Now, Gibbard-Satterthwaite only applies to ranked voting systems. But there are other types of voting systems, such as approval voting, where voters can give independent votes to candidates. Although Gibbard's more general theorem still applies to Approval voting, [Approval in particular has been proven to be strategyproof under a strict assumption about voter preferences](https://www.jstor.org/stable/1955105){:target="_blank"}, which is that voters have "dichotomous preferences". That is, voters have a set of candidates they approve of and a set of candidates they disapprove of, and they are indifferent between all candidates in the same set.
+Gibbard-Satterthwaite only applies to ranked voting systems. But there are other types of voting systems, such as approval voting, where voters can give independent votes to candidates. Although Gibbard's more general theorem still applies to Approval voting, [Approval in particular has been proven to be strategyproof under a strict assumption about voter preferences](https://www.jstor.org/stable/1955105){:target="_blank"}, which is that voters have "dichotomous preferences". That is, voters have a set of candidates they approve of and a set of candidates they disapprove of, and they are indifferent between all candidates in the same set.
 
 The key is that Approval is also strictly monotonic. If a voter approves of a candidate, then that candidate is strictly better off than if the voter disapproves of that candidate. Voting for that candidate can break any tie in their favor, push them into a tie with first place, increase their winning margin, or fail to help them win. But it can never make them go from winning to losing. The optimal strategy, then, is to approve all acceptable candidates and disapprove of all unacceptable candidates. This is strategyproof under the dichotomous preferences assumption, but does not apply when voters have three or more levels of preference.
 
@@ -394,7 +394,7 @@ This can be extended slightly further, however. If you [decide that, as a voter,
 
 Calling Approval strategyproof in practice is a bit of a stretch. However, I find it endlessly fascinating that there is indeed a non-dictatorial voting system that is strategyproof, albeit under a very strong assumption about voter preferences.
 
-A common theme of voting theory is that aggregating ranked preferences is extremely difficult to do so fairly and without potential for manipulation. Trying to impose stability, or make manipulation suboptimal collapses into needing to project onto the preferences of just one voter. By simply allowing voters to give independent votes, and restricting to a simple two-tiered preference, Approval voting makes expressing honest two-tiered preferences the optimal strategy. But only for exactly that: two-tiered preferences. If voters have more complex preferences, then deciding where to draw the line between "acceptable" and "unacceptable" becomes a strategic question, and the strategyproofness of Approval voting breaks down.
+A common theme of voting theory is that aggregating ranked preferences is extremely difficult to do so fairly and without potential for manipulation. Trying to impose stability, or make manipulation suboptimal collapses into needing to project onto the preferences of just one voter. By simply allowing voters to give independent votes, and restricting to a simple two-tiered preference, Approval voting makes expressing honest two-tiered preferences, like acceptable and unacceptable, the optimal strategy. But only for exactly that: two-tiered preferences. If voters have more complex preferences, then deciding where to draw the line between "acceptable" and "unacceptable" becomes a strategic question, and the strategyproofness of Approval voting breaks down. However, Approval is indeed one of the most sincere voting systems out there. In practice, it's never optimal to vote for one candidate, and not vote for all those candidates you strictly prefer to that candidate.
 
 ## References
 
