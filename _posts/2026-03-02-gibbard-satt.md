@@ -44,6 +44,8 @@ Similar to Arrow's impossibility theorem, the intuition is "If we have a voting 
 
 A social choice function is a function that takes in a profile of votes (a list of voters' rankings of candidates) and outputs a single winner. However, we can think of this as a voting system, where voters input their ballots and the voting system spits out a winner. We will be working with ranked voting systems, where voters must strictly rank candidates without ties.
 
+We will be assuming that our function is deterministic (i.e. no randomness involved). There are, in fact, a number of methods with random elements that simply cannot be gamed. For example, if we randomly select one ballot out of all cast, and the top ranked candidate is declared the winner, then there's never an incentive to lie, in case it's your ballot which is selected.
+
 We will start with two very limited assumptions about our voting system, including the key strategyproofness property, and show that strategyproofness is so strict that it forces the existence of a dictator.
 
 First, we assume the voting system respects "citizen sovereignty".
