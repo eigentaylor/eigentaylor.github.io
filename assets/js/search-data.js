@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-it-39-s-time-to-ditch-rcv-embrace-approval-voting",
+        },{id: "post-the-gibbard-satterthwaite-theorem",
+        
+          title: "The Gibbard-Satterthwaite Theorem",
+        
+        description: "A walkthrough and proof of the theorem that proves ranked voting systems must be susceptible to strategic voting.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/gibbard-satt/";
+          
+        },
+      },{id: "post-it-39-s-time-to-ditch-rcv-embrace-approval-voting",
         
           title: "It&#39;s Time to Ditch RCV, Embrace Approval Voting",
         
