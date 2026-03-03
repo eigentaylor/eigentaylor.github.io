@@ -41,6 +41,7 @@ the best way to contact me is through discord (@eigentaylor) but feel free to [e
 
 personal favorites:
 
+- [It's Time to Ditch RCV, Embrace Approval Voting](./blog/ditch-rcv){:target="_blank"}
 - [Why do we row reduce? What IS a matrix?](./blog/rref){:target="_blank"}
 - [Constant Coefficient ODEs Made Simple with Linear Operators](./blog/linalglinconstcoef){:target="_blank"}
 - [Shortcuts for Finding Eigenvalues and Eigenvectors](./blog/eigentricks){:target="_blank"}
