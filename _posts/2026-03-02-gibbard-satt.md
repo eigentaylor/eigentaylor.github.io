@@ -85,7 +85,7 @@ For all voters besides the dictator, ballot adjustments preserve the winner, mak
 
 However, first, it will be helpful to establish a very useful consequence of strategyproofness on what happens when a voter moves a candidate up or down in their ranking.
 
-> **Lemma:** If $$f$$ is strategyproof, and we have a profile $$P_1$$ where $$f(P_1)=A$$, and we move from $$P_1\to P_2$$ by changing the ranking of a single voter from $$R_1\to R_2$$ such that another candidate $$X$$ maintains the same relative position as $$A$$, then $$X$$ cannot win in $$P_2$$. \label{relativepositionlemma}
+> **Lemma:** If $$f$$ is strategyproof, and we have a profile $$P_1$$ where $$f(P_1)=A$$, and we move from $$P_1\to P_2$$ by changing the ranking of a single voter from $$R_1\to R_2$$ such that another candidate $$X$$ maintains the same relative position to $$A$$, then $$X$$ cannot win in $$P_2$$. \label{relativepositionlemma}
 
 **Proof:** Suppose for contradiction that $$f(P_1)=A$$ and $$f(P_2)=X$$ for $$X\neq A$$. Then, strategyproofness tells us that from moving from $$P_1\to P_2$$,
 
