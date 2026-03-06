@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: A Guide to Approval Voting Strategy
-date: 2026-03-04
+date: 2026-03-06
 description: An explanation of "the leader rule" strategy in approval voting, and its positive ramifications.
 giscus_comments: true
 importance: 2
@@ -43,9 +43,9 @@ This post is based on a paper by [Jean-François Laslier](https://journals.sagep
 
 In a [previous post](../avstratproof){:target="_blank"}, I gave an example to show that Approval voting is not technically strategyproof, but can be made so under a particular mindset that I called a "Dichotomous Goal". I explained how strategy simplifies down into drawing a line of acceptability, and once that line is set then the choice for how to vote is clear. In this post, we will explore a specific strategy called "the leader rule," which is a practical and effective way to help draw that line of acceptability optimally based on the perceived front-runners.
 
-A common complaint I have heard about Approval voting is that, while it incentivizes voters to approve all candidates they truly like, it might result in regret if voters choose to approve the candidates they are lukewarm about, but are strongly better than the candidates that they truly hate. What happens when a voter votes for a candidate they only voted for out of fear of the worst, and that candidate ends up winning? Sure, I can vote for my favorite, and won't vote for my least favorite, but what do I do about the candidate in the middle?
+A common complaint I have heard about Approval voting is that, while it incentivizes voters to approve all candidates they truly like, it might result in regret if voters choose to approve the candidates they are lukewarm about, but are strongly better than the candidates that they truly hate. What happens when a voter approves a candidate they only voted for out of fear of the worst, and that candidate ends up winning? Sure, I can vote for my favorite, and won't vote for my least favorite, but what do I do about the candidate in the middle?
 
-The leader rule is a strategy that helps mitigate this concern by focusing the voter's approval on the most relevant candidates in the election: the front-runners.
+The leader rule is a strategy that helps mitigate this concern by focusing the voter's approval on the most relevant candidates in the election: the front-runners. By taking into consideration who the most likely to win candidates are, we balance the risk of voting for too few candidates (which could lead to a worse outcome) and voting for too many candidates (which could lead to regret if a less preferred candidate wins).
 
 Three common criticisms (I might call "myths") of Approval voting I hear are that
 
@@ -86,7 +86,7 @@ The basic idea is
 1. to maximize the impact of your vote on the most likely pivotal outcomes of the election
 2. vote in a way that promotes precisely better than expected outcomes
 
-- By approving of all candidates you prefer to the leader, you strictly increase the chances of a more preferred candidate winning. Even if they have no chance, you still strictly help them overtake or maximize the distance between them and everyone you didn't approve. It's a "what the hell" vote that can't hurt you. Who knows, maybe other voters find them more appealing than the leader, like you, and when you all approve of them, they get a boost that helps them overtake the leader!
+- By approving of all candidates you prefer to the leader, you strictly increase the chances of a more preferred candidate winning. Even if they have no chance, you still strictly help them overtake or maximize the distance between them and everyone you didn't approve. It's a "why not" vote that can't hurt you. Who knows, maybe other voters find them more appealing than the leader, like you, and when you all approve of them, they get a boost that helps them overtake the leader!
 - If you prefer the challenger to the leader, then you approve of the challenger since you prefer them to the leader, and do not approve of the leader.
 - If you prefer the leader to the challenger, you approve of the leader by the rule. And since the challenger is below the leader, you do not approve of the challenger.
 - For anyone you prefer less than the leader, you do not approve of them, and that has the effect of your vote hurting everyone worse than the outcome you're already expecting.
@@ -171,9 +171,9 @@ We see that extending approval to that second least preferred candidate is optim
 
 The leader rule thus gives voters a clear and principled way to cast a ballot that maximizes their impact in Approval voting elections, channeling their approvals toward the candidates most relevant to the outcome.
 
-In [a future post](../leader-dynamics){:target="_blank"}, I analyze Alaska 2022 using the leader rule, and I found something interesting. Under certain assumptions, Begich is the only candidate who could possibly win if every voter applies the leader rule. This basically comes down to the fact that Begich is the Condorcet winner, and his match-ups against the other candidates are the strongest ones. Therefore, in response to any other leader, a majority would approve of Begich because they prefer him to any other leader. Further, the data also indicates that Palin, as the Condorcet loser, could never win under the leader rule.
+In [a future post (forthcoming)](../leader-dynamics){:target="_blank"}, I analyze Alaska 2022 using the leader rule, and I found something interesting. Under certain assumptions, Begich is the only candidate who could possibly win if every voter applies the leader rule. This basically comes down to the fact that Begich is the Condorcet winner, and his match-ups against the other candidates are the strongest ones. Therefore, in response to any other leader, a majority would approve of Begich because they prefer him to any other leader. Further, the data also indicates that Palin, as the Condorcet loser, could never win under the leader rule.
 
-The question is if Democratic voters might "regret" also approving Begich in the case where their support of Begich is what pushes him to victory. I argue no. Suppose that Palin is the leader the morning of the election. Regardless of who the challenger is, if the Peltola supporters go into the voting booth expecting Palin to win, they will vote defensively for Peltola and Begich in response to that expectation. My analysis indicates that Palin would get less than 50%, Peltola would get a meek majority of ballots, but Begich would get potentially over 60% of ballots, which would be a landslide victory. See [this post](../leader-dynamics){:target="_blank"} for my evidence of this claim when it comes out.
+The question is if Democratic voters might "regret" also approving Begich in the case where their support of Begich is what pushes him to victory. I argue no. Suppose that Palin is the leader the morning of the election. Regardless of who the challenger is, if the Peltola supporters go into the voting booth expecting Palin to win, they will vote defensively for Peltola and Begich in response to that expectation. My analysis indicates that Palin would get less than 50%, Peltola would get a meek majority of ballots, but Begich would get potentially over 60% of ballots, which would be a landslide victory. See [this post (forthcoming)](../leader-dynamics){:target="_blank"} for my evidence of this claim when it comes out.
 
 From their perspective, they went into the booth expecting their least favorite candidate, and then in a complete upset, their top two candidates win a majority of ballots, and their least favorite is in last place. Begich, their second favorite, winning is certainly a more preferable outcome than Palin. Further, it is hard to regret your vote as an individual when the difference between Peltola and Begich is so significant.
 
@@ -186,11 +186,11 @@ I gave the table for the four most common voter types in Alaska 2022 with the as
 | Voter Type               | Peltola Leader (Begich Challenger) | Begich Leader (Peltola Challenger) |
 |--------------------------|------------------------------------|------------------------------------|
 | Palin > Begich > Peltola | Palin, Begich                      | Palin, Begich                      |
-| Begich > Palin > Peltola | Begich, Palin                      | Begich                            |
-| Begich > Peltola > Palin | Begich                             | Begich                      |
-| Peltola > Begich > Palin | Peltola                           | Peltola |
-| Palin > Peltola > Begich | Palin, Peltola                   | Palin, Peltola                    |
-| Peltola > Palin > Begich | Peltola                           | Peltola, Palin                    |
+| Begich > Palin > Peltola | Begich, Palin                      | Begich                             |
+| Begich > Peltola > Palin | Begich                             | Begich                             |
+| Peltola > Begich > Palin | Peltola                            | Peltola                            |
+| Palin > Peltola > Begich | Palin, Peltola                     | Palin, Peltola                     |
+| Peltola > Palin > Begich | Peltola                            | Peltola, Palin                     |
 
 In these two scenarios, we see that
 
@@ -362,7 +362,7 @@ Note that this actually means that your optimal ballot under the leader rule is 
 
 ## References
 
-- Brams, S. J., & Fishburn, P. C. (1978). Approval Voting. The American Political Science Review, 72(3), 831–847. [https://doi.org/10.2307/1955105](https://doi.org/10.2307/1955105){:target="_blank"}
+Brams, S. J., & Fishburn, P. C. (1978). Approval Voting. The American Political Science Review, 72(3), 831–847. [https://doi.org/10.2307/1955105](https://doi.org/10.2307/1955105){:target="_blank"}
 
 Laslier, J. F. (2009). The Leader Rule: A Model of Strategic Approval Voting in a Large Electorate. *Journal of Theoretical Politics*, 21(1), 113-136. [https://journals.sagepub.com/doi/10.1177/0951629808097286](https://journals.sagepub.com/doi/10.1177/0951629808097286){:target="_blank"}
 
