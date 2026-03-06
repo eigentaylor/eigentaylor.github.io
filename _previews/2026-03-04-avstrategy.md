@@ -19,6 +19,8 @@ toc:
   - name: Introduction
   - name: The Leader Rule
     subsections:
+      - name: An Example of Application
+      - name: Applying the Leader Rule to Alaska 2022
       - name: Other Alaska Possibilities
   - name: Contrast to the Dichotomous Goal
   - name: The Florida Tremble
@@ -36,7 +38,7 @@ toc:
 
 ## Introduction
 
-> Approval voting (AV) is a voting method where each voter can "approve" of as many candidates as they like, and the candidate with the most approvals wins.
+> Approval voting is a voting method where each voter can "approve" of as many candidates as they like, and the candidate with the most approvals wins.
 
 This post is based on a paper by [Jean-François Laslier](https://journals.sagepub.com/doi/10.1177/0951629808097286){:target="_blank"}, which introduces the leader rule and analyzes its properties. I would like to give a special thanks to Rob LeGrand for bringing this strategy to my attention. LeGrand, as far as we know, came up with this strategy back in 2002, and Laslier discovered it independently and published about it in his 2009 paper. I find this interesting to bring up, because it shows that this strategy is not just some random "someone just thought of it" strategy, but rather something natural, intuitive, and fundamentally optimal that multiple people have independently discovered.
 
@@ -76,7 +78,9 @@ The first observation here is that this strategy is "sincere", which we should f
 
 > **Sincerity**: An approval vote is **sincere** if for any candidate you *do* vote for, you also approve all candidates you strictly prefer to them. That is, you do not leave any "holes" in your ballot between candidates you voted for. Alternatively, a sincere ballot is one where you draw a "line of acceptability" somewhere in your ranking, and approve everyone above that line.
 
-For example, if I prefer A > B > C > D, then voting for A and C would be insincere, because I left a hole between A and C by not voting for B. The leader rule says this is *never* optimal, in practice. The leader rule says you should always draw that line of acceptability right below the leader or right above (depending on how you feel about the most important race between the leader and challenger).
+For example, if I prefer A > B > C > D, then voting for A and C would be insincere, because I left a hole between A and C by not voting for B. Some people really don't like the term "sincere", as it implies there are multiple "sincere" ballots, but this is the terminology used by [Approval voting theorists](https://doi.org/10.2307/1955105){:target="_blank"}. We distinguish between the idea of an "honest ballot" (the approval ballot most truly consistent with the voter's inherent sense of acceptability towards the candidates) and one of many "sincere" ballots, which are consistent with some projection of the voter's nuanced ranking down to any "line of acceptability".
+
+The leader rule says leaving a hole in your ballot is *never* optimal, in practice. You should always draw that line of acceptability right below the leader or right above (depending on how you feel about the most important race between the leader and challenger).
 
 The basic idea is
 
@@ -89,6 +93,8 @@ The basic idea is
 - For anyone you prefer less than the leader, you do not approve of them, and that has the effect of your vote hurting everyone worse than the outcome you're already expecting.
 
 The ultimate effect is that you have an impact on the most important race: between the leader and the challenger. You also help push forward any candidates you prefer to the leader. This has the effect of "bringing up" the election towards an outcome better than or equal to what you expect to be the most likely outcome (the leader winning). You then contribute to the best possible outcome, from your perspective.
+
+### An Example of Application
 
 I was recently talking to someone in the electoral reform space. They mentioned that they would be conflicted about how to vote under Approval voting in the 2012 US Presidential election. They said that they preferred Gary Johnson > Mitt Romney > Barack Obama, and thus voted for Romney under plurality. But there's ambiguity in Approval over how they should vote, if they actually want to vote for a winning candidate. Here was a loose summary of their thought process:
 
@@ -305,9 +311,9 @@ But when you have no idea who the leader and challenger are, then it's very hard
 
 ### The Power of the Honest Ballot
 
-When you choose an "honest ballot", you optimize away from getting the *most* preferred candidate possible, and instead optimize on getting any *acceptable* candidate. For some, like myself, this is just as good. As long as an acceptable candidate wins, I don't really care so much about which one wins.
+When you choose an "honest ballot", you optimize away from getting the *most* **preferred** candidate possible, and instead optimize on getting *any* **acceptable** candidate. For some, like myself, this is just as good. As long as an acceptable candidate wins, I don't really care so much about which one wins. But I understand this is not a universal experience.
 
-An "honest ballot" also optimally impacts the share and margin between candidates, in a way that the Leader rule fails to do. An honest ballot strictly increases the gap between all candidates you approve of, and all candidates you do not approve of. It is an honest signal of your true preferences, and your voice *will* be heard in the election results *directly* through the approval percentages.
+An "honest ballot" optimally impacts the share and margin between candidates, in a way that the Leader rule fails to do. An honest ballot strictly increases the gap between all candidates you approve of, and all candidates you do not approve of. It is an honest signal of your true preferences, and your voice *will* be heard in the election results *directly* through the approval percentages.
 
 By approving only Peltola, you either strengthen her lead or narrow the gap between her and everyone else. By extending approval to Begich, you don't narrow the gap between Peltola and Begich anymore, but you do widen the gap between Palin and Begich (i.e. Palin and everyone else). The one that feels more "honest" to you is the one that is more optimal in achieving an acceptable outcome. This is the key piece of information that ordinal voting methods fail to capture. Peltola voters who approve of Begich are distinct from Peltola voters who do not approve of Begich, but still prefer Begich to Palin.
 
@@ -353,6 +359,8 @@ In summary, your ballot comes down to two rules:
 Note that this actually means that your optimal ballot under the leader rule is sincere! It's not optimal to have any "holes" in your approvals. For any candidate you approve, you should also approve all candidates you prefer to them.
 
 ## References
+
+- Brams, S. J., & Fishburn, P. C. (1978). Approval Voting. The American Political Science Review, 72(3), 831–847. [https://doi.org/10.2307/1955105](https://doi.org/10.2307/1955105){:target="_blank"}
 
 Laslier, J. F. (2009). The Leader Rule: A Model of Strategic Approval Voting in a Large Electorate. *Journal of Theoretical Politics*, 21(1), 113-136. [https://journals.sagepub.com/doi/10.1177/0951629808097286](https://journals.sagepub.com/doi/10.1177/0951629808097286){:target="_blank"}
 
