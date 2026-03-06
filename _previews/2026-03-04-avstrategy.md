@@ -244,7 +244,7 @@ In my view, however, the most surprising aspect of the leader rule is its majori
 
 ## Condorcet-efficiency of the Leader Rule
 
-One might ask "what happens if everyone uses the leader rule, all at once?" Laslier analyzes this in his paper, and [I tackle this question in more depth in a future post](../leader-dynamics){:target="_blank"}, but the short answer is that
+One might ask "what happens if everyone uses the leader rule, all at once?" Laslier analyzes this in his paper, and [I tackle this question in much more depth in a future post](../leader-dynamics){:target="_blank"}, but the short answer is that
 
 1. First, we have to assume that all voters have the same common perception of the leader and challenger.
 2. The leader rule only has one unique equilibrium when there exists a unique Condorcet winner, and the leader is that Condorcet winner. If the leader is not a unique Condorcet winner, then a new candidate (who beats the leader head-to-head) will get more approvals than the current leader, and overtake them.
@@ -262,30 +262,38 @@ This means that after an iteration of every voter using the leader rule, the app
 
 Thus, if the leader is a unique Condorcet winner, then after the iteration they will have over 50% approvals, and everyone else will have under 50% approvals. Therefore, the leader remains the leader, and must strictly win. The equilibrium challenger will be the candidate with the least bad head-to-head result against the leader.
 
-In conjunction with the previous section, what we see is that the way approval voting reacts with the way humans make decisions leads to a natural majoritarian outcome when everyone uses the leader rule. In that way, Approval voting is more majoritarian when voters are strategic, which significantly dampens the common criticism that Approval voting is both non-majoritarian and susceptible to strategic voting. In particular, if every voter applies the leader rule, then the outcome is the same or strictly better than the expectation of the voters going into the election.
+In conjunction with the previous section, what we see is that the way approval voting reacts with the way humans make decisions leads to a natural majoritarian outcome when everyone uses the leader rule. In that way, Approval voting is more majoritarian when voters are strategic, which significantly dampens the common criticism that Approval voting is both non-majoritarian and susceptible to strategic voting. In particular, if every voter applies the leader rule, then the outcome is the same or strictly better, in a majoritarian sense, than the expectation of the voters going into the election.
 
 ## What if my information is faulty?
 
-The fundamental assumption of the leader rule is that voters have some information on who the front-runners are, and thus can identify the leader and challenger. But, chances are, you maybe don't have the most detailed polls and news coverage of the school board election you're voting in. Or maybe you do, but the polls aren't exactly Nate Silver-level accurate. What if your information is wrong? What if you misidentify the leader and challenger? What if there are three or four candidates who all seem viable, and you can't identify the leader and challenger at all?
+It's important to contextualize the fundamental assumptions of the leader rule. To apply it, we are assuming that voters have some information on who the front-runners are, that they can identify a leader and challenger, and that the leader is truly the most likely candidate to win. We assume that we walk into the voting booth, cast our vote, and almost surely the leader wins and our vote was a drop in the bucket. But, *just in case*, our vote might just be a lottery ticket which breaks a tie favorably.
 
-When information is sparse or untrustworthy, the leader rule loses some of its global optimality guarantees. However, I think once we get into the weeds of uncertainty, this is where recognizing the safety of casting an "honest ballot" in Approval voting becomes particularly useful. The truth is that Approval is a very "safe" voting method for the voter, because it's strongly "monotonic" (more support for a candidate cannot hurt their chances of winning) and consistent with its ballot data. When in doubt, voting sincerely, according to your gut feeling of where the line of approval should be, is a very safe strategy.
+But, chances are, you maybe don't have the most detailed polls and news coverage of the school board election you're voting in. Or maybe you do, but the polls aren't exactly Nate Silver-level accurate. What if your information is wrong, or the polls are completely off? What if you misidentify the leader and challenger? What if there are three or four candidates who all seem viable, and you can't identify the leader and challenger at all?
 
-Laslier does prove that a sincere strategy is generally always optimal under Approval voting, in practice with a large electorate, at least. That is, you should always draw a line of acceptability somewhere. The strategy creeps in when there's pressure to adjust from that "gut" line to something else. The primary risks you are balancing when you adjust that line are:
+When information is sparse or untrustworthy, the leader rule loses some of its global optimality guarantees. However, I think once we get into the weeds of uncertainty, this is where recognizing the safety of casting an "honest ballot" in Approval voting becomes particularly useful.
+
+> An "honest ballot" is a particular type of sincere ballot, where you draw your line of acceptability based on your gut feeling of who you actually "approve" of, without strategically adjusting that line based on your perception of the election.
+
+The truth is that Approval is a very "safe" voting method for the voter, because it's strongly "monotonic" (more support for a candidate cannot hurt their chances of winning) and [consistent with its ballot data](../consistentcardinal){:target="_blank"}. When in doubt, voting sincerely, according to your gut feeling of where the line of approval should be, is a very safe strategy.
+
+Laslier's work shows that a sincere strategy is generally always optimal under Approval voting, in practice, with a large electorate, at least. That is, you should always draw a line of acceptability somewhere. The strategy creeps in when there's pressure to adjust from that "gut" line to something else. When you do not know who the likely winners are, the primary risks you are balancing when you adjust that line are:
 
 1. Your approval line is too strict. If you, for example, only approve of Palin, then you risk failing to help Begich win over Peltola, which could lead to Peltola winning. That is, you risk failing to be decisive in the Begich vs. Peltola race.
 2. Your approval line is too generous. If you, perhaps, approve of Palin and Begich, you might fail to help Palin win over Begich, which could lead to Begich winning. That is, you risk failing to be decisive in the Palin vs. Begich race.
 
-The leader rule is precisely the optimized balance of these two risks, by essentially working under the assumption of which races seem most likely to be pivotal. Withholding approval from Begich because you're focused on the Palin vs. Begich race when Peltola is the leader is a mistake because it's far more likely that the pivotal race will involve Peltola than not.
+The leader rule is precisely the optimized balance of these two risks, by essentially working under the assumption of which races are the most likely to be pivotal, based on who the frontrunners are. Withholding approval from Begich because you're focused on the Palin vs. Begich race when Peltola is the leader is a mistake if we assume it's far more likely that the pivotal race will involve Peltola than not.
 
-It's important to contextualize the assumptions of the leader rule. To apply it, we are assuming that the leader is truly the most likely candidate to win. We assume that we walk into the voting booth, cast our vote, and almost surely the leader wins and our vote was a drop in the bucket. But, *just in case*, our vote might just be a lottery ticket which breaks a tie favorably.
+It's worth emphasizing that leader upsets *do* happen already in choose-one voting, and that won't change under Approval voting. Dewey did not, in fact, defeat Truman. In fact, the leader rule actually makes them more likely when the perceived leader is actually a weak candidate. If a silent majority of voters preferred someone else to the candidate everyone expects to win, then it's certainly not unreasonable for that someone else to pull off an upset victory when that majority goes to vote, and particularly if they are freed to vote for multiple candidates. In my [future post](../leader-dynamics){:target="_blank"}, I explore this in detail, and explain how the leader rule, when used en masse, tends to lead to a more majoritarian-preferred outcome than whatever voters expect going into the voting booth.
 
-Suppose the favorite to win is also your favorite candidate. The leader rule says to bullet vote to preserve their lead. But what happens if the results come back and your favorite is in last place, your least favorite won, and your second favorite was a close second? If you genuinely liked your second favorite, then perhaps you'll regret not voting "honestly" for both and hedging your bets. And, when you're not particularly trusting of the polls, then honesty might just be the best policy.
+Voter perception and behavior are intertwined. It's hard to untangle whether or not a candidate wins *because* of the perception of who the leader is, whether they were the leader, validated by the voters, or if they were preferred by a silent majority to the perceived leader. The leader rule is simply a best response to a given assumption about the leader and challenger, but it does not necessarily make that assumption more likely to be correct, or a self-fulfilling prophecy. The difference between the leader rule and other strategies is that when many people use it, it tends to make the outcome more majoritarian not less.
 
-But, from another perspective, the reality is that the electorate saw your favorite was likely to win, and overwhelmingly voted for everyone else. That's the system converging to the secret consensus candidate that was hidden under low quality polling. And no strategy can save an unacceptable candidate from losing to a much more broadly supported one.
+Suppose the favorite to win is also your favorite candidate. The leader rule says to bullet vote to preserve their lead. But what happens if the results come back and your favorite is in last place, and your second favorite was a close second? If you genuinely liked your second favorite, then perhaps you'll regret not voting "honestly" for both and hedging your bets.
 
-However, it's worth emphasizing that upsets *do* happen. In fact, the leader rule actually makes them more likely when the perceived leader is actually a weak candidate. If a majority of voters preferred someone else to the candidate everyone expects to win, then it's certainly not unreasonable for that someone else to pull off an upset victory when that majority is freed to vote for multiple candidates. In my [future post](../leader-dynamics){:target="_blank"}, I explore this in detail, and explain how the leader rule, when used en masse, tends to lead to a more majoritarian-preferred outcome than whatever voters expect going into the voting booth.
+But, from another perspective, the reality is that the electorate saw your favorite was likely to win, and overwhelmingly voted for everyone else. That's the system converging to the secret consensus candidate that was hidden under low quality polling. And no strategy can save an unacceptable candidate from losing to a much more broadly supported one. That is just Approval voting working as intended.
 
-But when you have no idea who the leader and challenger are, then it's very hard to know which races are the most likely to be pivotal. In that case, you might as well just draw your line of approval based on your gut feeling of who you *actually approve* of, and not worry about the strategic implications of your vote. Let's call this the "honest ballot", which is a particular choice of a sincere ballot that is based on your gut feeling of who is acceptable to you, and who is not.
+In practice, a single ballot is unlikely to be decisive. Thus, changing to an honest ballot is less about changing the outcome, and more about changing how you feel about your vote, and that's still powerful.
+
+When you have no idea who the leader and challenger are, then it's especially hard to know which races are the most likely to be pivotal. In that case, you might as well just cast an honest ballot, and draw your line of approval based on your gut feeling of who you *actually approve* of, and not worry about the strategic implications of your vote.
 
 ### The Power of the Honest Ballot
 
@@ -295,7 +303,7 @@ An "honest ballot" optimally impacts the share and margin between candidates, in
 
 Think of it this way: suppose you are a Republican in Alaska who prefers Palin > Begich > Peltola, but it seems like all three candidates are viable. What exactly does your ballot do when you vote for Palin and Begich?
 
-Well, obviously, it gives Palin and Begich two votes. But we already knew that. However, think of it in terms of the margins between the candidates. By approving of Palin and Begich, you
+Well, obviously, it gives Palin and Begich one vote each. But we already knew that. However, think of it in terms of the margins between the candidates. By approving of Palin and Begich, you
 
 1. Increase the margin between Palin and Peltola, which helps Palin win over Peltola.
 2. Increase the margin between Begich and Peltola, which helps Begich win over Peltola.
@@ -316,7 +324,13 @@ Therefore, even when you have no idea who the leader and challenger are, you can
 In essence, we have two different mindsets for how to approach Approval voting strategically:
 
 1. Optimizing for getting an outcome that is better than what you expect, which is achieved by the leader rule.
-2. Optimizing for getting an outcome that is acceptable, which is achieved by the honest ballot.
+2. Optimizing for getting any outcome that is acceptable, which is achieved by the honest ballot.
+
+Laslier's contribution to this conversation is an honest truth that your single vote is unlikely to be decisive, but that doesn't mean you shouldn't vote strategically. By applying the leader rule, you are doing your best to move the election towards the best outcome, and the magic is that many people doing this together leads to a more majoritarian outcome.
+
+However, Approval's safety and simplicity also means that just voting honestly is also a very good strategy, especially when you have no idea who the leader and challenger are, or if you just want to vote for everyone you find acceptable without worrying about the strategic implications of your vote.
+
+No being forced to vote exclusively for the lesser evil at the threat of wasting your vote, as in choose-one voting. No risk of ranking your candidates and accidentally electing your least preferred candidate, as in ranked-choice voting. No agonizing over whether or not to give your second favorite candidate 5 stars or fewer, as in score or STAR voting. Just a simple drawing of a line of acceptability, based on your gut feeling of who you actually approve of, or based on who you expect to win. Strategy in Approval voting is simple, intuitive, and safe.
 
 ## Appendix
 
