@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: A Guide to Approval Voting Strategy
-date: 2026-02-16
+date: 2026-03-04
 description: An explanation of "the leader rule" strategy in approval voting, and its positive ramifications.
 giscus_comments: true
 importance: 2
@@ -38,11 +38,11 @@ toc:
 
 > Approval voting (AV) is a voting method where each voter can "approve" of as many candidates as they like, and the candidate with the most approvals wins.
 
-This post is based on a paper by [Jean-François Laslier](https://journals.sagepub.com/doi/10.1177/0951629808097286){:target="_blank"}, which introduces the leader rule and analyzes its properties. I would like to give a special thanks to Rob LeGrand for bringing this strategy to my attention. LeGrand, as far as we know, came up with this strategy back in 2002, and Laslier discovered it independently in his paper. I find this interesting to bring up, because it shows that this strategy is not just some random "someone just thought of it" strategy, but rather something natural, intuitive, and fundamentally optimal that multiple people have independently discovered it.
+This post is based on a paper by [Jean-François Laslier](https://journals.sagepub.com/doi/10.1177/0951629808097286){:target="_blank"}, which introduces the leader rule and analyzes its properties. I would like to give a special thanks to Rob LeGrand for bringing this strategy to my attention. LeGrand, as far as we know, came up with this strategy back in 2002, and Laslier discovered it independently and published about it in his 2009 paper. I find this interesting to bring up, because it shows that this strategy is not just some random "someone just thought of it" strategy, but rather something natural, intuitive, and fundamentally optimal that multiple people have independently discovered.
 
 In a [previous post](../avstratproof){:target="_blank"}, I gave an example to show that Approval voting is not technically strategyproof, but can be made so under a particular mindset that I called a "Dichotomous Goal". I explained how strategy simplifies down into drawing a line of acceptability, and once that line is set then the choice for how to vote is clear. In this post, we will explore a specific strategy called "the leader rule," which is a practical and effective way to help draw that line of acceptability optimally.
 
-A common complaint I have heard about Approval voting is that, while it incentivizes voters to approve all candidates they truly like, it might result in regret if voters choose to approve the candidates they are lukewarm about, but are strongly better than the candidates that they truly hate. What happens when a voter votes for a candidate they only voted for out of fear of the worst, and that candidate ends up winning?
+A common complaint I have heard about Approval voting is that, while it incentivizes voters to approve all candidates they truly like, it might result in regret if voters choose to approve the candidates they are lukewarm about, but are strongly better than the candidates that they truly hate. What happens when a voter votes for a candidate they only voted for out of fear of the worst, and that candidate ends up winning? Sure, I can vote for my favorite, and won't vote for my least favorite, but what do I do about the candidate in the middle?
 
 The leader rule is a strategy that helps mitigate this concern by focusing the voter's approval on the most relevant candidates in the election: the front-runners.
 
@@ -55,32 +55,40 @@ Three common criticisms (I might call "myths") of Approval voting I hear are tha
 The key insights I want to convey in this post are that
 
 1. Bullet voting is not some sort of failure of Approval voting, it is a natural and optimal strategy in many cases.
-2. Approval voting has the utmost incentive for sincerity. In practice, you should always vote sincerely. The only question is where to draw the line of acceptability (i.e. how many candidates to vote for sincerely). We will see that one of the most psychologically natural ways to do so, whilst minimizing regret, is consistent with the leader rule.
+2. Approval voting has the utmost incentive for sincerity. In practice, you should always vote "sincerely" (never leave "holes" in your ballot). The only question is where to draw the line of acceptability (i.e. how many candidates to vote for sincerely). We will see that one of the most psychologically natural ways to do so, whilst minimizing regret, is consistent with the leader rule.
 3. Approval voting has more majoritarian outcomes, **including electing the ranked Condorcet winner**, *precisely when* voters are **strategic**. That is, strategy is not some Achilles heel of Approval voting, it is the one of the mechanisms by which Approval voting achieves optimal outcomes.
 
 ## The Leader Rule
 
 First, we should establish that this strategy is not about impacting the "share" or percentage of votes that a candidate gets, but rather about impacting who wins. The goal under the leader rule is to maximize the chance that a more preferred candidate wins over a less preferred candidate, not to maximize number of votes one candidate gets over another. This is a subtle but important distinction, and it is the key to understanding the strategy.
 
-> **The Leader Rule**: Identify the top two front-runners in the election: the leader (most likely to win) and the "challenger" (the most likely to overtake the leader). You, as the voter, then
+> **The Leader Rule**: Identify the top two front-runners in the election: the "leader" (most likely to win) and the "challenger" (the most likely to overtake the leader). You, as the voter, then
 >
 > 1. approve all candidates that you prefer strictly to the leader
 > 2. only approve the leader if you prefer them to the challenger.
->
-> Do not approve of any other candidates (i.e. those you like less than the leader).
+> 3. Do not approve of any other candidates (i.e. those you like less than the leader).
+
+For example, suppose I prefer A > B > C > D, and the leader is C and the challenger is B. Then, I first approve everyone I prefer to the leader, which is A and B. Then, I only approve of the leader C if I prefer them to the challenger B, but since I prefer B to C, I do not approve of C. Finally, I do not approve of D, since they are less preferred than the leader. Thus, I would approve of A and B, and not approve of C and D.
 
 That's the entire strategy! You could stop reading here and go apply this strategy in any Approval voting election. But if you want to understand *why* this strategy is optimal, how to apply it in real examples, and you're here for the practical examples and theory, read on.
+
+The first observation here is that this strategy is "sincere", which we should formally define as follows:
+
+> **Sincerity**: An approval vote is **sincere** if for any candidate you *do* vote for, you also approve all candidates you strictly prefer to them. That is, you do not leave any "holes" in your ballot between candidates you voted for. Alternatively, a sincere ballot is one where you draw a "line of acceptability" somewhere in your ranking, and approve everyone above that line.
+
+For example, if I prefer A > B > C > D, then voting for A and C would be insincere, because I left a hole between A and C by not voting for B. The leader rule says this is *never* optimal, in practice. The leader rule says you should always draw that line of acceptability right below the leader or right above (depending on how you feel about the most important race between the leader and challenger).
 
 The basic idea is
 
 1. to maximize the impact of your vote on the most likely pivotal outcomes of the election
 2. vote in a way that promotes precisely better than expected outcomes
 
-- By approving of all candidates you prefer to the leader, you strictly increase the chances of a more preferred candidate winning. Even if they have no chance, you still strictly help them by monotonicity. It's a "what the hell" vote that can't hurt you. Who knows, maybe other voters find them more appealing than the leader, like you, and when you all approve of them, they get a boost that helps them overtake the leader!
+- By approving of all candidates you prefer to the leader, you strictly increase the chances of a more preferred candidate winning. Even if they have no chance, you still strictly help them overtake or maximize the distance between them and everyone you didn't approve. It's a "what the hell" vote that can't hurt you. Who knows, maybe other voters find them more appealing than the leader, like you, and when you all approve of them, they get a boost that helps them overtake the leader!
 - If you prefer the challenger to the leader, then you approve of the challenger since you prefer them to the leader, and do not approve of the leader.
 - If you prefer the leader to the challenger, you approve of the leader by the rule. And since the challenger is below the leader, you do not approve of the challenger.
+- For anyone you prefer less than the leader, you do not approve of them, and that has the effect of your vote hurting everyone worse than the outcome you're already expecting.
 
-The ultimate effect is that you have an impact on the most important race: between the leader and the challenger. You also help push forward any candidates you prefer to the leader.
+The ultimate effect is that you have an impact on the most important race: between the leader and the challenger. You also help push forward any candidates you prefer to the leader. This has the effect of "bringing up" the election towards an outcome better than or equal to what you expect to be the most likely outcome (the leader winning). You then contribute to the best possible outcome, from your perspective.
 
 I was recently talking to someone in the electoral reform space. They mentioned that they would be conflicted about how to vote under Approval voting in the 2012 US Presidential election. They said that they preferred Gary Johnson > Mitt Romney > Barack Obama, and thus voted for Romney under plurality. But there's ambiguity in Approval over how they should vote, if they actually want to vote for a winning candidate. Here was a loose summary of their thought process:
 
@@ -95,15 +103,19 @@ The leader rule cuts through all of this ambiguity and says that their optimal s
 1. Johnson is a long shot, yes, but there's absolutely no reason *not* to approve of him. Approving of him can't hurt, and it could help. If they approve of him, and other voters who prefer him also approve of him, then he could get a boost that helps him overtake the leader leading to a "come from behind" victory. Regardless of who the leader is out of Romney and Obama, they prefer Johnson to the leader, so they should approve of him.
 2. Obama versus Romney is the most important race. Therefore, they should always approve of exactly one of them, and never approve of both (or neither), if they want to maximize their impact. This means approving of Romney and not approving of Obama.
 
+The original hesitation from this strategy was fear that they would be disappointed if neither of their chosen candidates won. But we can see this is effectively the best possible ballot this voter could cast. No other ballot would have a better chance of electing a more preferred candidate. And they can stand firm knowing they voted in a way that maximizes their chances of success, in a sincere way that reflects their preferences. Though Obama, their least favorite, would have likely won, they can take solace in the fact that they didn't have to agonize over *which* single other candidate to vote for instead. Rather, they could vote for everyone they find better than Obama, and know they did the best they could, and that their voice was heard.
+
 ### Applying the Leader Rule to Alaska 2022
 
-Let's also take my favorite election to discuss: Alaska 2022 (it wouldn't be an eigentaylor post about voting if we didn't mention Alaska 2022). In this election, we had the following candidates:
+Let's also take my favorite election to discuss: Alaska 2022 (it wouldn't be an eigentaylor post about voting if we didn't mention Alaska 2022). In this election, we had the following candidates and first round totals:
 
-- Mary Peltola (D)
-- Sarah Palin (R)
-- Nick Begich III (R)
+| Candidate       | Party | First Round Percent | Final Round Percent |
+|-----------------|-------|---------------------|---------------------|
+| Mary Peltola    | D     | ~40%                | ~47% (Winner)       |
+| Sarah Palin     | R     | ~31%                | ~45%                |
+| Nick Begich III | R     | ~28% (Eliminated)   | Eliminated          |
 
-In this election under IRV, Peltola won after Begich was eliminated, despite most of his votes transferring to Palin. Further, this election was controversial partially because the ballot data showed that Begich was actually the Condorcet winner, meaning that he would have beaten both Peltola and Palin head-to-head, but was eliminated first under IRV. Further, there was anger that despite nearly 60% of voters ranking a Republican candidate first, the Democrat won.
+In this election under IRV, Peltola won after Begich was eliminated, despite most of his votes transferring to Palin. Further, this election was controversial partially because the ballot data showed that Begich was actually the Condorcet winner, meaning that he would have beaten both Peltola and Palin in a one-on-one race, but was eliminated first under IRV. Further, there was anger that despite nearly 60% of voters ranking a Republican candidate first, the Democrat won.
 
 I want to go through how different voters might apply the leader rule in this election. In this race, the front-runner was Peltola (~40%), with Palin as the primary challenger (~31%). Begich was a relatively close third at (~28%). The most common voter types were:
 
@@ -114,20 +126,20 @@ I want to go through how different voters might apply the leader rule in this el
 
 Let's see how each of these voter types would apply the leader rule assuming Peltola is the leader and Palin is the challenger:
 
-| Voter Type               | Approved Candidates  |
-|--------------------------|----------------------|
-| Palin > Begich > Peltola | Palin, Begich        |
-| Begich > Palin > Peltola | Begich, Palin        |
-| Begich > Peltola > Palin | Begich, Peltola      |
-| Peltola > Begich > Palin | Peltola              |
+| Voter Type               | Approved Candidates (Peltola leader, Palin challenger)  |
+|--------------------------|---------------------------------------------------------|
+| Palin > Begich > Peltola | Palin, Begich                                           |
+| Begich > Palin > Peltola | Begich, Palin                                           |
+| Begich > Peltola > Palin | Begich, Peltola                                         |
+| Peltola > Begich > Palin | Peltola                                                 |
 
 These four groups show us the way that different voter groups might optimally utilize the nature of the Approval ballot to maximize their impact on the election.
 
-- The Republican voters who rank both Palin and Begich above Peltola approve of both candidates, showing how the Republican voters can unite behind both candidates against the Democrat. Despite Begich not being in the top two, even voters who rank him second still approve him. Together, these voters form a coalition that essentially acts as a single vote *against* Peltola.
+- The Republican voters who rank Peltola last (under both Republicans) approve of both Republicans, showing how the Republican voters can unite behind both candidates against the Democrat. Despite Begich not being in the top two, even voters who rank him second still approve him. Together, these voters form a coalition that essentially acts as a single vote *against* Peltola.
 - The Begich > Peltola > Palin voters approve of Begich and Peltola. They prefer Begich the most, so there's no harm in approving him. They also prefer Peltola over the challenger Palin, so voting for Peltola as well helps maintain her lead over Palin, this bloc's least preferred candidate.
 - The Peltola > Begich > Palin voters only approve of Peltola, as she is both their most preferred candidate and the leader. Since Peltola is already the front-runner, it's not optimal for them to extend their approval to Begich, who is less preferred than Peltola.
 
-The leader rule thus encourages voters to focus their approvals on the candidates that matter most in the election, helping to ensure that their votes have the maximum possible impact on the outcome. But notice something interesting: all blocs except the ones that rank Peltola first end up extending their approval to Begich.
+The leader rule thus encourages voters to focus their approvals on the candidates that matter most in the election, helping to ensure that their votes have the maximum possible impact on the outcome. But notice something interesting: all blocs except the ones that rank Peltola first end up extending their approval to Begich, since they prefer Begich to Peltola.
 
 For the Democratic voters who view Begich as a lesser evil compared to Palin (ex. Peltola > Begich > Palin voters), let us consider the strategy suggested by the leader rule in the different possible scenarios:
 
@@ -156,7 +168,7 @@ The leader rule thus provides a clear and effective strategy for voters to maxim
 
 In [a future post](../leader-dynamics){:target="_blank"}, I analyze Alaska 2022 using the leader rule, and I found something interesting. Under certain assumptions, Begich is the only candidate who could possibly win if every voter applies the leader rule. This basically comes down to the fact that Begich is the Condorcet winner, and his match-ups against the other candidates are the strongest ones. Therefore, in response to any other leader, a majority would approve of Begich because they prefer him to any other leader. Further, the data also indicates that Palin, as the Condorcet loser, could never win under the leader rule.
 
-The question is if Democratic voters might "regret" also approving Begich in the case where their support of Begich is what pushes him to victory. I argue no. Suppose that Palin is the leader the morning of the election. Regardless of who the challenger is, if the Peltola supporters go into the voting both expecting Palin to win, they will vote defensively for Peltola and Begich in response to that expectation. My analysis indicates that Palin would get less than 50%, Peltola would get a meek majority of ballots, but Begich would get potentially over 60% of ballots, which would be a landslide victory. See [this post](../leader-dynamics){:target="_blank"} for the proof of this claim when it comes out.
+The question is if Democratic voters might "regret" also approving Begich in the case where their support of Begich is what pushes him to victory. I argue no. Suppose that Palin is the leader the morning of the election. Regardless of who the challenger is, if the Peltola supporters go into the voting both expecting Palin to win, they will vote defensively for Peltola and Begich in response to that expectation. My analysis indicates that Palin would get less than 50%, Peltola would get a meek majority of ballots, but Begich would get potentially over 60% of ballots, which would be a landslide victory. See [this post](../leader-dynamics){:target="_blank"} for my evidence of this claim when it comes out.
 
 From their perspective, they went into the booth expecting their least favorite candidate, and then in a complete upset, their top two candidates win a majority of ballots, and their least favorite is in last place. Begich, their second favorite, winning is certainly a more preferable outcome than Palin. Further, it is hard to regret your vote as an individual when the difference between Peltola and Begich is so significant.
 
@@ -185,14 +197,14 @@ In these two scenarios, we see that
 
 In my [other post](../avstratproof){:target="_blank"}, I provided a mindset which makes Approval voting strategyproof:
 
-> A **Dichotomous Goal** is a goal where a voter only cares that a candidate they find acceptable wins, and does not care which acceptable candidate wins. If any acceptable candidate wins, that is a success. If an unacceptable candidate wins, that is a failure.
+> A **Dichotomous Goal** is a goal where a voter only cares that a candidate they find "acceptable" wins, and does not care which "acceptable" candidate wins. If any "acceptable" candidate wins, that is a success. If an "unacceptable" candidate wins, that is a failure.
 
 If a voter chooses to adopt a Dichotomous Goal, then there is only one optimal strategy: approve all acceptable candidates, and do not approve any unacceptable candidates. This strategy is simple and straightforward, and also sincere. The reason this strategy is optimal is because
 
 - If you approve an unacceptable candidate, you risk being the deciding vote that gets them elected over an acceptable candidate. Therefore, approving unacceptable candidates can only be strictly harmful.
 - If you do not approve an acceptable candidate, you risk being the deciding vote that breaks a tie between that acceptable candidate and an unacceptable candidate. Therefore, not approving acceptable candidates can only be strictly harmful.
 
-The sleight of hand here is that we are pretending that we have dichotomous (two-tiered) preferences. If we view the election as a binary win/lose outcome based on whether an acceptable candidate wins, then Approval voting is strategy proof under this mindset. For example, if all you care about is having a Democrat win the seat, then you can vote for all democrats exclusively, and there's no better strategy.
+The sleight of hand here is that we are pretending that we have dichotomous (two-tiered) preferences. If we view the election as a binary win/lose outcome based on whether an acceptable candidate wins, then Approval voting is strategyproof under this mindset. For example, if all you care about is having a Democrat win the seat, then you can vote for all democrats exclusively, and there's no better strategy.
 
 This is a freeing way to think about Approval voting, and it is likely how I would personally approach it if I were a voter lucky enough to vote in an Approval election. The missing piece, however, from that post was how to optimally draw that line of acceptability, to maximize the chance of electing the most preferred possible candidate. Because, in reality, some unacceptable candidates are less unacceptable than others. And some acceptable candidates are more acceptable than others. Therefore, we want to draw that line of acceptability in a way that maximizes our chance of success. That is precisely what the leader rule does.
 
