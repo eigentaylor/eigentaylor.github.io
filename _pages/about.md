@@ -2,8 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: i am a math grad and tutor
-
+subtitle: mathematician and approval voting believer
 profile:
   align: right
   image: rpic.png
@@ -17,7 +16,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
-  enabled: true # includes a list of news items
+  enabled: false # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
@@ -29,15 +28,19 @@ latest_posts:
 
 $$\exp(x)=\sum_{n=0}^\infty \frac{x^n}{n!}$$
 
-math grad, dork extraordinaire.
-
-i like differential equations and linear algebra. my current obsession is approval voting and electoral systems.
+my current obsession is approval voting and electoral systems. i also like linear algebra.
 
 [here are some math posts ive written if you want to look at them i guess](./blog){:target="_blank"}
 
 the best way to contact me is through discord (@eigentaylor) but feel free to [email me](mailto:tayloreigenfisher@gmail.com){:target="_blank"}.
 
 ---
+
+my best blog posts related to approval voting:
+
+- [A Practical Case for Approval Voting](./blog/practicalapproval){:target="_blank"}
+- [It's Time to Ditch RCV, Embrace Approval Voting](./blog/ditch-rcv){:target="_blank"}
+- [Approval Voting is the Only Internally Consistent Cardinal Method](./blog/consistentcardinal){:target="_blank"}
 
 personal favorites:
 
@@ -47,13 +50,6 @@ personal favorites:
 - [Shortcuts for Finding Eigenvalues and Eigenvectors](./blog/eigentricks){:target="_blank"}
 - [Solving systems of first-order ODEs like a baller](./blog/firstordersystemsquick){:target="_blank"}
 - [The Alpha Method (Generalized Exponential Response Formula)](./blog/alphamethod){:target="_blank"}
-
-my best blog posts related to approval voting:
-
-- [A Practical Case for Approval Voting](./blog/practicalapproval){:target="_blank"}
-- [It's Time to Ditch RCV, Embrace Approval Voting](./blog/ditch-rcv){:target="_blank"}
-- [Approval Voting is the Only Internally Consistent Cardinal Method](./blog/consistentcardinal){:target="_blank"}
-- [Is Approval Voting Strategyproof?](./blog/avstratproof){:target="_blank"}
 
 ---
 
