@@ -57,7 +57,7 @@ The key insights I want to convey in this post are that
 
 1. Bullet voting is not some sort of failure of Approval voting, it is a natural and optimal strategy in many cases.
 2. Approval voting has the utmost incentive for sincerity. In practice, you should always vote "sincerely" (never leave "holes" in your ballot). The only question is where to draw the line of acceptability (i.e. how many candidates to vote for sincerely). We will see that one of the most psychologically natural ways to do so, whilst minimizing regret, is consistent with the leader rule.
-3. Approval voting has more majoritarian outcomes, **including electing the ranked Condorcet winner**, *precisely when* voters are **strategic**. That is, strategy is not some Achilles heel of Approval voting, it is one of the mechanisms by which Approval voting achieves optimal outcomes.
+3. Approval voting has more majoritarian outcomes, **including electing the ranked Condorcet winner**, *precisely when* voters are **strategic**. That is, strategy is not some Achilles heel of Approval voting, it is one of the mechanisms by which Approval voting achieves optimal outcomes. Worry not, we will get there, and I will explore this in much more depth in a [forthcoming post](../leader-dynamics){:target="_blank"}.
 
 ## The Leader Rule
 
@@ -230,7 +230,7 @@ By noting that the first point is the most important one, we prioritize our lott
 In Laslier's paper, he makes two key observations about voter psychology that make the leader rule particularly appealing:
 
 1. Voters consider pivotal scenarios sequentially, starting with the most likely scenarios. This means that they focus on the most probable outcomes first, and make their decisions based on those scenarios.
-2. The leader rule corresponds to Tversky's "elimination by aspects" model of decision-making. People tend to eliminate options that do not meet certain ranked criteria.
+2. As Laslier explains, the leader rule corresponds to [Tversky's "elimination by aspects" model of decision-making](https://journals.sagepub.com/doi/10.1177/0951629808097286){:target="_blank"}. People tend to eliminate options that do not meet certain ranked criteria. In this case, it is elimination by the most likely pivotal scenarios.
 
 The leader rule boils down to ranking the pivotal scenarios by their likelihood, and making decisions based on how their internal preferences align with those scenarios.
 
@@ -260,7 +260,7 @@ The proof and explanation of these ideas is actually relatively straightforward.
 
 This means that after an iteration of every voter using the leader rule, the approval percentages precisely equal head-to-head percentages.
 
-Thus, if the leader is a unique Condorcet winner, then after the iteration they will have over 50% approvals, and everyone else will have under 50% approvals. Therefore, the leader remains the leader, and must strictly win. The equilibrium challenger will be the candidate with the least bad head-to-head result against the leader.
+Thus, if the leader is a unique Condorcet winner, then after the iteration they will have over 50% approvals, and everyone else will have under 50% approvals. Therefore, the leader remains the leader, and must strictly win. The equilibrium challenger will be the candidate with the strongest head-to-head result against the leader.
 
 In conjunction with the previous section, what we see is that the way approval voting reacts with the way humans make decisions leads to a natural majoritarian outcome when everyone uses the leader rule. In that way, Approval voting is more majoritarian when voters are strategic, which significantly dampens the common criticism that Approval voting is both non-majoritarian and susceptible to strategic voting. In particular, if every voter applies the leader rule, then the outcome is the same or strictly better, in a majoritarian sense, than the expectation of the voters going into the election.
 
@@ -372,6 +372,5 @@ Mahlendorf, A. (2026). Fear of Vote Splitting. Substack. [https://substack.com/@
 
 - Alaska House Special Election 2022: [https://ranked.vote/report/us/ak/2022/08/cd](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"}
 - NYC Democratic Mayoral Primary 2025: [https://ranked.vote/report/us/ny/nyc/2025/07/mayor](https://ranked.vote/report/us/ny/nyc/2025/07/mayor){:target="_blank"}
-- Minneapolis City Council Ward 2 2021: [https://ranked.vote/report/us/mn/2021/11/ward-2](https://ranked.vote/report/us/mn/2021/11/ward-2){:target="_blank"}
 
 [hyperlink](https://www.youtube.com/watch?v=VXZUjn41dbw){:target="_blank"}
