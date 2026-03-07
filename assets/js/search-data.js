@@ -650,7 +650,7 @@ ninja.data = [{
               window.location.href = "/preview/gibbard-satt/";
             },},{id: "previews-a-guide-to-approval-voting-strategy",
           title: 'A Guide to Approval Voting Strategy',
-          description: "An explanation of &quot;the leader rule&quot; strategy in approval voting, and its positive ramifications.",
+          description: "An explanation of the leader rule strategy in approval voting, and its positive ramifications.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/avstrategy/";
             },},{id: "previews-jordan-canonical-form-made-easier-part-1",
