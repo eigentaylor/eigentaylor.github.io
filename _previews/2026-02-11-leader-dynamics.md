@@ -28,6 +28,7 @@ toc:
   - name: Discussion
     subsections:
       - name: The Chicken Dilemma Explored
+  - name: Other Considerations and Further Research
   - name: Appendix 
     subsections:
       - name: Alaska House Special Election 2022 Table
@@ -56,7 +57,7 @@ For a voter who prefers candidates A > B > C, there are three possible sincere b
 
 A common criticism of approval voting is that even a sincere voter may have to be strategic and decide where to draw their line of approval. While an approval for A and B may be sincere, and does not narrow the margin between A and B, it could lead to a situation where the voter could have instead approved only A, and had A win instead of B. The claim is that this would lead to regret for the voter, and thus the voter may feel compelled to approve of only their most preferred candidate, reducing approval voting to plurality voting in practice.
 
-This fear has not materialized in practice, as voters consistently approved of multiple candidates in real elections in Fargo and St. Louis. However, the myth of the "regretful approval voter" has persisted. Jean-François Laslier, in his 2009 paper "[The Leader Rule: A Model of Strategic Approval Voting in a Large Electorate.](https://journals.sagepub.com/doi/10.1177/0951629808097286){:target="_blank"}", presents a strategy for approval voting that helps optimally draw the line for a sincere strategy to minimize regret, based on who the perceived frontrunners are. Laslier's model is primarily focused on "trembling ballots" in large electorates, but we consider it here for its broader implications. Paradoxically, this strategy, which we call the "leader rule", can actually lead to significantly more majoritarian outcomes, as we will explore in this post.
+This fear has not materialized in practice, as voters consistently approved of multiple candidates in real elections in Fargo and St. Louis. However, the myth of the "regretful approval voter" has persisted. Jean-François Laslier, in his 2009 paper "[The Leader Rule: A Model of Strategic Approval Voting in a Large Electorate.](https://journals.sagepub.com/doi/10.1177/0951629808097286){:target="_blank"}", presents a strategy for approval voting that helps optimally draw the line for a sincere strategy to minimize regret, based on who the perceived frontrunners are. Laslier's model is primarily focused on "trembling ballots" in large electorates, but we consider it here for its broader implications. Paradoxically, this strategy can actually lead to significantly more majoritarian outcomes, as we will explore in this post.
 
 > **Definition:** **(The Leader Rule)** Call the candidate perceived most likely to win the "leader", and the second most likely candidate to win the "challenger". The leader rule strategy is as follows:
 >
@@ -71,22 +72,21 @@ We will not delve into the details of why this is an optimal strategy. Intuitive
 For our axioms of this analysis, we assume
 
 1. Voters have complete and transitive preferences over candidates. Given any pair of candidates, a voter strictly prefers one over the other, and is not indifferent between them.
-2. Voters always use sincere strategies. That is, if they prefer candidate X over Y, then whenever they approve candidate Y, they must approve candidate X. Laslier proves that this is optimal under the assumptions in his paper.
-3. Voters have common knowledge of the perceived front-runners. That is, every voter knows who the leader and challenger are perceived to be.
-4. Every voter applies the leader rule simultaneously.
-5. No two pairwise match-ups have the same margin, and no two candidates tie. That is, for any two pairs of candidates, $(X_1, Y_1) \neq (X_2, Y_2)$, then $P(X_1>Y_1)\neq P(X_2>Y_2)$, and $P(X_1>Y_1)\neq 0.5$. In a "large electorate",  which is the setting Laslier focuses on in his paper, this is a reasonable assumption, since the probability of ties goes to zero as the number of voters increases.
-6. Voter preferences are fixed. No voter changes their underlying ranking at any point.
+2. Voters have common knowledge of the perceived front-runners. That is, every voter knows who the leader and challenger are perceived to be.
+3. Every voter applies the leader rule simultaneously, implying that all voters use a sincere strategy.
+4. No two pairwise match-ups have the same margin, and no two candidates tie. That is, for any two pairs of candidates, $(X_1, Y_1) \neq (X_2, Y_2)$, then $P(X_1>Y_1)\neq P(X_2>Y_2)$, and $P(X_1>Y_1)\neq 0.5$. In a "large electorate",  which is the setting Laslier focuses on in his paper, this is a reasonable assumption, since the probability of ties goes to zero as the number of voters increases.
+5. Voter preferences are fixed. No voter changes their underlying ranking at any point.
 
 We identify the set of possible leader challenger pairs $(X,Y)$, where $X\neq Y$, as state nodes. We can imagine them as what the polls say prior to an election. We investigate the nature of how one node moves to another.
 
-Note that Theorems 1 and 2 are adapted from Laslier's original paper. The rest of the results are new so far as I know.
+Note that Theorems \ref{thm:pairwise} and Corollary \ref{cor:unique_condorcet_winner} are adapted from Laslier's original paper. The rest of the results are new so far as I know.
 
 > **Theorem:** (Laslier) Suppose the leader, challenger pair is $(X,Y)$. After every voter applies the leader rule, the candidates will have the following percent approvals: \label{thm:pairwise}
 >
 > 1. $X$: $P(X>Y)$
 > 2. $Z$: $P(Z>X)$ for all $Z\neq X$
 
-Note that for any candidate $X$, after every voter applies the leader rule, the percent of the vote that $X$ gets is $P(X>Z)$ for some candidate $Z$.
+Note that for any candidate $X$, after every voter applies the leader rule, the percent of the vote that $X$ gets is $P(X>Z)$ for some candidate $Z$. We remark that by the assumption that no two pairwise match-ups have the exact same margin, we can be assured that there is a unique winner after every voter applies the leader rule.
 
 **Proof**: Based on the leader rule,
 
@@ -109,12 +109,10 @@ Suppose that X is the leader and Y is the challenger. Since $P(Z>X)<0.5$ for all
 
 For (2): if $X$ is a Condorcet loser, then $P(X>Z) < 0.5$ for all $Z \neq X$, and thus $X$ will always have less than 50% of the votes by Theorem \ref{thm:pairwise}. By part (1), some candidate must have over 50% of the vote, and will thus have more votes than $X$. Therefore, $X$ will not be the leader. **QED**
 
-This corollary tells us something important: even if there is a cycle of preferences, when the elections finally comes around and voters apply the leader rule, we can guarantee that
+This corollary tells us something important: even if there is a cycle of preferences, when the elections finally comes around and voters apply the leader rule, we can guarantee that not only will there be a unique winner--by the assumption that no two pairwise match-ups have the same margin--but also that
 
-1. The winner will win with over 50% of the vote
+1. The winner will receive over 50% of the vote
 2. The winner won't be a Condorcet loser
-
-Further, due to the nature of the Approval ballot data, the winner is always the Condorcet winner induced by the literal dichotomous preferences expressed by the voters. That is, since the difference in total approvals is the difference in "strict approvals", the winner must defeat all other candidates in strict approvals. Any Condorcet cycle will be invisible in the ballot data, and instead voters will only see a single candidate with the most approvals (over 50%), who is the Condorcet winner of the strict approvals.
 
 > **Definition:** A node $(X,Y)$ has an edge to a node $(X',Y')$ if after every voter applies the leader rule at node $(X,Y)$, $X'$ has the most votes and $Y'$ has the second most votes. We then declare them the new leader and challenger. An equilibrium is a node that has an edge to itself.
 
@@ -261,9 +259,9 @@ Let us consider the $(A,B)$ node. We look for $A>B$ or $X>A$, since $A$ is the l
 
 ## Equilibrium Paths
 
-> **Theorem 6:** With three candidates, if a Condorcet winner and equilibrium exists, the leader rule always converges to that equilibrium, from any starting node, in a maximum of three steps. However, the Condorcet winner will win after at most two steps.
+> **Theorem:** With three candidates, if a Condorcet winner and equilibrium exists, the leader rule always converges to that equilibrium, from any starting node, in a maximum of three steps. However, the Condorcet winner will win after at most two steps.
 
-**Proof:** Note that the CPRO is uniquely determined by three pairwise match-ups. Suppose that candidate A is a Condorcet winner. That is, we have $A>B$ and $A>C$ in the first half of the CPRO. By previous results, we know that any node where $A$ is the leader has an edge to the equilibrium. Therefore, we prove the theorem by
+**Proof:** Note that the CPRO is uniquely determined by three pairwise match-ups. Suppose that candidate A is a Condorcet winner. That is, we have $A>B$ and $A>C$ in the first half of the CPRO. By previous results, we know that any node where $A$ is the leader has an edge to the equilibrium. Therefore, we prove the theorem by showing that any node where $A$ is not the leader has an edge to a node where $A$ is the leader, or another node that has an edge to a node where $A$ is the leader, in at most two steps.
 
 We have two cases:
 
@@ -286,7 +284,7 @@ In either case, $B$ must have fewer than 50% approvals in the outcome after $(B,
 
 This makes three candidate Approval highly Condorcet efficient, using the leader rule. While the Condorcet winner may not be the unique Leader rule outcome, we can assure that the Condorcet winner will win after at most two steps, even if the voter perception is wildly off.
 
-> **Theorem 7:** With four or more candidates, even if a unique Condorcet winner and equilibrium exist, it may not be reachable by every starting node.
+> **Theorem:** With four or more candidates, even if a unique Condorcet winner and equilibrium exist, it may not be reachable by every starting node. \label{thm:non_convergence}
 
 **Proof:** We present a counterexample based on a profile created by Rob LeGrand. Their example is included in the [appendix](#appendix). Suppose we have the CPRO:
 
@@ -317,7 +315,7 @@ We shall analyze three elections using ranked.vote pairwise data, to see what th
 
 Alaska's 2022 House Special Election was a controversial election where the IRV winner, Mary Peltola (D), was not the Condorcet winner, while the true Condorcet winner, Nick Begich III (R), was eliminated in the first round. The third candidate, Sarah Palin (R), was the Condorcet loser. The election was widely seen as a failure of IRV, and led to a backlash against IRV in Alaska, with the state failing to repeal it by only about 700 voters out of over 320,000 votes cast in the 2024 ballot measure. Another repeal effort is currently underway in 2026.
 
-An aspect of the pathology was the uninutive vote splitting and spoiler effect that occured between the Republican candidates. The voters who sincerely voted for Palin first and Begich second managed to get themselves their least preferred candidate, Peltola, elected. By voting first for Palin, the Condorcet loser, they kept her in the race long enough to eliminate the only viable Republican candidate, Begich. Thus, Peltola was able to win the final round since an insufficient number of Begich voters had Palin as their second choice.
+An aspect of the pathology was the unintuitive vote splitting and spoiler effect that occured between the Republican candidates. The voters who sincerely voted for Palin first and Begich second managed to get themselves their least preferred candidate, Peltola, elected. By voting first for Palin, the Condorcet loser, they kept her in the race long enough to eliminate the only viable Republican candidate, Begich. Thus, Peltola was able to win the final round since an insufficient number of Begich voters had Palin as their second choice.
 
 The actual first round results were:
 
@@ -486,17 +484,17 @@ However, against the other criticism that Approval elects only bland candidates,
 
 It should be acknowledged, however, that this is not any sort of guarantee that voters would or should bullet vote. While it may be optimal for R and C voters to bullet vote when both are ahead, we do see in real Approval elections in Fargo (TODO: include source) and St. Louis that voters are willing to approve multiple candidates, and support a coalition. Rather, this example should illustrate that Approval would not likely suddenly collapse when voters are strategic. Instead, it is actually robust to strategy when voters are prudent (ex. if their favorite candidate is trailing behind the top two). If a sufficient number of both R and CRL voters choose to approve R and C--say due to the candidates forming a coalition and encouraging their voters to do so--it's even more likely that either R or C will win, strengthening their lead over L. If the electorate is sufficiently right-leaning, then this is a highly representative outcome.
 
-In short, we have a balance between the risk-minimizing strategy of the Leader rule, which is not compatible with coalitions of candidates who are both viable, and the fact that we do, in fact, see coalitions in real Approval elections. In real elections, it's likely we will, in fact, see coalitions between viable candidates and bullet voting for non-viable candidates, which would weaken the strongly majoritarian guarantees of the leader rule. However, the leader rule still shows that widespread strategy and majoritarian outcomes are not necessarily at odds, and that strategic voting can actually lead to more majoritarian outcomes, rather than less.
+In short, we have a balance between the risk-minimizing strategy of the Leader rule, which is not compatible with coalitions of candidates who are both viable, and the fact that we do, in fact, see coalitions in real Approval elections. In real elections, it's likely we will see coalitions between viable candidates and bullet voting for non-viable candidates, which would weaken the strongly majoritarian guarantees of the leader rule. However, the leader rule still shows that widespread strategy and majoritarian outcomes are not necessarily at odds, and that strategic voting can actually lead to more majoritarian outcomes, rather than less.
 
 ## Other Considerations and Further Research
 
-Some considerations must be made to the plausibility or realism of the axioms. For one, this analysis does not take into account sincere voters who do not adjust their acceptability line strategically. It also does allow for the possibility that some voters may not agree on the perceived leader and challenger. In our increasingly divisive media bubbles, the perception of a race to one bloc of voters could be significantly different from another. If the supporters of the two major candidates believe their candidate is the leader, then that would result in more bullet voting, and less support for the more moderate candidates who might be the compromise candidate often ranked between the two major candidates. This could lead to more extreme outcomes, and less majoritarian outcomes, than the leader rule would predict.
+Some considerations must be made to the plausibility or realism of the axioms. For one, this analysis does not take into account sincere voters who do not adjust their acceptability line strategically. It also does not allow for the possibility that some voters may not agree on the perceived leader and challenger. In our increasingly divisive media bubbles, the perception of a race to one bloc of voters could be significantly different from another. If the supporters of the two major candidates believe their candidate is the leader, then that would result in more bullet voting, and less support for the more moderate candidates who might be the compromise often ranked between the two major candidates. This could lead to more extreme outcomes, and less majoritarian outcomes, than the leader rule would predict.
 
 Some potential questions to explore in future research include:
 
 - If we allow ties in the pairwise match-ups, and allow one node to have edges to multiple nodes probabilistically, how does this affect the dynamics?
-- How many sincere voters would it take to break the convergence to the equilibrium?
-- If, instead of all voters applying the leader rule simultaneously, we have voter adjusting their strategy based on some probability (ex. 50% of voters apply the leader rule, while 50% maintain their current strategy), will the edges of the graph stay the same, or will they change? If they change, how do they change?
+- How many non-strategic voters, who apply a fixed sincere strategy, would it take to break the convergence to the equilibrium?
+- If, instead of all voters applying the leader rule simultaneously, we have voter adjusting their strategy based on some probability (ex. 50% of voters apply the leader rule, while 50% maintain their current strategy), will the edges of the graph stay the same, or will they change?
 - If we suppose that voters of different demographics have different perceptions of the leader and challenger, or suppose that polls are intentionally misleading, can the outcome be manipulated by a malicious actor who controls the polls?
 
 ## Appendix
@@ -602,7 +600,7 @@ The cycle, in particular, is between the nodes:
 
 ## References
 
-A very big thank you to Rob LeGrand for his contributions, the counterexample that inspired Theorem 7, and for telling me about this strategy.
+A very big thank you to Rob LeGrand for his contributions, the counterexample that inspired Theorem \ref{thm:non_convergence}, and for telling me about this strategy.
 
 Laslier, J. F. (2009). The Leader Rule: A Model of Strategic Approval Voting in a Large Electorate. *Journal of Theoretical Politics*, 21(1), 113-136. [https://journals.sagepub.com/doi/10.1177/0951629808097286](https://journals.sagepub.com/doi/10.1177/0951629808097286){:target="_blank"}
 
