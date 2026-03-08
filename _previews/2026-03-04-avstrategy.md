@@ -55,7 +55,7 @@ Three common criticisms (I might call "myths") of Approval voting I hear are tha
 
 The key insights I want to convey in this post are that
 
-1. Bullet voting is not some sort of failure of Approval voting, it is a natural and optimal strategy in many cases.
+1. Even if we didn't see voters approving multiple candidates in Fargo and St. Louis, bullet voting is not some sort of failure of Approval voting. It is a natural and optimal strategy in many cases.
 2. Approval voting has the utmost incentive for sincerity. In practice, you should always vote "sincerely" (never leave "holes" in your ballot). The only question is where to draw the line of acceptability (i.e. how many candidates to vote for sincerely). We will see that one of the most psychologically natural ways to do so, whilst minimizing regret, is consistent with the leader rule.
 3. Approval voting has more majoritarian outcomes, **including electing the ranked Condorcet winner**, *precisely when* voters are **strategic**. That is, strategy is not some Achilles heel of Approval voting, it is one of the mechanisms by which Approval voting achieves optimal outcomes. Worry not, we will get there, and I will explore this in much more depth in a [forthcoming post](../leader-dynamics){:target="_blank"}.
 
