@@ -97,7 +97,7 @@ The only other case is if there is a tie for highest total approvals, in which c
 
 The only way for a losing candidate to have a legitimate claim to victory over the Approval winner is if they tied in total approvals with the winner.
 
-**Corollary 2:** There can be no Condorcet cycles induced by the ballots in Approval voting.
+> **Corollary 2:** There can be no Condorcet cycles induced by the ballots in Approval voting.
 
 **Proof:** Since Approval voting is SCC, if $$T(A>B) > T(B>A)$$, and $$T(B>C) > T(C>B)$$, then we have that $$S(A) > S(B)$$ and $$S(B) > S(C)$$, implying that $$S(A) > S(C)$$, and thus $$T(A>C) > T(C>A)$$. Therefore, there can be no cycles of the form $$A>B>C>A$$. QED.
 
