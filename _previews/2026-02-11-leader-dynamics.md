@@ -99,6 +99,8 @@ We now establish some important ramifications of Theorem \ref{thm:pairwise}:
 
 > **Corollary:** (Laslier) If $X$ is a unique Condorcet winner, then after every voter applies the leader rule, $X$ will always have over 50% of the vote. Further, if the $X$ is the leader and a unique Condorcet winner, then $X$ will still be the leader after every voter applies the leader rule. \label{cor:unique_condorcet_winner}
 
+Therefore, if the electorate assumes the Condorcet winner is the most likely candidate to win, then the leader rule will lead to the election of the Condorcet winner without fail. The election becomes a self-fulfilling prophecy, and Approval under the leader rule becomes perfectly Condorcet efficient. However, even if the electorate does not assume the Condorcet winner is the most likely candidate to win, the leader rule still guarantees that the Condorcet winner will get over 50% of the vote, but may not win the election, which we will explore in more detail later.
+
 **Proof:** As the unique Condorcet winner, $P(X>Z) > 0.5$ for all $Z \neq X$. Since the percent of votes $X$ gets must be some $P(X>Z)$ for some candidate $Z$, then $X$ must receive over 50% of the vote.
 
 Suppose that X is the leader and Y is the challenger. Since $P(Z>X)<0.5$ for all $Z \neq X$, we must have that $P(X>Y) > P(Z>X)$ for all $Z \neq X$, meaning $X$ has strictly more votes than any other candidate. **QED**
