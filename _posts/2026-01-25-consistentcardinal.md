@@ -223,7 +223,7 @@ giving B a higher total score than A by 1 point, despite nearly all voters prefe
 
 The issue with these examples is not that a clear consensus choice like B, who was rated at least 99.99% of the maximum score by every voter, has no legitimate claim to victory themselves. In fact, it seems very likely that, under Approval voting, all voters would approve of B. The problem that arises, however, is that the ballot data leaves evidence of an absurd violation of majority rule, that the losing candidate A could use to fuel distrust in the system.
 
-**Theorem 4:** For any rational number $$r\in(0.5,1)$$, there exists a cardinal score aggregation voting system that allows a candidate B to have a higher total score than candidate A, despite more voters giving A a higher score than B by a head-to-head ratio of $$r$$. That is, the head-to-head ratio of A over B in the ballot data can get arbitrarily close to 100% of voters declaring a preference for A over B, while B still has a higher total score than A.
+> **Theorem 4:** For any rational number $$r\in(0.5,1)$$, there exists a cardinal score aggregation voting system that allows a candidate B to have a higher total score than candidate A, despite more voters giving A a higher score than B by a head-to-head ratio of $$r$$. That is, the head-to-head ratio of A over B in the ballot data can get arbitrarily close to 100% of voters declaring a preference for A over B, while B still has a higher total score than A.
 
 A formal proof is given in the [appendix](#appendix).
 
