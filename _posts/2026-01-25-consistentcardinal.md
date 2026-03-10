@@ -28,6 +28,7 @@ toc:
   - name: But does Approval elect the best candidates?
   - name: The Importance of Legitimacy
   - name: Appendix
+  - name: References
 ---
 
 ## Introduction
