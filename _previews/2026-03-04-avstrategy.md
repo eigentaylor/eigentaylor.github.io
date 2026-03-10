@@ -270,7 +270,7 @@ It's important to contextualize the fundamental assumptions of the leader rule. 
 
 But, chances are, you maybe don't have the most detailed polls and news coverage of the school board election you're voting in. Or maybe you do, but the polls aren't exactly Nate Silver-level accurate. What if your information is wrong, or the polls are completely off? What if you misidentify the leader and challenger? What if there are three or four candidates who all seem viable, and you can't identify the leader and challenger at all?
 
-When information is sparse or untrustworthy, the leader rule loses some of its global optimality guarantees. However, I think once we get into the weeds of uncertainty, this is where recognizing the safety of casting an "honest ballot" in Approval voting becomes particularly useful.
+When information is sparse or untrustworthy, the leader rule loses some of its global optimality guarantees. Even if you just make your best guess, the leader rule is still a fairly robust heuristic that has a good chance of improving your expected outcome. However, I think once we get into the weeds of uncertainty, this is where recognizing the safety of casting an "honest ballot" in Approval voting becomes particularly useful.
 
 > An "honest ballot" is a particular type of sincere ballot, where you draw your line of acceptability based on your gut feeling of who you actually "approve" of, without strategically adjusting that line based on your perception of the election.
 
