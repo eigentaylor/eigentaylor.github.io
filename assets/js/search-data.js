@@ -643,16 +643,16 @@ ninja.data = [{
           description: "A walkthrough and proof of the theorem that proves ranked voting systems must be susceptible to strategic voting.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/gibbard-satt/";
-            },},{id: "previews-a-guide-to-approval-voting-strategy",
-          title: 'A Guide to Approval Voting Strategy',
-          description: "An explanation of the leader rule strategy in approval voting, and its positive ramifications.",
-          section: "Previews",handler: () => {
-              window.location.href = "/preview/avstrategy/";
             },},{id: "previews-the-approval-dynamics-of-laslier-39-s-leader-rule",
           title: 'The Approval Dynamics of Laslier&amp;#39;s Leader Rule',
           description: "How the leader rule induces a graph and dynamical system on candidate perceptions.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/leader-dynamics/";
+            },},{id: "previews-a-guide-to-approval-voting-strategy",
+          title: 'A Guide to Approval Voting Strategy',
+          description: "An explanation of the leader rule strategy in approval voting, and its positive ramifications.",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/avstrategy/";
             },},{id: "previews-jordan-canonical-form-made-easier-part-1",
           title: 'Jordan Canonical Form Made Easier Part 1',
           description: "not easy. just like... easier...",
