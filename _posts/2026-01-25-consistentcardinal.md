@@ -2,7 +2,7 @@
 layout: distill
 title: Approval voting is the Only Internally Consistent Cardinal Method
 date: 2026-01-25
-description: A proof that Approval voting is the unique score aggregation voting method that satisfies "Score-Condorcet-Consistency", an arguably necessary property for a trustworthy voting system.
+description: A proof that Approval voting is the unique score aggregation voting method that satisfies Score-Condorcet-Consistency, an arguably necessary property for a trustworthy voting system.
 giscus_comments: true
 importance: 2
 tags: voting
