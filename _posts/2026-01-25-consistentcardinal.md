@@ -141,9 +141,9 @@ Any system which allows a Condorcet cycle necessarily fails to be completely int
 
 In the appendix of my [other post](../practicalapproval/){:target="_blank"}, I gave an example for a SCC failure in a 0, 1, 2 scoring system. And, of course, the above construction works for any non-Approval cardinal system. But let's use the more common 0-5 system, and I'll leave you with a less conventional example to work through, which illustrates the generality of the proof for Theorem 2 in the [appendix](#appendix), where voters can give a score out of 100.
 
-Consider the general SCORE system where voters can rate a candidate 0,1,2,3,4,5. But let's just focus on 0, 1, and 5. We can normalize this to scores 0, 0.2, and 1, giving us $$s=0.2$$. Then, we have $$t=\text{ceil}(5)=5$$.
+Consider the general SCORE system where voters can rate a candidate 0,1,2,3,4,5. But let's just focus on 0, 1, and 5. We can normalize this to scores 0, 0.2, and 1, giving us $$s=0.2$$.
 
-We focus on the points of the two frontrunner candidates, A and B. Let us assume that there is an unpopular third candidate C, that both A and B voters dislike strongly, and that is why they give B a nonzero score. In a two candidate race, there is no rational reason for A voters to give B any score other than 0. Thus, we have the following profile when we un-normalize:
+We focus on the points of the two frontrunner candidates, A and B. Let us assume that there is an unpopular third candidate C, that both A and B voters dislike strongly, and that is why they give B a nonzero score. In a two candidate race, there is no rational reason for A voters to give B any score other than 0. Using the construction from the proof in the [appendix](#appendix), we have the following profile when we un-normalize:
 
 | Number of Voters | Score for A | Score for B | Preference |
 |------------------|-------------|-------------|------------|
