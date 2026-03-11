@@ -653,6 +653,11 @@ ninja.data = [{
           description: "An explanation of the leader rule strategy in approval voting, and its positive ramifications.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/avstrategy/";
+            },},{id: "previews-arrow-39-s-theorem",
+          title: 'Arrow&amp;#39;s Theorem',
+          description: "Walkthrough and proof of the theorem that proves ranked voting systems cannot satisfy seemingly reasonable properties.",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/arrows/";
             },},{id: "previews-jordan-canonical-form-made-easier-part-1",
           title: 'Jordan Canonical Form Made Easier Part 1',
           description: "not easy. just like... easier...",
