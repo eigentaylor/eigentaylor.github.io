@@ -653,8 +653,8 @@ ninja.data = [{
           description: "An explanation of the leader rule strategy in approval voting, and its positive ramifications.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/avstrategy/";
-            },},{id: "previews-arrow-39-s-theorem",
-          title: 'Arrow&amp;#39;s Theorem',
+            },},{id: "previews-arrow-39-s-impossibility-theorem",
+          title: 'Arrow&amp;#39;s Impossibility Theorem',
           description: "Walkthrough and proof of the theorem that proves ranked voting systems cannot satisfy seemingly reasonable properties.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/arrows/";
