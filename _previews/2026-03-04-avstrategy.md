@@ -246,7 +246,7 @@ In my view, however, the most surprising aspect of the leader rule is its majori
 
 One might ask "what happens if everyone uses the leader rule, all at once?" Laslier analyzes this in his paper, and [I tackle this question in much more depth in a future post](../leader-dynamics){:target="_blank"}, but the short answer is that
 
-1. First, we have to assume that all voters have the same common perception of the leader and challenger.
+1. First, we have to assume that all voters have the same common perception of the leader and challenger. Further, all voters have strict full rankings of the candidates, and they all apply the leader rule simultaneously based on that common perception of the leader and challenger.
 2. The leader rule only has one unique equilibrium when there exists a unique Condorcet winner, and the leader is that Condorcet winner. If the leader is not a unique Condorcet winner, then a new candidate (who beats the leader head-to-head) will get more approvals than the current leader, and overtake them.
 3. If there is no unique Condorcet winner, then there is no equilibrium under the leader rule.
 4. After any iteration of everyone using the leader rule, if a unique Condorcet winner exists, they will have over 50% approvals.
