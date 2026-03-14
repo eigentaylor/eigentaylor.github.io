@@ -62,6 +62,8 @@
         <div class="draft-preview-banner" style="background: #141001; border: 1px solid #fbff07; border-radius: 8px; padding: 12px 20px; margin-bottom: 20px; text-align: center; font-size: 0.95rem; color: #f6bf19;">
           📝 <strong style="color: inherit;">Draft Preview</strong> — This post is not yet published. Please don't share this link widely.
         </div>
+        {%- assign read_time = page.content | number_of_words | divided_by: 180 | plus: 1 -%}
+        <script>console.log('Read time: {{ read_time }} min read');</script>
       {% endif %}
       <d-title>
         <h1>{{ page.title }}</h1>
