@@ -147,10 +147,26 @@ In this case, there must instead be a cycle of nodes, where each node has an edg
 
 **Proof:** By theorem \ref{thm:equilibrium}, we know that $(X,Y)$ is an equilibrium if and only if $X$ is a unique Condorcet winner and $Y$ is the candidate with the best pairwise matchup against $X$. Therefore, if $X$ is a unique Condorcet winner, there exists at least one equilibrium node, which has an edge to itself, where $X$ is the leader, making $X$ a Leader Rule Outcome. Conversely, if $X$ is a Condorcet loser, by Corollary \ref{cor:majority_and_loser}, $X$ will never be the leader after all voters apply the leader rule, so $X$ is not a Leader Rule Outcome. **QED**
 
+We now add some convenient characterizations of the Leader Rule Outcomes, which will be useful for our later analysis.
+
+> **Lemma:** If candidate $X$ loses to their strongest challenger $Y$, then $Y$ is a Leader Rule Outcome. In particular, the node $(X,Y)$ has an edge to a node where $Y$ is the leader. \label{lem:strongest_challenger_outcome}
+
+**Proof:** Suppose that $X$ loses to their strongest challenger $Y$. By definition $P(Y>X) > P(Z>X)$ for all $Z \notin\{X,Y\}$. We also have by assumption that $P(Y>X) > 0.5$, and $P(X>Y) < 0.5$. Then $P(Y>X) > P(X>Y)$ and $P(Y>X) > P(Z>X)$ for all $Z \notin\{X,Y\}$, so $(X,Y)$ has an edge to $(Y,Y')$ for some $Y'$, making $Y$ a Leader Rule Outcome. **QED**
+
+> **Lemma:** If candidate $X$ is the leader in some node, and $Y$ is the strongest challenger of $X$, then the node will have an edge to a node where either $X$ is still the leader, or $Y$ is the new leader. \label{lem:leader_strongest_challenger_outcome}
+
+**Proof:** Suppose that a node where $X$ is the leader has an edge to a node where $X$ is not still the leader, but $Y$ is the new leader. Then we must have that $P(Y>X) > P(Z>X)$ for all $Z \notin\{X,Y\}$, so $Y$ is the strongest challenger of $X$. Therefore, either $X$ is still the leader, or the new leader must be the strongest challenger of $X$. **QED**
+
+This strongly restricts the possible dynamics of the leader rule. The leader can only remain static or be replaced by their strongest challenger. There is a relatively convenient characterization of when the leader can remain static.
+
+> **Lemma:** If $\text{max}_k P(X>Z_k) > \text{max}_i P(Z_i>X)$, then $X$ is a Leader Rule Outcome. In particular, there is some node where $X$ is the leader, and that node has an edge to a node where $X$ is still the leader. \label{lem:leader_remains_leader_outcome}
+
+**Proof:** Suppose that $\text{max}_k P(X>Z_k) > \text{max}_i P(Z_i>X)$. And let's say that the maximum on the left is achieved by $Z_k$. Then we have that $P(X>Z_k) > P(Z>X)$ for all $Z \neq X$. Therefore, the node $(X,Z_k)$ has an edge to a node where $X$ is still the leader, making $X$ a Leader Rule Outcome. **QED**
+
 > **Lemma:** Candidate $X$ is a Leader Rule Outcome if and only if one of the following holds: \label{lem:lr_outcome}
 >
 > 1. $X$ has a pairwise match-up against some candidate $Y$ that is stronger than any pairwise match-up against $X$. That is, there exists some $Y$ such that $P(X>Y) > P(Z>X)$ for all $Z \neq X$. Then $(X,Y)$ has an edge to a node where $X$ is the leader, making $X$ a Leader Rule Outcome.
-> 2. $X$ has the strongest pairwise match-up against some candidate $Y \neq X$, and that match-up is stronger than Y's match-up against some candidate $Y'\neq Y$. That is, there exists some $Y$ such that $P(X>Y) > P(Z>Y)$ for all $Z \neq X$ and there exists some $Y'$ such that $P(X>Y) > P(Y>Y')$ for some $Y'$. Then $(Y,Y')$ has an edge to a node where $X$ is the leader, making $X$ a Leader Rule Outcome.
+> 2. $X$ is a strongest challenger of some candidate $Y$, and $X$ defeats $Y$ pairwise.
 
 **Proof:** If condition 1 holds, then consider the node $(X,Y)$. We have that $P(X>Y) > P(Z>X)$ for all $Z \neq X$, so $X$ will have the most votes after every voter applies the leader rule, making $X$ the leader. Note that condition 1 holds when $X$ is a unique Condorcet winner, since $P(X>Z) > 0.5 > P(Z>X)$ for all $Z \neq X$. If condition 1 does not hold, then for all $Y$, there exists some $Z$ such that $P(Z>X) > P(X>Y)$, meaning that $(X,Y)$ cannot have an edge to any node where $X$ is the leader. That is, no node where $X$ is the leader can have an edge to a node where $X$ is the leader.
 
