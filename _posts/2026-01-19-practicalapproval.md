@@ -31,6 +31,7 @@ toc:
   - name: Approval Voting and Internal Consistency
     subsections:
       - name: You can't prove it's not Condorcet
+        slug: you-cant-prove-its-not-condorcet
   - name: The Condorcet Approximation of Approval Voting
   - name: Conclusion
   - name: Appendix
