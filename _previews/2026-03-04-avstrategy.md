@@ -336,34 +336,6 @@ Some reformers argue that this binary cut between approved and disapproved is to
 
 Choose-one voting is, like Approval voting, a binary ballot. You vote for some candidates and not others. The difference is that with choose-one, you must restrict your cut to be between a single candidate above all others. This creates perverse incentives to betray candidates you like for the preferred candidate out of the two who have a chance to win. Approval removes that restriction, and allows for any binary cut, which is a strict improvement. Same structure, more expressiveness, no new mechanics, no new risks.
 
-## Appendix
-
-The following is my attempt at an intuitive explanation of the mathematical proof of why the leader rule is optimal under the Florida Tremble model. The actual proof is more rigorous and formal, but I want to give a more intuitive explanation of the key ideas.
-
-### The Descending Chain of Unlikely Ties
-
-We imagine that we have a front-runner $$x_1$$, who we call the leader, and a challenger $$x_2$$. The challenger is the most likely candidate to beat the leader (i.e. the most likely candidate for the leader to tie or lose to). We imagine that every other candidate $$x_3, x_4, \ldots$$ is less likely to beat the leader than the challenger is.
-
-However, let's keep it concrete with a recent example: the 2025 NYC Mayoral Democratic Primary. In that race, which was held under Ranked-Choice Voting, Andrew Cuomo was seen as the clear front-runner (leader), and the challenger was Zohran Mamdani (who ended up winning in an upset victory). We also have other candidates like Brad Lander, Adrienne Adams, and others. Let's assume that the order is based on their first choice vote shares in the actual election. That gives the ordering $$x_1 = \text{Cuomo}$$, $$x_2 = \text{Mamdani}$$, $$x_3 = \text{Lander}$$, $$x_4 = \text{Adams}$$, etc. all the way down to the last place candidates like Paperboy Love Prince.
-
-We then have the following events in decreasing order of likelihood (by ignoring three or more way ties), assuming our identification of the leader and challenger is correct:
-
-1. Most likely: Cuomo wins by more than 1 vote over Mamdani. In this case, technically your vote has no effect, so it doesn't matter what you do.
-2. Next most likely (but far less likely): Cuomo ties with Mamdani. In this case, your vote could be decisive in determining the winner between these two candidates. Therefore, you should vote for one and only one of these candidates, depending on which you prefer. If you prefer the leader to the challenger, approve the leader (you strengthen their lead). If you prefer the challenger to the leader, approve the challenger (you help them overtake the leader). This is the most likely lottery you're going to win, so you should prioritize your ballot to be decisive in this one.
-3. Far less likely: Cuomo and Lander tie for first place. Say that, perhaps, many voters really like Lander and he surges in votes over Mamdani up to tie with Cuomo. In this case, your vote could be decisive in determining the winner between these two candidates. If you prefer Lander to Cuomo, you should definitely approve Lander to help them overtake Cuomo. If you prefer Cuomo to Lander, then what you chose in the previous step might put you in a pickle. If you are already approving Cuomo, then you're fine, you're approving exactly one between the leader and Lander. But you prefer Mamdani > Cuomo > Lander, meaning you aren't approving Cuomo, then we have to weigh the probabilities. Since it's far more likely that Cuomo and Mamdani tie than Cuomo and Lander do, you should stick with your original choice of approving only Mamdani (not the leader). That's more important than being the decider between Cuomo and Lander, which is far less likely. This is, in effect, like seeing that your ticket for the Powerball would conflict with your ticket for the Mega Millions, so you choose to prioritize the more likely lottery. Similarly, if you prefer Lander > Cuomo > Mamdani, meaning you are approving Cuomo, then you should approve Lander as well, because otherwise you risk helping Cuomo win over Lander. The key is, again, helping Cuomo win over Mamdani would be more important than helping Lander win over Cuomo. Therefore, it simply comes down to **approve Lander if and only if you prefer Lander to Cuomo**.
-4. The next most likely (but very, very unlikely): Cuomo and Adams tie for first place. By the same reasoning as before, you should approve Adams if and only if you prefer Adams to Cuomo.
-5. etc. etc. until you get to the tie between Cuomo and the last place candidate Paperboy Love Prince. Same logic: approve the last place candidate if and only if you prefer them to Cuomo. But now you have uniquely determined your entire ballot!
-
-One may ask whether or not it's more likely that Cuomo ties with Paperboy Love Prince or that Mamdani ties with Lander. The key is that *both* the Cuomo-Mamdani tie and Cuomo-Lander tie is far more likely than the Mamdani-Lander tie. That is, we should compare each candidate only to the leader. If you happen to draw one candidate in the lottery, it's far more likely that the leader is involved in that lottery than any other candidate. So how the candidate compares to the *leader* is the absolute most important factor in determining whether or not you should approve of them. The leader is the common thread that runs through all of the most likely pivotal scenarios, so your ballot should be designed to maximize your impact in those scenarios, in order of their likelihood.
-
-In summary, your ballot comes down to three rules:
-
-1. Approve every candidate you prefer to the leader $$x_1$$. No matter what. You have nothing to lose by approving them, particularly in the case that they might overtake the leader.
-2. Approve the leader $$x_1$$ if and only if you prefer them to the challenger $$x_2$$. This is the most important race, so you should make sure to approve exactly one of these two candidates based on your preference.
-3. Do not approve any candidates you prefer less than the leader $$x_1$$. This is because, if you approve of any of them, you risk being the deciding vote that gets them elected over the leader, resulting in a worse outcome for you.
-
-Note that this actually means that your optimal ballot under the leader rule is sincere! It's not optimal to have any "holes" in your approvals. For any candidate you approve, you should also approve all candidates you prefer to them.
-
 ## References
 
 Brams, S. J., & Fishburn, P. C. (1978). Approval Voting. The American Political Science Review, 72(3), 831–847. [https://doi.org/10.2307/1955105](https://doi.org/10.2307/1955105){:target="_blank"}
