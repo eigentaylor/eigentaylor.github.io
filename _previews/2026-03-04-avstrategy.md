@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: A Guide to Approval Voting Strategy
-date: 2026-03-09
+date: 2026-03-16
 description: An explanation of the leader rule strategy in approval voting, and its positive ramifications.
 giscus_comments: true
 importance: 2
@@ -84,7 +84,7 @@ The leader rule says leaving a hole in your ballot is *never* optimal, in practi
 The basic idea is
 
 1. to maximize the impact of your vote on the most likely pivotal outcomes of the election
-2. vote in a way that promotes precisely better than expected outcomes
+2. to vote in a way that promotes precisely better than expected outcomes
 
 - By approving of all candidates you prefer to the leader, you strictly increase the chances of a more preferred candidate winning. Even if they have no chance, you still strictly help them overtake or maximize the distance between them and everyone you didn't approve. It's a "why not" vote that can't hurt you. Who knows, maybe other voters find them more appealing than the leader, like you, and when you all approve of them, they get a boost that helps them overtake the leader!
 - If you prefer the challenger to the leader, then you approve of the challenger since you prefer them to the leader, and do not approve of the leader.
@@ -120,9 +120,9 @@ Let's also take my favorite election to discuss: Alaska 2022 (it wouldn't be an 
 | Sarah Palin     | R     | ~31%                | ~45%                |
 | Nick Begich III | R     | ~28% (Eliminated)   | Eliminated          |
 
-In this election under IRV, Peltola won after Begich was eliminated, despite most of his votes transferring to Palin. Further, this election was controversial partially because the ballot data showed that Begich was actually the Condorcet winner, meaning that he would have beaten both Peltola and Palin in a one-on-one race, but was eliminated first under IRV. Further, there was anger that despite nearly 60% of voters ranking a Republican candidate first, the Democrat won.
+In this election under IRV, Peltola won after Begich was eliminated, despite most of his votes transferring to Palin. Further, this election was controversial partially because the ballot data showed that Begich was actually the Condorcet winner, meaning that he would have beaten both Peltola and Palin in a one-on-one race, but was eliminated first under IRV. Additionally, there was anger that despite nearly 60% of voters ranking a Republican candidate first, the Democrat won.
 
-I want to go through how different voters might apply the leader rule in this election. In this race, the front-runner was Peltola (~40%), with Palin as the primary challenger (~31%). Begich was a relatively close third at (~28%). The most common voter types were:
+I want to go through how different voters might apply the leader rule in this election. In this race, the front-runner was Peltola (~40%), with Palin as the primary challenger (~31%). Begich was a relatively close third at ~28%. The most common voter types were:
 
 - Palin > Begich > Peltola
 - Begich > Palin > Peltola
@@ -173,9 +173,9 @@ The leader rule thus gives voters a clear and principled way to cast a ballot th
 
 In [a future post](../leader-dynamics){:target="_blank"}, I analyze Alaska 2022 using the leader rule, and I found something interesting. Under certain assumptions, Begich is the only candidate who could possibly win if every voter applies the leader rule. This basically comes down to the fact that Begich is the Condorcet winner, and his match-ups against the other candidates are the strongest ones. Therefore, in response to any other leader, a majority would approve of Begich because they prefer him to any other leader. Further, the data also indicates that Palin, as the Condorcet loser, could never win under the leader rule.
 
-The question is if Democratic voters might "regret" also approving Begich in the case where their support of Begich is what pushes him to victory. I argue no. Suppose that Palin is the leader the morning of the election. Regardless of who the challenger is, if the Peltola supporters go into the voting booth expecting Palin to win, they will vote defensively for Peltola and Begich in response to that expectation. My analysis indicates that Palin would get less than 50%, Peltola would get a meek majority of ballots, but Begich would get potentially over 60% of ballots, which would be a landslide victory. See [this post (forthcoming)](../leader-dynamics){:target="_blank"} for my evidence of this claim when it comes out.
+The question is if Democratic voters might "regret" also approving Begich in the case where their support of Begich is what pushes him to victory. I argue no. Suppose that Palin is the leader the morning of the election. Regardless of who the challenger is, if the Peltola supporters go into the voting booth expecting Palin to win, they will vote defensively for Peltola and Begich in response to that expectation. My analysis indicates that Palin would get less than 50%, Peltola would get a slim majority of ballots, but Begich would get potentially over 60% of ballots, which would be a landslide victory. See [this post (forthcoming)](../leader-dynamics){:target="_blank"} for my evidence of this claim when it comes out.
 
-From their perspective, they went into the booth expecting their least favorite candidate, and then in a complete upset, their top two candidates win a majority of ballots, and their least favorite is in last place. Begich, their second favorite, winning is certainly a more preferable outcome than Palin. Further, it is hard to regret your vote as an individual when the difference between Peltola and Begich is so significant.
+From their perspective, they went into the booth expecting their least favorite candidate to win, and then in a complete upset, their top two candidates won a majority of ballots, and their least favorite is in last place. Begich, their second favorite, winning is certainly preferable to Palin winning. Further, it is hard to regret your vote as an individual when the difference between Peltola and Begich is so significant.
 
 In the other case where they should vote for Begich, which is when Begich is the leader but Palin is the challenger, then Democratic voters go into the booth not even expecting their candidate to make it into the top two. In that case, they should still approve Peltola, but they should also vote for Begich, because reinforcing Begich's lead over Palin is the best way to prevent Palin from winning — in other words, shoring up against the worst-case outcome. The result of that strategy would likely be less of a landslide. My analysis indicates that Begich would win with over 50% and Peltola would be in second place with slightly under 50%.
 
@@ -297,9 +297,9 @@ When you have no idea who the leader and challenger are, then it's especially ha
 
 ### The Power of the Honest Ballot
 
-When you choose an "honest ballot", you optimize away from getting the *most* **preferred** candidate possible, and instead optimize on getting *any* **acceptable** candidate. For some, like myself, this is just as good. [As long as an acceptable candidate wins, I don't really care so much about which one wins](../avstratproof){:target="_blank"}. But I understand this is not a universal experience.
+When you choose an "honest ballot", you optimize away from getting the *most* **preferred** candidate possible, and instead optimize for getting *any* **acceptable** candidate. For some, like myself, this is just as good. [As long as an acceptable candidate wins, I don't really care so much about which one wins](../avstratproof){:target="_blank"}. But I understand this is not a universal experience.
 
-An "honest ballot" optimally impacts the share and margin between candidates, in a way that the Leader rule fails to do. An honest ballot strictly increases the gap between all candidates you approve of, and all candidates you do not approve of. It is an honest signal of your true preferences, and your voice *will* be heard in the election results *directly* through the approval percentages.
+An "honest ballot" optimally impacts the share and margin between candidates, in a way that the leader rule fails to do. An honest ballot strictly increases the gap between all candidates you approve of, and all candidates you do not approve of. It is an honest signal of your true preferences, and your voice *will* be heard in the election results *directly* through the approval percentages.
 
 Think of it this way: suppose you are a Republican in Alaska who prefers Palin > Begich > Peltola, but it seems like all three candidates are viable. What exactly does your ballot do when you vote for Palin and Begich?
 
@@ -311,7 +311,7 @@ Well, obviously, it gives Palin and Begich one vote each. But we already knew th
 
 Therefore, your ballot is strictly hurting Peltola, and is strictly helping both Palin and Begich. It is not hurting Palin relative to Begich, but it is helping both of them relative to Peltola.
 
-This may seem obvious, but this is not the case in other voting methods. For example, in Ranked-Choice voting, the Republican voters who sincerely ranked Palin first and Begich second did not help get a Republican elected. In fact, they actually elected Peltola, their least preferred candidate indirectly. If [less than 3,000 of the approximately 33,000 voters who did so](https://substack.com/@whelmedcitizen/p-182659376){:target="_blank"} had instead insincerely ranked Begich first and Palin second, then Palin would have been eliminated instead and Begich would have won, which is a much more preferable outcome for those voters. This is a case of sincere voting *actively* helping a much less preferred candidate, and *actively* hurting more preferred candidates.
+This may seem obvious, but this is not the case in other voting methods. For example, in Ranked-Choice voting, the Republican voters who sincerely ranked Palin first and Begich second did not help get a Republican elected. In fact, they actually elected Peltola, their least preferred candidate indirectly. If [fewer than 3,000 of the approximately 33,000 voters who did so](https://substack.com/@whelmedcitizen/p-182659376){:target="_blank"} had instead insincerely ranked Begich first and Palin second, then Palin would have been eliminated instead and Begich would have won, which is a much more preferable outcome for those voters. This is a case of sincere voting *actively* helping a much less preferred candidate, and *actively* hurting more preferred candidates.
 
 Approval has no such pathologies. Your ballot can only ever help elect someone you consciously vote for, and will *never* help someone you did *not* vote for. The difference between actively helping someone you did not vote for (as in a system like Ranked-Choice), and passively failing to help candidates you treat equally (as in Approval), is significant.
 
