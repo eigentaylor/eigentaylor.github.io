@@ -648,16 +648,16 @@ ninja.data = [{
           description: "How the leader rule induces a graph and dynamical system on candidate perceptions.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/leader-dynamics/";
-            },},{id: "previews-a-guide-to-approval-voting-strategy",
-          title: 'A Guide to Approval Voting Strategy',
-          description: "An explanation of the leader rule strategy in approval voting, and its positive ramifications.",
-          section: "Previews",handler: () => {
-              window.location.href = "/preview/avstrategy/";
             },},{id: "previews-arrow-39-s-impossibility-theorem",
           title: 'Arrow&amp;#39;s Impossibility Theorem',
           description: "Walkthrough and proof of the theorem that proves ranked voting systems cannot satisfy seemingly reasonable properties.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/arrows/";
+            },},{id: "previews-a-guide-to-approval-voting-strategy",
+          title: 'A Guide to Approval Voting Strategy',
+          description: "An explanation of the leader rule strategy in approval voting, and its positive ramifications.",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/avstrategy/";
             },},{id: "previews-jordan-canonical-form-made-easier-part-1",
           title: 'Jordan Canonical Form Made Easier Part 1',
           description: "not easy. just like... easier...",
