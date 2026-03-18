@@ -173,11 +173,39 @@ The leader rule thus gives voters a clear and principled way to cast a ballot th
 
 In [a future post](../leader-dynamics){:target="_blank"}, I analyze Alaska 2022 using the leader rule, and I found something interesting. Under certain assumptions, Begich is the only candidate who could possibly win if every voter applies the leader rule. This basically comes down to the fact that Begich is the Condorcet winner, and his match-ups against the other candidates are the strongest ones. Therefore, in response to any other leader, a majority would approve of Begich because they prefer him to any other leader. Further, the data also indicates that Palin, as the Condorcet loser, could never win under the leader rule.
 
-The question is if Democratic voters might "regret" also approving Begich in the case where their support of Begich is what pushes him to victory. I argue no. Suppose that Palin is the leader the morning of the election. Regardless of who the challenger is, if the Peltola supporters go into the voting booth expecting Palin to win, they will vote defensively for Peltola and Begich in response to that expectation. My analysis indicates that Palin would get less than 50%, Peltola would get a slim majority of ballots, but Begich would get potentially over 60% of ballots, which would be a landslide victory. See [this post (forthcoming)](../leader-dynamics){:target="_blank"} for my evidence of this claim when it comes out.
+The question is if Democratic voters might "regret" also approving Begich in the case where their support of Begich is what pushes him to victory. I argue no. Suppose that Palin is the leader the morning of the election. Regardless of who the challenger is, if the Peltola supporters go into the voting booth expecting Palin to win, they will vote defensively for Peltola and Begich in response to that expectation. My analysis indicates that if Palin is perceived as the favorite to win, then Palin would get less than 50%, Peltola would get a slim majority of ballots, but Begich would get potentially over 60% of ballots, which would be a landslide victory. See [this post (forthcoming)](../leader-dynamics){:target="_blank"} for my evidence of this claim when it comes out.
 
 From their perspective, they went into the booth expecting their least favorite candidate to win, and then in a complete upset, their top two candidates won a majority of ballots, and their least favorite is in last place. Begich, their second favorite, winning is certainly preferable to Palin winning. Further, it is hard to regret your vote as an individual when the difference between Peltola and Begich is so significant.
 
 In the other case where they should vote for Begich, which is when Begich is the leader but Palin is the challenger, then Democratic voters go into the booth not even expecting their candidate to make it into the top two. In that case, they should still approve Peltola, but they should also vote for Begich, because reinforcing Begich's lead over Palin is the best way to prevent Palin from winning — in other words, shoring up against the worst-case outcome. The result of that strategy would likely be less of a landslide. My analysis indicates that Begich would win with over 50% and Peltola would be in second place with slightly under 50%.
+
+The following is a table of the results of the election under the leader rule, in the scenarios when a Peltola > Begich > Palin voter would approve Begich:
+
+| Scenario (Peltola voters approve Begich) | Approval Results                                   |
+|-----------------------------------------|---------------------------------------------------|
+| Palin leader    | Begich: 61.4%, Peltola: 51.4%, Palin: Under 50% |
+| Begich leader, Palin challenger    | Begich: 61.4%, Peltola: 47.5%, Palin: 38.6% |
+
+In all other scenarios, where they do not approve of Begich, Begich gets 52.5% in the model. This is how the most common voter types would vote at the "equilibrium", where Begich is the leader and Peltola is the challenger, and the leader rule is applied by all voters:
+
+| Voter Type               | Approved Candidates (Begich leader, Peltola challenger) |
+|--------------------------|---------------------------------------------------------|
+| Palin > Begich > Peltola | Palin, Begich                                           |
+| Begich > Palin > Peltola | Begich                                                  |
+| Begich > Peltola > Palin | Begich                                                  |
+| Peltola > Begich > Palin | Peltola                                                 |
+
+Which would lead to the results (under the assumptions of the model)
+
+| Candidate | Approval at Equilibrium |
+|-----------|-------------------------|
+| Begich    | 52.5%                   |
+| Peltola   | 47.5%                   |
+| Palin     | 38.6%                   |
+
+Interestingly, we see that at equilibrium we have a lot of bullet voting, *and yet* the Condorcet winner is victorious. Both Begich and Peltola voters bullet vote to maximize their chance of their viable candidate winning over the other viable candidate. The Palin voters, realizing their candidate does not have sufficient appeal and will get last place, approve of both Republicans to prevent their least preferred candidate from winning. "Selfish" self-interest here leads to majoritarianism.
+
+These results should absolutely be taken with a healthy shovel-full of salt. You cannot simply switch a voting system and claim the results would go a certain way, particularly if we are assuming every single voter applies a specific strategy. But, if we take this example as simply showing what *could* happen if voters with the preferences expressed in the ballot data applied the leader rule perfectly, then we can see that the leader rule would have led to a much more majoritarian outcome, with the Condorcet winner Begich winning with a majority, up to a landslide. How it would truly play out in practice is certainly debatable. But it seems exceptionally likely to me that Begich would have won under Approval.
 
 ### Other Alaska Possibilities
 
