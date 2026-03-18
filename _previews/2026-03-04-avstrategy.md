@@ -315,6 +315,14 @@ This may seem obvious, but this is not the case in other voting methods. For exa
 
 Approval has no such pathologies. Your ballot can only ever help elect someone you consciously vote for, and will *never* help someone you did *not* vote for. The difference between actively helping someone you did not vote for (as in a system like Ranked-Choice), and passively failing to help candidates you treat equally (as in Approval), is significant.
 
+We can say some nice things, specifically, about Approval in general. Suppose we have a winner without your vote who we call $W$, and we have your ballot you're considering casting $b'$. Call the winner after your ballot $b'$ is cast $W'$. Then, we can say the following about the relationship between $W$, $W'$, and your ballot $b'$:
+
+1. If the current winner is on your ballot, they will still be the winner after you vote.
+2. If the current winner is not on your ballot, then the winner will either be exactly the same, or change to someone on your ballot.
+3. If you decide to slightly change your ballot to $b''$ by adding a candidate you were previously not approving, then the new winner $W''$ will either be the same as $W'$, or will change to the candidate you just added.
+
+These are nontrivial properties. RCV, better ranked (Condorcet) methods, STAR voting, and others fail to satisfy all of these properties. In those systems, you can get a worse outcome by showing up to vote. In Approval, you absolutely cannot. There might be a *better* ballot you could have cast, but you will never change the outcome to someone you did not consciously vote for. Therefore, if you vote for candidates you find acceptable, you can be assured that your vote will not help elect someone you find unacceptable.
+
 In short: the leader rule optimally pushes the election towards a more **preferable** outcome, but the honest ballot strictly and optimally pushes the election towards an **acceptable** outcome.
 
 Therefore, even when you have no idea who the leader and challenger are, you can still vote sincerely based on your gut feeling of who is acceptable to you, and know that you are playing optimally in the sense that you are maximizing the chance of electing an acceptable candidate.
