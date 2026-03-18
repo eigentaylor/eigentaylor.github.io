@@ -321,7 +321,7 @@ We can say some nice things, specifically, about Approval in general. Suppose we
 2. If the current winner is not on your ballot, then the winner will either be exactly the same, or change to someone on your ballot.
 3. If you decide to slightly change your ballot from $b'$ to $b''$ by adding a candidate you were previously not approving, then the new winner $W''$ will either be the same as $W'$, or will change to the candidate you just added.
 
-These are nontrivial properties. RCV, better ranked (Condorcet) methods, STAR voting, and others fail to satisfy all of these properties. In those systems, you can get a worse outcome by showing up to vote. In Approval, you absolutely cannot. There might be a *better* ballot you could have cast, but you will never change the outcome to someone you did not consciously vote for. Therefore, if you vote for candidates you find acceptable, you can be assured that your vote will not help elect someone you find unacceptable.
+These are nontrivial properties. RCV, better ranked (Condorcet) methods, STAR voting, and others fail to satisfy all of these properties. In those systems, you can get a worse outcome by showing up to vote. In Approval, there might be a *better* ballot you could have cast, but you will never change the outcome to someone you did not consciously vote for. Therefore, if you vote for candidates you find acceptable, you can be assured that your vote will not help elect someone you find unacceptable.
 
 In short: the leader rule optimally pushes the election towards a more **preferable** outcome, but the honest ballot strictly and optimally pushes the election towards an **acceptable** outcome.
 
