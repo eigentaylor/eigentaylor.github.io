@@ -50,7 +50,7 @@ We will start with two very limited assumptions about our voting system, includi
 
 First, we assume the voting system respects "citizen sovereignty".
 
-> **Definition:** We say a voting system respects **citizen sovereignty** if any candidate can win under some profile. For example, if every voter ranks that candidate first.
+> **Definition:** We say a voting system $f$ respects **citizen sovereignty** if any candidate can win under some profile. For example, if every voter ranks that candidate first.
 
 This may seem like an absurdly weak assumption that any voting system would satisfy, but there are (admittedly very absurd) examples. Take a voting system that chooses the winner based on alphabetical order of candidates. Then, no matter how voters vote, the same candidate will always win. This is a voting system that does not respect citizen sovereignty, but it is technically strategyproof, since no voter can change the outcome by voting differently. This property can be interpreted as "reachability" of candidates: any candidate can be the winner if voters rank them the right way. It is one measure of "responsiveness" for a voting system.
 
@@ -60,7 +60,7 @@ We now define the key property of strategyproofness.
 
 > **Definition:** We call $$f$$ **strategyproof** if the following is satisfied.
 >
-> Suppose that in a given profile $$P_1$$ we have $$f(P_1)=A$$, and suppose in $$P_1$$ we have a voter $$v$$ with their "honest" ranking $$R_1$$. If we obtain $$P_2$$ from changing $$P_1$$ only by adjusting the vote of $$v$$ (to a dishonest ranking), then one of the following two cases must occur:
+> Suppose that in a given profile $$P_1$$ we have $$f(P_1)=A$$, meaning that candidate $A$ wins, and suppose in $$P_1$$ we have a voter $$v$$ with their "honest" ranking $$R_1$$. If we obtain $$P_2$$ from changing $$P_1$$ only by adjusting the vote of $$v$$ (to a dishonest ranking), then one of the following two cases must occur:
 >
 > 1. $$f(P_1)=f(P_2)=A$$. The winner is preserved.
 > 2. If $$f(P_2)=B\neq A$$, then $$A>_{R_1}B$$ in $$v$$'s honest $$P_1$$ ranking.
@@ -195,7 +195,7 @@ The following Lemma characterizes the actual best possible case for $$B$$. If sa
 > 1. Every voter in $$S$$ ranks $$A$$ first and $$B$$ second
 > 2. Every voter outside of $$S$$ ranks $$B$$ first
 >
-> and $$B$$ loses, then $$A\triangleright_S B$. \label{blockcriterion}
+> and $$B$$ loses, then $$A\triangleright_S B$$. \label{blockcriterion}
 
 We remark that Pareto efficiency implies that, since $$B$$ is ranked over all candidates, except $$A$$, by every voter, then only $$B$$ or $$A$$ can possibly win in such a profile. Further, the difference between the conditions of this Lemma versus Lemma \ref{weakblock} is that voters in $$S$$ do not merely rank $$A>B$$, but have moved $$A$$ and $$B$$ to the top of their rankings. Intuitively, this is the best possible case for $$B$$ in a profile satisfying the conditions of Lemma \ref{weakblock}.
 
