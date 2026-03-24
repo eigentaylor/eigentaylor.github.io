@@ -71,7 +71,7 @@ ninja.data = [{
         
           title: "The Lichtman Perception Paradox",
         
-        description: "The Allan Lichtman hit piece you&#39;ve been waiting for.",
+        description: "A mathematician&#39;s take on Allan Lichtman&#39;s keys to the White House.",
         section: "Posts",
         handler: () => {
           
