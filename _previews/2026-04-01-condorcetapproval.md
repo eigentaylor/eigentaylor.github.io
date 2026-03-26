@@ -18,7 +18,20 @@ authors:
       name: None
 toc:
   - name: Introduction
+    subsections:
+      - name: Condorcet is an Approximation
+  - name: Generalized Condorcet Methods
+  - name: But wait, there's more!
+    slug: but-wait-theres-more
+    subsections:
+      - name: Independence of Irrelevant Alternatives
+      - name: Condorcet at Nash Equilibrium
+      - name: Strategyproofness
+  - name: You cannot be serious
   - name: Conclusion
+  - name: Appendix
+    subsections:
+      - name: The Fine Print
   - name: References
 ---
 
@@ -74,15 +87,15 @@ The biggest question is, however, does such a candidate even exist? How likely i
 
 Simple enough. If 100 voters rank Alice above Bob, and 50 voters rank Bob above Alice, while 600 voters rank Alice and Bob equally, then we choose to assume that Alice defeats Bob and Bob does not defeat Alice. If there is a candidate who defeats every other candidate, then we assume they are the Condorcet winner, and they must win.
 
-We treat the voting system as a (possibly non-deterministic) function $C_k(P)$, for $k \geq 2$ or $k = \infty$, that takes in a profile $P$ of ballot preferences (compatible with $C_k$) and outputs a single winner. If there is a Condorcet winner, then that candidate must be the unique winner.
+We treat the voting system as a function $C_k(P)$, for $k \geq 2$ or $k = \infty$, that takes in a profile $P$ of ballot preferences (compatible with $C_k$) and outputs a single winner. If there is a Condorcet winner, then that candidate must be the unique winner.
 
 > **Axiom:** If no candidate wins all of their matchups, based on the ballot data $P$, then we make no assumption about which candidate is the Condorcet winner or should win. If $P$ induces no Condorcet winner, then we make no assumption about the outcome of $C_k(P)$, and allow that any candidate could potentially be the winner.
 
-Generally, a Condorcet method uses the same number of tiers as there are candidates, so that voters could theoretically rank all candidates in a complete transitive order, which is effectively $C_\infty$. But what if we only allow voters to rank candidates in a limited number of tiers?
+Generally, a Condorcet method always chooses the same number of tiers as there are candidates, so that voters could theoretically rank all candidates in a complete transitive order, which is effectively $C_\infty$. But we investigate what happens when we restrict the number of tiers.
 
 ## Limited Tiers and the Condorcet Paradox
 
-> **Lemma:** A Condorcet winner can fail to exist if $k>2$.
+> **Lemma:** A Condorcet winner can fail to exist if $k>2$. \label{condorcetparadox}
 
 **Proof:** Consider the following profile:
 
@@ -102,23 +115,43 @@ Thus, $S(A)=S(A>B)+S(A=B)$, and $S(B)=S(B>A)+S(A=B)$.
 
 **Proof:** If more voters put $A$ in the approved tier, then $S(A)>S(B)$. Thus, $S(A>B)+S(A=B)>S(B>A)+S(A=B)$, so $S(A>B)>S(B>A)$, so $A$ defeats $B$. Conversely, if $A$ defeats $B$, then $S(A>B)>S(B>A)$, so $S(A)=S(A>B)+S(A=B)>S(B>A)+S(A=B)=S(B)$. $\square$
 
-> **Corollary:** To determine the winner in $C_2$, it suffices to count the number of approvals each candidate receives. The candidate with the most approvals is the Condorcet winner and will win. That is, $C_2$ is exactly approval voting.
+> **Theorem:**
+>
+> 1. $C_2$ induces a transitive majority relation
+> 2. There can never be a Condorcet paradox in $C_2$.
+> 3. To determine the winner in $C_2$, it suffices to count the number of approvals each candidate receives. The candidate with the most approvals is the Condorcet winner and will win.
+> 4. Therefore, $C_2$ is exactly approval voting.
+> 5. $C_2$ is the unique GCM that satisfies the first three properties. They do not hold for any $C_k$ where $k>2$.
 
-**Proof:** This follows directly from the previous result. Two tier rankings with ties is exactly equivalent to bubbling multiple names to indicate approval, and treating non-approved candidates as disapproved. Therefore, counting the number of approvals each candidate receives is sufficient to determine the Condorcet winner in $C_2$, which is exactly the same as approval voting. $\square$
+**Proof:** This follows directly from the previous result.
 
-Boom, Approval is a Condorcet method! It is precisely Condorcet consistent based on the ballot data, which is really the only kind of Condorcet consistency that any Condorcetist seems to care about. But wait, there's more!
+**Claim 1:** By the previous lemma, $A$ defeats $B$ if and only if $S(A)>S(B)$. Thus, the ordinal ranking of candidates by $S(\cdot)$ is the same as the majority relation. Since the ordinal ranking of candidates by $S(\cdot)$ is a sequence of real numbers, it is totally ordered and thus transitive.
 
-> **Proposition:** $C_2$ induces a transitive majority relation, and thus there can never be a Condorcet paradox in $C_2$.
+**Claim 2:** This directly implies the absence of a Condorcet paradox in $C_2$. Suppose that $A$ defeats $B$, and $B$ defeats $C$. Then $S(A)>S(B)$ and $S(B)>S(C)$, so $S(A)>S(C)$ by transitivity of the real numbers, so $A$ defeats $C$.
 
-**Proof:** By the previous lemma, $A$ defeats $B$ if and only if $S(A)>S(B)$. Thus, the ordinal ranking of candidates by $S(\cdot)$ is the same as the majority relation. Since the ordinal ranking of candidates by $S(\cdot)$ is a sequence of real numbers, it is totally ordered and thus transitive.
+**Claim 3:** As a Condorcet method, $C_2$ must elect the Condorcet winner whenever one exists. By the previous lemma, the candidate with the most approvals is the Condorcet winner. Therefore, $C_2$ always elects the candidate with the most approvals, and that candidate will always be the Condorcet winner.
 
-This directly implies the absence of a Condorcet paradox in $C_2$. Suppose that $A$ defeats $B$, and $B$ defeats $C$. Then $S(A)>S(B)$ and $S(B)>S(C)$, so $S(A)>S(C)$ by transitivity of the real numbers, so $A$ defeats $C$. $\square$
+Therefore, $C_2$ is exactly approval voting. 
 
-> **Theorem:** A Condorcet winner always exists for $C_k$ if and only if $k=2$. Further, as a GCM, that Condorcet winner will win without fail.
+**Claim 5:** By Lemma \ref{condorcetparadox}, any $C_k$ where $k>2$ can admit a Condorcet paradox, so it cannot satisfy the first two properties. To conclude the proof, we show that if $k>3$ then a candidate with the most first ranks is not necessarily the Condorcet winner. Consider the following profile:
 
-**Proof:** If $k=2$, then by the previous results, the candidate with the most approvals must defeat every other candidate, so there is a Condorcet winner. Conversely, if $k>2$, then by the first lemma, there can be a profile with no Condorcet winner. As a GCM, the Condorcet winner must win by definition. $\square$
+| Voters | 1st Tier | 2nd Tier | 3rd Tier |
+|--------|----------|----------|----------|
+| 3      | A        | B        | C        |
+| 2      | B        | C        | A        |
+| 2      | C        | B        | A        |
 
-Not only is Approval a Condorcet method, it is also the *only Condorcet method that can guarantee the existence of a Condorcet winner* when restricted to two tiers.
+In this profile, $A$ has the most first ranks, but $B$ defeats both $A$ and $C$, so $A$ is not the Condorcet winner. $\square$
+
+Boom, Approval is a Condorcet method! It is precisely Condorcet consistent based on the ballot data, which is really the only kind of Condorcet consistency that any Condorcetist seems to care about.
+
+Not only that, it is also the *only Condorcet method that can guarantee the existence of a Condorcet winner*.
+
+<img src="/assets/img/approvalcondorcetmeme1.jpg" alt="Approval is not two-tiered score, but two tiered Condorcet" style="width:100%; max-width:600px;">
+
+Further, the last property of the theorem implies that we need only count the number of approvals each candidate receives to determine the winner and all the pairwise matchup data is perfectly captured by the approval scores. Therefore, practically, Approval only requires tallying up $n$ numbers, rather than approximately $n(n-1)$ numbers for precinct summability.
+
+$n(n-1)$ is not very much, particularly for small $n$. But $n$ is even less and obviously grows more slowly. Further, if you wanted to do it really slickly, you could just have a single marginal pairwise tally for each candidates. So rather than $A>B$ being $+1$ for $A$ over $B$, and $B>A$ being $+1$ for $B$ over $A$, you could just have a single tally for $A$ where $A>B$ is $+1$ and $B>A$ is $-1$.
 
 ## But wait, there's more!
 
@@ -140,17 +173,15 @@ Intuitively, changing how voters rank candidates that are not $A$ or $B$ should 
 
 Construct a profile $P'$ from $P$ by having every voter move $Y$ to the bottom of their ranking, without changing the relative ranking of $X$ and $Z$. Since there are at least three tiers available, this is always possible. In this new profile, $Z$ still defeats $X$, but now both $X$ and $Z$ defeat $Y$. This means that $Z$ is now the Condorcet winner in $P'$, so society ranks $Z$ above $X$. We therefore have a violation of IIA, because the social preference between $X$ and $Z$ has changed despite the relative ranking of $X$ and $Z$ remaining the same.
 
-Finally, we show that Approval voting satisfies IIA. Suppose that $S(A) > S(B)$ under some profile $P$, where $S(X)$ denotes the approval score of candidate $X$. If we change the ballots from $P$ to $P'$ such that the relative ranking of candidates $A$ and $B$ is the same in both $P$ and $P'$, then we can only make the following changes:
+Finally, we show that Approval voting satisfies IIA. Suppose that $S_P(A) > S_P(B)$, implying $S_P(A>B) > S_P(B>A)$, under some profile $P$, where $S_P(X)$ denotes the approval score of candidate $X$ in profile $P$ and $S_P(X>Y)$ denotes the number of voters who strictly approve $X$ over $Y$. If we change the ballots from $P$ to $P'$ such that the relative ranking of candidates $A$ and $B$ is the same in both $P$ and $P'$, then we cannot change the approval of $A$ and $B$ for any voter who distinguishes between $A$ and $B$. Therefore, $S_P(A>B)=S_{P'}(A>B)$ and $S_P(B>A)=S_{P'}(B>A)$ represent the exact same set of voters in $P$ and $P'$, meaning
 
-- For a voter who ranks $A>B$ in $P$: They must still rank $A>B$ in $P'$, so their approval of $A$ and $B$ remains consistent. They may change their approval of other candidates, but this does not affect the relative approval scores of $A$ and $B$.
-- For a voter who ranks $B>A$ in $P$: They similarly must still rank $B>A$ in $P'$, so their approval of $A$ and $B$ remains consistent.
-- For a voter who ranks $A=B$ in $P$: They must still rank $A=B$ in $P'$, but they can choose to collectively move them both up or down between approval and disapproval. They may also change the approval of other candidates.
+$$\begin{multline*}
+S_P(A>B)-S_P(B>A)=S_{P'}(A>B)-S_{P'}(B>A)\\
+\implies S_P(A)-S_P(B)=S_{P'}(A)-S_{P'}(B)\\
+\implies S_P(A)>S_P(B) \iff S_{P'}(A)>S_{P'}(B)
+\end{multline*}$$
 
-In all cases, no voter who distinguished between $A$ and $B$ in $P$ changes their approval of $A$ or $B$ in $P'$. Therefore, $S(A>B)$ and $S(B>A)$ remain the same in $P'$, though $S(A)$ and $S(B)$ may change due to changes in approval of other candidates. However,
-
-$$S(A)-S(B)=S(A>B)-S(B>A)$$
-
-which are the same in $P'$ as they were in $P$. Therefore, while the raw approval scores of $A$ and $B$ may change due to changes in approval of other candidates, the exact difference $S(A)-S(B)$ remains the same. Therefore, $A$ has more total approvals than $B$ in $P$ if and only if $A$ has more total approvals than $B$ in $P'$. Since societal ranking is determined by the order of approval scores, Approval voting satisfies IIA, and is thus the only GCM that does so. $\square$
+Therefore, $A$ has more total approvals than $B$ in $P$ if and only if $A$ has more total approvals than $B$ in $P'$. $\square$
 
 We can see that Approval voting actually satisfies a sort of "super-IIA" property, since the *exact* numerical distance between the approval scores of any two candidates remains unchanged when the relative ranking of those two candidates is preserved, regardless of changes in the approval of other candidates. That is, Approval is highly immutable with respect to the relative ranking of any two candidates. Voters *must* change how they express their relative preferences between two candidates in order to affect the social preference between them.
 
@@ -199,13 +230,13 @@ Therefore, no insincere strategy by any coalition of voters who prefer $X$ to $W
 
 And here's the kicker: While Approval voting has a strong Nash Equilibrium under both sincere and insincere strategies where the Condorcet winner is elected, and those are the only strong Nash Equilibria, no other Condorcet-consistent voting system can guarantee the election of a Condorcet winner in any kind of Nash equilibrium. The following is a proof by Brams in that same chapter.
 
-> **Theorem:** If $k>2$, then $C_k$ cannot ensure the election of a Condorcet winner as a Nash equilibrium. That is, if $P$ has a Condorcet winner, and all voters are voting sincerely, then $P$ isn't necessarily a Nash equilibrium. Voters could benefit from misrepresenting their preferences and prevent the Condorcet winner from being elected.
+> **Theorem:** If $k>2$, then $C_k$ cannot ensure the election of a Condorcet winner as a Nash equilibrium. That is, if $P$ has a Condorcet winner $W$, then $P$ might not be a Nash equilibrium. Voters could benefit from misrepresenting their preferences and prevent the Condorcet winner from being elected.
 
 **Proof:** Consider the following profile:
 
 | Number of Voters | Preference Order $P$ |
 |------------------|----------------------|
-| $2$              | $A > B > B > C$      |
+| $2$              | $A > D > B > C$      |
 | $2$              | $B > D > C > A$      |
 | $1$              | $C > A > B > D$      |
 
