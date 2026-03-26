@@ -19,9 +19,13 @@
     var labelMap = {}; // key -> { number, id, type }
     var counters = {}; // type -> count
 
+    // list of supported theorem types
+    var theoremTypes = ["Definition", "Lemma", "Theorem", "Remark", "Corollary", "Proposition", "Conjecture", "Axiom"];
+
+
     // Match: "Type", optional number, optional parenthetical, then ":"
     var typeRe =
-        /^(Definition|Lemma|Theorem|Remark|Corollary|Proposition|Conjecture)\s*\d*\s*(\([^)]*\))?\s*:$/i;
+        /^(Definition|Lemma|Theorem|Remark|Corollary|Proposition|Conjecture|Axiom)\s*\d*\s*(\([^)]*\))?\s*:$/i;
     var labelRe = /\\label\{([^}]+)\}/;
 
     /* ── Step 1: Auto-number theorem blocks and collect labels ── */
