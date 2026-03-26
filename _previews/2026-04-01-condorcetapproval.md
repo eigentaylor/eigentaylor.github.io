@@ -102,7 +102,7 @@ Thus, $S(A)=S(A>B)+S(A=B)$, and $S(B)=S(B>A)+S(A=B)$.
 
 **Proof:** Suppose that $A$ defeats $B$, and $B$ defeats $C$. Then $S(A)>S(B)$ and $S(B)>S(C)$, so $S(A)>S(C)$ by transitivity of the real numbers, so $A$ defeats $C$. $\square$
 
-> **Theorem:** A Condorcet winner always exists for $C_k$ if and only if $k=2$ and if there is no tie for the most approved candidate. Further, as a GCM, that Condorcet winner must win.
+> **Theorem:** A Condorcet winner always exists for $C_k$ if and only if $k=2$. Further, as a GCM, that Condorcet winner will win without fail.
 
 **Proof:** If $k=2$, then by the previous results, the candidate with the most approvals must defeat every other candidate, so there is a Condorcet winner. Conversely, if $k>2$, then by the first lemma, there can be a profile with no Condorcet winner. As a GCM, the Condorcet winner must win by definition. $\square$
 
