@@ -307,14 +307,28 @@ We absolutely restrict the expression of voters to do this. And it's a normative
 2. Also in simulations, Approval has been shown to have essentially the same level of outcomes as more complex Condorcet methods. Whereas Ranked Robin gets up to about 99% VSE, Approval gets up to about 95%. That's nearly 96% of the way there *with other benefits* as listed above.
 3. In an era of distrust in institutions and elections, I believe that simplicity and clarity are a prerequisite for trust. And I do not trust that a generic Condorcet method is sufficiently simple and transparent (particularly in the case of a cycle, rare as they may be) in all cases to be a permanent solution. Approval is the only system I think is simple enough to be that permanent solution, and I think it *has to be the first step*. Approval tomorrow, Condorcet next week is something I might be willing to get behind.
 
+Fellow Condorcetists, let us unite behind the best and most practical Condorcet method: Approval voting!
+
 ## Conclusion
 
 ## Appendix
 
 ### The Fine Print
 
-To be perfectly clear: Approval voting is strategyproof under the goal of electing an acceptable candidate, if you can cleanly partition the candidates into "acceptable" and "unacceptable" sets for each voter. But in general, Approval voting is not strategyproof for any realistic sense of voter preferences beyond completely black-and-white acceptability judgments.
+To be perfectly clear: Approval voting is strategyproof under the goal of electing any acceptable candidate, if you can cleanly partition the candidates into "acceptable" and "unacceptable" sets, then voting according to that preference is optimal *under that goal*. But in general, Approval voting is not strategyproof for any realistic sense of voter preferences beyond completely black-and-white acceptability judgments. There are [strategies like the Leader Rule](../avstrategy){:target="_blank"} that help draw a line of acceptability optimally to get the most preferable possible outcome, which increase the Condorcet efficiency of Approval voting, but Approval is not generally strategyproof.
 
 Further, IIA is only satisfied by Approval voting at the ballot level. The introduction of a candidate, for example, can indeed change the decision of a voter about whether or not to approve other candidates, because the new candidate may alter the voter's perception of which candidates are acceptable. For example, maybe I'd vote for Bob and Dylan against Clark. But if Alice suddenly enters the race, then screw Bob and Dylan! I love Alice so much I will only approve of her.
+
+Similar things can be said about plurality level if you decide that "at the ballot level" is an acceptable loophole. Then, as a domain restriction, plurality also satisfies IIA. However, I do believe there is something to be said that dichotomous preferences, which are relatively realistic enough to be worth defining a voting system around, are more realistic than the extreme restriction of single-peaked preferences that plurality relies on. And the dichotomous preference domain is maximal to guarantee that a Condorcet method can be "perfect".
+
+It is not a surprise that Approval is "perfect" on the domain of Dichotomous preferences, since that is *precisely* the domain that Approval is designed for. But I do think it is surprising that Approval voting is genuinely a *kind* of Generalized Condorcet method (if you squint a bit).
+
+I maintain that any ranked method does rely on a domain restriction of transitive preferences. This is an extremely reasonable restriction for tractability. But I do think it does add a level of uncertainty to the claim that any ranked system can reliably capture the Condorcet winner when voters truncate their ballots, or have incomplete information about their preferences, or have intransitive preferences.
+
+In contrast, Approval voting is up front about its massive domain restriction, but treats and aggregates the signal it gets from voters faithfully. I posit that the binary Approval voting question of "who do you consent to govern you?" is a practical choice because
+
+1. It elects the true Condorcet winner so often
+2. It makes the system more practical and accessible to voters, which is crucial for legitimacy and turnout
+3. It gives more legitimacy than any other Condorcet method can guarantee
 
 ## References
