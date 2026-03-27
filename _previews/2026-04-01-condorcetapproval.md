@@ -153,6 +153,22 @@ Further, the last property of the theorem implies that we need only count the nu
 
 $n(n-1)$ is not very much, particularly for small $n$. But $n$ is even less and obviously grows more slowly. Further, if you wanted to do it really slickly, you could just have a single marginal pairwise tally for each candidates. So rather than $A>B$ being $+1$ for $A$ over $B$, and $B>A$ being $+1$ for $B$ over $A$, you could just have a single tally for $A$ where $A>B$ is $+1$ and $B>A$ is $-1$.
 
+## You can't prove it's not Condorcet
+
+As we have proved, Approval voting is indeed a Condorcet method, just restricted to two tiers. This is a restriction to binary "acceptable" vs "unacceptable" preferences, just as a ranked method is a restriction of an arbitrary preference ordering to a transitive one. But as a Condorcet method, it always elects the candidate who would win all pairwise matchups against other candidates based on the preferences expressed in the ballot data.
+
+However, unlike any ranked method, [or scoring method with three or more options](../consistentcardinal){:target="_blank"}, Approval never admits a case where another candidate has a legitimate claim to victory over the actual elected candidate, who is a Condorcet winner.
+
+As with any Condorcet method, all we have to go on is what voters express. Therefore, if there is, say, a true Condorcet winner if we theoretically held all pairwise matchups, and that candidate does not win, we can never know. But how *could* a candidate like that lose?
+
+Simply, any candidate loses an Approval voting election if and only if it was a skill issue. To be blunt, losing an Approval election is entirely the candidate's fault for not earning enough approvals from the voters. While the case could be made that this is true in plurality voting as well, not quite as cleanly.
+
+True, you lose plurality because not enough voters picked you. And if a third party sapped enough votes from you, well that is partially your fault. But under Approval, this isn't a proper excuse, because those third party voters can approve that third party *and* you. They had the pen in their hand, they looked at your name, and said "no thanks". Thus, if you get "spoiled", it's not because that third party candidate exists, it's because you couldn't convince their voters to also support you. In that case, all I can say is "cry about it".
+
+### You can't prove it IS Condorcet
+
+However, like we also said, for an arbitrary Condorcet method that allows full rankings, we can't prove the winner is actually the true Condorcet winner because we didn't actually hold all pairwise matchups. Unless you ask *every* single voter how they would vote in every possible pairwise matchup, I reject that you can prove the winner is the true Condorcet winner based on a ranked ballot election. You can probably have a very strong heuristic argument, but not a formal proof.
+
 ## But wait, there's more!
 
 We have so far proved that Approval voting *is* a Condorcet method restricted to two tiers, and that it has a number of unique advantages over other Condorcet methods, but there's so much more!
@@ -260,16 +276,24 @@ No... it can't be... No voting system can be strategyproof, can it? But... what 
 
 *Obviously*, any voter who participates in an election wants an acceptable candidate. And if you ask a voter if they find a candidate acceptable, and hold a gun to their head and refuse to take anything but "yes" or "no" as an answer, then of course the voter will be able to give you a truthful answer.
 
+The following is a result from Brams and Fishburn which we will not prove.
+
+> **Lemma:** Any optimal, non-dominated strategy for a voter in Approval voting involves voting for all candidates in a voter's highest tier and none in their lowest tier.
+
+There is never any reason not to approve of your favorite(s) and to disapprove of your least favorite(s). This gives us the following result:
+
 > **Theorem:** Approval voting is strategyproof under the goal of electing any acceptable candidate, with a dominant strategy for each voter being to approve all candidates they find acceptable and disapprove all candidates they find unacceptable.
 
-We assume that if a voter ranks $A$ above $B$, then they prefer $A$ winning outright to $A$ tying with $B$ to $B$ winning outright.
+We assume that if a voter ranks $A$ above $B$, then they prefer $A$ winning outright to $A$ tying with $B$ to $B$ winning outright. Under the goal of electing any acceptable candidate, we assume that a voter prefers any acceptable candidate winning to any unacceptable candidate winning, and [that is their entire preference ordering](#the-fine-print).
 
-**Proof:** Consider a single voter with a particular honest preference that they find all candidates in a set $S$ acceptable and all candidates not in $S$ unacceptable. Consider any deviation from this strategy:
+**Proof:** Consider a single voter with a particular honest preference that they find all candidates in a set $S$ acceptable and all candidates not in $S$ unacceptable. Under the goal of electing any acceptable candidate, all acceptable candidates comprise the voter's top tier, and all unacceptable candidates comprise the voter's bottom tier, so the voter's optimal strategy is to approve all candidates in $S$ and disapprove all candidates not in $S$. $\square$
 
-1. If the voter fails to vote for an acceptable candidate, then they may fail to break a tie between that candidate and an unacceptable candidate, resulting in a less preferred outcome. The outcome for any election with this ballot is identical to the outcome if the voter adds the acceptable candidate to their approval set, except that the acceptable candidate may now tie with or surpass the unacceptable candidate. Therefore, having all acceptable candidates in the approval set strictly dominates any strategy that excludes acceptable candidates.
-2. If the voter votes for an unacceptable candidate, then they may cause that candidate to tie with or surpass an acceptable candidate, resulting in a less preferred outcome. The outcome for any election with this ballot is identical to the outcome if the voter drops the unacceptable candidate from their approval set, except that the unacceptable candidate may no longer tie with or surpass the acceptable candidate. Therefore, having no unacceptable candidates in the approval set strictly dominates any strategy that includes unacceptable candidates.
+Intuitively, consider any deviation from this strategy:
 
-Therefore, voting sincerely for all acceptable candidates and against all unacceptable candidates is a unique dominant and sincere strategy for each voter. This proves that Approval voting is strategyproof under the goal of electing any acceptable candidate. $\square$
+1. If the voter fails to vote for an acceptable candidate, then they may fail to break a tie between that candidate and an unacceptable candidate, resulting in a less preferred outcome. Therefore, having all acceptable candidates in the approval set strictly dominates any strategy that excludes acceptable candidates.
+2. If the voter votes for an unacceptable candidate, then they may cause that candidate to tie with or surpass an acceptable candidate, resulting in a less preferred outcome. Therefore, having no unacceptable candidates in the approval set strictly dominates any strategy that includes unacceptable candidates.
+
+Hence, voting sincerely for all acceptable candidates and against all unacceptable candidates is a unique dominant and sincere strategy for each voter. This proves that Approval voting is strategyproof under the goal of electing any acceptable candidate.
 
 ## You cannot be serious
 
@@ -282,8 +306,8 @@ There is one point (among many) that should be addressed, however. Plurality vot
 All Condorcetists choose to simplify the data through some sort of limitation on what ballots voters can cast, for the purpose of making the system tractable and practical. And we have a hierarchy of compromises that a Condorcet method can make.
 
 1. $C_\infty$ simplifies the data by assuming voters have transitive preferences, but allows all possible rankings at the cost of guaranteeing a Condorcet winner.
-2. $C_k$ for $k>2$ simplifies the data by assuming voters have transitive preferences within some number of tiers. This still allows for paradoxes and does not really simplify the data much beyond unecessarily restricting voters to a small number of tiers.
-3. $C_2$ simplifies teh data by assuming voters can project their preferences into a partition of candidates into "acceptable" and "unacceptable" sets. This is a simplification and compromise that results in the complete elimination of all issues that arise from the Condorcet paradox, and allows us to perfectly capture the Condorcet winner in all cases based on the ballot data.
+2. $C_k$ for $k>2$ simplifies the data by assuming voters have transitive preferences within some number of tiers. This still allows for paradoxes and does not really simplify the data much beyond unnecessarily restricting voters to a small number of tiers.
+3. $C_2$ simplifies the data by assuming voters can project their preferences into a partition of candidates into "acceptable" and "unacceptable" sets. This is a simplification and compromise that results in the complete elimination of all issues that arise from the Condorcet paradox, and allows us to perfectly capture the Condorcet winner in all cases based on the ballot data.
 4. Plurality voting restricts $C_2$ to a single choice for the top tier, which allows it to maintain the properties of $C_2$, but is an arbitrary restriction that does not simplify the data significantly.
 
 $C_2$ is the maximal level that maintains a "reasonable" level of preference expression that allows the Condorcet method to work "perfectly". Here's the truth: I am an ultra pure Condorcetist. Purer than those who scoff at Approval voting, because I do not just think the Condorcet winner *should* be elected if they exist, I think if your system cannot guarantee that one will, then it's a broken system with no practical potential. Approval is the purest Condorcet method because it always elects and induces a Condorcet winner.
