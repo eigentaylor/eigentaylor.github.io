@@ -230,17 +230,27 @@ Therefore, no insincere strategy by any coalition of voters who prefer $X$ to $W
 
 And here's the kicker: While Approval voting has a strong Nash Equilibrium under both sincere and insincere strategies where the Condorcet winner is elected, and those are the only strong Nash Equilibria, no other Condorcet-consistent voting system can guarantee the election of a Condorcet winner in any kind of Nash equilibrium. The following is a proof by Brams in that same chapter.
 
-> **Theorem:** If $k>2$, then $C_k$ cannot ensure the election of a Condorcet winner as a Nash equilibrium. That is, if $P$ has a Condorcet winner $W$, then $P$ might not be a Nash equilibrium. Voters could benefit from misrepresenting their preferences and prevent the Condorcet winner from being elected.
+> **Theorem:** If $k>2$, then $C_k$ is not strategyproof, nor can it ensure the election of a Condorcet winner as a Nash equilibrium. That is, if $P$ has a Condorcet winner $W$, then $P$ might not be a Nash equilibrium. Voters could benefit from misrepresenting their preferences and prevent the Condorcet winner from being elected.
 
 **Proof:** Consider the following profile:
 
 | Number of Voters | Preference Order $P$ |
 |------------------|----------------------|
-| $2$              | $A > D > B > C$      |
-| $2$              | $B > D > C > A$      |
-| $1$              | $C > A > B > D$      |
+| 1                | $A > B > C$          |
+| 1                | $B > C > A$          |
+| 1                | $C > A > B$          |
 
-TODO: finish this proof
+Consider the following cases:
+
+1. If $C_k(P)=A$, then suppose that the truthful preference of the first voter is actually $A>C>B$. If that was true, then the true Condorcet winner is $C$ in that honest profile $P_C$. Thus, moving from $P_C$ to $P$ by having the first vote bury $C$ to the bottom of their ranking results in a profitable deviation for the first voter, by changing the winner from their second favorite, $C$, to their first favorite, $A$.
+2. If $C_k(P)=B$, then suppose that the truthful preference of the second voter is actually $B>A>C$. If that was true, then the true Condorcet winner is $A$ in that honest profile $P_A$. Thus, moving from $P_A$ to $P$ by having the second vote bury $A$ to the bottom of their ranking results in a profitable deviation for the second voter, by changing the winner from their second favorite, $A$, to their first favorite, $B$.
+3. If $C_k(P)=C$, then suppose that the truthful preference of the third voter is actually $C>B>A$. If that was true, then the true Condorcet winner is $B$ in that honest profile $P_B$. Thus, moving from $P_B$ to $P$ by having the third vote bury $B$ to the bottom of their ranking results in a profitable deviation for the third voter, by changing the winner from their second favorite, $B$, to their first favorite, $C$.
+
+In all cases, we have that a single voter can benefit by throwing the system into a cycle by burying the true Condorcet winner, so $C_k$ is not strategyproof, and the profiles $P_A$, $P_B$, and $P_C$ are not Nash equilibria. $\square$
+
+This tells us that the more complex systems designed entirely to elect the Condorcet winner whenever detected by the more complex ballot cannot even boast that such election is a Nash equilibrium. Whereas the simpler system of Approval voting can guarantee that if there is a Condorcet winner, then there is a strong Nash equilibrium, and any strong Nash equilibrium must elect a Condorcet winner.
+
+Sure, of course you can construct a pathological case where Approval elects the Condorcet loser by having voters vote stupidly. Just as the above proof constructs a pathological case where an election of just three voters can result in the system being thrown into a cycle by a single voter. However, the point is that Approval voting is still solidly good at electing the Condorcet winner, and more complex Condorcet methods still cannot even guarantee that they fulfill their main purpose as a Nash equilibrium.
 
 ### Strategyproofness
 
@@ -250,7 +260,7 @@ No... it can't be... No voting system can be strategyproof, can it? But... what 
 
 *Obviously*, any voter who participates in an election wants an acceptable candidate. And if you ask a voter if they find a candidate acceptable, and hold a gun to their head and refuse to take anything but "yes" or "no" as an answer, then of course the voter will be able to give you a truthful answer.
 
-> **Theorem:** Approval voting is strategyproof under the goal of electing an acceptable candidate, with a dominant strategy for each voter being to approve all candidates they find acceptable and disapprove all candidates they find unacceptable.
+> **Theorem:** Approval voting is strategyproof under the goal of electing any acceptable candidate, with a dominant strategy for each voter being to approve all candidates they find acceptable and disapprove all candidates they find unacceptable.
 
 We assume that if a voter ranks $A$ above $B$, then they prefer $A$ winning outright to $A$ tying with $B$ to $B$ winning outright.
 
@@ -259,7 +269,7 @@ We assume that if a voter ranks $A$ above $B$, then they prefer $A$ winning outr
 1. If the voter fails to vote for an acceptable candidate, then they may fail to break a tie between that candidate and an unacceptable candidate, resulting in a less preferred outcome. The outcome for any election with this ballot is identical to the outcome if the voter adds the acceptable candidate to their approval set, except that the acceptable candidate may now tie with or surpass the unacceptable candidate. Therefore, having all acceptable candidates in the approval set strictly dominates any strategy that excludes acceptable candidates.
 2. If the voter votes for an unacceptable candidate, then they may cause that candidate to tie with or surpass an acceptable candidate, resulting in a less preferred outcome. The outcome for any election with this ballot is identical to the outcome if the voter drops the unacceptable candidate from their approval set, except that the unacceptable candidate may no longer tie with or surpass the acceptable candidate. Therefore, having no unacceptable candidates in the approval set strictly dominates any strategy that includes unacceptable candidates.
 
-Therefore, voting sincerely for all acceptable candidates and against all unacceptable candidates is a unique dominant and sincere strategy for each voter. This proves that Approval voting is strategyproof under the goal of electing an acceptable candidate. $\square$
+Therefore, voting sincerely for all acceptable candidates and against all unacceptable candidates is a unique dominant and sincere strategy for each voter. This proves that Approval voting is strategyproof under the goal of electing any acceptable candidate. $\square$
 
 ## You cannot be serious
 
@@ -267,7 +277,20 @@ Oh, but I am. Mostly. Half-and-half.
 
 Here's what is absolutely true: Because no Condorcet method asks voters to directly vote in every possible head-to-head matchup, we cannot assume that any ranked method can perfectly capture the Condorcet winner in all cases, because you simply cannot assume all voters have transitive preferences over all candidates, *and* you can't force voters to completely rank all candidates without ties unless you want to bottleneck turnout.
 
-Approval voting is a Condorcet method that changes the question from asking voters for a ranking which may or may not accurately reflect their preferences into a simpler question: who do you consent to govern you?
+There is one point (among many) that should be addressed, however. Plurality voting, as a matter of act, also satisfies many of the same properties we have proved for Approval. It is also technically a Condorcet method that satisfies IIA, and it is also strategyproof if you assume that voters can only like a single candidate and equally dislike all other candidates. However, this isn't the gotcha some might think, because this is so because plurality is just an arbitrary restriction on Approval voting. Approval voting is precisely the minimal level of ballot restriction we can place on a Condorcet method to ensure that it's "perfect".
+
+All Condorcetists choose to simplify the data through some sort of limitation on what ballots voters can cast, for the purpose of making the system tractable and practical. And we have a hierarchy of compromises that a Condorcet method can make.
+
+1. $C_\infty$ simplifies the data by assuming voters have transitive preferences, but allows all possible rankings at the cost of guaranteeing a Condorcet winner.
+2. $C_k$ for $k>2$ simplifies the data by assuming voters have transitive preferences within some number of tiers. This still allows for paradoxes and does not really simplify the data much beyond unecessarily restricting voters to a small number of tiers.
+3. $C_2$ simplifies teh data by assuming voters can project their preferences into a partition of candidates into "acceptable" and "unacceptable" sets. This is a simplification and compromise that results in the complete elimination of all issues that arise from the Condorcet paradox, and allows us to perfectly capture the Condorcet winner in all cases based on the ballot data.
+4. Plurality voting restricts $C_2$ to a single choice for the top tier, which allows it to maintain the properties of $C_2$, but is an arbitrary restriction that does not simplify the data significantly.
+
+$C_2$ is the maximal level that maintains a "reasonable" level of preference expression that allows the Condorcet method to work "perfectly". Here's the truth: I am an ultra pure Condorcetist. Purer than those who scoff at Approval voting, because I do not just think the Condorcet winner *should* be elected if they exist, I think if your system cannot guarantee that one will, then it's a broken system with no practical potential. Approval is the purest Condorcet method because it always elects and induces a Condorcet winner.
+
+<img src="/assets/img/approvalcondorcetmeme2.jpg" alt="Approval is the cool Condorcet method" style="width:100%; max-width:600px;">
+
+Another way to look at it is that Approval voting is a Condorcet method that changes the question from asking voters for a ranking which may or may not accurately reflect their preferences in one-on-one elections into a simpler question: who do you consent to govern you?
 
 The latter question is binary and well defined. And because it is binary, it is impossible to induce a Condorcet paradox. If you are a fellow Condorcetist who scoffs that this question is *too* restrictive, then I reject that your arbitrary restriction is any less arbitrary than mine. Mine, however, has the following benefits:
 
@@ -277,6 +300,12 @@ The latter question is binary and well defined. And because it is binary, it is 
 4. Eliminates the possibility of a Condorcet paradox, ensuring a clear and decisive outcome in every election.
 5. Simplifies the voting process, reducing cognitive load on voters and minimizing the potential for errors in ballot completion.
 6. Voters who don't have the time to rank 10 candidates for Comptroller can still participate meaningfully by simply approving the candidates they find acceptable.
+
+We absolutely restrict the expression of voters to do this. And it's a normative choice to make that practicality should be prioritized over the ability to express more complex preferences. But here's why I think it's the right choice:
+
+1. Approval, in practice and in simulations, elects the true Condorcet winner exceptionally often, depending on strategy. Up to 90% or more. And even when it doesn't, you literally can't prove it. Approval gets you the same or more legitimacy than a Condorcet method would, but 100% of the time instead of 100% of the time minus cycles.
+2. Also in simulations, Approval has been shown to have essentially the same level of outcomes as more complex Condorcet methods. Whereas Ranked Robin gets up to about 99% VSE, Approval gets up to about 95%. That's nearly 96% of the way there *with other benefits* as listed above.
+3. In an era of distrust in institutions and elections, I believe that simplicity and clarity are a prerequisite for trust. And I do not trust that a generic Condorcet method is sufficiently simple and transparent (particularly in the case of a cycle, rare as they may be) in all cases to be a permanent solution. Approval is the only system I think is simple enough to be that permanent solution, and I think it *has to be the first step*. Approval tomorrow, Condorcet next week is something I might be willing to get behind.
 
 ## Conclusion
 
