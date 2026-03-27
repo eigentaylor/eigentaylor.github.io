@@ -61,7 +61,7 @@ We compromise on the idea that we can simulate how voters would vote in each the
 
 The single ranked ballot thus allows us to simulate how voters *might* vote in each theoretical matchup, and thus have an idea if there is a Condorcet winner. If there is a candidate who would defeat every other candidate in a head-to-head matchup based on the ballot data, then by golly, they should win!
 
-Further, it's far more efficient to just count up the individual pairwise votes. This is precinct summable: It is realistic for the high school gymnasium to count up the approximately $n(n-1)$ number of pairwise votes, and just post them on the door. This can be added up across precincts, and it only requires simple addition to determine if such a candidate exists. This is much easier than doing something like a *ridiculously complex* algorithm where we count up first choices only, arbitrarily, eliminate the candidate with the least votes, and transfer votes around until someone gets a majority. This would require central tabulation, be more opaque, and have worse outcomes in simulations. [That'd be a really stupid voting system, who would even want to use that?](../ditch-rcv){:target="_blank"} If we count rankings, we should use them! Condorcet only, baby!
+Further, it's far more efficient to just count up the individual pairwise votes. This is precinct summable: It is realistic for the high school gymnasium to count up the approximately $n(n-1)$ number of pairwise votes, and just post them on the door. This can be added up across precincts, and it only requires simple addition to determine if such a candidate exists. This is much easier than doing something like a *ridiculously complex* algorithm where we count up first choices only, arbitrarily, eliminate the candidate with the least votes, and transfer votes around until someone gets a majority. This would require central tabulation, be more opaque, and have [worse outcomes in simulations](https://electionscience.github.io/vse-sim/VSEbasic/){:target="_blank"}. [That'd be a really stupid voting system, who would even want to use that?](../ditch-rcv){:target="_blank"} If we count rankings, we should use them! Condorcet only, baby!
 
 ### Condorcet is an Approximation
 
@@ -81,14 +81,14 @@ They *could* all prefer Bob over Alice, and would vote that way in a runoff, but
 
 Take the Alaska 2022 special election, for example. While we claim that Begich was the true Condorcet winner, robbed by the spoiler Palin, the true head-to-head numbers are more modest.
 
-We report that Begich defeated Palin by 61.4% and Peltola by 52.5%, but that's not out of *all voters who cast a ballot*. That is out of voters who expressed a preference. The true number, as reported by ranked.vote, is that
+We report that Begich defeated Palin by 61.4% and Peltola by 52.5%, but that's not out of *all voters who cast a ballot*. That is out of voters who expressed a preference. The true number, as reported by [ranked.vote](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"}, is that
 
 | Candidate | Begich preferred over | Candidate preferred to Begich | Voters who expressed a preference
 |-----------|----------------------|------------------------------|
 | Palin     | 101,304              | 63,709                        | 165,013                        |
 | Peltola   | 87,989               | 79,497                        | 167,486                        |
 
-ranked.vote claims that there were nearly 180,000 voters in this election. Thus, while a majority certainly expressed a direct preference of Begich over Palin, and a majority *of those who expressed a preference* preferred Begich over Peltola, we cannot be sure that Begich would have truly defeated Peltola in a one-on-one plurality runoff.
+[ranked.vote](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"} claims that there were nearly 180,000 voters in this election. Thus, while a majority certainly expressed a direct preference of Begich over Palin, and a majority *of those who expressed a preference* preferred Begich over Peltola, we cannot be sure that Begich would have truly defeated Peltola in a one-on-one plurality runoff.
 
 I will be the first to say that Begich almost surely would have! The voters who did not express a preference are going to be the Palin voters, who heavily skewed towards Begich as a second choice over Peltola. But I bring up this example to illustrate an important point:
 
@@ -206,7 +206,7 @@ I make no claims that the above types of claims hold water or are meaningful met
 
 The above three criticisms can *never* be made against an Approval winner, because the winner is always the candidate with the most approvals, and thus the candidate who is ranked above more voters than any other candidate. Approval gives full legitimacy to the winner in every possible case, unless you explicitly make assumptions about voter intent that were not expressed in the ballots. Polls are not sufficient for this, as Dewey can tell you after his loss to Truman. We can only use the actual ballot data given by the actual voters.
 
-## But wait, there's more!
+## But wait, there's more
 
 We have so far proved that Approval voting *is* a Condorcet method restricted to two tiers, and that it has a number of unique advantages over other Condorcet methods, but there's so much more!
 
@@ -313,7 +313,7 @@ No... it can't be... No voting system can be strategyproof, can it? But... what 
 
 *Obviously*, any voter who participates in an election wants an acceptable candidate. And if you ask a voter if they find a candidate acceptable, and hold a gun to their head and refuse to take anything but "yes" or "no" as an answer, then of course the voter will be able to give you a truthful answer.
 
-The following is a result from Brams and Fishburn (1978) which we will not prove.
+The following is a result from [Brams and Fishburn (1978)](https://doi.org/10.2307/1955105){:target="_blank"} which we will not prove.
 
 > **Lemma:** Any optimal, non-dominated strategy for a voter in Approval voting involves voting for all candidates in a voter's highest tier and none in their lowest tier.
 
@@ -366,8 +366,8 @@ The latter question is binary and well defined. And because it is binary, it is 
 
 We absolutely restrict the expression of voters to do this. And it's a normative choice to make that practicality should be prioritized over the ability to express more complex preferences. But here's why I think it's the right choice:
 
-1. Approval, in practice and in simulations, elects the true Condorcet winner exceptionally often, depending on strategy. Up to 90% or more. And even when it doesn't, you literally can't prove it. Approval gets you the same or more legitimacy than a Condorcet method would, but 100% of the time instead of 100% of the time minus cycles.
-2. Also in simulations, Approval has been shown to have essentially the same level of outcomes as more complex Condorcet methods. Whereas Ranked Robin gets up to about 99% VSE, Approval gets up to about 95%. That's nearly 96% of the way there *with other benefits* as listed above.
+1. Approval, in practice and in simulations, elects the true Condorcet winner exceptionally often, depending on strategy. [Up to 90% or more](https://doi.org/10.1515/9781400859504.15){:target="_blank"}. And even when it doesn't, you literally can't prove it. Approval gets you the same or more legitimacy than a Condorcet method would, but 100% of the time instead of 100% of the time minus cycles.
+2. Also in simulations, Approval has been shown to have [essentially the same level of outcomes](https://electionscience.github.io/vse-sim/VSEbasic/){:target="_blank"} as more complex Condorcet methods. Whereas Ranked Robin gets up to about 99% VSE, Approval gets up to about 95%. That's 95% *with other benefits* as listed above that are lost to get just a few percentage points more.
 3. In an era of distrust in institutions and elections, I believe that simplicity and clarity are a prerequisite for trust. And I do not trust that a generic Condorcet method is sufficiently simple and transparent (particularly in the case of a cycle, rare as they may be) in all cases to be a permanent solution. Approval is the only system I think is simple enough to be that permanent solution, and I think it *has to be the first step*. Approval tomorrow, Condorcet next week is something I might be willing to get behind.
 
 Fellow Condorcetists, let us unite behind the best and most practical Condorcet method: Approval voting!
@@ -376,7 +376,7 @@ Fellow Condorcetists, let us unite behind the best and most practical Condorcet 
 
 ### The Fine Print
 
-To be perfectly clear: Approval voting is strategyproof under the goal of electing any acceptable candidate, if you can cleanly partition the candidates into "acceptable" and "unacceptable" sets, then voting according to that preference is optimal *under that goal*. But in general, Approval voting is not strategyproof for any realistic sense of voter preferences beyond completely black-and-white acceptability judgments. There are [strategies like the Leader Rule](../avstrategy){:target="_blank"} that help draw a line of acceptability optimally to get the most preferable possible outcome, which increase the Condorcet efficiency of Approval voting (under the Leader rule, the only equilibria is also one where the Condorcet winner is elected), but Approval is not generally strategyproof.
+To be perfectly clear: Approval voting is strategyproof under the goal of electing any acceptable candidate, if you can cleanly partition the candidates into "acceptable" and "unacceptable" sets, then voting according to that preference is optimal *under that goal*. But in general, Approval voting is not strategyproof for any realistic sense of voter preferences beyond completely black-and-white acceptability judgments. There are [strategies like the Leader Rule](../avstrategy){:target="_blank"} that help draw a line of acceptability optimally to get the most preferable possible outcome, which [increase the Condorcet efficiency](https://journals.sagepub.com/doi/10.1177/0951629808097286){:target="_blank"} of Approval voting (under the Leader rule, the only equilibria is also one where the Condorcet winner is elected), but Approval is not generally strategyproof.
 
 Further, IIA is only satisfied by Approval voting at the ballot level. The introduction of a candidate, for example, can indeed change the decision of a voter about whether or not to approve other candidates, because the new candidate may alter the voter's perception of which candidates are acceptable. For example, maybe I'd vote for Bob and Dylan against Clark. But if Alice suddenly enters the race, then screw Bob and Dylan! I love Alice so much I will only approve of her.
 
@@ -395,3 +395,17 @@ In contrast, Approval voting is up front about its massive domain restriction, b
 Further, while Brams does indeed prove that if a unique Condorcet winner exists, then there is a strong Nash equilibrium under Approval voting that elects them, and any strong Nash equilibrium elects a unique Condorcet winner, he does prove that there are other Nash equilibria. A Condorcet loser can be a Nash equilibria, but never a strong one. A Condorcet winner can be elected under a profile which is not a Nash equilibrium at all, just like Brams all other Condorcet methods can. However, Approval can guarantee any strong Nash elects a Condorcet winner, and I believe that absolutely has value.
 
 ## References
+
+Brams, S. J. (2008). *Mathematics and Democracy: Designing Better Voting and Fair-Division Procedures*. Princeton University Press. [https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy){:target="_blank"}
+
+Brams, S. J., & Fishburn, P. C. (1978). Approval Voting. *The American Political Science Review*, 72(3), 831–847. [https://doi.org/10.2307/1955105](https://doi.org/10.2307/1955105){:target="_blank"}
+
+Cox, G. W. (1987). Electoral Equilibrium under Alternative Voting Institutions. *American Journal of Political Science*, 31(1), 82–108. [https://doi.org/10.2307/2111325](https://doi.org/10.2307/2111325){:target="_blank"}
+
+Laslier, J. F. (2009). The Leader Rule: A Model of Strategic Approval Voting in a Large Electorate. *Journal of Theoretical Politics*, 21(1), 113-136. [https://journals.sagepub.com/doi/10.1177/0951629808097286](https://journals.sagepub.com/doi/10.1177/0951629808097286){:target="_blank"}
+
+Merrill, S. (1988). Condorcet Efficiency. In *Making Multicandidate Elections More Democratic* (pp. 15-29). Princeton University Press. [https://doi.org/10.1515/9781400859504.15](https://doi.org/10.1515/9781400859504.15){:target="_blank"}
+
+Quinn, J. (2017). *Voter Satisfaction Efficiency (VSE) summary*. Center for Election Science. [https://electionscience.github.io/vse-sim/VSEbasic/](https://electionscience.github.io/vse-sim/VSEbasic/){:target="_blank"}
+
+Ranked.Vote. (2022). *Alaska At-large Congressional District*. [https://ranked.vote/report/us/ak/2022/08/cd](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"}
