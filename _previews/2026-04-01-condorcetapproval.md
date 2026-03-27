@@ -102,7 +102,13 @@ The biggest question is, however, does such a candidate even exist? How likely i
 
 ## Generalized Condorcet Methods
 
-> **Definition:** A *Generalized Condorcet method* (GCM) is a voting system where voters can rank candidates, with ties allowed, among some predetermined number of tiers. If a voter ranks candidate X strictly over candidate Y, then that voter casts a vote for X in the X vs Y matchup. If there is a candidate who wins all of their matchups, then that candidate is declared the Condorcet winner and *must* win. We denote a GCM with $k\geq 2$ tiers as $C_k$. If there is no limit on the number of tiers, then we denote it as $C_\infty$.
+This is not a concept I have ever heard of anyone defining, but it's my post, so I get to make it up! At its core, a typical Condorcet method assumes the ability to be able to give a full ranking of all available candidates. Please excuse me for a moment while I move the goalpost.
+
+> **Definition:** A *Generalized Condorcet method* (GCM) is a voting system where voters can rank all candidates, with ties allowed, among some predetermined number of tiers. If a voter ranks candidate X strictly over candidate Y, then that voter casts a vote for X in the X vs Y matchup. If there is a candidate who wins all of their matchups, then that candidate is declared the Condorcet winner and *must* win. We denote a GCM with $k\geq 2$ tiers as $C_k$. If there is no limit on the number of tiers, then we denote it as $C_\infty$.
+
+If $k$ is smaller than the number of candidates, then a voter will necessarily express some number of ties, by the Pigeonhole principle.
+
+$C_6$ is equivalent to voters assigning candidates 0 through 5 stars or points, but we do not treat this as a point system, necessarily. It is still a Condorcet method. We interpret that if a voter gives a candidate, say, three stars, then that voter casts a vote for that candidate over all candidates with two, one, or zero stars, as well as a vote for all candidates with four or five stars over them (but no assumption about other candidates who also get three stars). For $C_3$, this could be assigning candidates "good", "okay", and "bad". And for $C_2$ this is declaring candidates "acceptable" or "unacceptable". While it does not affect the math we discuss in this post, we generally assume that a truncated ballot (ex. a voter who does not rank a candidate) ranks all non-ranked candidates in the bottom tier.
 
 Simple enough. If 100 voters rank Alice above Bob, and 50 voters rank Bob above Alice, while 600 voters rank Alice and Bob equally, then we choose to assume that Alice defeats Bob and Bob does not defeat Alice. If there is a candidate who defeats every other candidate, then we assume they are the Condorcet winner, and they must win.
 
@@ -154,7 +160,7 @@ Thus, $S(A)=S(A>B)+S(A=B)$, and $S(B)=S(B>A)+S(A=B)$.
 
 The above three claims tell us that $C_2$ is exactly approval voting.
 
-**Claim 5:** By Lemma \ref{condorcetparadox}, any $C_k$ where $k>2$ can admit a Condorcet paradox, so it cannot satisfy the first two properties. To conclude the proof, we show that if $k>3$ then a candidate with the most first ranks is not necessarily the Condorcet winner. Consider the following profile:
+**Claim 5:** By Lemma \ref{condorcetparadox}, any $C_k$ where $k>2$ can admit a Condorcet paradox, so it cannot satisfy the first two properties. To conclude the proof, we show that if $k>2$ then a candidate with the most first ranks is not necessarily the Condorcet winner. Consider the following profile:
 
 | Voters | 1st Tier | 2nd Tier | 3rd Tier |
 |--------|----------|----------|----------|
@@ -365,7 +371,7 @@ $C_2$ is the maximal level that maintains a "reasonable" level of preference exp
 
 However, to bring back in a little bit of seriousness to this April fools post, I accept that some believe there is value in a more expressive voting system. In particular, if Approval voting elects the Condorcet winner via sincere strategies, then that was done via voters likely choosing one of many sincere strategies. A full ranked method has only one sincere strategy, and there is value to that.
 
-Approval is indeed a truly an "indeterminate" kind of system. It's impossible to tell who will win based purely on underlying ordinal preferences. The Condorcet winner *usually does*, but there is no guarantee, and it does rely on voters applying strategies. But Laslier, for example, shows that very often times these strategies end up being coordinations of selfish self-interest that act as a heat-seeking missle towards the Condorcet winner at equilibrium.
+Approval is indeed a truly an "indeterminate" kind of system. It's impossible to tell who will win based purely on underlying ordinal preferences. The Condorcet winner *usually does*, but there is no guarantee, and it does rely on voters applying strategies. But Laslier, for example, shows that very often times these strategies end up being coordinations of selfish self-interest that act as a heat-seeking missile towards the Condorcet winner at equilibrium.
 
 Unlike those who claim that Ranked Choice Voting is "good enough" because it only failed to elect the Condorcet winner twice, as if that [excuses everything that makes that system a disaster](../ditch-rcv){:target="_blank"}, calling Approval a Condorcet approximation is I think entirely fair. In practice, Approval voting will generally elect the Condorcet winner (100% of the time for those induced by the ballots), and is basically a Condorcet method, all the while being a simpler, more cost-effective choice, which works excellently without a hitch.
 
@@ -412,7 +418,7 @@ In contrast, Approval voting is up front about its massive domain restriction, b
 2. It makes the system more practical and accessible to voters, which is crucial for legitimacy and turnout
 3. It gives more legitimacy than any other Condorcet method can guarantee
 
-Further, while [Brams does indeed prove](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy){:target="_blank"} that if a unique Condorcet winner exists, then there is a strong Nash equilibrium under Approval voting that elects them, and any strong Nash equilibrium elects a unique Condorcet winner, he does prove that there are other Nash equilibria. A Condorcet loser can be a Nash equilibria, but never a strong one. A Condorcet winner can be elected under a profile which is not a Nash equilibrium at all, just like Brams all other Condorcet methods can. However, Approval can guarantee any strong Nash elects a Condorcet winner, and I believe that absolutely has value.
+Further, while [Brams does indeed prove](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy){:target="_blank"} that if a unique Condorcet winner exists, then there is a strong Nash equilibrium under Approval voting that elects them, and any strong Nash equilibrium elects a unique Condorcet winner, he also proves that there are other Nash equilibria. A Condorcet loser can be a Nash equilibria, but never a strong one. A Condorcet winner can be elected under a profile which is not a Nash equilibrium at all, just like Brams all other Condorcet methods can. However, Approval can guarantee any strong Nash elects a Condorcet winner, and I believe that absolutely has value.
 
 ## References
 
