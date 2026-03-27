@@ -79,7 +79,7 @@ We also cannot guarantee that even if we elect the Condorcet winner induced by t
 
 They *could* all prefer Bob over Alice, and would vote that way in a runoff, but were too tired to rank them, or didn't want to rank either differently because while they do prefer Alice, they really love or hate both candidates. Real voters truncate their ballots. Real voters do not always provide complete rankings. Real voters do not always have sufficient information to rank all candidates. Real voters are human, and hence messy and complex. Therefore, we must work purely with the data we are given, and trust that it is roughly accurate to the intention of the voters.
 
-Take the Alaska 2022 special election, for example. While we claim that Begich was the true Condorcet winner, robbed by the spoiler Palin, the true head-to-head numbers are more modest.
+Take the Alaska 2022 special election, for example. In that race, the Republican Nick Begich was eliminated first in the ranked-choice voting tabulation. The other Republican Sarah Palin earned some transfers but not enough to defeat the Democrat Mary Peltola, who held the first choice lead. Condorcetists point to the data that Palin lost to both candidates and acted as a spoiler. She took away votes that would have otherwise gone to Begich, just to have Palin survive the first round long enough to lose in the end. Despite nearly 60% of voters ranking a Republican first, a Democrat was elected to represent Alaska. While we claim that Begich was the true Condorcet winner, robbed by the spoiler Palin, the true head-to-head numbers are more modest.
 
 We report that Begich defeated Palin by 61.4% and Peltola by 52.5%, but that's not out of *all voters who cast a ballot*. That is out of voters who expressed a preference. The true number, as reported by [ranked.vote](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"}, is that
 
@@ -125,6 +125,8 @@ Generally, a Condorcet method always chooses the same number of tiers as there a
 | 1      | C        | A        | B        |
 
 In this profile, $A$ defeats $B$ (a majority of voters rank $A$ above $B$), $B$ defeats $C$, and $C$ defeats $A$. There is no Condorcet winner, and this only requires 3 or more tiers. $\square$
+
+This is not an abstract result. While very rare, Condorcet cycles have occurred in real U.S. elections, such as a [Minnesota city council election in 2022](https://ranked.vote/report/us/mn/2021/11/ward-2){:target="_blank"}.
 
 > **Definition:** For $C_2$, we denote $S(A)$ as the number of voters who put candidate $A$ in the approved tier. We denote $S(A>B)$ as the number of "strict approvals" of $A$ over $B$--voters who put candidate $A$ in the approved tier and candidate $B$ in the not approved tier. And $S(A=B)$ as the number of voters who put both candidates in the approved tier.
 
@@ -199,7 +201,7 @@ My adherence and loyalty to the Condorcet criterion is not because I think they 
 Any ranked system necessarily opens the door for the following kinds of objections by a losing candidate's supporters aimed at the winner
 
 1. A losing candidate was ranked first by more voters than the winner
-2. A losing candidate was ranked over the winner by a majority (This always occurs even in non-Approval Condorcet methods in the case of a cycle)
+2. A losing candidate was ranked over the winner by a majority (This occurs sometimes in RCV elections, like Alaska 2022, but even in non-Approval Condorcet methods as well in the case of a cycle)
 3. The winner was ranked last by more voters than a loser
 
 I make no claims that the above types of claims hold water or are meaningful metrics by which to measure a winner. But if the data is available, then voters will comb through it and see if they can make such claims. If they can, then they will. This damages the legitimacy of the winner, and thus the legitimacy of the government.
