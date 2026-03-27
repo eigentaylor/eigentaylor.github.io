@@ -21,6 +21,8 @@ toc:
     subsections:
       - name: Condorcet is an Approximation
   - name: Generalized Condorcet Methods
+  - name: You can't prove it's not Condorcet
+    slug: you-cant-prove-its-not-condorcet
   - name: But wait, there's more!
     slug: but-wait-theres-more
     subsections:
@@ -37,16 +39,16 @@ toc:
 
 ## Introduction
 
-Merry April Foolsmas, everyone! Fellow Condorcetists, I come bearing a gift: I have permanently solved the Condorcet paradox. There is in fact a *perfect* voting system: Approval voting, and it *is* indeed a Condorcet method.
+Merry April Foolsmas, everyone! Fellow Condorcetists, I come bearing a gift: I have permanently solved the Condorcet paradox. There is in fact a *perfect* voting system! It is called Approval voting, and it *is* indeed a Condorcet method.
 
 > **Definition:** *Approval voting* is a voting system where voters can rank candidates among two tiers: approved and not approved. The candidate who is in the approved tier of the most voters wins.
 
-[For an actually serious argument on the fact that Approval is a practical Condorcet approximation, see this post.](../practicalapproval){:target="_blank"} However, I feel this is a fair argument that, in a practical sense, Approval is the perfect Condorcet method.
+[For an actually serious argument on the fact that Approval is a practical Condorcet approximation, see this post.](../practicalapproval){:target="_blank"} However, I feel this is a fair argument that, in a practical sense, Approval is the "perfect" Condorcet method, so long as one is [aware of the fine print](#the-fine-print){:target="_blank"}.
 
 During the time of the French revolution, two titans battled out their ideas of what a good voting system were: Their names were Jean-Charles de Borda and the Marquis de Condorcet.
 
 - Borda: Believed that we should give candidates points based on where they are ranked. My lowest ranked candidate gets zero. Next up gets one, and so on. Equivalently, the candidate with the best average ranking wins.
-- Condorcet: Had a much better idea:
+- Condorcet: Had a much better idea. He believed that we should always elect a candidate which we now call a *Condorcet winner*:
 
 > **Definition:** A *Condorcet winner* is a candidate who would defeat every other candidate in a one-on-one election.
 
@@ -77,7 +79,24 @@ We also cannot guarantee that even if we elect the Condorcet winner induced by t
 
 They *could* all prefer Bob over Alice, and would vote that way in a runoff, but were too tired to rank them, or didn't want to rank either differently because while they do prefer Alice, they really love or hate both candidates. Real voters truncate their ballots. Real voters do not always provide complete rankings. Real voters do not always have sufficient information to rank all candidates. Real voters are human, and hence messy and complex. Therefore, we must work purely with the data we are given, and trust that it is roughly accurate to the intention of the voters.
 
-It only makes sense to assume that given that more voters expressed a direct preference of Alice over Bob in the ballots were we given, then Alice would indeed defeat Bob in a head-to-head matchup. To assume otherwise would be to completely spit in the face of the data. Alice sufficiently earned the victory by convincing more voters to rank her above Bob, regardless of the unknown underlying preferences of the remaining voters who chose not to express a preference between the two. Electing Alice in this scenario is the only reasonable choice, unless you want to incite a riot led by Alice's supporters.
+Take the Alaska 2022 special election, for example. While we claim that Begich was the true Condorcet winner, robbed by the spoiler Palin, the true head-to-head numbers are more modest.
+
+We report that Begich defeated Palin by 61.4% and Peltola by 52.5%, but that's not out of *all voters who cast a ballot*. That is out of voters who expressed a preference. The true number, as reported by ranked.vote, is that
+
+| Candidate | Begich preferred over | Candidate preferred to Begich | Voters who expressed a preference
+|-----------|----------------------|------------------------------|
+| Palin     | 101,304              | 63,709                        | 165,013                        |
+| Peltola   | 87,989               | 79,497                        | 167,486                        |
+
+ranked.vote claims that there were nearly 180,000 voters in this election. Thus, while a majority certainly expressed a direct preference of Begich over Palin, and a majority *of those who expressed a preference* preferred Begich over Peltola, we cannot be sure that Begich would have truly defeated Peltola in a one-on-one plurality runoff.
+
+I will be the first to say that Begich almost surely would have! The voters who did not express a preference are going to be the Palin voters, who heavily skewed towards Begich as a second choice over Peltola. But I bring up this example to illustrate an important point:
+
+> When voters truncate their ballots, or express ties, then we lose the ability to confidently infer the Condorcet status of a candidate.
+
+Every Condorcetist who has claimed Begich was robbed has implicitly assumed that the expressed preferences of voters is far more important than the potential unexpressed preferences of voters.
+
+It only makes sense to assume that given that more voters expressed a direct preference of Begich over Peltola in the ballots were we given, then Begich would indeed defeat Peltola in a head-to-head matchup. To assume otherwise would be to completely spit in the face of the data. Begich sufficiently earned the victory by convincing more voters to rank him above Peltola, regardless of the unknown underlying preferences of the remaining voters who chose not to express a preference between the two. Electing Begich in this scenario is the only reasonable choice, unless you want to incite a riot led by Begich's supporters.
 
 The biggest question is, however, does such a candidate even exist? How likely is it that if we hold an election with hundreds, thousands, or even millions of voters, that there will be a single candidate who would be ranked above every other candidate by a majority of voters in the ballot data? It turns out the answer can be 100%, or not 100%, depending on the system.
 
@@ -105,7 +124,7 @@ Generally, a Condorcet method always chooses the same number of tiers as there a
 | 1      | B        | C        | A        |
 | 1      | C        | A        | B        |
 
-In this profile, $A$ defeats $B$ (a majority of voters rank $A$ above $B$), $B$ defeats $C$, and $C$ defeats $A$. There is no Condorcet winner, and this only requires 3 tiers. $\square$
+In this profile, $A$ defeats $B$ (a majority of voters rank $A$ above $B$), $B$ defeats $C$, and $C$ defeats $A$. There is no Condorcet winner, and this only requires 3 or more tiers. $\square$
 
 > **Definition:** For $C_2$, we denote $S(A)$ as the number of voters who put candidate $A$ in the approved tier. We denote $S(A>B)$ as the number of voters who put candidate $A$ in the approved tier and candidate $B$ in the not approved tier. And $S(A=B)$ as the number of voters who put both candidates in the approved tier.
 
@@ -131,7 +150,7 @@ Thus, $S(A)=S(A>B)+S(A=B)$, and $S(B)=S(B>A)+S(A=B)$.
 
 **Claim 3:** As a Condorcet method, $C_2$ must elect the Condorcet winner whenever one exists. By the previous lemma, the candidate with the most approvals is the Condorcet winner. Therefore, $C_2$ always elects the candidate with the most approvals, and that candidate will always be the Condorcet winner.
 
-Therefore, $C_2$ is exactly approval voting. 
+The above three claims tell us that $C_2$ is exactly approval voting.
 
 **Claim 5:** By Lemma \ref{condorcetparadox}, any $C_k$ where $k>2$ can admit a Condorcet paradox, so it cannot satisfy the first two properties. To conclude the proof, we show that if $k>3$ then a candidate with the most first ranks is not necessarily the Condorcet winner. Consider the following profile:
 
@@ -145,13 +164,13 @@ In this profile, $A$ has the most first ranks, but $B$ defeats both $A$ and $C$,
 
 Boom, Approval is a Condorcet method! It is precisely Condorcet consistent based on the ballot data, which is really the only kind of Condorcet consistency that any Condorcetist seems to care about.
 
-Not only that, it is also the *only Condorcet method that can guarantee the existence of a Condorcet winner*.
+And not only that, it is also the *only Condorcet method that can guarantee the existence of a Condorcet winner*.
 
 <img src="/assets/img/approvalcondorcetmeme1.jpg" alt="Approval is not two-tiered score, but two tiered Condorcet" style="width:100%; max-width:600px;">
 
 Further, the last property of the theorem implies that we need only count the number of approvals each candidate receives to determine the winner and all the pairwise matchup data is perfectly captured by the approval scores. Therefore, practically, Approval only requires tallying up $n$ numbers, rather than approximately $n(n-1)$ numbers for precinct summability.
 
-$n(n-1)$ is not very much, particularly for small $n$. But $n$ is even less and obviously grows more slowly. Further, if you wanted to do it really slickly, you could just have a single marginal pairwise tally for each candidates. So rather than $A>B$ being $+1$ for $A$ over $B$, and $B>A$ being $+1$ for $B$ over $A$, you could just have a single tally for $A$ where $A>B$ is $+1$ and $B>A$ is $-1$.
+$n(n-1)$ is not very much, particularly for small $n$. But $n$ is even less, and obviously grows more slowly. Further, if you wanted to do it really slickly, you could just have a single marginal pairwise tally for each candidates. So rather than $A>B$ being $+1$ for $A$ over $B$, and $B>A$ being $+1$ for $B$ over $A$, you could just have a single tally for $A$ where $A>B$ is $+1$ and $B>A$ is $-1$.
 
 ## You can't prove it's not Condorcet
 
@@ -165,9 +184,27 @@ Simply, any candidate loses an Approval voting election if and only if it was a 
 
 True, you lose plurality because not enough voters picked you. And if a third party sapped enough votes from you, well that is partially your fault. But under Approval, this isn't a proper excuse, because those third party voters can approve that third party *and* you. They had the pen in their hand, they looked at your name, and said "no thanks". Thus, if you get "spoiled", it's not because that third party candidate exists, it's because you couldn't convince their voters to also support you. In that case, all I can say is "cry about it".
 
-### You can't prove it IS Condorcet
+I could give an example where we know the underlying utilities of voters, and show that a Condorcet winner has lower overall utility than an Approval winner, but why bother? I think it's *true* that the best candidate is not always the ranked Condorcet winner. Just because a majority *would* prefer Bob over Alice, does not mean that you actually gain net positive utility by switching the winner. But then we get into generic SCORE methods, which I have my own problems with (primarily: exaggeration and a lack of consistent reference frames for reported scores as a stand-in for utilities).
 
-However, like we also said, for an arbitrary Condorcet method that allows full rankings, we can't prove the winner is actually the true Condorcet winner because we didn't actually hold all pairwise matchups. Unless you ask *every* single voter how they would vote in every possible pairwise matchup, I reject that you can prove the winner is the true Condorcet winner based on a ranked ballot election. You can probably have a very strong heuristic argument, but not a formal proof.
+Instead, I go the Condorcet route: If a voter ranks (or approves) Alice above Bob, then all we can say is that they would vote for Alice over Bob in a theoretical one-on-one matchup. We do not assume a specific gap between Alice and Bob, nor do we assume that voters have any information about how they would vote in matchups they did not express a preference for. We just take the ballot data at face value, and if Alice is ranked above Bob by more voters than Bob is ranked above Alice, then we say that Alice defeats Bob.
+
+This does not, in my opinion, lose significant meaning when we restrict to two tiers. Under the conditions of the ballot, if more voters express they would vote for Alice over Bob than the other way around, then that does indeed show something meaningful about the relative popularity of Alice and Bob.
+
+Just as I would argue you cannot always prove that a full Condorcet method truly elected the real Condorcet winner when voters truncate their ballot, I triumphantly claim that you can't prove Approval is *not* Condorcet!
+
+### A Remark on Legitimacy
+
+My adherence and loyalty to the Condorcet criterion is not because I think they are actually the best candidate. My loyalty is for legitimacy. I treat a voting system as a tool to elect public leaders in a way that is tractable, leads to sufficiently, representative outcomes, and bestows those leaders full legitimacy to govern. Approval does this **without fail**.
+
+Any ranked system necessarily opens the door for the following kinds of objections by a losing candidate's supporters aimed at the winner
+
+1. A losing candidate was ranked first by more voters than the winner
+2. A losing candidate was ranked by a majority over the winner (This occurs even in non-Approval Condorcet methods in the case of a cycle)
+3. The winner was ranked last by more voters than a loser
+
+I make no claims that the above types of claims hold water or are meaningful metrics by which to measure a winner. But if the data is available, then voters will comb through it and see if they can make such claims. If they can, then they will. This damages the legitimacy of the winner, and thus the legitimacy of the government.
+
+The above three criticisms can *never* be made against an Approval winner, because the winner is always the candidate with the most approvals, and thus the candidate who is ranked above more voters than any other candidate. Approval gives full legitimacy to the winner in every possible case, unless you explicitly make assumptions about voter intent that were not expressed in the ballots. Polls are not sufficient for this, as Dewey can tell you after his loss to Truman. We can only use the actual ballot data given by the actual voters.
 
 ## But wait, there's more!
 
@@ -276,7 +313,7 @@ No... it can't be... No voting system can be strategyproof, can it? But... what 
 
 *Obviously*, any voter who participates in an election wants an acceptable candidate. And if you ask a voter if they find a candidate acceptable, and hold a gun to their head and refuse to take anything but "yes" or "no" as an answer, then of course the voter will be able to give you a truthful answer.
 
-The following is a result from Brams and Fishburn which we will not prove.
+The following is a result from Brams and Fishburn (1978) which we will not prove.
 
 > **Lemma:** Any optimal, non-dominated strategy for a voter in Approval voting involves voting for all candidates in a voter's highest tier and none in their lowest tier.
 
@@ -314,9 +351,11 @@ $C_2$ is the maximal level that maintains a "reasonable" level of preference exp
 
 <img src="/assets/img/approvalcondorcetmeme2.jpg" alt="Approval is the cool Condorcet method" style="width:100%; max-width:600px;">
 
-Another way to look at it is that Approval voting is a Condorcet method that changes the question from asking voters for a ranking which may or may not accurately reflect their preferences in one-on-one elections into a simpler question: who do you consent to govern you?
+## Conclusion
 
-The latter question is binary and well defined. And because it is binary, it is impossible to induce a Condorcet paradox. If you are a fellow Condorcetist who scoffs that this question is *too* restrictive, then I reject that your arbitrary restriction is any less arbitrary than mine. Mine, however, has the following benefits:
+In conclusion, Approval voting is a Condorcet method that changes the question from asking voters for a ranking which may or may not accurately reflect their preferences in one-on-one elections into a simpler, and arguably more important, question: who do you consent to govern you?
+
+The latter question is binary and well defined. And because it is binary, it is impossible to induce a Condorcet paradox. If you are a fellow Condorcetist who scoffs that this question is *too* restrictive, then I reject that your arbitrary restriction is any less arbitrary than mine. While yours certainly allows for more complex expression of preferences, it also allows for the possibility of cycles and paradoxes, which can lead to less legitimate outcomes. Mine, however, has the following benefits:
 
 1. Making the system far more practical for voters and administrators
 2. Always defines and elects a Condorcet winner
@@ -333,13 +372,11 @@ We absolutely restrict the expression of voters to do this. And it's a normative
 
 Fellow Condorcetists, let us unite behind the best and most practical Condorcet method: Approval voting!
 
-## Conclusion
-
 ## Appendix
 
 ### The Fine Print
 
-To be perfectly clear: Approval voting is strategyproof under the goal of electing any acceptable candidate, if you can cleanly partition the candidates into "acceptable" and "unacceptable" sets, then voting according to that preference is optimal *under that goal*. But in general, Approval voting is not strategyproof for any realistic sense of voter preferences beyond completely black-and-white acceptability judgments. There are [strategies like the Leader Rule](../avstrategy){:target="_blank"} that help draw a line of acceptability optimally to get the most preferable possible outcome, which increase the Condorcet efficiency of Approval voting, but Approval is not generally strategyproof.
+To be perfectly clear: Approval voting is strategyproof under the goal of electing any acceptable candidate, if you can cleanly partition the candidates into "acceptable" and "unacceptable" sets, then voting according to that preference is optimal *under that goal*. But in general, Approval voting is not strategyproof for any realistic sense of voter preferences beyond completely black-and-white acceptability judgments. There are [strategies like the Leader Rule](../avstrategy){:target="_blank"} that help draw a line of acceptability optimally to get the most preferable possible outcome, which increase the Condorcet efficiency of Approval voting (under the Leader rule, the only equilibria is also one where the Condorcet winner is elected), but Approval is not generally strategyproof.
 
 Further, IIA is only satisfied by Approval voting at the ballot level. The introduction of a candidate, for example, can indeed change the decision of a voter about whether or not to approve other candidates, because the new candidate may alter the voter's perception of which candidates are acceptable. For example, maybe I'd vote for Bob and Dylan against Clark. But if Alice suddenly enters the race, then screw Bob and Dylan! I love Alice so much I will only approve of her.
 
@@ -354,5 +391,7 @@ In contrast, Approval voting is up front about its massive domain restriction, b
 1. It elects the true Condorcet winner so often
 2. It makes the system more practical and accessible to voters, which is crucial for legitimacy and turnout
 3. It gives more legitimacy than any other Condorcet method can guarantee
+
+Further, while Brams does indeed prove that if a unique Condorcet winner exists, then there is a strong Nash equilibrium under Approval voting that elects them, and any strong Nash equilibrium elects a unique Condorcet winner, he does prove that there are other Nash equilibria. A Condorcet loser can be a Nash equilibria, but never a strong one. A Condorcet winner can be elected under a profile which is not a Nash equilibrium at all, just like Brams all other Condorcet methods can. However, Approval can guarantee any strong Nash elects a Condorcet winner, and I believe that absolutely has value.
 
 ## References
