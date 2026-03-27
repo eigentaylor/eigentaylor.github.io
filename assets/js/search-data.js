@@ -615,11 +615,6 @@ ninja.data = [{
               window.location.href = "/news/backin2022/";
             },},{id: "previews-a-mathematical-case-for-approval-voting",
           title: 'A Mathematical Case for Approval Voting',
-          description: "Approval voting is the best voting system",
-          section: "Previews",handler: () => {
-              window.location.href = "/preview/approval/";
-            },},{id: "previews-a-mathematical-case-for-approval-voting",
-          title: 'A Mathematical Case for Approval Voting',
           description: "Approval voting is the best voting system (AKA, Taylor gets political)",
           section: "Previews",handler: () => {
               window.location.href = "/preview/approval/";
