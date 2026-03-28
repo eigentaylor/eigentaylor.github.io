@@ -52,14 +52,27 @@ During the time of the French revolution, two titans battled out their ideas of 
 
 > **Definition:** A *Condorcet winner* is a candidate who would defeat every other candidate in a one-on-one election.
 
-But it is impractical to hold an election for every $\frac{n(n-1)}{2}$ pair of candidates, or to ask every voter to decide in 45 different one-on-one matchups for 10 candidates just to decide a Comptroller, so we need a voting system that can be used in a single election, is not preposterously hostile to voters, and still satisfies the Condorcet criterion: if there is a Condorcet winner, *and voters express this through their ballots*, then they should win.
+But it is impractical to hold an election for every $\frac{n(n-1)}{2}$ pair of candidates, or to put all 45 different one-on-one matchups for 10 candidates on the ballot given to each voter just to decide a Comptroller, so we need a voting system that can be used in a single election, is not preposterously hostile to voters, and still satisfies the Condorcet criterion: if there is a Condorcet winner, *and voters express this through their ballots*, then they should win.
 
-We compromise on the idea that we can simulate how voters would vote in each theoretical matchup by ranking candidates. If I rank Alice first, Bob and Clark tied for second, and Dylan last, then I am saying that
+We compromise on the idea that we can simulate how voters would vote in each theoretical matchup by ranking candidates. If I rank Alice first, Bob and Clark tied for second, and Dylan last, then a Condorcet method interprets this *only*(https://doi.org/10.2307/2111325){:target="_blank"} as me saying that
 
 - I would vote for Alice over Bob, Alice over Clark, and Alice over Dylan.
 - I would vote for Bob over Dylan, and Clark over Dylan.
 
 The single ranked ballot thus allows us to simulate how voters *might* vote in each theoretical matchup, and thus have an idea if there is a Condorcet winner. If there is a candidate who would defeat every other candidate in a head-to-head matchup based on the ballot data, then by golly, they should win!
+
+The value of this criterion is felt most strongly in the contrapositive. If the ballots indicate that a candidate would be defeated by any single other candidate in a runoff, then they would not have a strong claim of legitimacy if declared the winner.
+
+The main drawback of a ranked method is that while it captures ordinal preferences, it cannot capture the distance between those choices. Borda explicitly exacerbates this problem to the extreme by assuming *exact* equidistance between ranks in the units of points. For example,
+
+| Voters | 1st Rank | 2nd Rank | 3rd Rank |
+|--------|----------|----------|----------|
+| 3      | Alice    | Bob      | Clark    |
+| 2      | Bob      | Clark    | Alice    |
+
+Then Alice gets $3(2)+2(0)=6$ points. Bob earns $3(1)+2(2)=7$ points. Even though Alice was preferred over Bob by a majority (60%) of voters, Bob was elected instead. Personally, I wouldn't have a problem believing that Bob might be a more acceptable candidate, since they were not as polarizing as Alice, but the ranked ballot data is clear: If you don't elect Alice, then you are subverting the will of the majority. That's not a great way to maintain legitimacy in your elected leader.
+
+Condorcet, on the other hand, treats the ranked data as faithfully as possible. Regardless of if Alice is one or seventy ranks above Dylan, a Condorcet method *only* assumes that I prefer Alice over Dylan, in the sense that I would vote for Alice over Dylan if told to choose between them. To elect the Condorcet winner is simply to respect the majority preference of the matchups, and completely disregard the potential intensity of preferences, which the ranked ballot does not capture, as well as to respect the voter's choice to abstain from making a decision in a race.
 
 Further, it's far more efficient to just count up the individual pairwise votes. This is precinct summable: It is realistic for the high school gymnasium to count up the approximately $n(n-1)$ number of pairwise votes, and just post them on the door. This can be added up across precincts, and it only requires simple addition to determine if such a candidate exists. This is much easier than doing something like a *ridiculously complex* algorithm where we count up first choices only, arbitrarily, eliminate the candidate with the least votes, and transfer votes around until someone gets a majority. This would require central tabulation, be more opaque, and have [worse outcomes in simulations](https://electionscience.github.io/vse-sim/VSEbasic/){:target="_blank"}. [That'd be a really stupid voting system, who would even want to use that?](../ditch-rcv){:target="_blank"} If we count rankings, we should use them! Condorcet only, baby!
 
@@ -75,26 +88,24 @@ This is a *huge* assumption. It is a *huge* compromise. But it makes the voting 
 
 If you do not elect such a candidate, then **what are you even** ***doing***? [Why ask for rankings if you aren't even going to use or respect them?](../ditch-rcv){:target="_blank"}. If you do not elect such a candidate, then you have elected someone else who has to serve their constituents knowing that a majority of voters wanted someone else more. That creates a [legitimacy problem](../consistentcardinal){:target="_blank"}.
 
-We also cannot guarantee that even if we elect the Condorcet winner induced by the ballots, that this candidate would truly defeat every other candidate in a head-to-head matchup, because we are not asking all those direct head-to-head questions. Especially if we allow ties or ballot truncation. If 45% of voters say they prefer Alice over Bob, and 40% of voters say they prefer Bob over Alice, but 15% of voters did not express a preference between Alice and Bob, then we have no way to prove that Alice truly would defeat Bob in a head-to-head matchup, because those 15% of voters could be split in any way.
+We also cannot guarantee that even if we elect the Condorcet winner induced by the ballots, that this candidate would truly defeat every other candidate in a head-to-head matchup, because we are not asking all those direct head-to-head questions. Especially if we allow ties or ballot truncation.
 
-They *could* all prefer Bob over Alice, and would vote that way in a runoff, but were too tired to rank them, or didn't want to rank either differently because while they do prefer Alice, they really love or hate both candidates. Real voters truncate their ballots. Real voters do not always provide complete rankings. Real voters do not always have sufficient information to rank all candidates. Real voters are human, and hence messy and complex. Therefore, we must work purely with the data we are given, and trust that it is roughly accurate to the intention of the voters.
+Take the Alaska 2022 special election, for example. In that race, the Republican Nick Begich was eliminated first in the ranked-choice voting tabulation. The other Republican Sarah Palin earned some transfers but not enough to defeat the Democrat Mary Peltola, who held the first choice lead. Condorcetists point to the data that Palin lost to both other candidates and acted as a spoiler. She took away votes that would have otherwise gone to Begich, just to have Palin survive the first round long enough to lose in the end. Despite nearly 60% of voters ranking a Republican first, a Democrat was elected to represent Alaska. While we claim that Begich was the true Condorcet winner, robbed by the spoiler Palin, the true head-to-head numbers are more modest.
 
-Take the Alaska 2022 special election, for example. In that race, the Republican Nick Begich was eliminated first in the ranked-choice voting tabulation. The other Republican Sarah Palin earned some transfers but not enough to defeat the Democrat Mary Peltola, who held the first choice lead. Condorcetists point to the data that Palin lost to both candidates and acted as a spoiler. She took away votes that would have otherwise gone to Begich, just to have Palin survive the first round long enough to lose in the end. Despite nearly 60% of voters ranking a Republican first, a Democrat was elected to represent Alaska. While we claim that Begich was the true Condorcet winner, robbed by the spoiler Palin, the true head-to-head numbers are more modest.
-
-We report that Begich defeated Palin by 61.4% and Peltola by 52.5%, but that's not out of *all voters who cast a ballot*. That is out of voters who expressed a preference. The true number, as reported by [ranked.vote](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"}, is that
+We report that Begich defeated Palin by 61.4% and Peltola by 52.5%, but that's not out of *all voters who cast a ballot*. That is out of voters *who expressed a preference*. [ranked.vote](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"} claims that there were nearly 190,000 (189,197) voters in this election. The true head-to-head numbers, as reported by the site claim
 
 | Candidate | Begich preferred over | Candidate preferred to Begich | Voters who expressed a preference
 |-----------|----------------------|------------------------------|
-| Palin     | 101,304              | 63,709                        | 165,013                        |
-| Peltola   | 87,989               | 79,497                        | 167,486                        |
+| Palin     | 101,304 (53.5%)            | 63,709 (33.7%)                        | 165,013                        |
+| Peltola   | 87,989 (46.5%)               | 79,497 (42%)                        | 167,486                        |
 
-[ranked.vote](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"} claims that there were nearly 180,000 voters in this election. Thus, while a majority certainly expressed a direct preference of Begich over Palin, and a majority *of those who expressed a preference* preferred Begich over Peltola, we cannot be sure that Begich would have truly defeated Peltola in a one-on-one plurality runoff.
+It follows that if no candidate got at least 94,000 voters to rank them over each other candidate, then we cannot be sure they are the Condorcet winner. Thus, while a direct majority of all voters certainly expressed a direct preference of Begich over Palin, and a majority *of those who expressed a preference* preferred Begich over Peltola, we cannot be sure that Begich would have truly defeated Peltola in a one-on-one plurality runoff. It's entirely possible that the approximate 11.2% of voters who failed to express a preference between Begich and Peltola would have gone *entirely* to Peltola, which would mean that Begich was not a Condorcet winner.
 
-I will be the first to say that Begich almost surely would have! The voters who did not express a preference are going to be the Palin voters, who heavily skewed towards Begich as a second choice over Peltola. But I bring up this example to illustrate an important point:
+However, I will be the first to say that Begich almost surely would have defeated Peltola. The voters who did not express a preference are going to be the Palin voters who only ranked Palin, who heavily skewed towards Begich as a second choice over Peltola. But I bring up this example to illustrate an important point:
 
-> When voters truncate their ballots, or express ties, then we lose the ability to confidently infer the Condorcet status of a candidate.
+> When voters truncate their ballots, or express ties, then we lose the ability to confidently infer the Condorcet status of a candidate when a majority fails to rank a single candidate over all others.
 
-Every Condorcetist who has claimed Begich was robbed has implicitly assumed that the expressed preferences of voters is far more important than the potential unexpressed preferences of voters.
+Every Condorcetist who has claimed Begich was robbed has implicitly assumed that the expressed preferences of voters is *far* more important than the *potential unexpressed* preferences of voters. I agree with this! But it's going to make the rejection of Approval voting a bit harder to justify.
 
 It only makes sense to assume that given that more voters expressed a direct preference of Begich over Peltola in the ballots were we given, then Begich would indeed defeat Peltola in a head-to-head matchup. To assume otherwise would be to completely spit in the face of the data. Begich sufficiently earned the victory by convincing more voters to rank him above Peltola, regardless of the unknown underlying preferences of the remaining voters who chose not to express a preference between the two. Electing Begich in this scenario is the only reasonable choice, unless you want to incite a riot led by the voters who preferred Begich to whatever other winner you choose.
 
@@ -347,6 +358,8 @@ I also want to bring this up, because it's something I've heard mentioned as som
 <img src="/assets/img/yeediagamsample.png" alt="Yee diagram sample" style="width:100%; max-width:600px;">
 
 [This is a cool page to look at](http://zesty.ca/voting/sim/){:target="_blank"} (and it has a lot more comparisons). And without getting too deep into what a Yee Digram is, the point is that in the Yee simulations, Approval and Condorcet have essentially the same outcomes, with a slight haze around the edges. Which makes sense, since Approval is just a simpler Condorcet method.
+
+Both methods make the Yee diagrams what are called "Voronoi diagrams" of the electorate, which basically just means that the candidate closest to the "center" of the electorate always wins. And [Gary Cox](https://doi.org/10.2307/2111325){:target="_blank"} has proven that in at least 1d spatial models, both Approval and Condorcet have what I call strong "median pulls". Candidates are incentivized to appeal to the median or center of the electorate. Being an extremist appealing to a narrow base is not a winning strategy when you need to either be ranked above all other candidates, or earn the most approvals.
 
 ## You cannot be serious
 
