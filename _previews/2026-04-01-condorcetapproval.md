@@ -21,6 +21,7 @@ toc:
     subsections:
       - name: Condorcet is an Approximation
   - name: Generalized Condorcet Methods
+  - name: Limited Tiers and the Condorcet Paradox
   - name: You can't prove it's not Condorcet
     slug: you-cant-prove-its-not-condorcet
   - name: But wait, there's more!
@@ -45,7 +46,7 @@ Merry April Foolsmas, everyone! Fellow Condorcetists, I come bearing a gift: I h
 
 [For an actually serious argument on the fact that Approval is a practical Condorcet approximation, see this post.](../practicalapproval){:target="_blank"} However, I feel this is a fair argument that, in a practical sense, Approval is the "perfect" Condorcet method, so long as one is [aware of the fine print](#the-fine-print){:target="_blank"}.
 
-During the time of the French revolution, two titans battled out their ideas of what a good voting system were: Their names were Jean-Charles de Borda and the Marquis de Condorcet.
+During the time of the French revolution, two titans battled out their ideas of what a good voting system was: Their names were Jean-Charles de Borda and the Marquis de Condorcet.
 
 - Borda: Believed that we should give candidates points based on where they are ranked. My lowest ranked candidate gets zero. Next up gets one, and so on. Equivalently, the candidate with the best average ranking wins.
 - Condorcet: Had a much better idea. He believed that we should always elect a candidate which we now call a *Condorcet winner*: a candidate who would defeat every other candidate in a one-on-one election.
@@ -86,7 +87,7 @@ This is a *huge* assumption. It is a *huge* compromise. But it makes the voting 
 
 > **Definition:** A voting system satisfies the *Condorcet criterion* if whenever there is a candidate who would defeat every other candidate in a head-to-head matchup **based on the ballot data**, then that candidate must win.
 
-If you do not elect such a candidate, then **what are you even** ***doing***? [Why ask for rankings if you aren't even going to use or respect them?](../ditch-rcv){:target="_blank"}. If you do not elect such a candidate, then you have elected someone else who has to serve their constituents knowing that a majority of voters wanted someone else more. That creates a [legitimacy problem](../consistentcardinal){:target="_blank"}.
+If you do not elect such a candidate, then **what are you even** ***doing***? [Why ask for rankings if you aren't even going to use or respect them?](../ditch-rcv){:target="_blank"} If you do not elect such a candidate, then you have elected someone else who has to serve their constituents knowing that a majority of voters wanted someone else more. That creates a [legitimacy problem](../consistentcardinal){:target="_blank"}.
 
 We also cannot guarantee that even if we elect the Condorcet winner induced by the ballots, that this candidate would truly defeat every other candidate in a head-to-head matchup, because we are not asking all those direct head-to-head questions. Especially if we allow ties or ballot truncation.
 
@@ -107,7 +108,7 @@ However, I will be the first to say that Begich almost surely would have defeate
 
 Every Condorcetist who has claimed Begich was robbed has implicitly assumed that the expressed preferences of voters is *far* more important than the *potential unexpressed* preferences of voters. I agree with this! But it's going to make the rejection of Approval voting a bit harder to justify.
 
-It only makes sense to assume that given that more voters expressed a direct preference of Begich over Peltola in the ballots were we given, then Begich would indeed defeat Peltola in a head-to-head matchup. To assume otherwise would be to completely spit in the face of the data. Begich sufficiently earned the victory by convincing more voters to rank him above Peltola, regardless of the unknown underlying preferences of the remaining voters who chose not to express a preference between the two. Electing Begich in this scenario is the only reasonable choice, unless you want to incite a riot led by the voters who preferred Begich to whatever other winner you choose.
+It only makes sense to assume that given that more voters expressed a direct preference of Begich over Peltola in the ballots we were given, then Begich would indeed defeat Peltola in a head-to-head matchup. To assume otherwise would be to completely spit in the face of the data. Begich sufficiently earned the victory by convincing more voters to rank him above Peltola, regardless of the unknown underlying preferences of the remaining voters who chose not to express a preference between the two. Electing Begich in this scenario is the only reasonable choice, unless you want to incite a riot led by the voters who preferred Begich to whatever other winner you choose.
 
 The biggest question is, however, does such a candidate even exist? How likely is it that if we hold an election with hundreds, thousands, or even millions of voters, that there will be a single candidate who would be ranked above every other candidate by a majority of voters in the ballot data? It turns out the answer can be 100%, or not 100%, depending on the system.
 
@@ -145,7 +146,7 @@ Generally, a Condorcet method always chooses the same number of tiers as there a
 
 In this profile, $A$ defeats $B$ (a majority of voters rank $A$ above $B$), $B$ defeats $C$, and $C$ defeats $A$. There is no Condorcet winner, and this only requires 3 or more tiers. $\square$
 
-This is not an abstract result. While very rare, Condorcet cycles have occurred in real U.S. elections, such as a [Minnesota city council election in 2022](https://ranked.vote/report/us/mn/2021/11/ward-2){:target="_blank"}.
+This is not an abstract result. While very rare, Condorcet cycles have occurred in real U.S. elections, such as a [Minnesota city council election in 2021](https://ranked.vote/report/us/mn/2021/11/ward-2){:target="_blank"}.
 
 > **Definition:** For $C_2$, we denote $S(A)$ as the number of voters who put candidate $A$ in the approved tier. We denote $S(A>B)$ as the number of "strict approvals" of $A$ over $B$--voters who put candidate $A$ in the approved tier and candidate $B$ in the not approved tier. And $S(A=B)$ as the number of voters who put both candidates in the approved tier.
 
@@ -298,7 +299,7 @@ Since $W$ is the Condorcet winner, we know that the group who prefer $W$ to $X$ 
 
 Suppose that $G_3$ strategically omit $W$ from their approval set by adjusting to a new sincere strategy. Then the new $S(W)=G_1+G_4$ and $S(X)=G_2+G_3$. By the assumption that $P$ is a strong Nash Equilibrium under sincere strategies, no coalition can improve their outcome by deviating, so this deviation cannot result in $X$ winning over $W$. Thus, the strict approvals of $W$ must still be greater than the strict approvals of $X$: $G_1>G_2+G_3$.
 
-The best possible case for $X$ is that all voters in $G_2$ and $G_3$ approve $X$ only--possibly insincerely--and no other candidate. But even then, $X$ only gets $G_2+G_3$ strict approvals, which we just showed is less than the strict approvals of $W$: $G_1$. Thus, $W$ still wins.
+The best possible case for $X$ is that all voters in $G_2$ and $G_3$ approve $X$ only--possibly insincerely--and no other candidate. But even then, considering strict approvals only, $X$ only gets $G_2+G_3$ strict approvals, which we just showed is less than the strict approvals of $W$: $G_1$. Thus, $W$ still wins.
 
 Therefore, no insincere strategy by any coalition of voters who prefer $X$ to $W$ can result in $X$ winning over $W$ from a strong Nash Equilibrium under sincere strategies. $\square$
 
@@ -359,7 +360,7 @@ I also want to bring this up, because it's something I've heard mentioned as som
 
 <img src="/assets/img/yeediagamsample.png" alt="Yee diagram sample" style="width:100%; max-width:600px;">
 
-[This is a cool page to look at](http://zesty.ca/voting/sim/){:target="_blank"} (and it has a lot more comparisons). And without getting too deep into what a Yee Digram is, the point is that in the Yee simulations, Approval and Condorcet have essentially the same outcomes, with a slight haze around the edges. Which makes sense, since Approval is just a simpler Condorcet method.
+[This is a cool page to look at](http://zesty.ca/voting/sim/){:target="_blank"} (and it has a lot more comparisons). And without getting too deep into what a Yee Diagram is, the point is that in the Yee simulations, Approval and Condorcet have essentially the same outcomes, with a slight haze around the edges. Which makes sense, since Approval is just a simpler Condorcet method.
 
 Both methods make the Yee diagrams what are called "Voronoi diagrams" of the electorate, which basically just means that the candidate closest to the "center" of the electorate always wins. And [Gary Cox](https://doi.org/10.2307/2111325){:target="_blank"} has proven that in at least 1d spatial models, both Approval and Condorcet have what I call strong "median pulls". Candidates are incentivized to appeal to the median or center of the electorate. Being an extremist appealing to a narrow base is not a winning strategy when you need to either be ranked above all other candidates, or earn the most approvals.
 
@@ -371,7 +372,7 @@ Here's what is absolutely true: Because no Condorcet method asks voters to direc
 
 In reality, Approval voting is, in my opinion, a "Condorcet-lite" method. It's not a Condorcet method *proper*, but I would absolutely say a "generalized" Condorcet method is an appropriate name. We simplify the ballot to make it more tractable, more accessible, and more consistent. But it is still, at its core, fundamentally electing the candidate who is ranked strictly above any other candidate by a majority of voters who express a preference. And Approval inherits the base legitimacy of any system that does this reliably (Condorcet methods), along with the legitimacy that comes from simplified ballot data.
 
-There is one point (among many) that should be addressed, however. Plurality voting, as a matter of act, also satisfies many of the same properties we have proved for Approval. It is also technically a Condorcet method (based on the ballot data) that satisfies IIA, and it is also strategyproof if you assume that voters can only like a single candidate and equally dislike all other candidates. However, this isn't the gotcha some might think, because this is so because plurality is just an arbitrary restriction on Approval voting. Approval voting is precisely the minimal level of ballot restriction we can place on a Condorcet method to ensure that it works 100% of the time.
+There is one point (among many) that should be addressed, however. Plurality voting, as a matter of fact, also satisfies many of the same properties we have proved for Approval. It is also technically a Condorcet method (based on the ballot data) that satisfies IIA, and it is also strategyproof if you assume that voters can only like a single candidate and equally dislike all other candidates. However, this isn't the gotcha some might think, because this is so because plurality is just an arbitrary restriction on Approval voting. Approval voting is precisely the minimal level of ballot restriction we can place on a Condorcet method to ensure that it works 100% of the time.
 
 All Condorcetists choose to simplify the data through some sort of limitation on what ballots voters can cast, for the purpose of making the system tractable and practical. And we have a hierarchy of compromises that a Condorcet method can make.
 
