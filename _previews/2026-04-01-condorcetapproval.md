@@ -140,11 +140,11 @@ Generally, a Condorcet method always chooses the same number of tiers as there a
 
 | Voter  | 1st Tier | 2nd Tier | 3rd Tier |
 |--------|----------|----------|----------|
-| x      | A        | B        | C        |
-| y      | B        | C        | A        |
-| z      | C        | A        | B        |
+| x      | Rock     | Scissors | Paper    |
+| y      | Scissors | Paper    | Rock     |
+| z      | Paper    | Rock     | Scissors |
 
-In this profile, $A$ defeats $B$ (a majority of voters rank $A$ above $B$), $B$ defeats $C$, and $C$ defeats $A$. There is no Condorcet winner, and this only requires 3 or more tiers. $\square$
+In this profile, Rock defeats Scissors (a majority of voters rank Rock above Scissors), Scissors defeats Paper, and Paper defeats Rock. There is no Condorcet winner, and this only requires 3 or more tiers. $\square$
 
 This is not an abstract result. While very rare, Condorcet cycles have occurred in real U.S. elections, such as a [Minnesota city council election in 2021](https://ranked.vote/report/us/mn/2021/11/ward-2){:target="_blank"}.
 
@@ -216,7 +216,7 @@ Just as I would argue you cannot always prove that a full Condorcet method truly
 
 ### A Remark on Legitimacy
 
-My adherence and loyalty to the Condorcet criterion is not because I think the theoretical winner in all one-on-one plurality runoffs is actually the best candidate if there is potentially a better and less polarizting compromise. My loyalty is for the *legitimacy* of the criterion in the only data that truly matters: what the ballots collect. I treat a voting system as a tool to elect public leaders in a way that is tractable and nonhostile to voters, leads to sufficiently representative outcomes, and bestows those leaders full legitimacy to govern. Approval does this **without fail**, in a way that any system which admits a Condorcet paradox cannot.
+My adherence and loyalty to the Condorcet criterion is not because I think the theoretical winner in all one-on-one plurality runoffs is actually the best candidate if there is potentially a better and less polarizing compromise. My loyalty is for the *legitimacy* of the criterion in the only data that truly matters: what the ballots collect.
 
 Any ranked system necessarily opens the door for the following kinds of objections by a losing candidate's supporters aimed at the winner
 
@@ -224,9 +224,7 @@ Any ranked system necessarily opens the door for the following kinds of objectio
 2. A losing candidate was ranked over the winner by a majority (This occurs in RCV elections, like Alaska 2022, but even in non-Approval Condorcet methods as well, in the case of a cycle)
 3. The winner was ranked last by more voters than a loser
 
-I make no claims that the above types of claims hold water or are meaningful metrics by which to measure a winner. But if the data is available, then voters will comb through it and see if they can make such claims. If they can, then they will. This damages the legitimacy of the winner, and thus the legitimacy of the government.
-
-The above three criticisms can *never* be made against an Approval winner, because the winner is always the candidate with the most approvals, and thus the candidate who is ranked above more voters than any other candidate. Approval gives full legitimacy to the winner in every possible case, unless you explicitly make assumptions about voter intent that were not expressed in the ballots. Polls are not sufficient for this, as Dewey can tell you after his loss to Truman. We can only use the actual ballot data given by the actual voters.
+I make no claims that the above types of claims hold water or are meaningful metrics by which to measure a winner. But if the data is available, then such claims will be made. This damages the legitimacy of the winner, and thus the legitimacy of the Democratic process. No such criticisms can *ever* be made against an Approval winner, unless you explicitly make assumptions about voter intent that were not expressed in the ballots.
 
 ## But wait, there's more
 
@@ -256,9 +254,9 @@ S_P(A>B)-S_P(B>A)=S_{P'}(A>B)-S_{P'}(B>A)\\
 \implies S_P(A)>S_P(B) \iff S_{P'}(A)>S_{P'}(B)
 \end{multline*}$$
 
-Therefore, $A$ has more total approvals than $B$ in $P$ if and only if $A$ has more total approvals than $B$ in $P'$. Society holds them at the same distance so long as voters who expressed a preference betwen $A$ and $B$ maintain that same relative preference. $\square$
+Therefore, $A$ has more total approvals than $B$ in $P$ if and only if $A$ has more total approvals than $B$ in $P'$. Society holds them at the same distance so long as voters who expressed a preference between $A$ and $B$ maintain that same relative preference. $\square$
 
-We can see that Approval voting actually satisfies a sort of "super-IIA" property, since the *exact* numerical distance between the approval scores of any two candidates remains unchanged when the relative ranking of those two candidates is preserved, regardless of changes in the approval of other candidates. That is, Approval is highly immutable with respect to the relative ranking of any two candidates. Voters *must* change how they express their relative preferences between two candidates in order to affect the social preference between them.
+We can see that Approval voting actually satisfies a sort of "super-IIA" property, since the *exact* numerical distance between the approval scores of any two candidates remains unchanged when the relative ranking of those two candidates is preserved.
 
 ### Condorcet at Nash Equilibrium
 
@@ -363,6 +361,8 @@ I also want to bring this up, because it's something I've heard mentioned as som
 [This is a cool page to look at](http://zesty.ca/voting/sim/){:target="_blank"} (and it has a lot more comparisons). And without getting too deep into what a Yee Diagram is, the point is that in the Yee simulations, Approval and Condorcet have essentially the same outcomes, with a slight haze around the edges. Which makes sense, since Approval is just a simpler Condorcet method.
 
 Both methods make the Yee diagrams what are called "Voronoi diagrams" of the electorate, which basically just means that the candidate closest to the "center" of the electorate always wins. And [Gary Cox](https://doi.org/10.2307/2111325){:target="_blank"} has proven that in at least 1d spatial models, both Approval and Condorcet have what I call strong "median pulls". Candidates are incentivized to appeal to the median or center of the electorate. Being an extremist appealing to a narrow base is not a winning strategy when you need to either be ranked above all other candidates, or earn the most approvals.
+
+While it's less so the Condorcetists who make the claim that Approval would elect bland and inoffensive candidates, this is still a criticism made of it. Approval would very likely elect standard Condorcet winners, or candidates who can inspire passionate but non-polarized support. [Steven Brams suggests that Ronald Reagan would likely do very well under Approval voting](https://www.youtube.com/watch?v=BZiS3U7EG0M){:target="_blank"}, and I agree.
 
 ## You cannot be serious
 
