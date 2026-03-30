@@ -657,12 +657,12 @@ ninja.data = [{
           title: 'Approval is a Condorcet Method',
           description: "Approval is the perfect Condorcet method, and I have permanently solved the Condorcet paradox. April Fools!",
           section: "Previews",handler: () => {
-              window.location.href = "/preview/condorcet-approval/";
-            },},{id: "previews-approval-is-a-condorcet-method",
-          title: 'Approval is a Condorcet Method',
-          description: "Approval is the perfect Condorcet method, and I have permanently solved the Condorcet paradox. April Fools!",
-          section: "Previews",handler: () => {
               window.location.href = "/preview/condorcetapproval/";
+            },},{id: "previews-approval-is-the-perfect-condorcet-method",
+          title: 'Approval is the Perfect Condorcet Method',
+          description: "Approval is a perfect Condorcet method, and I have permanently solved the Condorcet paradox. April Fools!",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/condorcet-approval/";
             },},{id: "previews-jordan-canonical-form-made-easier-part-1",
           title: 'Jordan Canonical Form Made Easier Part 1',
           description: "not easy. just like... easier...",
