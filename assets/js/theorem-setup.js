@@ -25,7 +25,7 @@
 
     // Match: "Type", optional number, optional parenthetical, then ":"
     var typeRe =
-        /^(Definition|Lemma|Theorem|Remark|Corollary|Proposition|Conjecture|Axiom)\s*\d*\s*(\([^)]*\))?\s*:$/i;
+        /^(Definition|Lemma|Theorem|Remark|Corollary|Proposition|Conjecture|Axiom|Example)\s*\d*\s*(\([^)]*\))?\s*:$/i;
     var labelRe = /\\label\{([^}]+)\}/;
 
     /* ── Step 1: Auto-number theorem blocks and collect labels ── */
