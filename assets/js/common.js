@@ -1,4 +1,53 @@
 $(document).ready(function () {
+  // On preview pages, map ../post-slug links to the published /blog/post-slug/ route.
+  const baseurl = document.body.dataset.baseurl || "";
+  const previewRoot = `${baseurl}/preview/`;
+  const isPreviewPage = document.body.classList.contains("is-preview") || window.location.pathname.startsWith(previewRoot);
+
+  if (isPreviewPage) {
+
+    document.querySelectorAll("a[href]").forEach((link) => {
+      const rawHref = link.getAttribute("href");
+
+      if (!rawHref || !rawHref.startsWith("../")) {
+        return;
+      }
+
+      // Only rewrite simple one-segment relative slugs like ../ditch-rcv.
+      const slugMatch = rawHref.match(/^\.\.\/([^\/?#]+)\/?([?#].*)?$/);
+      if (!slugMatch) {
+        return;
+      }
+
+      const slug = slugMatch[1];
+      const suffix = slugMatch[2] || "";
+      link.setAttribute("href", `${baseurl}/blog/${slug}/${suffix}`);
+    });
+  }
+
+  // Enforce new-tab behavior for external links site-wide.
+  document.querySelectorAll("a[href]").forEach((link) => {
+    const href = link.getAttribute("href");
+
+    if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) {
+      return;
+    }
+
+    try {
+      const url = new URL(href, window.location.href);
+      if (url.origin !== window.location.origin) {
+        link.setAttribute("target", "_blank");
+
+        const relTokens = new Set((link.getAttribute("rel") || "").split(/\s+/).filter(Boolean));
+        relTokens.add("noopener");
+        relTokens.add("noreferrer");
+        link.setAttribute("rel", Array.from(relTokens).join(" "));
+      }
+    } catch (_error) {
+      // Ignore malformed URLs.
+    }
+  });
+
   // add toggle functionality to abstract, award and bibtex buttons
   $("a.abstract").click(function () {
     $(this).parent().parent().find(".abstract.hidden").toggleClass("open");

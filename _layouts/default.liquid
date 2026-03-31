@@ -16,7 +16,10 @@
   </head>
 
   <!-- Body -->
-  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+  <body
+    class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %} {% if page.collection == 'previews' or page.draft_preview %}is-preview{% endif %}"
+    data-baseurl="{{ site.baseurl | default: '' }}"
+  >
     <!-- Header -->
     {% include header.liquid %}
 
