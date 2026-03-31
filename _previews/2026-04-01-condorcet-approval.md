@@ -233,7 +233,7 @@ And land the crushing blow.
 | 2      | B        | C        | A        |
 | 2      | C        | B        | A        |
 
-In this profile, $A$ has the most first ranks, but $B$ defeats both $A$ and $C$, so $A$ is not the Condorcet winner.
+In this profile, $A$ has the most first ranks, but $B$ defeats both $A$ and $C$, so $A$ is not the Condorcet winner. We cannot, then, infer pairwise dominance by considering only the number of ballots in which a candidate is in the top tier, except in $C_2$.
 
 Claims 1 through 3 establish that $C_2$ is precisely approval voting, proving that Approval is a Generalized Condorcet Method that never admits a Condorcet paradox. Claim 4 establishes that Approval voting is the unique Generalized Condorcet Method with all properties 1 through 3. $\square$
 
@@ -267,7 +267,7 @@ Then Alice wins the Approval voting election with 80 votes, since she has the mo
 
 From another perspective, however, this is a blowout. Alice was approved by *80%* of all voters. That is an *absurd* mandate, and it would be very difficult to actually question her status as the Condorcet winner if this was a true election outcome. This is only a "pathology" because we are choosing to assume that 55% of the electorate prefer Bob over Alice, even though they did not express this on their ballots.
 
-But if we want to play the "let's make up a profile where voters act stupidly", then we can play that game. Just because voters can rank beyond two tiers does not mean they will, and thus a general Condorcet method is susceptible to ridiculous outcomes.
+But if we want to play the "let's make up a profile where voters act stupidly" game, then we can play that game. Just because voters can rank beyond two tiers does not mean they will, and thus a general Condorcet method is susceptible to ridiculous outcomes.
 
 **Example:** Let's suppose we instead give the voters in Example \ref{ex:approval} a full ranked ballot, with ties allowed, and they vote in $C_\infty$ as follows:\label{ex:cinf}
 
