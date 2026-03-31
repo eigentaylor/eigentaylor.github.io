@@ -44,12 +44,12 @@ Fellow Condorcetists, I come bearing a gift: I have permanently solved the Condo
 
 [For an actually serious argument on the fact that Approval is a practical Condorcet approximation, see this post.](../practicalapproval){:target="_blank"} However, I feel this is a fair argument that, in a practical sense, Approval is the "perfect" Condorcet method, so long as one is [aware of the fine print](#you-cannot-be-serious){:target="_blank"}.
 
-During the time of the French revolution, two titans battled out their ideas of what a good voting system was: Their names were Jean-Charles de Borda and the Marquis de Condorcet.
+During the time of the French Revolution, two titans battled out their ideas of what a good voting system was: Their names were Jean-Charles de Borda and the Marquis de Condorcet.
 
 - Borda: Believed that we should give candidates points based on where they are ranked. He essentially believed the candidate with the best average ranking should win. This method is used in many modern contexts, including sports awards.
-- Condorcet: Had a much better idea. He believed that we should always elect a candidate which we now call a *Condorcet winner*--a candidate who would defeat every other candidate in a one-on-one election.
+- Condorcet: Had a much better idea. He believed that we should always elect what we now call a *Condorcet winner*--a candidate who would defeat every other candidate in a one-on-one election.
 
-But it is impractical to hold an election for every $\frac{n(n-1)}{2}$ pair of candidates, or to put all possible one-on-one matchups for all candidates on the ballot given to each voter. Take [the mayoral election in Portland from 2024](https://en.wikipedia.org/wiki/2024_Portland,_Oregon,_mayoral_election){:target="_blank"}, which had 19 candidates. That would require voters to consider $\frac{19 \cdot 18}{2} = 171$ different matchups just to elect a mayor. Would you vote for Candidate 1 or Candidate 2? Would you vote for Candidate 1 or Candiadte 3? ... Would you vote for Candidate 18 or Candidate 19? That would be utterly *preposterous*.
+But it is impractical to hold an election for every $\frac{n(n-1)}{2}$ pair of candidates, or to put all possible one-on-one matchups for all candidates on the ballot given to each voter. Take [the mayoral election in Portland from 2024](https://en.wikipedia.org/wiki/2024_Portland,_Oregon,_mayoral_election){:target="_blank"}, which had 19 candidates. That would require voters to consider $\frac{19 \cdot 18}{2} = 171$ different matchups just to elect a mayor. Would you vote for Candidate 1 or Candidate 2? Would you vote for Candidate 1 or Candidate 3? ... Would you vote for Candidate 18 or Candidate 19? That would be utterly *preposterous*.
 
 So we need a voting system that can be used in a single election, is not absurdly hostile to voters, and still satisfies the *spirit* of the Condorcet criterion: if there is a Condorcet winner, *and voters express this through their ballots*, then they should win.
 
@@ -89,7 +89,7 @@ Condorcet's solution sounds perfect, theoretically. I mean, if we can tell voter
 | 1      | Scissors | Paper    | Rock     |
 | 1      | Paper    | Rock     | Scissors |
 
-In this profile, Rock defeats Scissors (a majority of 2 voters rank Rock above Scissors), Similarly, Scissors defeats Paper. However, while we would expect that if Rock beats Scissors, and Scissors defeats Paper, then Rock must defeat Paper. However, another majority prefers Paper over Rock. Thus, there is no Condorcet winner. No matter who you elect, some other candidate can say, "but I would have defeated them!" There is no way to elect any candidate with full legitimacy.
+In this profile, Rock defeats Scissors (a majority of 2 voters rank Rock above Scissors). Similarly, Scissors defeats Paper. However, while we would expect that if Rock beats Scissors, and Scissors defeats Paper, then Rock must defeat Paper, another majority prefers Paper over Rock. Thus, there is no Condorcet winner. No matter who you elect, some other candidate can say, "but I would have defeated them!" There is no way to elect any candidate with full legitimacy.
 
 ### Condorcet is an Approximation
 
@@ -136,7 +136,7 @@ We saw in example \ref{ex:cycle} that a Condorcet winner does not always exist. 
 
 ## Generalized Condorcet Methods
 
-This is not a concept I have ever heard of anyone defining, but it's my post, so I get to make it up! At its core, a typical Condorcet method assumes the ability to be able to give a full ranking of all available candidates if the voter is able to. Please excuse me for a moment while I move the goalpost.
+This is not a concept I have ever heard of anyone defining, but it's my post, so I get to make it up! At its core, a typical Condorcet method assumes the ability to give a full ranking of all available candidates if the voter is able to. Please excuse me for a moment while I move the goalpost.
 
 > **Definition:** A *Generalized Condorcet method* (GCM) is a voting system where voters can rank all candidates, with ties allowed, among some predetermined number of tiers. If a voter ranks candidate X strictly over candidate Y, then that voter casts a vote for X in the X vs Y matchup. If a voter ranks candidate X in the same tier as Y, they abstain in the matchup. If there is a candidate who wins all of their matchups, then that candidate is declared the Condorcet winner and *must* win. We denote a GCM with $k\geq 2$ tiers as $C_k$. If there is no limit on the number of tiers, then we denote it as $C_\infty$.
 
@@ -146,7 +146,7 @@ $C_6$ is equivalent to voters assigning candidates 0 through 5 stars or points, 
 
 If 100 voters rank Alice above Bob, and 50 voters rank Bob above Alice, while 600 voters rank Alice and Bob equally, then we choose to assume that Alice defeats Bob and Bob does not defeat Alice. If there is a candidate who defeats every other candidate, then we assume they are the Condorcet winner, and they must win. We would do this if this electorate of 750 voters had 100 possible ranks or just 2.
 
-We treat the voting system as a function $C_k(P)=W$, for $k \geq 2$, including $k = \infty$, that takes in a profile $P$ of ballot preferences (compatible with $C_k$) and outputs a single winner $W$. If there is a Condorcet winner induced by $P$, based on our Axioms and defintions, then that candidate must be the unique winner outputted by the function.
+We treat the voting system as a function $C_k(P)=W$, for $k \geq 2$, including $k = \infty$, that takes in a profile $P$ of ballot preferences (compatible with $C_k$) and outputs a single winner $W$. If there is a Condorcet winner induced by $P$, based on our axioms and definitions, then that candidate must be the unique winner output by the function.
 
 > **Axiom:** If no candidate wins all of their matchups, based on the ballot data $P$, then we make no assumption about which candidate is the Condorcet winner or should win. If $P$ induces no Condorcet winner, then we make no assumption about the outcome of $C_k(P)$, and allow that any candidate could potentially be the winner.
 
@@ -214,7 +214,7 @@ We now land the crushing blow.
 
 In this profile, $A$ has the most first ranks, but $B$ defeats both $A$ and $C$, so $A$ is not the Condorcet winner.
 
-Claims 1 through 3 establish that $C_2$ is precisely approval voting, proving that Approval is a Generalized Condorcet Method that never admits a Condorcet paradox. Claim 4 establishes that Approval voting is the unique Generalized Condorcet Method with all of properties 1 through 3. $\square$
+Claims 1 through 3 establish that $C_2$ is precisely approval voting, proving that Approval is a Generalized Condorcet Method that never admits a Condorcet paradox. Claim 4 establishes that Approval voting is the unique Generalized Condorcet Method with all properties 1 through 3. $\square$
 
 This leads to the pièce de résistance:
 
@@ -282,7 +282,7 @@ However, unlike any ranked method, [or scoring method with three or more options
 
 Simply, any candidate loses an Approval voting election if and only if it was a "skill issue". To be blunt, losing an Approval election is entirely the candidate's fault for not earning enough approvals from the voters. While the case could be made that this is true in plurality voting as well, it cannot be done quite as cleanly.
 
-Unlike choose-one plurality voting, in Approval voting, the third party supporters can voter for the third party *and* for the viable alternative. If they have the pen in their hand, and look at your name, and say "no thanks", then that is entirely your fault for not being able to convince them to support you. *Skill issue*.
+Unlike choose-one plurality voting, in Approval voting, third-party supporters can vote for the third party *and* for the viable alternative. If they have the pen in their hand, and look at your name, and say "no thanks", then that is entirely your fault for not being able to convince them to support you. *Skill issue*.
 
 Similarly, if there was an underlying Condorcet winner who just couldn't convince their majority to approve them due to their majority preference being sufficiently lukewarm, which is what happened to Bob in the example above, then in that case, all I can say is, "cry about it".
 
@@ -312,7 +312,7 @@ Oh, but I am. Mostly. Half-and-half.
 
 The sleight of hand that I used in this post was to emphasize the outcomes at the ballot level. I conveniently left out an axiom that any true Condorcetist would absolutely mandate: that voters should be able to rank all candidates if they want to. If that is ultimately important, then a "Generalized Condorcet Method" violates the innate spirit of the Condorcet ideal.
 
-Here's what is absolutely true: Because no Condorcet method asks voters to directly vote in every possible head-to-head matchup, we cannot assume that any ranked method can perfectly capture the Condorcet winner in all cases, because you simply cannot assume all voters have and will express a full complete preferences over all candidates, so long as you do not force voters to completely rank all candidates without ties. And if you *do* force a full ranking, then you will bottleneck turnout and get a bunch of noise from voters with no genuine opinion who are just guessing.
+Here's what is absolutely true: Because no Condorcet method asks voters to directly vote in every possible head-to-head matchup, we cannot assume that any ranked method can perfectly capture the Condorcet winner in all cases, because you simply cannot assume all voters have and will express full, complete preferences over all candidates, so long as you do not force voters to completely rank all candidates without ties. And if you *do* force a full ranking, then you will bottleneck turnout and get a bunch of noise from voters with no genuine opinion who are just guessing.
 
 In reality, Approval voting is, in my opinion, "Condorcet-lite". It's not a Condorcet method *proper*, but I would absolutely say a "generalized" Condorcet method is an appropriate name. Condorcetists simplify messy incomplete preferences to a transitive ranking, with abstention allowed, to make determining a (possible) Condorcet winner tractable and practical.
 
@@ -324,7 +324,7 @@ Here's the truth: At the time of writing, Condorcet would be my second choice ov
 
 We have established that Approval is a simplified, two-tiered Condorcet method. While those like Munger would argue that this simplification comes at the cost of outcomes, I would argue that the cost is minimal for the benefits we get in return.
 
-Approval has been shown to have [essentially the same level of outcomes](https://electionscience.github.io/vse-sim/VSEbasic/){:target="_blank"} as more complex Condorcet methods. Whereas Condorcet get about 86%-98% VSE, Approval gets 89%-95%, depending on strategy. And what do we gain in return for that three percent drop in maximum VSE?
+Approval has been shown to have [essentially the same level of outcomes](https://electionscience.github.io/vse-sim/VSEbasic/){:target="_blank"} as more complex Condorcet methods. Whereas Condorcet gets about 86%-98% VSE, Approval gets 89%-95%, depending on strategy. And what do we gain in return for that three percent drop in maximum VSE?
 
 We have mentioned thus far the simplicity to count Approval votes compared to more complex ranked methods, which balloon in complexity as the number of candidates increases. So it's exceptionally simpler to actually use in practice, which has nontrivial importance.
 
@@ -364,7 +364,7 @@ $C_2$ is the maximal level that maintains a "reasonable" level of preference exp
 
 The fact is, I am an ultra pure Condorcetist. Purer than those who scoff at Approval voting, because I do not just think the Condorcet winner *should* be elected if they exist (in the ballot data). Instead, I believe that if your system cannot guarantee that a Condorcet winner *will* exist (in the ballot data), then it's a broken system with no practical potential. Approval is the purest Condorcet method because it always elects and induces a Condorcet winner!
 
-However, to bring back in a little bit of seriousness to this April fools post, I accept that some believe there is value in a more expressive voting system. In particular, if Approval voting elects the Condorcet winner via sincere strategies, then that was done via voters likely choosing one of many sincere strategies. A full ranked method has only one sincere strategy, and there is value to that.
+However, to bring back in a little bit of seriousness to this April Fools' post, I accept that some believe there is value in a more expressive voting system. In particular, if Approval voting elects the Condorcet winner via sincere strategies, then that was done via voters likely choosing one of many sincere strategies. A full ranked method has only one sincere strategy, and there is value to that.
 
 Further, the effective rarity of Condorcet cycles "in the wild" (at least, under RCV) means that the guarantee that a Condorcet winner will always exist in the ballot data has limited persuasiveness. I think such a guarantee is valuable in an era of distrust, but I do not claim this is the only thing that matters. Especially because it *does* come at the cost of limiting expression significantly.
 
@@ -372,7 +372,7 @@ Further, the effective rarity of Condorcet cycles "in the wild" (at least, under
 
 In conclusion, Approval voting is a Condorcet method that changes the question from asking voters for a ranking which may or may not accurately reflect their preferences in one-on-one elections into a simpler, and arguably more important, question: who do you consent to govern you?
 
-The latter question is binary and well defined. And because it is binary, it is impossible to induce a Condorcet paradox. We absolutely limit expression, at minimal cost to outcomes. And my choice to simplify things down to acceptability has the following benefits:
+The latter question is binary and well-defined. And because it is binary, it is impossible to induce a Condorcet paradox. We absolutely limit expression, at minimal cost to outcomes. And my choice to simplify things down to acceptability has the following benefits:
 
 1. Making the system far more practical for voters and administrators
 2. Always induces and elects a Condorcet winner
@@ -381,7 +381,7 @@ The latter question is binary and well defined. And because it is binary, it is 
 5. Simplifies the voting process, reducing cognitive load on voters and minimizing the potential for errors in ballot completion.
 6. Voters who don't have the time to rank 10 candidates for Comptroller can still participate meaningfully by simply approving the candidates they find acceptable.
 
-All the while providing [essentially the same level of outcomes](https://electionscience.github.io/vse-sim/VSEbasic/){:target="_blank"} as a more complex Condorcet methods.
+All the while providing [essentially the same level of outcomes](https://electionscience.github.io/vse-sim/VSEbasic/){:target="_blank"} as more complex Condorcet methods.
 
 In an era of distrust in institutions and elections, I believe that simplicity and clarity are a prerequisite for trust. And I do not trust that a generic Condorcet method is sufficiently simple and transparent (particularly in the case of a cycle, rare as they may be) in all cases to be a permanent solution. Approval is the only system I think is simple enough to be that permanent solution, and I think it *has to be the first step*. Approval today, Condorcet tomorrow is something I might be willing to get behind.
 
