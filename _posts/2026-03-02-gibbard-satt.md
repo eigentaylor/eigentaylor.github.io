@@ -81,7 +81,7 @@ All we need is to assume strategyproofness alongside the absurdly minimal assump
 
 **Proof:** If voter $$v$$ is a dictator, then the winner is always the candidate ranked first by the dictator, regardless of how other voters vote. Therefore, the dictator can place any candidate in their first ranking and that candidate will win. Therefore, dictatorship respects citizen sovereignty.
 
-For all voters besides the dictator, ballot adjustments preserve the winner, making dictatorship strategyproof for all voters besides the dictator. The winner can only change if the dictator moves some candidate $$B$$ over their first choice, which we can call $$A$$. If $$R_1$$ has $$A$$ ranked first, and $$R_2$$ has $$B$$ ranked first, then we satisfy that $$f(P_1)=A\geq_{R_1}B=f(P_2)$$. Therefore, dictatorship is strategyproof. In other words, the dictator can only make a lower-ranked candidate win over their top choice. **QED**.
+For all voters besides the dictator, ballot adjustments preserve the winner, making dictatorship strategyproof for all voters besides the dictator. The winner can only change if the dictator moves some candidate $$B$$ over their first choice, which we can call $$A$$. If $$R_1$$ has $$A$$ ranked first, and $$R_2$$ has $$B$$ ranked first, then we satisfy that $$f(P_1)=A\geq_{R_1}B=f(P_2)$$. Therefore, dictatorship is strategyproof. In other words, the dictator can only make a lower-ranked candidate win over their top choice. $\square$.
 
 However, first, it will be helpful to establish a very useful consequence of strategyproofness on what happens when a voter moves a candidate up or down in their ranking.
 
@@ -99,7 +99,7 @@ But if the relative position of $$A$$ and $$X$$ is unchanged, then that precisel
 
 $$X\geq_{R_2}A\implies X\geq_{R_1}A\geq_{R_1}X$$
 
-So $$A=X$$, contradicting our assumption that $$X\neq A$$. **QED**.
+So $$A=X$$, contradicting our assumption that $$X\neq A$$. $\square$.
 
 This tells us something crucial: when a voter adjusts their ranking, then they can only change the winner by changing the winner's relative position to some other candidate. Otherwise, there is some direction with which we can make that change where it would count as a beneficial strategy.
 
@@ -110,7 +110,7 @@ We can articulate this more precisely with this Corollary:
 > 1. If $$X>_{R_1}A$$, then $$f(P_2)=A$$.
 > 2. If $$A>_{R_2}X$$, then $$f(P_2)=A$$.
 
-**Proof:** We use Lemma \ref{relativepositionlemma} directly. If $$X>_{R_1}A$$, then moving $$X$$ up will not change the relative position of $$A$$ with $$X$$, and by extension any other candidate, so $$A$$ must still win. If $$A>_{R_2}X$$, then moving $$X$$ up did not change the relative position of $$A$$ and $$X$$, since we would need that $$A>_{R_1}X$$, so $$A$$ must still win. **QED**.
+**Proof:** We use Lemma \ref{relativepositionlemma} directly. If $$X>_{R_1}A$$, then moving $$X$$ up will not change the relative position of $$A$$ with $$X$$, and by extension any other candidate, so $$A$$ must still win. If $$A>_{R_2}X$$, then moving $$X$$ up did not change the relative position of $$A$$ and $$X$$, since we would need that $$A>_{R_1}X$$, so $$A$$ must still win. $\square$.
 
 It's worth emphasizing the intuition of this Corollary, as it will be crucial to the proof. The first part of the Corollary says that we can't get a better result by moving a candidate preferred to the winner up. Concretely, lying about how much you like a better candidate can't topple the current winner. For example, if my least favorite candidate, Clark, is currently winning, then adjusting the general order of who I have above Clark can't get me anyone better than Clark. Even if Bob is my second choice, but the best chance I have to beat Clark, then strategically raising him above my favorite Alice, to try to get him some extra points to beat Clark, is not allowed to get me Bob or Alice.
 
@@ -134,7 +134,7 @@ We will show that the relative positioning properties we have shown in the previ
 
 > **Proposition:** If $$f$$ is strategyproof and respects citizen sovereignty, then $$f$$ is **monotonic**.
 
-**Proof:** If $$X$$ is the only candidate moved, then the relative position of $$A$$ with all candidates, besides potentially $$X$$, is unchanged. Therefore, no candidate apart from $$X$$ or $$A$$ *can* be the new winner by Lemma \ref{relativepositionlemma}. That is, if $$B$$ is the new winner, then $$B\in\{X,A\}$$. **QED**
+**Proof:** If $$X$$ is the only candidate moved, then the relative position of $$A$$ with all candidates, besides potentially $$X$$, is unchanged. Therefore, no candidate apart from $$X$$ or $$A$$ *can* be the new winner by Lemma \ref{relativepositionlemma}. That is, if $$B$$ is the new winner, then $$B\in\{X,A\}$$. $\square$
 
 Monotonicity falls out quite directly from strategyproofness, driven by how tightly the relative position of the winner between candidates is constrained when moving between profiles.
 
@@ -154,7 +154,7 @@ Each has its own intuitive interpretation. As mentioned previously, citizen sove
 
 > **Corollary:** If $$f$$ is monotonic and respects citizen sovereignty, then $$f$$ is Pareto efficient. Therefore, by the previous Proposition, if $$f$$ is strategyproof and respects citizen sovereignty, then $$f$$ is Pareto efficient. \label{paretolemma}
 
-**Proof:** By citizen sovereignty, there exists a profile $$P$$ where $$A$$ wins. By monotonicity, if every voter moves $$A$$ to the top of their ranking, inducing profile $$P\to P'$$, then $$A$$ must still win. **QED**.
+**Proof:** By citizen sovereignty, there exists a profile $$P$$ where $$A$$ wins. By monotonicity, if every voter moves $$A$$ to the top of their ranking, inducing profile $$P\to P'$$, then $$A$$ must still win. $\square$.
 
 Essentially, we know any candidate *can* win by citizen sovereignty. By monotonicity, we can move that winning candidate above any other candidate, and preserve the winner. Thus, we very easily get Pareto efficiency.
 
@@ -184,7 +184,7 @@ It will be extremely important to establish that a set of voters is a blocking s
 >
 > then $A\triangleright_S B$. \label{weakblock}
 
-**Proof:** Suppose $B$ loses whenever all voters in $S$ rank $A>B$ and all voters outside of $S$ rank $B$ first. Assume for contradiction that we have some profile $P$ where $S$ ranks $A>B$ but $B$ wins. Then, by monotonicity, if every voter outside of $S$ moves $B$ to the top, inducing profile $P\to P'$, then $B$ must still win in $P'$. This contradicts our assumption that $B$ loses whenever all voters outside of $S$ rank $B$ first and all voters in $S$ rank $A>B$. Thus, we must have that $A\triangleright_S B$. **QED**.
+**Proof:** Suppose $B$ loses whenever all voters in $S$ rank $A>B$ and all voters outside of $S$ rank $B$ first. Assume for contradiction that we have some profile $P$ where $S$ ranks $A>B$ but $B$ wins. Then, by monotonicity, if every voter outside of $S$ moves $B$ to the top, inducing profile $P\to P'$, then $B$ must still win in $P'$. This contradicts our assumption that $B$ loses whenever all voters outside of $S$ rank $B$ first and all voters in $S$ rank $A>B$. Thus, we must have that $A\triangleright_S B$. $\square$.
 
 Again, since we aim to eventually show that $$S$$ contains a dictator, if every voter outside of $$S$$ ranks $$B$$ first, then that is almost the best possible case for $$B$$. The fact that $$B$$ is first outside of $$S$$ is crucial. For example, if $$S$$ didn't contain a dictator, but the complement of $$S$$ did, then if the dictator (outside of $$S$$) ranks, say, $$C>B>A$$, then $$B$$ will still lose. Thus, we would not have sufficiently shown that $$S$$ can *always* block $$B$$ using $$A$$.
 
@@ -217,7 +217,7 @@ $$P_2\to P_3$$: For every other candidate $$X$$ distinct from $$A$$ and $$B$$, e
 
 $$P_3\to P$$: Every voter outside of $$S$$ moves $$A$$ to their place in $$P$$. Since the relative position of $$A$$ and $$B$$ is preserved, as $$B$$ is still ranked first, then the winner must be preserved by Lemma \ref{relativepositionlemma}.
 
-At every step, $$B$$ still wins, so $$B$$ must win in profile $$P$$. Therefore, if $$B$$ loses in any profile satisfying the conditions of Lemma \ref{blockcriterion}, then $$B$$ must lose in any profile satisfying the conditions of Lemma \ref{weakblock}, and thus $$A\triangleright_S B$$. **QED**.
+At every step, $$B$$ still wins, so $$B$$ must win in profile $$P$$. Therefore, if $$B$$ loses in any profile satisfying the conditions of Lemma \ref{blockcriterion}, then $$B$$ must lose in any profile satisfying the conditions of Lemma \ref{weakblock}, and thus $$A\triangleright_S B$$. $\square$.
 
 ### Partitioning Blocking Sets
 
@@ -272,7 +272,7 @@ This creates a profile $$P_C$$ where
 - $$N:C>B>A$$
 - $$S':B>C>A$$
 
-which has $$N$$ ranking $$C$$ first and $$B$$ second, every voter outside of $$N$$ ranking $$B$$ first, and $$B$$ losing. By the Blocking Criterion, Lemma \ref{blockcriterion}, we must have that $$C\triangleright_N B$$. **QED**.
+which has $$N$$ ranking $$C$$ first and $$B$$ second, every voter outside of $$N$$ ranking $$B$$ first, and $$B$$ losing. By the Blocking Criterion, Lemma \ref{blockcriterion}, we must have that $$C\triangleright_N B$$. $\square$.
 
 ## From Blocking to Dictatorship
 
@@ -293,7 +293,7 @@ More precisely, if $$A\triangleright_S B$$, then $$S$$ can block any third candi
 - Suppose we take $$M=\varnothing$$, and thus $$N=S$$. Then we cannot have $$A\triangleright_M C$$ since an empty set cannot block. Thus, $$C\triangleright_S B$$.
 - Similarly, if $$N=\varnothing$$ and $$M=S$$, then we must have $$A\triangleright_S C$$.
 
-Since both are acceptable partitions, we must have both conditions hold. **QED**.
+Since both are acceptable partitions, we must have both conditions hold. $\square$.
 
 Essentially, in Lemma \ref{partitionblock}, we said that at least one of the two conditions must hold. This Corollary says that actually *both* conditions must hold. The key is that Lemma \ref{partitionblock} is so powerful because it applies to *any* partition. We can choose the partition to be the trivial one where one side is empty, and since an empty set cannot block, then the other side must block.
 
@@ -313,7 +313,7 @@ And, again, taking $A$ as the third candidate now,
 
 $$B\triangleright_S C\implies B\triangleright_S A$$
 
-**QED**.
+$\square$.
 
 At this point, we have essentially shown that the ability to block a single candidate with another actually implies far more power, when we have strategyproofness. In fact, it can block any candidate with any other. In that sense, $$S$$ can make all candidates lose. Therefore, if $$S$$ ranks a candidate $$A$$ over all others, then all other candidates must lose, and so $$A$$ wins. In effect, $$S$$ completely determines the outcome of the election, acting as a coalition that collectively dictates the result.
 
@@ -325,7 +325,7 @@ However, Lemma \ref{partitionblock} will land the crushing blow: any partition o
 
 By Corollary \ref{thirdblock}, if $$A\triangleright_S B$$, then $$S$$ can use $$A$$ to block any third candidate. Say, $$A\triangleright_S D$$.
 
-Also by Corollary \ref{thirdblock}, $$S$$ can block $$D$$ with any other candidate. Say, $$C\triangleright_S D$$. **QED**.
+Also by Corollary \ref{thirdblock}, $$S$$ can block $$D$$ with any other candidate. Say, $$C\triangleright_S D$$. $\square$.
 
 Therefore, we have made the connection between blocking and dictatorship. The particular specification of which candidates $$S$$ can block with which are mostly irrelevant.
 
@@ -338,11 +338,11 @@ The final results are as follows.
 - $$A\triangleright_M C \implies M$$ is a dictating set
 - $$C\triangleright_N B \implies N$$ is a dictating set.
 
-Thus, at least one must be a dictating set. **QED**.
+Thus, at least one must be a dictating set. $\square$.
 
 > **Corollary:** If $$S$$ can be partitioned into $$S=S_1\sqcup\ldots\sqcup S_k$$, then at least one of the $$S_i$$ is a dictating set. \label{dictatepartitionk}
 
-**Proof:** We prove this by induction. Corollary \ref{dictatepartition} gives us the base case for $k=2$. For the inductive step, we can take the partition $$S=S_1\sqcup (S_2\sqcup\ldots\sqcup S_k)$$. By Corollary \ref{dictatepartition}, either $$S_1$$ is a dictating set, or $$S_2\sqcup\ldots\sqcup S_k$$ is a dictating set. In the former case, we are done. In the latter case, we can apply the inductive hypothesis to conclude that at least one of the $$S_i$$ for $i>1$ is a dictating set. **QED**.
+**Proof:** We prove this by induction. Corollary \ref{dictatepartition} gives us the base case for $k=2$. For the inductive step, we can take the partition $$S=S_1\sqcup (S_2\sqcup\ldots\sqcup S_k)$$. By Corollary \ref{dictatepartition}, either $$S_1$$ is a dictating set, or $$S_2\sqcup\ldots\sqcup S_k$$ is a dictating set. In the former case, we are done. In the latter case, we can apply the inductive hypothesis to conclude that at least one of the $$S_i$$ for $i>1$ is a dictating set. $\square$.
 
 Waldo is cornered now. If $$S$$ is a dictating set, we can place each member in a separate room, and know that Waldo is in one of those rooms, and everyone in that room is a dictator. Since each room has only one person, that means Waldo is a dictator. The proof of the following theorem is a formalization of this idea.
 
@@ -350,7 +350,7 @@ Waldo is cornered now. If $$S$$ is a dictating set, we can place each member in 
 
 **Proof:** Let $$S=\left\{v_1,\ldots,v_n\right\}$$ be a dictating set.
 
-Take the partition $$S=\{v_1\}\sqcup\{v_2\}\sqcup\ldots\sqcup\{v_n\}$$. By Corollary \ref{dictatepartitionk}, at least one of the $$\{v_i\}$$ is a dictating set, which means that $$v_i$$ is a dictator. Therefore, $$S$$ contains a dictator. **QED**.
+Take the partition $$S=\{v_1\}\sqcup\{v_2\}\sqcup\ldots\sqcup\{v_n\}$$. By Corollary \ref{dictatepartitionk}, at least one of the $$\{v_i\}$$ is a dictating set, which means that $$v_i$$ is a dictator. Therefore, $$S$$ contains a dictator. $\square$.
 
 This lets us equate the existence of a blocking set with that of a dictating set, and hence with the existence of a dictator.
 
@@ -360,7 +360,7 @@ We can finally prove the theorem.
 
 > **Theorem:** (Gibbard-Satterthwaite) Suppose that we have a ranked voting system, where voters must strictly rank candidates without ties, which respects citizen sovereignty and is strategyproof. Then it must be a dictatorship.
 
-**Proof:** By Corollary \ref{paretolemma}, the voting system must satisfy Pareto efficiency, so the set of all voters $$S$$ is a dictating set. By Theorem \ref{dictator}, $$S$$ contains a dictator. **QED**.
+**Proof:** By Corollary \ref{paretolemma}, the voting system must satisfy Pareto efficiency, so the set of all voters $$S$$ is a dictating set. By Theorem \ref{dictator}, $$S$$ contains a dictator. $\square$.
 
 ## Conclusion
 

@@ -91,7 +91,7 @@ Note that for any candidate $X$, after every voter applies the leader rule, the 
 **Proof**: Based on the leader rule,
 
 1. A voter only approves of a non-leader Z if they prefer Z > X. Therefore, Z gets $P(Z>X)$ approvals.
-2. A voter only approves of X if they prefer X > Y. So X gets $P(X>Y)$ approvals. **QED**
+2. A voter only approves of X if they prefer X > Y. So X gets $P(X>Y)$ approvals. $\square$
 
 > **Definition:** a **unique Condorcet winner** is a candidate who strictly defeats every other candidate in pairwise comparisons. That is, if $X$ is a unique Condorcet winner, then for every other candidate $Z$, $P(X>Z) > 0.5$. Thus, $P(Z>X) < 0.5$ for all $Z \neq X$. A **Condorcet loser** is a candidate who is strictly defeated by every other candidate in pairwise comparisons.
 
@@ -103,13 +103,13 @@ Therefore, if the electorate assumes the Condorcet winner is the most likely can
 
 **Proof:** As the unique Condorcet winner, $P(X>Z) > 0.5$ for all $Z \neq X$. Since the percent of votes $X$ gets must be some $P(X>Z)$ for some candidate $Z$, then $X$ must receive over 50% of the vote.
 
-Suppose that X is the leader and Y is the challenger. Since $P(Z>X)<0.5$ for all $Z \neq X$, we must have that $P(X>Y) > P(Z>X)$ for all $Z \neq X$, meaning $X$ has strictly more votes than any other candidate. **QED**
+Suppose that X is the leader and Y is the challenger. Since $P(Z>X)<0.5$ for all $Z \neq X$, we must have that $P(X>Y) > P(Z>X)$ for all $Z \neq X$, meaning $X$ has strictly more votes than any other candidate. $\square$
 
 > **Corollary:** After every voter applies the leader rule: (1) at least one candidate will have more than 50% of the vote, and (2) if $X$ is a Condorcet loser, then $X$ will never be the leader and will always have less than 50% of the vote. \label{cor:majority_and_loser}
 
 **Proof:** For (1): if there exists a unique Condorcet winner, then by Corollary \ref{cor:unique_condorcet_winner}, that candidate will have over 50% of the vote. If there is no unique Condorcet winner, then there must exist some candidate $Z$ who defeats the leader $X$ in a pairwise match-up: $P(Z>X)>0.5>P(X>Z)$. Therefore, $Z$ will have more than 50% of the vote.
 
-For (2): if $X$ is a Condorcet loser, then $P(X>Z) < 0.5$ for all $Z \neq X$, and thus $X$ will always have less than 50% of the votes by Theorem \ref{thm:pairwise}. By part (1), some candidate must have over 50% of the vote, and will thus have more votes than $X$. Therefore, $X$ will not be the leader. **QED**
+For (2): if $X$ is a Condorcet loser, then $P(X>Z) < 0.5$ for all $Z \neq X$, and thus $X$ will always have less than 50% of the votes by Theorem \ref{thm:pairwise}. By part (1), some candidate must have over 50% of the vote, and will thus have more votes than $X$. Therefore, $X$ will not be the leader. $\square$
 
 This corollary tells us something important: even if there is a cycle of preferences, when the elections finally comes around and voters apply the leader rule, we can guarantee that not only will there be a unique winner--by the assumption that no two pairwise match-ups have the same margin--but also that
 
@@ -131,7 +131,7 @@ For example, if all voters think $X$ is the leader and $Y$ is the challenger, th
 
 **Proof:** By Corollary \ref{cor:unique_condorcet_winner}, if $X$ is a unique Condorcet winner, then $X$ will remain the leader after every voter applies the leader rule. Therefore, we know that $(X,Y)$ has an edge to $(X,Y')$ for some $Y'$ such that the votes $P(Y'>X) > P(Z>X)$ for all $Z \notin\{X,Y'\}$. That is, $Y'$ must have the best pairwise matchup against $X$. Therefore, if $Y$ is the strongest challenger of $X$, then $(X,Y)$ is an equilibrium.
 
-Suppose now that $(X,Y)$ is an equilibrium. Then we must have that $P(X>Y) > P(Y>X) > P(Z>X)$ for all $Z \neq X$. Since $P(X>Y) > 0.5 > P(Y>X)$, we must have that $P(Z>X) < 0.5$ for all $Z \neq X$, meaning $X$ is a unique Condorcet winner. Since $P(Y>X) > P(Z>X)$ for all $Z \notin\{X,Y\}$, we must have that $Y$ is the strongest challenger of $X$. **QED**
+Suppose now that $(X,Y)$ is an equilibrium. Then we must have that $P(X>Y) > P(Y>X) > P(Z>X)$ for all $Z \neq X$. Since $P(X>Y) > 0.5 > P(Y>X)$, we must have that $P(Z>X) < 0.5$ for all $Z \neq X$, meaning $X$ is a unique Condorcet winner. Since $P(Y>X) > P(Z>X)$ for all $Z \notin\{X,Y\}$, we must have that $Y$ is the strongest challenger of $X$. $\square$
 
 In the language of our assumed reality, this means that if voters go into the voting booth expecting $X$ to win and $Y$ to be in second place, and they apply the leader rule based on that perception, then the expectation matches the reality if and only if $X$ is a unique Condorcet winner and $Y$ is the strongest challenger of $X$. In a sense, this implies that the polling is accurate to the results if and only if the winner is a unique Condorcet winner, and the second place candidate was actually the strongest candidate to challenge them.
 
@@ -145,23 +145,23 @@ In this case, there must instead be a cycle of nodes, where each node has an edg
 
 > **Corollary:** If $X$ is a unique Condorcet winner, then $X$ is a Leader Rule Outcome. If $X$ is a Condorcet loser, then $X$ is not a Leader Rule Outcome.
 
-**Proof:** By theorem \ref{thm:equilibrium}, we know that $(X,Y)$ is an equilibrium if and only if $X$ is a unique Condorcet winner and $Y$ is the candidate with the best pairwise matchup against $X$. Therefore, if $X$ is a unique Condorcet winner, there exists at least one equilibrium node, which has an edge to itself, where $X$ is the leader, making $X$ a Leader Rule Outcome. Conversely, if $X$ is a Condorcet loser, by Corollary \ref{cor:majority_and_loser}, $X$ will never be the leader after all voters apply the leader rule, so $X$ is not a Leader Rule Outcome. **QED**
+**Proof:** By theorem \ref{thm:equilibrium}, we know that $(X,Y)$ is an equilibrium if and only if $X$ is a unique Condorcet winner and $Y$ is the candidate with the best pairwise matchup against $X$. Therefore, if $X$ is a unique Condorcet winner, there exists at least one equilibrium node, which has an edge to itself, where $X$ is the leader, making $X$ a Leader Rule Outcome. Conversely, if $X$ is a Condorcet loser, by Corollary \ref{cor:majority_and_loser}, $X$ will never be the leader after all voters apply the leader rule, so $X$ is not a Leader Rule Outcome. $\square$
 
 We now add some convenient characterizations of the Leader Rule Outcomes, which will be useful for our later analysis.
 
 > **Lemma:** If candidate $X$ loses to their strongest challenger $Y$, then $Y$ is a Leader Rule Outcome. In particular, the node $(X,Y)$ has an edge to a node where $Y$ is the leader. \label{lem:strongest_challenger_outcome}
 
-**Proof:** Suppose that $X$ loses to their strongest challenger $Y$. By definition $P(Y>X) > P(Z>X)$ for all $Z \notin\{X,Y\}$. We also have by assumption that $P(Y>X) > 0.5$, and $P(X>Y) < 0.5$. Then $P(Y>X) > P(X>Y)$ and $P(Y>X) > P(Z>X)$ for all $Z \notin\{X,Y\}$, so $(X,Y)$ has an edge to $(Y,Y')$ for some $Y'$, making $Y$ a Leader Rule Outcome. **QED**
+**Proof:** Suppose that $X$ loses to their strongest challenger $Y$. By definition $P(Y>X) > P(Z>X)$ for all $Z \notin\{X,Y\}$. We also have by assumption that $P(Y>X) > 0.5$, and $P(X>Y) < 0.5$. Then $P(Y>X) > P(X>Y)$ and $P(Y>X) > P(Z>X)$ for all $Z \notin\{X,Y\}$, so $(X,Y)$ has an edge to $(Y,Y')$ for some $Y'$, making $Y$ a Leader Rule Outcome. $\square$
 
 > **Lemma:** If candidate $X$ is the leader in some node, and $Y$ is the strongest challenger of $X$, then the node will have an edge to a node where either $X$ is still the leader, or $Y$ is the new leader. \label{lem:leader_strongest_challenger_outcome}
 
-**Proof:** Suppose that a node where $X$ is the leader has an edge to a node where $X$ is not still the leader, but $Y$ is the new leader. Then we must have that $P(Y>X) > P(Z>X)$ for all $Z \notin\{X,Y\}$, so $Y$ is the strongest challenger of $X$. Therefore, either $X$ is still the leader, or the new leader must be the strongest challenger of $X$. **QED**
+**Proof:** Suppose that a node where $X$ is the leader has an edge to a node where $X$ is not still the leader, but $Y$ is the new leader. Then we must have that $P(Y>X) > P(Z>X)$ for all $Z \notin\{X,Y\}$, so $Y$ is the strongest challenger of $X$. Therefore, either $X$ is still the leader, or the new leader must be the strongest challenger of $X$. $\square$
 
 This strongly restricts the possible dynamics of the leader rule. The leader can only remain static or be replaced by their strongest challenger. There is a relatively convenient characterization of when the leader can remain static.
 
 > **Lemma:** If $\text{max}_k P(X>Z_k) > \text{max}_i P(Z_i>X)$, then $X$ is a Leader Rule Outcome. In particular, there is some node where $X$ is the leader, and that node has an edge to a node where $X$ is still the leader. \label{lem:leader_remains_leader_outcome}
 
-**Proof:** Suppose that $\text{max}_k P(X>Z_k) > \text{max}_i P(Z_i>X)$. And let's say that the maximum on the left is achieved by $Z_k$. Then we have that $P(X>Z_k) > P(Z>X)$ for all $Z \neq X$. Therefore, the node $(X,Z_k)$ has an edge to a node where $X$ is still the leader, making $X$ a Leader Rule Outcome. **QED**
+**Proof:** Suppose that $\text{max}_k P(X>Z_k) > \text{max}_i P(Z_i>X)$. And let's say that the maximum on the left is achieved by $Z_k$. Then we have that $P(X>Z_k) > P(Z>X)$ for all $Z \neq X$. Therefore, the node $(X,Z_k)$ has an edge to a node where $X$ is still the leader, making $X$ a Leader Rule Outcome. $\square$
 
 > **Lemma:** Candidate $X$ is a Leader Rule Outcome if and only if one of the following holds: \label{lem:lr_outcome}
 >
@@ -170,7 +170,7 @@ This strongly restricts the possible dynamics of the leader rule. The leader can
 
 **Proof:** If condition 1 holds, then consider the node $(X,Y)$. We have that $P(X>Y) > P(Z>X)$ for all $Z \neq X$, so $X$ will have the most votes after every voter applies the leader rule, making $X$ the leader. Note that condition 1 holds when $X$ is a unique Condorcet winner, since $P(X>Z) > 0.5 > P(Z>X)$ for all $Z \neq X$. If condition 1 does not hold, then for all $Y$, there exists some $Z$ such that $P(Z>X) > P(X>Y)$, meaning that $(X,Y)$ cannot have an edge to any node where $X$ is the leader. That is, no node where $X$ is the leader can have an edge to a node where $X$ is the leader.
 
-If condition 2 holds, then consider the node $(Y,Y')$. We have that $P(X>Y) > P(Z>Y)$ for all $Z\notin\{X,Y\}$, so $X$ will have more votes than all candidates other than $Y$ after every voter applies the leader rule. However, since $P(X>Y) > P(Y>Y')$, $X$ will have more votes than $Y$ as well, making $X$ the leader. If condition 2 does not hold, then for all nodes where $X$ is not the leader, $(Y,Y')$ where $Y \neq X$, there exists some $Z$ such that $P(Z>Y) > P(X>Y)$, meaning that $(Y,Y')$ cannot have an edge to any node where $X$ is the leader. That is, no node where $X$ is not the leader can have an edge to a node where $X$ is the leader. **QED**
+If condition 2 holds, then consider the node $(Y,Y')$. We have that $P(X>Y) > P(Z>Y)$ for all $Z\notin\{X,Y\}$, so $X$ will have more votes than all candidates other than $Y$ after every voter applies the leader rule. However, since $P(X>Y) > P(Y>Y')$, $X$ will have more votes than $Y$ as well, making $X$ the leader. If condition 2 does not hold, then for all nodes where $X$ is not the leader, $(Y,Y')$ where $Y \neq X$, there exists some $Z$ such that $P(Z>Y) > P(X>Y)$, meaning that $(Y,Y')$ cannot have an edge to any node where $X$ is the leader. That is, no node where $X$ is not the leader can have an edge to a node where $X$ is the leader. $\square$
 
 In short, we have essentially two archetypes for a candidate to be a Leader Rule Outcome:
 
@@ -298,7 +298,7 @@ Without loss of generality, suppose that $B>C$ is one of the top two strongest m
 - If the $B>C$ match-up is stronger than $A>C$, then $(C,B)$ will have an edge to $(B,A)$.
 - If $B>C$ is not stronger than $A>C$ (meaning $A>C$ is the strongest pairwise match-up), then $(B,C)$ will have an edge to $(B,A)$.
 
-In either case, $B$ must have fewer than 50% approvals in the outcome after $(B,A)$, while $A$ must have more than 50% approvals, by the assumption that $A$ is the Condorcet winner. Since $C$ is a Condorcet loser, they must also have less than 50% approvals, so $A$ will be the leader in at most two steps. This node may not be the equilibrium, but must have an edge to the equilibrium, giving it at most three steps. **QED**
+In either case, $B$ must have fewer than 50% approvals in the outcome after $(B,A)$, while $A$ must have more than 50% approvals, by the assumption that $A$ is the Condorcet winner. Since $C$ is a Condorcet loser, they must also have less than 50% approvals, so $A$ will be the leader in at most two steps. This node may not be the equilibrium, but must have an edge to the equilibrium, giving it at most three steps. $\square$
 
 This makes three candidate Approval highly Condorcet efficient, using the leader rule. While the Condorcet winner may not be the unique Leader rule outcome, we can assure that the Condorcet winner will win after at most two steps, even if the voter perception is wildly off.
 
@@ -317,7 +317,7 @@ Here, we clearly have a Condorcet winner, $B$. However, they have the weakest pa
 
 If we have a leader who is not $B$, then at least one candidate will have a stronger margin against that leader than $B$. Therefore, $B$ cannot become the leader unless $B$ starts as the leader.
 
-In particular, we can see that there will be a cycle $(A,B)$ to $(C,B)$ to $(D,B)$ and back to $(A,B)$. **QED**
+In particular, we can see that there will be a cycle $(A,B)$ to $(C,B)$ to $(D,B)$ and back to $(A,B)$. $\square$
 
 <img src="/assets/img/leader_rule/island.png" alt="Leader Rule Non-Convergence Example" style="max-width: 600px;">
 
