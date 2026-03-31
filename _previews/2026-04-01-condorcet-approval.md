@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: Approval is the Perfect Condorcet Method
-date: 2026-03-30
+date: 2026-03-31
 description: Approval is a perfect Condorcet method, and I have permanently solved the Condorcet paradox. April Fools!
 giscus_comments: true
 importance: 3
