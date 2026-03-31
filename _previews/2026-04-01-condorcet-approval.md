@@ -111,7 +111,7 @@ The use of rankings to infer one-on-one preferences is an approximation. Every C
 
 That is precisely Axiom \ref{ax:ranked-ballot-assumption}: We go entirely off of what the majority *of voters who explicitly expressed a preference* between two candidates indicated, rather than requiring a full majority to have expressed a preference.
 
-This is a *huge* assumption. It is a *huge* compromise. But it makes the voting system *tractable*.
+This is a *huge* assumption and a *huge* compromise. But it makes the voting system *tractable*.
 
 It is simply too impractical to expect every voter to strictly rank 19 candidates with no ties allowed, let alone vote in 171 choose-one matchups, particularly when considering the cognitive load and time required.
 
@@ -135,7 +135,7 @@ There were nearly 190,000 voters in this election, according to [ranked.vote](ht
 
 RCV was short-sighted, and interpreted the clear expressed preference of "I would take Palin over Peltola *and* Begich over Peltola" in a way that ultimately led to the election of Peltola directly. This is *not* a faithful treatment of the voters' expressed preferences. Particularly because a clear majority of *all ballots cast*--approximately 53%, over 60% of those who expressed a preference between Begich and Palin--had voters expressing a preference of Begich over Palin.
 
-However, what Condorcetists often neglect to mention is that because so many voters who ranked Palin first did not rank a second choice, we *technically* have no idea how they would vote in a Begich vs. Peltola head-to-head matchup. While out of all voters *who did express a preference* between Begich and Peltola, a majority preferred Begich, this was not a majority *of all voters who cast a ballot*, but rather approximately 46% of all voters who cast a ballot. We report the number as 52.5% of voters who expressed a preference between Begich and Peltola preferred Begich, but it's *not* 52.5% of all voters.
+However, what Condorcetists often neglect to mention is that because so many voters who ranked Palin first did not rank a second choice, we *technically* have no idea how they would vote in a Begich vs. Peltola head-to-head matchup. While out of all voters *who did express a preference* between Begich and Peltola, a majority preferred Begich, this was not a majority *of all voters who cast a ballot*, but rather approximately 46% of all voters. We report this as 52.5% among voters who expressed a Begich-Peltola preference, but it's *not* 52.5% of all voters.
 
 Therefore, we cannot be certain that Begich was the true Condorcet winner, because if all of the unaccounted for votes had gone entirely to Peltola in a head-to-head matchup against Begich, then Begich would not have defeated Peltola. This is exceptionally unlikely, but because we did not collect that information, we cannot be 100% certain.
 
@@ -341,7 +341,7 @@ Here's what is absolutely true: Because no Condorcet method asks voters to direc
 
 In reality, Approval voting is, in my opinion, "Condorcet-lite". It's not a Condorcet method *proper*, but I would absolutely say a "generalized" Condorcet method is an appropriate name. Condorcetists simplify messy incomplete preferences to a transitive ranking, with abstention allowed, to make determining a (possible) Condorcet winner tractable and practical.
 
-Approval just goes one step further with this logic and simplifies the ballot to make it completely consistent and ultimately practical. But it is still, at its core, fundamentally electing the candidate who is ranked strictly above any other candidate by a majority of voters who express a preference. To me, *that* is the appeal of the Condorcet criterion--the legitimacy given to the winner. And in *that* respect, Approval is perfect. It inherits the base legitimacy of any system that does this reliably (Condorcet methods), along with the legitimacy that comes from simplified ballot data.
+Approval just goes one step further with this logic and simplifies the ballot to make it completely consistent and practical. But at its core, it is still electing the candidate ranked strictly above any other candidate by a majority of voters who express a preference. To me, *that* is the appeal of the Condorcet criterion--the legitimacy given to the winner. And in *that* respect, Approval is perfect. It inherits the base legitimacy of any system that does this reliably (Condorcet methods), along with the legitimacy that comes from simplified ballot data.
 
 Here's the truth: At the time of writing, Condorcet would be my second choice over Approval. If Approval *didn't* show clear data that it was essentially *just* as good as a full Condorcet method in practice, and if I didn't feel that [simplicity is paramount in this era of distrust](../practicalapproval){:target="_blank"}, then I wouldn't be advocating for Approval voting so strongly over a full Condorcet method. But the fact that Approval is simple, transparent, and *practically as good* makes the choice for me quite clear.
 
@@ -351,7 +351,7 @@ We have established that Approval is a simplified, two-tiered Condorcet method. 
 
 Approval has been shown to have [essentially the same level of outcomes](https://electionscience.github.io/vse-sim/VSEbasic/){:target="_blank"} as more complex Condorcet methods in "Voter Satisfaction Efficiency" (VSE). Whereas Condorcet gets about 86%-98% VSE, Approval gets 89%-95%, depending on strategy. And what do we gain in return for that three percent drop in maximum VSE?
 
-We have mentioned thus far the simplicity to count Approval votes compared to more complex ranked methods, which balloon in complexity as the number of candidates increases. So it's exceptionally simpler to actually use in practice, which has nontrivial importance.
+We have mentioned thus far the simplicity of counting Approval votes compared to more complex ranked methods, which balloon in complexity as the number of candidates increases. So it's much simpler to use in practice, which has nontrivial importance.
 
 There is the fact that, unlike any other Generalized Condorcet method, Approval never "breaks" due to a cycle, because Approval has no cycles. Sorry, but I'm not quite ready to take an extra 3% in maximum VSE for a system that's more complicated and has a tiny chance to completely collapse, and be relegated to a seemingly arbitrary tie-breaker, if voters are sufficiently messy. I'll take the sturdy simplicity of a 95% system, that can promise it will never break, any day.
 
@@ -389,9 +389,9 @@ Further, the effective rarity of Condorcet cycles "in the wild" (at least, under
 
 In conclusion, Approval voting is a Condorcet method that changes the question from asking voters for a ranking which may or may not accurately reflect their preferences in one-on-one elections into a simpler, and arguably more important, question: who do you consent to govern you?
 
-The latter question is binary and well-defined. And because it is binary, it is impossible to induce a Condorcet paradox. We absolutely limit expression, at minimal cost to outcomes. And my choice to simplify things down to acceptability has the following benefits:
+The latter question is binary and well-defined. Because it is binary, it is impossible to induce a Condorcet paradox. We do limit expression, at minimal cost to outcomes. And my choice to simplify things down to acceptability has the following benefits:
 
-1. Making the system far more practical for voters and administrators, simplifying the voting process and reducing cognitive load on voters and minimizing the potential for errors in ballot completion. Voters who don't have the time to rank 10 candidates for Comptroller can still participate meaningfully by simply approving the candidates they find acceptable.
+1. Making the system far more practical for voters and administrators by simplifying the voting process, reducing cognitive load, and minimizing ballot-completion errors. Voters who don't have the time to rank 10 candidates for Comptroller can still participate meaningfully by simply approving the candidates they find acceptable.
 2. Ensuring full legitimacy to the winner in every possible non-tied election scenario, as the ballot Condorcet winner. No paradoxes or cycles, and no other candidate can claim to be more deserving of victory than the candidate with the most approvals based on the ballots cast.
 3. Maintaining full transparency and being far easier to explain to voters, particularly to skeptical voters who demand to know why *their* candidate lost.
 
