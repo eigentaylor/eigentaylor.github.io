@@ -323,7 +323,7 @@ My adherence and loyalty to the Condorcet criterion is not because I think the t
 
 ### A Remark on Precinct Summability
 
-Approval voting is very clearly precinct summable. We have proved that it is a Generalized Condorcet Method which only needs the total number of approvals each candidate receives to determine all pairwise matchups.
+Approval voting is very clearly precinct summable. We have proved that it is a Generalized Condorcet Method which only needs the total number of approvals each candidate receives to determine all pairwise matchups. It is as simple as our current choose-one voting system.
 
 General Condorcet Methods, including $C_\infty$, are also technically precinct summable, unlike a method like RCV which absolutely requires [central tabulation](../ditch-rcv){:target="_blank"}. However, the practicality decreases as the number of candidates increases. For 19 candidates, a precinct would potentially need to report the number of voters who prefer each candidate over each other candidate, which is $19(18) = 342$ numbers, which is considerably more cumbersome than simply reporting 19 approval counts. However, it is technically fewer numbers than STAR voting, which would require reporting all of these numbers alongside the total scores for each candidate ($19^2=361$) for full summability that wouldn't require a later tabulation of the runoff numbers.
 
