@@ -38,7 +38,7 @@ toc:
 
 ## Introduction
 
-Merry April Foolsmas, everyone! I must make a confession. I have seen the light. I am not a true Condorcet believer!
+Merry April Foolsmas, everyone! I must make a confession. I have seen the light. I am now a true Condorcet purist!
 
 Fellow Condorcetists, I come bearing a gift: I have permanently solved the Condorcet paradox. There is in fact a *perfect* voting system! It is called Approval voting, and it *is* indeed a Condorcet method.
 
