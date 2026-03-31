@@ -139,7 +139,7 @@ However, what Condorcetists often neglect to mention is that because so many vot
 
 Therefore, we cannot be certain that Begich was the true Condorcet winner, because if all of the unaccounted for votes had gone entirely to Peltola in a head-to-head matchup against Begich, then Begich would not have defeated Peltola. This is exceptionally unlikely, but because we did not collect that information, we cannot be 100% certain.
 
-As Condorcetists, we have to rely exclusively on the expressed ballot data, and trust that among those who *did* express a preference between two candidates, the majority preference accurately reflects who would win in a head-to-head matchup. Just as Ranked Choice Voting exhausts ballots from voters who failed to rank any remaining candidates, Condorcetists also value expressed preferences over potential unexpressed preferences.
+As Condorcetists, we have to rely exclusively on the expressed ballot data, and trust that among those who *did* express a preference between two candidates, the majority preference accurately reflects who would win in a head-to-head matchup among the entire electorate. Just as Ranked Choice Voting exhausts ballots from voters who failed to rank any remaining candidates, Condorcetists also value expressed preferences over potential unexpressed preferences.
 
 Now, hopefully we are on the same page about what it truly means, in practice, to be a Condorcet winner, given the limitations of the ballot data. The only sane way to implement a Condorcet method is to
 
