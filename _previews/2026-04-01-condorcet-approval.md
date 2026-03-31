@@ -38,7 +38,7 @@ toc:
 
 ## Introduction
 
-Merry April Foolsmas, everyone! I must make a confession. I have seen the light. I am now a true Condorcet purist!
+Merry April Foolsmas, everyone! I must make a confession. I have seen the light. I am now a true Condorcet purist! I did the math, and it revealed to me the solution was before us the entire time.
 
 Fellow Condorcetists, I come bearing a gift: I have permanently solved the Condorcet paradox. There is in fact a *perfect* voting system! It is called Approval voting, and it *is* indeed a Condorcet method.
 
@@ -380,7 +380,7 @@ The latter question is binary and well-defined. And because it is binary, it is 
 
 1. Making the system far more practical for voters and administrators
 2. Always induces and elects a Condorcet winner
-3. Ensures full legitimacy to the winner in every possible election scenario. No other candidate can claim to be more deserving of the winner than the candidate with the most approvals.
+3. Ensures full legitimacy to the winner in every possible non-tied election scenario. No other candidate can claim to be more deserving of the winner than the candidate with the most approvals.
 4. Eliminates the possibility of a Condorcet paradox, ensuring a clear and decisive outcome in every election.
 5. Simplifies the voting process, reducing cognitive load on voters and minimizing the potential for errors in ballot completion.
 6. Voters who don't have the time to rank 10 candidates for Comptroller can still participate meaningfully by simply approving the candidates they find acceptable.
