@@ -388,7 +388,7 @@ In conclusion, Approval voting is a Condorcet method that changes the question f
 The latter question is binary and well-defined. And because it is binary, it is impossible to induce a Condorcet paradox. We absolutely limit expression, at minimal cost to outcomes. And my choice to simplify things down to acceptability has the following benefits:
 
 1. Making the system far more practical for voters and administrators, simplifying the voting process and reducing cognitive load on voters and minimizing the potential for errors in ballot completion. Voters who don't have the time to rank 10 candidates for Comptroller can still participate meaningfully by simply approving the candidates they find acceptable.
-2. Ensuring full legitimacy to the winner in every possible non-tied election scenario, as the ballot Condorcet winner. No paradoxes or cycles, and no other candidate can claim to be more deserving of the winner than the candidate with the most approvals.
+2. Ensuring full legitimacy to the winner in every possible non-tied election scenario, as the ballot Condorcet winner. No paradoxes or cycles, and no other candidate can claim to be more deserving of victory than the candidate with the most approvals based on the ballots cast.
 3. Maintaining full transparency and being far easier to explain to voters, particularly to skeptical voters who demand to know why *their* candidate lost.
 
 All the while providing [essentially the same level of outcomes](https://electionscience.github.io/vse-sim/VSEbasic/){:target="_blank"} as more complex Condorcet methods.
