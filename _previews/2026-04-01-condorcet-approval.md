@@ -103,7 +103,7 @@ As with all things in voting theory, there's a catch. While a Condorcet winner e
 | 1      | Scissors | Paper    | Rock     |
 | 1      | Paper    | Rock     | Scissors |
 
-In this profile, Rock defeats Scissors (a majority of 2 voters rank Rock above Scissors). Similarly, Scissors defeats Paper. However, while we would expect that if Rock beats Scissors, and Scissors defeats Paper, then Rock must defeat Paper, another majority prefers Paper over Rock. Thus, there is no Condorcet winner. No matter who you elect, some other candidate can say, "but I would have defeated them!" There is no way to elect any candidate with full legitimacy.
+In this profile, Rock defeats Scissors (a majority of 2 voters rank Rock above Scissors). Similarly, Scissors defeats Paper. However, while we would expect that if Rock beats Scissors, and Scissors defeats Paper, then Rock must defeat Paper, another majority prefers Paper over Rock. Thus, there is no Condorcet winner. No matter who you elect, some other candidate can say, "but I would have defeated them!" There is no way to elect any candidate with full legitimacy based on these ballots.
 
 ### Condorcet is an Approximation
 
