@@ -192,19 +192,22 @@ $$\begin{equation}
 S(A>B)>S(B>A) \iff S(A)>S(B)
 \end{equation}$$
 
-**Proof:** If more voters put $A$ in the approved tier, then $S(A)>S(B)$. Thus, $S(A>B)+S(A=B)>S(B>A)+S(A=B)$, implies that $S(A>B)>S(B>A)$ by cancellation of $S(A=B)$, meaning $A$ defeats $B$. Conversely, if $A$ defeats $B$, then $S(A>B)>S(B>A)$. Adding $S(A=B)$ to both sides of the inequality,
+**Proof:** If more voters put $A$ in the approved tier, then $S(A)>S(B)$. Thus, $S(A>B)+S(A=B)>S(B>A)+S(A=B)$, implies that $S(A>B)>S(B>A)$ by cancellation of $S(A=B)$, meaning $A$ defeats $B$. Conversely, if $A$ defeats $B$, then $S(A>B)>S(B>A)$. Adding $S(A=B)$ to both sides of the inequality retrieves the desired result
 
-$$S(A)=S(A>B)+S(A=B)>S(B>A)+S(A=B)=S(B)$$
+$$\begin{multline*}
+S(A>B)+S(A=B)>S(B>A)+S(A=B) \\
+\iff S(A)>S(B)
+\end{multline*}$$
 
 Thus, $A$ gets more total approvals than $B$ if and only if $A$ defeats $B$ pairwise. $\square$
 
-Beyond the algebra, the key and intuition of this proof is extraordinarily simple. Voters who approve both or neither do not contribute to the difference between the total approvals of A and B. That difference is based purely on voters who distinguish between them, which we use to *define* who wins the pairwise matchup. If Alice gets 50 more approvals than Bob, then that means that 50 more voters approved Alice and not Bob than voters approved Bob and not Alice.
+Beyond the algebra, the key and intuition of this proof is extraordinarily simple. Voters who approve both or neither do not contribute to the difference between the total approvals of A and B. That difference is based purely on voters who distinguish between them, which we use to *define* who wins the pairwise matchup. If Alice gets 50 more approvals than Bob, then that means that 50 more voters approved Alice and not Bob than voters approved Bob and not Alice. Therefore, Alice beats Bob!
 
 We now define Approval voting.
 
 > **Definition:** Approval voting is a voting method in which each voter can approve any number of candidates. The candidate who is approved by the most voters wins.
 
-We now land the crushing blow.
+And land the crushing blow.
 
 > **Theorem:**
 >
