@@ -345,7 +345,7 @@ Here's the truth: At the time of writing, Condorcet would be my second choice ov
 
 We have established that Approval is a simplified, two-tiered Condorcet method. While those like Munger would argue that this simplification comes at the cost of outcomes, I would argue that the cost is minimal for the benefits we get in return.
 
-Approval has been shown to have [essentially the same level of outcomes](https://electionscience.github.io/vse-sim/VSEbasic/){:target="_blank"} as more complex Condorcet methods. Whereas Condorcet gets about 86%-98% VSE, Approval gets 89%-95%, depending on strategy. And what do we gain in return for that three percent drop in maximum VSE?
+Approval has been shown to have [essentially the same level of outcomes](https://electionscience.github.io/vse-sim/VSEbasic/){:target="_blank"} as more complex Condorcet methods in "Voter Satisfaction Efficiency" (VSE). Whereas Condorcet gets about 86%-98% VSE, Approval gets 89%-95%, depending on strategy. And what do we gain in return for that three percent drop in maximum VSE?
 
 We have mentioned thus far the simplicity to count Approval votes compared to more complex ranked methods, which balloon in complexity as the number of candidates increases. So it's exceptionally simpler to actually use in practice, which has nontrivial importance.
 
