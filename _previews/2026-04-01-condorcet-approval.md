@@ -23,7 +23,7 @@ toc:
       - name: The Paradox
       - name: Condorcet is an Approximation
   - name: Generalized Condorcet Methods
-  - name: Limited Tiers and the Condorcet Paradox
+  - name: Limited Tiers and the End of Paradoxes
   - name: You can't prove it's not Condorcet
     slug: you-cant-prove-its-not-condorcet
     subsections:
@@ -160,27 +160,27 @@ $C_6$ is equivalent to voters assigning candidates 0 through 5 stars or points, 
 
 If 100 voters rank Alice above Bob, and 50 voters rank Bob above Alice, while 600 voters rank Alice and Bob equally, then we choose to assume that Alice defeats Bob and Bob does not defeat Alice. If there is a candidate who defeats every other candidate, then we assume they are the Condorcet winner, and they must win. We would do this if this electorate of 750 voters had 100 possible ranks or just 2.
 
-We treat the voting system as a function $C_k(P)=W$, for $k \geq 2$, including $k = \infty$, that takes in a profile $P$ of ballot preferences (compatible with $C_k$) and outputs a single winner $W$. If there is a Condorcet winner induced by $P$, based on our axioms and definitions, then that candidate must be the unique winner output by the function.
+We treat the voting system as a function $C_k(P)=W$, for $k \geq 2$, including $k = \infty$, that takes in a profile $P$ of ballot preferences (having at most $k$ tiers) and outputs a single winner $W$. If there is a Condorcet winner induced by $P$, based on our axioms and definitions, then that candidate must be the unique winner output by the function.
 
 > **Axiom:** If no candidate wins all of their matchups, based on the ballot data $P$, then we make no assumption about which candidate is the Condorcet winner or should win. If $P$ induces no Condorcet winner, then we make no assumption about the outcome of $C_k(P)$, and allow that any candidate could potentially be the winner.
 
-Essentially, $C_k$ can be an arbitrary function, so long as it agrees on the Condorcet winner when one exists. It could elect them alphabetically for all we care in the case of a cycle.
+Essentially, $C_k$ can be an arbitrary function, so long as it agrees on the Condorcet winner when one exists. In the case of a cycle, it could elect them alphabetically for all we care.
 
-Generally, a Condorcet method always chooses the same number of tiers as there are candidates, so that voters could theoretically rank all candidates in a complete transitive order, which is effectively $C_\infty$. But we investigate what happens when we restrict the number of tiers.
+Generally, a Condorcet method always chooses the same number of tiers as there are candidates, so that voters could theoretically rank all candidates in a complete transitive order. We consider this $C_\infty$. But we investigate what happens when we restrict the number of tiers.
 
-## Limited Tiers and the Condorcet Paradox
+## Limited Tiers and the End of Paradoxes
 
 We first establish a simple Axiom to make the following analysis clean.
 
 > **Axiom:** (Unique winner) We assume that at most one candidate has no strict pairwise loss in any profile $P$. \label{ax:unique-winner}
 
-This axiom allows us to disregard the possibility of a Condorcet method having to choose between multiple weak Condorcet winners in the absence of a cycle. Say Alice defeats Clark, and Bob defeats Clark, but Alice and Bob tie. Neither Alice and Bob have a strict pairwise loss. We don't consider this type of case in our analysis.
+This axiom allows us to disregard the possibility of a Condorcet method having to choose between multiple weak Condorcet winners in the absence of a cycle. Say Alice defeats Clark, and Bob defeats Clark, but Alice and Bob tie. Neither Alice and Bob have a strict pairwise loss, so neither is a unique Condorcet winner. We don't consider such cases here.
 
 > **Lemma:** A Condorcet winner can fail to exist in $C_k$ if $k>2$. \label{condorcet-paradox}
 
 **Proof:** By example \ref{ex:cycle}, we can see that any GCM that allows three tiers can result in no Condorcet winner. This example works for any $k\geq 3$, so a Condorcet winner can fail to exist for any $k\geq 3$. $\square$
 
-This is not an abstract result. While very rare, Condorcet cycles have occurred in real U.S. elections, such as a [Minnesota city council election in 2021](https://ranked.vote/report/us/mn/2021/11/ward-2){:target="_blank"}.
+This is not an abstract result. While very rare, Condorcet cycles have occurred in real U.S. elections, such as a [Minneapolis city council election in 2021](https://ranked.vote/report/us/mn/2021/11/ward-2){:target="_blank"}.
 
 > **Definition:** For $C_2$, we denote $S(A)$, as the number of voters who put candidate $A$ in the upper tier, which we call the "approved tier". We say $S(A)$ is the number of "approvals". We denote $S(A>B)$ as the number of "strict approvals" of $A$ over $B$--voters who put candidate $A$ in the approved tier and candidate $B$ in the not approved tier. And $S(A=B)$ as the number of voters who put both candidates in the approved tier, but does not include voters who put both candidates in the not approved tier.
 
