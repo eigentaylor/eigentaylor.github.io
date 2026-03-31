@@ -49,7 +49,7 @@ Fellow Condorcetists, I come bearing a gift: I have permanently solved the Condo
 
 During the time of the French Revolution, a titan came up with an idea that changed the way we think about voting systems forever. This was Marie Jean Antoine Nicolas de Caritat, Marquis de Condorcet. While that is an *awesome* name, we will just call him Condorcet.
 
-Condorcet believed that we should always elect what we now call a *Condorcet winner*--a candidate who would defeat every other candidate in a one-on-one election. This is often held as a *gold* standard for a voting system (by *cool* people, at least).
+Condorcet believed that we should always elect what we now call a *Condorcet winner*--a candidate who would defeat every other candidate in a one-on-one election. This is often held as the *gold* standard for a voting system (by *cool* people).
 
 But it is impractical to hold an election for every $\frac{n(n-1)}{2}$ pair of candidates, or to put all possible one-on-one matchups for all candidates on the ballot given to each voter. Take [the mayoral election in Portland from 2024](https://en.wikipedia.org/wiki/2024_Portland,_Oregon,_mayoral_election){:target="_blank"}, which had 19 candidates. That would require voters to consider $\frac{19 \cdot 18}{2} = 171$ different matchups just to elect a mayor. Would you vote for Candidate 1 or Candidate 2? Would you vote for Candidate 1 or Candidate 3? ... Would you vote for Candidate 18 or Candidate 19? That would be utterly *preposterous*.
 
