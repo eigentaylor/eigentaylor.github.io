@@ -38,7 +38,7 @@ toc:
 
 ## Introduction
 
-Merry April Foolsmas, everyone! I must make a confession. I have seen the light. I am not a true Condorcet believer!
+Merry April Foolsmas, everyone! I must make a confession. I have seen the light. I am now a true Condorcet purist!
 
 Fellow Condorcetists, I come bearing a gift: I have permanently solved the Condorcet paradox. There is in fact a *perfect* voting system! It is called Approval voting, and it *is* indeed a Condorcet method.
 
@@ -160,11 +160,11 @@ We first establish a simple Axiom to make the following analysis clean.
 
 > **Axiom:** (Unique winner) We assume that at most one candidate has no strict pairwise loss in any profile $P$. \label{ax:unique-winner}
 
-This axiom allows us to disregard the possibility of a Condorcet method having to choose between multiple weak Condorcet winners in the absence of a cycle.
+This axiom allows us to disregard the possibility of a Condorcet method having to choose between multiple weak Condorcet winners in the absence of a cycle. Say Alice defeats Clark, and Bob defeats Clark, but Alice and Bob tie. Neither Alice and Bob have a strict pairwise loss. We don't consider this type of case in our analysis.
 
 > **Lemma:** A Condorcet winner can fail to exist in $C_k$ if $k>2$. \label{condorcet-paradox}
 
-**Proof:** By example \ref{ex:cycle}, we can see that any GCM that allows three or more tiers can result in no Condorcet winner. $\square$
+**Proof:** By example \ref{ex:cycle}, we can see that any GCM that allows three tiers can result in no Condorcet winner. This example works for any $k\geq 3$, so a Condorcet winner can fail to exist for any $k\geq 3$. $\square$
 
 This is not an abstract result. While very rare, Condorcet cycles have occurred in real U.S. elections, such as a [Minnesota city council election in 2021](https://ranked.vote/report/us/mn/2021/11/ward-2){:target="_blank"}.
 
@@ -178,7 +178,11 @@ $$\begin{equation}
 S(A>B)>S(B>A) \iff S(A)>S(B)
 \end{equation}$$
 
-**Proof:** If more voters put $A$ in the approved tier, then $S(A)>S(B)$. Thus, $S(A>B)+S(A=B)>S(B>A)+S(A=B)$, implies that $S(A>B)>S(B>A)$ by cancellation of $S(A=B)$, meaning $A$ defeats $B$. Conversely, if $A$ defeats $B$, then $S(A>B)>S(B>A)$. Adding $S(A=B)$ to both sides of the inequality, $S(A)=S(A>B)+S(A=B)>S(B>A)+S(A=B)=S(B)$. Thus, $A$ gets more total approvals than $B$ if and only if $A$ defeats $B$ pairwise. $\square$
+**Proof:** If more voters put $A$ in the approved tier, then $S(A)>S(B)$. Thus, $S(A>B)+S(A=B)>S(B>A)+S(A=B)$, implies that $S(A>B)>S(B>A)$ by cancellation of $S(A=B)$, meaning $A$ defeats $B$. Conversely, if $A$ defeats $B$, then $S(A>B)>S(B>A)$. Adding $S(A=B)$ to both sides of the inequality,
+
+$$S(A)=S(A>B)+S(A=B)>S(B>A)+S(A=B)=S(B)$$
+
+Thus, $A$ gets more total approvals than $B$ if and only if $A$ defeats $B$ pairwise. $\square$
 
 Beyond the algebra, the key and intuition of this proof is extraordinarily simple. Voters who approve both or neither do not contribute to the difference between the total approvals of A and B. That difference is based purely on voters who distinguish between them, which we use to *define* who wins the pairwise matchup. If Alice gets 50 more approvals than Bob, then that means that 50 more voters approved Alice and not Bob than voters approved Bob and not Alice.
 
@@ -256,11 +260,11 @@ But if we want to play the "let's make up a profile where voters act stupidly", 
 | 35     | $B > A > C$      | $B > A > C$       |
 | 20     | $C > B > A$      | $C$               |
 
-Perhaps Clark, knowing he has no chance, told his supporters to rank him first and nobody else, in a misguided attempt to game the election. Out of voters who expressed a preference between Alice and Bob, still more preferred Alice over Bob (45 (56.25%) to 35 (43.75%)). Therefore, Alice would still be elected. And, based on the ballots, you still wouldn't be able to prove that Alice was not the Condorcet winner either, just like in Approval.
+Perhaps Clark, knowing he has no chance, told his supporters to rank him first and nobody else, in a misguided attempt to game the election. Out of voters who expressed a preference between Alice and Bob, still more preferred Alice over Bob (45 (56.25%) to 35 (43.75%)). Therefore, Alice would still be elected. And, based on the ballots, you still wouldn't be able to prove that Alice was not the Condorcet winner either, just like in Approval. The difference? Alice has a weaker mandate. Expression has weakened the legitimacy without changing the outcome.
 
 Whether it be Approval or $C_\infty$, the pathology of this scenario is that while Bob was the true Condorcet winner based on the full preferences, he was unable to convince the majority of voters who truly preferred him over Alice to express that preference on their ballots. Given that real voters truncate their ballots, this is a realistic concern.
 
-I have my issues with utility arguments, and range voting methods, but let's pretend we magically know the utility that each candidate provides to each voter in this example (just as Condorcetists pretend to know the pairwise preferences that voters express in Approval voting).
+I have my issues with utility arguments, and range voting methods, but let's pretend we magically know the utility that each candidate provides to each voter in this example (just as Condorcetists pretend to know the true pairwise preferences that voters *might* have in Approval voting).
 
 | Voters | A Utility | B Utility | C Utility | Ranking   | Approvals |
 |--------|-----------|-----------|-----------|-----------|-----------|
