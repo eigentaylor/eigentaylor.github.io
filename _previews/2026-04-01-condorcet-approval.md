@@ -44,10 +44,11 @@ Fellow Condorcetists, I come bearing a gift: I have permanently solved the Condo
 
 [For an actually serious argument on the fact that Approval is a practical Condorcet approximation, see this post.](../practicalapproval){:target="_blank"} However, I feel this is a fair argument that, in a practical sense, Approval is the "perfect" Condorcet method, so long as one is [aware of the fine print](#you-cannot-be-serious){:target="_blank"}.
 
-During the time of the French Revolution, two titans battled out their ideas of what a good voting system was: Their names were Jean-Charles de Borda and the Marquis de Condorcet.
+During the time of the French Revolution, a titan came up with an idea that changed the way we think about voting systems forever. This was the Marquis de Condorcet.
 
-- Borda: Believed that we should give candidates points based on where they are ranked. He essentially believed the candidate with the best average ranking should win. This method is used in many modern contexts, including sports awards.
-- Condorcet: Had a much better idea. He believed that we should always elect what we now call a *Condorcet winner*--a candidate who would defeat every other candidate in a one-on-one election.
+Condorcet criticized contemporaries like Jean-Charles de Borda, whose positional-based voting system elects the candidate with the best average ranking. Condorcet claimed it could rob a majority from their preferred candidate, even when the expressed preferences clearly show that majority preference. 
+
+Instead, Condorcet believed that we should always elect what we now call a *Condorcet winner*--a candidate who would defeat every other candidate in a one-on-one election.
 
 But it is impractical to hold an election for every $\frac{n(n-1)}{2}$ pair of candidates, or to put all possible one-on-one matchups for all candidates on the ballot given to each voter. Take [the mayoral election in Portland from 2024](https://en.wikipedia.org/wiki/2024_Portland,_Oregon,_mayoral_election){:target="_blank"}, which had 19 candidates. That would require voters to consider $\frac{19 \cdot 18}{2} = 171$ different matchups just to elect a mayor. Would you vote for Candidate 1 or Candidate 2? Would you vote for Candidate 1 or Candidate 3? ... Would you vote for Candidate 18 or Candidate 19? That would be utterly *preposterous*.
 
@@ -119,9 +120,9 @@ Condorcetists, including myself, claim that Begich was the true Condorcet winner
 
 There were nearly 190,000 voters in this election, according to [ranked.vote](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"}. Over 33,000 voters ranked Palin first and Begich second, while over 20,000 voters ranked Palin first and no other candidate second. If less than 3,000 of those Palin first and Begich second voters had instead ranked Begich first and Palin second, then Begich would have won the ranked-choice tabulation.
 
-RCV was short-sighted, and interpreted the clear expressed preference of "I would take Palin over Peltola *and* Begich over Peltola" in a way that ultimately led to the election of Peltola directly. This is *not* a faithful treatment of the voters' expressed preferences.
+RCV was short-sighted, and interpreted the clear expressed preference of "I would take Palin over Peltola *and* Begich over Peltola" in a way that ultimately led to the election of Peltola directly. This is *not* a faithful treatment of the voters' expressed preferences. Particularly because a clear majority of *all ballots cast* had voters expressing a preference of Begich over Palin.
 
-However, what Condorcetists often neglect to mention is that because so many voters who ranked Palin first did not rank a second choice, we *technically* have no idea how they would vote in a Begich vs. Peltola head-to-head matchup. While out of all voters who did express a preference between Begich and Peltola, a majority preferred Begich, this was not a majority of all voters who cast a ballot, but rather approximately 46%. We report the number as 52.5% of voters who expressed a preference between Begich and Peltola preferred Begich, but it's *not* 52.5% of all voters.
+However, what Condorcetists often neglect to mention is that because so many voters who ranked Palin first did not rank a second choice, we *technically* have no idea how they would vote in a Begich vs. Peltola head-to-head matchup. While out of all voters *who did express a preference* between Begich and Peltola, a majority preferred Begich, this was not a majority *of all voters who cast a ballot*, but rather approximately 46% of all voters who cast a ballot. We report the number as 52.5% of voters who expressed a preference between Begich and Peltola preferred Begich, but it's *not* 52.5% of all voters.
 
 Therefore, we cannot be certain that Begich was the true Condorcet winner, because if all of the unaccounted for votes had gone entirely to Peltola in a head-to-head matchup against Begich, then Begich would not have defeated Peltola. This is exceptionally unlikely, but because we did not collect that information, we cannot be 100% certain.
 
