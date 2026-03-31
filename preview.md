@@ -4,6 +4,8 @@ Place draft posts here to make them accessible at `/preview/<title>/` without ap
 
 Posts in this folder use the same front matter as regular `_posts/` files (e.g. `layout: distill`). The `draft_preview: true`, `sitemap: false`, and `feed: false` flags are set automatically via `_config.yml` defaults — no need to add them manually.
 
+Preview pages also rewrite simple relative post links from `../post-slug` to `/blog/post-slug/`, so you can use the same short links in drafts and published posts.
+
 ## Workflow
 
 1. Write your post in `_previews/` with the same format as a regular post.
