@@ -20,6 +20,7 @@ toc:
   - name: Introduction
   - name: Condorcet and His Paradox
     subsections:
+      - name: The Paradox
       - name: Condorcet is an Approximation
   - name: Generalized Condorcet Methods
   - name: Limited Tiers and the Condorcet Paradox
