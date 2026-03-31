@@ -52,7 +52,7 @@ During the time of the French Revolution, a titan came up with an idea that chan
 
 Condorcet believed that we should always elect what we now call a *Condorcet winner*--a candidate who would defeat every other candidate in a one-on-one election. This is often held as the *gold* standard for a voting system (by *cool* people).
 
-But it is impractical to hold an election for every $\frac{n(n-1)}{2}$ pair of candidates, or to put all possible one-on-one matchups for all candidates on the ballot given to each voter. Take [the mayoral election in Portland from 2024](https://en.wikipedia.org/wiki/2024_Portland,_Oregon,_mayoral_election){:target="_blank"}, which had 19 candidates. That would require voters to consider $\frac{19 \cdot 18}{2} = 171$ different matchups just to elect a mayor. Would you vote for Candidate 1 or Candidate 2? Would you vote for Candidate 1 or Candidate 3? ... Would you vote for Candidate 18 or Candidate 19? That would be utterly *preposterous*.
+But it is impractical to hold an election for every $\frac{n(n-1)}{2}$ pair of candidates, or to put all possible one-on-one matchups for all candidates on the ballot given to each voter. Take [the mayoral election in Portland from 2024](https://en.wikipedia.org/wiki/2024_Portland,_Oregon,_mayoral_election), which had 19 candidates. That would require voters to consider $\frac{19 \cdot 18}{2} = 171$ different matchups just to elect a mayor. Would you vote for Candidate 1 or Candidate 2? Would you vote for Candidate 1 or Candidate 3? ... Would you vote for Candidate 18 or Candidate 19? That would be utterly *preposterous*.
 
 So we need a voting system that can be used in a single election, is not absurdly hostile to voters, and still satisfies the *spirit* of the Condorcet criterion: if there is a Condorcet winner, *and voters express this through their ballots*, then they should win.
 
@@ -123,7 +123,7 @@ All this to say, we Condorcetists are *all* about throwing away certain informat
 
 > **Definition:** A voting system satisfies the *Condorcet criterion* if whenever there is a candidate who would defeat every other candidate in a head-to-head matchup **based on the ballot data of voters who expressed a preference between the two candidates**, then that candidate must win.
 
-If you do not elect such a candidate in a ranked system, then **what are you even** ***doing***? [Why ask for rankings if you aren't even going to use or respect them?](../ditch-rcv){:target="_blank"} If you do not elect such a candidate, then you have elected someone else who has to serve their constituents knowing that a majority of voters wanted someone else more. That creates a [legitimacy problem](../consistentcardinal){:target="_blank"}.
+If you do not elect such a candidate in a ranked system, then **what are you even** ***doing***? [Why ask for rankings if you aren't even going to use or respect them?](../ditch-rcv){:target="_blank"} If you do not elect such a candidate, then you have elected someone else who has to serve their constituents knowing that a majority of voters wanted someone else more. That creates a [legitimacy problem](../consistentcardinal).
 
 We also cannot guarantee that even if we elect the Condorcet winner induced by the ballots, that this candidate would truly defeat every other candidate in a head-to-head matchup, because we are not asking all those direct head-to-head questions. Especially if we allow ties or ballot truncation.
 
@@ -131,7 +131,7 @@ Take the Alaska 2022 special election, for example. I have discussed that electi
 
 Condorcetists, including myself, claim that Begich was the true Condorcet winner, who was eliminated by the ranked-choice voting tabulation that did not faithfully treat the expressed preferences of voters.
 
-There were nearly 190,000 voters in this election, according to [ranked.vote](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"}. Over 33,000 voters ranked Palin first and Begich second, while over 20,000 voters ranked Palin first and no other candidate second. If less than 3,000 of those Palin first and Begich second voters had instead ranked Begich first and Palin second, then Begich would have won the ranked-choice tabulation.
+There were nearly 190,000 voters in this election, according to [ranked.vote](https://ranked.vote/report/us/ak/2022/08/cd). Over 33,000 voters ranked Palin first and Begich second, while over 20,000 voters ranked Palin first and no other candidate second. If less than 3,000 of those Palin first and Begich second voters had instead ranked Begich first and Palin second, then Begich would have won the ranked-choice tabulation.
 
 RCV was short-sighted, and interpreted the clear expressed preference of "I would take Palin over Peltola *and* Begich over Peltola" in a way that ultimately led to the election of Peltola directly. This is *not* a faithful treatment of the voters' expressed preferences. Particularly because a clear majority of *all ballots cast*--approximately 53%, over 60% of those who expressed a preference between Begich and Palin--had voters expressing a preference of Begich over Palin.
 
