@@ -68,7 +68,7 @@ The single ranked ballot thus allows us to simulate how voters *might* vote in e
 
 > **Axiom:** If a voter submits a ranked ballot, we assume only one thing about that voter's preferences: If a voter ranks candidate A above candidate B, then they would vote for A over B in a head-to-head matchup. That is, we assume the ranking implies transitive preferences. If a voter ranks A and B equally, then they have no preference between A and B in a head-to-head matchup. If more voters rank A above B than the reverse, we assume A defeats B.\label{ax:ranked-ballot-assumption}
 
-If there is a candidate who would defeat every other candidate in a head-to-head matchup based purely on the ballot data's indication of the above assumption, then we must assume they are the Condorcet winner, and by golly, they should win!
+If there is a candidate who would defeat every other candidate in a head-to-head matchup based purely on the ballot data, interpreted through the above assumption, then we must assume they are the Condorcet winner, and by golly, they should win!
 
 The value of this criterion is felt most strongly in the contrapositive. If the ballots indicate that a candidate would be defeated by any single other candidate in a runoff, then they would not have a strong claim of legitimacy if declared the winner.
 
@@ -269,7 +269,7 @@ Then Alice wins the Approval voting election with 80 votes, since she has the mo
 
 From another perspective, however, this is a blowout. Alice was approved by *80%* of all voters. That is an *absurd* mandate, and it would be very difficult to actually question her status as the Condorcet winner if this was a true election outcome. This is only a "pathology" because we are choosing to assume that 55% of the electorate prefer Bob over Alice, even though they did not express this on their ballots.
 
-But if we want to play the "let's make up a profile where voters act stupidly" game, then we can play that game. Just because voters can rank beyond two tiers does not mean they will, and thus a general Condorcet method is susceptible to ridiculous outcomes.
+But if we want to play the "let's make up a profile where voters act stupidly" game, then let's play it. Just because voters *can* rank beyond two tiers does not mean they will, and thus a general Condorcet method is susceptible to ridiculous outcomes.
 
 **Example:** Let's suppose we instead give the voters in Example \ref{ex:approval} a full ranked ballot, with ties allowed, and they vote in $C_\infty$ as follows:\label{ex:cinf}
 
@@ -287,13 +287,13 @@ I have my issues with utility arguments, and range voting methods, but let's pre
 
 | Voters | A Utility | B Utility | C Utility | Ranking   | Approvals |
 |--------|-----------|-----------|-----------|-----------|-----------|
-| 45     | 10        | 3         | 0         | $A > B > C$ | $A$         |
-| 35     | 9         | 10        | 0         | $B > A > C$ | $B, A$      |
-| 20     | 0         | 1         | 10        | $C > B > A$ | $C$         |
+| 45     | 1         | 0.3       | 0         | $A > B > C$ | $A$         |
+| 35     | 0.9       | 1         | 0         | $B > A > C$ | $B, A$      |
+| 20     | 0         | 0.1       | 1         | $C > B > A$ | $C$         |
 
-In this scenario, Alice is a much higher utility option (765) for the electorate than the true Condorcet winner Bob (505). Perhaps Alice is a firebrand candidate who excites her 45% base, who finds a milquetoast candidate like Bob unexciting. And perhaps, a substantial minority of moderate voters *slightly* prefers Bob over Alice (a 10/10 vs a 9/10), but would be genuinely happy with either one. The minority of Clark supporters hate both Alice and Bob, and preferring Bob is like preferring losing a kidney over losing a liver. Both awful, but if *forced* to pick one, they would pick Bob.
+In this scenario, Alice is a much higher utility option (76.5) for the electorate than the true Condorcet winner Bob (50.5). Perhaps Alice is a firebrand candidate who excites her 45% base, who finds a milquetoast candidate like Bob unexciting. And perhaps, a substantial minority of moderate voters *slightly* prefers Bob over Alice (a 10/10 vs a 9/10), but would be genuinely happy with either one. The minority of Clark supporters hate both Alice and Bob, and preferring Bob is like preferring losing a kidney over losing a liver. Both awful, but if *forced* to pick one, they would pick Bob. However, the utility disparity is so large, it's not unbelievable they might just rank both Bob *and* Alice equally below Clark.
 
-This is not to argue that utility maximization should be the goal of an election, especially because that's not the data we collect in a Condorcet method. But the utilities show the approvals are not necessarily irrational in this context. Each voter is approving only the candidates above the average utility of all candidates. If this is genuinely how the voters feel, and if 80% of the electorate gives Alice a 9/10 or higher, then I see no reason that Alice is an unreasonable winner, or somehow a "fringe" candidate. Bob, on the other hand, is only a 3/10 or 1/10 to 65% of the electorate. Under this dynamic, Alice is clearly a better compromise for the electorate as a whole than Bob, given that the Bob supporters seem to genuinely like Alice.
+This is not to argue that utility maximization should be the goal of an election, especially because that's not the data we collect in a Condorcet method. But the utilities show the approvals are not necessarily irrational in this context. Each voter is approving only the candidates above the average utility of all candidates. If this is genuinely how the voters feel, and if 80% of the electorate gives Alice a 9/10 or higher, then I see no reason that Alice is an unreasonable winner, or somehow a "fringe" candidate. Bob, on the other hand, is only a 3/10 or 1/10 to 65% of the electorate. Under this dynamic, Alice is clearly a better compromise for the electorate as a whole than Bob, given that the Bob supporters seem to genuinely like Alice. I would argue 80% of the voters being at least 90% happy is more majoritarian than 65% of the voters being at most 30% happy.
 
 Most Condorcet winners are not like Bob here, in my opinion. And when they are genuinely good, I have no doubt that Approval voting would likely elect them. But in cases like the one above, where the Condorcet winner is only marginally preferred by a lukewarm majority who barely sees a difference between him and Alice, Approval voting can reasonably elect a candidate who is actually acceptable to a larger portion of the electorate.
 
@@ -315,7 +315,7 @@ This does not, in my opinion, lose significant meaning when we restrict to two t
 
 In Approval there is no "but I got more first choice votes" argument to be made against a legitimate Condorcet winner, because the Condorcet winner is such *because* they convinced the most voters to approve them over any other candidate in a one-on-one comparison.
 
-In Approval there is no "but I was ranked by more voters over the winner" argument, as in Ranked Choice Voting. And Condorcet can't escape this either, because when a Condorcet cycle inevitably occurs, there is no winner who doesn't lose to at least one other candidate in a one-on-one matchup. So much for "legitimacy" to the winner in those cases. Approval has no cycles, and therefore no ambiguity about who the legitimate winner is based on the ballot data.
+Likewise, in Approval there is no "but I was ranked by more voters over the winner" argument, as in Ranked Choice Voting. And Condorcet can't escape this either, because when a Condorcet cycle inevitably occurs, there is no winner who doesn't lose to at least one other candidate in a one-on-one matchup. So much for "legitimacy" to the winner in those cases. Approval has no cycles, and therefore no ambiguity about who the legitimate winner is based on the ballot data.
 
 My adherence and loyalty to the Condorcet criterion is not because I think the theoretical winner in all one-on-one plurality runoffs is actually the best candidate if there is potentially a better and less polarizing compromise. My loyalty is for the *legitimacy* of the criterion in the only data that truly matters: what the ballots collect.
 
@@ -401,7 +401,7 @@ In an era of distrust in institutions and elections, I believe that simplicity a
 
 Fellow Condorcetists, let us unite behind the best and most practical Condorcet method: Approval voting!
 
-And if you are a true Condorcetist who read this far, I would like to extend a genuine thanks for getting through this complete mathematical abuse of the term "Condorcet". However, I hope that it at least convinced you that Approval is, in fact, a two-tiered Condorcet method. Whether or not that changes your opinion of Approval, I leave that up to you!
+And if you are a true Condorcetist who read this far, I would like to extend my genuine thanks for getting through this complete mathematical abuse of the term "Condorcet". However, I hope that it at least convinced you that Approval is, in fact, a two-tiered Condorcet method. Whether or not that changes your opinion of Approval, I leave that up to you!
 
 ## References
 
