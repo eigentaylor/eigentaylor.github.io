@@ -71,7 +71,7 @@ If there is a candidate who would defeat every other candidate in a head-to-head
 
 The value of this criterion is felt most strongly in the contrapositive. If the ballots indicate that a candidate would be defeated by any single other candidate in a runoff, then they would not have a strong claim of legitimacy if declared the winner.
 
-The main drawback of a ranked method is that while it captures ordinal preferences, it cannot capture the distance between those choices. Jean-Charles de Borda, who Condorcet criticized, explicitly exacerbates this problem to the extreme by assuming *exact* equidistance between ranks in the units of points. Out of $n$ candidates, Borda gives $n-r$ points for being rank $r$ on a ballot. So the worst gets 0 points, the next gets 1, and so on. Functionally, this is equivalent to electing the candidate with the best average ranking.
+The main drawback of a ranked method is that while it captures ordinal preferences, it cannot capture the distance between those choices. The system proposed by Jean-Charles de Borda, who Condorcet criticized, explicitly exacerbates this problem to the extreme by assuming *exact* equidistance between ranks in the units of points. Out of $n$ candidates, Borda gives $n-r$ points for being rank $r$ on a ballot. So the worst gets 0 points, the next gets 1, and so on. Functionally, this is equivalent to electing the candidate with the best average ranking.
 
 Condorcet claimed this system could rob a majority from their preferred candidate, even when the expressed ballots clearly show that majority preference.
 
