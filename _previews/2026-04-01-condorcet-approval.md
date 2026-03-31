@@ -18,6 +18,7 @@ authors:
       name: None
 toc:
   - name: Introduction
+  - name: Condorcet and His Paradox
     subsections:
       - name: Condorcet is an Approximation
   - name: Generalized Condorcet Methods
@@ -42,13 +43,13 @@ Merry April Foolsmas, everyone! I must make a confession. I have seen the light.
 
 Fellow Condorcetists, I come bearing a gift: I have permanently solved the Condorcet paradox. There is in fact a *perfect* voting system! It is called Approval voting, and it *is* indeed a Condorcet method.
 
-[For an actually serious argument on the fact that Approval is a practical Condorcet approximation, see this post.](../practicalapproval){:target="_blank"} However, I feel this is a fair argument that, in a practical sense, Approval is the "perfect" Condorcet method, so long as one is [aware of the fine print](#you-cannot-be-serious){:target="_blank"}.
+[For an actually serious argument on the fact that Approval is a practical Condorcet approximation, see this post.](../practicalapproval){:target="_blank"} However, the math I am about to present is *dead serious*, even if *I* am not.
 
-During the time of the French Revolution, a titan came up with an idea that changed the way we think about voting systems forever. This was the Marquis de Condorcet.
+## Condorcet and His Paradox
 
-Condorcet criticized contemporaries like Jean-Charles de Borda, whose positional-based voting system elects the candidate with the best average ranking. Condorcet claimed it could rob a majority from their preferred candidate, even when the expressed preferences clearly show that majority preference. 
+During the time of the French Revolution, a titan came up with an idea that changed the way we think about voting systems forever. This was Marie Jean Antoine Nicolas de Caritat, Marquis de Condorcet. While that is an *awesome* name, we will just call him Condorcet.
 
-Instead, Condorcet believed that we should always elect what we now call a *Condorcet winner*--a candidate who would defeat every other candidate in a one-on-one election.
+Condorcet believed that we should always elect what we now call a *Condorcet winner*--a candidate who would defeat every other candidate in a one-on-one election. This is often held as a *gold* standard for a voting system (by *cool* people, at least).
 
 But it is impractical to hold an election for every $\frac{n(n-1)}{2}$ pair of candidates, or to put all possible one-on-one matchups for all candidates on the ballot given to each voter. Take [the mayoral election in Portland from 2024](https://en.wikipedia.org/wiki/2024_Portland,_Oregon,_mayoral_election){:target="_blank"}, which had 19 candidates. That would require voters to consider $\frac{19 \cdot 18}{2} = 171$ different matchups just to elect a mayor. Would you vote for Candidate 1 or Candidate 2? Would you vote for Candidate 1 or Candidate 3? ... Would you vote for Candidate 18 or Candidate 19? That would be utterly *preposterous*.
 
@@ -60,6 +61,7 @@ We compromise on the idea that we can simulate how voters would vote in each the
 
 - I would vote for Alice over Bob, Alice over Clark, and Alice over Dylan.
 - I would vote for Bob over Dylan, and Clark over Dylan.
+- Bob and Clark are *about the same*, I don't have a strong preference between them. Maybe they're both just meh, while Alice is amazing, and Dylan is terrible.
 
 The single ranked ballot thus allows us to simulate how voters *might* vote in each theoretical matchup, and thus have an idea if there is a Condorcet winner. By ranking Bob and Clark equally, I am indicating that I have no preference between them in a head-to-head matchup. We make only a single assumption:
 
@@ -69,18 +71,28 @@ If there is a candidate who would defeat every other candidate in a head-to-head
 
 The value of this criterion is felt most strongly in the contrapositive. If the ballots indicate that a candidate would be defeated by any single other candidate in a runoff, then they would not have a strong claim of legitimacy if declared the winner.
 
-The main drawback of a ranked method is that while it captures ordinal preferences, it cannot capture the distance between those choices. Borda explicitly exacerbates this problem to the extreme by assuming *exact* equidistance between ranks in the units of points. Out of $n$ candidates, Borda gives $n-r$ points for being rank $r$ on a ballot. For example,
+The main drawback of a ranked method is that while it captures ordinal preferences, it cannot capture the distance between those choices. Jean-Charles de Borda, who Condorcet criticized, explicitly exacerbates this problem to the extreme by assuming *exact* equidistance between ranks in the units of points. Out of $n$ candidates, Borda gives $n-r$ points for being rank $r$ on a ballot. So the worst gets 0 points, the next gets 1, and so on. Functionally, this is equivalent to electing the candidate with the best average ranking.
+
+Condorcet claimed this system could rob a majority from their preferred candidate, even when the expressed ballots clearly show that majority preference.
+
+**Example:**
 
 | Voters | 1st Rank | 2nd Rank | 3rd Rank |
 |--------|----------|----------|----------|
 | 3      | Alice    | Bob      | Clark    |
 | 2      | Bob      | Clark    | Alice    |
 
-Then Alice gets $3-1=2$ points from each member of the majority for being ranked first, and $3-3=0$ points from the minority for being ranked third, adding up to 6 points. Bob earns $3-2=1$ point from each member of the majority, and $3-1=2$ points from each member of the minority, adding up to 7 points. Even though Alice was preferred over Bob by a majority (60%) of voters, Bob was elected instead.
+Using the Borda count, Alice gets $3-1=2$ points from each member of the majority for being ranked first, and $3-3=0$ points from the minority for being ranked third, adding up to 6 points. Bob earns $3-2=1$ point from each member of the majority, and $3-1=2$ points from each member of the minority, adding up to 7 points. Even though Alice was preferred over Bob by a majority (60%) of voters, Bob was elected instead.
 
-Personally, I wouldn't have a problem believing that Bob might be a more acceptable compromise candidate, since he was not as polarizing as Alice. However, the ranked ballot data is clear: If you don't elect Alice, then you are subverting the expressed will of the majority. That's not a great way to give legitimacy to your elected leader.
+Personally, I wouldn't have a problem believing that Bob might be a more acceptable compromise candidate, since he was not as polarizing as Alice. However, there are two possible issues.
 
-Condorcet's solution sounds perfect, theoretically. I mean, if we can tell voters "this is the candidate who would have won against *every* other", then that would be amazing! Unfortunately, there's a slight wrinkle.
+Borda is exceptionally manipulatable. What if the Bob supporters, knowing Alice has the majority, buried Alice at the bottom, just to game the system? But even so, the ranked ballot data is clear: If you don't elect Alice, then you are subverting the expressed will of the majority. That's not a great way to give legitimacy to your elected leader.
+
+### The Paradox
+
+Condorcet's solution sounds perfect, theoretically. I mean, if we can tell voters "this is the candidate who would have won against *every* other", then that would be amazing!
+
+As with all things in voting theory, there's a slight wrinkle. When I was first getting into voting theory, I thought "that *sounds* great, but how *often* does that *actually* happen?" While it turns out to be *quite* often, it's unfortunately strictly below 100% of the time.
 
 **Example:** Consider the following profile of 3 voters: \label{ex:cycle}
 
@@ -120,7 +132,7 @@ Condorcetists, including myself, claim that Begich was the true Condorcet winner
 
 There were nearly 190,000 voters in this election, according to [ranked.vote](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"}. Over 33,000 voters ranked Palin first and Begich second, while over 20,000 voters ranked Palin first and no other candidate second. If less than 3,000 of those Palin first and Begich second voters had instead ranked Begich first and Palin second, then Begich would have won the ranked-choice tabulation.
 
-RCV was short-sighted, and interpreted the clear expressed preference of "I would take Palin over Peltola *and* Begich over Peltola" in a way that ultimately led to the election of Peltola directly. This is *not* a faithful treatment of the voters' expressed preferences. Particularly because a clear majority of *all ballots cast* had voters expressing a preference of Begich over Palin.
+RCV was short-sighted, and interpreted the clear expressed preference of "I would take Palin over Peltola *and* Begich over Peltola" in a way that ultimately led to the election of Peltola directly. This is *not* a faithful treatment of the voters' expressed preferences. Particularly because a clear majority of *all ballots cast*--approximately 53%, over 60% of those who expressed a preference between Begich and Palin--had voters expressing a preference of Begich over Palin.
 
 However, what Condorcetists often neglect to mention is that because so many voters who ranked Palin first did not rank a second choice, we *technically* have no idea how they would vote in a Begich vs. Peltola head-to-head matchup. While out of all voters *who did express a preference* between Begich and Peltola, a majority preferred Begich, this was not a majority *of all voters who cast a ballot*, but rather approximately 46% of all voters who cast a ballot. We report the number as 52.5% of voters who expressed a preference between Begich and Peltola preferred Begich, but it's *not* 52.5% of all voters.
 
