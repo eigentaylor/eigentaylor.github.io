@@ -264,7 +264,7 @@ Perhaps Clark, knowing he has no chance, told his supporters to rank him first a
 
 Whether it be Approval or $C_\infty$, the pathology of this scenario is that while Bob was the true Condorcet winner based on the full preferences, he was unable to convince the majority of voters who truly preferred him over Alice to express that preference on their ballots. Given that real voters truncate their ballots, this is a realistic concern.
 
-I have my issues with utility arguments, and range voting methods, but let's pretend we magically know the utility that each candidate provides to each voter in this example (just as Condorcetists pretend to know the pairwise preferences that voters express in Approval voting).
+I have my issues with utility arguments, and range voting methods, but let's pretend we magically know the utility that each candidate provides to each voter in this example (just as Condorcetists pretend to know the true pairwise preferences that voters *might* have in Approval voting).
 
 | Voters | A Utility | B Utility | C Utility | Ranking   | Approvals |
 |--------|-----------|-----------|-----------|-----------|-----------|
