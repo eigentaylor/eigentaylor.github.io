@@ -160,11 +160,11 @@ We first establish a simple Axiom to make the following analysis clean.
 
 > **Axiom:** (Unique winner) We assume that at most one candidate has no strict pairwise loss in any profile $P$. \label{ax:unique-winner}
 
-This axiom allows us to disregard the possibility of a Condorcet method having to choose between multiple weak Condorcet winners in the absence of a cycle.
+This axiom allows us to disregard the possibility of a Condorcet method having to choose between multiple weak Condorcet winners in the absence of a cycle. Say Alice defeats Clark, and Bob defeats Clark, but Alice and Bob tie. Neither Alice and Bob have a strict pairwise loss. We don't consider this type of case in our analysis.
 
 > **Lemma:** A Condorcet winner can fail to exist in $C_k$ if $k>2$. \label{condorcet-paradox}
 
-**Proof:** By example \ref{ex:cycle}, we can see that any GCM that allows three or more tiers can result in no Condorcet winner. $\square$
+**Proof:** By example \ref{ex:cycle}, we can see that any GCM that allows three tiers can result in no Condorcet winner. This example works for any $k\geq 3$, so a Condorcet winner can fail to exist for any $k\geq 3$. $\square$
 
 This is not an abstract result. While very rare, Condorcet cycles have occurred in real U.S. elections, such as a [Minnesota city council election in 2021](https://ranked.vote/report/us/mn/2021/11/ward-2){:target="_blank"}.
 
