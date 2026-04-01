@@ -418,7 +418,7 @@ Brams, S. J., & Fishburn, P. C. (1978). Approval Voting. *The American Political
 
 Cox, G. W. (1987). Electoral Equilibrium under Alternative Voting Institutions. *American Journal of Political Science*, 31(1), 82-108. [https://doi.org/10.2307/2111325](https://doi.org/10.2307/2111325)
 
-Electorama. (2022). U.S. Representative (Special General), Alaska, August 16, 2022 -- ABIF results. [https://abif.electorama.com/id/2022-08-16_Alaska-U.S.Representative(Special_General)](https://abif.electorama.com/id/2022-08-16_Alaska-U.S.Representative(Special_General))
+Electorama. (2022). U.S. Representative (Special General), Alaska, August 16, 2022 -- ABIF results. [https://abif.electorama.com/id/2022-08-16-Alaska-U.S.Representative(Special_General)](https://abif.electorama.com/id/2022-08-16_Alaska-U.S._Representative_(Special_General)#pairwise)
 
 Fishburn, P. C., & Little, J. D. C. (1988). An Experiment in Approval Voting. *Management Science*, 34(5), 555–568. [https://www.jstor.org/stable/2632078](https://www.jstor.org/stable/2632078)
 
