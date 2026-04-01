@@ -66,7 +66,7 @@ We compromise on the idea that we can simulate how voters would vote in each the
 
 The single ranked ballot thus allows us to simulate how voters *might* vote in each theoretical matchup, and thus have an idea if there is a Condorcet winner. By ranking Bob and Clark equally, I am indicating that I have no preference between them in a head-to-head matchup. We make only a single assumption:
 
-> **Axiom:** If a voter submits a ranked ballot, we assume only one thing about that voter's preferences: If a voter ranks candidate A above candidate B, then they would vote for A over B in a head-to-head matchup. That is, we assume the ranking implies transitive preferences. If a voter ranks A and B equally, then they have no preference between A and B in a head-to-head matchup. If more voters rank A above B than the reverse, we assume A defeats B.\label{ax:ranked-ballot-assumption}
+> **Axiom:** If a voter submits a ranked ballot, we assume only one thing about that voter's preferences: If a voter ranks candidate $X$ above candidate $Y$, then they would vote for $X$ over $Y$ in a head-to-head matchup. That is, we assume the ranking implies transitive preferences. If a voter ranks $X$ and $Y$ equally, then they have no preference between $X$ and $Y$ in a head-to-head matchup. If more voters rank $X$ above $Y$ than the reverse, we assume $X$ defeats $Y$.\label{ax:ranked-ballot-assumption}
 
 If there is a candidate who would defeat every other candidate in a head-to-head matchup based purely on the ballot data, interpreted through the above assumption, then we must assume they are the Condorcet winner, and by golly, they should win!
 
@@ -147,9 +147,9 @@ There is *significant* ballot truncation (bullet voting) in this example, as 30%
 
 We choose, then, to conclude that Bob is the Condorcet winner in this example, based on the expressed preferences of voters who did rank a second choice. The ranked-choice voting (RCV) tabulation would have eliminated Bob, however, and Alice would ultimately win over Clark by a single vote despite having only 48% support.
 
-Insidiously, if just 2 of the Clark-first-Bob-second voters had instead lied and insincerely ranked Bob first and Clark second, then their second choice, Bob, would have won the RCV tabulation, rather than their worst choice, Alice. By voting sincerely, these voters who were expressing a preference of Clark over Alice and Bob over Alice ultimately elected Alice directly. Under RCV, Clark is a spoiler.
+Insidiously, if just 2 of the Clark-first-Bob-second voters had instead strategically ranked Bob first and Clark second, then their second choice, Bob, would have won the RCV tabulation rather than their worst choice, Alice. This wouldn't have changed their expressed preference towards Alice, but it would have changed the winner of the election from Alice to Bob. By voting sincerely, these voters who expressed a preference of Clark over Alice and Bob over Alice ultimately elected Alice directly. Under RCV, Clark is a spoiler.
 
-In Condorcetist thinking, we choose to rely on the expressed preferences of voters, even when those preferences are incomplete due to ballot truncation. Indeed, we are lacking the information of how a pivotal 15% of voters would vote between Bob and Alice in a potential head-to-head matchup. But of those who did, Bob is the preferred candidate.
+In Condorcetist thinking, we rely on the expressed preferences of voters, even when those preferences are incomplete due to ballot truncation. Indeed, we are lacking the information of how a pivotal 15% of voters would vote between Bob and Alice in a potential head-to-head matchup. But of those who did, Bob is the preferred candidate.
 
 But if just 11 of the Clark bullet voters, who maybe hated both Bob and Alice, slightly preferred Alice over Bob, then Alice *might just be* the Condorcet winner. However, we also have intense ambiguity from the 5% of Bob supporters who did not rank a second choice. The result between Alice and Clark is therefore also exceptionally close and uncertain, and it's entirely possible that we actually have a Condorcet cycle on our hands.
 
@@ -168,7 +168,7 @@ We saw in example \ref{ex:cycle} that a Condorcet winner does not always exist. 
 
 This is not a concept I have ever heard of anyone defining, but it's my post, so I get to make it up! At its core, a typical Condorcet method assumes the ability to give a full ranking of all available candidates if the voter is able to. Please excuse me for a moment while I move the goalpost.
 
-> **Definition:** A *Generalized Condorcet method* (GCM) is a voting system where voters can rank all candidates, with ties allowed, among some predetermined number of tiers, with no other restrictions. If a voter ranks candidate X strictly over candidate Y, then that voter casts a vote for X in the X vs Y matchup. If a voter ranks candidate X in the same tier as Y, they abstain in the matchup. If there is a candidate who wins all of their matchups, then that candidate is declared the Condorcet winner and *must* win. We denote a GCM with $k\geq 2$ tiers as $C_k$. If there is no limit on the number of tiers, then we denote it as $C_\infty$.
+> **Definition:** A *Generalized Condorcet method* (GCM) is a voting system where voters can rank all candidates, with ties allowed, among some predetermined number of tiers, with no other restrictions. If a voter ranks candidate $X$ strictly over candidate $Y$, then that voter casts a vote for $X$ in the $X$ vs $Y$ matchup. If a voter ranks candidate $X$ in the same tier as $Y$, they abstain in the matchup. If there is a candidate who wins all of their matchups, then that candidate is declared the Condorcet winner and *must* win. We denote a GCM with $k\geq 2$ tiers as $C_k$. If there is no limit on the number of tiers, then we denote it as $C_\infty$.
 
 If $k$ is smaller than the number of candidates, then a voter will necessarily have to express some number of ties, by the Pigeonhole principle.
 
@@ -200,31 +200,31 @@ This axiom allows us to disregard the possibility of a Condorcet method having t
 
 This is not an abstract result. While very rare, Condorcet cycles have occurred in real U.S. elections, such as a [Minneapolis city council election in 2021](https://ranked.vote/report/us/mn/2021/11/ward-2).
 
-> **Definition:** For $C_2$, we use the following notation. The two tiers are called the "approved tier" and the "unapproved tier". For candidates $A$ and $B$:
+> **Definition:** For $C_2$, we use the following notation. The two tiers are called the "approved tier" and the "unapproved tier". For candidates $X$ and $Y$:
 >
-> - $S(A)$: the number of voters who place $A$ in the approved tier ("approvals of $A$").
-> - $S(A>B)$: the number of voters who approve $A$ but not $B$ ("strict approvals of $A$ over $B$").
-> - $S(A=B)$: the number of voters who approve both $A$ and $B$.
-> Note that voters who disapprove both candidates do not contribute to $S(A>B)$, $S(B>A)$, or $S(A=B)$, and are therefore irrelevant to the $A$ vs $B$ pairwise comparison. It follows that $S(A)=S(A>B)+S(A=B)$.
+> - $S(X)$: the number of voters who place $X$ in the approved tier ("approvals of $X$").
+> - $S(X>Y)$: the number of voters who approve $X$ but not $Y$ ("strict approvals of $X$ over $Y$").
+> - $S(X=Y)$: the number of voters who approve both $X$ and $Y$.
+> Note that voters who disapprove both candidates do not contribute to $S(X>Y)$, $S(Y>X)$, or $S(X=Y)$, and are therefore irrelevant to the $X$ vs $Y$ pairwise comparison. It follows that $S(X)=S(X>Y)+S(X=Y)$.
 
-By Axiom \ref{ax:ranked-ballot-assumption}, we say $A$ defeats $B$ if and only if $S(A>B)>S(B>A)$, as these are precisely the voters who distinguish between $A$ and $B$ on their ballots.
+By Axiom \ref{ax:ranked-ballot-assumption}, we say $X$ defeats $Y$ if and only if $S(X>Y)>S(Y>X)$, as these are precisely the voters who distinguish between $X$ and $Y$ on their ballots.
 
-> **Lemma:** Candidate $A$ defeats candidate $B$ pairwise in $C_2$ if and only if more voters put $A$ in the approved tier.\label{lem:c2-approval}
+> **Lemma:** Candidate $X$ defeats candidate $Y$ pairwise in $C_2$ if and only if more voters put $X$ in the approved tier.\label{lem:c2-approval}
 
 $$\begin{equation}
-S(A>B)>S(B>A) \iff S(A)>S(B)
+S(X>Y)>S(Y>X) \iff S(X)>S(Y)
 \end{equation}$$
 
-**Proof:** If more voters put $A$ in the approved tier, then $S(A)>S(B)$. Thus, $S(A>B)+S(A=B)>S(B>A)+S(A=B)$, implies that $S(A>B)>S(B>A)$ by cancellation of $S(A=B)$, meaning $A$ defeats $B$. Conversely, if $A$ defeats $B$, then $S(A>B)>S(B>A)$. Adding $S(A=B)$ to both sides of the inequality retrieves the desired result
+**Proof:** If more voters put $X$ in the approved tier, then $S(X)>S(Y)$. Thus, $S(X>Y)+S(X=Y)>S(Y>X)+S(X=Y)$, implies that $S(X>Y)>S(Y>X)$ by cancellation of $S(X=Y)$, meaning $X$ defeats $Y$. Conversely, if $X$ defeats $Y$, then $S(X>Y)>S(Y>X)$. Adding $S(X=Y)$ to both sides of the inequality retrieves the desired result
 
 $$\begin{multline*}
-S(A>B)+S(A=B)>S(B>A)+S(A=B) \\
-\iff S(A)>S(B)
+S(X>Y)+S(X=Y)>S(Y>X)+S(X=Y) \\
+\iff S(X)>S(Y)
 \end{multline*}$$
 
-Thus, $A$ gets more total approvals than $B$ if and only if $A$ defeats $B$ pairwise. $\square$
+Thus, $X$ gets more total approvals than $Y$ if and only if $X$ defeats $Y$ pairwise. $\square$
 
-Beyond the algebra, the key and intuition of this proof is extraordinarily simple. Voters who approve both or neither do not contribute to the difference between the total approvals of A and B. That difference is based purely on voters who distinguish between them, which we use to *define* who wins the pairwise matchup. If Alice gets 50 more approvals than Bob, then that means that 50 more voters approved Alice and not Bob than voters approved Bob and not Alice. Therefore, Alice beats Bob!
+Beyond the algebra, the key and intuition of this proof is extraordinarily simple. Voters who approve both or neither do not contribute to the difference between the total approvals of $X$ and $Y$. That difference is based purely on voters who distinguish between them, which we use to *define* who wins the pairwise matchup. If Alice gets 50 more approvals than Bob, then that means that 50 more voters approved Alice and not Bob than voters approved Bob and not Alice. Therefore, Alice beats Bob!
 
 We now define Approval voting.
 
@@ -242,9 +242,9 @@ And land the crushing blow.
 
 **Proof:** This follows directly from Lemma \ref{lem:c2-approval}.
 
-**Claim 1:** By the previous lemma, $A$ defeats $B$ if and only if $S(A)>S(B)$. Thus, the ordinal ranking of candidates by $S(\cdot)$ is the same as the majority relation. Since the ordinal ranking of candidates by $S(\cdot)$ is a sequence of real numbers, it is totally ordered and thus transitive.
+**Claim 1:** By the previous lemma, $X$ defeats $Y$ if and only if $S(X)>S(Y)$. Thus, the ordinal ranking of candidates by $S(\cdot)$ is the same as the majority relation. Since the ordinal ranking of candidates by $S(\cdot)$ is a sequence of real numbers, it is totally ordered and thus transitive.
 
-**Claim 2:** Claim 1 directly implies the absence of a Condorcet paradox in $C_2$. Suppose that $A$ defeats $B$, and $B$ defeats $C$. Then $S(A)>S(B)$ and $S(B)>S(C)$, so $S(A)>S(C)$ by transitivity of the real numbers, so $A$ defeats $C$.
+**Claim 2:** Claim 1 directly implies the absence of a Condorcet paradox in $C_2$. Suppose that $X$ defeats $Y$, and $Y$ defeats $Z$. Then $S(X)>S(Y)$ and $S(Y)>S(Z)$, so $S(X)>S(Z)$ by transitivity of the real numbers, so $X$ defeats $Z$.
 
 **Claim 3:** As a Condorcet method, $C_2$ must elect the Condorcet winner whenever one exists. By the previous lemma, the candidate with the most first ranks (approvals) is the Condorcet winner. Axiom \ref{ax:unique-winner} tells us that there can be at most one such candidate, meaning there is at most one candidate with the most total approvals. Therefore, $C_2$ always elects the candidate with the most approvals, and that candidate will always be the Condorcet winner.
 
