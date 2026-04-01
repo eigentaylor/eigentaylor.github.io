@@ -277,7 +277,7 @@ But if we want to play the "let's make up a profile where voters act stupidly" g
 |--------|------------------|-------------------|
 | 45     | $A > B > C$      | $A > B > C$       |
 | 35     | $B > A > C$      | $B > A > C$       |
-| 20     | $C > B > A$      | $C$               |
+| 20     | $C > B > A$      | $C > B = A$       |
 
 Perhaps Clark, knowing he has no chance, told his supporters to rank him first and nobody else, in a misguided attempt to game the election. Out of voters who expressed a preference between Alice and Bob, still more preferred Alice over Bob (45 (56.25%) to 35 (43.75%)). Therefore, Alice would still be elected. And, based on the ballots, you still wouldn't be able to prove that Alice was not the Condorcet winner either, just like in Approval. The difference? Alice has a weaker mandate. Expression has weakened the legitimacy without changing the outcome.
 
@@ -285,11 +285,11 @@ Whether it be Approval or $C_\infty$, the pathology of this scenario is that whi
 
 I have my issues with utility arguments, and range voting methods, but let's pretend we magically know the utility that each candidate provides to each voter in this example (just as Condorcetists pretend to know the true pairwise preferences that voters *might* have in Approval voting).
 
-| Voters | A Utility | B Utility | C Utility | Ranking   | Approvals |
-|--------|-----------|-----------|-----------|-----------|-----------|
-| 45     | 1         | 0.3       | 0         | $A > B > C$ | $A$         |
-| 35     | 0.9       | 1         | 0         | $B > A > C$ | $B, A$      |
-| 20     | 0         | 0.1       | 1         | $C > B > A$ | $C$         |
+| Voters | A Utility | B Utility | C Utility | True Ranking | Approvals | $C_\infty$ Ballot |
+|--------|-----------|-----------|-----------|--------------|-----------|-------------------|
+| 45     | 1         | 0.3       | 0         |  $A > B > C$ | $A$       | $A > B > C$       |
+| 35     | 0.9       | 1         | 0         |  $B > A > C$ | $B, A$    | $B > A > C$       |
+| 20     | 0         | 0.1       | 1         |  $C > B > A$ | $C$       | $C > B = A$       |
 
 In this scenario, Alice is a much higher utility option (76.5) for the electorate than the true Condorcet winner Bob (50.5). Perhaps Alice is a firebrand candidate who excites her 45% base, who finds a milquetoast candidate like Bob unexciting. And perhaps, a substantial minority of moderate voters *slightly* prefers Bob over Alice (a 10/10 vs a 9/10), but would be genuinely happy with either one. The minority of Clark supporters hate both Alice and Bob, and preferring Bob is like preferring losing a kidney over losing a liver. Both awful, but if *forced* to pick one, they would pick Bob. However, the utility disparity is so large, it's not unbelievable they might just rank both Bob *and* Alice equally below Clark.
 
