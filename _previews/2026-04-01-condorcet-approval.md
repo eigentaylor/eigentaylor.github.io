@@ -131,7 +131,7 @@ Take the Alaska 2022 special election, for example. I have discussed that electi
 
 Condorcetists, including myself, claim that Begich was the true Condorcet winner, who was eliminated by the ranked-choice voting tabulation that did not faithfully treat the expressed preferences of voters.
 
-There were nearly 190,000 voters in this election, according to [Electorama ABIF results](https://abif.electorama.com/id/2022-08-16_Alaska-U.S._Representative_(Special_General)#pairwise). Over 33,000 voters ranked Palin first and Begich second, while over 20,000 voters ranked Palin first and no other candidate second. If less than 3,000 of those Palin first and Begich second voters had instead ranked Begich first and Palin second, then Begich would have won the ranked-choice tabulation.
+There were approximately 190,000 voters in this election, according to [Electorama ABIF results](https://abif.electorama.com/id/2022-08-16_Alaska-U.S._Representative_(Special_General)#pairwise) and [ranked.vote](https://ranked.vote/report/us/ak/2022/08/cd). Over 33,000 voters ranked Palin first and Begich second, while over 20,000 voters ranked Palin first and no other candidate second. If less than 3,000 of those Palin first and Begich second voters had instead ranked Begich first and Palin second, then Begich would have won the ranked-choice tabulation.
 
 RCV was short-sighted, and interpreted the clear expressed preference of "I would take Palin over Peltola *and* Begich over Peltola" in a way that ultimately led to the election of Peltola directly. This is *not* a faithful treatment of the voters' expressed preferences. Particularly because a clear majority of *all ballots cast*--approximately 53%, over 60% of those who expressed a preference between Begich and Palin--had voters expressing a preference of Begich over Palin.
 
@@ -156,7 +156,7 @@ This is not a concept I have ever heard of anyone defining, but it's my post, so
 
 If $k$ is smaller than the number of candidates, then a voter will necessarily have to express some number of ties, by the Pigeonhole principle.
 
-$C_3$ would be like assigning candidates "good", "okay", and "bad". Where the voter expresses that they would vote for all "good" candidates over all "okay" and "bad", and all "okay" over all "bad". And for $C_2$ this is declaring candidates "acceptable" or "unacceptable", only assuming all "acceptable" are preferable to all "unacceptable".
+$C_3$ would be like assigning candidates "good", "okay", and "bad". In this system, the voter expresses that they would vote for all "good" candidates over all "okay" and "bad", and all "okay" over all "bad". And for $C_2$ this is declaring candidates "acceptable" or "unacceptable", only assuming all "acceptable" are preferable to all "unacceptable".
 
 $C_1$ does not really make sense as a system--it would be a trivial system where ballots say nothing and every voter is assumed to be indifferent between all of them. Plurality/choose-one voting does not fit in as a GCM, as it's an arbitrary restriction on $C_2$ where voters can only put a single candidate in the upper tier.
 
@@ -184,11 +184,16 @@ This axiom allows us to disregard the possibility of a Condorcet method having t
 
 This is not an abstract result. While very rare, Condorcet cycles have occurred in real U.S. elections, such as a [Minneapolis city council election in 2021](https://ranked.vote/report/us/mn/2021/11/ward-2).
 
-> **Definition:** For $C_2$, we denote $S(A)$, as the number of voters who put candidate $A$ in the upper tier, which we call the "approved tier". We say $S(A)$ is the number of "approvals". We denote $S(A>B)$ as the number of "strict approvals" of $A$ over $B$--voters who put candidate $A$ in the approved tier and candidate $B$ in the not approved tier. And $S(A=B)$ as the number of voters who put both candidates in the approved tier, but does not include voters who put both candidates in the not approved tier.
+> **Definition:** For $C_2$, we use the following notation. The two tiers are called the "approved tier" and the "unapproved tier". For candidates $A$ and $B$:
+>
+> - $S(A)$: the number of voters who place $A$ in the approved tier ("approvals of $A$").
+> - $S(A>B)$: the number of voters who approve $A$ but not $B$ ("strict approvals of $A$ over $B$").
+> - $S(A=B)$: the number of voters who approve both $A$ and $B$.
+> Note that voters who disapprove both candidates do not contribute to $S(A>B)$, $S(B>A)$, or $S(A=B)$, and are therefore irrelevant to the $A$ vs $B$ pairwise comparison. It follows that $S(A)=S(A>B)+S(A=B)$.
 
-Thus, $S(A)=S(A>B)+S(A=B)$, and $S(B)=S(B>A)+S(A=B)$. And by Axiom \ref{ax:ranked-ballot-assumption}, we say $A$ defeats $B$ if and only if $S(A>B)>S(B>A)$.
+By Axiom \ref{ax:ranked-ballot-assumption}, we say $A$ defeats $B$ if and only if $S(A>B)>S(B>A)$, as these are precisely the voters who distinguish between $A$ and $B$ on their ballots.
 
-> **Lemma:** Candidate $A$ defeats candidate $B$ pairwise in $C_2$ if and only if more voters put $A$ in the approved tier.
+> **Lemma:** Candidate $A$ defeats candidate $B$ pairwise in $C_2$ if and only if more voters put $A$ in the approved tier.\label{lem:c2-approval}
 
 $$\begin{equation}
 S(A>B)>S(B>A) \iff S(A)>S(B)
@@ -219,7 +224,7 @@ And land the crushing blow.
 > 4. $C_2$ is the unique GCM that satisfies any of the above three properties. They do not hold for any $C_k$ where $k>2$.
 > 5. Therefore, $C_2$ is exactly Approval voting, which is hence the unique Generalized Condorcet Method that never admits a Condorcet paradox.
 
-**Proof:** This follows directly from the previous result.
+**Proof:** This follows directly from Lemma \ref{lem:c2-approval}.
 
 **Claim 1:** By the previous lemma, $A$ defeats $B$ if and only if $S(A)>S(B)$. Thus, the ordinal ranking of candidates by $S(\cdot)$ is the same as the majority relation. Since the ordinal ranking of candidates by $S(\cdot)$ is a sequence of real numbers, it is totally ordered and thus transitive.
 
@@ -237,7 +242,7 @@ And land the crushing blow.
 
 In this profile, $A$ has the most first ranks, but $B$ defeats both $A$ and $C$, so $A$ is not the Condorcet winner. We cannot, then, infer pairwise dominance by considering only the number of ballots in which a candidate is in the top tier, except in $C_2$.
 
-Claims 1 through 3 establish that $C_2$ is precisely approval voting, proving that Approval is a Generalized Condorcet Method that never admits a Condorcet paradox. Claim 4 establishes that Approval voting is the unique Generalized Condorcet Method with all properties 1 through 3. $\square$
+Claims 1 through 3 establish that $C_2$ is precisely approval voting, proving that Approval is a Generalized Condorcet Method that never admits a Condorcet paradox. Claim 4 establishes that Approval voting is the unique Generalized Condorcet Method with any of properties 1 through 3. $\square$
 
 This leads to the pièce de résistance:
 
@@ -253,7 +258,7 @@ Note: As I was writing this post, I was researching related arguments and I foun
 
 ## You can't prove it's not Condorcet
 
-As we have proved, Approval voting is indeed a Condorcet method, just restricted to two tiers. This is a restriction to binary "acceptable" vs "unacceptable" preferences, just as a ranked method is a restriction of an arbitrary preference ordering to a transitive one. But as a Condorcet method, it always elects the candidate who would win all pairwise matchups against other candidates based on the preferences expressed in the ballot data.
+As proved above, Approval voting is indeed a Condorcet method, just restricted to two tiers. This is a restriction to binary "acceptable" vs "unacceptable" preferences, just as a ranked method is a restriction of an arbitrary preference ordering to a transitive one. But as a Condorcet method, it always elects the candidate who would win all pairwise matchups against other candidates based on the preferences expressed in the ballot data.
 
 As with *any* Condorcet method, all we have to go on is what voters express.
 
@@ -293,7 +298,7 @@ I have my issues with utility arguments, and range voting methods, but let's pre
 
 In this scenario, Alice is a much higher utility option (76.5) for the electorate than the true Condorcet winner Bob (50.5). Perhaps Alice is a firebrand candidate who excites her 45% base, who finds a milquetoast candidate like Bob unexciting. And perhaps, a substantial minority of moderate voters *slightly* prefers Bob over Alice (a 10/10 vs a 9/10), but would be genuinely happy with either one. The minority of Clark supporters hate both Alice and Bob, and preferring Bob is like preferring losing a kidney over losing a liver. Both awful, but if *forced* to pick one, they would pick Bob. However, the utility disparity is so large, it's not unbelievable they might just rank both Bob *and* Alice equally below Clark.
 
-This is not to argue that utility maximization should be the goal of an election, especially because that's not the data we collect in a Condorcet method. But the utilities show the approvals are not necessarily irrational in this context. Each voter is approving only the candidates above the average utility of all candidates (this is called ["relative sincerity" by Dellis and Oak](https://www.sciencedirect.com/science/article/abs/pii/S0899825604002003)). If this is genuinely how the voters feel, and if 80% of the electorate gives Alice a 9/10 or higher, then I see no reason that Alice is an unreasonable winner, or somehow a "fringe" candidate.
+This is not to argue that utility maximization should be the goal of an election, especially because that's not the data we collect in a Condorcet method. But the utilities show the approvals are not necessarily irrational in this context. Each voter is approving only the candidates above the average utility of all candidates (this is a [standard modeling choice for the approval threshold under honest, zero-information assumptions](https://electionscience.github.io/vse-sim/VSEbasic/)). If this is genuinely how the voters feel, and if 80% of the electorate gives Alice a 9/10 or higher, then I see no reason that Alice is an unreasonable winner, or somehow a "fringe" candidate.
 
 Bob, on the other hand, is only a 3/10 or 1/10 to 65% of the electorate. Under this dynamic, Alice is clearly a better compromise for the electorate as a whole than Bob, given that the Bob supporters seem to genuinely like Alice. I would argue 80% of the voters being at least 90% happy is more majoritarian than 65% of the voters being at most 30% happy.
 
@@ -376,7 +381,7 @@ Since Approval is perfect for dichotomous preferences, as that is literally the 
 We have a hierarchy of compromises that a Condorcet method can make.
 
 1. $C_\infty$ simplifies the data by assuming voters have transitive preferences, and allows voters to truncate and express indifference, but allows all possible rankings at the cost of not being able to guarantee a Condorcet winner.
-2. $C_2$ simplifies the data by assuming voters can project their preferences into a partition of candidates into "acceptable" and "unacceptable" sets. This is a simplification and compromise that results in the complete elimination of all issues that arise from the Condorcet paradox, while still generally electing the best candidate almost all of the time,
+2. $C_2$ simplifies the data by assuming voters can project their preferences into a partition of candidates into "acceptable" and "unacceptable" sets. This is a simplification and compromise that results in the complete elimination of all issues that arise from the Condorcet paradox, while still generally electing the best candidate almost all of the time.
 3. Plurality voting restricts $C_2$ to a single choice for the top tier, which allows it to maintain the properties of $C_2$, but is an arbitrary restriction that does not greatly simplify the data, *and* leads to significantly worse outcomes.
 
 $C_2$ is the maximal level that maintains a "reasonable" level of preference expression, still gives excellent outcomes, while still allowing the Condorcet method to work "perfectly".
@@ -412,8 +417,6 @@ Brams, S. J. (2008). *Mathematics and Democracy: Designing Better Voting and Fai
 Brams, S. J., & Fishburn, P. C. (1978). Approval Voting. *The American Political Science Review*, 72(3), 831-847. [https://doi.org/10.2307/1955105](https://doi.org/10.2307/1955105)
 
 Cox, G. W. (1987). Electoral Equilibrium under Alternative Voting Institutions. *American Journal of Political Science*, 31(1), 82-108. [https://doi.org/10.2307/2111325](https://doi.org/10.2307/2111325)
-
-Dellis, A., & Oak, M. P. (2006). Approval voting with endogenous candidates. Games and Economic Behavior, 54(1), 47–76. [https://doi.org/10.1016/j.geb.2004.10.010](https://doi.org/10.1016/j.geb.2004.10.010)
 
 Electorama. (2022). U.S. Representative (Special General), Alaska, August 16, 2022 -- ABIF results. [https://abif.electorama.com/id/2022-08-16_Alaska-U.S.Representative(Special_General)](https://abif.electorama.com/id/2022-08-16_Alaska-U.S.Representative(Special_General))
 
