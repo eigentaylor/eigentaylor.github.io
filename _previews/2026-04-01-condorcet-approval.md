@@ -125,7 +125,7 @@ All this to say, we Condorcetists are *all* about throwing away certain informat
 
 If you do not elect such a candidate in a ranked system, then **what are you even** ***doing***? [Why ask for rankings if you aren't even going to use or respect them?](../ditch-rcv){:target="_blank"} If you do not elect such a candidate, then you have elected someone else who has to serve their constituents knowing that a majority of voters wanted someone else more. That creates a [legitimacy problem](../consistentcardinal){:target="_blank"}.
 
-We also cannot guarantee that even if we elect the Condorcet winner induced by the ballots, that this candidate would truly defeat every other candidate in a head-to-head matchup, because we are not asking all those direct head-to-head questions. Especially if we allow ties or ballot truncation.
+We also cannot guarantee that even if we elect the Condorcet winner induced by the ballots, that candidate would truly defeat every other candidate in a head-to-head matchup, because we are not directly asking all of those head-to-head questions, especially when ties or ballot truncation are allowed.
 
 Take the Alaska 2022 special election, for example. I have discussed that election extensively in recent posts. However, I will focus entirely on a single aspect relevant to Condorcet analysis.
 
@@ -242,7 +242,7 @@ And land the crushing blow.
 
 In this profile, $A$ has the most first ranks, but $B$ defeats both $A$ and $C$, so $A$ is not the Condorcet winner. We cannot, then, infer pairwise dominance by considering only the number of ballots in which a candidate is in the top tier, except in $C_2$.
 
-Claims 1 through 3 establish that $C_2$ is precisely approval voting, proving that Approval is a Generalized Condorcet Method that never admits a Condorcet paradox. Claim 4 establishes that Approval voting is the unique Generalized Condorcet Method with any of properties 1 through 3. $\square$
+Claims 1 through 3 establish that $C_2$ is precisely approval voting, proving that Approval is a Generalized Condorcet Method that never admits a Condorcet paradox. Claim 4 establishes that Approval voting is the unique Generalized Condorcet Method with property 1, 2, or 3. $\square$
 
 This leads to the pièce de résistance:
 
@@ -322,7 +322,7 @@ This does not, in my opinion, lose significant meaning when we restrict to two t
 
 In Approval there is no "but I got more first choice votes" argument to be made against a legitimate Condorcet winner, because the Condorcet winner is such *because* they convinced the most voters to approve them over any other candidate in a one-on-one comparison.
 
-Likewise, in Approval there is no "but I was ranked by more voters over the winner" argument, as in Ranked Choice Voting. And Condorcet can't escape this either, because when a Condorcet cycle inevitably occurs, there is no winner who doesn't lose to at least one other candidate in a one-on-one matchup. So much for "legitimacy" to the winner in those cases. Approval has no cycles, and therefore no ambiguity about who the legitimate winner is based on the ballot data.
+Likewise, in Approval there is no "but I was ranked by more voters over the winner" argument, as in ranked-choice voting. And Condorcet can't escape this either, because when a Condorcet cycle inevitably occurs, there is no winner who doesn't lose to at least one other candidate in a one-on-one matchup. So much for "legitimacy" to the winner in those cases. Approval has no cycles, and therefore no ambiguity about who the legitimate winner is based on the ballot data.
 
 My adherence and loyalty to the Condorcet criterion is not because I think the theoretical winner in all one-on-one plurality runoffs is actually the best candidate if there is potentially a better and less polarizing compromise. My loyalty is for the *legitimacy* of the criterion in the only data that truly matters: what the ballots collect.
 
@@ -334,7 +334,7 @@ Approval voting is very clearly precinct summable. We have proved that it is a G
 
 General Condorcet Methods, including $C_\infty$, are also technically precinct summable, unlike a method like RCV which absolutely requires [central tabulation](../ditch-rcv){:target="_blank"}. However, the practicality decreases as the number of candidates increases. For 19 candidates, a precinct would potentially need to report the number of voters who prefer each candidate over each other candidate, which is $19(18) = 342$ numbers, which is considerably more cumbersome than simply reporting 19 approval counts. However, it is technically fewer numbers than STAR voting, which would require reporting all of these numbers alongside the total scores for each candidate ($19^2=361$) for full summability that wouldn't require a later tabulation of the runoff numbers.
 
-In fairness, optimizations could be made for both systems. It might be possible to reduce the number of reported numbers by considering $A>B$ rankings $+1$ and $B>A$ rankings a $-1$, and counting only the margins in each $\frac{n(n-1)}{2}$ pairwise matchup. But that's still over 170 numbers to put on the gymnasium door for a 19 candidate race. Better than Ranked Choice voting, surely, but not exactly practical.
+In fairness, optimizations could be made for both systems. It might be possible to reduce the number of reported numbers by considering $A>B$ rankings $+1$ and $B>A$ rankings a $-1$, and counting only the margins in each $\frac{n(n-1)}{2}$ pairwise matchup. But that's still over 170 numbers to put on the gymnasium door for a 19 candidate race. Better than ranked-choice voting, surely, but not exactly practical.
 
 ## You cannot be serious
 
