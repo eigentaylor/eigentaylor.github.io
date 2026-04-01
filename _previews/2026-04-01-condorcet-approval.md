@@ -127,19 +127,35 @@ If you do not elect such a candidate in a ranked system, then **what are you eve
 
 We also cannot guarantee that even if we elect the Condorcet winner induced by the ballots, that candidate would truly defeat every other candidate in a head-to-head matchup, because we are not directly asking all of those head-to-head questions, especially when ties or ballot truncation are allowed.
 
-Take the Alaska 2022 special election, for example. I have discussed that election extensively in recent posts. However, I will focus entirely on a single aspect relevant to Condorcet analysis.
+**Example:** Consider this election with 100 voters.
 
-Condorcetists, including myself, claim that Nick Begich was the true Condorcet winner, who was eliminated by the ranked-choice voting tabulation that did not faithfully treat the expressed preferences of voters.
+| Voters | 1st Choice | 2nd Choice | 3rd Choice |
+|--------|------------|------------|------------|
+| 10     | Alice      |            |            |
+| 30     | Alice      | Bob        | Clark      |
+| 5      | Bob        |            |            |
+| 8      | Bob        | Alice      | Clark      |
+| 16     | Bob        | Clark      | Alice      |
+| 15     | Clark      |            |            |
+| 16     | Clark      | Bob        | Alice      |
 
-There were approximately 190,000 voters in this election, according to [Electorama ABIF results](https://abif.electorama.com/id/2022-08-16_Alaska-U.S._Representative_(Special_General)#pairwise) and [ranked.vote](https://ranked.vote/report/us/ak/2022/08/cd). Over 33,000 voters ranked Sarah Palin first and Nick Begich second, while over 20,000 voters ranked Palin first and no other candidate second. If less than 3,000 of those Palin first and Begich second voters had instead ranked Begich first and Palin second, then Begich would have won the ranked-choice tabulation.
+There is *significant* ballot truncation (bullet voting) in this example, as 30% of voters did not rank a second choice. We have no choice but to assume that these voters have no preference between the unranked candidates, but prefer their one ranked candidate over the unranked ones. When we crunch the pairwise matchup numbers, we find
 
-RCV was short-sighted, and interpreted the clear expressed preference of "I would take Palin over Peltola *and* Begich over Peltola" in a way that ultimately led to the election of Peltola directly. This is *not* a faithful treatment of the voters' expressed preferences. Particularly because a clear majority of *all ballots cast*--approximately 53%, over 60% of those who expressed a preference between Begich and Palin--had voters expressing a preference of Begich over Palin.
+- Alice defeats Clark *narrowly*, 48% to 47%.
+- Bob defeats Clark handily by 59%. Even if all the Alice supporters who only voted for Alice broke for Clark, Bob would still win the head-to-head matchup.
+- 45% of voters implicitly ranked Bob above Alice, while only 40% ranked Alice above Bob. Of those who expressed a preference between the two, Bob is the preferred candidate, but this is not a majority of all voters, only of those who expressed a preference.
 
-However, what Condorcetists often neglect to mention is that because so many voters who ranked Palin first did not rank a second choice, we *technically* have no idea how they would vote in a Begich vs. Peltola head-to-head matchup. While out of all voters *who did express a preference* between Begich and Peltola, a majority preferred Begich, this was not a majority *of all voters who cast a ballot*, but rather approximately 46% of all voters. We report this as 52.5% among voters who expressed a Begich-Peltola preference, but it's *not* 52.5% of all voters.
+We choose, then, to conclude that Bob is the Condorcet winner in this example, based on the expressed preferences of voters who did rank a second choice. The ranked-choice voting (RCV) tabulation would have eliminated Bob, however, and Alice would ultimately win over Clark by a single vote despite having only 48% support.
 
-Therefore, we cannot be certain that Begich was the true Condorcet winner, because if all of the unaccounted for votes had gone entirely to Peltola in a head-to-head matchup against Begich, then Begich would not have defeated Peltola. This is exceptionally unlikely, but because we did not collect that information, we cannot be 100% certain.
+Insidiously, if just 2 of the Clark-first-Bob-second voters had instead lied and insincerely ranked Bob first and Clark second, then their second choice, Bob, would have won the RCV tabulation, rather than their worst choice, Alice. By voting sincerely, these voters who were expressing a preference of Clark over Alice and Bob over Alice ultimately elected Alice directly. Under RCV, Clark is a spoiler.
 
-As Condorcetists, we have to rely exclusively on the expressed ballot data, and trust that among those who *did* express a preference between two candidates, the majority preference accurately reflects who would win in a head-to-head matchup among the entire electorate. Just as Ranked Choice Voting exhausts ballots from voters who failed to rank any remaining candidates, Condorcetists also value expressed preferences over potential unexpressed preferences.
+In Condorcetist thinking, we choose to rely on the expressed preferences of voters, even when those preferences are incomplete due to ballot truncation. Indeed, we are lacking the information of how a pivotal 15% of voters would vote between Bob and Alice in a potential head-to-head matchup. But of those who did, Bob is the preferred candidate.
+
+But if just 11 of the Clark bullet voters, who maybe hated both Bob and Alice, slightly preferred Alice over Bob, then Alice *might just be* the Condorcet winner. However, we also have intense ambiguity from the 5% of Bob supporters who did not rank a second choice. The result between Alice and Clark is therefore also exceptionally close and uncertain, and it's entirely possible that we actually have a Condorcet cycle on our hands.
+
+This example is modeled after the [real Alaska 2022 special election](https://abif.electorama.com/id/2022-08-16_Alaska-U.S._Representative_(Special_General)#pairwise). Bob here is a stand-in for Republican Nick Begich, who many Condorcetists believe was the true Condorcet winner. However, his theoretical matchup against Democrat Mary Peltola, the eventual ranked-choice winner and Alice analogue, was also made ambiguous by heavy bullet voting by Sarah Palin supporters. Palin, like Clark, also acted as a spoiler. And while many of those Palin supporters would have almost surely preferred the other Republican candidate, Begich, over Peltola, we cannot know for certain due to the incomplete rankings.
+
+As Condorcetists, we have to rely exclusively on the expressed ballot data, and trust that among those who *did* express a preference between two candidates, the majority preference accurately reflects who would win in a head-to-head matchup among the entire electorate. Just as ranked-choice voting exhausts ballots from voters who failed to rank any remaining candidates, Condorcetists also value expressed preferences over potential unexpressed preferences.
 
 Now, hopefully we are on the same page about what it truly means, in practice, to be a Condorcet winner, given the limitations of the ballot data. The only sane way to implement a Condorcet method is to
 
