@@ -659,16 +659,16 @@ ninja.data = [{
           description: "Walkthrough and proof of the theorem that proves ranked voting systems cannot satisfy seemingly reasonable properties.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/arrows/";
-            },},{id: "previews-a-guide-to-approval-voting-strategy",
-          title: 'A Guide to Approval Voting Strategy',
-          description: "An explanation of the leader rule strategy in approval voting, and its positive ramifications.",
-          section: "Previews",handler: () => {
-              window.location.href = "/preview/avstrategy/";
             },},{id: "previews-approval-is-a-condorcet-method",
           title: 'Approval is a Condorcet Method',
           description: "Approval is the perfect Condorcet method, and I have permanently solved the Condorcet paradox. April Fools!",
           section: "Previews",handler: () => {
               window.location.href = "/preview/condorcetapproval/";
+            },},{id: "previews-a-guide-to-approval-voting-strategy",
+          title: 'A Guide to Approval Voting Strategy',
+          description: "An explanation of the leader rule strategy in approval voting, and its positive ramifications.",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/avstrategy/";
             },},{id: "previews-approval-is-the-perfect-condorcet-method",
           title: 'Approval is the Perfect Condorcet Method',
           description: "Approval is a perfect Condorcet method, and I have permanently solved the Condorcet paradox. April Fools!",
