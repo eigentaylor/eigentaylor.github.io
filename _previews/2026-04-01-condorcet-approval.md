@@ -131,7 +131,7 @@ Take the Alaska 2022 special election, for example. I have discussed that electi
 
 Condorcetists, including myself, claim that Begich was the true Condorcet winner, who was eliminated by the ranked-choice voting tabulation that did not faithfully treat the expressed preferences of voters.
 
-There were nearly 190,000 voters in this election, according to [ranked.vote](https://ranked.vote/report/us/ak/2022/08/cd). Over 33,000 voters ranked Palin first and Begich second, while over 20,000 voters ranked Palin first and no other candidate second. If less than 3,000 of those Palin first and Begich second voters had instead ranked Begich first and Palin second, then Begich would have won the ranked-choice tabulation.
+There were nearly 190,000 voters in this election, according to [Electorama ABIF results](https://abif.electorama.com/id/2022-08-16_Alaska-U.S._Representative_(Special_General)#pairwise){:target="_blank"}. Over 33,000 voters ranked Palin first and Begich second, while over 20,000 voters ranked Palin first and no other candidate second. If less than 3,000 of those Palin first and Begich second voters had instead ranked Begich first and Palin second, then Begich would have won the ranked-choice tabulation.
 
 RCV was short-sighted, and interpreted the clear expressed preference of "I would take Palin over Peltola *and* Begich over Peltola" in a way that ultimately led to the election of Peltola directly. This is *not* a faithful treatment of the voters' expressed preferences. Particularly because a clear majority of *all ballots cast*--approximately 53%, over 60% of those who expressed a preference between Begich and Palin--had voters expressing a preference of Begich over Palin.
 
@@ -410,6 +410,8 @@ Brams, S. J. (2008). *Mathematics and Democracy: Designing Better Voting and Fai
 Brams, S. J., & Fishburn, P. C. (1978). Approval Voting. *The American Political Science Review*, 72(3), 831-847. [https://doi.org/10.2307/1955105](https://doi.org/10.2307/1955105){:target="_blank"}
 
 Cox, G. W. (1987). Electoral Equilibrium under Alternative Voting Institutions. *American Journal of Political Science*, 31(1), 82-108. [https://doi.org/10.2307/2111325](https://doi.org/10.2307/2111325){:target="_blank"}
+
+Electorama. (2022). U.S. Representative (Special General), Alaska, August 16, 2022 -- ABIF results. [https://abif.electorama.com/id/2022-08-16_Alaska-U.S.Representative(Special_General)](https://abif.electorama.com/id/2022-08-16_Alaska-U.S.Representative(Special_General)){:target="_blank"}
 
 Fishburn, P. C., & Little, J. D. C. (1988). An Experiment in Approval Voting. *Management Science*, 34(5), 555–568. [https://www.jstor.org/stable/2632078](https://www.jstor.org/stable/2632078){:target="_blank"}
 
