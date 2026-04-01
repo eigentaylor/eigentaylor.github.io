@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: A Guide to Approval Voting Strategy
-date: 2026-03-24
+date: 2026-04-01
 description: An explanation of the leader rule strategy in approval voting, and its positive ramifications.
 giscus_comments: true
 importance: 2
@@ -36,9 +36,9 @@ toc:
 
 ## Introduction
 
-> Approval voting is a voting method where each voter can "approve" of as many candidates as they like, and the candidate with the most approvals wins.
+> Approval voting is a voting method where each voter can "approve" of as many candidates as they like, and the candidate who is approved by the most voters wins.
 
-This post is based on a paper by [Jean-François Laslier](https://journals.sagepub.com/doi/10.1177/0951629808097286){:target="_blank"}, which introduces the leader rule and analyzes its properties. I would like to give a special thanks to Rob LeGrand for bringing this strategy to my attention. LeGrand, as far as we know, came up with this strategy back in 2002, and Laslier discovered it independently and published about it in his 2009 paper. I find this interesting to bring up, because it shows that this strategy is not just some random "someone just thought of it" strategy, but rather something natural, intuitive, and fundamentally optimal that multiple people have independently discovered.
+This post is based on a paper by [Jean-François Laslier](https://journals.sagepub.com/doi/10.1177/0951629808097286), which introduces the leader rule and analyzes its properties. I would like to give a special thanks to Rob LeGrand for bringing this strategy to my attention. LeGrand, as far as we know, came up with this strategy back in 2002, and Laslier discovered it independently and published about it in his 2009 paper. I find this interesting to bring up, because it shows that this strategy is not just some random "someone just thought of it" strategy, but rather something natural, intuitive, and fundamentally optimal that multiple people have independently discovered.
 
 In a [previous post](../avstratproof){:target="_blank"}, I gave an example to show that Approval voting is not technically strategyproof, but can be made so under a particular mindset that I called a "Dichotomous Goal", where a voter only wants to maximize the chance of an "acceptable" candidate winning--however a voter defines acceptable. I explained how strategy simplifies down into drawing a line of acceptability, and once that line is set then the choice for how to vote is clear under such a goal. In this post, we will explore a specific strategy called "the leader rule," which is a practical and effective way to help draw that line of acceptability optimally based on the perceived front-runners.
 
@@ -72,13 +72,15 @@ For example, suppose I prefer A > B > C > D, and the leader is C and the challen
 
 If A is the leader and B is the challenger, then there is no candidate I prefer to the leader, so I do not approve of anyone in step 1. Then, since I prefer the leader A to the challenger B, I approve of A. Finally, I do not approve of B, C, or D, since they are all less preferred than the leader. Thus, I would only approve of A. If my favorite is going to win, and B is the most likely candidate to overtake them, then approving B risks helping B win over A. Notice the leader rule tells me to bullet vote here!
 
+This is actually a [real dynamic we see in real-world Approval elections](https://felixsargent.com/democracy/2025/08/29/st-louis-approval-voting.html). In an analysis of a St. Louis election, we saw heavy bullet voting for frontrunners, and *over 80%* of voters who supported a non-frontunner also supporting another candidate. When your candidate is ahead, it's not some crime to only support them, to maintain their lead. But when you're behind, it's prudent to widen your net of support. This example should be taken with a grain of salt, however, since St. Louis uses a top-2 Approval system. [The dynamics and strategy are significantly different for single-round Approval versus Approval with a runoff.](https://www.jstor.org/stable/30023417)
+
 That's the entire strategy! You could stop reading here and go apply this strategy in any Approval voting election. But if you want to understand *why* this strategy is optimal, how to apply it in real examples, and you're here for the practical examples and theory, read on.
 
 The first observation here is that this strategy is "sincere", which we should formally define as follows:
 
 > **Sincerity**: An approval vote is **sincere** if for any candidate you *do* vote for, you also approve all candidates you strictly prefer to them. That is, you do not leave any "holes" in your ballot between candidates you voted for. Alternatively, a sincere ballot is one where you draw a "line of acceptability" somewhere in your ranking, and approve everyone above that line.
 
-For example, if I prefer A > B > C > D, then voting for A and C, and not B, would be insincere, because I left a hole between A and C by not voting for B. Some people really don't like the term "sincere", as it implies there are multiple "sincere" ballots, but this is the terminology used by [Approval voting theorists](https://doi.org/10.2307/1955105){:target="_blank"}. We distinguish between the idea of an "honest ballot" (the approval ballot most truly consistent with the voter's inherent sense of acceptability towards the candidates) and one of many "sincere" ballots, which are consistent with some projection of the voter's nuanced ranking down to any "line of acceptability".
+For example, if I prefer A > B > C > D, then voting for A and C, and not B, would be insincere, because I left a hole between A and C by not voting for B. Some people really don't like the term "sincere", as it implies there are multiple "sincere" ballots, but this is the terminology used by [Approval voting theorists](https://doi.org/10.2307/1955105). We distinguish between the idea of an "honest ballot" (the approval ballot most truly consistent with the voter's inherent sense of acceptability towards the candidates) and one of many "sincere" ballots, which are consistent with some projection of the voter's nuanced ranking down to any "line of acceptability".
 
 The leader rule says leaving a hole in your ballot is *never* optimal, in practice. You should always draw that line of acceptability right below the leader or right above (depending on how you feel about the most important race between the leader and challenger).
 
@@ -251,7 +253,7 @@ All this complicated probability math and casework boils down to the very simple
 In Laslier's paper, he makes two key observations about voter psychology that make the leader rule particularly appealing:
 
 1. Voters consider pivotal scenarios sequentially, starting with the most likely scenarios. This means that they focus on the most probable outcomes first, and make their decisions based on those scenarios.
-2. As Laslier explains, the leader rule corresponds to [Tversky's "elimination by aspects" model of decision-making](https://journals.sagepub.com/doi/10.1177/0951629808097286){:target="_blank"}. People tend to eliminate options that do not meet certain ranked criteria. In this case, it is elimination by the most likely pivotal scenarios.
+2. As Laslier explains, the leader rule corresponds to [Tversky's "elimination by aspects" model of decision-making](https://journals.sagepub.com/doi/10.1177/0951629808097286). People tend to eliminate options that do not meet certain ranked criteria. In this case, it is elimination by the most likely pivotal scenarios.
 
 The leader rule boils down to ranking the pivotal scenarios by their likelihood, and making decisions based on how their internal preferences align with those scenarios.
 
@@ -274,7 +276,7 @@ One might ask "what happens if everyone uses the leader rule, all at once?" Lasl
 
 However, credit to Rob LeGrand for pointing out to me that it is not necessarily the case that the leader rule converges to the Condorcet winner under all initial conditions. See [my forthcoming post](../leader-dynamics){:target="_blank"} for a pathological (but intriguing) example of this.
 
-Brams also proves in his 2008 book ["Mathematics and Democracy"](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy){:target="_blank"} (pg 39) that when a Condorcet winner is the outcome under sincere strategies, then that outcome is a *strong* Nash equilibrium. More humorously, he also proves that no Condorcet method can guarantee the election of a unique Condorcet winner as a Nash equilibrium. This means, in some ways, that Approval elects the Condorcet winner more "stably" than any method specifically designed to elect such a candidate.
+Brams also proves in his 2008 book ["Mathematics and Democracy"](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy) (pg 39) that when a Condorcet winner is the outcome under sincere strategies, then that outcome is a *strong* Nash equilibrium. More humorously, he also proves that no Condorcet method can guarantee the election of a unique Condorcet winner as a Nash equilibrium. This means, in some ways, that Approval elects the Condorcet winner more "stably" than any method specifically designed to elect such a candidate.
 
 The proof and explanation of these ideas is actually relatively straightforward. Consider what happens when everyone uses the leader rule at the same time:
 
@@ -334,7 +336,7 @@ Well, obviously, it gives Palin and Begich one vote each. But we already knew th
 
 Therefore, your ballot is strictly hurting Peltola, and is strictly helping both Palin and Begich. It is not hurting Palin relative to Begich, but it is helping both of them relative to Peltola.
 
-This may seem obvious, but this is not the case in other voting methods. For example, in Ranked-Choice voting, the Republican voters who sincerely ranked Palin first and Begich second did not help get a Republican elected. In fact, they actually elected Peltola, their least preferred candidate indirectly. If [fewer than 3,000 of the approximately 33,000 voters who did so](https://substack.com/@whelmedcitizen/p-182659376){:target="_blank"} had instead insincerely ranked Begich first and Palin second, then Palin would have been eliminated instead and Begich would have won, which is a much more preferable outcome for those voters. This is a case of sincere voting *actively* helping a much less preferred candidate, and *actively* hurting more preferred candidates.
+This may seem obvious, but this is not the case in other voting methods. For example, in Ranked-Choice voting, the Republican voters who sincerely ranked Palin first and Begich second did not help get a Republican elected. In fact, they actually elected Peltola, their least preferred candidate indirectly. If [fewer than 3,000 of the approximately 33,000 voters who did so](https://substack.com/@whelmedcitizen/p-182659376) had instead insincerely ranked Begich first and Palin second, then Palin would have been eliminated instead and Begich would have won, which is a much more preferable outcome for those voters. This is a case of sincere voting *actively* helping a much less preferred candidate, and *actively* hurting more preferred candidates.
 
 Approval has no such pathologies. Your ballot can only ever help elect someone you consciously vote for, and will *never* help someone you did *not* vote for. The difference between actively helping someone you did not vote for (as in a system like Ranked-Choice), and passively failing to help candidates you treat equally (as in Approval), is significant.
 
@@ -369,17 +371,19 @@ Choose-one voting is, like Approval voting, a binary ballot. You vote for some c
 
 ## References
 
-Brams, S. J., & Fishburn, P. C. (1978). Approval Voting. The American Political Science Review, 72(3), 831–847. [https://doi.org/10.2307/1955105](https://doi.org/10.2307/1955105){:target="_blank"}
+Brams, S. J., & Fishburn, P. C. (1978). Approval Voting. The American Political Science Review, 72(3), 831–847. [https://doi.org/10.2307/1955105](https://doi.org/10.2307/1955105)
 
-Brams, S. J. (2008). *Mathematics and Democracy: Designing Better Voting and Fair-Division Procedures*. Princeton University Press. [https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy){:target="_blank"}
+Brams, S. J. (2008). *Mathematics and Democracy: Designing Better Voting and Fair-Division Procedures*. Princeton University Press. [https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy)
 
-Laslier, J. F. (2009). The Leader Rule: A Model of Strategic Approval Voting in a Large Electorate. *Journal of Theoretical Politics*, 21(1), 113-136. [https://journals.sagepub.com/doi/10.1177/0951629808097286](https://journals.sagepub.com/doi/10.1177/0951629808097286){:target="_blank"}
+Fishburn, P. C., & Brams, S. J. (1981). Approval Voting, Condorcet’s Principle, and Runoff Elections. Public Choice, 36(1), 89–114. [http://www.jstor.org/stable/30023417](http://www.jstor.org/stable/30023417)
 
-Mahlendorf, A. (2026). Fear of Vote Splitting. Substack. [https://substack.com/@whelmedcitizen/p-182659376](https://substack.com/@whelmedcitizen/p-182659376){:target="_blank"}
+Laslier, J. F. (2009). The Leader Rule: A Model of Strategic Approval Voting in a Large Electorate. *Journal of Theoretical Politics*, 21(1), 113-136. [https://journals.sagepub.com/doi/10.1177/0951629808097286](https://journals.sagepub.com/doi/10.1177/0951629808097286)
 
-[ranked.vote](https://ranked.vote){:target="_blank"} Election Reports:
+Mahlendorf, A. (2026). Fear of Vote Splitting. Substack. [https://substack.com/@whelmedcitizen/p-182659376](https://substack.com/@whelmedcitizen/p-182659376)
 
-- Alaska House Special Election 2022: [https://ranked.vote/report/us/ak/2022/08/cd](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"}
-- NYC Democratic Mayoral Primary 2025: [https://ranked.vote/report/us/ny/nyc/2025/07/mayor](https://ranked.vote/report/us/ny/nyc/2025/07/mayor){:target="_blank"}
+[ranked.vote](https://ranked.vote) Election Reports:
 
-[hyperlink](https://www.youtube.com/watch?v=VXZUjn41dbw){:target="_blank"}
+- Alaska House Special Election 2022: [https://ranked.vote/report/us/ak/2022/08/cd](https://ranked.vote/report/us/ak/2022/08/cd)
+- NYC Democratic Mayoral Primary 2025: [https://ranked.vote/report/us/ny/nyc/2025/07/mayor](https://ranked.vote/report/us/ny/nyc/2025/07/mayor)
+
+[hyperlink](https://www.youtube.com/watch?v=VXZUjn41dbw)
