@@ -129,9 +129,9 @@ We also cannot guarantee that even if we elect the Condorcet winner induced by t
 
 Take the Alaska 2022 special election, for example. I have discussed that election extensively in recent posts. However, I will focus entirely on a single aspect relevant to Condorcet analysis.
 
-Condorcetists, including myself, claim that Begich was the true Condorcet winner, who was eliminated by the ranked-choice voting tabulation that did not faithfully treat the expressed preferences of voters.
+Condorcetists, including myself, claim that Nick Begich was the true Condorcet winner, who was eliminated by the ranked-choice voting tabulation that did not faithfully treat the expressed preferences of voters.
 
-There were approximately 190,000 voters in this election, according to [Electorama ABIF results](https://abif.electorama.com/id/2022-08-16_Alaska-U.S._Representative_(Special_General)#pairwise) and [ranked.vote](https://ranked.vote/report/us/ak/2022/08/cd). Over 33,000 voters ranked Palin first and Begich second, while over 20,000 voters ranked Palin first and no other candidate second. If less than 3,000 of those Palin first and Begich second voters had instead ranked Begich first and Palin second, then Begich would have won the ranked-choice tabulation.
+There were approximately 190,000 voters in this election, according to [Electorama ABIF results](https://abif.electorama.com/id/2022-08-16_Alaska-U.S._Representative_(Special_General)#pairwise) and [ranked.vote](https://ranked.vote/report/us/ak/2022/08/cd). Over 33,000 voters ranked Sarah Palin first and Nick Begich second, while over 20,000 voters ranked Palin first and no other candidate second. If less than 3,000 of those Palin first and Begich second voters had instead ranked Begich first and Palin second, then Begich would have won the ranked-choice tabulation.
 
 RCV was short-sighted, and interpreted the clear expressed preference of "I would take Palin over Peltola *and* Begich over Peltola" in a way that ultimately led to the election of Peltola directly. This is *not* a faithful treatment of the voters' expressed preferences. Particularly because a clear majority of *all ballots cast*--approximately 53%, over 60% of those who expressed a preference between Begich and Palin--had voters expressing a preference of Begich over Palin.
 
