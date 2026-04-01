@@ -132,9 +132,9 @@ We also cannot guarantee that even if we elect the Condorcet winner induced by t
 | Voters | 1st Choice | 2nd Choice | 3rd Choice |
 |--------|------------|------------|------------|
 | 10     | Alice      |            |            |
-| 30     | Alice      | Bob        | Clark      |
+| 29     | Alice      | Bob        | Clark      |
 | 5      | Bob        |            |            |
-| 8      | Bob        | Alice      | Clark      |
+| 9      | Bob        | Alice      | Clark      |
 | 16     | Bob        | Clark      | Alice      |
 | 15     | Clark      |            |            |
 | 16     | Clark      | Bob        | Alice      |
@@ -143,15 +143,15 @@ There is *significant* ballot truncation (bullet voting) in this example, as 30%
 
 - Alice defeats Clark *narrowly*, 48% to 47%.
 - Bob defeats Clark handily by 59%. Even if all the Alice supporters who only voted for Alice broke for Clark, Bob would still win the head-to-head matchup.
-- 45% of voters implicitly ranked Bob above Alice, while only 40% ranked Alice above Bob. Of those who expressed a preference between the two, Bob is the preferred candidate, but this is not a majority of all voters, only of those who expressed a preference.
+- 46% of voters implicitly ranked Bob above Alice, while only 39% ranked Alice above Bob. Of those who expressed a preference between the two, Bob is the preferred candidate, but this is not a majority of all voters, only of those who expressed a preference.
 
 We choose, then, to conclude that Bob is the Condorcet winner in this example, based on the expressed preferences of voters who did rank a second choice. The ranked-choice voting (RCV) tabulation would have eliminated Bob, however, and Alice would ultimately win over Clark by a single vote despite having only 48% support.
 
-Insidiously, if just 2 of the Clark-first-Bob-second voters had instead strategically ranked Bob first and Clark second, then their second choice, Bob, would have won the RCV tabulation rather than their worst choice, Alice. This wouldn't have changed their expressed preference towards Alice, but it would have changed the winner of the election from Alice to Bob. By voting sincerely, these voters who expressed a preference of Clark over Alice and Bob over Alice ultimately elected Alice directly. Under RCV, Clark is a spoiler.
+Insidiously, if just *one single* Clark-first-Bob-second voter had instead strategically ranked Bob first and Clark second, then their second choice, Bob, would have won the RCV tabulation rather than their worst choice, Alice. This wouldn't have changed their expressed preference towards Alice, but it would have changed the winner of the election from Alice to Bob. By voting sincerely, these voters who expressed a preference of Clark over Alice and Bob over Alice ultimately elected Alice directly. Under RCV, Clark is a spoiler.
 
 In Condorcetist thinking, we rely on the expressed preferences of voters, even when those preferences are incomplete due to ballot truncation. Indeed, we are lacking the information of how a pivotal 15% of voters would vote between Bob and Alice in a potential head-to-head matchup. But of those who did, Bob is the preferred candidate.
 
-But if just 11 of the Clark bullet voters, who maybe hated both Bob and Alice enough to rank neither, slightly preferred Alice over Bob, then Alice *might just be* the Condorcet winner. However, we also have intense ambiguity from the 5% of Bob supporters who did not rank a second choice. The result between Alice and Clark is therefore also exceptionally close and uncertain, and it's entirely possible that we actually have a Condorcet cycle on our hands.
+But if just 12 of the Clark bullet voters, who maybe hated both Bob and Alice enough to rank neither, slightly preferred Alice over Bob, then Alice *might just be* the Condorcet winner. However, we also have intense ambiguity from the 5% of Bob supporters who did not rank a second choice. The result between Alice and Clark is therefore also exceptionally close and uncertain, and it's entirely possible that we actually have a Condorcet cycle on our hands.
 
 This example is modeled after the [real Alaska 2022 special election](https://abif.electorama.com/id/2022-08-16_Alaska-U.S._Representative_(Special_General)#pairwise). Bob here is a stand-in for Republican Nick Begich, who many Condorcetists believe was the true Condorcet winner. However, his theoretical matchup against Democrat Mary Peltola, the eventual ranked-choice winner and Alice analogue, was also made ambiguous by heavy bullet voting by Sarah Palin supporters. Palin, like Clark, also acted as a spoiler. And while many of those Palin supporters would have almost surely preferred the other Republican candidate, Begich, over Peltola, we cannot know for certain due to the incomplete rankings.
 
