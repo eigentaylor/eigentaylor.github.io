@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-the-gibbard-satterthwaite-theorem",
+        },{id: "post-approval-is-the-perfect-condorcet-method",
+        
+          title: "Approval is the Perfect Condorcet Method",
+        
+        description: "Approval is a perfect Condorcet method, and I have permanently solved the Condorcet paradox. April Fools!",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/condorcet-approval/";
+          
+        },
+      },{id: "post-the-gibbard-satterthwaite-theorem",
         
           title: "The Gibbard-Satterthwaite Theorem",
         
