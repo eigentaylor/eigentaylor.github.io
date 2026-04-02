@@ -26,8 +26,6 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-$$\exp(x)=\sum_{n=0}^\infty \frac{x^n}{n!}$$
-
 my current obsession is approval voting and electoral systems. i also like linear algebra.
 
 [here are some math posts ive written if you want to look at them i guess](./blog){:target="_blank"}
@@ -40,6 +38,7 @@ my best blog posts related to approval voting:
 
 - [A Practical Case for Approval Voting](./blog/practicalapproval){:target="_blank"}
 - [It's Time to Ditch RCV, Embrace Approval Voting](./blog/ditch-rcv){:target="_blank"}
+- [Approval is the "Perfect" Condorcet Method](./blog/condorcet-approval){:target="_blank"}
 - [Approval Voting is the Only Internally Consistent Cardinal Method](./blog/consistentcardinal){:target="_blank"}
 
 personal favorites:
