@@ -170,11 +170,11 @@ Since STAR voting is a 0 to 5 score system, by the above theorem, it is not SCC.
 
 Take this particular example with three candidates A, B, and C, and 11 voters:
 
-| Number of Voters | Score for A | Score for B | Score for C | Ranking |
-|------------------|-------------|-------------|-------------|---------|
-| 5 | 1 | 0 | 5 | C > A > B |
-| 4 | 1 | 5 | 0 | B > A > C |
-| 2 | 5 | 1 | 0 | A > B > C |
+| Number of Voters | Score for A | Score for B | Score for C | Ranking   |
+|------------------|-------------|-------------|-------------|-----------|
+| 5                | 1           | 0           | 5           | C > A > B |
+| 4                | 1           | 5           | 0           | B > A > C |
+| 2                | 5           | 1           | 0           | A > B > C |
 
 If we look at the head-to-head match-ups:
 
