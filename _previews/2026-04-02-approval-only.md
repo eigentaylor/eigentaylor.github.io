@@ -147,6 +147,8 @@ All proposed systems *claim* to solve this problem. But one system stands out in
 
 On the surface, RCV seems to be a solution. Maybe not as good as some others, but is it actively worse than Choose-one? I would argue that it is.
 
+The most immediate way to see that RCV fails to address vote splitting is to realize that your vote only supports a single candidate at any given time. You cannot fix choose-one voting by just iterating elections where you can still only support one candidate. But it gets much worse than that.
+
 [As I have previously argued](../ditch-rcv){:target="_blank"}, RCV actually makes the spoiler problem *worse* in an insidious way. Because the promise is that it eliminates vote splitting, when it actually *does not*. By pure luck, Republicans have gotten the short end of the stick twice.
 
 Consider this example:
@@ -161,6 +163,22 @@ Consider this example:
 In this scenario, candidate $B$ would actually be eliminated in the first round of RCV despite being the Condorcet winner--only getting 30 votes while $C$ would advance with 31 and $A$ would advance with 39. If just a single $C$ voter had lied and ranked $B$ first instead of $C$, then $B$ would have advanced instead of $C$ *and won*. By voting sincerely for $C>B>A$, these voters elected $A$.
 
 That is not a solution to vote splitting. The $C$ voters, and $C$ themselves, were essentially lied to. They were told that they could safely rank their favorite first, and if they couldn't win then their votes would transfer. What they *weren't* told was the truth: if their favorite can't win, then ranking them first can cause their viable back-up to *lose* and directly elect their worst nightmare.
+
+The insidious part is not that RCV gives worse outcomes than Choose-one, it's that it promises to fix problems it objectively hasn't, and that leads to voters and candidates behaving in ways that the system cannot sustain, leading to bad outcomes.
+
+For all of the faults and issues with Choose-one voting, we have gotten pretty good at dealing with them. Voters are now conditioned to vote only for viable candidates. We have primaries to narrow the field so similar candidates don't split the vote, and candidates often drop out when they realize they have no chance. Choose-one isn't *good*, but it doesn't pretend to be.
+
+RCV, on the other hand, pretends to solve all the problems, gives false promises that lead to similar poor outcomes, and then voters become disillusioned and rightly upset when they realize they were lied to.
+
+Approval, Condorcet, and STAR voting all avoid this problem because your support for multiple candidates is counted simultaneously. And all three systems are quite robust [in simulations](https://electionscience.github.io/vse-sim/VSEbasic/).
+
+| System    | VSE Range |
+|-----------|-----------|
+| STAR      | 91%-98%   |
+| Condorcet | 86%-98%   |
+| Approval  | 89%-95%   |
+| RCV       | 79%-92%   |
+| Choose-one| ~75%      |
 
 ## The Condorcet Criterion
 
