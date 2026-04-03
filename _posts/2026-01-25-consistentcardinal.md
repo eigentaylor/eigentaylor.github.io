@@ -168,20 +168,21 @@ STAR voting is a popular cardinal-esque voting system that seems to attempt to f
 
 Since STAR voting is a 0 to 5 score system, by the above theorem, it is not SCC. However, we can show that the runoff does not fix the underlying legitimacy issues that arise from SCC violations, nor does it guarantee that the Condorcet winner induced by the ballots will win.
 
-Take this particular example with three candidates A, B, and C, and 5 voters:
+Take this particular example with three candidates A, B, and C, and 11 voters:
 
 | Number of Voters | Score for A | Score for B | Score for C | Ranking |
-|------------------|-------------|-------------|-------------|----------|
-| 3 | 5 | 4 | 3 | A > B > C |
-| 2 | 0 | 3 | 5 | C > B > A |
+|------------------|-------------|-------------|-------------|---------|
+| 5 | 1 | 0 | 5 | C > A > B |
+| 4 | 1 | 5 | 0 | B > A > C |
+| 2 | 5 | 1 | 0 | A > B > C |
 
 If we look at the head-to-head match-ups:
 
 | Match-up | Winner | Vote Count |
-|---------|--------|------------|
-| A vs B | A | 3 to 2 |
-| A vs C | A | 3 to 2 |
-| B vs C | B | 3 to 2 |
+|----------|--------|------------|
+| A vs B | A | 7 to 4 |
+| A vs C | A | 6 to 5 |
+| B vs C | B | 6 to 5 |
 
 Therefore, A is the Condorcet winner and C is the Condorcet loser.
 
@@ -189,13 +190,13 @@ When we add up the scores, however, something odd happens:
 
 | Candidate | Total Score |
 |-----------|-------------|
-| A | $$3\cdot5 + 2\cdot0 = 15$$ |
-| B | $$3\cdot4 + 2\cdot3 = 18$$ |
-| C | $$3\cdot3 + 2\cdot5 = 19$$ |
+| A         | $$5\cdot1 + 4\cdot1 + 2\cdot5 = 19$$ |
+| B         | $$5\cdot0 + 4\cdot5 + 2\cdot1 = 22$$ |
+| C         | $$5\cdot5 + 4\cdot0 + 2\cdot0 = 25$$ |
 
 We get that the Condorcet loser C has the highest total score, while the Condorcet winner A has the lowest total score. Thus, in a regular cardinal system, C would be declared the winner, despite being the Condorcet loser induced by the ballots. This would be an extreme violation of internal consistency, since a majority of voters would have preferred both A and B over C.
 
-In STAR voting, however, we take the top two candidates by total score (B and C) and have a runoff. In the runoff, B beats C by a vote of 3 to 2, so B is declared the winner. While this prevents the Condorcet loser from ever winning, we still have two major problems:
+In STAR voting, however, we take the top two candidates by total score (B and C) and have a runoff. In the runoff, B beats C by a vote of 6 to 5, so B is declared the winner. While this prevents the Condorcet loser from ever winning, we still have two major problems:
 
 1. The Condorcet winner A still loses, despite having a legitimate claim to victory over both B and C.
 2. C got the highest total score, but lost in the runoff. This gives them a legitimate claim to victory over A and B, since they got the highest total score, despite fewer voters preferring them over the other two alternatives.
@@ -210,15 +211,15 @@ Consider the following profile (after un-normalizing):
 
 | Number of Voters | Score for A | Score for B | Preference |
 |------------------|-------------|-------------|------------|
-| 9,999 | 10,000 | 9,999 | A > B |
-| 1 | 0 | 10,000 | B > A |
+| 9,999            | 10,000      | 9,999       | A > B      |
+| 1                | 0           | 10,000      | B > A      |
 
 Here, A beats B by 9,999 to 1 (99.99% of voters prefer A over B), but B has a higher total score:
 
-| Candidate | Total Score |
-|-----------|-------------|
-| A | $$1\cdot0 + 9,999\cdot10,000 = 99,990,000$$ |
-| B | $$1\cdot10,000 + 9,999\cdot9,999 = 99,990,001$$ |
+| Candidate | Total Score                                     |
+|-----------|-------------------------------------------------|
+| A         | $$1\cdot0 + 9,999\cdot10,000 = 99,990,000$$     |
+| B         | $$1\cdot10,000 + 9,999\cdot9,999 = 99,990,001$$ |
 
 giving B a higher total score than A by 1 point, despite nearly all voters preferring A over B. The greater the granularity of the scoring system (the closer s is to 1), the worse majority rule can be violated.
 
