@@ -654,11 +654,6 @@ ninja.data = [{
           description: "How the leader rule induces a graph and dynamical system on candidate perceptions.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/leader-dynamics/";
-            },},{id: "previews-arrow-39-s-impossibility-theorem",
-          title: 'Arrow&amp;#39;s Impossibility Theorem',
-          description: "Walkthrough and proof of the theorem that proves ranked voting systems cannot satisfy seemingly reasonable properties.",
-          section: "Previews",handler: () => {
-              window.location.href = "/preview/arrows/";
             },},{id: "previews-approval-is-a-condorcet-method",
           title: 'Approval is a Condorcet Method',
           description: "Approval is the perfect Condorcet method, and I have permanently solved the Condorcet paradox. April Fools!",
@@ -674,6 +669,11 @@ ninja.data = [{
           description: "Approval is a perfect Condorcet method, and I have permanently solved the Condorcet paradox. April Fools!",
           section: "Previews",handler: () => {
               window.location.href = "/preview/condorcet-approval/";
+            },},{id: "previews-arrow-39-s-impossibility-theorem",
+          title: 'Arrow&amp;#39;s Impossibility Theorem',
+          description: "Walkthrough and proof of the theorem that proves ranked voting systems cannot satisfy seemingly reasonable properties.",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/arrows/";
             },},{id: "previews-jordan-canonical-form-made-easier-part-1",
           title: 'Jordan Canonical Form Made Easier Part 1',
           description: "not easy. just like... easier...",
