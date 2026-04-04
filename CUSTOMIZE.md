@@ -26,6 +26,7 @@ Here we will give you some tips on how to customize the website. One important t
     - [Configuring external service URLs](#configuring-external-service-urls)
   - [Creating new pages](#creating-new-pages)
   - [Creating new blog posts](#creating-new-blog-posts)
+    - [Theorem references and appendix proofs](#theorem-references-and-appendix-proofs)
   - [Creating new projects](#creating-new-projects)
   - [Adding some news](#adding-some-news)
   - [Adding Collections](#adding-collections)
