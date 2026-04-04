@@ -19,10 +19,10 @@ authors:
 toc:
   - name: Introduction
   - name: The Taylor Criteria
+  - name: Legitimacy
+  - name: Practicality
+  - name: Outcomes and the End of Vote Splitting
     subsections:
-      - name: Legitimacy
-      - name: Practicality
-      - name: Outcomes and the End of Vote Splitting
       - name: Expressiveness
   - name: Conclusion
   - name: References
@@ -126,13 +126,15 @@ STAR and Condorcet are... fine. Better than RCV, certainly. There is no central 
 | STAR       | $n^2\sim O(n^2)$              | 361 or ~190               |
 | RCV        | $O(n!)$                       | 330,665,665,962,403,999   |
 
-Optimizations could be made to cut the numbers for STAR and Condorcet tabulations by about a half. For example, counting the *margins* of each matchup, rather than the raw count in each. But RCV is absurdly impractical in this regard. In the actual Portland election, voters were restricted to ranking up to 6 candidates, which brings the number down to just... 21,029,599...
+Optimizations could be made to cut the numbers for STAR and Condorcet tabulations by about a half. For example, counting the *margins* of each matchup, rather than the raw count in each. But RCV is absurdly impractical in this regard. In the actual Portland election, voters were restricted to ranking up to 6 candidates, which brings the number down to just... 21,029,599... Hard to post all of those possibilities on the high school gymnasium doors for independent verification of the tabulation.
 
 $$21,029,599=\sum_{k=1}^{6} \frac{19!}{(19-k)!} $$
 
 $$\sum_{k=1}^{19} \frac{19!}{(19-k)!} = \text{floor}(e \cdot 19!) $$
 
 Which gives us that lovely astronomical number of possible rankings that the RCV tabulation would need to consider if voters were allowed to rank all 19 candidates. Indeed, the number of actual cast ballots would be a small subset of that number, but there is no way that a single precinct could realistically enumerate and tally all of those possibilities. Central tabulation is vital under RCV.
+
+And Central tabulation has **[big problems](https://oaklandside.org/2023/01/05/recount-for-real-county-supervisor-calls-for-an-independent-recount-of-oaklands-ranked-choice-elections/)**. The Oakland RCV case shows just how important precinct summability are for the legitimacy of the results. A mistakenly checked box caused counting errors that yielded the wrong winner that took four months and a lawsuit to resolve.
 
 When compared to RCV, Condorcet and STAR really do not look so bad. But both Approval and Plurality are the kings of the category.
 
@@ -144,7 +146,9 @@ When compared to RCV, Condorcet and STAR really do not look so bad. But both App
 | STAR       | Moderate     |
 | RCV        | Awful        |
 
-We can also talk about practicality in terms of how easy it is for a voter to use. However, I would argue that wouldn't really change my placement of these systems. STAR an Condorcet both use more complex ballots. While the Ranked ballot has been studied for hundreds of years, and the literature on Approval is quite extensive, STAR is still quite young and untested. I am not convinced that STAR is so much simpler than a Ranked ballot, though maybe it is marginally, to make it meaningfully better than Condorcet.
+We can also talk about practicality in terms of how easy it is for a voter to use. However, I would argue that wouldn't really change my placement of these systems. STAR and Condorcet both use more complex ballots. While the Ranked ballot has been studied for hundreds of years, and the literature on Approval is quite extensive, STAR is still quite young and untested. I am not convinced that STAR is so much simpler than a Ranked ballot, though maybe it is marginally, to make it meaningfully better than Condorcet.
+
+But there *are* serious logistical concerns with ranked ballots beyond just central tabulation. [MIT](https://electionlab.mit.edu/articles/effect-ranked-choice-voting-maine) found that RCV lead to significant increases in time to fill out ballots, and significantly lower levels of overall satisfaction with the voting process and a marked decrease in confidence regarding the integrity of the election results. The data also showed a heightened perception among voters that the process was "slanted" against their specific political party. This was about RCV and not Condorcet, but I am personally worried about logistical concerns of voting systems that require voters to rank candidates.
 
 ## Outcomes and Vote Splitting
 
@@ -179,6 +183,8 @@ RCV, on the other hand, pretends to solve all the problems, gives false promises
 
 Approval, Condorcet, and STAR voting all avoid this problem because your support for multiple candidates is counted simultaneously. And all three systems are quite robust [in simulations](https://electionscience.github.io/vse-sim/VSEbasic/).
 
+Before we reveal the numbers, we should be clear that a voting systems changes all aspects of elections, including who runs, who comes out to vote, and who is perceived as viable. But VSE attemps to give us the best way to compare approximately how well the true will of the voters is reflected in the outcomes.
+
 | System     | VSE Range |
 |------------|-----------|
 | STAR       | 91%-98%   |
@@ -187,27 +193,29 @@ Approval, Condorcet, and STAR voting all avoid this problem because your support
 | RCV        | 79%-92%   |
 | Choose-one | ~75%      |
 
-These numbers should be taken with a grain of salt. Particularly, Approval is difficult to quantify because how a voter translates a ranking or utilities to Approvals is heavily dependent on strategy.
+These numbers should be taken with a grain of salt. Particularly, Approval is difficult to quantify because how a voter translates a ranking or utilities to Approvals is heavily dependent on strategy. It's hard to directly compare the percentages, but the range gives us a rough heuristic in which we can evaluate approximately how do two systems stack up in terms of pure outcomes.
 
-But this is where Choose-one completely fails. While it *is* practical, and it gives the winner some level of legitimacy, it simply fails to provide solid outcomes. This is why I don't think that Choose-one is something we should settle for.
+And this is where Choose-one completely fails. While it *is* practical, and it gives the winner some level of legitimacy, it simply fails to provide solid outcomes. This is why I don't think that Choose-one is something we should settle for.
 
 This is also where the arguments for STAR and Condorcet are at their strongest, I think. But also where Approval finally wins out clearly. STAR and Condorcet give excellent outcomes. They allow for expression and then treat that data well. STAR attempts to mitigate some general issues of strategy in expressive SCORE systems with the runoff step, and the Condorcet winner is *usually* a strong candidate.
 
-But here's the thing. Approval is basically comparable. The difference between 98% and 95% in maximum VSE is quite negligible, and Approval also comes with significantly better legitimacy and practicality guarantees. So I have to ask: why go for that extra 3% in maximum VSE when Approval has all the other benefits we have discussed?
+But here's the thing: Approval is basically comparable. The difference between the VSE ranges in Approval and these other systems is quite negligible, and Approval also comes with significantly better legitimacy and practicality guarantees. So I have to ask: why go for marginal VSE improvements when Approval has all the other benefits we have discussed?
 
 I am simply not convinced that the marginal gains in outcomes from these more complex systems are worth the *risk* that comes from trying to convince voters and election officials to adopt a more complicated system that is harder to explain, harder to implement, and more prone to misunderstandings and admit potential crises of legitimacy.
 
-Anytime I hear someone advocate for STAR voting in particular, I hear the pitch and wonder "but... why not just use Approval?" It seems like STAR is trying to solve a problem that Approval already solves quite well, with only a small potential gain in outcome quality at the cost of added complexity and potential voter confusion.
+Anytime I hear someone advocate for STAR voting in particular, I hear the pitch and wonder "but... why not just use Approval?" It solves the same problems, but in a simpler way. It seems to me like STAR is trying to solve a problem that Approval already solves quite well, with only a small potential gain in outcome quality at the cost of added complexity and potential voter confusion.
 
 ### Expressiveness
 
-I can only assume the reasoning is something along the lines of "expressiveness". That these more expressive systems *feel* better to (some) voters than treating the candidates you like and don't like equally. But, admittedly anecdotally, many of the people I have talked to, who aren't political junkies, don't exactly find the prospect of ranking candidates or scoring them particularly appealing. The idea of being able to support or vote for multiple candidates equally generally seems to land quite well. Especially since many of them don't feel "tuned in" enough to feel like they'd be giving meaningful distinctions between candidates if they had to rank or score them.
+I can only assume the reasoning is something along the lines of "expressiveness". That these more expressive systems *feel* better to (some) voters than treating the candidates you like and don't like equally. That it collects "better" information to help deliver better outcomes.
 
-It's arguably a lot easier to say "yes, I would support this candidate" or "no, I do not want to support them" than to decide if a candidate is a 3/5 or a 4/5, or deciding who is their 6th and 7th favorite. By forcing voters who aren't deeply engaged in politics to make fine-grained distinctions between candidates they may not feel they know well enough to evaluate, these systems risk collecting noise in the ballot data that can then propagate through the tabulation and affect the outcome in ways that don't reflect genuine voter preferences.
+But, admittedly anecdotally, many of the people I have talked to, who aren't political junkies, don't exactly find the prospect of ranking candidates or scoring them particularly appealing. The idea of being able to support or vote for multiple candidates equally generally seems to land quite well. Especially since many of those I talk to don't feel "tuned in" enough to feel like they'd be giving meaningful distinctions between candidates if they had to rank or score them.
 
-This is not to say STAR would be *bad*. I literally don't know because it's seen such limited use in real elections and the literature is so sparse. From my perspective, I just do not understand the appeal for STAR over Approval. I am simply not yet impressed. I am not yet convinced. The solution in this moment seems quite obvious: let's start with Approval and go from there.
+It's arguably a lot easier to say "yes, I would support this candidate" or "no, I do not want to support them" than to decide if a candidate is a 3/5 or a 4/5, or deciding who is their 5th and 6th favorite. By forcing voters who aren't deeply engaged in politics to make fine-grained distinctions between candidates they may not feel they know well enough to evaluate, these systems risk collecting noise rather than meaningful data.
 
-Adopting Approval does not exclude later adoption of other systems. But pushing for something too far outside of the Overton window, only for it to face backlash for being too new or complex, *does* make it harder to keep the reforms in place. And if Approval is not firmly within the window, how can you argue that STAR or Condorcet *are*?
+This is not to say STAR would be *bad*. I literally don't know because it's seen such limited use in real elections and the literature is so sparse. From my perspective, I just do not understand the appeal for STAR over Approval in a *practical* sense. I am simply not yet impressed. I am not yet convinced. The solution in this moment seems quite obvious: let's start with Approval and go from there.
+
+Adopting Approval does not exclude later adoption of other systems. But pushing for something too far outside of the Overton window, only for it to face backlash for being too new or complex, *does* make it harder to keep the reforms in place, or to try again later. And if Approval is not firmly within the window, how can you argue that STAR or Condorcet *are*?
 
 Perhaps, after we whet the appetite for more expressive systems by showing voters that Approval voting can improve the outcomes and solve many of the problems we face as a nation, then we can start experimenting with more complex systems. But, at this current moment, Approval seems like the obvious place to start: it is simple, it is practical, it is easy to explain, and it already delivers outcomes that are very close to what STAR or Condorcet would deliver without the added complexity and risk.
 
@@ -229,18 +237,26 @@ The final scoreboard is as follows:
 
 The choice seems clear to me. By making Approval voting the *bridge* to other, more expressive methods, we give ourselves the best chance to make electoral reform *stick*. Moving from Approval to something like STAR or Condorcet is much more feasible than jumping straight from choose-one plurality to STAR or Condorcet, which would likely provoke significant resistance due to the perceived complexity and unfamiliarity of those systems.
 
-Approval voting is the *clear* first step we need to make in electoral reform.
+[RCV has utterly failed, and needs to go](../ditch-rcv){:target="_blank"}, and I think we need to rally around Approval voting before attempting to push for more complex reforms like STAR or Condorcet. RCV sandbagged better methods like Approval, ignoring the warnings and evidence from experts, and in doing so has set back the Electoral Reform movement. We cannot repeat this mistake again by expecting another untested system to succeed where RCV failed without first building a foundation of public trust and understanding through a simpler, proven method like Approval voting.
+
+Approval voting is the *clear* first step we need to make in electoral reform. We should assume we have *one chance* to get this right, and stand together behind it before backlash leads to a successful ban on all systems besides Choose-one, as the existing ["Make Elections Great Again Act"](https://ballot-access.org/2026/02/01/congressional-bill-to-ban-ranked-choice-voting-in-federal-elections-2/) threatens to do.
 
 ## References
 
-Ballotpedia. (2026). *Ranked-choice voting (RCV)*. [https://ballotpedia.org/Ranked-choice_voting_(RCV)](https://ballotpedia.org/Ranked-choice_voting_(RCV)){:target="_blank"}
+Ballot Access News. (2026, February 1). *Congressional Bill to Ban Ranked Choice Voting in Federal Elections*. [https://ballot-access.org/2026/02/01/congressional-bill-to-ban-ranked-choice-voting-in-federal-elections-2/](https://ballot-access.org/2026/02/01/congressional-bill-to-ban-ranked-choice-voting-in-federal-elections-2/)
 
-Ballotpedia. (2026). *Indiana becomes the 19th state to ban ranked-choice voting*. [https://news.ballotpedia.org/2026/02/27/indiana-becomes-the-19th-state-to-ban-ranked-choice-voting/](https://news.ballotpedia.org/2026/02/27/indiana-becomes-the-19th-state-to-ban-ranked-choice-voting/){:target="_blank"}
+Ballotpedia. (2026). *Ranked-choice voting (RCV)*. [https://ballotpedia.org/Ranked-choice_voting_(RCV)](https://ballotpedia.org/Ranked-choice_voting_(RCV))
 
-Quinn, J. (2017). Voter Satisfaction Efficiency (VSE) summary. Center for Election Science. [https://electionscience.github.io/vse-sim/VSEbasic/](https://electionscience.github.io/vse-sim/VSEbasic/){:target="_blank"}
+Ballotpedia. (2026). *Indiana becomes the 19th state to ban ranked-choice voting*. [https://news.ballotpedia.org/2026/02/27/indiana-becomes-the-19th-state-to-ban-ranked-choice-voting/](https://news.ballotpedia.org/2026/02/27/indiana-becomes-the-19th-state-to-ban-ranked-choice-voting/)
 
-Ranked.Vote. (2009). *Burlington Mayor*. [https://ranked.vote/report/us/vt/btv/2009/03/mayor](https://ranked.vote/report/us/vt/btv/2009/03/mayor){:target="_blank"}
+BondGraham, D. (2023). *Recount for real? County supervisor calls for an independent recount of Oakland’s ranked-choice elections*. [https://oaklandside.org/2023/01/05/recount-for-real-county-supervisor-calls-for-an-independent-recount-of-oaklands-ranked-choice-elections/](https://oaklandside.org/2023/01/05/recount-for-real-county-supervisor-calls-for-an-independent-recount-of-oaklands-ranked-choice-elections/)
 
-Ranked.Vote. (2022). *Alaska At-large Congressional District*. [https://ranked.vote/report/us/ak/2022/08/cd](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"}
+MIT Election Data and Science Lab. (2023). *The Effect of Ranked Choice Voting in Maine*. [https://electionlab.mit.edu/articles/effect-ranked-choice-voting-maine](https://electionlab.mit.edu/articles/effect-ranked-choice-voting-maine)
 
-Wikipedia Contributors. (2024). *2024 Portland, Oregon, mayoral election*. Wikipedia. [https://en.wikipedia.org/wiki/2024_Portland,_Oregon,_mayoral_election](https://en.wikipedia.org/wiki/2024_Portland,_Oregon,_mayoral_election){:target="_blank"}
+Quinn, J. (2017). Voter Satisfaction Efficiency (VSE) summary. Center for Election Science. [https://electionscience.github.io/vse-sim/VSEbasic/](https://electionscience.github.io/vse-sim/VSEbasic/)
+
+Ranked.Vote. (2009). *Burlington Mayor*. [https://ranked.vote/report/us/vt/btv/2009/03/mayor](https://ranked.vote/report/us/vt/btv/2009/03/mayor)
+
+Ranked.Vote. (2022). *Alaska At-large Congressional District*. [https://ranked.vote/report/us/ak/2022/08/cd](https://ranked.vote/report/us/ak/2022/08/cd)
+
+Wikipedia Contributors. (2024). *2024 Portland, Oregon, mayoral election*. Wikipedia. [https://en.wikipedia.org/wiki/2024_Portland,_Oregon,_mayoral_election](https://en.wikipedia.org/wiki/2024_Portland,_Oregon,_mayoral_election)
