@@ -674,6 +674,11 @@ ninja.data = [{
           description: "Walkthrough and proof of the theorem that proves ranked voting systems cannot satisfy seemingly reasonable properties.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/arrows/";
+            },},{id: "previews-why-i-currently-only-support-approval",
+          title: 'Why I Currently Only Support Approval',
+          description: "Opinion piece about my thoughts on other systems like STAR, RCV, and Condorcet.",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/approval-only/";
             },},{id: "previews-jordan-canonical-form-made-easier-part-1",
           title: 'Jordan Canonical Form Made Easier Part 1',
           description: "not easy. just like... easier...",
