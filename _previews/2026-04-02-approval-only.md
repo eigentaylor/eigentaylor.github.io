@@ -173,9 +173,9 @@ Consider this example:
 | 39     | $A > B > C$ |
 | 12     | $B > A > C$ |
 | 18     | $B > C > A$ |
-| 31     | $C > A > B$ |
+| 31     | $C > B > A$ |
 
-In this scenario, candidate $B$ would actually be eliminated in the first round of RCV despite being the Condorcet winner--only getting 30 votes while $C$ would advance with 31 and $A$ would advance with 39. If just a single $C$ voter had lied and ranked $B$ first instead of $C$, then $B$ would have advanced instead of $C$ *and won*. By voting sincerely for $C>B>A$, these voters elected $A$.
+In this scenario, candidate $B$ would actually be eliminated in the first round of RCV despite being the Condorcet winner--only getting 30 votes while $C$ would advance with 31 and $A$ would advance with 39. If just a single $C$ voter had lied and ranked $B$ first instead of $C$, or just two of these voters just stayed home, then $B$ would have advanced with 31 votes instead of $C$ *and won*. By voting sincerely for $C>B>A$, these voters elected $A$.
 
 That is not a solution to vote splitting. The $C$ voters, and $C$ themselves, were essentially lied to. They were told that they could safely rank their favorite first, and if they couldn't win then their votes would transfer. What they *weren't* told was the truth: if their favorite can't win, then ranking them first can cause their viable back-up to *lose* and directly elect their worst nightmare.
 
