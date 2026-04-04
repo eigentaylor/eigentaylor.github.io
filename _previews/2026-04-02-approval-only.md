@@ -21,7 +21,7 @@ toc:
   - name: The Taylor Criteria
   - name: Legitimacy
   - name: Practicality
-  - name: Outcomes and the End of Vote Splitting
+  - name: Outcomes
     subsections:
       - name: Expressiveness
   - name: Conclusion
@@ -154,7 +154,7 @@ We can also talk about practicality in terms of how easy it is for a voter to us
 
 But there *are* serious logistical concerns with ranked ballots beyond just central tabulation. [MIT](https://electionlab.mit.edu/articles/effect-ranked-choice-voting-maine) found that RCV led to significant increases in time to fill out ballots, significantly lower levels of overall satisfaction with the voting process, and a marked decrease in confidence regarding the integrity of the election results. The data also showed a heightened perception among voters that the process was "slanted" against their specific political party. This was about RCV and not Condorcet, but I am personally worried about logistical concerns with voting systems that require voters to rank candidates.
 
-## Outcomes and Vote Splitting
+## Outcomes
 
 Vote splitting is something we're all familiar with. In a Choose-one election, your vote will only truly matter if you vote for one of the top two candidates. If you vote for a third-party or less popular candidate, your vote is effectively "wasted" in the sense that it cannot help your preferred major candidate win without also helping elect the candidate you like least. This is the classic spoiler problem that leads to strategic voting and the need to vote not for your favorite, but for the "lesser evil" among the frontrunners.
 
