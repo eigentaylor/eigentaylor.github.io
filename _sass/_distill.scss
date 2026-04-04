@@ -74,6 +74,23 @@ d-article {
     }
   }
 
+  a.proof-ref {
+    color: var(--global-theme-color) !important;
+    text-decoration: underline;
+
+    &:hover {
+      color: var(--global-hover-color) !important;
+    }
+  }
+
+  .proof-block {
+    scroll-margin-top: 80px;
+  }
+
+  .theorem-restatement {
+    scroll-margin-top: 80px;
+  }
+
   // Style taken from code blocks
   details {
     color: var(--global-text-color);

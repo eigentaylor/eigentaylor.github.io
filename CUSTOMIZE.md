@@ -318,6 +318,49 @@ If you want to create blog posts that are not ready to be published, but you wan
 
 Note that `posts` is also a collection, but it is a default collection created automatically by Jekyll. To access the posts, you can use the `site.posts` variable in your templates.
 
+### Theorem references and appendix proofs
+
+If you use Distill posts and add `theorems: true` to front matter, theorem headers can be auto-numbered and cross-referenced.
+
+1. Label a theorem in the main text:
+
+  ```markdown
+  > **Theorem:** Main statement. \label{bigtheorem}
+  ```
+
+1. Add a proof link in the main text using either style:
+
+  ```markdown
+  [Proof in appendix](#proof-bigtheorem)
+  ```
+
+  ```markdown
+  \proofref{bigtheorem}
+  ```
+
+1. Restate in the appendix without consuming a new theorem number:
+
+  ```markdown
+  > **Theorem \ref{bigtheorem}:** (Restated statement)
+   
+  > **Proof:** ...
+  ```
+
+The restatement reuses the original theorem number (for example, "Theorem 2") instead of creating a new one.
+
+If your proof block follows that restatement, it gets an automatic anchor at `#proof-bigtheorem`.
+
+1. Optional backlink from appendix to the original theorem:
+
+  ```markdown
+  [Back to theorem](#thm-bigtheorem)
+  ```
+
+Notes:
+
+- Keep theorem labels unique per page.
+- `\ref{key}` and `\proofref{key}` are not rewritten inside `code` or `pre` blocks.
+
 ## Creating new projects
 
 You can create new projects by adding new Markdown files in the [\_projects](_projects/) directory. The easiest way to do this is to copy an existing project and modify it.
