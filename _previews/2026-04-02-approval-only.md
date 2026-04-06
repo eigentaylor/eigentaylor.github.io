@@ -106,9 +106,9 @@ And let's not forget about STAR. STAR, I think, has the potential to be worse th
 
 | Number of Voters | Score for A | Score for B | Score for C | Ranking   |
 |------------------|-------------|-------------|-------------|-----------|
-| 5                | 1           | 0           | 5           | C > A > B |
-| 4                | 1           | 5           | 0           | B > A > C |
-| 2                | 5           | 1           | 0           | A > B > C |
+| 5                | 1           | 0           | 5           | C>A>B     |
+| 4                | 1           | 5           | 0           | B>A>C     |
+| 2                | 5           | 1           | 0           | A>B>C     |
 
 If you have candidate A saying "I was preferred over everyone else by a majority, but the others exaggerated and their votes counted more!" and another candidate C saying "I got the most stars! The runoff is pointless and it was rigged against me!" and the actual winner B just shrugging because they won by the rules, then that's not exactly an outcome I would imagine everyone being particularly happy with.
 
