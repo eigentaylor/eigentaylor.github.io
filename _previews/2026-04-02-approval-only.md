@@ -42,7 +42,7 @@ At this point, I am fully convinced that Approval voting is the most practical f
 
 ### The State of the Reform Movement
 
-We are in a critical moment right now. RCV is facing wide backlash and is now banned in [19 states](https://ballotpedia.org/Ranked-choice_voting_(RCV)){:target="_blank"} across the country (and has been rejected by voters in ballot propositions in red *and* blue states). The ["Make Elections Great Again Act"](https://ballot-access.org/2026/02/01/congressional-bill-to-ban-ranked-choice-voting-in-federal-elections-2/) is currently making its way through Congress and would ban *any voting system except Choose-one*. Voters are increasingly skeptical of electoral reform, and I think we have *one* chance to pivot.
+We are in a critical moment right now. RCV is facing wide backlash and is now banned in [19 states](https://ballotpedia.org/Ranked-choice_voting_(RCV)){:target="_blank"} across the country (and has been rejected by voters in ballot propositions in red *and* blue states). The ["Make Elections Great Again Act"](https://ivn.us/posts/11-ways-mega-act-congress-tries-control-how-you-vote-2026-02-06) is currently accumulating sponsors and would ban *any voting system except Choose-one*, despite being framed specifically to target RCV. Other systems are being brought into the crossfire, and voters are increasingly skeptical of electoral reform. We might have *one* chance to pivot.
 
 If we make the wrong move now and rally behind a system that is too complex, too new, or insufficiently tested, and the voters reject it, then we may lose the opportunity to make meaningful electoral reform progress in the near future. The political capital and public trust required to push through reform are finite and waning. Let's not squander them on a system that may fail to gain public trust when we have a tested, simple, and provably legitimate option right in front of us: Approval voting.
 
@@ -275,17 +275,17 @@ Adopting Approval does not exclude later adoption of other systems. But pushing 
 
 Perhaps, after we whet the appetite for more expressive systems by showing voters that Approval voting can improve the outcomes and solve many of the problems we face as a nation, then we can start experimenting with more complex systems. But, at this current moment, Approval seems like the obvious place to start: it is simple, it is practical, it is easy to explain, and it already delivers outcomes that are very close to what STAR or Condorcet would deliver without the added complexity and risk.
 
-Approval voting is the *clear* first step we need to make in electoral reform. We should assume we have *one chance* to get this right, and stand together behind it before backlash leads to a successful ban on all systems besides Choose-one, as the existing ["Make Elections Great Again Act"](https://ballot-access.org/2026/02/01/congressional-bill-to-ban-ranked-choice-voting-in-federal-elections-2/) threatens to do.
+Approval voting is the *clear* first step we need to make in electoral reform. We should assume we have *one chance* to get this right, and stand together behind it before backlash leads to a successful ban on all systems besides Choose-one, as the existing ["Make Elections Great Again Act"](https://ivn.us/posts/11-ways-mega-act-congress-tries-control-how-you-vote-2026-02-06) threatens to do.
 
 ## References
-
-Ballot Access News. (2026, February 1). *Congressional Bill to Ban Ranked Choice Voting in Federal Elections*. [https://ballot-access.org/2026/02/01/congressional-bill-to-ban-ranked-choice-voting-in-federal-elections-2/](https://ballot-access.org/2026/02/01/congressional-bill-to-ban-ranked-choice-voting-in-federal-elections-2/)
 
 Ballotpedia. (2026). *Ranked-choice voting (RCV)*. [https://ballotpedia.org/Ranked-choice_voting_(RCV)](https://ballotpedia.org/Ranked-choice_voting_(RCV))
 
 Ballotpedia. (2026). *Indiana becomes the 19th state to ban ranked-choice voting*. [https://news.ballotpedia.org/2026/02/27/indiana-becomes-the-19th-state-to-ban-ranked-choice-voting/](https://news.ballotpedia.org/2026/02/27/indiana-becomes-the-19th-state-to-ban-ranked-choice-voting/)
 
 BondGraham, D. (2023). *Recount for real? County supervisor calls for an independent recount of Oakland’s ranked-choice elections*. [https://oaklandside.org/2023/01/05/recount-for-real-county-supervisor-calls-for-an-independent-recount-of-oaklands-ranked-choice-elections/](https://oaklandside.org/2023/01/05/recount-for-real-county-supervisor-calls-for-an-independent-recount-of-oaklands-ranked-choice-elections/)
+
+Griffiths, S. (2026, February 6). *11 ways the MEGA Act in Congress tries to control how you vote*. Independent Voter News. [https://ivn.us/posts/11-ways-mega-act-congress-tries-control-how-you-vote-2026-02-06](https://ivn.us/posts/11-ways-mega-act-congress-tries-control-how-you-vote-2026-02-06)
 
 MIT Election Data and Science Lab. (2023). *The Effect of Ranked Choice Voting in Maine*. [https://electionlab.mit.edu/articles/effect-ranked-choice-voting-maine](https://electionlab.mit.edu/articles/effect-ranked-choice-voting-maine)
 
