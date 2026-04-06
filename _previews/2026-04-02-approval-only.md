@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: Why I Currently Only Support Approval
-date: 2026-04-06
+date: 2026-04-05
 description: Opinion piece about my thoughts on other systems like STAR, RCV, and Condorcet.
 giscus_comments: true
 importance: 3
