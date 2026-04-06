@@ -126,7 +126,7 @@ Why, then, should we gamble our second chance on a system like STAR, while the h
 
 ## Practicality
 
-Now, I think it's hard to argue that Approval and Choose-one voting are the most practical systems to use in terms of tabulation. There is simply no beating the fact that all you need to count is the total check marks each candidate gets. No need for pairwise tallies, no complicated elimination rounds, no runoff rounds, and no multi-stage tabulations. You literally just add up the marks and whoever has the most wins.
+Now, I think it's hard to argue that Approval and Choose-one voting are not the most practical systems to use in terms of tabulation. There is simply no beating the fact that all you need to count is the total check marks each candidate gets. No need for pairwise tallies, no complicated elimination rounds, no runoff rounds, and no multi-stage tabulations. You literally just add up the marks and whoever has the most wins.
 
 That is as simple as it gets, and that simplicity is a huge part of why I think Approval is the correct next step system for the current moment. The ballot is exactly, or almost exactly, the same as a Choose-one ballot, with the only difference being that instead of marking a single candidate, you can mark as many as you approve of. That minimal change keeps the system extremely practical while solving the vote-splitting problem that plagues Choose-one voting. It also works on our existing machines with only a minor code change. It's even harder to spoil a ballot. Approval wins here, hands down.
 
