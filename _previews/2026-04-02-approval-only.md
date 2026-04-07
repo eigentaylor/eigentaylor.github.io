@@ -199,13 +199,13 @@ Here is an example in STAR:
 
 | Voters | $A$ Score | $B$ Score | $C$ Score |
 |--------|-----------|-----------|-----------|
-| 8      | 5         | 1         | 0         |
-| 5      | 0         | 5         | 1         |
-| 5      | 1         | 0         | 5         |
-| You    | 5         | 0         | 4         |
-| Totals | 45 or 50  | 33        | 30 or 34  |
+| 2      | 5         | 3         | 0         |
+| 3      | 0         | 5         | 2         |
+| 4      | 2         | 0         | 5         |
+| You    | 5         | 1         | 0         |
+| Totals | 18 or 23  | 21 or 22  | 26        |
 
-You can verify in this example that you would be better off staying home. If you abstain, $A$ defeats $B$ in the runoff. If you vote, $C$ defeats $A$ in the runoff. Your vote would actually cause your favorite, $A$, to lose.
+You can verify in this example that you would be better off staying home. If you abstain, $B$ defeats $C$ in the runoff. If you vote, $C$ defeats $A$ in the runoff. Your vote would change the result from your lesser evil to your worst nightmare.
 
 These failures are much more rare in STAR and Condorcet, but only Approval (and Choose-one) completely avoid them: in Approval, voting sincerely can never hurt your preferred outcome, and your single vote can only ever help elect someone you *actually vote for*. Which sounds so obvious that it shouldn't even need to be stated, but it's true. This is one way in which complexity and expressiveness in a voting system can actually make it less safe to vote.
 
