@@ -223,7 +223,7 @@ Before we reveal the numbers, we should be clear that a voting system changes al
 | Condorcet  | 86%-98%   |
 | Approval   | 89%-95%   |
 | RCV        | 79%-92%   |
-| Choose-one | ~75%      |
+| Choose-one | ~72-85%   |
 
 These numbers should be taken with a grain of salt. In particular, Approval is difficult to model because how a voter translates a ranking or utilities to approvals is heavily dependent on strategy. It's hard to directly compare the percentages, but the range gives us a rough heuristic for evaluating approximately how two systems stack up in terms of pure outcomes.
 
