@@ -225,9 +225,9 @@ Before we reveal the numbers, we should be clear that a voting system changes al
 | RCV        | 79%-92%   |
 | Choose-one | ~71-86%   |
 
-These numbers should be taken with a grain of salt. In particular, Approval is difficult to model because how a voter translates a ranking or utilities to approvals is heavily dependent on strategy. It's hard to directly compare the percentages, but the range gives us a rough heuristic for evaluating approximately how two systems stack up in terms of pure outcomes.
+These numbers should be taken with a grain of salt, and they depend on strategy assumptions. In particular, Approval is difficult to model because how a voter translates a ranking or utilities to approvals is heavily dependent on strategy. It's hard to directly compare the percentages, but the range gives us a rough heuristic for evaluating approximately how two systems stack up in terms of pure outcomes when we vary strategic behavior.
 
-And this is where Choose-one completely fails. While it *is* practical, and it gives the winner some level of legitimacy, it simply fails to provide solid outcomes. This is why I don't think that Choose-one is something we should settle for.
+And this is where Choose-one completely fails. It may be shocking that its range overlaps so much with RCV, but the upper range for Choose-one is primarily when voters are all being strategic. While it *is* practical, and it gives the winner a relatively strong level of legitimacy, it simply fails to provide solid outcomes. This is why I don't think that Choose-one is something we should settle for.
 
 This is also where the arguments for STAR and Condorcet are at their strongest, I think. But also where Approval finally wins out clearly. STAR and Condorcet give excellent outcomes. They allow for expression and then treat that data well. STAR attempts to mitigate some general issues of strategy in expressive SCORE systems with the runoff step, and the Condorcet winner is *usually* a strong candidate.
 
