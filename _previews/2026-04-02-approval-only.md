@@ -140,7 +140,7 @@ STAR and Condorcet are... fine. Better than RCV, certainly. There is no central 
 | Approval   | $n$                           | 19                        |
 | Condorcet  | $n \cdot (n-1)\sim O(n^2)$    | 342 or ~171               |
 | STAR       | $n^2\sim O(n^2)$              | 361 or ~190               |
-| RCV        | $O(n!)$                       | 330,665,665,962,403,999   |
+| RCV        | $O(n!)$                       | $3.3 \times 10^{17}$      |
 
 Optimizations could be made to cut the numbers for STAR and Condorcet tabulations by about a half. For example, counting the *margins* of each matchup, rather than the raw count in each. But RCV is absurdly impractical in this regard. In the actual Portland election, voters were restricted to ranking up to 6 candidates, which brings the number down to just... 21,029,599... Hard to post all of those possibilities on the high school gymnasium doors for independent verification of the tabulation.
 
