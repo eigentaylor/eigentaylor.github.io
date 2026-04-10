@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: A Guide to Approval Voting Strategy
-date: 2026-04-01
+date: 2026-04-09
 description: An explanation of the leader rule strategy in approval voting, and its positive ramifications.
 giscus_comments: true
 importance: 2
