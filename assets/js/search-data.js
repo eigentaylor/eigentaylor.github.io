@@ -664,11 +664,6 @@ ninja.data = [{
           description: "Approval is a perfect Condorcet method, and I have permanently solved the Condorcet paradox. April Fools!",
           section: "Previews",handler: () => {
               window.location.href = "/preview/condorcet-approval/";
-            },},{id: "previews-why-i-currently-only-support-approval",
-          title: 'Why I Currently Only Support Approval',
-          description: "Why Approval voting is the only system I trust to push for right now.",
-          section: "Previews",handler: () => {
-              window.location.href = "/preview/approval-only/";
             },},{id: "previews-a-guide-to-approval-voting-strategy",
           title: 'A Guide to Approval Voting Strategy',
           description: "An explanation of the leader rule strategy in approval voting, and its positive ramifications.",
@@ -684,6 +679,11 @@ ninja.data = [{
           description: "Walkthrough and proof of the theorem that proves ranked voting systems cannot satisfy seemingly reasonable properties.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/arrows/";
+            },},{id: "previews-why-i-currently-only-support-approval",
+          title: 'Why I Currently Only Support Approval',
+          description: "Why Approval voting is the only system I trust to push for right now.",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/approval-only/";
             },},{id: "previews-jordan-canonical-form-made-easier-part-1",
           title: 'Jordan Canonical Form Made Easier Part 1',
           description: "not easy. just like... easier...",
