@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: Why I Currently Only Support Approval
-date: 2026-04-05
+date: 2026-04-11
 description: Why Approval voting is the only system I trust to push for right now.
 giscus_comments: true
 importance: 3
@@ -84,7 +84,7 @@ I think that legitimacy is one of the most important criteria for evaluating a v
 
 If a candidate wins a plurality of votes, then there is no way for a majority of voters to point to the ballots and say "we prefer someone else to the winner." This is done by an absurd level of data destruction, absolutely. But when we're trying to fix the perceived problems with Choose-one voting by moving to a more complex system like RCV, STAR, or Condorcet, we have to be aware of what we *lose*. Forgetting the objective strengths of Choose-one voting and being too ready to disregard them entirely is, I think, a mistake that many reformers make: in trying to "fix" the system, we can create new problems.
 
-Plurality has these strengths, however, as an arbitrary restriction on Approval voting. Choose-one is just Approval voting where you can only approve one candidate and get objectively worse outcomes. Approval uncaps that lack of expressiveness, without sacrificing the legitimacy and simplicity that make Choose-one so robust.
+Plurality has these strengths, however, only because it is an arbitrary restriction on Approval voting. Choose-one is just Approval voting where you can only approve one candidate and get objectively worse outcomes. Approval uncaps that lack of expressiveness, without sacrificing the legitimacy and simplicity that make Choose-one so robust.
 
 However, when legitimacy comes into the conversation, you *have* to mention Condorcet methods--methods that attempt to elect [the candidate who would beat every other candidate in a head-to-head matchup](../condorcet-approval){:target="_blank"}. I find that its importance lies less in it *needing* to be satisfied, and more in how it *cannot be violated*.
 
