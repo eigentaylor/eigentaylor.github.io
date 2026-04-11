@@ -146,7 +146,7 @@ Optimizations could be made to cut the numbers for STAR and Condorcet tabulation
 
 $$21,029,599=\sum_{k=1}^{6} \frac{19!}{(19-k)!} $$
 
-$$\sum_{k=0}^{19} \frac{19!}{(19-k)!} = \text{floor}(e \cdot 19!) $$
+$$\sum_{k=1}^{19} \frac{19!}{(19-k)!} = \text{floor}(e \cdot 19!)-1 $$
 
 Which gives us that lovely astronomical number of possible rankings that the RCV tabulation would need to consider if voters were allowed to rank all 19 candidates. Indeed, the number of actual cast ballots would be a small subset of that number, but there is no way that a single precinct could realistically enumerate and tally all of those possibilities. Central tabulation is vital under RCV.
 
