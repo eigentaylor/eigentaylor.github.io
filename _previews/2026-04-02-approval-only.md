@@ -2,7 +2,7 @@
 layout: distill
 title: Why I Currently Only Support Approval
 date: 2026-04-05
-description: Opinion piece about my thoughts on other systems like STAR, RCV, and Condorcet.
+description: Why Approval voting is the only system I trust to push for right now.
 giscus_comments: true
 importance: 3
 tags: voting
@@ -11,6 +11,8 @@ featured: false
 related_posts: true
 theorems: false
 pretty_table: true
+chart:
+  plotly: true
 authors:  
   - name: Taylor Eigen Fisher
     url: ""
@@ -20,7 +22,7 @@ toc:
   - name: Introduction
     subsections:
       - name: The State of the Reform Movement
-  - name: The Fisher Criteria
+  - name: The Bridge Criteria
   - name: Legitimacy
   - name: Practicality
   - name: Outcomes
@@ -36,7 +38,7 @@ I would say I am still rather new to the electoral reform space. I've tried my b
 
 As a mathematician, I have a soft spot for theoretical perfection. But I also love exceptional approximations that are simple and practical. I have found that if a simple model can capture the vital essence of a complex phenomenon with high fidelity, then adding complexity does not often yield significantly more accurate results. In fact, it can often lead to worse results due to overfitting, noise, and the introduction of new failure modes. This is a common theme in many areas of mathematics and science, and I find it applies just as well to electoral systems.
 
-Approval voting is the simplest possible electoral reform. It is a simple extension of the existing system, where you can approve of as many candidates as you like instead of just one. That simplicity is deceiving, and led to me initially dismissing it entirely in favor of something more complex. How could such a complicated problem as Democracy be solved by just allowing people to check more boxes? My skepticism eventually gave way once I read the [seminal 1978 paper by Brams and Fishburn](https://doi.org/10.2307/1955105) on Approval voting. I realized that sometimes, the simplest answer is genuinely the best one. By unrestricting the voters' ability to express support for multiple candidates, Approval voting is the only system that lets your ballot truly mean what it says, without putting the voter at risk.
+Approval voting is the simplest possible electoral reform. It is a minimal extension of the existing system, where you can approve of as many candidates as you like instead of just one. That simplicity is deceptive, and led to me initially dismissing it entirely in favor of something more complex. How could such a complicated problem as Democracy be solved by just allowing people to check more boxes? My skepticism eventually gave way once I read the [seminal 1978 paper by Brams and Fishburn](https://doi.org/10.2307/1955105) on Approval voting. I realized that sometimes, the simplest answer is genuinely the best one. By removing all restrictions on voters' ability to express support for multiple candidates, Approval voting is the only system that lets your ballot truly mean what it says, without putting the voter at risk.
 
 At this point, I am fully convinced that Approval voting is the most practical fix for our democracy. In this post, I want to explain my personal philosophy and most important criteria for evaluating electoral systems, and why Approval voting is the only option that checks all the boxes. This is a snapshot in time of my current thoughts as of approximately April 2026. I am open to changing my mind, and will happily update this post if that happens (as I have done before). And if you aren't convinced by my reasons and the criteria that I value, that's fine. But my framework is grounded in pure practicality and in our common goal of permanently ending Choose-one voting.
 
@@ -46,13 +48,13 @@ We are in a critical moment right now. RCV is facing wide backlash and is now ba
 
 If we make the wrong move now and rally behind a system that is too complex, too new, or insufficiently tested, and the voters reject it, then we may lose the opportunity to make meaningful electoral reform progress in the near future. The political capital and public trust required to push through reform are finite and waning. Let's not squander them on a system that may fail to gain public trust when we have a tested, simple, and provably legitimate option right in front of us: Approval voting.
 
-I am open to considering other systems in the future. If we get significant polarization diffusion and greater trust from voters to use a more complex system like STAR or Condorcet methods, then I am open to revisiting those options as viable alternatives. But in this current moment, I can only say that I support "Approval today, [insert your preferred system for the future here] tomorrow." Approval voting, I think, truly needs to be the bridge--the new baseline from which we can *then* discuss whether we want or need something supposedly "better".
+I am open to considering other systems in the future. If we get significant polarization diffusion and greater trust from voters to use a more complex system like STAR or Condorcet methods, then I would be glad to revisit those options as viable alternatives. But in this current moment, I can only say that I support "Approval today, [insert your preferred system for the future here] tomorrow." Approval voting, I think, truly needs to be the bridge--the new baseline from which we can *then* discuss whether we want or need something supposedly "better".
 
-## The Fisher Criteria
+## The Bridge Criteria
 
 The Equal Vote Coalition champions three systems: Approval, STAR, and Ranked Robin (AKA Condorcet). I, however, currently only champion one of those: Approval voting. This is not a decision I come to lightly, but rather based on what I've read in the literature, my assessment of the current political and social context in the United States, and the practical realities of what implementation involves. Based on the criteria that I feel are most important, only one system uniquely satisfies all of them.
 
-1. Legitimacy: The system must produce outcomes that the electorate can view as legitimate. If voters can point to the cast ballots and claim their losing candidate *should* have won for whatever reason, then I do not believe that system will stand up to scrutiny or maintain public trust in the democratic process when the stakes are high. And if voters cannot easily understand how their votes translate into outcomes, or why their candidate won or lost, then I believe that system is a non-starter in this current moment.
+1. Legitimacy: The system must produce outcomes that the electorate can view as legitimate. If voters can point to the cast ballots and claim their losing candidate *should* have won for whatever reason, then I do not believe that system will stand up to scrutiny or maintain public trust in the democratic process when the stakes are high. And if voters cannot easily understand how their votes translate into outcomes, or why their candidate won or lost, then I believe that system is a non-starter in this political moment.
 2. Practicality: The system must be simple enough that it can be implemented and understood by the general public in a transparent and trustworthy way. Voters must be able to easily understand how to fill out their ballots and how they will be counted, and election officials must be able to count them without introducing unnecessary complexity or opportunities for error.
 3. Outcomes: We need a system that actually leads to *good* outcomes. Radical, I know. But the main issue that causes elections to fail is *vote splitting*. A good system allows voters to express support for multiple candidates, allowing strong consensus candidates to accumulate support and win, rather than polarizing and unrepresentative options that win because the majority was split.
 
@@ -96,11 +98,11 @@ Approval fixes this issue in the simplest possible way: voters are allowed to ex
 
 And even when it's a [cardinal ballot](../consistentcardinal){:target="_blank"}, if the system can indicate that some candidate might beat the winner in a head-to-head matchup and yet still elect someone else, that is a legitimacy problem in the same sense: the electorate can point directly to the ballots and say "the data shows this other candidate would win head-to-head against the winner," and that is hard to ignore.
 
-In those posts, I have been clear that Approval gives full and complete legitimacy to the winner in every election with a single winner. When a critic of Approval tries to create an Approval pathology, it's always based on information that would *not* be visible if it were to occur in real life. When bad actors will do *anything* to try to convince their supporters the election was stolen, I am willing to champion that Approval's inability to be "proven" to fail in practice is a meaningful safeguard.
+In those posts, I have been clear that Approval gives complete legitimacy to the winner in every election with a single winner. When a critic of Approval tries to create an Approval pathology, it's always based on information that would *not* be visible if it were to occur in real life. When bad actors will do *anything* to try to convince their supporters the election was stolen, I am willing to champion that Approval's inability to be "proven" to fail in practice is a meaningful safeguard.
 
 I would even go as far as to say that the fact that a Condorcet method has cycles actually makes it *less legitimate* than Approval. Because when a Condorcet winner does not exist, you still have to make a choice about which candidate to elect, knowing that any choice will allow some (simple) majority of voters to say they wanted someone else more. Since Approval never admits a cycle, [and is provably a two-tiered Condorcet method](../condorcet-approval){:target="_blank"}, I argue it's more Condorcet than Condorcet (so long as you value the legitimacy of the Condorcet criterion more than the need to be able to express a full ranked preference, as I do).
 
-Without rehashing everything from those previous posts, I think RCV completely fails in giving its winners legitimacy. And I fear for a Condorcet method when it inevitably encounters a cycle: at which point you must choose an arbitrary tie-breaking rule which can't fix the fundamental legitimacy problem that a majority of voters can point to the ballots and say "we prefer someone else to the candidate you elected." You can't paper that over with "oh but cycles are rare". That was the argument for RCV Condorcet failures and the Center squeeze too. I don't care if a failure mode is "rare" if it's *catastrophic when it does occur*. That is why I absolutely *do not trust RCV*.
+Without [rehashing everything from those previous posts](../ditch-rcv){:target="_blank"}, I think RCV completely fails in giving its winners legitimacy. And I fear for a Condorcet method when it inevitably encounters a cycle: at which point you must choose an arbitrary tie-breaking rule which can't fix the fundamental legitimacy problem that a majority of voters can point to the ballots and say "we prefer someone else to the candidate you elected." You can't paper that over with "oh but cycles are rare". That was the argument for RCV Condorcet failures and the center squeeze too. I don't care if a failure mode is "rare" if it's *catastrophic when it does occur*. That is why I absolutely *do not trust RCV*.
 
 And let's not forget about STAR. STAR, I think, has the potential to be worse than Condorcet in this regard. In my [post about internal consistency](../consistentcardinal){:target="_blank"}, I showed that STAR can create a three-way legitimacy crisis where an apparent Condorcet winner, and the candidate with the most total stars, both lose. Here is such an election:
 
@@ -217,17 +219,70 @@ Approval, Condorcet, and STAR voting mitigate the vote splitting problem because
 
 Before we reveal the numbers, we should be clear that a voting system changes all aspects of elections, including who runs, who comes out to vote, and who is perceived as viable. But VSE attempts to give us the best way to compare, approximately, how well the true will of the voters is reflected in the outcomes. This gives a range that we can't compare directly between systems, but it does give us a sense of how robust a system is at producing outcomes that reflect the will of the electorate.
 
-| System     | VSE Range |
-|------------|-----------|
-| STAR       | 91%-98%   |
-| Condorcet  | 86%-98%   |
-| Approval   | 89%-95%   |
-| RCV        | 79%-92%   |
-| Choose-one | ~71-86%   |
+```plotly
+{
+  "data": [
+    {
+      "x": [71, 86],
+      "y": ["Choose-one", "Choose-one"],
+      "mode": "lines+markers",
+      "name": "Choose-one",
+      "line": { "width": 5 },
+      "marker": { "size": 12 }
+    },
+    {
+      "x": [79, 92],
+      "y": ["RCV", "RCV"],
+      "mode": "lines+markers",
+      "name": "RCV",
+      "line": { "width": 5 },
+      "marker": { "size": 12 }
+    },
+    {
+      "x": [89, 95],
+      "y": ["Approval", "Approval"],
+      "mode": "lines+markers",
+      "name": "Approval",
+      "line": { "width": 5 },
+      "marker": { "size": 12 }
+    },
+    {
+      "x": [86, 98],
+      "y": ["Condorcet", "Condorcet"],
+      "mode": "lines+markers",
+      "name": "Condorcet",
+      "line": { "width": 5 },
+      "marker": { "size": 12 }
+    },
+    {
+      "x": [91, 98],
+      "y": ["STAR", "STAR"],
+      "mode": "lines+markers",
+      "name": "STAR",
+      "line": { "width": 5 },
+      "marker": { "size": 12 }
+    }
+  ],
+  "layout": {
+    "title": { "text": "Voter Satisfaction Efficiency (VSE) Range by Voting System" },
+    "xaxis": {
+      "title": { "text": "VSE (%)" },
+      "range": [50, 100],
+      "ticksuffix": "%"
+    },
+    "yaxis": { "autorange": true },
+    "showlegend": false,
+    "height": 350,
+    "margin": { "l": 100 }
+  }
+}
+```
 
-These numbers should be taken with a grain of salt, and they depend on strategy assumptions. In particular, Approval is difficult to model because how a voter translates a ranking or utilities to approvals is heavily dependent on strategy. It's hard to directly compare the percentages, but the range gives us a rough heuristic for evaluating approximately how two systems stack up in terms of pure outcomes when we vary strategic behavior.
+[Source](https://electionscience.github.io/vse-sim/VSEbasic/).
 
-And this is where Choose-one completely fails. It may be shocking that its range overlaps so much with RCV, but the upper range for Choose-one is primarily when voters are all being strategic. While it *is* practical, and it gives the winner a relatively strong level of legitimacy, it simply fails to provide solid outcomes. This is why I don't think that Choose-one is something we should settle for.
+These numbers should be taken with a grain of salt, and they depend on strategy assumptions. It's hard to directly compare the percentages, but the range gives us a rough heuristic for evaluating approximately how two systems stack up in terms of pure outcomes when we vary strategic behavior.
+
+And this is where Choose-one completely fails. It may be shocking that its range overlaps so much with RCV, but the upper range for Choose-one is primarily when voters are all being strategic. While it *is* practical, and it gives the winner a (relatively) strong level of legitimacy, it simply fails to provide solid outcomes. This is why I don't think that Choose-one is something we should settle for.
 
 This is also where the arguments for STAR and Condorcet are at their strongest, I think. But also where Approval finally wins out clearly. STAR and Condorcet give excellent outcomes. They allow for expression and then treat that data well. STAR attempts to mitigate some general issues of strategy in expressive SCORE systems with the runoff step, and the Condorcet winner is *usually* a strong candidate.
 
@@ -249,11 +304,11 @@ And one clear piece of evidence for this is how much better Approval does than R
 
 In a few recent posts, I have mathematically proven that Approval is the [maximal level of ballot expressiveness that can be achieved whilst maintaining full legitimacy to the winner](../condorcet-approval){:target="_blank"}. Approval is essentially a two-tiered Condorcet method that avoids cycles, while any [scoring method with more than two tiers](../consistentcardinal){:target="_blank"} necessarily introduces the possibility of a Condorcet failure. And, given that Approval still performs extremely well in terms of outcome quality--producing results that are very close to what more expressive systems like STAR or Condorcet would produce--it seems difficult to justify the added complexity of those systems in exchange for expressiveness that opens the door to legitimacy concerns that Approval neatly avoids.
 
-This is not to say STAR would be *bad*. I literally don't know because it has seen such limited use in real elections and the literature is so sparse. From my perspective, I just do not understand the appeal of STAR over Approval in a *practical* sense. I am simply not yet impressed. I am not yet convinced. The solution in this moment seems quite obvious: let's start with Approval and go from there.
+This is not to say STAR would be *bad*. I literally don't know because it has seen such limited use in real elections and the literature is so sparse. From my perspective, I just do not understand the appeal of STAR over Approval in a *practical* sense. I am simply not yet impressed. I am not yet convinced. I am still skeptical, and worried about the failure modes.
 
 ## Conclusion
 
-Approval voting offers a compelling combination of simplicity, practicality, and strong performance in terms of election outcomes. While more expressive systems like STAR or Condorcet may offer marginally better results in simulations, the added complexity, potential for voter confusion, failure modes, and implementation challenges make them a riskier choice for widespread adoption at this time. Approval voting, by contrast, is easy to understand and implement, and already delivers outcomes that are very close to those of the more complex systems. For these reasons, it seems like the most sensible place to start in reforming our elections.
+Approval voting offers a compelling combination of simplicity, practicality, and strong performance in terms of election outcomes. While more expressive systems like STAR or Condorcet may offer marginally better results in simulations, the added complexity, potential for voter confusion, failure modes, and implementation challenges make them a riskier choice for widespread adoption at this time. Approval voting, by contrast, is easy to implement and explain to voters, and already delivers outcomes that are very close to those of the more complex systems. For these reasons, it seems like the most sensible place to start in reforming our elections.
 
 Approval voting is the only system I trust at this moment. It strikes the right balance between delivering strong election outcomes and maintaining the simplicity and legitimacy that are crucial for broad adoption and public trust in our electoral process.
 
@@ -271,9 +326,11 @@ The choice seems clear to me. By making Approval voting the *bridge* to other, m
 
 [RCV has utterly failed, and needs to go](../ditch-rcv){:target="_blank"}, and I think we need to rally around Approval voting before attempting to push for more complex reforms like STAR or Condorcet. RCV sandbagged better methods like Approval, ignoring the warnings and evidence from experts, and in doing so has set back the Electoral Reform movement. We cannot repeat this mistake again by expecting another untested system to succeed where RCV failed without first building a foundation of public trust and understanding through a simpler, proven method like Approval voting.
 
-Adopting Approval does not exclude later adoption of other systems. But pushing for something too far outside of the Overton window, only for it to face backlash for being too new or complex, *does* make it harder to keep the reforms in place, or to try again later.
+I admire the Equal Vote Coalition for trying to be inclusive of multiple systems, and their choices of Approval, STAR, and Condorcet are the best available, in my opinion. But I worry that a clear favoritism towards STAR might tempt them to fly too close to the sun. If STAR fails when Approval could have succeeded, we may squander the last of our political capital and public trust in electoral reform. The solution in this moment seems quite obvious: let's start with Approval and go from there.
 
-Perhaps, after we whet the appetite for more expressive systems by showing voters that Approval voting can improve the outcomes and solve many of the problems we face as a nation, then we can start experimenting with more complex systems. But, at this current moment, Approval seems like the obvious place to start: it is simple, it is practical, it is easy to explain, and it already delivers outcomes that are very close to what STAR or Condorcet would deliver without the added complexity and risk.
+Adopting Approval does not exclude later adoption of other systems. But pushing for something too far outside of the Overton window, only for it to face backlash for being too new or complex, *does* make it harder to keep the reforms in place, or to try again later. It's a gamble, and I don't like the odds.
+
+Perhaps, after we whet the appetite for more expressive systems by showing voters that Approval voting can improve the outcomes and solve many of the problems we face as a nation, then we can start experimenting with more complex systems. But, at this political moment, Approval seems like the obvious place to start: it is simple, it is practical, it is easy to explain, and it already delivers outcomes that are very close to what STAR or Condorcet would deliver without the added complexity and risk.
 
 Approval voting is the *clear* first step we need to make in electoral reform. We should assume we have *one chance* to get this right, and stand together behind it before backlash leads to a successful ban on all systems besides Choose-one, as the existing ["Make Elections Great Again Act"](https://ivn.us/posts/11-ways-mega-act-congress-tries-control-how-you-vote-2026-02-06) threatens to do.
 
