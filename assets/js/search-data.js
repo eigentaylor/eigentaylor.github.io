@@ -666,7 +666,7 @@ ninja.data = [{
               window.location.href = "/preview/condorcet-approval/";
             },},{id: "previews-why-i-currently-only-support-approval",
           title: 'Why I Currently Only Support Approval',
-          description: "Opinion piece about my thoughts on other systems like STAR, RCV, and Condorcet.",
+          description: "Why Approval voting is the only system I trust to push for right now.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/approval-only/";
             },},{id: "previews-a-guide-to-approval-voting-strategy",
