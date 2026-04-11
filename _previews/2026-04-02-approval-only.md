@@ -267,7 +267,7 @@ Before we reveal the numbers, we should be clear that a voting system changes al
     "title": { "text": "Voter Satisfaction Efficiency (VSE) Range by Voting System" },
     "xaxis": {
       "title": { "text": "VSE (%)" },
-      "range": [50, 100],
+      "range": [65, 100],
       "ticksuffix": "%"
     },
     "yaxis": { "autorange": true },
@@ -286,7 +286,9 @@ And this is where Choose-one completely fails. It may be shocking that its range
 
 This is also where the arguments for STAR and Condorcet are at their strongest, I think. But also where Approval finally wins out clearly. STAR and Condorcet give excellent outcomes. They allow for expression and then treat that data well. STAR attempts to mitigate some general issues of strategy in expressive SCORE systems with the runoff step, and the Condorcet winner is *usually* a strong candidate.
 
-But here's the thing: Approval is basically comparable. The difference between the VSE ranges in Approval and both STAR and Condorcet is quite negligible--particularly when compared to the difference in the ranges of Approval, STAR, and Condorcet to Choose-one. And Approval also comes with significantly better legitimacy and practicality guarantees. RCV, on the other hand, significantly underperforms Approval, STAR, and Condorcet. So I have to ask: why go for marginal VSE improvements when Approval has all the other benefits we have discussed?
+But here's the thing: Approval is basically comparable. The difference between the VSE ranges in Approval and both STAR and Condorcet is quite negligible--particularly when compared to the difference in the ranges of Approval, STAR, and Condorcet to Choose-one's poor 71-86%. Approval's 89-95% range is quite close to STAR's 91-98% and Condorcet's 86-98%.
+
+Further, Approval also comes with significantly better legitimacy and practicality guarantees. RCV, on the other hand, significantly underperforms Approval, STAR, and Condorcet. So I have to ask: why go for marginal VSE improvements when Approval has all the other benefits we have discussed?
 
 I am simply not convinced that the marginal gains in outcomes from these more complex systems are worth the *risk* that comes from trying to convince voters and election officials to adopt a more complicated system that is harder to explain, harder to implement, and more prone to misunderstandings and potential crises of legitimacy.
 
