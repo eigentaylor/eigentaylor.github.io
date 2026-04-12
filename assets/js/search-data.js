@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-approval-is-the-perfect-condorcet-method",
+        },{id: "post-why-i-currently-only-support-approval",
+        
+          title: "Why I Currently Only Support Approval",
+        
+        description: "Why Approval voting is the only system I trust to push for right now.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/approval-only/";
+          
+        },
+      },{id: "post-approval-is-the-perfect-condorcet-method",
         
           title: "Approval is the Perfect Condorcet Method",
         
