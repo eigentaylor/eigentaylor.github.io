@@ -692,7 +692,7 @@ ninja.data = [{
               window.location.href = "/preview/arrows/";
             },},{id: "previews-why-i-currently-only-support-approval",
           title: 'Why I Currently Only Support Approval',
-          description: "Why Approval voting is the only system I trust to push for right now.",
+          description: "Approval voting is the only system I trust to push for right now, and here&#39;s why.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/approval-only/";
             },},{id: "previews-jordan-canonical-form-made-easier-part-1",
