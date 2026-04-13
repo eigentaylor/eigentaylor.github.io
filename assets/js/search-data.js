@@ -695,6 +695,11 @@ ninja.data = [{
           description: "Approval voting is the only system I trust to push for right now, and here&#39;s why.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/approval-only/";
+            },},{id: "previews-is-the-condorcet-winner-the-true-compromise",
+          title: 'Is the Condorcet Winner the True Compromise?',
+          description: "A Condorcet winner may not be a true consensus candidate. Approval voting can find consensus with a simpler ballot.",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/why-condorcet/";
             },},{id: "previews-jordan-canonical-form-made-easier-part-1",
           title: 'Jordan Canonical Form Made Easier Part 1',
           description: "not easy. just like... easier...",
