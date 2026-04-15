@@ -146,15 +146,17 @@ STAR and Condorcet are... fine. Better than RCV, certainly. There is no central 
 |------------|-------------------------------|---------------------------|
 | Choose-one | $n$                           | 19                        |
 | Approval   | $n$                           | 19                        |
-| Condorcet  | $n \cdot (n-1)\sim O(n^2)$    | 342 or ~171               |
-| STAR       | $n^2\sim O(n^2)$              | 361 or ~190               |
-| RCV        | $O(n!)$                       | $3.3 \times 10^{17}$      |
+| Condorcet  | $n \cdot (n-1)\sim O(n^2)$    | 342                       |
+| STAR       | $n^2\sim O(n^2)$              | 361                       |
+| RCV        | $O(n!)$                       | $2.09 \times 10^{17}$     |
 
-Optimizations could be made to cut the numbers for STAR and Condorcet tabulations by about a half. For example, counting the *margins* of each matchup, rather than the raw count in each. But RCV is absurdly impractical in this regard. In the actual Portland election, voters were restricted to ranking up to 6 candidates, which brings the number down to just... 21,029,599... Hard to post all of those possibilities on the high school gymnasium doors for independent verification of the tabulation.
+Optimizations could be made to cut the numbers for STAR and Condorcet tabulations by about a half. For example, counting the *margins* of each matchup, rather than the raw count in each. However, speaking to those who advocate for the system, they tell me that it's more important for transparency and trustworthiness to not just report the margins, but the full raw counts. So I have not made that optimization here.
+
+However, these systems are not even close to approaching how absurdly impractical RCV is in this regard. In the actual Portland election, voters were restricted to ranking up to 6 candidates, which brings the number down to just... 21,029,599... Hard to post all of those possibilities on the high school gymnasium doors for independent verification of the tabulation.
 
 $$21,029,599=\sum_{k=1}^{6} \frac{19!}{(19-k)!} $$
 
-$$\sum_{k=1}^{19} \frac{19!}{(19-k)!} = \text{floor}(e \cdot 19!)-1 $$
+$$\sum_{k=1}^{19-1} \frac{19!}{(19-k)!} = \text{floor}((e-1) \cdot 19!)-1 $$
 
 Which gives us that lovely astronomical number of possible rankings that the RCV tabulation would need to consider if voters were allowed to rank all 19 candidates. Indeed, the number of actual cast ballots would be a small subset of that number, but there is no way that a single precinct could realistically enumerate and tally all of those possibilities. Central tabulation is vital under RCV.
 
