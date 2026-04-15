@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-why-i-currently-only-support-approval",
+        },{id: "post-is-the-condorcet-winner-the-true-compromise",
+        
+          title: "Is the Condorcet Winner the True Compromise?",
+        
+        description: "A Condorcet winner may not be a true consensus candidate. Approval voting can find consensus with a simpler ballot.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/why-condorcet/";
+          
+        },
+      },{id: "post-why-i-currently-only-support-approval",
         
           title: "Why I Currently Only Support Approval",
         
