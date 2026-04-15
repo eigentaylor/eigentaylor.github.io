@@ -63,7 +63,7 @@ I have [previously argued](../condorcet-approval/){:target="_blank"} that if you
 
 Moving from Veg n' Go to Pizza Palace would make 2 voters happier, objectively. And only one voter would be less happy. But the marginal increase in happiness for the two pizza lovers is extremely small, and the loss of happiness for the vegan is extremely large. And, I don't know about you, but watching my friend starve to death while two of us eat pizza is not going to make me feel like we found a compromise, even if I got my best outcome.
 
-I'd rather more people be happy with the outcome than to be forced to make a choice between which two options I prefer. Even if Veg n' Go is only 40% as good as Pizza Palace to me, I might still be willing to eat there if it means that all of my friends can have a good time, and the menu actually has something each person can eat.
+I'd rather more people be *content* with the outcome than to be forced to make a choice between which two options I prefer. Even if Veg n' Go is only 40% as good as Pizza Palace to me, I might still be willing to eat there if it means that all of my friends can have a good time, and the menu actually has something each person can eat.
 
 Electing candidates is not the same as picking a restaurant for dinner, but I see no reason to redefine what a "compromise" is. Even if my preference is Pizza Palace over Veg n' Go, I want to be able to signal that I would be satisfied either way. By providing the additional information that I have an ordinal preference of Pizza Palace over Veg n' Go, I can actually *obscure* the compromise in the ballot data.
 
