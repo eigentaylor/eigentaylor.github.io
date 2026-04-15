@@ -29,11 +29,11 @@ Three friends are trying to decide on a restaurant for dinner. Two of them reall
 
 The vegan obviously loves the vegan restaurant, and Burger Barn at least *has* vegan options, unlike Pizza Palace, so the vegan prefers Veg n' Go > Burger Barn > Pizza Palace. The two pizza lovers are really craving pizza, and they had burgers for lunch, so they prefer Pizza Palace > Veg n' Go > Burger Barn.
 
-Marquis de Condorcet would decree that the true consensus option is Pizza Palace, because a majority of voters have it as their first choice. Majority rule, after all, is the most fundamental principle of democracy. Or is it?
+Marquis de Condorcet would decree that the true consensus option is Pizza Palace, because a majority of voters have it as their first choice, and thus it defeats every other option. Majority rule, after all, is the most fundamental principle of democracy. Or is it?
 
 When I was in grad school, I had a friend who was vegan, and he convinced me to give Veg n' Go a try. I was skeptical at first, but I loved it! It may not be my *first* choice on any given day, but I was always perfectly happy to eat there, despite not being a vegan myself. Its proximity to our office combined with the fact my friend was a vegan made it a great compromise that we went to regularly.
 
-If both pizza lovers find Veg n' Go to be 99% as good as Pizza Palace, then Veg n' Go is a choice that literally 100% of voters would be content with, while Pizza Palace would result in the minority being unable to eat anything at all. Which of these sounds like a compromise to you?
+If both pizza lovers find Veg n' Go to be 99% as good as Pizza Palace, then Veg n' Go is a choice that literally 100% of voters would be content with, while Pizza Palace would result in the minority being unable to eat anything at all. Which of these sounds like the compromise to you?
 
 This example highlights my major issue with the Condorcet criterion.
 
@@ -82,44 +82,16 @@ In Approval voting, I do not have to express that I *technically* prefer Pizza P
 
 You see, [approval is actually, provably, a two-tiered Condorcet method which never runs into a paradox where no Condorcet winner exists](../condorcet-approval/){:target="_blank"}. The Approval winner is always the Condorcet winner *induced by the ballot data*. But it is not beholden to pick the true ranked Condorcet winner if that candidate is less acceptable to the electorate than another candidate. To explain why, let's look back at the first example with just three voters.
 
-The number of voters who approved of Veg n' Go but not Pizza Palace is 1. The number of voters who approved of Pizza Palace but not Veg n' Go is 0. Therefore, Veg n' Go actually defeats Pizza Palace in a head-to-head matchup of *approvals*, as two voters declared indifference. Similarly, Veg n' Go also defeats Burger Barn in a head-to-head matchup of approvals three to zero. Therefore, Veg n' Go is the Condorcet winner of the approval data, even though Pizza Palace is the Condorcet winner of the ranked data. This always happens in Approval: the Approval winner is the Condorcet winner of the approval data, but it may not be the Condorcet winner when you consider the ranked data underlying those approvals.
+The number of voters who approved of Veg n' Go but not Pizza Palace is 1. The number of voters who approved of Pizza Palace but not Veg n' Go is 0. Therefore, Veg n' Go actually defeats Pizza Palace in a head-to-head matchup of *approvals*, as two voters declared indifference. Similarly, Veg n' Go also defeats Burger Barn in a head-to-head matchup of approvals, three to zero. Therefore, Veg n' Go is the Condorcet winner of the approval data, even though Pizza Palace is the Condorcet winner of the ranked data. This always happens in Approval: the Approval winner is the Condorcet winner of the approval data, but it may not be the Condorcet winner when you consider the ranked data underlying those approvals.
 
 Approval, therefore, gives us the best of both worlds. It can select the true compromise candidate while also giving the winner absolute legitimacy, by being [the Condorcet winner of the ballot data](../consistentcardinal/){:target="_blank"}. It does this without being *beholden* to the ranked Condorcet winner, which may not be the ultimate compromise choice.
 
-Let's scale up this example. Let's say that now we have to satisfy 100 friends instead of just 3. We have the following preferences:
+There are things I like about Condorcet methods, but what really pushes me towards Approval voting is [the practical consideration of how we run each election](../approval-only/){:target="_blank"}. It's simply far easier to run an Approval election than a Condorcet election, particularly when we're trying to find a consensus for a much larger group. We can simply ask each voter to raise their hand for each option they would be happy with, and the option with the most raised hands wins. We don't need to collect ranked ballots from every voter and then run pairwise comparisons between every candidate to find the Condorcet winner, or run a majority rule election for all three matchups. We can just count approvals and be done with it.
 
-| Number | Ranking       | Approvals |
-|--------|---------------|-----------|
-| 1      | V > B > P     | V         |
-| 60     | P > V > B     | P, V      |
-| 39     | B > P > V     | B         |
+The Condorcet winner and approval winner generally coincide. However, when they don't, there is usually good reason. The [1985 Institute of Management Sciences (TIMS) election](https://www.jstor.org/stable/2632078) is a good example where they potentially didn't. See [this post](../practicalapproval){:target="_blank"} where I discuss it in more detail.
 
-Unfortunately, now we can't satisfy 100% of voters with any one option. But we can still look at the approvals and the Condorcet winner to see how the two differ.
-
-The Condorcet winner is still Pizza Palace, because 60% of voters put it as their first choice, so it necessarily wins in head-to-head matchups against the other options. Additionally, 99% of voters prefer Pizza Palace to Veg n' Go. However, the approvals tell us a different story.
-
-| Option        | Approval Count |
-|---------------|----------------|
-| Veg n' Go     | 61 (61%)       |
-| Pizza Palace  | 60 (60%)       |
-| Burger Barn   | 39 (39%)       |
-
-Every single voter who said they would be happy with Pizza Palace also said they would be happy with Veg n' Go. Additionally, the 39 voters who really want a Burger technically prefer Pizza Palace to Veg n' Go, but did not feel that preference strongly enough to approve of Pizza Palace. Perhaps they hate pizza and vegan food about the same, even if they technically prefer pizza to vegan food. In any case, no voter who actually prefers Pizza Palace to Veg n' Go actually *expressed* that preference in their approvals.
-
-We thus have to make a normative choice here.
-
-1. If we pick Burger Barn, then a supermajority of voters will be unhappy with the outcome. They objectively *did not consent* to that option, *and* it loses via majority rule to both of the other options. This is a non-starter.
-2. If we pick Pizza Palace, then we make a supermajority of voters the happiest they could be. However, 40% of voters would be very unhappy with the outcome.
-3. If we pick Veg n' Go, then that same supermajority of voters would still be happy, and one additional voter would be happy with the outcome. Only 39% of voters would be unhappy with the outcome, but they would still be unhappy with either Pizza Palace or Veg n' Go.
-
-There is no single correct answer here. But objectively more voters would be content with Veg n' Go than with Pizza Palace, even though if we asked voters to just choose between those two options, Pizza Palace would win by a landslide.
-
-It doesn't feel great to give 39% of voters their least favorite option. And it doesn't feel great to pick an option that makes 99% of voters slightly less happy than if we picked the Condorcet winner. But between the two options, Veg n' Go is the choice that leaves the most people going to a restaurant they are "happy" with, even if it's not their absolute favorite. That is what compromise is all about.
-
-What breaks the tie for me, however, is [the practical consideration of how we run each election](../approval-only/){:target="_blank"}. It's far easier to run an Approval election than a Condorcet election. We simply ask each voter to raise their hand for each option they would be happy with, and the option with the most raised hands wins. We don't need to collect 100 ballots and then run pairwise comparisons between every candidate to find the Condorcet winner. We don't need to run a majority rule election for all three matchups. We can just count approvals and be done with it.
-
-The Condorcet winner and approval winner generally coincide. However, the [1985 Institute of Management Sciences (TIMS) election](https://www.jstor.org/stable/2632078) is a good example where they potentially didn't. See [this post](../practicalapproval){:target="_blank"} where I discuss it in more detail. In this election, they collected both approval and ranked data. The approval winner won by over a hundred approvals. The supposed Condorcet winner was *inferred* to be strictly preferred over the approval winner by a single vote (901 to 900 of those who expressed some type of preference), while 27 voters abstained--leaving it very ambiguous. That's not exactly a strong legitimate claim. Approval broke that ambiguity: the approval winner earned 1,038 approvals to the "Condorcet winner's" 908 approvals.
+In this election, they collected both approval and ranked data. The approval winner won by over a hundred approvals. The supposed Condorcet winner was *inferred* to be strictly preferred over the approval winner by a single vote (901 to 900 of those who expressed some type of preference), while 27 voters abstained--leaving it very ambiguous. That's not exactly a strong legitimate claim. Approval broke that ambiguity: the approval winner earned 1,038 approvals to the "Condorcet winner's" 908 approvals.
 
 Would a 901 to 900 majority really give as much legitimacy to the Condorcet winner as the 1,038 to 908 majority that Approval voting gave to its winner? I don't think so. Instead, we can definitively conclude that many of the voters who said they preferred the Condorcet winner to the Approval winner explicitly approved of both candidates. You can have an ordinal preference but still be perfectly happy with either candidate. To pretend this is some sort of impossibility, and that tiny ordinal distances make a non-Condorcet winner somehow "fringe", is to completely misunderstand the nature of compromise and acceptability.
 
-The lesson is simple: majority preference and broad consent are not the same thing, and a voting system should make room for both. Condorcet logic captures pairwise legitimacy, but it can still miss the candidate most people can genuinely agree on. Approval voting closes that gap by letting voters signal acceptable outcomes directly, while still preserving a coherent notion of legitimacy in the ballot data. It is easier to run, easier to explain, and often yields the same winner when the Condorcet case is clear, yet it behaves better when preferences are close, ambiguous, or weakly held. If our goal is not just to crown a winner but to produce outcomes people can accept as fair, then [approval voting](../practicalapproval/){:target="_blank"} is the better compromise between mathematical rigor and democratic reality.
+The lesson is simple: majority preference and broad consent are not the same thing, and a voting system should make room for both. Condorcet logic captures pairwise legitimacy, but it can still miss the candidate most people can genuinely agree on. Approval voting closes that gap by letting voters signal acceptable outcomes directly, while still preserving a coherent notion of legitimacy in the ballot data. It is easier to run, easier to explain, and often yields the same winner when the Condorcet case is clear, yet it behaves better when preferences are close, ambiguous, or weakly held. If our goal is not just to crown a winner but to produce outcomes people can accept as fair, then approval voting is the better compromise between mathematical rigor and democratic reality.
