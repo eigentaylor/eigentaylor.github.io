@@ -34,6 +34,17 @@ ninja.data = [{
             window.location.href = "/blog/why-condorcet/";
           
         },
+      },{id: "post-the-perfection-of-approval-voting",
+        
+          title: "The Perfection of Approval Voting",
+        
+        description: "A mathematical dive into the fundamentalness of Approval voting on Dichotomous preferences.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/perfect-approval/";
+          
+        },
       },{id: "post-why-i-currently-only-support-approval",
         
           title: "Why I Currently Only Support Approval",
