@@ -22,7 +22,7 @@ authors:
 
 Three friends are trying to decide on a restaurant for dinner. Two of them really love pizza, but the third is a vegan. The full rankings of the three friends are as follows:
 
-| Number | First Choice | Second Choice | Third Choice |
+| Number | 1st Choice   | 2nd Choice    | 3rd Choice   |
 |--------|--------------|---------------|--------------|
 | 2      | Pizza Palace | Veg n' Go     | Burger Barn  |
 | 1      | Veg n' Go    | Burger Barn   | Pizza Palace |
