@@ -120,7 +120,7 @@ And let's not forget about STAR. STAR, I think, has the potential to be worse th
 | 2                | 5           | 1           | 0           | A>B>C        |
 | Total            | 19          | 22          | 25          | B wins       |
 
-If you have candidate A saying "I was preferred over everyone else by a majority, but the others exaggerated and their votes counted more!" and another candidate C saying "I got the most stars! The runoff is pointless and it was rigged against me!" and the actual winner B just shrugging because they won by the rules, then that's not exactly an outcome I would imagine everyone being particularly happy with.
+If you have the Condorcet winner, candidate A, saying "I was preferred over everyone else by a majority, but the others exaggerated and their votes counted more!" and another candidate C saying "I got the most stars! The runoff is pointless and it was rigged against me!" and the actual winner B just shrugging because they won by the rules, then that's not exactly an outcome I would imagine everyone being particularly happy with.
 
 STAR is just too new, and the literature is too sparse to convince me that this *isn't* a problem. We need more empirical evidence from real-world elections to really stress test the system, and I do *not* believe we have the time for that. Approval, on the other hand, *has* been tested. The literature is deep and extensive, spanning decades of theoretical work, simulations, and real-world applications in organizations and cities in the United States. And we can *prove* that Approval guarantees full legitimacy at the ballot level.
 
