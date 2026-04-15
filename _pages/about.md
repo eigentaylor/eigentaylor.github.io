@@ -2,14 +2,13 @@
 layout: about
 title: about
 permalink: /
-subtitle: mathematician and approval voting believer
+subtitle: mathematician and approval voting advocate
 profile:
   align: right
   image: rpic.png
   image_circular: false # crops the image to make it circular
   more_info: > 
-    <p>Taylor Fisher</p> 
-    <p>discord: eigentaylor</p>   
+    <p>Taylor Fisher</p>  
     <p>california CA</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
@@ -30,7 +29,7 @@ my current obsession is approval voting and electoral systems. i also like linea
 
 [here are some math posts ive written if you want to look at them i guess](./blog){:target="_blank"}
 
-the best way to contact me is through discord (@eigentaylor) but feel free to [email me](mailto:tayloreigenfisher@gmail.com){:target="_blank"}.
+feel free to [email me](mailto:tayloreigenfisher@gmail.com) if you want to get in touch.
 
 ---
 
