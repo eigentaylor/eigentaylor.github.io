@@ -33,7 +33,7 @@ Marquis de Condorcet would decree that the true consensus option is Pizza Palace
 
 When I was in grad school, I had a friend who was vegan, and he convinced me to give Veg n' Go a try. I was skeptical at first, but I loved it! It may not be my *first* choice on any given day, but I was always perfectly happy to eat there, despite not being a vegan myself. Its proximity to our office combined with the fact my friend was a vegan made it a great compromise that we went to regularly.
 
-If both pizza lovers find Veg n' Go to be 99% as good as Pizza Palace, then Veg n' Go is a choice that literally 100% of voters would be content with, while Pizza Palace would result in the minority being unable to eat anything at all. How is that not a compromise?
+If both pizza lovers find Veg n' Go to be 99% as good as Pizza Palace, then Veg n' Go is a choice that literally 100% of voters would be content with, while Pizza Palace would result in the minority being unable to eat anything at all. Which of these sounds like a compromise to you?
 
 This example highlights my major issue with the Condorcet criterion.
 
@@ -45,7 +45,7 @@ The Condorcet winner is something defined by *ordinal* preferences. That is, it 
 
 When we talk about compromise, or negotiation, or consensus, we don't evaluate things simply by how many people prefer one option to another, or even necessarily by majority rule. We tend to try to find an agreement that allows everyone to leave feeling like they got something out of the deal, even if it wasn't their first choice.
 
-Knowledge that one person prefers Pizza Palace to Veg n' Go tells us *nothing* about whether or not they would be willing to compromise and eat at Veg n' Go. The order tells us nothing about that intensity or distance between the two options. This is important information entirely lost when we ask a voter to submit a ranked ballot. A ranked ballot is simply *not the tool* for determining consensus.
+Knowledge that one person prefers Pizza Palace to Veg n' Go tells us *nothing* about whether or not they would be willing to compromise and eat at Veg n' Go. The order tells us nothing about that intensity or distance between the two options. This is important information entirely lost when we ask a voter to submit a ranked ballot. A ranked ballot is simply *not a good tool* for determining consensus.
 
 In the example above, the Condorcet winner is Pizza Palace, but the true compromise is Veg n' Go. If we were to take a majority rule comparison between the two, Pizza Palace would win 2-1. But if we simply ask "who is okay with Pizza Palace?" the answer is "only 2 out of 3 people." If we ask "who is okay with Veg n' Go?" the answer is "all 3 people." How is that not the truest consensus option?
 
@@ -55,7 +55,7 @@ In the example above, the Condorcet winner is Pizza Palace, but the true comprom
 | Pizza Palace  | 2 (66.7%)      |
 | Burger Barn   | 0 (0%)         |
 
-It sure looks like we found the compromise candidate, even if we know that underneath this data Pizza Palace would have defeated Veg n' Go in a head-to-head matchup. But everyone is happy with the outcome, and is that not the point of compromise?
+It sure looks like we found the compromise candidate, even if we know that underneath this data Pizza Palace would have defeated Veg n' Go in a head-to-head matchup. But everyone is at least content with the outcome, and is that not the point of compromise?
 
 Majority rule and ordinal preferences are a decent option when we have a very large group of voters, especially if no single option is going to make a majority of voters content with the outcome. But equating majority rule with compromise is a complete fallacy.
 
@@ -63,7 +63,11 @@ I have [previously argued](../condorcet-approval/){:target="_blank"} that if you
 
 Moving from Veg n' Go to Pizza Palace would make 2 voters happier, objectively. And only one voter would be less happy. But the marginal increase in happiness for the two pizza lovers is extremely small, and the loss of happiness for the vegan is extremely large. And, I don't know about you, but watching my friend starve to death while two of us eat pizza is not going to make me feel like we found a compromise, even if I got my best outcome.
 
-Electing candidates is not the same as picking a restaurant for dinner, but I see no reason to redefine what a "compromise" is. Even if my preference is Pizza Palace over Veg n' Go, I want to be able to signal that I would be satisfied either way. Further, I'd rather more people be happy with the outcome than to be forced to make a choice between which two options I prefer. Even if Veg n' Go is only 40% as good as Pizza Palace to me, I might still be willing to eat there if it means that all of my friends can have a good time, and the menu actually has something each person can eat.
+I'd rather more people be happy with the outcome than to be forced to make a choice between which two options I prefer. Even if Veg n' Go is only 40% as good as Pizza Palace to me, I might still be willing to eat there if it means that all of my friends can have a good time, and the menu actually has something each person can eat.
+
+Electing candidates is not the same as picking a restaurant for dinner, but I see no reason to redefine what a "compromise" is. Even if my preference is Pizza Palace over Veg n' Go, I want to be able to signal that I would be satisfied either way. By providing the additional information that I have an ordinal preference of Pizza Palace over Veg n' Go, I can actually *obscure* the compromise in the ballot data.
+
+The two tables above are two different perspectives on the same underlying preferences. But the ranked data, while surely more detailed, actually makes it *harder* to see which option is actually the consensus choice. More data does not necessarily mean better data, and in this case, the ranked ballot data is actually worse for determining consensus than simply tallying up approvals.
 
 I am thus left with two propositions:
 
@@ -87,7 +91,7 @@ Let's scale up this example. Let's say that now we have to satisfy 100 friends i
 | Number | Ranking       | Approvals |
 |--------|---------------|-----------|
 | 1      | V > B > P     | V         |
-| 60     | P > V > B     | P,V       |
+| 60     | P > V > B     | P, V      |
 | 39     | B > P > V     | B         |
 
 Unfortunately, now we can't satisfy 100% of voters with any one option. But we can still look at the approvals and the Condorcet winner to see how the two differ.
@@ -114,7 +118,7 @@ It doesn't feel great to give 39% of voters their least favorite option. And it 
 
 What breaks the tie for me, however, is [the practical consideration of how we run each election](../approval-only/){:target="_blank"}. It's far easier to run an Approval election than a Condorcet election. We simply ask each voter to raise their hand for each option they would be happy with, and the option with the most raised hands wins. We don't need to collect 100 ballots and then run pairwise comparisons between every candidate to find the Condorcet winner. We don't need to run a majority rule election for all three matchups. We can just count approvals and be done with it.
 
-The Condorcet winner and Approval winner generally coincide. However, the [1985 Institute of Management Sciences (TIMS) election](https://www.jstor.org/stable/2632078) is a good example where they potentially didn't. See [this post](../practicalapproval){:target="_blank"} where I discuss it in more detail. In this election, they collected both Approval and Ranked data. The Approval winner won by over a hundred approvals. The supposed Condorcet winner was *inferred* to be strictly preferred over the Approval winner by a single vote (901 to 900 of those who expressed some type of preference), while 27 voters abstained--leaving it very ambiguous. That's not exactly a strong legitimate claim. Approval broke that ambiguity: the Approval winner earned 1,038 approvals to the "Condorcet winner's" 908 approvals.
+The Condorcet winner and approval winner generally coincide. However, the [1985 Institute of Management Sciences (TIMS) election](https://www.jstor.org/stable/2632078) is a good example where they potentially didn't. See [this post](../practicalapproval){:target="_blank"} where I discuss it in more detail. In this election, they collected both approval and ranked data. The approval winner won by over a hundred approvals. The supposed Condorcet winner was *inferred* to be strictly preferred over the approval winner by a single vote (901 to 900 of those who expressed some type of preference), while 27 voters abstained--leaving it very ambiguous. That's not exactly a strong legitimate claim. Approval broke that ambiguity: the approval winner earned 1,038 approvals to the "Condorcet winner's" 908 approvals.
 
 Would a 901 to 900 majority really give as much legitimacy to the Condorcet winner as the 1,038 to 908 majority that Approval voting gave to its winner? I don't think so. Instead, we can definitively conclude that many of the voters who said they preferred the Condorcet winner to the Approval winner explicitly approved of both candidates. You can have an ordinal preference but still be perfectly happy with either candidate. To pretend this is some sort of impossibility, and that tiny ordinal distances make a non-Condorcet winner somehow "fringe", is to completely misunderstand the nature of compromise and acceptability.
 
