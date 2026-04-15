@@ -34,17 +34,6 @@ ninja.data = [{
             window.location.href = "/blog/why-condorcet/";
           
         },
-      },{id: "post-the-perfection-of-approval-voting",
-        
-          title: "The Perfection of Approval Voting",
-        
-        description: "A mathematical dive into the fundamentalness of Approval voting on Dichotomous preferences.",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/perfect-approval/";
-          
-        },
       },{id: "post-why-i-currently-only-support-approval",
         
           title: "Why I Currently Only Support Approval",
@@ -722,6 +711,11 @@ ninja.data = [{
           description: "A Condorcet winner may not be a true consensus candidate. Approval voting can find consensus with a simpler ballot.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/why-condorcet/";
+            },},{id: "previews-the-perfection-of-approval-voting",
+          title: 'The Perfection of Approval Voting',
+          description: "A mathematical dive into the fundamentalness of Approval voting on Dichotomous preferences.",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/perfect-approval/";
             },},{id: "previews-jordan-canonical-form-made-easier-part-1",
           title: 'Jordan Canonical Form Made Easier Part 1',
           description: "not easy. just like... easier...",
