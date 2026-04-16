@@ -108,9 +108,25 @@ But to extend May's theorem to more than two candidates, we need a fourth criter
 
 To get a sense for what this means in practice, let's say that initially we have that Alice and Bob are currently tied for first. I prefer Alice over Clark, and so I voted accordingly (voting that Alice is good and Clark is bad). Strategyproofness means that I can't change my ballot to something else and get a better outcome, such as making Alice win.
 
-Here's an example to show what that might look like. Suppose we have a voting system where you submit your "good" and "bad" candidates. If you say that $n$ candidates are good, then each gets $\frac{1}{n}$ points, and the candidate with the most points wins.
+Here's an example to show what that might look like. Suppose we have a voting system where you submit your "good" and "bad" candidates. If you say that $n$ candidates are good, then each gets $\frac{1}{n}$ points, and the candidate with the most points wins. Consider the following scenario: Suppose that currently, Alice and Clark are tied for first, and my current ballot is saying that both Alice and Bob are both good. Then I'm currently giving Alice and Bob half of a point.
 
-Suppose that currently, Alice and Clark are tied for first, and my current ballot is saying that both Alice and Bob are both good. Then I'm currently giving Alice and Bob half of a point. If I change my ballot to say that only Alice is good, and lie about liking Bob, then my vote now gives Alice a *full* point, and Bob gets zero. This would give Alice half a point more than Clark, and make her win outright. Assuming I prefer a good candidate winning outright over a tie between a good and bad candidate, I have an incentive to lie about my preferences, and so this system is not strategyproof.
+| Voters | Ballot | A  | B | C |
+|--------|--------|----|---|---|
+| Me     | A, B   | 0.5|0.5|0  |
+| 1      | B, C   | 0  |0.5|0.5|
+| 3      | A, C   | 0.5|0  |0.5|
+| Total  |        | 2  | 1 | 2 |
+
+If I change my ballot to say that only Alice is good, and lie about liking Bob, then my vote now gives Alice a *full* point, and Bob gets zero. This would give Alice half a point more than Clark, and make her win outright.
+
+| Voters | Ballot | A  | B | C |
+|--------|--------|----|---|---|
+| Me     | A      | 1  |0  |0  |
+| 1      | B, C   | 0  |0.5|0.5|
+| 3      | A, C   | 0.5|0  |0.5|
+| Total  |        | 2.5|0.5| 2 |
+
+Assuming I prefer a good candidate winning outright over a tie between a good and bad candidate, I have an incentive to lie about my preferences, and so this system is not strategyproof.
 
 But Gibbard's theorem tells us that if we have three or more candidates, then it can't be strategyproof, right? Not on dichotomous preferences!
 
