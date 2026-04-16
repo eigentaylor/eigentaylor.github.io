@@ -23,10 +23,13 @@ toc:
     subsections:
       - name: May's Theorem
   - name: Dichotomous Preferences
-  - name: Approval Voting as the Natural Language of Dichotomous Preferences
+  - name: The Natural Language of Dichotomous Preferences
     subsections:
       - name: The Extension of May's Theorem
-  - name: Conclusion
+  - name: Impossibilities Achieved
+  - name: The Projection Perspective
+  - name: The Canonical Voting System
+  - name: Appendix
   - name: References
 ---
 
@@ -90,7 +93,7 @@ However, we won't dwell too much more on this. Regardless of if you think Dichot
 
 The question is: in this three candidate race, can we extend May's theorem to find a unique voting system to decide the winner(s) that satisfy basic fairness criteria? If we restrict ourselves to dichotomous preferences, the answer is yes!
 
-## Approval Voting as the Natural Language of Dichotomous Preferences
+## The Natural Language of Dichotomous Preferences
 
 The most natural system we might devise for dichotomous preferences is to just count how many voters find each candidate acceptable, and then pick the candidate with the most "approvals". This is exactly what Approval voting does.
 
@@ -171,6 +174,8 @@ And, of course, when you only have two candidates, you obviously have dichotomou
 
 Brams and Fishburn also proved in 1978 that, on dichotomous preferences, Approval voting is exactly the same as Condorcet. So the fact that May's original theorem is usually stated as majority rule or Condorcet means that this extension via dichotomous preferences through Approval voting is actually quite natural.
 
+And since number don't cycle, neither does Approval. As a [two-tiered Condorcet method](../condorcet-approval/){:target="_blank"}, Approval is a Condorcet method that never cycles, so the Approval winner(s) are always Condorcet winners.
+
 ## Impossibilities Achieved
 
 While I talked about IIA in my post on [Arrow's theorem](../arrows/){:target="_blank"}, I think it's worth emphasizing again here. I love to introduce it with the famous joke about Sidney Morgenbesser:
@@ -209,7 +214,29 @@ But even though the ballot data *isn't* a perfect representation of reality, it 
 
 In this way, Approval asks voters to project their nuanced preferences into the dichotomous domain. It treats those preferences perfectly, and gives you a winner. We necessarily lose a decent swathe of information. The question is how much that loss of information hurts the outcomes.
 
-As I've written about before, VSE (Voter Satisfaction Efficiency) is one measure of the outcomes of a system. Approval gets a VSE range of 89-95%. Meaning, it gets the "optimal" outcome about 90-95% of the time. That is *absurdly* good, especially in comparison to Choose one voting getting about 72-86%, and STAR voting getting 91-98%. Approval is basically 
+As I've written about before, VSE (Voter Satisfaction Efficiency) is one measure of the outcomes of a system. [Approval gets a VSE range of 89-95%](https://electionscience.github.io/vse-sim/VSEbasic/). Meaning, it gets the "optimal" outcome about 90-95% of the time. That is *absurdly* good, especially in comparison to Choose one voting getting about 72-86%, and STAR voting getting 91-98%. Approval is not perfect, but it's absurdly good for it's simplicity and practicality. And that simplicity comes with the benefit of being particularly robust to insidious pathologies that can arise in more complex systems like RCV and STAR.
+
+No participation failures, no vote splitting, no spoilers, no monotonicity failures, no favorite betrayal. Your vote can only help the candidates you vote for. Easy to count, easy to understand, easy to participate in. That's a pretty fantastic report card. Okay, that's enough, I can't help but make the case for Approval again. Let's wrap this up.
+
+## The Canonical Voting System
+
+The way I interpret May's theorem is that majority rule is the "canonical" voting system for two candidates. It's the unique system that satisfies the most fundamental idea of fairness in that context. It's the "natural language" of two candidates. If you want to be fair and responsive to voters, then you have to use majority rule.
+
+Vorsatz essentially generalizes this beyond two candidates to two preference tiers. The "canonical" voting system for dichotomous preferences is Approval. It's the unique system that satisfies the most fundamental idea of fairness in *that* context. It's the "natural language" of dichotomous preferences. If you want to be fair, responsive, and eliminate strategic incentives for dichotomous voters, then you have to use Approval.
+
+But what does that really *say*? Is this just a fun mathematical exercise? Are we just skipping around the impossibility theorems by lobotomizing the voters? Yeah, sure, voting is easy if the world is black and white. But the world isn't black and white, so this is just a theoretical exercise, right?
+
+I don't think so. I'm not ready to say Approval is the "perfect" voting system for the real world. It's certainly the [practical approximation of a perfect voting system](../practicalapproval/){:target="_blank"}. But rather than think of dichotomous preferences as a "get out of jail free" card, or a sneaky loophole, I think it's more accurate to say that Approval voting asks the *right* question.
+
+We are conditioned to think that more data is always better. That more nuance gets us a better picture of reality. But, as a mathematician, I can tell you from personal experience that the more complicated you make your model, the *less* realistic it tends to be! You start collecting noise and overfitting. I'm not saying it's impossible to create a state of the art model which is both complex and accurate. But, in those cases, you usually need excellent data as an input.
+
+In the context of a voting system, the "model" is the voting system itself, and the "data" is the ballot data you collect from the voters. The more complex your ballot, the worse the data quality tends to be. Voters have things to do, man. Many don't have time to strictly rank 20 candidates, or give each of them a thoughtful 5-star rating. And when you rely on your system being "top of the line" through treating detailed preference data "well enough", you are more than likely going to be collecting *noise* rather than true signal.
+
+[More data can often *obscure* the true compromise](../why-condorcet/){:target="_blank"}. Instead, why not just ask a simple, unambiguous question: "Who do you consent to govern you?" That's what Approval does. It asks a simpler, more fundamental question, and treats that data with full fidelity. It doesn't try to extrapolate more from you than what you give it. It's simple, but more honest. And by keeping it simple, it makes itself robust and practical, while still delivering excellent outcomes.
+
+Approval is the canonical voting system for dichotomous preferences. But, in a way, I would argue it's still the canonical voting system for all preferences. It just asks a different question than I think many in the electoral reform space *think* should be asked. It doesn't care about the order of your preferences, which obscures all sense of acceptability. It doesn't care about the intensity of your preferences, which are prone to exaggeration and misrepresentation. It just asks you who you want to support. Isn't that the most fundamental question we should be asking? Who do *you* actually want to win?
+
+If democracy is ultimately about consent, then Approval is the ballot that captures consent most directly: not perfect information, but honest information. It asks each voter for one clear boundary between acceptable and unacceptable, then counts that boundary without distortion. That is why, mathematically, it becomes canonical on dichotomous preferences, and why, practically, it remains so compelling in the real world. We may never build a flawless voting system for every possible psychology, but we can choose one that is fair, transparent, strategy-resistant where it matters, and robust under real conditions. Approval does not promise utopia. It promises clarity, and in collective decision-making, clarity is power.
 
 ## Appendix
 
@@ -232,5 +259,7 @@ We have hence shown that changing each concerned voter's ballot from their ballo
 ## References
 
 Brams, S. J., & Fishburn, P. C. (1978). Approval Voting. *The American Political Science Review*, 72(3), 831-847. [https://doi.org/10.2307/1955105](https://doi.org/10.2307/1955105)
+
+Quinn, J. (2017). Voter Satisfaction Efficiency (VSE) summary. Center for Election Science. [https://electionscience.github.io/vse-sim/VSEbasic/](https://electionscience.github.io/vse-sim/VSEbasic/)
 
 Vorsatz, M. (2007). Approval voting on dichotomous preferences. Social Choice and Welfare, 28(1), 127–141. [http://www.jstor.org/stable/41106808](http://www.jstor.org/stable/41106808)
