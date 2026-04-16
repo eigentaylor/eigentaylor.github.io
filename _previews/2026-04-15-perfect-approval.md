@@ -113,7 +113,25 @@ To get a sense for what this means in practice, let's say that initially we have
 
 Here's an example to show what that might look like. Suppose we have a voting system where you submit your "good" and "bad" candidates. If you say that $n$ candidates are good, then each gets $\frac{1}{n}$ points, and the candidate with the most points wins. This is anonymous, neutral, and monotone, but it's not strategyproof.
 
-Suppose that currently, Alice and Clark are tied for first, and my current ballot is saying that both Alice and Bob are both good. Then I'm currently giving Alice and Bob half of a point. If I change my ballot to say that only Alice is good, and lie about liking Bob, then my vote now gives Alice a *full* point, and Bob gets zero. This would give Alice half a point more than Clark, and make her win outright. Assuming I prefer a good candidate winning outright over a tie between a good and bad candidate, I have an incentive to lie about my preferences, and so this system is not strategyproof.
+Consider the following scenario: Suppose that currently, Alice and Clark are tied for first, and my current ballot is saying that both Alice and Bob are both good. Then I'm currently giving Alice and Bob half of a point each.
+
+| Voters | Ballot | A  | B | C |
+|--------|--------|----|---|---|
+| Me     | A, B   | 0.5|0.5|0  |
+| 1      | B, C   | 0  |0.5|0.5|
+| 3      | A, C   | 0.5|0  |0.5|
+| Total  |        | 2  | 1 | 2 |
+
+If I change my ballot to say that only Alice is good, and lie about liking Bob, then my vote now gives Alice a *full* point, and Bob gets zero. This would give Alice half a point more than Clark, and make her win outright.
+
+| Voters | Ballot | A  | B | C |
+|--------|--------|----|---|---|
+| Me     | A      | 1  |0  |0  |
+| 1      | B, C   | 0  |0.5|0.5|
+| 3      | A, C   | 0.5|0  |0.5|
+| Total  |        | 2.5|0.5| 2 |
+
+Assuming I prefer a good candidate winning outright over a tie between a good and bad candidate, I have an incentive to lie about my preferences, and so this system is not strategyproof.
 
 But Gibbard's theorem tells us that if we have three or more candidates, then it can't be strategyproof, right? Not on dichotomous preferences!
 
@@ -140,11 +158,16 @@ It's not just that Approval happens to be so, it's that Approval is the *only* s
 
 Vorsatz shows that if you drop any single one of the four criteria, you can define some other voting system that satisfies the other three criteria but violates the one you dropped. So these four criteria are sufficient *and necessary* to define Approval voting on dichotomous preferences.
 
+- Dropping strategyproof allows for scoring rules like the one in the example above.
+- Dropping strict monotonicity allows for a system where everyone ties all the time and your vote is completely meaningless
+- Dropping anonymity allows for Waldo to cast 5 votes instead of 1, because he's a generous donor.
+- Dropping neutrality allows for candidate favoritism. For example, Bob is a friend of the CEO so if he ties for first, all ties are broken for him.
+
 This, in a sense, makes Approval the "natural language" of dichotomous preferences. It satisfies the most basic fairness properties like neutrality and anonymity by holding no bias for voters or candidates. It's responsive to the voters' preferences by being strictly monotone. And it escapes manipulation by being strategyproof.
 
 Intuitively, it might make sense that Approval is the most basic and intuitive possible voting system you might define if people are labeling candidates "good" and "bad". Just find the candidate(s) the most people think are "good". Done. But Vorsatz shows that it's more fundamental than that.
 
-Rather than "Approval is intuitive and happens to satisfy xyz...", it's more that the dichotomous domain gives us a lot of room for weird and crazy voting systems. But as we take away more and more of the "weirdness" by imposing these basic criteria, we end up building a cage that can only contain one voting system: Approval. Approval becomes the lossless, perfect measure of the voters' preferences on this domain. It becomes the ultimately "honest" system. Your ballot means *exactly* what it says, and that eliminates all room for manipulation.
+Rather than "Approval is intuitive and happens to satisfy xyz...", it's more that the dichotomous domain, though simple, still gives us a lot of room for weird and crazy voting systems. But as we take away more and more of the "weirdness" by imposing these basic criteria, we end up building a cage that can only contain one voting system: Approval. Approval becomes the lossless, perfect measure of the voters' preferences on this domain. It becomes the ultimately "honest" system. Your ballot means *exactly* what it says, and that eliminates all room for manipulation.
 
 ### The Extension of May's Theorem
 
