@@ -156,11 +156,16 @@ It's not just that Approval happens to be so, it's that Approval is the *only* s
 
 Vorsatz shows that if you drop any single one of the four criteria, you can define some other voting system that satisfies the other three criteria but violates the one you dropped. So these four criteria are sufficient *and necessary* to define Approval voting on dichotomous preferences.
 
+- Dropping strategyproof allows for scoring rules like the one in the example above.
+- Dropping strict monotonicity allows for a system where everyone ties all the time and your vote is completely meaningless
+- Dropping anonymity allows for Waldo to cast 5 votes instead of 1, because he's a generous donor.
+- Dropping neutrality allows for candidate favoritism. For example, Bob is a friend of the CEO so if he ties for first, all ties are broken for him.
+
 This, in a sense, makes Approval the "natural language" of dichotomous preferences. It satisfies the most basic fairness properties like neutrality and anonymity by holding no bias for voters or candidates. It's responsive to the voters' preferences by being strictly monotone. And it escapes manipulation by being strategyproof.
 
 Intuitively, it might make sense that Approval is the most basic and intuitive possible voting system you might define if people are labeling candidates "good" and "bad". Just find the candidate(s) the most people think are "good". Done. But Vorsatz shows that it's more fundamental than that.
 
-Rather than "Approval is intuitive and happens to satisfy xyz...", it's more that the dichotomous domain gives us a lot of room for weird and crazy voting systems. But as we take away more and more of the "weirdness" by imposing these basic criteria, we end up building a cage that can only contain one voting system: Approval. Approval becomes the lossless, perfect measure of the voters' preferences on this domain. It becomes the ultimately "honest" system. Your ballot means *exactly* what it says, and that eliminates all room for manipulation.
+Rather than "Approval is intuitive and happens to satisfy xyz...", it's more that the dichotomous domain, though simple, still gives us a lot of room for weird and crazy voting systems. But as we take away more and more of the "weirdness" by imposing these basic criteria, we end up building a cage that can only contain one voting system: Approval. Approval becomes the lossless, perfect measure of the voters' preferences on this domain. It becomes the ultimately "honest" system. Your ballot means *exactly* what it says, and that eliminates all room for manipulation.
 
 ### The Extension of May's Theorem
 
