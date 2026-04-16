@@ -158,6 +158,8 @@ And, of course, when you only have two candidates, you obviously have dichotomou
 
 Brams and Fishburn also proved in 1978 that, on dichotomous preferences, Approval voting is exactly the same as Condorcet. So the fact that May's original theorem is usually stated as majority rule or Condorcet means that this extension via dichotomous preferences through Approval voting is actually quite natural.
 
+And since number don't cycle, neither does Approval. As a [two-tiered Condorcet method](../condorcet-approval/){:target="_blank"}, Approval is a Condorcet method that never cycles, so the Approval winner(s) are always Condorcet winners.
+
 ## Impossibilities Achieved
 
 While I talked about IIA in my post on [Arrow's theorem](../arrows/){:target="_blank"}, I think it's worth emphasizing again here. I love to introduce it with the famous joke about Sidney Morgenbesser:
@@ -241,5 +243,7 @@ We have hence shown that changing each concerned voter's ballot from their ballo
 ## References
 
 Brams, S. J., & Fishburn, P. C. (1978). Approval Voting. *The American Political Science Review*, 72(3), 831-847. [https://doi.org/10.2307/1955105](https://doi.org/10.2307/1955105)
+
+Quinn, J. (2017). Voter Satisfaction Efficiency (VSE) summary. Center for Election Science. [https://electionscience.github.io/vse-sim/VSEbasic/](https://electionscience.github.io/vse-sim/VSEbasic/)
 
 Vorsatz, M. (2007). Approval voting on dichotomous preferences. Social Choice and Welfare, 28(1), 127–141. [http://www.jstor.org/stable/41106808](http://www.jstor.org/stable/41106808)
