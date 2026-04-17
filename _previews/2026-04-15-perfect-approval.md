@@ -142,7 +142,7 @@ The intuition being that
 - If you vote for any "unacceptable" candidate, then you might make them win over an "acceptable" candidate, which is bad.
 - If you don't vote for any "acceptable" candidate, then you might fail to break a tie between an "acceptable" candidate and an "unacceptable" candidate, which is also bad.
 
-So voting exclusively for all good candidates and no bad candidates is weakly dominant. There's no reason to submit any other ballot, and you'll never get anything but a potentially worse outcome by doing so.
+So voting exclusively for all good candidates and no bad candidates is *uniquely* undominated. There's no reason to submit any other ballot, and you'll never get anything but a potentially worse outcome by doing so.
 
 This is worth emphasizing: strategyproofness is inherently achievable on dichotomous preferences. Essentially, each voters have two "blobs" of candidates: the good and the bad. Each voter just wants *any* candidate from the good blob to win, and *no* candidate from the bad blob to win. So there's nothing better to do than to fully support every option in the good blob and fully oppose every option in the bad blob. This is exactly what Approval voting does, and so Approval voting is strategyproof on dichotomous preferences.
 
@@ -171,7 +171,7 @@ Rather than "Approval is intuitive and happens to satisfy xyz...", it's more tha
 
 ### The Extension of May's Theorem
 
-One can verify that strategyproofness actually fits perfectly into majority rule on just two candidates. If you prefer one candidate over the other, then the only reasonable ballot is to vote for that candidate and not the other! And if you're indifferent, then abstaining is also weakly dominant. So strategyproofness is satisfied by majority rule with two candidates.
+One can verify that strategyproofness actually fits perfectly into majority rule on just two candidates. If you prefer one candidate over the other, then the only reasonable ballot is to vote for that candidate and not the other! And if you're indifferent, then expressing that honestly by abstaining is undominated. So strategyproofness is satisfied by majority rule with two candidates.
 
 Further, notice that majority rule on two candidates is also equivalent to Approval voting. Voting for one candidate and not the other is exactly the same as approving of one candidate and not the other. Abstaining is the same as approving both candidates. Therefore, we can say that it's not exactly majority rule or Condorcet that May's theorem describes, but Approval voting! Which isn't a big surprise as [Approval is a two-tiered Condorcet method](../condorcet-approval/){:target="_blank"}. Thus,
 
@@ -181,9 +181,11 @@ And, of course, when you only have two candidates, you obviously have dichotomou
 
 Brams and Fishburn also proved in 1978 that, on dichotomous preferences, Approval voting is exactly the same as Condorcet. So the fact that May's original theorem is usually stated as majority rule or Condorcet means that this extension via dichotomous preferences through Approval voting is actually quite natural.
 
-And since number don't cycle, neither does Approval. As a [two-tiered Condorcet method](../condorcet-approval/){:target="_blank"}, Approval is a Condorcet method that never cycles, so the Approval winner(s) are always Condorcet winners.
-
 ## Impossibilities Achieved
+
+As mentioned in my [April fools post](../condorcet-approval/){:target="_blank"}, Approval voting is the only Condorcet method that escapes the Condorcet paradox. Approval voting determines the societal ranking, and pairwise defeats, of candidates via the number of approvals. If Alice gets more approvals than Bob, then Alice defeats Bob in a pairwise comparison. And since numbers don't cycle, neither does Approval. As a [two-tiered Condorcet method](../condorcet-approval/){:target="_blank"}, Approval is a Condorcet method that never has a paradox, so the Approval winner(s) are always at least weak Condorcet winners.
+
+Therefore, Approval escapes the Condorcet paradox, and thus escapes the problems that come with it. Cycles are the source of many criterion failures in Condorcet methods, such as the failure of participation, strategyproofness, and IIA.
 
 While I talked about IIA in my post on [Arrow's theorem](../arrows/){:target="_blank"}, I think it's worth emphasizing again here. I love to introduce it with the famous joke about Sidney Morgenbesser:
 
