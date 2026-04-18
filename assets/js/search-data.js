@@ -696,11 +696,6 @@ ninja.data = [{
           description: "Walkthrough and proof of the theorem that proves ranked voting systems cannot satisfy seemingly reasonable properties.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/arrows-old/";
-            },},{id: "previews-arrow-39-s-impossibility-theorem",
-          title: 'Arrow&amp;#39;s Impossibility Theorem',
-          description: "Walkthrough and proof of the theorem that proves ranked voting systems cannot satisfy seemingly reasonable properties.",
-          section: "Previews",handler: () => {
-              window.location.href = "/preview/arrows/";
             },},{id: "previews-why-i-currently-only-support-approval",
           title: 'Why I Currently Only Support Approval',
           description: "Approval voting is the only system I trust to push for right now, and here&#39;s why.",
@@ -716,6 +711,11 @@ ninja.data = [{
           description: "A mathematical dive into the fundamentalness of Approval voting on Dichotomous preferences.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/perfect-approval/";
+            },},{id: "previews-arrow-39-s-impossibility-theorem",
+          title: 'Arrow&amp;#39;s Impossibility Theorem',
+          description: "Walkthrough and proof of the theorem that proves ranked voting systems cannot satisfy seemingly reasonable properties.",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/arrows/";
             },},{id: "previews-jordan-canonical-form-made-easier-part-1",
           title: 'Jordan Canonical Form Made Easier Part 1',
           description: "not easy. just like... easier...",
