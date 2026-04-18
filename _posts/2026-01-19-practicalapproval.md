@@ -7,7 +7,7 @@ giscus_comments: true
 importance: 1
 tags: voting
 category: polisci
-featured: true
+featured: false
 related_posts: true
 authors:  
   - name: Taylor Eigen Fisher
