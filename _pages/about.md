@@ -34,6 +34,7 @@ feel free to [email me](mailto:tayloreigenfisher@gmail.com) if you want to get i
 
 my best blog posts related to approval voting:
 
+- [Why I Currently Only Support Approval Voting](./blog/approval-only){:target="_blank"}
 - [A Practical Case for Approval Voting](./blog/practicalapproval){:target="_blank"}
 - [It's Time to Ditch RCV, Embrace Approval Voting](./blog/ditch-rcv){:target="_blank"}
 - [Approval is the "Perfect" Condorcet Method](./blog/condorcet-approval){:target="_blank"}
