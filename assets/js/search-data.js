@@ -708,7 +708,7 @@ ninja.data = [{
               window.location.href = "/preview/why-condorcet/";
             },},{id: "previews-the-perfection-of-approval-voting",
           title: 'The Perfection of Approval Voting',
-          description: "A mathematical dive into the fundamentalness of Approval voting on Dichotomous preferences.",
+          description: "A mathematical dive into the fundamental nature of Approval voting on dichotomous preferences.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/perfect-approval/";
             },},{id: "previews-arrow-39-s-impossibility-theorem",
