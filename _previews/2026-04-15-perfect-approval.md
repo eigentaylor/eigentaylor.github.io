@@ -157,7 +157,7 @@ The math doesn't *know* what your true underlying preference is. It just knows t
 
 Gibbard's theorem, and its [extension by Satterthwaite](../gibbard-satt/){:target="_blank"} says that if you have three or more candidates, then no voting system (including Approval!) can be strategyproof. Intuitively meaning that you can be clearly telling the voting system "I prefer Alice to Clark!", but you need to lie about your preferences in some other way to change the outcome from Clark winning to Alice winning.
 
-Approval is not strategyproof when you have three or more tiers of preference. *However*, based purely on the ballot data, Approval *does* hold a strategyproofness property. If you are already disapproving of Clark, you don't need to exaggerate to make sure your ballot fully counts against him. The ballot never betrays what you tell it. That is *not* a given in any other voting system.
+Approval is not strategyproof when you have three or more tiers of preference. Then there can certainly be strategic consideration as to where to cut off your threshold of acceptability. *However*, based purely on the ballot data, Approval *does* hold a strategyproofness property. If you are already disapproving of Clark, you don't need to exaggerate to make sure your ballot fully counts against him. The ballot never betrays what you tell it. That is *not* a given in any other voting system.
 
 This makes an Approval ballot incredibly "honest" in a way that other ballots aren't. Any other system, you might tell the system a preference, but need to lie or exaggerate in some other way to get the system to respect that preference. Voting for your favorite in STAR or RCV might give you your worst nightmare due to runoff rounds or vote transfers. Not in Approval!
 
