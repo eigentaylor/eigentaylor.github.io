@@ -110,6 +110,17 @@
         return null;
     }
 
+    function assignProofAnchor(proofBlock) {
+        if (!proofBlock) return;
+        proofBlock.classList.add("proof-block");
+        if (proofBlock.id) return;
+
+        var refKey = findReferenceKeyFromPreviousBlock(proofBlock);
+        if (refKey) {
+            safeSetId(proofBlock, "proof-" + toAnchorToken(refKey));
+        }
+    }
+
     // Step 1: Number ordinary theorem headers and collect labels.
     var strongs = article.querySelectorAll("strong, b");
     for (var i = 0; i < strongs.length; i++) {
@@ -197,15 +208,13 @@
         if (!/^Proof\s*:?$/i.test(strongNode.textContent.trim())) continue;
 
         var proofBlock = strongNode.closest("blockquote") || strongNode.parentElement;
-        if (!proofBlock) continue;
+        assignProofAnchor(proofBlock);
+    }
 
-        proofBlock.classList.add("proof-block");
-        if (proofBlock.id) continue;
-
-        var refKey = findReferenceKeyFromPreviousBlock(proofBlock);
-        if (refKey) {
-            safeSetId(proofBlock, "proof-" + toAnchorToken(refKey));
-        }
+    // Step 1.7: Assign proof anchors for dedicated proof disclosure widgets.
+    var proofDisclosures = article.querySelectorAll("details.proof-disclosure");
+    for (var d = 0; d < proofDisclosures.length; d++) {
+        assignProofAnchor(proofDisclosures[d]);
     }
 
     // Step 2: Resolve \ref{key} and \proofref{key} into links.

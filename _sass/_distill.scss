@@ -115,6 +115,46 @@ d-article {
     }
   }
 
+  details.proof-disclosure {
+    border: 1px solid color-mix(in srgb, var(--global-theme-color) 30%, transparent);
+    background: color-mix(in srgb, var(--global-code-bg-color) 88%, var(--global-theme-color) 12%);
+    scroll-margin-top: 80px;
+
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::before {
+      content: "▸";
+      display: inline-block;
+      margin-right: 0.45rem;
+      transition: transform 0.15s ease;
+    }
+
+    &[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    .proof-content {
+      margin-top: 0.65rem;
+
+      p:first-child {
+        margin-top: 0;
+      }
+
+      mjx-container[jax="CHTML"][display="true"] {
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+      }
+    }
+  }
+
   d-contents {
     align-self: start;
     grid-column: 1 / 4;

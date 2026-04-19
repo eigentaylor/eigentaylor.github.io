@@ -351,6 +351,28 @@ The restatement reuses the original theorem number (for example, "Theorem 2") in
 
 If your proof block follows that restatement, it gets an automatic anchor at `#proof-bigtheorem`.
 
+You can also make proofs collapsible with a dedicated proof disclosure tag:
+
+```markdown
+{% proof %}
+Proof body with markdown and math like $a^2+b^2=c^2$.
+{% endproof %}
+```
+
+Optional custom caption:
+
+```markdown
+{% proof Click to expand full proof %}
+...
+{% endproof %}
+```
+
+Behavior notes:
+
+- Proof disclosures are collapsed by default.
+- Math inside a proof is typeset when the disclosure is opened.
+- If the proof follows a labeled theorem restatement, proof links such as `\proofref{bigtheorem}` still resolve to that proof.
+
 1. Optional backlink from appendix to the original theorem:
 
   ```markdown
@@ -747,7 +769,7 @@ To update a library:
 
 ## Removing content
 
-Since this template has a lot of content, you may want to remove some of it. The easiest way to achieve this and avoid merge conflicts when updating your code (as [pointed by CheariX ](https://github.com/alshedivat/al-folio/pull/2933#issuecomment-2571271117)) is to add the unwanted files to the `exclude` section in your `_config.yml` file instead of actually deleting them, for example:
+Since this template has a lot of content, you may want to remove some of it. The easiest way to achieve this and avoid merge conflicts when updating your code (as [pointed by CheariX](https://github.com/alshedivat/al-folio/pull/2933#issuecomment-2571271117)) is to add the unwanted files to the `exclude` section in your `_config.yml` file instead of actually deleting them, for example:
 
 ```yml
 exclude:
@@ -857,7 +879,7 @@ To add secrets for [lighthouse-badger](https://github.com/alshedivat/al-folio/ac
 
 Also In case you face the error: "Input required and not supplied: token" in the Lighthouse Badger action, this solution resolves it.
 
-### Personal Access Token (fine-grained) Permissions for Lighthouse Badger:
+### Personal Access Token (fine-grained) Permissions for Lighthouse Badger
 
 - **contents**: access: read and write
 - **metadata**: access: read-only
