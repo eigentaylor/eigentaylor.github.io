@@ -60,7 +60,7 @@ Here we will give you some tips on how to customize the website. One important t
     - [Removing the repositories page](#removing-the-repositories-page)
     - [You can also remove pages through commenting out front-matter blocks](#you-can-also-remove-pages-through-commenting-out-front-matter-blocks)
   - [Adding Token for Lighthouse Badger](#adding-token-for-lighthouse-badger)
-    - [Personal Access Token (fine-grained) Permissions for Lighthouse Badger:](#personal-access-token-fine-grained-permissions-for-lighthouse-badger)
+    - [Personal Access Token (fine-grained) Permissions for Lighthouse Badger](#personal-access-token-fine-grained-permissions-for-lighthouse-badger)
   - [Customizing fonts, spacing, and more](#customizing-fonts-spacing-and-more)
   - [Scheduled Posts](#scheduled-posts)
     - [Name Format](#name-format)
