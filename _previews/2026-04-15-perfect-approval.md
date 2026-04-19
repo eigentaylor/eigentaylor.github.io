@@ -25,6 +25,8 @@ toc:
   - name: Dichotomous Preferences
   - name: The Natural Language of Dichotomous Preferences
     subsections:
+      - name: The Significance of Strategyproofness
+      - name: Uniqueness of Approval
       - name: The Extension of May's Theorem
   - name: Impossibilities Achieved
   - name: The Projection Perspective
@@ -40,6 +42,8 @@ I've made plenty of [cases for Approval voting recently](../approval-only/){:tar
 Here, I'm going back to my roots. I'm going to talk about the pure math underlying Approval voting, and why it's fundamental in a way that other voting systems just aren't. I will talk about the proofs that--under certain assumptions--Approval actually breaks famous impossibility theorems like [Gibbard-Satterthwaite](../gibbard-satt/){:target="_blank"} and [Arrow's Theorem](../arrows/){:target="_blank"}, and what that means.
 
 This post is inspired and borrows heavily on an amazing paper by [Marc Vorsatz: "Approval voting on dichotomous preferences"](http://www.jstor.org/stable/41106808).
+
+Many of the things I say here about Approval will not be true about Approval with a runoff. The runoff tends to really hamper the honesty incentives of Approval (in theory). In practice, there is evidence to suggest that the runoff might improve outcomes, but that's not what we're talking about here. We're talking about pure, single round, "vanilla" Approval voting.
 
 ### May's Theorem
 
@@ -113,22 +117,22 @@ To get a sense for what this means in practice, let's say that initially we have
 
 Here's an example to show what that might look like. Suppose we have a voting system where you submit your "good" and "bad" candidates. If you say that $n$ candidates are good, then each gets $\frac{1}{n}$ points, and the candidate with the most points wins. This is anonymous, neutral, and monotone, but it's not strategyproof.
 
-Consider the following scenario: Suppose that currently, Alice is behind Clark by half a point, and Bob is behind both of them.
+Consider the following scenario: Suppose that currently, Alice is behind Clark by half a point, while Bob and Dylan are behind both of them.
 
-| Voters | Ballot | A | B | C |
-|--------|--------|---|---|---|
-| 1      | B, C   |0  |0.5|0.5|
-| 3      | A, C   |0.5|0  |0.5|
-| Total  |        |1.5| 1 | 2 |
+| Voters | Ballot | A | B  | C  | D  |
+|--------|--------|---|----|----|----|
+| 2      | B, C, D|0  |0.33|0.33|0.33|
+| 2      | A, C   |0.5|0   |0.5 |0   |
+| Total  |        |1  |0.66|1.66|0.66|
 
-Let's assume my true preference is that Alice and Bob are both good, and Clark is bad. We assume that means I prefer Alice winning outright over Alice and Clark tying. Let's compare my honest ballot for both Alice and Bob, versus a dishonest ballot for just Alice.
+Let's assume my true preference is that Alice and Bob are both good, and both Clark and Dylan are bad. Let's compare my honest ballot for both Alice and Bob, versus a dishonest ballot for just Alice.
 
-| My Ballot | A total  | B total  | C total  | Outcome    |
-|-----------|----------|----------|----------|------------|
-| A, B      | 2        | 1        | 2        | A, C tie   |
-| A         | 2.5      | 0.5      | 2        | A wins     |
+| My Ballot | A total  | B total  | C total  | D total  | Outcome    |
+|-----------|----------|----------|----------|----------|------------|
+| A, B      | 1.5      | 1.16     | 1.66     | 0.66     | C wins     |
+| A         | 2        | 0.66     | 1.66     | 0.66     | A wins     |
 
-If I say that only Alice is good, and lie about liking Bob, then my vote now gives Alice a *full* point, and Bob gets zero. This would give Alice half a point more than Clark, and make her win outright. If I'm honest, then my support is diluted between Alice and Bob, and Alice doesn't get enough support to win outright. A good and bad candidate tie is worse for me than a good candidate winning outright, so I have an incentive to lie. This violates strategyproofness.
+If I say that only Alice is good, and lie about liking Bob, then my vote now gives Alice a *full* point, and Bob gets zero. This would give Alice a third of a point more than Clark, and make her win outright. If I'm honest, then my support is diluted between Alice and Bob, and Alice doesn't get enough support to win. I thus have an incentive to lie. This violates strategyproofness.
 
 But Gibbard's theorem tells us that if we have three or more candidates, then it can't be strategyproof, right? Not on dichotomous preferences!
 
@@ -141,9 +145,23 @@ The intuition being that
 
 So voting exclusively for all good candidates and no bad candidates is *uniquely* undominated. There's no reason to submit any other ballot, and you'll never get anything but a potentially worse outcome by doing so.
 
+### The Significance of Strategyproofness
+
 This is worth emphasizing: strategyproofness is inherently achievable on dichotomous preferences. Essentially, each voter has two "blobs" of candidates: the good and the bad. Each voter just wants *any* candidate from the good blob to win, and *no* candidate from the bad blob to win. So there's nothing better to do than to fully support every option in the good blob and fully oppose every option in the bad blob. This is exactly what Approval voting does, and so Approval voting is strategyproof on dichotomous preferences.
 
 Since Approval picks the candidate with the most approvals, it's simply "counting" voters or support. One person, one vote! So making sure you're counted fully for all the good, and not at all for the bad, is the best you can possibly do. Why would you ever do anything else?
+
+However, it's also worth emphasizing that strategyproofness, when defined *mathematically* has a very specific meaning different from the natural intuition that we've been using. They're equivalent in a sense, but not exactly the same.
+
+The math doesn't *know* what your true underlying preference is. It just knows the ballot you submitted. So strategyproofness is defined more in terms of how the outcome changes relative to the ballot you submitted. For our example above, the ballot where I approved of both Alice and Bob clearly said "I prefer Alice to Clark", because I approved of Alice and not Clark. But changing my ballot, by pretending I didn't like Bob, made Alice win outright. I was already saying that I liked Alice more than Clark, but it took a lie or exaggeration for the system to *respect* that preference and give me Alice as the winner over Clark.
+
+Gibbard's theorem, and its [extension by Satterthwaite](../gibbard-satt/){:target="_blank"} says that if you have three or more candidates, then no voting system (including Approval!) can be strategyproof. Intuitively meaning that you can be clearly telling the voting system "I prefer Alice to Clark!", but you need to lie about your preferences in some other way to change the outcome from Clark winning to Alice winning.
+
+Approval is not strategyproof when you have three or more tiers of preference. *However*, based purely on the ballot data, Approval *does* hold a strategyproofness property. If you are already disapproving of Clark, you don't need to exaggerate to make sure your ballot fully counts against him. The ballot never betrays what you tell it. That is *not* a given in any other voting system.
+
+This makes an Approval ballot incredibly "honest" in a way that other ballots aren't. Any other system, you might tell the system a preference, but need to lie or exaggerate in some other way to get the system to respect that preference. Voting for your favorite in STAR or RCV might give you your worst nightmare due to runoff rounds or vote transfers. Not in Approval!
+
+### Uniqueness of Approval
 
 Alright, so Approval is anonymous, neutral, strictly monotone, and strategyproof on dichotomous preferences. Big whoop, right? Why does that matter? It turns out this is a *huge* whoop.
 
@@ -172,7 +190,7 @@ One can verify that strategyproofness actually fits perfectly into majority rule
 
 Further, notice that majority rule on two candidates is also equivalent to Approval voting. Voting for one candidate and not the other is exactly the same as approving of one candidate and not the other. Abstaining is the same as approving both candidates. Therefore, we can say that it's not exactly majority rule or Condorcet that May's theorem describes, but Approval voting! Which isn't a big surprise as [Approval is a two-tiered Condorcet method](../condorcet-approval/){:target="_blank"}. Thus,
 
-> **Theorem:** (Extension of May's Theorem) The unique voting system that is anonymous, neutral, strictly monotone, and strategyproof on dichotomous preferences is Approval voting.
+> **Theorem:** (Extension of May's Theorem) The unique voting system that is anonymous, neutral, strictly monotone, and strategyproof is Approval voting on dichotomous preferences.
 
 And, of course, when you only have two candidates, you obviously have dichotomous preferences! So this is a true generalization of May's theorem.
 
@@ -200,6 +218,8 @@ This is a really big deal. IIA is *the* criterion that causes so much trouble in
 
 Arrow's theorem and Gibbard's theorem are often framed as saying that there is no "perfect" voting system. But what we see here is that, on dichotomous preferences, there is a perfect voting system: Approval. It satisfies all the basic fairness criteria we might want, and it also satisfies IIA and strategyproofness.
 
+> **Corollary:** A voting system is anonymous, neutral, strictly monotone, strategyproof, and satisfies IIA if and only if it is Approval voting on dichotomous preferences.
+
 The way dichotomous preferences allows us to sidestep these theorems is actually because the number of preference levels is strictly less than three, even though we might have more than two candidates. The general theme with these impossibility theorems often comes from the fact that there are three or more candidates in the assumptions. But that's not really what causes the problems.
 
 The real problem comes from the fact that, with three or more candidates, we can potentially have *three or more preference tiers*. If we restrict ourselves to keep the number of preference tiers to two, then we can have as many candidates as we want, and still have a perfect voting system that satisfies all the great properties that typical impossibility theorems say we can't have.
@@ -210,17 +230,19 @@ The magic number is two. Not two candidates, as May's theorem would imply. But t
 
 All we have said thus far requires dichotomous preferences to be truly correct. And it's true: if voters have more complex preferences, then Approval voting won't be strategyproof. It won't satisfy IIA.
 
-However, Approval *doesn't know that*. When you cast an approval ballot, it doesn't matter how complex or messy your preferences are. You still have to actually *choose* "who is acceptable". Who do you "approve" of? Whatever that means. It requires the voters to *project* their preferences down into the dichotomous domain.
+However, Approval *doesn't know that*. When you cast an approval ballot, it doesn't matter how complex or messy your preferences are. You still have to actually *choose* "who is acceptable". Who do you "approve" of? Whatever that means to you. It requires the voters to *project* their preferences down into the dichotomous domain.
 
-If we assume that the ballots are a perfect reflection of reality, then Approval is perfect. It's nearly impossible to look at the Approval ballot data and point to a pathology. There are no issues where a majority preferred a candidate who was eliminated because of vote splitting, like in RCV. There are no clear spoiler candidates, because all the votes a nonviable candidate received were given by voters who were free to also vote for a viable candidate at no cost. There are no participation failures where, by voting for the candidates you like, you change the result to a *worse* outcome like in STAR, Condorcet, and especially RCV.
+Every voting system requires some sort of lossy projection. Ranked systems ask you to eliminate all distance between candidates and report [only the order](../why-condorcet/){:target="_blank"}, which can obscure all acceptability and intensity, and obscure compromise and consensus. Range methods like STAR require you to project each candidate onto a 0-5 star rating, which are prone to exaggeration and misrepresentation, and for which the scale is not well defined. Approval instead asks for an unambiguous signal of support: "Do you consent?" Consent to be governed. Consent to be supported by your vote. Consent to be elected.
 
-That just *doesn't* happen in Approval, because it treats the data at face value. It doesn't have any weird quirks that cause it to misinterpret the data. An approval is an approval; an unambiguous signal of support. Impossible to exaggerate or misrepresent. The winner is simply the candidate who earned that unambiguous consent to govern from the largest number of voters. The candidate who earned the most consent.
+If we assume that the ballots are a perfect reflection of reality, then Approval is perfect. It's nearly impossible to look at the Approval ballot data and point to a pathology. There are no issues where a majority preferred a candidate who was eliminated because of vote splitting, like in RCV. There are no clear spoiler candidates, because all the votes a nonviable candidate received were given by voters who were free to also vote for a viable candidate at no cost. There are no participation failures where, by voting for the candidates you like, you change the result to a *worse* outcome like in STAR, Condorcet, and especially RCV. Strict monotonicity means that your vote can only help a candidate you *actually vote for*. Which sounds absurdly trivial but is not a given in any other seriously proposed voting system, *except* Approval (and Choose-one plurality, which is just a special case of Approval).
+
+That just *doesn't* happen in Approval, because it treats all the data it receives at face value. It doesn't have any weird quirks that cause it to misinterpret the data. An approval is an approval; an unambiguous signal of support. Impossible to exaggerate or misrepresent. The winner is simply the candidate who earned that unambiguous consent to govern from the largest number of voters. The candidate who earned the most consent.
 
 But even though the ballot data *isn't* a perfect representation of reality, it still treats the data it gets with *full* fidelity. There are no *structural* issues with Approval voting. It does the best with the data it has. Any issue with Approval comes from the translation step. In that way, the issues with Approval are essentially "behavioral".
 
-In this way, Approval asks voters to project their nuanced preferences into the dichotomous domain. It treats those preferences perfectly, and gives you a winner. We necessarily lose a decent swathe of information. The question is how much that loss of information hurts the outcomes.
+In this way, Approval asks voters to project their nuanced preferences into the dichotomous domain. It treats those preferences perfectly, and gives you a winner. We necessarily lose some information in the process. The question is how much that loss of information hurts the outcomes.
 
-As I've written about before, VSE (Voter Satisfaction Efficiency) is one measure of the outcomes of a system. [Approval gets a VSE range of 89-95%](https://electionscience.github.io/vse-sim/VSEbasic/). Meaning, it gets the "optimal" outcome about 90-95% of the time. That is *absurdly* good, especially in comparison to choose-one voting getting about 72-86%, and STAR voting getting 91-98%. Approval is not perfect, but it's absurdly good for its simplicity and practicality. And that simplicity comes with the benefit of being particularly robust to insidious pathologies that can arise in more complex systems like RCV and STAR.
+As I've written about before, VSE (Voter Satisfaction Efficiency) is one measure of the outcomes of a system. [Approval gets a VSE range of 89-95%](https://electionscience.github.io/vse-sim/VSEbasic/). Meaning, it gets the "optimal" outcome about 90-95% of the time. That is *absurdly* good, especially in comparison to choose-one voting getting about 75%, and STAR voting clocking in around 91-98%. Approval is not perfect, but it's absurdly good for its simplicity and practicality. And that simplicity comes with the benefit of being particularly robust to insidious pathologies that can arise in more complex systems like RCV and STAR.
 
 No participation failures, no vote splitting, no spoilers, no monotonicity failures, no favorite betrayal. Your vote can only help the candidates you vote for. Easy to count, easy to understand, easy to participate in. That's a pretty fantastic report card. Okay, that's enough, I can't help but make the case for Approval again. Let's wrap this up.
 
