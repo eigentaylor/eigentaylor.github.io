@@ -173,6 +173,8 @@ This is not a concept I have ever heard of anyone defining, but it's my post, so
 
 If $k$ is smaller than the number of candidates, then a voter will necessarily have to express some number of ties, by the Pigeonhole principle.
 
+An example of a $C_6$ system is [Condorcet//Score](https://electowiki.miraheze.org/wiki/Smith/Score), which collects 0-5 scores for each candidate, elects the Condorcet winner if one exists, and otherwise breaks a tie/cycle by electing the candidate with the highest score. One can imagine that a Generalized Condorcet method is actually just a generalization of the concept of Condorcet//Score, where we allow for any number of tiers, and an arbitrary function to break ties when there is no Condorcet winner.
+
 $C_3$ would be like assigning candidates "good", "okay", and "bad". In this system, the voter expresses that they would vote for all "good" candidates over all "okay" and "bad", and all "okay" over all "bad". And for $C_2$ this is declaring candidates "acceptable" or "unacceptable", only assuming all "acceptable" are preferable to all "unacceptable".
 
 $C_1$ does not really make sense as a system--it would be a trivial system where ballots say nothing and every voter is assumed to be indifferent between all of them. Plurality/choose-one voting does not fit in as a GCM, as it's an arbitrary restriction on $C_2$ where voters can only put a single candidate in the upper tier.
