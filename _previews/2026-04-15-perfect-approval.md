@@ -53,9 +53,9 @@ In 1952, just a year after Kenneth Arrow published his impossibility theorem, an
 
 To put this in very simple terms:
 
-- **Anonymous:** No voter bias. Everyone's vote is equal. Waldo doesn't contribute 5 votes just because he donates to charity.
+- **Anonymous:** No voter bias. Everyone's vote is equal. Waldo doesn't contribute 100 votes just because he owns a hundred shares in the company.
 - **Neutral:** No candidate bias. The system treats all candidates equally. No bias for Bob because his name starts with a B.
-- **Strictly Monotone:** Your vote actually *matters*. If candidate $x$ is tied for first, then voting for $x$ makes them win outright.
+- **Strictly Monotone:** Your vote actually *matters*. If candidate $x$ is already winning or tied for first, then voting for $x$ makes them win outright.
 - **Majority Rule:** (AKA [Condorcet](../condorcet-approval/){:target="_blank"}) You can either give one vote to either candidate, or abstain. The candidate with the most votes wins. If there is a tie, then we just say that both candidates win.
 
 This is... painfully obvious. I mean, how else would you possibly pick between two people? Just choose the one with the most votes, right?
@@ -87,7 +87,9 @@ It turns out that the true underlying key to May's theorem is not exactly that i
 
 > **Definition:** A voter's preferences are *dichotomous* if they can be represented in a maximum of two tiers. In other words, the voter declares each candidate either "acceptable" or "unacceptable", with no further ranking or differentiation between candidates within those tiers. This can include complete indifference (where all candidates are in the same tier).
 
-It may seem like we're basically lobotomizing the voters here. But, from another perspective, when faced with many options, there's an argument that we often do simplify our preferences by just partitioning candidates into "good" and "bad" buckets. Particularly when information is scarce, or we haven't had time to develop more nuanced preferences.
+It may seem like we're basically lobotomizing the voters here. And critics of Approval often argue that this a serious problem. By squashing the voters' nuanced preferences into just two tiers, it becomes very easy to construct pathologies where voters use very strange Approval thresholds which elect candidates which seem "bad" [based on the ranked data](../why-condorcet/){:target="_blank"}.
+
+But, from another perspective, when faced with many options, there's an argument that we often do simplify our preferences by just partitioning candidates into "good" and "bad" buckets. Particularly when information is scarce, or we haven't had time to develop more nuanced preferences.
 
 Vorsatz proposes an example of a committee trying to hire a specialized contractor. At the early stages of the process, it may be easier to just label candidates as "qualified" or "unqualified", rather than trying to rank them in a more detailed way. But, more generally, there is an argument to make that even in high stakes elections, voters can identify a set of "acceptable" candidates that they would be happy to see win, and a set of "unacceptable" candidates that they would not want to see win, even if they have an underlying ranking of the candidates.
 
@@ -188,7 +190,7 @@ Rather than "Approval is intuitive and happens to satisfy xyz...", it's more tha
 
 One can verify that strategyproofness actually fits perfectly into majority rule on just two candidates. If you prefer one candidate over the other, then the only reasonable ballot is to vote for that candidate and not the other! And if you're indifferent, then expressing that honestly by abstaining is undominated. So strategyproofness is satisfied by majority rule with two candidates.
 
-Further, notice that majority rule on two candidates is also equivalent to Approval voting. Voting for one candidate and not the other is exactly the same as approving of one candidate and not the other. Abstaining is the same as approving both candidates. Therefore, we can say that it's not exactly majority rule or Condorcet that May's theorem describes, but Approval voting! Which isn't a big surprise as [Approval is a two-tiered Condorcet method](../condorcet-approval/){:target="_blank"}. Thus,
+Further, notice that majority rule on two candidates is also equivalent to Approval voting. Voting for one candidate and not the other is exactly the same as approving of one candidate and not the other. Abstaining is the same as approving both candidates. Therefore, we can say that it's not exactly majority rule or Condorcet that May's theorem describes, but Approval voting! Which isn't a big surprise as [Approval is a two-tiered Condorcet method](../condorcet-approval/){:target="_blank"}--equivalently, Approval is equivalent to Condorcet rule on the dichotomous domain. Thus,
 
 > **Theorem:** (Extension of May's Theorem) The unique voting system that is anonymous, neutral, strictly monotone, and strategyproof is Approval voting on dichotomous preferences.
 
@@ -212,7 +214,19 @@ There is a really cool lemma in the Vorsatz paper which I think is quite illumin
 
 > **Lemma:** (Vorsatz Lemma 1) If a voting system is neutral and strategyproof, then it satisfies Independence of Irrelevant Alternatives (IIA).\label{stratproof-iia}
 
-\proofref{stratproof-iia} in appendix.
+{% proof Click to expand proof %}
+**Proof:** Suppose we have two profiles $P$ and $P'$ where every voter who strictly prefers candidate $x$ to candidate $y$ in $P$ also strictly prefers $x$ to $y$ in $P'$, and vice versa. Suppose for contradiction that this changes the outcome between $x$ and $y$. Without loss of generality we assume that in $P$ we have that $x$ wins and $y$ does not win, and in $P'$ we have that either $y$ wins (and not $x$) or $x$ and $y$ tie. We can call that "$y$ entering the winning set".
+
+If every voter is indifferent between $x$ and $y$, then we would have a violation of neutrality, as we could just swap the names of $x$ and $y$ and get a different outcome without changing any of the ballots. So there must be at least one voter who strictly prefers one of the candidates to the other. We assume that voters who do not distinguish between $x$ and $y$ have no impact on the outcome between $x$ and $y$, so we can ignore them (this is called "consistency in individuals").
+
+Let's look at a single concerned voter $v$. Because the strict preferences between $x$ and $y$ are the same in both profiles, $v$ votes with the same preference in both. Let's create an intermediate profile where just $v$ changes their ballot from $P$ to $P'$.
+
+If $v$ strictly prefers $y$ to $x$, and we know that $x$ wins in $P$, then could the outcome change? If $v$ changes their ballot to their ballot in $P'$, and $y$ enters the winning set, then that would mean that $v$ has an incentive to lie. They prefer $y$ to $x$, but by changing their ballot to their ballot in $P'$, they can cause $y$ to enter the winning set, which is a better outcome for them. This would contradict strategyproofness. So $y$ cannot enter the winning set. Thus, the outcome cannot change if we change $v$'s ballot from $P$ to $P'$.
+
+If $v$ strictly prefers $x$ to $y$, and $v$ changes their ballot to their ballot in $P'$, then suppose $y$ enters the winning set. This means that by changing from their $P'$ ballot to their $P$ ballot, they *remove* $y$ from the winning set, which is a better outcome for them. This would contradict strategyproofness. So $y$ cannot enter the winning set when moving $v$'s ballot from $P$ to $P'$.
+
+We have hence shown that changing each concerned voter's ballot from their ballot in $P$ to their ballot in $P'$ cannot possibly change the outcome from $x$ winning and $y$ not winning, without contradicting strategyproofness. This contradicts the assumption that the outcome changes from $P$ to $P'$. Therefore, the outcome between $x$ and $y$ cannot change from $P$ to $P'$ if the relative preferences between $x$ and $y$ are the same in both profiles. Thus, the voting system satisfies IIA. $\square$
+{% endproof %}
 
 This is a really big deal. IIA is *the* criterion that causes so much trouble in Arrow's theorem. And, of course, strategyproofness is the big concern in Gibbard's theorem. So it turns out the fact that Approval *technically* breaks Gibbard's theorem (strategyproofness) and also Arrow's theorem (IIA) is not a coincidence at all. Rather, strategyproofness is an inherent fact of dichotomous preferences, so the natural language of dichotomous preferences (Approval) is strategyproof, so Approval has to satisfy IIA. It's all connected.
 
@@ -246,7 +260,13 @@ But even though the ballot data *isn't* a perfect representation of reality, it 
 
 In this way, Approval asks voters to project their nuanced preferences into the dichotomous domain. It treats those preferences perfectly, and gives you a winner. We necessarily lose some information in the process. The question is how much that loss of information hurts the outcomes.
 
-As I've written about before, VSE (Voter Satisfaction Efficiency) is one measure of the outcomes of a system. [Approval gets a VSE range of 89-95%](https://electionscience.github.io/vse-sim/VSEbasic/). Meaning, it gets the "optimal" outcome about 90-95% of the time. That is *absurdly* good, especially in comparison to choose-one voting getting about 75%, and STAR voting clocking in around 91-98%. Approval is not perfect, but it's absurdly good for its simplicity and practicality. And that simplicity comes with the benefit of being particularly robust to insidious pathologies that can arise in more complex systems like RCV and STAR.
+As I've also written about before, VSE (Voter Satisfaction Efficiency) is one measure of the outcomes of a system. [Approval gets a VSE range of 89-95%](https://electionscience.github.io/vse-sim/VSEbasic/). Meaning, it gets the "optimal" outcome about 90-95% of the time. That is *absurdly* good, especially in comparison to choose-one voting getting about 75%, and STAR voting clocking in around 91-98%. Approval is not perfect, but it's absurdly good for its simplicity and practicality. And that simplicity comes with the benefit of being particularly robust to insidious pathologies that can arise in more complex systems like RCV and STAR.
+
+In a [1998 paper by Regenwetter and Grofman](http://www.jstor.org/stable/2634612), they found that Approval reliably picked the winners of Borda and Condorcet methods in experiments and real world elections when the ordinal preferences were reconstructed. In fact, they even say,
+
+> "We find no evidence here that approval voting should be replaced by a more elaborate voting scheme." (p. 532)
+
+And frankly, I agree. I think that those who are pushing more complex systems should really consider if the extra complexity is worth it, or if that system is just an overengineered solution to a problem that would be solved more simply. Particularly in a moment when [trust is low, RCV is imploding, and a failure to push for something more complicated than approval might ruin our chances to get *anything* to replace Choose-one voting](../approval-only/){:target="_blank"}.
 
 No participation failures, no vote splitting, no spoilers, no monotonicity failures, no favorite betrayal. Your vote can only help the candidates you vote for. Easy to count, easy to understand, easy to participate in. That's a pretty fantastic report card. Okay, that's enough, I can't help but make the case for Approval again. Let's wrap this up.
 
@@ -262,7 +282,7 @@ I don't think so. I'm not ready to say Approval is the "perfect" voting system f
 
 We are conditioned to think that more data is always better. That more nuance gets us a better picture of reality. But, as a mathematician, I can tell you from personal experience that the more complicated you make your model, the *less* realistic it tends to be! You start collecting noise and overfitting. I'm not saying it's impossible to create a state of the art model which is both complex and accurate. But, in those cases, you usually need excellent data as an input.
 
-In the context of a voting system, the "model" is the voting system itself, and the "data" is the ballot data you collect from the voters. The more complex your ballot, the worse the data quality tends to be. Voters have things to do, man. Many don't have time to strictly rank 20 candidates, or give each of them a thoughtful 5-star rating. And when you rely on your system being "top of the line" through treating detailed preference data "well enough", you are more than likely going to be collecting *noise* rather than true signal.
+In the context of a voting system, the "model" is the voting system itself, and the "data" is the ballot data you collect from the voters. The more complex your ballot, the worse the data quality tends to be. Voters have things to do, man. Many don't have time to rank 20 candidates, or give each of them a thoughtful 5-star rating. And when you rely on your system being "top of the line" through treating detailed preference data "well enough", you are more than likely going to be collecting *noise* rather than true signal.
 
 [More data can often *obscure* the true compromise](../why-condorcet/){:target="_blank"}. Instead, why not just ask a simple, unambiguous question: "Who do you consent to govern you?" That's what Approval does. It asks a simpler, more fundamental question, and treats that data with full fidelity. It doesn't try to extrapolate more from you than what you give it. It's simple, but more honest. And by keeping it simple, it makes itself robust and practical, while still delivering excellent outcomes.
 
@@ -270,28 +290,12 @@ Approval is the canonical voting system for dichotomous preferences. But, in a w
 
 If democracy is ultimately about consent, then Approval is the ballot that captures consent most directly: not perfect information, but honest information. It asks each voter for one clear boundary between acceptable and unacceptable, then counts that boundary without distortion. That is why, mathematically, it becomes canonical on dichotomous preferences, and why, practically, it remains so compelling in the real world. We may never build a flawless voting system for every possible psychology, but we can choose one that is fair, transparent, strategy-resistant where it matters, and robust under real conditions. Approval does not promise utopia. It promises clarity, and in collective decision-making, clarity is power.
 
-## Appendix
-
-> **Lemma \ref{stratproof-iia}:** (Vorsatz Lemma 1) If a voting system is neutral and strategyproof, then it satisfies Independence of Irrelevant Alternatives (IIA).
-
-[Back to main text](#thm-stratproof-iia)
-
-**Proof:** Suppose we have two profiles $P$ and $P'$ where every voter who strictly prefers candidate $x$ to candidate $y$ in $P$ also strictly prefers $x$ to $y$ in $P'$, and vice versa. Suppose for contradiction that this changes the outcome between $x$ and $y$. Without loss of generality we assume that in $P$ we have that $x$ wins and $y$ does not win, and in $P'$ we have that either $y$ wins (and not $x$) or $x$ and $y$ tie. We can call that "$y$ entering the winning set".
-
-If every voter is indifferent between $x$ and $y$, then we would have a violation of neutrality, as we could just swap the names of $x$ and $y$ and get a different outcome without changing any of the ballots. So there must be at least one voter who strictly prefers one of the candidates to the other. We assume that voters who do not distinguish between $x$ and $y$ have no impact on the outcome between $x$ and $y$, so we can ignore them (this is called "consistency in individuals").
-
-Let's look at a single concerned voter $v$. Because the strict preferences between $x$ and $y$ are the same in both profiles, $v$ votes with the same preference in both. Let's create an intermediate profile where just $v$ changes their ballot from $P$ to $P'$.
-
-If $v$ strictly prefers $y$ to $x$, and we know that $x$ wins in $P$, then could the outcome change? If $v$ changes their ballot to their ballot in $P'$, and $y$ enters the winning set, then that would mean that $v$ has an incentive to lie. They prefer $y$ to $x$, but by changing their ballot to their ballot in $P'$, they can cause $y$ to enter the winning set, which is a better outcome for them. This would contradict strategyproofness. So $y$ cannot enter the winning set. Thus, the outcome cannot change if we change $v$'s ballot from $P$ to $P'$.
-
-If $v$ strictly prefers $x$ to $y$, and $v$ changes their ballot to their ballot in $P'$, then suppose $y$ enters the winning set. This means that by changing from their $P'$ ballot to their $P$ ballot, they *remove* $y$ from the winning set, which is a better outcome for them. This would contradict strategyproofness. So $y$ cannot enter the winning set when moving $v$'s ballot from $P$ to $P'$.
-
-We have hence shown that changing each concerned voter's ballot from their ballot in $P$ to their ballot in $P'$ cannot possibly change the outcome from $x$ winning and $y$ not winning, without contradicting strategyproofness. This contradicts the assumption that the outcome changes from $P$ to $P'$. Therefore, the outcome between $x$ and $y$ cannot change from $P$ to $P'$ if the relative preferences between $x$ and $y$ are the same in both profiles. Thus, the voting system satisfies IIA. $\square$
-
 ## References
 
 Brams, S. J., & Fishburn, P. C. (1978). Approval Voting. *The American Political Science Review*, 72(3), 831-847. [https://doi.org/10.2307/1955105](https://doi.org/10.2307/1955105)
 
 Quinn, J. (2017). Voter Satisfaction Efficiency (VSE) summary. Center for Election Science. [https://electionscience.github.io/vse-sim/VSEbasic/](https://electionscience.github.io/vse-sim/VSEbasic/)
+
+Regenwetter, M., & Grofman, B. (1998). Approval Voting, Borda Winners, and Condorcet Winners: Evidence from Seven Elections. Management Science, 44(4), 520--533. [http://www.jstor.org/stable/2634612](http://www.jstor.org/stable/2634612)
 
 Vorsatz, M. (2007). Approval voting on dichotomous preferences. Social Choice and Welfare, 28(1), 127–141. [http://www.jstor.org/stable/41106808](http://www.jstor.org/stable/41106808)
