@@ -128,7 +128,7 @@ Why, then, should we gamble our second chance on a system like STAR, while the h
 
 | System     | Legitimacy Guarantee |
 |------------|----------------------|
-| Approval   | Best                 |
+| Approval   | Great                |
 | Choose-one | Great                |
 | Condorcet  | Usually great        |
 | STAR       | Unproven             |
@@ -150,9 +150,9 @@ STAR and Condorcet are... fine. Better than RCV, certainly. There is no central 
 | STAR       | $n^2\sim O(n^2)$              | 361                       |
 | RCV        | $O(n!)$                       | $2.09 \times 10^{17}$     |
 
-Optimizations could be made to cut the numbers for STAR and Condorcet tabulations by about a half. For example, counting the *margins* of each matchup, rather than the raw count in each. However, after speaking to knowledgeable STAR and Condorcet advocates directly, they specifically told me that it's more important for transparency and trustworthiness to not just report the margins, but the full raw counts for each pairwise tally. In response to them telling me that, I have edited the original draft of this post to remove that optimization.
+Optimizations could be made to cut the numbers for STAR and Condorcet tabulations by about a half. For example, counting the *margins* of each matchup, rather than the raw count in each. However, after speaking to knowledgeable STAR and Condorcet advocates directly, they told me it is more important for transparency and trustworthiness to report the full raw counts for each pairwise tally, not just the margins. I have accordingly removed that optimization from this post.
 
-However, these systems are not even close to approaching how absurdly impractical RCV is in this regard. In the actual Portland election, voters were restricted to ranking up to 6 candidates, which brings the number down to just... 21,029,599... Hard to post all of those possibilities on the high school gymnasium doors for independent verification of the tabulation.
+Still, these systems are not even close to approaching how absurdly impractical RCV is in this regard. In the actual Portland election, voters were restricted to ranking up to 6 candidates, which brings the number down to just... 21,029,599... Hard to post all of those possibilities on the high school gymnasium doors for independent verification of the tabulation.
 
 $$21,029,599=\sum_{k=1}^{6} \frac{19!}{(19-k)!} $$
 
@@ -205,7 +205,7 @@ In this scenario, Bob would actually be eliminated in the first round of RCV des
 
 That is not a solution to vote splitting. The Clark voters, and Clark himself, were essentially lied to. Voters were told that they could safely rank their favorite first, and if that favorite couldn't win then their votes would transfer. What they *weren't* told was the truth: if their favorite can't win, then ranking them first can cause their viable back-up to *lose* and directly elect their worst nightmare.
 
-The insidious part is not that RCV gives worse outcomes than Choose-one; it's that it promises to fix problems it objectively hasn't, and that leads to voters and candidates behaving in ways that the system cannot sustain, leading to worse outcomes. RCV only really works well when there are two serious candidates. Once you have three or more viable candidates, the system starts to break down and sincere voting can actually elect your least favorite candidate.
+The insidious part is not that RCV gives worse outcomes than Choose-one; it's that it promises to fix problems it objectively hasn't fixed, and that leads to voters and candidates behaving in ways that the system cannot sustain, leading to worse outcomes. RCV only really works well when there are two serious candidates. Once you have three or more viable candidates, the system starts to break down and sincere voting can actually elect your least favorite candidate.
 
 Participation failures can happen in RCV, STAR, and even Condorcet methods. It is *not* always safe to vote sincerely in these systems.
 
@@ -308,7 +308,7 @@ Further, Approval also comes with significantly better legitimacy and practicali
 
 I am simply not convinced that the marginal gains in outcomes from these more complex systems are worth the *risk* that comes from trying to convince voters and election officials to adopt a more complicated system that is harder to explain, harder to implement, and more prone to misunderstandings and potential crises of legitimacy.
 
-In a [1998 paper by Regenwetter and Grofman](http://www.jstor.org/stable/2634612), they found that Approval reliably picked the winners of Borda and Condorcet methods in experiments and real world elections when the ordinal preferences could be reconstructed. In fact, they even say,
+In a [1998 paper by Regenwetter and Grofman](http://www.jstor.org/stable/2634612), they found that Approval reliably picked the winners of Borda and Condorcet methods in experiments and real-world elections when the ordinal preferences could be reconstructed. In fact, they even say,
 
 > "We find no evidence here that approval voting should be replaced by a more elaborate voting scheme." (p. 532)
 
