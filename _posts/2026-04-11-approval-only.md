@@ -150,7 +150,7 @@ STAR and Condorcet are... fine. Better than RCV, certainly. There is no central 
 | STAR       | $n^2\sim O(n^2)$              | 361                       |
 | RCV        | $O(n!)$                       | $2.09 \times 10^{17}$     |
 
-Optimizations could be made to cut the numbers for STAR and Condorcet tabulations by about a half. For example, counting the *margins* of each matchup, rather than the raw count in each. However, speaking to those who advocate for the system, they tell me that it's more important for transparency and trustworthiness to not just report the margins, but the full raw counts. So I have not made that optimization here.
+Optimizations could be made to cut the numbers for STAR and Condorcet tabulations by about a half. For example, counting the *margins* of each matchup, rather than the raw count in each. However, after speaking to knowledgeable STAR and Condorcet advocates directly, they specifically told me that it's more important for transparency and trustworthiness to not just report the margins, but the full raw counts for each pairwise tally. In response to them telling me that, I have edited the original draft of this post to remove that optimization.
 
 However, these systems are not even close to approaching how absurdly impractical RCV is in this regard. In the actual Portland election, voters were restricted to ranking up to 6 candidates, which brings the number down to just... 21,029,599... Hard to post all of those possibilities on the high school gymnasium doors for independent verification of the tabulation.
 
@@ -308,7 +308,11 @@ Further, Approval also comes with significantly better legitimacy and practicali
 
 I am simply not convinced that the marginal gains in outcomes from these more complex systems are worth the *risk* that comes from trying to convince voters and election officials to adopt a more complicated system that is harder to explain, harder to implement, and more prone to misunderstandings and potential crises of legitimacy.
 
-Anytime I hear someone advocate for STAR voting in particular, I hear the pitch and wonder "but... why not just use Approval?" It solves the same problems, but in a simpler way. It seems to me like STAR is trying to solve a problem that Approval already solves quite well, with only a small potential gain in outcome quality at the cost of added complexity and potential voter confusion.
+In a [1998 paper by Regenwetter and Grofman](http://www.jstor.org/stable/2634612), they found that Approval reliably picked the winners of Borda and Condorcet methods in experiments and real world elections when the ordinal preferences could be reconstructed. In fact, they even say,
+
+> "We find no evidence here that approval voting should be replaced by a more elaborate voting scheme." (p. 532)
+
+And in the present moment, I have to say I think that is still the case. Anytime I hear someone advocate for STAR voting in particular, I hear the pitch and wonder "but... why not just use Approval?" I have to wonder if these alternate systems are, perhaps, overengineered solutions to problems that Approval would solve just fine--without the added complexity, risk, and potential voter confusion in the pursuit of only a small potential gain in outcome quality.
 
 ### Expressiveness
 
@@ -365,5 +369,7 @@ Quinn, J. (2017). Voter Satisfaction Efficiency (VSE) summary. Center for Electi
 Ranked.Vote. (2009). *Burlington Mayor*. [https://ranked.vote/report/us/vt/btv/2009/03/mayor](https://ranked.vote/report/us/vt/btv/2009/03/mayor)
 
 Ranked.Vote. (2022). *Alaska At-large Congressional District*. [https://ranked.vote/report/us/ak/2022/08/cd](https://ranked.vote/report/us/ak/2022/08/cd)
+
+Regenwetter, M., & Grofman, B. (1998). Approval Voting, Borda Winners, and Condorcet Winners: Evidence from Seven Elections. Management Science, 44(4), 520--533. [http://www.jstor.org/stable/2634612](http://www.jstor.org/stable/2634612)
 
 Wikipedia Contributors. (2024). *2024 Portland, Oregon, mayoral election*. Wikipedia. [https://en.wikipedia.org/wiki/2024_Portland,_Oregon,_mayoral_election](https://en.wikipedia.org/wiki/2024_Portland,_Oregon,_mayoral_election)
