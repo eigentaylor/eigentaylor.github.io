@@ -158,7 +158,7 @@ $$21,029,599=\sum_{k=1}^{6} \frac{19!}{(19-k)!} $$
 
 $$\sum_{k=1}^{19-1} \frac{19!}{(19-k)!} = \text{floor}((e-1) \cdot 19!)-1 $$
 
-Which gives us that lovely astronomical number of possible rankings that the RCV tabulation would need to consider if voters were allowed to rank all 19 candidates. Indeed, the number of actual cast ballots would be a small subset of that number, but there is no way that a single precinct could realistically enumerate and tally all of those possibilities. Central tabulation is vital under RCV.
+Which gives us that lovely astronomical number of functionally distinct rankings that the RCV tabulation would need to consider if voters were allowed to rank all 19 candidates. Indeed, the number of actual cast ballots would be a small subset of that number, but there is no way that a single precinct could realistically enumerate and tally all of those possibilities. Central tabulation is absolutely necessary under RCV.
 
 And central tabulation has **[big problems](https://oaklandside.org/2023/01/05/recount-for-real-county-supervisor-calls-for-an-independent-recount-of-oaklands-ranked-choice-elections/)**. The Oakland RCV case shows just how important precinct summability is for the legitimacy of the results. A mistakenly checked box caused counting errors that yielded the wrong winner and took four months and a lawsuit to resolve.
 
