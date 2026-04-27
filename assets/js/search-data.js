@@ -716,6 +716,11 @@ ninja.data = [{
           description: "Walkthrough and proof of the theorem that proves ranked voting systems cannot satisfy seemingly reasonable properties.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/arrows/";
+            },},{id: "previews-independence-of-irrelevant-alternatives",
+          title: 'Independence of Irrelevant Alternatives',
+          description: "A brief exploration of the Independence of Irrelevant Alternatives (IIA) condition in voting systems.",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/iia/";
             },},{id: "previews-jordan-canonical-form-made-easier-part-1",
           title: 'Jordan Canonical Form Made Easier Part 1',
           description: "not easy. just like... easier...",
