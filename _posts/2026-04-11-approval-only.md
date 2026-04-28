@@ -235,7 +235,7 @@ Reading it off, you realize with horror that $A$ was completely nonviable. They 
 
 If you had just stayed home, $B$ would have won and you would have gotten a candidate you scored a genuine 3 out of 5. But your vote pushed $A$ over the top, and now you got a candidate you scored a 0 out of 5. Despite clearly signaling that you would still prefer $B$ over $C$, your ballot was weaponized against you to change the outcome from $B$ to $C$. If $A$ was completely nonviable, why were they put into the runoff at all, over your viable backup $B$?
 
-This data also gives $B$ supporters good reason to be upset. The numbers clearly show a strong consensus for $B$ over any other option, but $B$ still lost. This result is not indefensible, but it is also extremely worrying. It becomes extremely obvious that the $A$ supporters who would have preferred $B$ over $C$ were screwed over by the system.
+This data also gives $B$ supporters good reason to be upset. The numbers clearly show a strong consensus for $B$ over any other option, but $B$ still lost. This result is not indefensible, but it is also extremely worrying. It becomes transparent that the $A$ supporters who would have preferred $B$ over $C$ were screwed over by the system.
 
 These failures are generally assumed to be much rarer in STAR and Condorcet than RCV, but only Approval (and Choose-one) completely avoid them: in Approval, voting sincerely can never hurt your preferred outcome, and your single vote can only ever help elect someone you *actually vote for*. Which sounds so obvious that it shouldn't even need to be stated, but it's true. This is one way in which complexity and expressiveness in a voting system can actually make it less safe to vote.
 
