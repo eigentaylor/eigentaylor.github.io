@@ -219,7 +219,7 @@ Here is an example in STAR:
 | You    | 5         | 3         | 0         |
 | Totals | 15 or 20  | 16 or 19  | 21        |
 
-You can verify in this example that you would be better off staying home. If you abstain, $B$ defeats $C$ in the runoff. If you vote, $C$ defeats $A$ in the runoff. Your vote would change the result from your lesser evil to your worst nightmare.
+You can verify in this example that you would be better off staying home. If you abstain, $B$ defeats $C$ in the runoff. If you vote, $C$ defeats $A$ in the runoff. Your vote would change the result from your genuine compromise, $B$, to your worst nightmare, $C$.
 
 Let's imagine this is the result, and you are following the tally on election night. Your website of choice displays the full matrix of scores and pairwise tallies:
 
