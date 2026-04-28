@@ -38,7 +38,7 @@ ninja.data = [{
         
           title: "Why I Currently Only Support Approval",
         
-        description: "My reasons that Approval voting is the only system I trust to push for right now.",
+        description: "Why Approval voting is the only system I trust to push for right now.",
         section: "Posts",
         handler: () => {
           
