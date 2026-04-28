@@ -221,9 +221,9 @@ Here is an example in STAR:
 
 You can verify in this example that you would be better off staying home. If you abstain, $B$ defeats $C$ in the runoff. If you vote, $C$ defeats $A$ in the runoff. Your vote would change the result from your genuine compromise, $B$, to your worst nightmare, $C$.
 
-Let's imagine this is the result, and you are following the tally on election night. Your website of choice displays the full matrix of scores and pairwise tallies:
+Now suppose the election results are in, and you are following the tally on election night. Your website of choice displays the full matrix of scores and pairwise percentages:
 
-On the diagonal, we put the total scores for each candidate. In the off-diagonal, we give the percent of voters who prefer the candidate in the row to the candidate in the column.
+On the diagonal, we put the total scores for each candidate. Off-diagonal entries give the percent of voters who prefer the candidate in the row to the candidate in the column.
 
 |       | $A$ | $B$ | $C$ |
 |-------|-----|-----|-----|
@@ -231,11 +231,11 @@ On the diagonal, we put the total scores for each candidate. In the off-diagonal
 | $B$   |55.6%| 19  |66.7%|
 | $C$   |55.6%|33.3%| 21  |
 
-Reading it off, you realize with horror that $A$ was completely nonviable. They would have lost to *anyone* in the runoff. Whereas $B$ would have defeated *anyone else* in a runoff, as the Condorcet winner, including your least favorite $C$. But $B$ got a lower score than the nonviable $A$ by *one single point*.
+Reading it, you realize with horror that $A$ was completely nonviable. They would have lost to *anyone* in the runoff. Whereas $B$ would have defeated *anyone else* in a runoff, as the Condorcet winner, including your least favorite $C$. But $B$ got a lower score than the nonviable $A$ by *one single point*.
 
 If you had just stayed home, $B$ would have won and you would have gotten a candidate you scored a genuine 3 out of 5. But your vote pushed $A$ over the top, and now you got a candidate you scored a 0 out of 5. Despite clearly signaling that you would still prefer $B$ over $C$, your ballot was weaponized against you to change the outcome from $B$ to $C$. If $A$ was completely nonviable, why were they put into the runoff at all, over your viable backup $B$?
 
-This data also gives $B$ supporters good reason to be upset. The numbers clearly show a strong consensus for $B$ over any other option, but $B$ still lost. This result is not indefensible, but it is also extremely worrying. It becomes transparent that the $A$ supporters who would have preferred $B$ over $C$ were screwed over by the system.
+This data also gives $B$ supporters good reason to be upset. The numbers show a clear majority preference for $B$ over any other option, but $B$ still lost. The result is philosophically defensible, since $B$ was not able to amass strong enough support, but it is also extremely worrying. It becomes obvious that the $A$ supporters who would have preferred $B$ over $C$ were screwed over by the system.
 
 These failures are generally assumed to be much rarer in STAR and Condorcet than RCV, but only Approval (and Choose-one) completely avoid them: in Approval, voting sincerely can never hurt your preferred outcome, and your single vote can only ever help elect someone you *actually vote for*. Which sounds so obvious that it shouldn't even need to be stated, but it's true. This is one way in which complexity and expressiveness in a voting system can actually make it less safe to vote.
 
