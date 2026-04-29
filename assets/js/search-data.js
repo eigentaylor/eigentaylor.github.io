@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-is-the-condorcet-winner-the-true-compromise",
+        },{id: "post-independence-of-irrelevant-alternatives",
+        
+          title: "Independence of Irrelevant Alternatives",
+        
+        description: "A brief exploration of the Independence of Irrelevant Alternatives (IIA) condition in voting systems, and why its absence makes voting systems behave irrationally.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/iia/";
+          
+        },
+      },{id: "post-is-the-condorcet-winner-the-true-compromise",
         
           title: "Is the Condorcet Winner the True Compromise?",
         
