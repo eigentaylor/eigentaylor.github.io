@@ -718,7 +718,7 @@ ninja.data = [{
               window.location.href = "/preview/arrows/";
             },},{id: "previews-independence-of-irrelevant-alternatives",
           title: 'Independence of Irrelevant Alternatives',
-          description: "A brief exploration of the Independence of Irrelevant Alternatives (IIA) condition in voting systems.",
+          description: "A brief exploration of the Independence of Irrelevant Alternatives (IIA) condition in voting systems, and why its absence makes voting systems behave irrationally.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/iia/";
             },},{id: "previews-jordan-canonical-form-made-easier-part-1",
