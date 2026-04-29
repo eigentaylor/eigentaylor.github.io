@@ -96,7 +96,7 @@ Condorcet's solution sounds perfect, theoretically. I mean, if we can tell voter
 
 As with all things in voting theory, there's a catch. While a Condorcet winner exists *quite* often, it's still less than 100% of the time.
 
-**Example:** Consider the following profile of 3 voters: \label{ex:cycle}
+**Example:** Consider the following profile of 3 voters:\label{cycle}
 
 | Voters | 1st Tier | 2nd Tier | 3rd Tier |
 |--------|----------|----------|----------|
@@ -163,7 +163,7 @@ Now, hopefully we are on the same page about what it truly means, in practice, t
 1. Allow ties in a voter's ranking, and truncation, for the sake of the voter
 2. Define a Condorcet winner purely based on the ballot data, and Condorcet efficiency based on electing a candidate who is a Condorcet winner (based on the ballot data) when one exists
 
-We saw in example \ref{ex:cycle} that a Condorcet winner does not always exist. But can they be forced to exist in every election if we just... make the system *better*? The answer may surprise you.
+We saw in example \ref{cycle} that a Condorcet winner does not always exist. But can they be forced to exist in every election if we just... make the system *better*? The answer may surprise you.
 
 ## Generalized Condorcet Methods
 
@@ -197,7 +197,7 @@ This axiom allows us to disregard the possibility of a Condorcet method having t
 
 > **Lemma:** A Condorcet winner can fail to exist in $C_k$ if $k>2$. \label{condorcet-paradox}
 
-**Proof:** By example \ref{ex:cycle}, we can see that any GCM that allows three tiers can result in no Condorcet winner. This example works for any $k\geq 3$, so a Condorcet winner can fail to exist for any $k\geq 3$. $\square$
+**Proof:** By example \ref{cycle}, we can see that any GCM that allows three tiers can result in no Condorcet winner. This example works for any $k\geq 3$, so a Condorcet winner can fail to exist for any $k\geq 3$. $\square$
 
 This is not an abstract result. While very rare, Condorcet cycles have occurred in real U.S. elections, such as a [Minneapolis city council election in 2021](https://ranked.vote/report/us/mn/2021/11/ward-2).
 
@@ -280,7 +280,7 @@ As proved above, Approval voting is indeed a Condorcet method, just restricted t
 
 As with *any* Condorcet method, all we have to go on is what voters express.
 
-**Example:** Consider the following example in Approval voting between Alice, Bob, and Clark: \label{ex:approval}
+**Example:** Consider the following example in Approval voting between Alice, Bob, and Clark: \label{approval}
 
 | Voters | True Preferences | Approvals |
 |--------|------------------|-----------|
@@ -294,7 +294,7 @@ From another perspective, however, this is a blowout. Alice was approved by *80%
 
 But if we want to play the "let's make up a profile where voters act stupidly" game, then let's play it. Just because voters *can* rank beyond two tiers does not mean they will, and thus a general Condorcet method is susceptible to ridiculous outcomes.
 
-**Example:** Let's suppose we instead give the voters in Example \ref{ex:approval} a full ranked ballot, with ties allowed, and they vote in $C_\infty$ as follows:\label{ex:cinf}
+**Example:** Let's suppose we instead give the voters in Example \ref{approval} a full ranked ballot, with ties allowed, and they vote in $C_\infty$ as follows:\label{cinf}
 
 | Voters | True Preferences | $C_\infty$ Ballot |
 |--------|------------------|-------------------|
