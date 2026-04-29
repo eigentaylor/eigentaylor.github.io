@@ -1,10 +1,11 @@
 /**
  * Minimal theorem/lemma/definition auto-numbering and \label/\ref cross-references.
  * Activate by adding `theorems: true` to front matter.
+ * Optional front matter in Distill posts: `theorem_numbering: shared|separate`
  *
  * - Finds <strong> tags matching "Type [N]:" (Definition, Lemma, etc.)
  * - Works in blockquotes (> **Lemma:**) or plain paragraphs (**Lemma:**)
- * - Assigns per-type auto-numbers and stable IDs for linking
+ * - Assigns auto-numbers (shared or per-type) and stable IDs for linking
  * - Collects \label{key} from theorem blocks and removes visible markers
  * - Resolves \ref{key} anywhere in the article into clickable links
  * - Supports theorem restatements via "Type \ref{key}:" without renumbering
@@ -16,9 +17,13 @@
 (function () {
     var article = document.querySelector("d-article");
     if (!article) return;
+    var thisScript = document.currentScript || document.querySelector('script[src*="theorem-setup.js"]');
+    var numberingModeRaw = thisScript && thisScript.dataset ? thisScript.dataset.theoremNumbering : "";
+    var numberingMode = numberingModeRaw === "separate" ? "separate" : "separate"; // default to "shared" if not specified or invalid
 
     var labelMap = {}; // key -> { number, id, type }
     var counters = {}; // theorem-type -> count
+    var sharedCounter = 0;
     var pendingRestatements = [];
 
     var theoremTypes = ["Definition", "Lemma", "Theorem", "Remark", "Corollary", "Proposition", "Conjecture", "Axiom", "Example"];
@@ -145,8 +150,14 @@
         var paren = match[2] || "";
         var typeKey = type.toLowerCase();
 
-        counters[typeKey] = (counters[typeKey] || 0) + 1;
-        var num = counters[typeKey];
+        var num;
+        if (numberingMode === "separate") {
+            counters[typeKey] = (counters[typeKey] || 0) + 1;
+            num = counters[typeKey];
+        } else {
+            sharedCounter += 1;
+            num = sharedCounter;
+        }
 
         var block = strong.closest("blockquote") || strong.parentElement;
         if (!block) continue;

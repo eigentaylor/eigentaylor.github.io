@@ -18,7 +18,11 @@
 
 {% if page.theorems %}
   <!-- Theorem auto-numbering and cross-references (must run before MathJax) -->
-  <script src="{{ '/assets/js/theorem-setup.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
+  <script
+    src="{{ '/assets/js/theorem-setup.js' | relative_url | bust_file_cache }}"
+    type="text/javascript"
+    data-theorem-numbering="{{ page.theorem_numbering }}"
+  ></script>
 {% endif %}
 
 <script defer src="{{ '/assets/js/proof-disclosure.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>

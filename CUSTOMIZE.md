@@ -323,6 +323,18 @@ Note that `posts` is also a collection, but it is a default collection created a
 
 If you use Distill posts and add `theorems: true` to front matter, theorem headers can be auto-numbered and cross-referenced.
 
+By default, theorem numbering is shared across all theorem types (for example: Lemma 1, Theorem 2, Lemma 3).
+You can switch numbering mode with front matter:
+
+```yaml
+theorems: true
+theorem_numbering: shared   # default
+# theorem_numbering: separate
+```
+
+- `shared`: one global theorem counter across all types.
+- `separate`: each theorem type has its own counter (for example: Lemma 1, Theorem 1, Lemma 2).
+
 1. Label a theorem in the main text:
 
   ```markdown
