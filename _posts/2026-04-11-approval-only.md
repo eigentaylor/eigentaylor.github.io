@@ -37,6 +37,8 @@ toc:
 
 ## Introduction
 
+EDIT (4/28/2026): Adjusted the STAR examples into a single example, and added a bit more explanation.
+
 I would say I am still rather new to the electoral reform space. I've tried my best to catch up, read papers, and write about what I've found. When I first started writing about Approval voting, I initially said something along the lines of "anything is better than what we have now," which is a common sentiment among those new to the field. In particular, I also supported Ranked Choice Voting (RCV) alongside Approval at the time, because both seemed like a clear improvement over Choose-one. See [this post](../ditch-rcv){:target="_blank"} where I realized the error of my ways.
 
 As a mathematician, I have a soft spot for theoretical perfection. But I also love exceptional approximations that are simple and practical. I have found that if a simple model can capture the vital essence of a complex phenomenon with high fidelity, then adding complexity does not often yield significantly more accurate results. In fact, it can often lead to worse results due to overfitting, noise, and the introduction of new failure modes. This is a common theme in many areas of mathematics and science, and I find it applies just as well to electoral systems.
@@ -111,18 +113,41 @@ I would even go so far as to say that the fact that a Condorcet method has cycle
 
 Without [rehashing everything from those previous posts](../ditch-rcv){:target="_blank"}, I think RCV completely fails in giving its winners legitimacy. And I fear for a Condorcet method when it inevitably encounters a cycle: at which point you must choose an arbitrary tie-breaking rule which can't fix the fundamental legitimacy problem that a majority of voters can point to the ballots and say "we prefer someone else to the candidate you elected." You can't paper that over with "oh but cycles are rare". That was the argument for RCV Condorcet failures and the center squeeze too. I don't care if a failure mode is "rare" if it's *catastrophic when it does occur*. That is why I am skeptical of Condorcet, and why I absolutely *do not trust RCV*.
 
-And let's not forget about STAR. STAR, I think, has the potential to be worse than Condorcet in this regard. In my [post about internal consistency](../consistentcardinal){:target="_blank"}, I showed that STAR can create a three-way legitimacy crisis where an apparent Condorcet winner, and the candidate with the most total stars, both lose. Here is such an election:
-
-| Number of Voters | Score for A | Score for B | Score for C | Ranking      |
-|------------------|-------------|-------------|-------------|--------------|
-| 5                | 1           | 0           | 5           | C>A>B        |
-| 4                | 1           | 5           | 0           | B>A>C        |
-| 2                | 5           | 1           | 0           | A>B>C        |
-| Total            | 19          | 22          | 25          | B wins       |
+And let's not forget about STAR. STAR, I think, has the potential to be worse than Condorcet in this regard. In my [post about internal consistency](../consistentcardinal){:target="_blank"}, I showed that STAR can create a three-way legitimacy crisis where an apparent Condorcet winner, and the candidate with the most total stars, both lose.
 
 If you have the Condorcet winner, candidate A, saying "I was preferred over everyone else by a majority, but the others exaggerated and their votes counted more!" and another candidate C saying "I got the most stars! The runoff is pointless and it was rigged against me!" and the actual winner B just shrugging because they won by the rules, then that's not exactly an outcome I would imagine everyone being particularly happy with.
 
-STAR is just too new, and the literature is too sparse to convince me that this *isn't* a problem. We need more empirical evidence from real-world elections to really stress test the system, and I do *not* believe we have the time for that. Approval, on the other hand, *has* been tested. The literature is deep and extensive, spanning decades of theoretical work, simulations, and real-world applications in organizations and cities in the United States. And we can *prove* that Approval guarantees full legitimacy at the ballot level.
+However, I think a much more concerning legitimacy problem with STAR is the possibility of participation failures. Here's an example of how a simultaneous participation and Condorcet failure could occur in STAR:
+
+| Voters | $A$ Score | $B$ Score | $C$ Score | Ranking      |
+|--------|-----------|-----------|-----------|--------------|
+| 2      | 0         | 5         | 3         | $B > C > A$  |
+| 3      | 0         | 1         | 5         | $C > B > A$  |
+| 3      | 5         | 1         | 0         | $A > B > C$  |
+| You    | 5         | 3         | 0         | $A > B > C$  |
+| Totals | 15 or 20  | 16 or 19  | 21        |              |
+
+You can verify in this example that you would be better off staying home. If you abstain, $B$ defeats $C$ in the runoff. If you vote, $C$ defeats $A$ in the runoff. Your vote would change the result from your genuine compromise, $B$, to your worst nightmare, $C$.
+
+Now suppose the election results are in, and you are following the tally on election night. Your website of choice displays the full matrix of scores and pairwise percentages:
+
+On the diagonal, we put the total scores for each candidate. Off-diagonal entries give the percent of voters who prefer the candidate in the row to the candidate in the column.
+
+|       | $A$ | $B$ | $C$ |
+|-------|-----|-----|-----|
+| $A$   | 20  |44.4%|44.4%|
+| $B$   |55.6%| 19  |66.7%|
+| $C$   |55.6%|33.3%| 21  |
+
+Reading it, you realize with horror that $A$ was completely nonviable. They would have lost to *anyone* in the runoff. Whereas $B$ would have defeated *anyone else* in a runoff, as the Condorcet winner, including your least favorite $C$. But $B$ got a lower score than the nonviable $A$ by *one single point*.
+
+If you had just stayed home, $B$ would have won and you would have gotten a candidate you scored a genuine 3 out of 5. But your vote pushed $A$ over the top, and now you got a candidate you scored a 0 out of 5. Despite clearly signaling that you would still prefer $B$ over $C$, your ballot was weaponized against you to change the outcome from $B$ to $C$. If $A$ was completely nonviable, why were they put into the runoff at all, over your viable backup $B$?
+
+This data also gives $B$ supporters good reason to be upset. The numbers show a clear majority preference for $B$ over any other option, but $B$ still lost. The result is philosophically defensible, since $B$ was not able to amass strong enough support, but it is also extremely worrying. It becomes obvious that the $A$ supporters who would have preferred $B$ over $C$ were screwed over by the system.
+
+STAR is just too new, and the literature is too sparse to convince me that this *isn't* a problem. We need more empirical evidence from real-world elections to really stress test the system, and I do *not* believe we have the time for that. All it takes is a *single* election like this to cause a huge blow to the legitimacy of the system, and I don't believe we'd get a third chance to try again with something else if that happens.
+
+Approval, on the other hand, *has* been tested. The literature is deep and extensive, spanning decades of theoretical work, simulations, and real-world applications in organizations and cities in the United States. And we can *prove* that Approval guarantees full legitimacy at the ballot level.
 
 Why, then, should we gamble our second chance on a system like STAR, while the house is on fire, when Approval is right there?
 
@@ -207,35 +232,7 @@ That is not a solution to vote splitting. The Clark voters, and Clark himself, w
 
 The insidious part is not that RCV gives worse outcomes than Choose-one; it's that it promises to fix problems it objectively hasn't fixed, and that leads to voters and candidates behaving in ways that the system cannot sustain, leading to worse outcomes. RCV only really works well when there are two serious candidates. Once you have three or more viable candidates, the system starts to break down and sincere voting can actually elect your least favorite candidate.
 
-Participation failures can happen in RCV, STAR, and even Condorcet methods. It is *not* always safe to vote sincerely in these systems.
-
-Here is an example in STAR:
-
-| Voters | $A$ Score | $B$ Score | $C$ Score |
-|--------|-----------|-----------|-----------|
-| 2      | 0         | 5         | 3         |
-| 3      | 0         | 1         | 5         |
-| 3      | 5         | 1         | 0         |
-| You    | 5         | 3         | 0         |
-| Totals | 15 or 20  | 16 or 19  | 21        |
-
-You can verify in this example that you would be better off staying home. If you abstain, $B$ defeats $C$ in the runoff. If you vote, $C$ defeats $A$ in the runoff. Your vote would change the result from your genuine compromise, $B$, to your worst nightmare, $C$.
-
-Now suppose the election results are in, and you are following the tally on election night. Your website of choice displays the full matrix of scores and pairwise percentages:
-
-On the diagonal, we put the total scores for each candidate. Off-diagonal entries give the percent of voters who prefer the candidate in the row to the candidate in the column.
-
-|       | $A$ | $B$ | $C$ |
-|-------|-----|-----|-----|
-| $A$   | 20  |44.4%|44.4%|
-| $B$   |55.6%| 19  |66.7%|
-| $C$   |55.6%|33.3%| 21  |
-
-Reading it, you realize with horror that $A$ was completely nonviable. They would have lost to *anyone* in the runoff. Whereas $B$ would have defeated *anyone else* in a runoff, as the Condorcet winner, including your least favorite $C$. But $B$ got a lower score than the nonviable $A$ by *one single point*.
-
-If you had just stayed home, $B$ would have won and you would have gotten a candidate you scored a genuine 3 out of 5. But your vote pushed $A$ over the top, and now you got a candidate you scored a 0 out of 5. Despite clearly signaling that you would still prefer $B$ over $C$, your ballot was weaponized against you to change the outcome from $B$ to $C$. If $A$ was completely nonviable, why were they put into the runoff at all, over your viable backup $B$?
-
-This data also gives $B$ supporters good reason to be upset. The numbers show a clear majority preference for $B$ over any other option, but $B$ still lost. The result is philosophically defensible, since $B$ was not able to amass strong enough support, but it is also extremely worrying. It becomes obvious that the $A$ supporters who would have preferred $B$ over $C$ were screwed over by the system.
+Participation failures can happen in RCV, STAR, and even Condorcet methods. It is *not* always safe to vote sincerely in these systems, as seen in the example provided above.
 
 These failures are generally assumed to be much rarer in STAR and Condorcet than RCV, but only Approval (and Choose-one) completely avoid them: in Approval, voting sincerely can never hurt your preferred outcome, and your single vote can only ever help elect someone you *actually vote for*. Which sounds so obvious that it shouldn't even need to be stated, but it's not true for RCV, STAR, or Condorcet. This is one way in which complexity and expressiveness in a voting system can actually make it less safe to vote.
 
