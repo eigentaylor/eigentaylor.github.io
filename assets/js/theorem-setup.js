@@ -21,7 +21,7 @@
     var counters = {}; // theorem-type -> count
     var pendingRestatements = [];
 
-    var theoremTypes = ["Definition", "Lemma", "Theorem", "Remark", "Corollary", "Proposition", "Conjecture", "Axiom"];
+    var theoremTypes = ["Definition", "Lemma", "Theorem", "Remark", "Corollary", "Proposition", "Conjecture", "Axiom", "Example"];
     var typeReStr = theoremTypes.join("|");
 
     // Match: "Type", optional explicit number, optional parenthetical, then ":"
