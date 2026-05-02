@@ -732,6 +732,11 @@ ninja.data = [{
           description: "Walkthrough and proof of the theorem that proves ranked voting systems cannot satisfy seemingly reasonable properties.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/arrows/";
+            },},{id: "previews-a-quick-look-at-sen-39-s-theorem",
+          title: 'A Quick Look at Sen&amp;#39;s Theorem',
+          description: "A brief alternate proof of the theorem that individual sovereignty and efficiency are incompatible.",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/quick-sen/";
             },},{id: "previews-jordan-canonical-form-made-easier-part-1",
           title: 'Jordan Canonical Form Made Easier Part 1',
           description: "not easy. just like... easier...",
