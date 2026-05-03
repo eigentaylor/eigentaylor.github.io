@@ -5,7 +5,7 @@ date: 2026-04-01
 description: Approval is a perfect Condorcet method, and I have permanently solved the Condorcet paradox. April Fools!
 thumbnail: /assets/img/approvalcondorcetmeme1.jpg
 giscus_comments: true
-importance: 3
+importance: 2
 tags: voting
 category: polisci
 featured: false
