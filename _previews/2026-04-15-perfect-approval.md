@@ -54,8 +54,8 @@ In 1952, just a year after Kenneth Arrow published his impossibility theorem, an
 To put this in very simple terms:
 
 - **Anonymous:** No voter bias. Everyone's vote is equal. Waldo doesn't contribute 100 votes just because he owns a hundred shares in the company.
-- **Neutral:** No candidate bias. The system treats all candidates equally. No bias for Bob because his name starts with a B.
-- **Strictly Monotone:** Your vote actually *matters*. If candidate $x$ is already winning or tied for first, then voting for $x$ makes them win outright.
+- **Neutral:** No candidate bias. The system treats all candidates equally. No bias for Bob because his name starts with a B, or because he's an incumbent.
+- **Strictly Monotone:** Your vote actually *matters*. If candidate $x$ is already winning or tied for first, then voting solely for $x$ (or changing your ballot to add a vote for $x$) makes them win outright.
 - **Majority Rule:** (AKA [Condorcet](../condorcet-approval/){:target="_blank"}) You can either give one vote to either candidate, or abstain. The candidate with the most votes wins. If there is a tie, then we just say that both candidates win.
 
 This is... painfully obvious. I mean, how else would you possibly pick between two people? Just choose the one with the most votes, right?
@@ -64,11 +64,11 @@ Well, for two candidates, this is obvious. But for decades, the extension of thi
 
 | Voters | 1st Tier | 2nd Tier | 3rd Tier |
 |--------|----------|----------|----------|
-| 5      | Rock     | Scissors | Paper    |
-| 4      | Scissors | Paper    | Rock     |
-| 3      | Paper    | Rock     | Scissors |
+| 1      | Rock     | Scissors | Paper    |
+| 1      | Scissors | Paper    | Rock     |
+| 1      | Paper    | Rock     | Scissors |
 
-A majority of eight prefers Rock to Scissors, a majority of nine prefers Scissors to Paper, and a majority of seven prefers Paper to Rock. So who wins? Majority rule doesn't work here. There is no candidate for which it truly makes sense to elect.
+A majority of two prefers Rock to Scissors, a majority of two prefers Scissors to Paper, and a majority of two prefers Paper to Rock. So who wins? Majority rule doesn't work here. There is no candidate for which it truly makes sense to elect.
 
 But even before May, we already knew that [three candidates is a big problem, thanks to Arrow](../arrows/){:target="_blank"}. Arrow's theorem says that if you have three or more candidates, there is no voting system that can satisfy a certain set of (supposedly) "reasonable" criteria. You essentially have to pick one of the following:
 
@@ -77,7 +77,7 @@ But even before May, we already knew that [three candidates is a big problem, th
 - **IIA Violation:** The voting system violates the "Independence of Irrelevant Alternatives" criterion, which *loosely* means that an irrelevant spoiler candidate can change the outcome of the election. For example, if Alice originally beats Bob, then the entrance of Clark into the race can cause Bob to win, even if a majority still prefers Alice to Bob.
 - A secret fourth choice we will get to shortly...
 
-The knife was twisted in the 70's when Gibbard went on to show that strategy is a fundamental part of voting systems, when you have three or more candidates. Essentially, either the system has to be completely unresponsive to your preferences, or you will always have opportunities to get a better outcome by lying to the system. While Gibbard's more general theorem in 1972 hits essentially every voting system (and many more types of things), the [Gibbard-Satterthwaite](../gibbard-satt/){:target="_blank"} theorem is a corollary that applies specifically to ranked voting systems.
+The knife was twisted in the 70's when Gibbard went on to show that strategy is a fundamental part of voting systems, when you have three or more candidates. Essentially, either the system has to be completely unresponsive to your preferences, or you will always have opportunities to get a better outcome by lying to the system (loosely, there's a bit of nuance to these results, but the takeaway is that any reasonable system will be susceptible to strategic manipulation). While Gibbard's more general theorem in 1973 hits essentially every voting system (and many more types of things), the [Gibbard-Satterthwaite](../gibbard-satt/){:target="_blank"} theorem is basically a corollary to that result that applies specifically to ranked voting systems.
 
 The standard conclusion to take from these theorems is that there is no "perfect" voting system. You have to compromise somewhere. If you want something democratic and responsive to the voters, you won't be able to guarantee it works ideally in all scenarios. You'll always get a case where lying is profitable, or a spoiler candidate throws the system into chaos. But it turns out that this conclusion is not quite the full story.
 
@@ -113,9 +113,11 @@ We stated May's theorem above as satisfying three criteria: anonymity, neutralit
 - The system treats all candidates equally, so it's neutral.
 - If a candidate is tied for first, then voting for them makes them win outright, so it's strictly monotone. Your vote actually matters.
 
-But to extend May's theorem to more than two candidates, we need a fourth criterion.
+But to extend May's theorem to more than two candidates, we need a fourth criterion. Vorsatz loosely defines strategyproofness as follows:
 
-> **Definition:** A voting system is **strategyproof** if no voter can ever "manipulate" the outcome by misrepresenting their preferences.
+> **Definition:** A voting system is **strategyproof** if given some expressed preference $P$, there is never any scenario, no matter what the other voters do, where the outcome where you submit a different ballot $P'$ is strictly better for you according to your original preference $P$. That is,
+>
+> $$\text{Outcome}(P) \geq_P \text{Outcome}(P')$$
 
 To get a sense for what this means in practice, let's say that initially we have that Alice and Bob are currently tied for first. I prefer Alice over Clark, and so I voted accordingly (voting that Alice is good and Clark is bad). Strategyproofness means that I can't change my ballot to something else and get a better outcome, such as making Alice win.
 
@@ -138,7 +140,7 @@ Let's assume my true preference is that Alice and Bob are both good, and both Cl
 
 If I say that only Alice is good, and lie about liking Bob, then my vote now gives Alice a *full* point, and Bob gets zero. This would give Alice a third of a point more than Clark, and make her win outright. If I'm honest, then my support is diluted between Alice and Bob, and Alice doesn't get enough support to win. I thus have an incentive to lie. This violates strategyproofness.
 
-But Gibbard's theorem tells us that if we have three or more candidates, then it can't be strategyproof, right? Not on dichotomous preferences!
+But Gibbard tells us that if we have three or more candidates, then it can't be strategyproof, right? Not on dichotomous preferences!
 
 In [1978, Brams and Fishburn](https://doi.org/10.2307/1955105) prove that Approval voting is the unique "single ballot non-ranked" voting system (a system where you can give single votes to some number of candidates) which is strategyproof on dichotomous preferences.
 
@@ -159,7 +161,7 @@ However, it's also worth emphasizing that strategyproofness, when defined *mathe
 
 The math doesn't *know* what your true underlying preference is. It just knows the ballot you submitted. So strategyproofness is defined more in terms of how the outcome changes relative to the original ballot you submitted, or were planning to submit. For our example above, the ballot where I approved of both Alice and Bob clearly said "I prefer Alice to Clark", because I approved of Alice and not Clark. But changing my ballot, by pretending I didn't like Bob, made Alice win outright. I was already saying that I liked Alice more than Clark, but it took a lie or exaggeration for the system to *respect* that preference and give me Alice as the winner over Clark. My ballot had potential to be decisive, but *wasn't* without strategic manipulation.
 
-Gibbard's theorem, and its [extension by Satterthwaite](../gibbard-satt/){:target="_blank"} says that if you have three or more candidates, then no voting system (including Approval!) can be strategyproof. Intuitively meaning that you can be clearly telling the voting system "I prefer Alice to Clark!", but you need to lie about your preferences in some other way to change the outcome from Clark winning to Alice winning.
+Gibbard's theorem loosely says that if you have three or more candidates, then no voting system (including Approval!) can be strategyproof. Intuitively meaning that you can be clearly telling the voting system "I prefer Alice to Clark!", but you need to lie about your preferences in some other way--for example, pretending you changed your mind about Bob versus Alice--to change the outcome from Clark winning to Alice winning.
 
 Approval is not strategyproof when you have three or more tiers of preference. Then there can certainly be strategic consideration as to where to cut off your threshold of acceptability. *However*, based purely on the ballot data, Approval *does* hold a strategyproofness property. If you are already disapproving of Clark, you don't need to exaggerate to make sure your ballot fully counts against him. The ballot never betrays what you tell it. That is *not* a given in any other voting system.
 
@@ -179,7 +181,7 @@ Vorsatz shows that if you drop any single one of the four criteria, you can defi
 
 - Dropping strategyproof allows for scoring rules like the one in the example above.
 - Dropping strict monotonicity allows for a system where everyone ties all the time and your vote is completely meaningless
-- Dropping anonymity allows for Waldo to cast 5 votes instead of 1, because he's a generous donor.
+- Dropping anonymity allows for Waldo to cast a vote worth 100 points instead of 1, because he owns a hundred shares in the company.
 - Dropping neutrality allows for candidate favoritism. For example, Bob is a friend of the CEO so if he ties for first, all ties are broken for him.
 
 This, in a sense, makes Approval the "natural language" of dichotomous preferences. It satisfies the most basic fairness properties like neutrality and anonymity by holding no bias for voters or candidates. It's responsive to the voters' preferences by being strictly monotone. And it escapes manipulation by being strategyproof.
@@ -234,7 +236,7 @@ This is a really big deal. IIA is *the* criterion that causes so much trouble in
 
 Arrow's theorem and Gibbard's theorem are often framed as saying that there is no "perfect" voting system. But what we see here is that, on dichotomous preferences, there is a perfect voting system: Approval. It satisfies all the basic fairness criteria we might want, and it also satisfies IIA and strategyproofness.
 
-> **Corollary:** (The Perfect Voting System) A voting system is anonymous, neutral, strictly monotone, strategyproof, and satisfies IIA if and only if it is Approval voting on dichotomous preferences.
+> **Theorem:** (The Perfect Voting System) Approval is the unique voting system is anonymous, neutral, strictly monotone, strategyproof, and satisfies IIA on dichotomous preferences.
 
 The way dichotomous preferences allows us to sidestep these theorems is actually because the number of preference levels is strictly less than three, even though we might have more than two candidates. The general theme with these impossibility theorems often comes from the fact that there are three or more candidates in the assumptions. But that's not really what causes the problems.
 
