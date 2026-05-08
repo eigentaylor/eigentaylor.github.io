@@ -737,6 +737,11 @@ ninja.data = [{
           description: "A brief alternate proof of the theorem that individual sovereignty and efficiency are incompatible.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/quick-sen/";
+            },},{id: "previews-the-intuition-behind-gibbard-39-s-theorem",
+          title: 'The Intuition Behind Gibbard&amp;#39;s Theorem',
+          description: "An intuitive breakdown of Gibbard&#39;s more general 1973 theorem on the manipulation of voting schemes.",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/gibbard-intuition/";
             },},{id: "previews-jordan-canonical-form-made-easier-part-1",
           title: 'Jordan Canonical Form Made Easier Part 1',
           description: "not easy. just like... easier...",
