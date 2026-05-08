@@ -166,6 +166,8 @@ This game form can be shown to be straightforward, and thus the voting scheme of
 
 This does not break Gibbard's proof, however, since he assumed unrestricted domain on the preferences $P$ that voters can hold. Since we have three or more possible outcomes, we can't assume that $P$ is dichotomous. But, it is nice to know that if a voter's preferences are dichotomous, they do, in fact, have a best response: perfect honesty.
 
+This is also technically true of non-Approval score voting systems which only aggregate points (i.e. not STAR), due to the min/max strategy which makes it equivalent to approval voting.
+
 ## The Proof Structure
 
 Okay, so we assume we have some straightforward game, $g$. We have that each player has a best response strategy $\sigma_k(P_k)$ for whatever their underlying preference $P_k$ is. We then define a voting scheme from this game form as $v(P) = g(\sigma(P))$. We assume that there are at least three possible outcomes in the outcome set $X$. We must show that $g$ is dictatorial:
@@ -296,7 +298,13 @@ Therefore, there might be cases where you need to adjust your strategy to get a 
 
 This idea doesn't perfectly apply to all of our typical voting systems, which may need chance to break a tie, but it does tell us that the pursuit of a strategyproof voting system is in vain. We can't just design a better, more complicated game form that will finally make it so that no one ever has to lie again when they go out to vote.
 
-But the Approval exception* is still interesting. If your preferences are dichotomous, then you do, in fact, have a best response. That is, if the preference you are choosing to apply $P_i$ is a dichotomous one--for example, if you decide some subset of candidate are all "acceptable" and you only care that any one of them wins the election--then you can safely vote for all of them without worrying that you're failing to use some better strategy.
+Gibbard says something very poignant.
+
+> "Every voting scheme is dictatorial, limited to one or two possible outcomes, or subject to manipulation. Why should that matter? It means that no system of decision making but a trivial one can depend on informed self-interest to make outcomes a function of true preferences. If a system does make outcomes a function of preferences, it is in virtue of individual integrity, ignorance, or stupidity, or because preferences are sufficiently predictable that the system does not have to accommodate all possible patterns of preferences... The way [a voter] acts, then, must depend on something other than informed self-interest-perhaps ignorance, integrity, or stupidity."
+
+In practice, it's basically impossible to figure out what the best response strategy is for your preferences, since you don't know what everyone else is doing. Polls are often wrong, and the result is unexpected. Some will vote on principle even if that vote is not at all optimal. Some will vote completely against their interests because they don't understand the system, or because they just don't care. etc. etc. etc.
+
+But the Approval exception* is still interesting. If your preferences are dichotomous, then you do, in fact, have a best response. That is, if the preference you are choosing to apply, $P_i$, is dichotomous--for example, if you decide some subset of candidate are all "acceptable" and you only care that any one of them wins the election--then you can safely vote for all of them without worrying that you're failing to use some better strategy. In other words, $\sigma(P_i)$ is perfectly well defined if $P_i$ is dichotomous.
 
 Voting systems like [STAR voting and Condorcet methods](../approval-only/){:target="_blank"} like to tout that they have strong honesty incentives, which is somewhat true. But they do, in fact, have potential for completely sincere and honest strategies to fully and completely backfire on you. Approval voting, relatively speaking, is one of the safest systems to vote in.
 
