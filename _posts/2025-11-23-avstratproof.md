@@ -206,7 +206,7 @@ However, if this dichotomous goal is a rational projection of a voter's nuanced 
 
 To be explicitly clear: this is not saying that approval voting is *properly* strategyproof in general. This is essentially a newly invented concept of being "strategyproof" but only under a *specific* goal, chosen by a voter. To "win" under this goal, there is only one optimal strategy. But this strategy is **also** *sincere* for the voter. That makes it strategyproof for them *under this goal*. There could be an alternate strategy that could be optimal under a different goal (such as trying to get one's absolute favorite candidate to win), but that strategy would also *necessarily* open the voter up to risk of not achieving the dichotomous goal.
 
-Note that, again, this says nothing about how what any other voter is doing. If you, as a voter, choose your approval set $$S_v$$ sincerely, and decide to adopt the dichotomous goal induced by $$S_v$$, then there is no scenario where voting for $$S_v$$ is not optimal for you. We have essentially eliminated all strategy from your perspective (once we have a dichotomous goal). The only ballot it is rational to cast is a sincere expression of this preference.
+Note that, again, this says nothing about what any other voter is doing. If you, as a voter, choose your approval set $$S_v$$ sincerely, and decide to adopt the dichotomous goal induced by $$S_v$$, then there is no scenario where voting for $$S_v$$ is not optimal for you. We have essentially eliminated all strategy from your perspective (once we have a dichotomous goal). The only ballot it is rational to cast is a sincere expression of this preference.
 
 ### Where did the strategy go?
 
