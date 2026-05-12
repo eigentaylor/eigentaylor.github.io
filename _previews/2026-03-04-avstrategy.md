@@ -28,9 +28,6 @@ toc:
     subsections:
       - name: The Power of the Honest Ballot
   - name: Conclusion
-  - name: Appendix 
-    subsections:
-      - name: The Descending Chain of Unlikely Ties
   - name: References
 ---
 
