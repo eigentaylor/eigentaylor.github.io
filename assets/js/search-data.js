@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-independence-of-irrelevant-alternatives",
+        },{id: "post-arrow-39-s-impossibility-theorem",
+        
+          title: "Arrow&#39;s Impossibility Theorem",
+        
+        description: "Walkthrough and proof of the theorem that proves ranked voting systems cannot satisfy seemingly reasonable properties, unless you have infinitely many voters!",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/arrows/";
+          
+        },
+      },{id: "post-independence-of-irrelevant-alternatives",
         
           title: "Independence of Irrelevant Alternatives",
         
