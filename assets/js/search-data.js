@@ -662,11 +662,6 @@ ninja.data = [{
           description: "Approval voting is the best voting system (AKA, Taylor gets political)",
           section: "Previews",handler: () => {
               window.location.href = "/preview/approval/";
-            },},{id: "previews-irv-inconsistencies",
-          title: 'IRV Inconsistencies',
-          description: "It&#39;s much worse than you think.",
-          section: "Previews",handler: () => {
-              window.location.href = "/preview/not-irv/";
             },},{id: "previews-a-practical-case-for-approval-voting",
           title: 'A Practical Case for Approval Voting',
           description: "It&#39;s not just mathematically elegant, it&#39;s the most practical solution for our electoral problems.",
@@ -687,11 +682,6 @@ ninja.data = [{
           description: "How the leader rule induces a graph and dynamical system on candidate perceptions.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/leader-dynamics/";
-            },},{id: "previews-approval-is-a-condorcet-method",
-          title: 'Approval is a Condorcet Method',
-          description: "Approval is the perfect Condorcet method, and I have permanently solved the Condorcet paradox. April Fools!",
-          section: "Previews",handler: () => {
-              window.location.href = "/preview/condorcetapproval/";
             },},{id: "previews-approval-is-the-perfect-condorcet-method",
           title: 'Approval is the Perfect Condorcet Method',
           description: "Approval is a perfect Condorcet method, and I have permanently solved the Condorcet paradox. April Fools!",
@@ -702,11 +692,6 @@ ninja.data = [{
           description: "An explanation of the leader rule strategy in approval voting, and its positive ramifications.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/avstrategy/";
-            },},{id: "previews-arrow-39-s-impossibility-theorem",
-          title: 'Arrow&amp;#39;s Impossibility Theorem',
-          description: "Walkthrough and proof of the theorem that proves ranked voting systems cannot satisfy seemingly reasonable properties.",
-          section: "Previews",handler: () => {
-              window.location.href = "/preview/arrows-old/";
             },},{id: "previews-why-i-currently-only-support-approval",
           title: 'Why I Currently Only Support Approval',
           description: "Approval voting is the only system I trust to push for right now, and here&#39;s why.",
