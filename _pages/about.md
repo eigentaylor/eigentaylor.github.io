@@ -2,13 +2,13 @@
 layout: about
 title: about
 permalink: /
-subtitle: mathematician and approval voting advocate
+subtitle: mathematician and approval voting appreciator
 profile:
   align: right
   image: rpic.png
   image_circular: false # crops the image to make it circular
   more_info: > 
-    <p>Taylor Fisher</p> 
+    <p>Taylor Eigen Fisher</p> 
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -21,10 +21,10 @@ announcements:
 latest_posts:
   enabled: true
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  limit: 5 # leave blank to include all the blog posts
 ---
 
-my current obsession is approval voting and electoral systems. i also like linear algebra.
+my current obsession is approval voting and electoral reform. i also like linear algebra.
 
 [here are some math posts ive written if you want to look at them i guess](./blog){:target="_blank"}
 
@@ -42,6 +42,7 @@ my best blog posts related to approval voting:
 
 personal favorites:
 
+- [Why I Currently Only Support Approval Voting](./blog/approval-only){:target="_blank"}
 - [It's Time to Ditch RCV, Embrace Approval Voting](./blog/ditch-rcv){:target="_blank"}
 - [Why do we row reduce? What IS a matrix?](./blog/rref){:target="_blank"}
 - [Constant Coefficient ODEs Made Simple with Linear Operators](./blog/linalglinconstcoef){:target="_blank"}
