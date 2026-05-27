@@ -1,5 +1,5 @@
 # Development overrides for faster builds
-# Use with: bundle exec jekyll serve --config _config.yml,_config_dev.yml
+# Use with: bundle exec jekyll serve --config _config.yml,_config_dev.yml --incremental --livereload
 
 # Disable CSS/HTML minification  
 jekyll-minifier:
