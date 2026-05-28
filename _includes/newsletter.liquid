@@ -9,7 +9,7 @@
     <div class="newsletter-main">
       <p class="newsletter-eyebrow">newsletter</p>
       <h3 class="newsletter-title">join <b>the eigenletter</b></h3>
-      <p class="newsletter-subtitle">you'll get an email when i publish something. i won't spam you, i promise.</p>
+      <p class="newsletter-subtitle">get an email when i publish something</p>
 
       <form
         class="newsletter-form"
@@ -77,7 +77,7 @@
     {% if include.show_qr %}
       <div class="newsletter-qr">
         <img src="{{ include.qr_path | relative_url }}" alt="{{ include.qr_alt | default: 'QR code for newsletter sign-up' }}" class="newsletter-qr-image">
-        <p class="newsletter-qr-caption">Prefer phone signup? Scan this code.</p>
+        <p class="newsletter-qr-caption">prefer phone signup? scan this code.</p>
       </div>
     {% endif %}
   </div>
