@@ -13,3 +13,4 @@ vendor
 .idea
 .venv
 /_previews/scrap
+/.github/prompts
