@@ -9,6 +9,9 @@ jekyll-minifier:
 imagemagick:
   enabled: false
 
+# disable blog lsi
+lsi: false # produce an index for related posts
+
 # Remove terser from plugins list to disable JS minification
 plugins:
   - jekyll-archives-v2
