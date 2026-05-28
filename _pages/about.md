@@ -26,7 +26,7 @@ latest_posts:
 
 my current obsession is approval voting and electoral reform. i also like linear algebra.
 
-[here are some math posts ive written if you want to look at them i guess](./blog){:target="_blank"}
+[here are some posts ive written if you want to look at them i guess](./blog){:target="_blank"}
 
 feel free to [email me](mailto:tayloreigenfisher@gmail.com) if you want to get in touch.
 
