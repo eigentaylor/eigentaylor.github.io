@@ -88,7 +88,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: eigentaylor # blog_name will be displayed in your blog page
-blog_description: i wrote these
+blog_description: blog posts by taylor
 permalink: /blog/:title/
 lsi: true # produce an index for related posts
 
