@@ -101,6 +101,12 @@ pagination:
 
 {% endif %}
 
+{% if site.newsletter and site.newsletter.enabled %}
+<div class="newsletter-blog-block">
+  {% include newsletter.liquid id='blog' center=true %}
+</div>
+{% endif %}
+
   <ul class="post-list">
 
     {% if page.pagination.enabled %}

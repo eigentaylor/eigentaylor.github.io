@@ -32,6 +32,13 @@ feel free to [email me](mailto:tayloreigenfisher@gmail.com) if you want to get i
 
 ---
 
+<!-- insert newsletter signup form here -->
+{% if site.newsletter and site.newsletter.enabled %}
+{% include newsletter.liquid id='home' center=true show_qr=true qr_path='assets/img/qr-code.png' qr_alt='QR code to subscribe to the newsletter' %}
+
+---
+{% endif %}
+
 my best blog posts related to approval voting:
 
 - [Why I Currently Only Support Approval Voting](./blog/approval-only){:target="_blank"}

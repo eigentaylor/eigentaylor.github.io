@@ -2,19 +2,23 @@
 {% for post in site.related_posts | limit: site.related_blog_posts.max_related %}
   {% unless have_related_posts %}
     {% assign have_related_posts = true %}
-    {% if page.layout == 'post' %}
+    {% if include.compact %}
+      <ul class="list-disc pl-8"></ul>
+    {% elsif page.layout == 'post' %}
       <br>
       <hr>
       <br>
       <ul class="list-disc pl-8"></ul>
 
       <!-- Adds related posts to the end of an article -->
-      <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2>
+      <h2 class="text-3xl font-semibold mb-4 mt-12">enjoy this article?</h2>
     {% else %}
-      <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2>
+      <h2 class="text-3xl font-semibold mb-4 mt-12">enjoy this article?</h2>
     {% endif %}
 
-    <p class="mb-2">Here are some more articles you might like to read next:</p>
+    {% unless include.compact %}
+      <p class="mb-2">here are some more articles you might like to read next:</p>
+    {% endunless %}
   {% endunless %}
 
   <li class="my-2">
@@ -30,7 +34,7 @@
     {% endif %}
   </li>
 {% endfor %}
-{% if site.newsletter.enabled and site.footer_fixed %}
-  <p class="mb-2" style="margin-top: 1.5rem !important">Subscribe to be notified of future articles:</p>
+{% if site.newsletter.enabled and site.footer_fixed and page.layout != 'distill' %}
+  <p class="mb-2" style="margin-top: 1.5rem !important">subscribe to be notified of future articles:</p>
   {% include newsletter.liquid left=true %}
 {% endif %}
