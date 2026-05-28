@@ -30,12 +30,12 @@ toc:
   - name: Conclusion
     subsections:
       - name: The Approval Voting Exception
-  - name: References
+bibliography: voting.bib
 ---
 
 ## Introduction
 
-Based primarily on the proof included in W.D. Wallis' [The Mathematics of Elections and Voting](https://link.springer.com/book/10.1007/978-3-319-09810-4){:target="_blank"}, with more detail. I also referenced [these lecture notes](https://web.stanford.edu/~ashishg/msande336/aut2021/handouts/lecture5_notes.pdf){:target="_blank"} from Ashish Goel's course at Stanford, and this ["simple proof" by Andrew C. Eggers](https://andy.egge.rs/papers/Eggers_GibbardSatterthwaite.pdf){:target="_blank"}.
+Based primarily on the proof included in W.D. Wallis' *The Mathematics of Elections and Voting* <d-cite key="wallis2014mathElections"></d-cite>, with more detail. I also referenced lecture notes from Ashish Goel's course at Stanford <d-cite key="goel2021gibbardLecture"></d-cite>, and this "simple proof" by Andrew C. Eggers <d-cite key="eggers2015simpleProofGS"></d-cite>.
 
 The Gibbard-Satterthwaite theorem is a fundamental result in social choice theory, which loosely states that no "reasonable" ranked voting system can be strategyproof — there can always be a situation where a voter can get a better result by voting dishonestly. The exception is a "dictatorship", where the whole election is decided by a single voter, and all other ballots are ignored.
 
@@ -420,7 +420,7 @@ Strategyproofness therefore implies a strong lack of responsiveness to ranked ba
 
 We conclude the post with an informal discussion of Approval voting. I have discussed [the nuances of "strategyproofness" in Approval voting](../avstratproof){:target="_blank"} in a previous post, but I think it warrants a discussion here as well, since it is an interesting exception to the Gibbard-Satterthwaite theorem.
 
-Gibbard-Satterthwaite only applies to ranked voting systems. But there are other types of voting systems, such as approval voting, where voters can give independent votes to candidates. Although Gibbard's more general theorem still applies to Approval voting, [Approval in particular has been proven to be strategyproof under a strict assumption about voter preferences](https://www.jstor.org/stable/1955105){:target="_blank"}, which is that voters have "dichotomous preferences": they have a set of candidates they approve of and a set they disapprove of, and are indifferent between all candidates within each group.
+Gibbard-Satterthwaite only applies to ranked voting systems. But there are other types of voting systems, such as approval voting, where voters can give independent votes to candidates. Although Gibbard's more general theorem still applies to Approval voting, Approval in particular has been proven to be strategyproof under a strict assumption about voter preferences <d-cite key="bramsFishburn1978approval"></d-cite>, which is that voters have "dichotomous preferences": they have a set of candidates they approve of and a set they disapprove of, and are indifferent between all candidates within each group.
 
 The key is that Approval is also strictly monotonic. If a voter approves of a candidate, then that candidate is strictly better off than if the voter disapproves of that candidate. Voting for that candidate can break any tie in their favor, push them into a tie with first place, increase their winning margin, or fail to help them win. But it can never make them go from winning to losing. The optimal strategy, then, is to approve all acceptable candidates and disapprove of all unacceptable candidates. This is strategyproof under the dichotomous preferences assumption, but does not apply when voters have three or more levels of preference.
 
@@ -436,10 +436,3 @@ This can be extended slightly further, however. If you [decide that, as a voter,
 Calling Approval strategyproof in practice is a bit of a stretch. However, I find it endlessly fascinating that there is indeed a non-dictatorial voting system that is strategyproof, albeit under a very strong assumption about voter preferences.
 
 A common theme of voting theory is that aggregating ranked preferences is extremely difficult to do so fairly and without potential for manipulation. Trying to impose stability, or make manipulation suboptimal, collapses into needing to project onto the preferences of just one voter. By simply allowing voters to give independent votes, and restricting to a simple two-tiered preference, Approval voting makes expressing honest two-tiered preferences, like acceptable and unacceptable, the optimal strategy. But only for exactly that: two-tiered preferences. If voters have more complex preferences, then deciding where to draw the line between "acceptable" and "unacceptable" becomes a strategic question, and the strategyproofness of Approval voting breaks down. However, Approval is indeed one of the most sincere voting systems out there. In practice, it's never optimal to vote for one candidate, and not vote for all those candidates you strictly prefer to that candidate.
-
-## References
-
-- Andrew C. Eggers, *A Simple Proof of the Gibbard-Satterthwaite Theorem* (2015). [https://andy.egge.rs/papers/Eggers_GibbardSatterthwaite.pdf](https://andy.egge.rs/papers/Eggers_GibbardSatterthwaite.pdf){:target="_blank"}
-- Ashish Goel, *Lecture Notes on Gibbard-Satterthwaite* (2021). [https://web.stanford.edu/~ashishg/msande336/aut2021/handouts/lecture5_notes.pdf](https://web.stanford.edu/~ashishg/msande336/aut2021/handouts/lecture5_notes.pdf){:target="_blank"}
-- Brams, S. J., & Fishburn, P. C. (1978). Approval Voting. The American Political Science Review, 72(3), 831–847. [https://doi.org/10.2307/1955105](https://doi.org/10.2307/1955105){:target="_blank"}
-- Wallis, W.D. (2014). Arrow’s Theorem and the Gibbard-Satterthwaite Theorem. In: The Mathematics of Elections and Voting. Springer, Cham. [https://doi.org/10.1007/978-3-319-09810-4_5](https://doi.org/10.1007/978-3-319-09810-4_5){:target="_blank"}
