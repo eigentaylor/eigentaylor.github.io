@@ -375,6 +375,3 @@ s > 2-\frac1r & \iff rs>2r-1  \\
 \end{align*}$$
 
 Therefore, B has a higher total score than A and more voters prefer A over B, completing the proof. QED.
-
----
-

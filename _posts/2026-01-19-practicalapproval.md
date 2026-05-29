@@ -401,4 +401,3 @@ $$ \frac{70+3}{139}\cdot 27 =14.2\approx 14 \text{ voters for }B>C $$
 $$ \frac{66}{139}\cdot 27 =12.8\approx 13 \text{ voters for }C>B $$
 
 This gives both B and C 914 votes in the inferred pairwise matchup, a perfect tie. This makes it really difficult to determine who the true Condorcet winner is based on the expressed preferences.
-
