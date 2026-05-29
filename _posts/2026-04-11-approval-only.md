@@ -12,6 +12,7 @@ published: true
 related_posts: true
 theorems: false
 pretty_table: true
+bibliography: voting.bib
 chart:
   plotly: true
 authors:  
@@ -32,7 +33,6 @@ toc:
       - name: Voter Satisfaction Efficiency
       - name: Expressiveness
   - name: Conclusion
-  - name: References
 ---
 
 ## Introduction
@@ -43,13 +43,13 @@ I would say I am still rather new to the electoral reform space. I've tried my b
 
 As a mathematician, I have a soft spot for theoretical perfection. But I also love exceptional approximations that are simple and practical. I have found that if a simple model can capture the vital essence of a complex phenomenon with high fidelity, then adding complexity does not often yield significantly more accurate results. In fact, it can often lead to worse results due to overfitting, noise, and the introduction of new failure modes. This is a common theme in many areas of mathematics and science, and I find it applies just as well to electoral systems.
 
-Approval voting is the simplest possible electoral reform. It is a minimal extension of the existing system, where you can approve of as many candidates as you like instead of just one. That simplicity is deceptive, and led to me initially dismissing it entirely in favor of something more complex. How could such a complicated problem as Democracy be solved by just allowing people to check more boxes? My skepticism eventually gave way once I read the [seminal 1978 paper by Brams and Fishburn](https://doi.org/10.2307/1955105) on Approval voting. I realized that sometimes, the simplest answer is genuinely the best one. By removing all restrictions on voters' ability to express support for multiple candidates, Approval voting is the only system that lets your ballot truly mean what it says, without putting the voter at risk.
+Approval voting is the simplest possible electoral reform. It is a minimal extension of the existing system, where you can approve of as many candidates as you like instead of just one. That simplicity is deceptive, and led to me initially dismissing it entirely in favor of something more complex. How could such a complicated problem as Democracy be solved by just allowing people to check more boxes? My skepticism eventually gave way once I read the [seminal 1978 paper by Brams and Fishburn](https://doi.org/10.2307/1955105) on Approval voting <d-cite key="bramsFishburn1978approval"></d-cite>. I realized that sometimes, the simplest answer is genuinely the best one. By removing all restrictions on voters' ability to express support for multiple candidates, Approval voting is the only system that lets your ballot truly mean what it says, without putting the voter at risk.
 
 At this point, I am fully convinced that Approval voting is the most practical fix for our democracy. In this post, I want to explain my personal philosophy and most important criteria for evaluating electoral systems, and why Approval voting is the only option that checks all the boxes. This is a snapshot in time of my current thoughts as of approximately April 2026. I am open to changing my mind, and will happily update this post if that happens (as I have done before). And if you aren't convinced by my reasons and the criteria that I value, that's fine. But my framework is grounded in pure practicality and in our common goal of permanently ending Choose-one voting.
 
 ### The State of the Reform Movement
 
-We are in a critical moment right now. RCV is facing wide backlash and is now banned in [19 states](https://ballotpedia.org/Ranked-choice_voting_(RCV)){:target="_blank"} across the country (and has been rejected by voters in ballot propositions in red *and* blue states). The ["Make Elections Great Again Act"](https://ivn.us/posts/11-ways-mega-act-congress-tries-control-how-you-vote-2026-02-06) is currently accumulating sponsors and would ban *any voting system except Choose-one*, despite being framed specifically to target RCV. Other systems are being brought into the crossfire, and voters are increasingly skeptical of electoral reform. We might have *one* chance to pivot.
+We are in a critical moment right now. RCV is facing wide backlash and is now banned in [19 states](https://ballotpedia.org/Ranked-choice_voting_(RCV)){:target="_blank"} <d-cite key="ballotpedia2026rcv"></d-cite><d-cite key="ballotpedia2026indianaBan"></d-cite> across the country (and has been rejected by voters in ballot propositions in red *and* blue states). The ["Make Elections Great Again Act"](https://ivn.us/posts/11-ways-mega-act-congress-tries-control-how-you-vote-2026-02-06) <d-cite key="griffiths2026megaAct"></d-cite> is currently accumulating sponsors and would ban *any voting system except Choose-one*, despite being framed specifically to target RCV. Other systems are being brought into the crossfire, and voters are increasingly skeptical of electoral reform. We might have *one* chance to pivot.
 
 If we make the wrong move now and rally behind a system that is too complex, too new, or insufficiently tested, and the voters reject it, then we may lose the opportunity to make meaningful electoral reform progress in the near future. The political capital and public trust required to push through reform are finite and waning. Let's not squander them on a system that may fail to gain public trust when we have a tested, simple, and provably legitimate option right in front of us: Approval voting.
 
@@ -97,7 +97,7 @@ But Choose-one has the spoiler problem: when a third party gets more votes than 
 
 However, when legitimacy comes into the conversation, you *have* to mention Condorcet methods--methods that attempt to elect [the candidate who would beat every other candidate in a head-to-head matchup](../condorcet-approval){:target="_blank"}. I find that its importance lies less in it *needing* to be satisfied, and more in how it *cannot be violated*.
 
-I am in two minds about the Condorcet criterion. On the one hand, I find no reason that the underlying ranked Condorcet winner is truly the best consensus compromise. On the other hand, if you elect a candidate whom the ballots indicate would lose a head-to-head matchup against some other candidate, then that is a clear legitimacy problem: a pairwise majority of voters can point directly to the ballots and say "more of us preferred this other candidate to the one you elected," and that is a hard argument for the electorate to ignore. That's what happened in [Alaska](https://ranked.vote/report/us/ak/2022/08/cd) and [Burlington](https://ranked.vote/report/us/vt/btv/2009/03/mayor) under Ranked Choice. And that led to voter-led repeal efforts.
+I am in two minds about the Condorcet criterion. On the one hand, I find no reason that the underlying ranked Condorcet winner is truly the best consensus compromise. On the other hand, if you elect a candidate whom the ballots indicate would lose a head-to-head matchup against some other candidate, then that is a clear legitimacy problem: a pairwise majority of voters can point directly to the ballots and say "more of us preferred this other candidate to the one you elected," and that is a hard argument for the electorate to ignore. That's what happened in [Alaska](https://ranked.vote/report/us/ak/2022/08/cd) <d-cite key="rankedVote2022alaskaCd"></d-cite> and [Burlington](https://ranked.vote/report/us/vt/btv/2009/03/mayor) <d-cite key="rankedVote2009burlingtonMayor"></d-cite> under Ranked Choice. And that led to voter-led repeal efforts.
 
 I have argued extensively [against RCV specifically](../ditch-rcv){:target="_blank"} and [in reference to the Condorcet criterion in general](../condorcet-approval){:target="_blank"} that if we do not elect the Condorcet winner when you give voters a ranked ballot, you are not respecting the data we were given by the voters, and blatantly ignoring the expressed preferences of the electorate.
 
@@ -165,7 +165,7 @@ Now, I think it's hard to argue that Approval and Choose-one voting are not the 
 
 That is as simple as it gets, and that simplicity is a huge part of why I think Approval is the correct next step system for the current moment. The ballot is exactly, or almost exactly, the same as a Choose-one ballot, with the only difference being that instead of marking a single candidate, you can mark as many as you approve of. That minimal change keeps the system extremely practical while solving the vote-splitting problem that plagues Choose-one voting. It also works on our existing machines with only a minor code change. It's even harder to spoil a ballot. Approval wins here, hands down.
 
-STAR and Condorcet are... fine. Better than RCV, certainly. There is no central tabulation, and both are precinct summable. But their tabulation complexity grows significantly as the number of candidates increases. With 19 candidates, as there were in [Portland's 2024 mayoral race](https://en.wikipedia.org/wiki/2024_Portland,_Oregon,_mayoral_election), here are the numbers each precinct would need to count (for FULL precinct decentralization, and no central aggregation) in order to fully tabulate the results:
+STAR and Condorcet are... fine. Better than RCV, certainly. There is no central tabulation, and both are precinct summable. But their tabulation complexity grows significantly as the number of candidates increases. With 19 candidates, as there were in [Portland's 2024 mayoral race](https://en.wikipedia.org/wiki/2024_Portland,_Oregon,_mayoral_election) <d-cite key="wikipedia2024portlandMayoral"></d-cite>, here are the numbers each precinct would need to count (for FULL precinct decentralization, and no central aggregation) in order to fully tabulate the results:
 
 | System     | Tally Complexity per Precinct | Number with 19 Candidates |
 |------------|-------------------------------|---------------------------|
@@ -185,7 +185,7 @@ $$\sum_{k=1}^{19-1} \frac{19!}{(19-k)!} = \text{floor}((e-1) \cdot 19!)-1 $$
 
 Which gives us that lovely astronomical number of functionally distinct rankings that the RCV tabulation would need to consider if voters were allowed to rank all 19 candidates. Indeed, the number of actual cast ballots would be a small subset of that number, but there is no way that a single precinct could realistically enumerate and tally all of those possibilities. Central tabulation is absolutely necessary under RCV.
 
-And central tabulation has **[big problems](https://oaklandside.org/2023/01/05/recount-for-real-county-supervisor-calls-for-an-independent-recount-of-oaklands-ranked-choice-elections/)**. The Oakland RCV case shows just how important precinct summability is for the legitimacy of the results. A mistakenly checked box caused counting errors that yielded the wrong winner and took four months and a lawsuit to resolve.
+And central tabulation has **[big problems](https://oaklandside.org/2023/01/05/recount-for-real-county-supervisor-calls-for-an-independent-recount-of-oaklands-ranked-choice-elections/)** <d-cite key="bondGraham2023oaklandRecount"></d-cite>. The Oakland RCV case shows just how important precinct summability is for the legitimacy of the results. A mistakenly checked box caused counting errors that yielded the wrong winner and took four months and a lawsuit to resolve.
 
 When compared to RCV, Condorcet and STAR really do not look so bad. But both Approval and Plurality are the kings of the category.
 
@@ -199,7 +199,7 @@ When compared to RCV, Condorcet and STAR really do not look so bad. But both App
 
 We can also talk about practicality in terms of how easy it is for a voter to use. However, I would argue that this wouldn't really change my placement of these systems. STAR and Condorcet both use more complex ballots. While the ranked ballot has been studied for hundreds of years, and the literature on Approval is quite extensive, STAR is still quite young and untested. I am not convinced that STAR is simple enough, relative to a ranked ballot, to be meaningfully easier than Condorcet for voters.
 
-But there *are* serious logistical concerns with ranked ballots beyond just central tabulation. [MIT](https://electionlab.mit.edu/articles/effect-ranked-choice-voting-maine) found that RCV led to significant increases in time to fill out ballots, significantly lower levels of overall satisfaction with the voting process, and a marked decrease in confidence regarding the integrity of the election results. The data also showed a heightened perception among voters that the process was "slanted" against their specific political party. This was about RCV and not Condorcet, but I am personally worried about logistical concerns with voting systems that require voters to rank candidates.
+But there *are* serious logistical concerns with ranked ballots beyond just central tabulation. [MIT](https://electionlab.mit.edu/articles/effect-ranked-choice-voting-maine) <d-cite key="mit2023maineRcv"></d-cite> found that RCV led to significant increases in time to fill out ballots, significantly lower levels of overall satisfaction with the voting process, and a marked decrease in confidence regarding the integrity of the election results. The data also showed a heightened perception among voters that the process was "slanted" against their specific political party. This was about RCV and not Condorcet, but I am personally worried about logistical concerns with voting systems that require voters to rank candidates.
 
 ## Outcomes
 
@@ -242,7 +242,7 @@ RCV, on the other hand, pretends to solve all these problems, gives voters and c
 
 ### Voter Satisfaction Efficiency
 
-Approval, Condorcet, and STAR voting mitigate the vote splitting problem because support for multiple candidates is counted simultaneously. All three systems are quite robust [in simulations](https://electionscience.github.io/vse-sim/VSEbasic/), and from those simulations we can get a sense of how well they perform in terms of outcomes. One way to measure this is through Voter Satisfaction Efficiency (VSE), which measures how well a system tends to pick winners that reflect the preferences of the voters.
+Approval, Condorcet, and STAR voting mitigate the vote splitting problem because support for multiple candidates is counted simultaneously. All three systems are quite robust [in simulations](https://electionscience.github.io/vse-sim/VSEbasic/) <d-cite key="quinn2017vseSummary"></d-cite>, and from those simulations we can get a sense of how well they perform in terms of outcomes. One way to measure this is through Voter Satisfaction Efficiency (VSE), which measures how well a system tends to pick winners that reflect the preferences of the voters.
 
 Before we reveal the numbers, we should be clear that a voting system changes all aspects of elections, including who runs, who comes out to vote, and who is perceived as viable. But VSE attempts to give us the best way to compare, approximately, how well the true will of the voters is reflected in the outcomes. This gives a range that we can't compare directly between systems, but it does give us a sense of how robust a system is at producing outcomes that reflect the will of the electorate.
 
@@ -321,7 +321,7 @@ Further, Approval also comes with significantly better legitimacy and practicali
 
 I am simply not convinced that the marginal gains in outcomes from these more complex systems are worth the *risk* that comes from trying to convince voters and election officials to adopt a more complicated system that is harder to explain, harder to implement, and more prone to misunderstandings and potential crises of legitimacy.
 
-In a [1998 paper by Regenwetter and Grofman](http://www.jstor.org/stable/2634612), they found that Approval reliably picked the winners of Borda and Condorcet methods in experiments and real-world elections when the ordinal preferences could be reconstructed. In fact, they even say,
+In a [1998 paper by Regenwetter and Grofman](http://www.jstor.org/stable/2634612) <d-cite key="regenwetterGrofman1998approvalBordaCondorcet"></d-cite>, they found that Approval reliably picked the winners of Borda and Condorcet methods in experiments and real-world elections when the ordinal preferences could be reconstructed. In fact, they even say,
 
 > "We find no evidence here that approval voting should be replaced by a more elaborate voting scheme." (p. 532)
 
@@ -361,28 +361,4 @@ I admire the Equal Vote Coalition for trying to be inclusive of multiple systems
 
 Adopting Approval does not exclude later adoption of other systems. Perhaps, after we whet the appetite for more expressive systems by showing voters that Approval voting can improve the outcomes and solve many of the problems we face as a nation, then we can start experimenting with more complex systems. But pushing for something too far outside of the Overton window, only for it to face backlash for being too new or complex, *does* make it harder to keep the reforms in place, or to try again later. It's a gamble, and I don't like the odds.
 
-Approval voting is the *clear* first step we need to make in electoral reform. We should assume we have *one chance* to get this right, and stand together behind it before backlash leads to a successful ban on all systems besides Choose-one, as the existing ["Make Elections Great Again Act"](https://ivn.us/posts/11-ways-mega-act-congress-tries-control-how-you-vote-2026-02-06) threatens to do.
-
-## References
-
-Ballotpedia. (2026). *Ranked-choice voting (RCV)*. [https://ballotpedia.org/Ranked-choice_voting_(RCV)](https://ballotpedia.org/Ranked-choice_voting_(RCV))
-
-Ballotpedia. (2026). *Indiana becomes the 19th state to ban ranked-choice voting*. [https://news.ballotpedia.org/2026/02/27/indiana-becomes-the-19th-state-to-ban-ranked-choice-voting/](https://news.ballotpedia.org/2026/02/27/indiana-becomes-the-19th-state-to-ban-ranked-choice-voting/)
-
-BondGraham, D. (2023). *Recount for real? County supervisor calls for an independent recount of Oakland’s ranked-choice elections*. [https://oaklandside.org/2023/01/05/recount-for-real-county-supervisor-calls-for-an-independent-recount-of-oaklands-ranked-choice-elections/](https://oaklandside.org/2023/01/05/recount-for-real-county-supervisor-calls-for-an-independent-recount-of-oaklands-ranked-choice-elections/)
-
-Brams, S. J., & Fishburn, P. C. (1978). Approval Voting. *The American Political Science Review*, 72(3), 831-847. [https://doi.org/10.2307/1955105](https://doi.org/10.2307/1955105)
-
-Griffiths, S. (2026, February 6). *11 ways the MEGA Act in Congress tries to control how you vote*. Independent Voter News. [https://ivn.us/posts/11-ways-mega-act-congress-tries-control-how-you-vote-2026-02-06](https://ivn.us/posts/11-ways-mega-act-congress-tries-control-how-you-vote-2026-02-06)
-
-MIT Election Data and Science Lab. (2023). *The Effect of Ranked Choice Voting in Maine*. [https://electionlab.mit.edu/articles/effect-ranked-choice-voting-maine](https://electionlab.mit.edu/articles/effect-ranked-choice-voting-maine)
-
-Quinn, J. (2017). Voter Satisfaction Efficiency (VSE) summary. Center for Election Science. [https://electionscience.github.io/vse-sim/VSEbasic/](https://electionscience.github.io/vse-sim/VSEbasic/)
-
-Ranked.Vote. (2009). *Burlington Mayor*. [https://ranked.vote/report/us/vt/btv/2009/03/mayor](https://ranked.vote/report/us/vt/btv/2009/03/mayor)
-
-Ranked.Vote. (2022). *Alaska At-large Congressional District*. [https://ranked.vote/report/us/ak/2022/08/cd](https://ranked.vote/report/us/ak/2022/08/cd)
-
-Regenwetter, M., & Grofman, B. (1998). Approval Voting, Borda Winners, and Condorcet Winners: Evidence from Seven Elections. Management Science, 44(4), 520--533. [http://www.jstor.org/stable/2634612](http://www.jstor.org/stable/2634612)
-
-Wikipedia Contributors. (2024). *2024 Portland, Oregon, mayoral election*. Wikipedia. [https://en.wikipedia.org/wiki/2024_Portland,_Oregon,_mayoral_election](https://en.wikipedia.org/wiki/2024_Portland,_Oregon,_mayoral_election)
+Approval voting is the *clear* first step we need to make in electoral reform. We should assume we have *one chance* to get this right, and stand together behind it before backlash leads to a successful ban on all systems besides Choose-one, as the existing ["Make Elections Great Again Act"](https://ivn.us/posts/11-ways-mega-act-congress-tries-control-how-you-vote-2026-02-06) <d-cite key="griffiths2026megaAct"></d-cite> threatens to do.
