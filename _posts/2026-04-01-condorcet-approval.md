@@ -36,7 +36,7 @@ toc:
         slug: what-about-the-outcomes
       - name: Domain Restriction
   - name: Conclusion
-  - name: References
+bibliography: voting.bib
 ---
 
 ## Introduction
@@ -154,7 +154,7 @@ In Condorcetist thinking, we rely on the expressed preferences of voters, even w
 
 But if 12 of the Clark bullet voters--who maybe hated both Bob and Alice enough to rank neither--slightly preferred Alice over Bob, then Alice *might just be* the Condorcet winner. However, we also have intense ambiguity from the 5% of Bob supporters who did not rank a second choice. The result between Alice and Clark is therefore also exceptionally close and uncertain, and it's entirely possible that we actually have a Condorcet cycle on our hands.
 
-This example is modeled after the [real Alaska 2022 special election](https://abif.electorama.com/id/2022-08-16_Alaska-U.S._Representative_(Special_General)#pairwise). Bob here is a stand-in for Republican Nick Begich, who many Condorcetists believe was the true Condorcet winner. However, his theoretical matchup against Democrat Mary Peltola, the eventual ranked-choice winner and Alice analogue, was also made ambiguous by heavy bullet voting by Sarah Palin supporters. Palin, like Clark, also acted as a spoiler. And while many of those Palin supporters would have almost surely preferred the other Republican candidate, Begich, over Peltola, we cannot know for certain due to the incomplete rankings.
+This example is modeled after the [real Alaska 2022 special election](https://abif.electorama.com/id/2022-08-16_Alaska-U.S._Representative_(Special_General)#pairwise) <d-cite key="electorama2022alaskaAbif"></d-cite>. Bob here is a stand-in for Republican Nick Begich, who many Condorcetists believe was the true Condorcet winner. However, his theoretical matchup against Democrat Mary Peltola, the eventual ranked-choice winner and Alice analogue, was also made ambiguous by heavy bullet voting by Sarah Palin supporters. Palin, like Clark, also acted as a spoiler. And while many of those Palin supporters would have almost surely preferred the other Republican candidate, Begich, over Peltola, we cannot know for certain due to the incomplete rankings.
 
 As Condorcetists, we have to rely exclusively on the expressed ballot data, and trust that among those who *did* express a preference between two candidates, the majority preference accurately reflects who would win in a head-to-head matchup among the entire electorate. Just as ranked-choice voting exhausts ballots from voters who failed to rank any remaining candidates, Condorcetists also value expressed preferences over potential unexpressed preferences.
 
@@ -199,7 +199,7 @@ This axiom allows us to disregard the possibility of a Condorcet method having t
 
 **Proof:** By example \ref{cycle}, we can see that any GCM that allows three tiers can result in no Condorcet winner. This example works for any $k\geq 3$, so a Condorcet winner can fail to exist for any $k\geq 3$. $\square$
 
-This is not an abstract result. While very rare, Condorcet cycles have occurred in real U.S. elections, such as a [Minneapolis city council election in 2021](https://ranked.vote/report/us/mn/2021/11/ward-2).
+This is not an abstract result. While very rare, Condorcet cycles have occurred in real U.S. elections, such as a [Minneapolis city council election in 2021](https://ranked.vote/report/us/mn/2021/11/ward-2) <d-cite key="rankedVote2021minneapolisWard2"></d-cite>.
 
 > **Definition:** For $C_2$, we use the following notation. The two tiers are called the "approved tier" and the "unapproved tier". For candidates $X$ and $Y$:
 >
@@ -230,7 +230,7 @@ Beyond the algebra, the key and intuition of this proof is extraordinarily simpl
 
 We now define Approval voting.
 
-> **Definition:** Approval voting is a voting method in which each voter can approve any number of candidates. The candidate who is approved by the most voters wins.
+> **Definition:** Approval voting is a voting method in which each voter can approve any number of candidates. The candidate who is approved by the most voters wins. <d-cite key="bramsFishburn1978approval"></d-cite>
 
 And come to our main result.
 
@@ -272,7 +272,7 @@ If you concede that we can only define a Condorcet winner by the ballot data tha
 
 <img src="/assets/img/approvalcondorcetmeme1.jpg" alt="Drake: Approval is not two-tiered score, but two-tiered Condorcet" style="width:100%; max-width:600px;">
 
-Note: As I was writing this post, I was researching related arguments and I found out that [Charles Munger wrote a paper in 2023 proving that Approval is a two-tiered Condorcet method](https://bettervotingmethods.com/s/ApprovalRangeStarVoting030323.pdf). Even hardcore Condorcetists know Approval is a Condorcet method! His conclusion is that Approval voting is a degenerate Condorcet method with worse outcomes. However, while I actually generally agree with his criticisms of Range and STAR voting, I think that in practice Approval really is just a more practical Condorcet method. [This is a pretty good argument in that regard](https://rangevoting.org/AppCW.html).
+Note: As I was writing this post, I was researching related arguments and I found out that [Charles Munger wrote a paper in 2023 proving that Approval is a two-tiered Condorcet method](https://bettervotingmethods.com/s/ApprovalRangeStarVoting030323.pdf) <d-cite key="munger2023approvalCondorcet"></d-cite>. Even hardcore Condorcetists know Approval is a Condorcet method! His conclusion is that Approval voting is a degenerate Condorcet method with worse outcomes. However, while I actually generally agree with his criticisms of Range and STAR voting, I think that in practice Approval really is just a more practical Condorcet method. [This is a pretty good argument in that regard](https://rangevoting.org/AppCW.html) <d-cite key="smithNdaAppCW"></d-cite>. Older Condorcet-efficiency work points in the same direction <d-cite key="merrill1988condorcetEfficiency"></d-cite>.
 
 ## You can't prove it's not Condorcet
 
@@ -316,13 +316,13 @@ I have my issues with utility arguments, and range voting methods, but let's pre
 
 In this scenario, Alice is a much higher utility option (76.5) for the electorate than the true Condorcet winner Bob (50.5). Perhaps Alice is a firebrand candidate who excites her 45% base, who finds a milquetoast candidate like Bob unexciting. And perhaps, a substantial minority of moderate voters *slightly* prefers Bob over Alice (a 10/10 vs a 9/10), but would be genuinely happy with either one. The minority of Clark supporters hate both Alice and Bob, and preferring Bob is like preferring losing a kidney over losing a liver. Both awful, but if *forced* to pick one, they would pick Bob. However, the utility disparity is so large, it's not unbelievable they might just rank both Bob *and* Alice equally below Clark.
 
-This is not to argue that utility maximization should be the goal of an election, especially because that's not the data we collect in a Condorcet method. Just as we can't know the true pairwise preferences that voters might have in Approval voting, we can't know the true utilities that voters assign to candidates in any ranked election. But the utilities show the approvals are not necessarily irrational in this context. Each voter is approving only the candidates above the average utility of all candidates (this is a [standard modeling choice for the approval threshold under honest, zero-information assumptions](https://electionscience.github.io/vse-sim/VSEbasic/)). If this is genuinely how the voters feel, and if 80% of the electorate gives Alice a 9/10 or higher, then I see no reason that Alice is an unreasonable winner, or somehow a "fringe" candidate.
+This is not to argue that utility maximization should be the goal of an election, especially because that's not the data we collect in a Condorcet method. Just as we can't know the true pairwise preferences that voters might have in Approval voting, we can't know the true utilities that voters assign to candidates in any ranked election. But the utilities show the approvals are not necessarily irrational in this context. Each voter is approving only the candidates above the average utility of all candidates (this is a [standard modeling choice for the approval threshold under honest, zero-information assumptions](https://electionscience.github.io/vse-sim/VSEbasic/)<d-cite key="quinn2017vseSummary"></d-cite>). If this is genuinely how the voters feel, and if 80% of the electorate gives Alice a 9/10 or higher, then I see no reason that Alice is an unreasonable winner, or somehow a "fringe" candidate.
 
 Bob, on the other hand, is only a 3/10 or 1/10 to 65% of the electorate. Under this dynamic, Alice is clearly a better compromise for the electorate as a whole than Bob, given that the Bob supporters seem to genuinely like Alice. I would argue 80% of the voters being *at least* 90% happy is more majoritarian than 65% of the voters being *at most* 30% happy.
 
 Most Condorcet winners are not like Bob here, in my opinion. And when they are genuinely good, I have no doubt that Approval voting would likely elect them. But in cases like the one above, where the Condorcet winner is only marginally preferred by a lukewarm majority who barely sees a difference between him and Alice, Approval voting can reasonably elect a candidate who is actually acceptable to a larger portion of the electorate.
 
-The [1985 Institute of Management Sciences (TIMS) election](https://www.jstor.org/stable/2632078) is a good example that shows a narrow (and ambiguous) Condorcet winner can be defeated by a candidate who is more broadly acceptable to the electorate. See [this post](../practicalapproval){:target="_blank"} where I discuss it in more detail. But, in short, the Approval winner won by over a hundred approvals. The Condorcet winner was inferred to be strictly preferred over the Approval winner by a single vote (of those who expressed some type of preference), while 27 voters abstained. That's not exactly a strong legitimate claim. Approval broke that ambiguity and would have given a mandate, even though ordinal preferences were in a deadlock.
+The [1985 Institute of Management Sciences (TIMS) election](https://www.jstor.org/stable/2632078) <d-cite key="fishburnLittle1988approvalExperiment"></d-cite> is a good example that shows a narrow (and ambiguous) Condorcet winner can be defeated by a candidate who is more broadly acceptable to the electorate. See [this post](../practicalapproval){:target="_blank"} where I discuss it in more detail. But, in short, the Approval winner won by over a hundred approvals. The Condorcet winner was inferred to be strictly preferred over the Approval winner by a single vote (of those who expressed some type of preference), while 27 voters abstained. That's not exactly a strong legitimate claim. Approval broke that ambiguity and would have given a mandate, even though ordinal preferences were in a deadlock.
 
 ### A Remark on Legitimacy
 
@@ -374,19 +374,19 @@ Truthfully, at the time of writing, Condorcet would be my second choice over App
 
 We have established that Approval is a simplified, two-tiered Condorcet method. While those like Munger would argue that this simplification comes at the cost of outcomes, I would argue that the cost is minimal for the benefits we get in return.
 
-Approval has been shown to have [essentially the same level of outcomes](https://electionscience.github.io/vse-sim/VSEbasic/) as more complex Condorcet methods in "Voter Satisfaction Efficiency" (VSE). Whereas Condorcet gets about 86%-98% VSE, Approval gets 89%-95%, depending on strategy and model assumptions. And what do we gain in return for that three percent drop in maximum VSE?
+Approval has been shown to have [essentially the same level of outcomes](https://electionscience.github.io/vse-sim/VSEbasic/) <d-cite key="quinn2017vseSummary"></d-cite> as more complex Condorcet methods in "Voter Satisfaction Efficiency" (VSE). Whereas Condorcet gets about 86%-98% VSE, Approval gets 89%-95%, depending on strategy and model assumptions. And what do we gain in return for that three percent drop in maximum VSE?
 
 We have mentioned thus far the simplicity of counting Approval votes compared to more complex ranked methods, which balloon in complexity as the number of candidates increases. So it's much simpler to use in practice, which has nontrivial importance. In real life, how much voter satisfaction does a full Condorcet method lose from its opacity and complexity?
 
 There is the fact that, unlike any other Generalized Condorcet method, Approval never "breaks" due to a cycle, because Approval has no cycles. Sorry, but I'm not quite ready to take an extra theoretical 3% in maximum VSE for a system that's more complicated and has a tiny chance to completely collapse, and be relegated to a seemingly arbitrary tie-breaker, if voters are sufficiently messy. I'll take the sturdy simplicity of a 95% system, that can promise it will never break, any day.
 
-[I recommend taking a look at some Yee diagrams](http://zesty.ca/voting/sim/), and tell me if you can truly tell the difference between the Approval and Condorcet diagrams without your reading glasses.
+[I recommend taking a look at some Yee diagrams](http://zesty.ca/voting/sim/) <d-cite key="yee2005simulations"></d-cite>, and tell me if you can truly tell the difference between the Approval and Condorcet diagrams without your reading glasses.
 
-In the same vein, [Gary Cox](https://doi.org/10.2307/2111325) has a paper that shows both Approval and Condorcet have strong median pulls. Munger's criticisms that Approval elects "fringe" candidates, based purely on ordinal preferences that have no information about intensity, just do not hold up to scrutiny in my opinion. To treat a candidate who ranks Bob over Alice but only finds Bob acceptable exactly the same as a voter who slightly prefers Bob but also loves Alice is to completely ignore the concept of acceptability and the possibility of distance between rankings.
+In the same vein, [Gary Cox](https://doi.org/10.2307/2111325) <d-cite key="cox1987electoralEquilibrium"></d-cite> has a paper that shows both Approval and Condorcet have strong median pulls. Munger's criticisms that Approval elects "fringe" candidates, based purely on ordinal preferences that have no information about intensity, just do not hold up to scrutiny in my opinion. To treat a candidate who ranks Bob over Alice but only finds Bob acceptable exactly the same as a voter who slightly prefers Bob but also loves Alice is to completely ignore the concept of acceptability and the possibility of distance between rankings.
 
 And even *if* Approval voting occasionally elects a candidate who is not the Condorcet winner, we would literally never even know! You would never be able to *prove* it. The only thing we would see is the candidate who earned approvals from the most voters, and all the others who couldn't manage to convince as many voters.
 
-I may make a future post about some of the mathematical nuances of Approval versus full Condorcet, including discussion of IIA, and Nash equilibria guarantees. There is also [the fact that Approval is technically strategyproof under the goal of electing any "acceptable" candidate](../avstratproof){:target="_blank"}. Additionally, when voters apply an intuitive strategy like [Laslier's Leader rule](https://journals.sagepub.com/doi/10.1177/0951629808097286), the only equilibrium is one that elects a unique Condorcet winner, when they exist.
+I may make a future post about some of the mathematical nuances of Approval versus full Condorcet, including discussion of IIA, and [Nash equilibria guarantees](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy) <d-cite key="brams2008mathDemocracy"></d-cite>. There is also [the fact that Approval is technically strategyproof under the goal of electing any "acceptable" candidate](../avstratproof){:target="_blank"}. Additionally, when voters apply an intuitive strategy like [Laslier's Leader rule](https://journals.sagepub.com/doi/10.1177/0951629808097286) <d-cite key="laslier2009leaderRule"></d-cite>, the only equilibrium is one that elects a unique Condorcet winner, when they exist.
 
 ### Domain Restriction
 
@@ -420,38 +420,10 @@ The latter question is binary and well-defined. Because it is binary, it is impo
 2. Ensuring full legitimacy to the winner in every possible non-tied election scenario, as the ballot Condorcet winner. No paradoxes or cycles, and no other candidate can claim to be more deserving of victory than the candidate with the most approvals based on the ballots cast.
 3. Maintaining full transparency and being far easier to explain to voters, particularly to skeptical voters who demand to know why *their* candidate lost.
 
-All the while providing [essentially the same level of outcomes](https://electionscience.github.io/vse-sim/VSEbasic/) as more complex Condorcet methods.
+All the while providing [essentially the same level of outcomes](https://electionscience.github.io/vse-sim/VSEbasic/) <d-cite key="quinn2017vseSummary"></d-cite> as more complex Condorcet methods.
 
 In an era of distrust in institutions and elections, I believe that simplicity and legitimacy are a prerequisite for trust. And I do not trust that a generic Condorcet method is sufficiently simple and transparent (particularly in the case of a cycle, rare as they may be) in all cases to be a permanent solution. Approval is the only system I think is simple enough to be that permanent solution, and I think it *has to be the first step*. Approval today, Condorcet tomorrow is something I might be willing to get behind.
 
 Fellow Condorcetists, let us unite behind the best and most practical Condorcet method: Approval voting!
 
 And if you are a true Condorcetist who read this far, I would like to extend my genuine thanks for getting through this complete mathematical abuse of the term "Condorcet". However, I hope that it at least convinced you that Approval is, in fact, a two-tiered Condorcet method. Whether or not that changes your opinion of Approval, I leave that up to you!
-
-## References
-
-Brams, S. J. (2008). *Mathematics and Democracy: Designing Better Voting and Fair-Division Procedures*. Princeton University Press. [https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy)
-
-Brams, S. J., & Fishburn, P. C. (1978). Approval Voting. *The American Political Science Review*, 72(3), 831-847. [https://doi.org/10.2307/1955105](https://doi.org/10.2307/1955105)
-
-Cox, G. W. (1987). Electoral Equilibrium under Alternative Voting Institutions. *American Journal of Political Science*, 31(1), 82-108. [https://doi.org/10.2307/2111325](https://doi.org/10.2307/2111325)
-
-Electorama. (2022). U.S. Representative (Special General), Alaska, August 16, 2022 -- ABIF results. [https://abif.electorama.com/id/2022-08-16-Alaska-U.S.Representative(Special_General)](https://abif.electorama.com/id/2022-08-16_Alaska-U.S._Representative_(Special_General)#pairwise)
-
-Fishburn, P. C., & Little, J. D. C. (1988). An Experiment in Approval Voting. *Management Science*, 34(5), 555–568. [https://www.jstor.org/stable/2632078](https://www.jstor.org/stable/2632078)
-
-Laslier, J. F. (2009). The Leader Rule: A Model of Strategic Approval Voting in a Large Electorate. *Journal of Theoretical Politics*, 21(1), 113-136. [https://journals.sagepub.com/doi/10.1177/0951629808097286](https://journals.sagepub.com/doi/10.1177/0951629808097286)
-
-Merrill, S. (1988). Condorcet Efficiency. In *Making Multicandidate Elections More Democratic* (pp. 15-29). Princeton University Press. [https://doi.org/10.1515/9781400859504.15](https://doi.org/10.1515/9781400859504.15)
-
-Munger, C. T., Jr. (2023). Approval voting is Condorcet-compatible voting under a constraint: A critique of Approval, and both Range and Star, voting. Better Voting Methods. [https://bettervotingmethods.com/s/ApprovalRangeStarVoting030323.pdf](https://bettervotingmethods.com/s/ApprovalRangeStarVoting030323.pdf)
-
-Quinn, J. (2017). *Voter Satisfaction Efficiency (VSE) summary*. Center for Election Science. [https://electionscience.github.io/vse-sim/VSEbasic/](https://electionscience.github.io/vse-sim/VSEbasic/)
-
-Ranked.Vote. (2022). *Alaska At-large Congressional District*. [https://ranked.vote/report/us/ak/2022/08/cd](https://ranked.vote/report/us/ak/2022/08/cd)
-
-Ranked.Vote. (2021). *Minneapolis City Council Ward 2*. [https://ranked.vote/report/us/mn/2021/11/ward-2](https://ranked.vote/report/us/mn/2021/11/ward-2)
-
-Smith, W. D. (n.d.). Approval yields Condorcet winners in practice. Center for Range Voting. [https://rangevoting.org/AppCW.html](https://rangevoting.org/AppCW.html)
-
-Yee, K. P. (2005). Voting simulation visualizations. [http://zesty.ca/voting/sim/](http://zesty.ca/voting/sim/)

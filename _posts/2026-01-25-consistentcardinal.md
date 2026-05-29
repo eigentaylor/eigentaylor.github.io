@@ -28,7 +28,7 @@ toc:
   - name: But does Approval elect the best candidates?
   - name: The Importance of Legitimacy
   - name: Appendix
-  - name: References
+bibliography: voting.bib
 ---
 
 ## Introduction
@@ -267,7 +267,7 @@ There is, in my estimation, a common misconception that is pervasive in the elec
 
 I have argued in [previous posts](../practicalapproval/){:target="_blank"} that Approval voting does not elect milquetoast, beige wall candidates, but rather candidates that are both broadly acceptable and can inspire passionate support. But it still seems counterintuitive to many that increasing the granularity or expressiveness of ballots does not necessarily lead to better outcomes.
 
-The literature, however, shows otherwise. Approval voting has a [strong pull towards the median voter](https://www.jstor.org/stable/2111214){:target="_blank"} (Cox 1985), promoting representative outcomes. Simulations put Approval voting at 89-95% VSE (Voter Satisfaction Efficiency), depending on the model used (see [here](https://electionscience.github.io/vse-sim/VSEbasic){:target="_blank"}).
+The literature, however, shows otherwise. Approval voting has a [strong pull towards the median voter](https://www.jstor.org/stable/2111214){:target="_blank"} <d-cite key="cox1985approvalEquilibrium"></d-cite>, promoting representative outcomes. Simulations put Approval voting at 89-95% VSE (Voter Satisfaction Efficiency), depending on the model used (see [here](https://electionscience.github.io/vse-sim/VSEbasic){:target="_blank"} <d-cite key="quinn2017vseSummary"></d-cite>).
 
 Compared to STAR's 91-98% VSE, and SCORE's 84-96%, Approval voting is extremely comparable. And the extremely minor improvement from Approval to STAR comes at [serious costs beyond the SCC property](../practicalapproval/){:target="_blank"}, in terms of complexity, cost, and trustworthiness. Plurality voting, by comparison, scores around 75% and IRV around 79% ("better than plurality, but worse than all the other methods above").
 
@@ -378,10 +378,3 @@ Therefore, B has a higher total score than A and more voters prefer A over B, co
 
 ---
 
-# References
-
-Cox, Gary W. “Electoral Equilibrium under Approval Voting.” American Journal of Political Science, vol. 29, no. 1, 1985, pp. 112–18. JSTOR, [https://doi.org/10.2307/2111214](https://doi.org/10.2307/2111214){:target="_blank"}.
-
-Quinn, J. (2017). Voter Satisfaction Efficiency (VSE) summary. Center for Election Science. [https://electionscience.github.io/vse-sim/VSEbasic/](https://electionscience.github.io/vse-sim/VSEbasic/){:target="_blank"}.
-
-[hyperlink](https://www.youtube.com/watch?v=JwKTy959n8o){:target="_blank"}
