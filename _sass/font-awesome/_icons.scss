@@ -12,4 +12,3 @@ readers do not read off random characters that represent icons */
     #{$fa-duotone-icon-property}: string.unquote("\"#{$icon}#{$icon}\"");
   }
 }
-
