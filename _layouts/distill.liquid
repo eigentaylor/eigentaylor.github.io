@@ -124,8 +124,17 @@
       <d-bibliography src="{{ page.bibliography | prepend: '/assets/bibliography/' | relative_url }}"></d-bibliography>
 
       <d-article>
-        {% assign show_newsletter = site.newsletter and site.newsletter.enabled %}
-        {% assign show_related_posts = site.related_blog_posts and site.related_blog_posts.enabled and (page.related_posts == null or page.related_posts) %}
+        {% assign show_newsletter = false %}
+        {% if site.newsletter and site.newsletter.enabled %}
+          {% assign show_newsletter = true %}
+        {% endif %}
+
+        {% assign show_related_posts = false %}
+        {% if site.related_blog_posts and site.related_blog_posts.enabled %}
+          {% if page.related_posts == nil or page.related_posts %}
+            {% assign show_related_posts = true %}
+          {% endif %}
+        {% endif %}
 
         {% if show_newsletter and show_related_posts %}
           <h2 class="text-3xl font-semibold mb-4 mt-12">enjoy this article?</h2>
