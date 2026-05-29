@@ -280,8 +280,8 @@ display_categories: ['differential-equations', 'linear-algebra','calculus','poli
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Fisher]
+  first_name: ["Taylor Eigen", "T. E."]
 
   style: apa
   locale: en
