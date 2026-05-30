@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "my random projects",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
         },{id: "nav-teaching",
           title: "teaching",
           description: "Classes I have officially tutored or TA&#39;d for",
@@ -793,11 +800,36 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
-            },},{id: "projects-just-how-chaotic-is-the-electoral-college",
-          title: 'Just how chaotic is the electoral college?',
-          description: "An analysis of how close US elections really are",
+            },},{id: "projects-av-lab",
+          title: 'AV lab',
+          description: "lightweight lab for approval voting experiments.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/EC_margins/";
+              window.location.href = "/projects/avlab/";
+            },},{id: "projects-margin-matters",
+          title: 'margin matters',
+          description: "interactive presidential election results from 1864-2024 plus too many features to list here!",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/margin-matters/";
+            },},{id: "projects-president-sorter",
+          title: 'president sorter',
+          description: "sort and create a tier list for U.S. presidents",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/pres-sort/";
+            },},{id: "projects-runoff-av",
+          title: 'runoff AV',
+          description: "how does adding runoff affect strategy in approval voting?",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/runoff-av/";
+            },},{id: "projects-satisficing-voter-sim",
+          title: 'satisficing voter sim',
+          description: "comparing voting methods when voters are misinformed and fatigued",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/satisficing-voter-sim/";
+            },},{id: "projects-star-pathology-generator",
+          title: 'STAR pathology generator',
+          description: "quickly generate edge cases and failure modes for STAR voting.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/star-pathology-gen/";
             },},{id: "projects-title",
           title: 'Title',
           description: "desc",
