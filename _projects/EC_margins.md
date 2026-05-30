@@ -5,9 +5,9 @@ date: 2025-08-13
 description: An analysis of how close US elections really are
 giscus_comments: true
 importance: 3
-category:
+category: electoral analysis
 authors:  
-  - name: Taylor F.
+  - name: Taylor Eigen Fisher
     url: ""
     affiliations:
       name: None
@@ -18,19 +18,19 @@ toc:
       - name: c22
 ---
 
-Let's get POLITICAL! Okay, not really. But sort of. I am actually extremely fascinated by voting systems, elections, and presidents! And lately, I've been quite interested in the science behind elections. One of the primary gripes people have with US elections is the Electoral College. 
+Let's get POLITICAL! Okay, not really. But sort of. I am actually extremely fascinated by voting systems, elections, and presidents! And lately, I've been quite interested in the science behind elections. One of the primary gripes people have with US elections is the Electoral College.
 
 Whether or not the electoral college is *good* or *bad* is beyond the scope of this post. But the question I'm here to ask is
 
-# Just how close was a particular election?
+## Just how close was a particular election?
 
-How do we define close? Well, we don't pick a president by the popular vote margin, but that's a good place to start! We define 
+How do we define close? Well, we don't pick a president by the popular vote margin, but that's a good place to start! We define
 
 $$
 m_{PV}=\frac{\abs{D_{votes}-R_{votes}}}{D_{votes}+R_{votes}}
 $$
 
-This measures the percentage difference in votes that the winning candiate got over the other. The format we will use in this post is D+$x$ or R+$x$ depending on the winner. For example, in 2020, Joseph Biden received 81,283,501 votes to Donald Trump's 74,223,975. 
+This measures the percentage difference in votes that the winning candidate got over the other. The format we will use in this post is D+$x$ or R+$x$ depending on the winner. For example, in 2020, Joseph Biden received 81,283,501 votes to Donald Trump's 74,223,975.
 
 $$
 \frac{\abs{81,283,501-74,223,975}}{81,283,501+74,223,975}
@@ -49,11 +49,25 @@ $$
 
 The most famous example where this is smallest is the election of 2000. George W. Bush won Florida by 537 votes, which means that if 269 of those voters had put Gore instead of Bush, then Gore would have won the electoral college by a single vote. That's 0.05181% of the popular vote margin (about D+$0.5$), and a mere 0.00027% of the total votes cast that year.
 
-Flipped states: {'ARIZONA': {'EC': 11, 'flipped votes': 5229, '% flipped': 0.157}, 'GEORGIA': {'EC': 16, 'flipped votes': 5890, '% flipped': 0.119}, 'WISCONSIN': {'EC': 10, 'flipped votes': 10342, '% flipped': 0.319}, 'NE-02': {'EC': 1, 'flipped votes': 10819, '% flipped': 3.366}}
-Total number of flipped votes: 32280 across 4 states, Ratio to Popular Vote Margin: 0.45769%, Ratio to Total Votes in Year: 0.02076%
-New Winner: Donald J. Trump (R) with 270 electoral votes vs Joseph R. Biden (D) with 268 electoral votes
+| Metric | Value |
+| --- | --- |
+| Votes changed | 21,461 |
+| % of total | 0.0135% |
+| States flipped | 3 |
+| EC outcome | 269 - 269 |
 
+### Applied flips (optimize: min votes)
 
+| State | EV | D (before → after) | R (before → after) | Δ votes |
+| --- | ---: | ---: | ---: | ---: |
+| AZ | 11 | 1,672,143 → 1,666,914 | 1,661,686 → 1,666,915 | 5,229 (0.154%) |
+| GA | 16 | 2,473,633 → 2,467,743 | 2,461,854 → 2,467,744 | 5,890 (0.118%) |
+| WI | 10 | 1,630,866 → 1,620,524 | 1,610,184 → 1,620,526 | 10,342 (0.314%) |
 
+By also flipping Nebraska's second district, Trump would have won outright with exactly 270 electoral votes.
+
+| District | EV | D (before → after) | R (before → after) | Δ votes |
+| --- | ---: | ---: | ---: | ---: |
+| NE-02 | 1 | 176,468 → 165,422 | 154,377 → 165,423 | 11,046 (3.252%) |
 
 [hyperlink](../eigentricks/){:target="_blank"}
