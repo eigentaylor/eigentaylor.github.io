@@ -151,17 +151,6 @@ ninja.data = [{
             window.location.href = "/blog/avstratproof/";
           
         },
-      },{id: "post-a-mathematical-case-for-approval-voting",
-        
-          title: "A Mathematical Case for Approval Voting",
-        
-        description: "Approval voting is the best voting system (AKA, Taylor gets political). (Somewhat outdated.)",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/approval/";
-          
-        },
       },{id: "post-why-do-we-row-reduce-what-is-a-matrix",
         
           title: "Why do we row reduce? What IS a matrix?",
