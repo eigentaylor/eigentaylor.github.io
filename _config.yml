@@ -151,7 +151,7 @@ collections:
       layout: post
     output: false
   projects:
-    output: false
+    output: true
   previews:
     output: true
     permalink: /preview/:title/

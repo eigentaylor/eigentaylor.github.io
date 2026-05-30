@@ -3,10 +3,10 @@ layout: page
 title: projects
 permalink: /projects/
 description: my random projects
-nav: false
+nav: true
 nav_order: 3
-display_categories: [political science]
-horizontal: false
+display_categories: [electoral analysis, voting methods, fun]
+horizontal: true
 ---
 
 <!-- pages/projects.md -->
