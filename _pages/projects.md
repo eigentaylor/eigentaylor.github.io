@@ -6,7 +6,7 @@ description: my random projects
 nav: true
 nav_order: 3
 display_categories: [electoral analysis, election simulations, voting methods]
-horizontal: false
+horizontal: true
 ---
 
 <!-- pages/projects.md -->
