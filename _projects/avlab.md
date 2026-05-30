@@ -1,7 +1,7 @@
 ---
 layout: page
-title: AV Lab
-description: Lightweight lab for approval voting experiments.
+title: AV lab
+description: lightweight lab for approval voting experiments.
 redirect: https://eigentaylor.github.io/avlab
 github: https://github.com/eigentaylor/avlab
 importance: 6
