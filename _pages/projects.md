@@ -5,7 +5,7 @@ permalink: /projects/
 description: my random projects
 nav: true
 nav_order: 3
-display_categories: [electoral analysis, election simulations, voting methods]
+display_categories: [electoral analysis, voting methods, fun]
 horizontal: true
 ---
 
