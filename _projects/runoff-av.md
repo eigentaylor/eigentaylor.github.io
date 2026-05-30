@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Runoff AV
-description: Experiment with runoff-style approval voting rules.
+title: runoff AV
+description: How does adding runoff affect strategy in approval voting?
 redirect: https://eigentaylor.github.io/runoff-av
 github: https://github.com/eigentaylor/runoff-av
 importance: 5
