@@ -979,6 +979,24 @@ html.transition *:after {
       }
     }
   }
+
+  .post-content {
+
+    // pretty_table can wrap/replace table nodes, so style both native tables and wrappers.
+    table,
+    .table-responsive,
+    .bootstrap-table,
+    .fixed-table-container {
+      margin-bottom: 1rem;
+    }
+
+    table+p,
+    .table-responsive+p,
+    .bootstrap-table+p,
+    .fixed-table-container+p {
+      margin-top: 1rem;
+    }
+  }
 }
 
 progress {

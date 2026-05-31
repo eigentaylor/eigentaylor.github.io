@@ -56,6 +56,21 @@ d-article {
     display: inline;
   }
 
+  // Keep a visible gap after rendered tables, including Bootstrap Table wrappers.
+  table,
+  .table-responsive,
+  .bootstrap-table,
+  .fixed-table-container {
+    margin-bottom: 1rem;
+  }
+
+  table+p,
+  .table-responsive+p,
+  .bootstrap-table+p,
+  .fixed-table-container+p {
+    margin-top: 1rem;
+  }
+
   blockquote {
     border-left: 2px solid var(--global-theme-color) !important;
   }
