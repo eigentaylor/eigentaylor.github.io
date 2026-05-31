@@ -9,6 +9,8 @@ tags: voting
 category: polisci
 theorems: true
 pretty_table: true
+preview_redirect: true
+published: true
 bibliography: voting.bib
 authors:  
   - name: Taylor Eigen Fisher

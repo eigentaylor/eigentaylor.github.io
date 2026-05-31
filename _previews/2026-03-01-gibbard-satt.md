@@ -7,7 +7,7 @@ giscus_comments: true
 importance: 3
 tags: voting
 category: polisci
-published: true
+preview_redirect: true
 featured: false
 related_posts: true
 theorems: true

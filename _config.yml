@@ -237,6 +237,7 @@ defaults:
       sitemap: false
       feed: false
       draft_preview: true
+      preview_redirect: true
 
 sass:
   style: compressed

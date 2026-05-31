@@ -8,7 +8,7 @@ importance: 3
 tags: voting
 category: polisci
 featured: false
-published: true
+preview_redirect: true
 related_posts: true
 theorems: false
 pretty_table: true

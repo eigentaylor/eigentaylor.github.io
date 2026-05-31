@@ -3,13 +3,16 @@
   <head>
     {% include head.liquid %}
 
-    {% if page.collection == 'previews' and page.published == true %}
+    {% if page.collection == 'previews' and page.preview_redirect == true %}
       {%- assign published_url = page.url | replace_first: '/preview/', '/blog/' -%}
-      <link rel="canonical" href="{{ published_url | absolute_url }}">
-      <meta http-equiv="refresh" content="0; url={{ published_url | relative_url }}">
-      <script>
-        window.location.replace("{{ published_url | relative_url }}");
-      </script>
+      {%- assign matching_post = site.posts | where: 'url', published_url | first -%}
+      {% if matching_post %}
+        <link rel="canonical" href="{{ published_url | absolute_url }}">
+        <meta http-equiv="refresh" content="0; url={{ published_url | relative_url }}">
+        <script>
+          window.location.replace("{{ published_url | relative_url }}");
+        </script>
+      {% endif %}
     {% endif %}
 
     <!-- Distill js -->
