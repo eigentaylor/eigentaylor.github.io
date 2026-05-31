@@ -734,6 +734,11 @@ ninja.data = [{
           description: "An intuitive breakdown of Gibbard&#39;s more general 1973 theorem on the manipulation of voting schemes.",
           section: "Previews",handler: () => {
               window.location.href = "/preview/gibbard-intuition/";
+            },},{id: "previews-is-approval-voting-strategyproof",
+          title: 'Is Approval Voting Strategyproof?',
+          description: "Well yes, but actually no. Unless...",
+          section: "Previews",handler: () => {
+              window.location.href = "/preview/av-stratproof/";
             },},{id: "previews-jordan-canonical-form-made-easier-part-1",
           title: 'Jordan Canonical Form Made Easier Part 1',
           description: "not easy. just like... easier...",
