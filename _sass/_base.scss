@@ -310,6 +310,26 @@ ul.task-list input[type="checkbox"] {
     &:hover {
       color: var(--global-hover-color);
     }
+
+    &.nav-link-subscribe {
+      padding: 0.35rem 0.75rem;
+      margin-left: 0.35rem;
+      border-radius: 999px;
+      color: var(--global-bg-color);
+      background: linear-gradient(135deg, var(--global-theme-color), color-mix(in srgb, var(--global-theme-color) 70%, #ffffff 30%));
+      box-shadow: 0 4px 12px color-mix(in srgb, var(--global-theme-color) 30%, transparent);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      animation: subscribe-glow 2.8s ease-in-out infinite;
+
+      &:hover {
+        color: var(--global-bg-color);
+        transform: translateY(-1px);
+        filter: saturate(1.08);
+        box-shadow: 0 8px 18px color-mix(in srgb, var(--global-theme-color) 45%, transparent);
+      }
+    }
   }
 
   .navbar-nav .nav-item.active>.nav-link {
@@ -357,6 +377,23 @@ ul.task-list input[type="checkbox"] {
         }
       }
     }
+  }
+}
+
+@keyframes subscribe-glow {
+  0%,
+  100% {
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--global-theme-color) 28%, transparent);
+  }
+
+  50% {
+    box-shadow: 0 6px 16px color-mix(in srgb, var(--global-theme-color) 42%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar.navbar-light .navbar-nav .nav-item .nav-link.nav-link-subscribe {
+    animation: none;
   }
 }
 
