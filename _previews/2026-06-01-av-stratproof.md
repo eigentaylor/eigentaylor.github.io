@@ -139,7 +139,7 @@ Looking back at Example \ref{strategy-not-proof}, we can consider the two dichot
 
 Except, not so fast. There are a couple of wrinkles to consider here. If your dichotomous goal is $A$ only, then in Scenario 2, you waste your vote on a nonviable candidate and allow a 50% chance to elect your least favorite. And if your dichotomous goal includes both $A$ and $B$, then you might fail to break a tie for your favorite $A$ in Scenario 1.
 
-The latter is a little less problematic, since if you define both $A$ and $B$ as acceptable, then you still have a 100% chance to elect an acceptable candidate. However, there is still room for strategic optimization, because both of the above scenarios failed to account for viability.
+The latter is a little less problematic, since if you define both $A$ and $B$ as acceptable, then you still have a 100% chance to elect an acceptable candidate in Scenario 1. However, there is still room for strategic optimization, because both of the above scenarios failed to account for viability.
 
 ### Where to draw the line
 
