@@ -130,24 +130,24 @@ Let's suppose you are an average tired voter. You see a crowded field of candida
 
 We can call this a **dichotomous goal**.
 
-Under such a goal, you are in the dichotomous domain where Approval is strategyproof. You can just approve of all the candidates you find acceptable, and that's that.
+Under such a goal, you are in the dichotomous domain where Approval is strategyproof. You can just approve of all the candidates you find acceptable, and that's that. In any other system, you have to make strategic considerations about which candidates to support, lest the system backfire and give you a worse outcome just for participating honestly.
 
 Looking back at Example \ref{strategy-not-proof}, we can consider the two dichotomous goals:
 
 - If your only acceptable candidate is $A$, then there's no reason to approve $B$.
 - If your dichotomous goal includes both $A$ and $B$ as acceptable candidates, then you should approve both.
 
-Except, not so fast. There are a couple of wrinkles to consider here. If your dichotomous goal is $A$ only, then in Scenario 2, you waste your vote on a nonviable candidate and allow a 50% chance to elect your least favorite. And if your dichotomous goal includes both $A$ and $B$, then you might fail to break a tie for your favorite $A$.
+Except, not so fast. There are a couple of wrinkles to consider here. If your dichotomous goal is $A$ only, then in Scenario 2, you waste your vote on a nonviable candidate and allow a 50% chance to elect your least favorite. And if your dichotomous goal includes both $A$ and $B$, then you might fail to break a tie for your favorite $A$ in Scenario 1.
 
 The latter is a little less problematic, since if you define both $A$ and $B$ as acceptable, then you still have a 100% chance to elect an acceptable candidate. However, there is still room for strategic optimization, because both of the above scenarios failed to account for viability.
 
 ### Where to draw the line
 
-We have not escaped strategy with the dichotomous goal. It's very prudent to consider the viability of your acceptable candidates. If the only candidates you find "acceptable" are completely nonviable, then this isn't exactly a particularly compelling strategy, especially if you could actually affect the outcome by expanding your definition of "acceptable" to include some more viable candidates. Laslier's leader rule is one such strategy to prudently draw the line of acceptability <d-cite key="laslier2009leaderRule"></d-cite>, but that is for another post.
+We have not escaped strategy with the dichotomous goal. It's still prudent to consider the viability of your acceptable candidates. If the only candidates you find "acceptable" are completely nonviable, then this isn't exactly a particularly compelling strategy, especially if you could actually affect the outcome by expanding your definition of "acceptable" to include some more viable candidates. Laslier's leader rule is one such strategy to prudently draw the line of acceptability <d-cite key="laslier2009leaderRule"></d-cite>, but that is for another post.
 
-However, if you feel, deep in your heart, that you can only stand to approve some candidates, viable or not, then Approval allows you to express this honestly and without judgment. And the system [will not betray you for that choice (see the appendix)](#ballot-level-strategyproofness){:target="_blank"}.
+However, if you feel, deep in your heart, that you can only stand to approve some candidates, viable or not, then Approval allows you to express this honestly and without judgment. And, unlike more complex systems, Approval [will not betray you for that choice (see the appendix)](#ballot-level-strategyproofness){:target="_blank"}.
 
-This is, however, a point in favor of Approval with a top two runoff. Even if a voter fails to contribute to the outcome by not distinguishing between the frontrunners, the runoff ensures that all voters have a chance to influence the outcome, even if their initial ballot failed to distinguish between the two most viable candidates. Despite the theoretical results that Approval with a runoff is more strategic and less sincere in theory with perfect knowledge <d-cite key="fishburnBrams1981runoff"></d-cite>, there are strong arguments that a runoff allows voters to feel safer being more generous with their approvals since they always have the runoff in case they accidentally waste their votes.
+This is, however, a point in favor of Approval with a top two runoff. Even if a voter fails to distinguish between the frontrunners, the runoff gives them another chance to influence the result. And although Approval with a runoff is more strategic and less sincere in theory with perfect knowledge <d-cite key="fishburnBrams1981runoff"></d-cite>, it can also make voters feel safer being more generous with their approvals, since they still have the runoff if they accidentally waste their vote.
 
 ### Genuinely Dichotomous Preferences
 
