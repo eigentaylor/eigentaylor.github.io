@@ -188,7 +188,7 @@ ninja.data = [{
         
           title: "Constant Coefficient ODEs Made Simple with Linear Operators",
         
-        description: "No more guessing. Let&#39;s make it intuitive with linear algebra.",
+        description: "No more guessing. The linear algebra perspective makes everything obvious.",
         section: "Posts",
         handler: () => {
           
