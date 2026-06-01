@@ -25,7 +25,7 @@ toc:
     subsections:
       - name: Approval is not strategyproof
       - name: Approval is strategyproof
-  - name: The Game
+  - name: The Dichotomous Goal
     subsections:
       - name: Where to draw the line
       - name: Genuinely Dichotomous Preferences
@@ -122,9 +122,7 @@ But, given this theorem, strategyproofness is trivial under dichotomous preferen
 
 This can also be understood quite intuitively. If you don't support all of your "good" candidates, then you might fail to help break a tie between a good candidate and a bad candidate, which is bad. If you support any of your "bad" candidates, then you might help break a tie between a good candidate and a bad candidate in favor of the bad candidate, which is also bad. So you should support all of your "good" candidates, and none of your "bad" candidates.
 
-## The Game
-
-![let's play a game](/assets/img/playagame.gif)
+## The Dichotomous Goal
 
 Let's suppose you are an average tired voter. You see a crowded field of candidates (the current California Governor's race has [61 candidates on the ballot](https://elections.cdn.sos.ca.gov/statewide-elections/2026-primary/cert-list-candidates.pdf)), and you don't have the time or energy to properly rank all of them, let alone calculate the optimal strategy based on viability and polling. You just know that you like some of them, and you don't like the others. You have a choice to simplify the election into a kind of "game" as follows:
 
