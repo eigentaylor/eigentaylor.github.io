@@ -201,14 +201,14 @@ d-article {
       transform: rotate(90deg);
     }
 
-    > *:not(summary) {
+    >*:not(summary) {
       padding-left: 1rem;
       padding-right: 1rem;
     }
 
-    > p:last-child,
-    > ul:last-child,
-    > ol:last-child {
+    >p:last-child,
+    >ul:last-child,
+    >ol:last-child {
       margin-bottom: 1rem;
     }
   }
