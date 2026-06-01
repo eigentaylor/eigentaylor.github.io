@@ -116,7 +116,7 @@ Strategyproofness comes directly from a nice result that they prove in the paper
 
 In other words, you have no reason to ever not approve of your absolute favorites, and you will never be compelled to approve of your absolute least favorites. This is not true in Approval with a runoff <d-cite key="fishburnBrams1981runoff"></d-cite>, which we will not be discussing here.
 
-But, given this, strategyproofness is trivial under dichotomous preferences. Because you only have a top tier and a bottom tier, you approve all the candidates in your top tier and none of the candidates in your bottom tier. There are no middle tiers to worry about! So there is only one optimal strategy, and it is sincere. It is the pure, honest expression of your preferences. Thus, Approval voting is strategyproof under dichotomous preferences.
+In their paper, Brams and Fishburn also show that--with four or more candidates (preference tiers)--insincere strategies can sometimes be optimal <d-cite key="bramsFishburn1978approval"></d-cite> (under very contrived, perfect knowledge scenarios). But Laslier proved that under a different model (with a few minor assumptions), a best response in single winner Approval is always sincere <d-cite key="laslier2009leaderRule"></d-cite>.
 
 But, given this theorem, strategyproofness is trivial under dichotomous preferences. Because you only have a top tier and a bottom tier, you approve all the candidates in your top tier and none of the candidates in your bottom tier. There are no middle tiers to worry about! So there is only one optimal strategy, and it is sincere. It is the pure, honest expression of your preferences. Thus, Approval voting is strategyproof under dichotomous preferences.
 
