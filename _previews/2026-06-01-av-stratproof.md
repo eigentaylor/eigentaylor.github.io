@@ -183,7 +183,7 @@ However, if fewer than [3,000 of those voters](https://substack.com/@whelmedciti
 
 Notice, they were *already* saying, "I want Begich over Peltola!", but they needed to lie about how they felt about Sarah Palin to actually get the system to *respect* that preference. *That* is a strategyproofness violation.
 
-In Approval, we can say that if you are already approving Begich and not approving Peltola, but Peltola is winning, then no matter how you change your ballot, you will not be able to get Begich to win instead of Peltola. You are already doing the best you can for Begich, and the system hears you loud and clear on that preference. There is no need to exaggerate or misrepresent that specific preference to get the system to respect it.
+In Approval, we can say that if you are already approving Begich and not approving Peltola, but Peltola is winning, then no matter how you change your ballot, you will not be able to get Begich to win instead of Peltola. You are already doing the best you can for Begich, and the system hears you loud and clear on that preference. There is no need to exaggerate or misrepresent some aspect of your preferences to get the system to respect it (ex. your decision on Palin can't make Begich suddenly win).
 
 In RCV, Begich *already* had the numbers to beat Peltola, but the system was just too convoluted and dumb to acknowledge that fact. Approval voting does not have that problem. This is where simplicity can be an advantage.
 
