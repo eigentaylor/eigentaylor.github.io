@@ -11,6 +11,8 @@ theorems: true
 pretty_table: true
 preview_redirect: true
 published: true
+exclude_appendix_from_word_count: true
+collapse_appendix: false
 bibliography: voting.bib
 authors:  
   - name: Taylor Eigen Fisher

@@ -238,6 +238,8 @@ defaults:
       feed: false
       draft_preview: true
       preview_redirect: true
+      exclude_appendix_from_word_count: true
+      collapse_appendix: false
 
 sass:
   style: compressed

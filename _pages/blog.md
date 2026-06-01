@@ -77,7 +77,11 @@ pagination:
 <p class="card-text">{{ post.description }}</p>
 
                     {% if post.external_source == blank %}
-                      {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
+                      {% assign word_count = post.content | number_of_words %}
+                      {% if post.exclude_appendix_from_word_count %}
+                        {% assign word_count = post.content | content_without_appendix | number_of_words %}
+                      {% endif %}
+                      {% assign read_time = word_count | divided_by: 180 | plus: 1 %}
                     {% else %}
                       {% assign read_time = post.feed_content | strip_html | number_of_words | divided_by: 180 | plus: 1 %}
                     {% endif %}
@@ -118,7 +122,11 @@ pagination:
     {% for post in postlist %}
 
     {% if post.external_source == blank %}
-      {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
+      {% assign word_count = post.content | number_of_words %}
+      {% if post.exclude_appendix_from_word_count %}
+        {% assign word_count = post.content | content_without_appendix | number_of_words %}
+      {% endif %}
+      {% assign read_time = word_count | divided_by: 180 | plus: 1 %}
     {% else %}
       {% assign read_time = post.feed_content | strip_html | number_of_words | divided_by: 180 | plus: 1 %}
     {% endif %}

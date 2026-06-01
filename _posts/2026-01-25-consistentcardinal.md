@@ -10,6 +10,8 @@ category: polisci
 featured: false
 related_posts: true
 pretty_table: true
+exclude_appendix_from_word_count: true
+collapse_appendix: false
 authors:  
   - name: Taylor Eigen Fisher
     url: ""

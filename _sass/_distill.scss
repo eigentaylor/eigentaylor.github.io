@@ -170,6 +170,49 @@ d-article {
     }
   }
 
+  details.appendix-disclosure {
+    border: 1px solid var(--global-divider-color);
+    background: transparent;
+    border-radius: 8px;
+    padding: 0;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 600;
+      color: var(--global-theme-color);
+      padding: 0.75rem 1rem;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::before {
+      content: "▸";
+      display: inline-block;
+      margin-right: 0.45rem;
+      transition: transform 0.15s ease;
+    }
+
+    &[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    > *:not(summary) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    > p:last-child,
+    > ul:last-child,
+    > ol:last-child {
+      margin-bottom: 1rem;
+    }
+  }
+
   d-contents {
     align-self: start;
     grid-column: 1 / 4;

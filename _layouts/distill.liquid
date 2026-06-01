@@ -74,8 +74,25 @@
         <div class="draft-preview-banner" style="background: #141001; border: 1px solid #fbff07; border-radius: 8px; padding: 12px 20px; margin-bottom: 20px; text-align: center; font-size: 0.95rem; color: #f6bf19;">
           📝 <strong style="color: inherit;">Draft Preview</strong> — This post is not yet published. Please don't share this link widely.
         </div>
-        {%- assign read_time = page.content | number_of_words | divided_by: 180 | plus: 1 -%}
-        <script>console.log('Read time: {{ read_time }} min read');</script>
+      {% endif %}
+
+      {% assign should_log_read_time = false %}
+      {% if page.draft_preview %}
+        {% assign should_log_read_time = true %}
+      {% endif %}
+      {% if page.exclude_appendix_from_word_count %}
+        {% assign should_log_read_time = true %}
+      {% endif %}
+
+      {% if should_log_read_time %}
+        {%- assign full_word_count = page.content | number_of_words -%}
+        {%- assign full_read_time = full_word_count | divided_by: 180 | plus: 1 -%}
+        <script>console.log('Read time (full): {{ full_read_time }} min read');</script>
+        {% if page.exclude_appendix_from_word_count %}
+          {%- assign no_appendix_word_count = page.content | content_without_appendix | number_of_words -%}
+          {%- assign no_appendix_read_time = no_appendix_word_count | divided_by: 180 | plus: 1 -%}
+          <script>console.log('Read time (without appendix): {{ no_appendix_read_time }} min read');</script>
+        {% endif %}
       {% endif %}
       <d-title>
         <h1>{{ page.title }}</h1>
@@ -116,7 +133,11 @@
           </d-contents>
         {% endif %}
 
-        {{ content }}
+        {% if page.collapse_appendix %}
+          {{ content | collapse_appendix }}
+        {% else %}
+          {{ content }}
+        {% endif %}
       </d-article>
 
       <d-appendix>
