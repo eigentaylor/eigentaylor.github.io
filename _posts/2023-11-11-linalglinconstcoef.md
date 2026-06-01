@@ -2,7 +2,7 @@
 layout: distill
 title: Constant Coefficient ODEs Made Simple with Linear Operators
 date: 2023-11-11
-description: No more guessing. Let's make it intuitive with linear algebra.
+description: No more guessing. The linear algebra perspective makes everything obvious.
 giscus_comments: true
 importance: 1
 featured: false
@@ -151,7 +151,7 @@ As before, to find the **general solution**, we need a basis $$\{y_1,\ldots,y_k\
 
 $$y=y_p+c_1y_1+\ldots+c_ky_k$$
 
-So how can we start to find a basis for the kernel? And how many vectors will be in it? Well, we know that any eigenvector of $$D$$ with eigenvalue $$\lambda$$ will be an eigenvector of $$p(D)$$ with eigenvalue $$p(\lambda)$$. So we can try to find some solutions by solving $$p(\lambda)=0$$. 
+So how can we start to find a basis for the kernel? And how many vectors will be in it? Well, we know that any eigenvector of $$D$$ with eigenvalue $$\lambda$$ will be an eigenvector of $$p(D)$$ with eigenvalue $$p(\lambda)$$. So we can try to find some solutions by solving $$p(\lambda)=0$$.
 
 $$p(\lambda)=a_n\lambda^n+\ldots+a_1\lambda+a_0=0$$
 
@@ -266,7 +266,7 @@ $$e^{-\lambda t}(D-\lambda)y=(D-(-\lambda)-\lambda)e^{-\lambda t}y$$
 
 $$=D(e^{-\lambda t}y)=0$$
 
-And if $$e^{-\lambda t}y$$ is in the kernel of $$D$$, then it's just a constant. So $$e^{-\lambda t}y=C\implies y=Ce^{\lambda t}$$. 
+And if $$e^{-\lambda t}y$$ is in the kernel of $$D$$, then it's just a constant. So $$e^{-\lambda t}y=C\implies y=Ce^{\lambda t}$$.
 
 To summarize,
 
@@ -364,7 +364,7 @@ But if we then take the image of the result under $$(D-\lambda)$$, we will get z
 
 Now, $$y_p$$ cannot be linearly dependent with $$y_1,\ldots,y_n$$, because then it would be in the kernel of $$q(D)$$ and thus could not be a preimage of $$e^{\lambda t}\neq0$$ under $$q(D)$$. Hence, $$\left\{y_1,\ldots,y_n,y_p\right\}$$ form a set of $$n+1$$ linearly independent vectors in $$\ker(p(D))$$, making its dimension at least $$n+1$$. We now need to show that there cannot be another linearly independent solution.
 
-Suppose that $$y_{n+2}$$ is also a solution to $$p(D)y=0$$ which is linearly independent with $$\{y_1,\ldots,y_n,y_p\}$$. $$y_{n+2}$$ can't be in the kernel of $$q(D)$$, because then it would be linearly dependent with $$y_1,\ldots,y_n$$. So 
+Suppose that $$y_{n+2}$$ is also a solution to $$p(D)y=0$$ which is linearly independent with $$\{y_1,\ldots,y_n,y_p\}$$. $$y_{n+2}$$ can't be in the kernel of $$q(D)$$, because then it would be linearly dependent with $$y_1,\ldots,y_n$$. So
 
 $$q(D)y_{n+2}\neq0\implies q(D)y_{n+2}\in\ker(D-\lambda)$$
 
