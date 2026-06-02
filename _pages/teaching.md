@@ -14,23 +14,41 @@ Classes I was/am a TA for.
 
 ---
 
+## 2026 Moorpark College
+### Summer
+
+- Precalculus
+
+### Spring
+
+- Calculus I
+
+---
+
 ## 2025 Moorpark College
+
 ### Fall
+
 - Precalculus
 - Calculus I
 
 ## 2025
 
 ### Spring
+
 - Linear Algebra
 - Calculus II (Two sections)
 
 ### Winter
+
 - Discrete Math (Four Sections)
+
+---
 
 ## 2024
 
 ### Spring
+
 - Linear Algebra (Two Sections)
 
 ---
@@ -38,12 +56,14 @@ Classes I was/am a TA for.
 ## 2023
 
 ### Fall
+
 - Linear Algebra
 - Differential Equations (Two Sections)
 
 ---
 
 # Moorpark College
+
 - PALS: Peer Assisted Learning Leader
 - CET: Course Embedded Tutor
 
@@ -52,6 +72,7 @@ Classes I was/am a TA for.
 ## 2021
 
 ### Spring
+
 - MATH M35: Differential Equations (PALS)
 
 ---
@@ -59,12 +80,15 @@ Classes I was/am a TA for.
 ## 2020
 
 ### Fall
+
 - MATH M31: Linear Algebra (PALS)
 
 ### Summer
+
 - MATH M25C: Calculus III (Multivariable Calculus) (CET)
 
 ### Spring
+
 - MATH M31: Linear Algebra (CET)
 - MATH M25C: Calculus III (Multivariable Calculus) (PALS)
 
@@ -73,5 +97,6 @@ Classes I was/am a TA for.
 ## 2019
 
 ### Fall
+
 - MATH M16A: Applied Calculus I (PALS)
 - MATH M25A: Calculus I (PALS)
