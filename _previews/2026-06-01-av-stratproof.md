@@ -126,7 +126,7 @@ This can also be understood quite intuitively. If you don't support all of your 
 
 ## The Dichotomous Goal
 
-Let's suppose you are an average tired voter. You see a crowded field of candidates (the current California Governor's race has [61 candidates on the ballot](https://elections.cdn.sos.ca.gov/statewide-elections/2026-primary/cert-list-candidates.pdf)), and you don't have the time or energy to properly rank all of them, let alone calculate the optimal strategy based on viability and polling. You just know that you like some of them, and you don't like the others. You have a choice to simplify the election into a kind of "game" as follows:
+Let's suppose you are an average tired voter. You see a crowded field of candidates (the current 2026 California Governor's race has [61 candidates on the ballot](https://elections.cdn.sos.ca.gov/statewide-elections/2026-primary/cert-list-candidates.pdf)), and you don't have the time or energy to properly rank all of them, let alone calculate the optimal strategy based on viability and polling. You just know that you like some of them, and you don't like the others. You have a choice to simplify the election into a kind of "game" as follows:
 
 > If you only care about electing *any* "acceptable" candidate, however you define that, then you are adopting a dichotomous preference structure. You are saying, "I don't care which of these candidates wins, as long as it's not one of those other candidates."
 
