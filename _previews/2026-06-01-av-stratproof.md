@@ -110,7 +110,7 @@ Okay, why isn't the post over? We just proved that Approval voting is not strate
 
 In 1978, when Brams and Fishburn published their seminal paper on Approval<d-cite key="bramsFishburn1978approval"></d-cite>, they proved that Approval voting is strategyproof for a voter if and only if that voter has dichotomous preferences.
 
-Dichotomous preferences are when a voter has two tiers of candidates: those who are "good", and those who are "bad". In other words, the voter is indifferent between all the candidates they consider "good", and also indifferent between all the candidates they consider "bad", but they strictly prefer all the candidates they consider "good" to all the candidates they consider "bad".
+> **Definition:** A voter's preferences are **dichotomous** if they can partition the candidates into two tiers: a top tier of "good" candidates, and a bottom tier of "bad" candidates. The voter is indifferent between all the candidates in the top tier, and also indifferent between all the candidates in the bottom tier, but they strictly prefer all the candidates in the top tier to all the candidates in the bottom tier.
 
 Strategyproofness comes directly from a nice result that they prove in the paper:
 
@@ -118,17 +118,15 @@ Strategyproofness comes directly from a nice result that they prove in the paper
 
 In other words, you have no reason to ever not approve of your absolute favorites, and you will never be compelled to approve of your absolute least favorites. This is not necessarily true in Approval with a runoff<d-cite key="fishburnBrams1981runoff"></d-cite>, which we will not be discussing here.
 
-In their paper, Brams and Fishburn also show that, with four or more candidates (preference tiers), insincere strategies can sometimes be optimal<d-cite key="bramsFishburn1978approval"></d-cite> (under very contrived scenarios). But Laslier proved in 2009 that under a different model (with a few minor assumptions), a best response in single-winner Approval is always sincere<d-cite key="laslier2009leaderRule"></d-cite>.
+In their paper, Brams and Fishburn also show that, with four or more candidates (preference tiers), insincere strategies can sometimes be optimal<d-cite key="bramsFishburn1978approval"></d-cite> (under very contrived scenarios). But Laslier proved in 2009 that under a fairly realistic model (with a few minor assumptions), a best response in single-winner Approval is always sincere<d-cite key="laslier2009leaderRule"></d-cite>.
 
-But, given this theorem, strategyproofness is trivial under dichotomous preferences. Because you only have a top tier and a bottom tier, you approve all the candidates in your top tier and none of the candidates in your bottom tier. There are no middle tiers to worry about! So there is only one optimal strategy, and it is sincere. It is the pure, honest expression of your preferences. Thus, Approval voting is strategyproof under dichotomous preferences.
-
-This can also be understood quite intuitively. If you don't support all of your "good" candidates, then you might fail to help break a tie between a good candidate and a bad candidate, which is bad. If you support any of your "bad" candidates, then you might help break a tie between a good candidate and a bad candidate in favor of the bad candidate, which is also bad. So you should support all of your "good" candidates, and none of your "bad" candidates.
+Given this theorem, strategyproofness becomes trivial under dichotomous preferences: with only a top and bottom tier, there's exactly one optimal strategy--approve all "good" candidates, reject all "bad" ones. This strategy is necessarily sincere. Thus, Approval voting is strategyproof under dichotomous preferences.
 
 ## The Dichotomous Goal
 
-Let's suppose you are an average tired voter. You see a crowded field of candidates (the current 2026 California Governor's race has [61 candidates on the ballot](https://elections.cdn.sos.ca.gov/statewide-elections/2026-primary/cert-list-candidates.pdf)), and you don't have the time or energy to properly rank all of them, let alone calculate the optimal strategy based on viability and polling. You just know that you like some of them, and you don't like the others. You have a choice to simplify the election into a kind of "game" as follows:
+Let's suppose you are an average tired voter. You see a crowded field of candidates (the 2026 California Governor's race which is still being counted has [61 candidates on the ballot](https://elections.cdn.sos.ca.gov/statewide-elections/2026-primary/cert-list-candidates.pdf)), and you don't have the time or energy to properly rank all of them, let alone calculate the optimal strategy based on viability and polling. You just know that you like some of them, and you don't like the others. You have a choice to simplify the election into a kind of "game" as follows:
 
-> If you only care about electing *any* "acceptable" candidate, however you define that, then you are adopting a dichotomous preference structure. You are saying, "I don't care which of these candidates wins, as long as it's not one of those other candidates."
+> If you only care about electing *any* "acceptable" candidate, however you define "acceptable", then you are adopting a dichotomous preference structure. You are saying, "I don't care which of these candidates wins, as long as it's not one of those other candidates."
 
 We can call this a **dichotomous goal**.
 
@@ -162,7 +160,7 @@ Acceptability isn't naturally categorized by ordinal rankings or utility scores.
 
 This is not to understate the strategic question of where to draw the line of acceptability, which is a serious consideration. But, in practice, I think the question of strategy in Approval is occasionally overblown.
 
-Many like to point to Approval as a "highly strategic" system, as if that is a bad thing. In practice, your optimal ballot is almost surely sincere<d-cite key="laslier2009leaderRule"></d-cite>; the strategy question is mostly where you draw your line of acceptability. If you can identify who you "like," you can vote for them without fear of active betrayal, and, as expanded on in the appendix, trust Approval to take your expressed preferences at face value without requiring exaggeration or misrepresentation. That is how strategyproofness on dichotomous preferences manifests in the real world, and I think it's a genuinely strong point in its favor.
+In practice, your optimal ballot is almost surely sincere<d-cite key="laslier2009leaderRule"></d-cite>; the strategy question is mostly where you draw your line of acceptability. If you can identify who you "like," you can vote for them without fear of active betrayal, and, as expanded on in the appendix, trust Approval to take your expressed preferences at face value without requiring exaggeration or misrepresentation. That is how strategyproofness on dichotomous preferences manifests in the real world, and I think it's a genuinely strong point in its favor.
 
 ## Appendix
 
@@ -172,8 +170,8 @@ The remainder of this post is dedicated to a few, more technical, aspects of thi
 
 There is one nice little bonus that we get from strategyproofness on dichotomous preferences. Since any approval ballot is necessarily a projection of the voter's preferences onto the dichotomous domain, if we take those preferences completely literally (the voter prefers all approved candidates over all unapproved candidates), then we do actually get a comfy little guarantee under Approval voting:
 
-- If a candidate you are planning to approve is currently winning without your vote, then your vote will not change the winner.
-- If an unapproved candidate is currently winning even with your vote, then there is *no deviation* from your current ballot to change the outcome to an approved candidate.
+- If a candidate you are planning to approve is currently winning without your vote, then your vote will not change the winner. It will also never cause a candidate you are not planning to approve to win instead of a candidate you are planning to approve.
+- If an unapproved candidate is currently winning even *with* your vote, then there is *no deviation* from your current ballot to change the outcome to an approved candidate.
 
 This means your ballot is already doing maximal work for all the candidates you voted for against all the candidates you did not vote for. This is a nontrivial guarantee that essentially no other system can claim.
 
@@ -181,19 +179,21 @@ Take [ranked choice voting](../ditch-rcv/){:target="_blank"}, for example, in th
 
 However, if fewer than 3,000 of those voters had instead insincerely ranked Nick Begich as their first choice, burying their favorite Palin second, then they would have elected Begich instead of Peltola (their backup instead of their worst nightmare).
 
-Notice, they were *already* saying, "I want Begich over Peltola!", but they needed to lie about how they felt about Sarah Palin to actually get the system to *respect* that preference. *That* is a strategyproofness violation.
+Notice, they were *already* saying, "I want Begich over Peltola!", but they needed to lie about how they felt about Sarah Palin to actually get the system to *respect* that preference. *That* is a strategyproofness violation. Similar events happened in Burlington, Vermont in 2009.
 
-In Approval, we can say that if you are already approving Begich and not approving Peltola, but Peltola is winning, then no matter how you change your ballot, you will not be able to get Begich to win instead of Peltola. You are already doing the best you can for Begich, and the system hears you loud and clear on that preference. There is no need to exaggerate or misrepresent some aspect of your preferences to get the system to respect it (ex. your decision on Palin can't make Begich suddenly win). If this sounds like [IIA](../iia/){:target="_blank"}, that's not a coincidence.
+In Approval, such a voter could simply approve of both Palin and Begich, and they would have gotten Begich instead of Peltola without needing to lie about their feelings for Palin. There is no need to exaggerate or misrepresent some aspect of your preferences to get the system to respect it (ex. your decision on Palin can't make Begich suddenly win). If this sounds like [IIA](../iia/){:target="_blank"}, that's not a coincidence.
 
-In RCV, Begich *already* had the numbers to beat Peltola, but the system was just too convoluted and dumb to acknowledge that fact. Approval voting does not have that problem. If Begich already has the numbers to win, then your vote for him won't backfire and cause him to lose under approval. This is where simplicity can be an advantage.
+If a sufficient number of voters find Begich acceptable, then he wins. Given that both hardcore Palin supporters and Democrats found Begich far more acceptable their respective alternatives, it seems highly likely that Begich would have won under Approval.
 
-Even Condorcet methods, which try to interpret your ranked ballot faithfully, are still open to failures like this [as seen in this post](../iia/){:target="_blank"}. That post also includes an example in SCORE voting where the exact same thing occurs. And [this post](../approval-only/){:target="_blank"} shows an example in STAR voting where participation leads to your worst outcome. Approval's strict monotonicity prevents such pathologies.
+In RCV, Begich *already* had the numbers to beat Peltola, but the system was just too convoluted and short-sighted to acknowledge that fact. Approval voting does not have that problem. If Begich already has the numbers to win, then your vote for him won't backfire and cause him to lose under approval. This is where simplicity can be an advantage.
 
-However, it could still be that you could get a *better* outcome in Approval by extending or reducing your approval threshold, as we saw in Example \ref{strategy-not-proof}. This can be articulated as a **passive inefficiency** versus **active betrayal**. So, again, Approval is not perfectly strategyproof, but still a nice little guarantee.
+Condorcet methods can fail this way (see [this post](../iia/){:target="_blank"}); the post also shows the same failure in SCORE, and [this post](../approval-only/){:target="_blank"} shows STAR where participation backfires. Approval's strict monotonicity prevents these pathologies.
+
+However, it could still be that you could get a *better* outcome in Approval by extending or reducing your approval threshold, as we saw in Example \ref{strategy-not-proof}. This can be articulated as a **passive inefficiency** versus the kind of **active betrayal** we saw in RCV. So, again, Approval is not perfectly strategyproof, but still a nice little guarantee.
 
 We can summarize this "ballot-level strategyproofness" property as the system taking your preferences at face value. In any other system, you may need to exaggerate or misrepresent your preferences to get the system to listen to what you tell it. Or, perhaps, participating at all can lead to a strictly *worse* outcome. *Not* in Approval. In Approval, your ballot means *exactly* what it says. In these other systems, the more expressive ballot can backfire and be weaponized against you. Approval's simpler, more straightforward design protects you from such things. That's worth something, in my opinion.
 
-It should be mentioned that choose-one plurality voting also has ballot-level strategyproofness. When you vote for a candidate, you are also doing the best you can for that candidate given the constraints of the system. However, the scope of this protection is limited to *one* candidate, making passive inefficiency more likely. In Approval, this ballot-level strategyproofness extends to all of your approved candidates against all other candidates.
+It should be mentioned that choose-one plurality voting also has ballot-level strategyproofness. When you vote for a candidate, you are also doing the best you can for that candidate given the constraints of the system. However, the scope of this protection is limited to *one* candidate, making passive inefficiency more likely. In Approval, this ballot-level strategyproofness extends to all of your approved candidates against all other unapproved candidates.
 
 A further distinction is that for choose-one voting, you essentially have exactly one efficient strategy: voting for the more preferred of the top two candidates. This strategy is not always sincere (you must often betray your favorite). In Approval voting, you can, in practice, change any efficient strategy into a sincere efficient strategy, because there's really no harm in voting for your favorite candidates, regardless of viability. Approval easily satisfies "no favorite betrayal" better than most, if not all, other systems.
 
