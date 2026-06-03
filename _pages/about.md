@@ -5,7 +5,7 @@ permalink: /
 subtitle: mathematician and approval voting appreciator
 profile:
   align: right
-  image: rpic.png
+  image: lambdasigma.png
   image_circular: false # crops the image to make it circular
   more_info: > 
     <p>Taylor Eigen Fisher</p> 
