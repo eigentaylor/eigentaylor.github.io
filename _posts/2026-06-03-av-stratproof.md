@@ -69,7 +69,7 @@ One positive aspect of this definition is that two voters who rank $A>B>C$ can v
 Either way, this is the usage of the word "sincerity" in the literature, so we'll stick with it: a voter can be both sincere and strategic. For the pedants in the audience, the following block provides the formal definition.
 
 {% proof A remark on "rationality" %}
-What we are calling "rational" is called "admissible" in the literature. Formally, it just means a strategy or ballot that is not "dominated" by any other strategy or ballot. In other words, there is no other ballot that would give you the same or a better outcome in all possible scenarios.
+What we are calling "rational" is called "admissible" in the literature. Formally, it just means a strategy or ballot that is not "dominated" by any other strategy or ballot. In other words, there is no other ballot that would give you at least as good in all possible scenarios and strictly better in at least one scenario. So you can just ignore dominated strategies, since they are never optimal.
 
 For example in Approval, why would you ever vote for a middle tier candidate, and not your favorite candidate? It doesn't hurt to include your favorite, because you might make them win! Similarly, you should never vote for your least favorite candidate, for the same reason.
 
@@ -158,7 +158,7 @@ Many voters can readily categorize candidates into "acceptable" and "unacceptabl
 
 ## Conclusion
 
-As I explored in [this post](../why-condorcet/){:target="_blank"}, I think compromise and consent are essentially impossible to express with a ranked ballot. That is simply not what ranked ballots are designed to capture. Two voters can give the same preference *order* yet disagree on who they'd find genuinely acceptable. "Second choice" does not imply "acceptable backup"--it could mean "lesser evil" (or vice versa). Scores are similarly ambiguous: is a 3/5 "acceptable" or not?
+As I explored in [this post](../why-condorcet/){:target="_blank"}, I think compromise and consent are essentially impossible to express with a ranked ballot. That is simply not what ranked ballots are *able* to capture. Two voters can give the same preference *order* yet disagree on who they'd find genuinely acceptable. "Second choice" does not imply "acceptable backup"--it could mean "lesser evil" (or vice versa). Scores are similarly ambiguous: is a 3/5 "acceptable" or not?
 
 Acceptability isn't naturally categorized by ordinal rankings or utility scores. Approval voting is, to me, the natural language of compromise: each voter signals who they find acceptable, and the candidate with the largest base of acceptability earns the right to be called the consensus choice. Approval isn't perfect at capturing compromise--no practical system is--but it asks the right question. And I think that is something that we, in this polarized time, should [seriously consider](../approval-only){:target="_blank"}.
 
