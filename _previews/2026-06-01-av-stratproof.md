@@ -33,7 +33,7 @@ toc:
   - name: Appendix
     subsections:
       - name: Ballot-level strategyproofness
-      - name: An Axiomatic Digression
+      - name: An Axiomatic Aside
 ---
 
 ## Introduction
@@ -56,11 +56,23 @@ Strategyproofness is slippery and hard to define rigorously. Everyone can easily
 
 Brams and Fishburn<d-cite key="bramsFishburn1978approval"></d-cite> give a somewhat tailored definition in the context of Approval voting, which is what we use here. The following is a little oversimplified for pedagogical purposes.
 
-> **Definition:** A strategy in Approval voting is **sincere** if there are no "holes" in the ballot. In other words, a voter draws a "line of acceptability" in their ranking and approves everyone above that line.
+> **Definition:** A strategy in Approval voting is **sincere** if there are no "holes" in the ballot. In other words, a voter draws a "line of acceptability" in their ranking and approves everyone above that line. For example, you cannot approve of your first and third choices without approving your second choice, because that would imply a "hole" in your ballot.
 >
-> A voting system is **strategyproof** if there is always only one "rational" strategy for any voter in any scenario, and that strategy is sincere.
+> A voting system is **strategyproof** for a given preference order if there is always only one "rational" strategy for any voter with that preference order to use in any scenario, and that strategy is sincere.
 
-I know some people, particularly [Condorcetists](../condorcet-approval/){:target="_blank"}, who dislike this definition of "sincere" because it allows a voter multiple sincere strategies. But this is the usage in the literature, so we'll stick with it: a voter can be both sincere and strategic. For the pedants in the audience, the following block provides the formal definition.
+I know some people, particularly [Condorcetists](../condorcet-approval/){:target="_blank"}, who dislike this definition of "sincere" because it allows a voter multiple sincere strategies. The objection gets the relationship backwards. Sincerity is defined based on how *ordinal* preferences, which [cannot capture acceptability](../why-condorcet/){:target="_blank"}, can "honestly" be projected onto an Approval ballot.
+
+One positive aspect of this definition is that two voters who rank $A>B>C$ can vote exclusively for $A$ or for both $A$ and $B$ to show a meaningful difference in how they feel about $B$ relative to $A$. Is $B$ an acceptable backup for $A$, which you are happy to approve of, or is $B$ a lesser evil that you only approve of if you have to? Both of these are sincere strategies, and Approval allows them both to be expressed without forcing the voters to share only the ordinal information which cannot capture that distinction. This is a feature, not a bug, in my view.
+
+Either way, this is the usage of the word "sincerity" in the literature, so we'll stick with it: a voter can be both sincere and strategic. For the pedants in the audience, the following block provides the formal definition.
+
+{% proof A remark on "rationality" %}
+What we are calling "rational" is called "admissible" in the literature. Formally, it just means a strategy or ballot that is not "dominated" by any other strategy or ballot. In other words, there is no other ballot that would give you the same or a better outcome in all possible scenarios.
+
+For example, why would you ever vote for a middle tier candidate, and not your favorite candidate? It doesn't hurt to include your favorite, because you might make them win! Similarly, you should never vote for your least favorite candidate, for the same reason.
+
+We articulate this idea with the word "rational". It would be irrational to submit a ballot which is at most as good and sometimes worse than another ballot. So we can just ignore those ballots, and only consider the rational (admissible) ballots.
+{% endproof %}
 
 {% proof A remark on "sincerity" %}
 Intuitively, sincerity can be easily understood as setting an "acceptability threshold" somewhere in your ranking. However, the precise definition which follows is necessary to deal with the case of equal ranks/indifference:
@@ -75,14 +87,6 @@ For example, a voter who ranks $A > B = C > D$ has four "rational" sincere strat
 - approve $A$, $B$, and $C$
 
 All of these are strictly "sincere", by definition. If you approve of $B$, then only $A$ is *strictly* preferred. So any sincere strategy including $B$ must also include $A$. But we need not include candidates that are equally preferred, like $C$ in this example.
-{% endproof %}
-
-{% proof A remark on "rationality" %}
-What we are calling "rational" is called "admissible" in the literature. Formally, it just means a strategy or ballot that is not "dominated" by any other strategy or ballot. In other words, there is no other ballot that would give you the same or a better outcome in all possible scenarios.
-
-For example, why would you ever vote for a middle tier candidate, and not your favorite candidate? It doesn't hurt to include your favorite, because you might make them win! Similarly, you should never vote for your least favorite candidate, for the same reason.
-
-We articulate this idea with the word "rational". It would be irrational to submit a ballot which is at most as good and sometimes worse than another ballot. So we can just ignore those ballots, and only consider the rational (admissible) ballots.
 {% endproof %}
 
 ### Approval is not strategyproof
@@ -193,7 +197,7 @@ It should be noted that choose-one plurality voting also has a form of ballot-le
 
 A further distinction is that for choose-one voting, you essentially have exactly one efficient strategy: voting for the more preferred of the top two candidates, which often requires betraying your favorite. In Approval voting, you can, in practice, change any efficient strategy into a sincere efficient strategy, because there's really no harm in voting for your favorite candidates, regardless of viability. Approval easily satisfies "no favorite betrayal" better than most, if not all, other systems.
 
-### An Axiomatic Digression
+### An Axiomatic Aside
 
 As a final note, I want to briefly justify why "Yes" is an acceptable answer to the question "Is Approval voting strategyproof?" even though we can clearly see that it is not.
 
