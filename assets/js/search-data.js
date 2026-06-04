@@ -151,17 +151,6 @@ ninja.data = [{
             window.location.href = "/blog/lichtman/";
           
         },
-      },{id: "post-is-approval-voting-strategyproof",
-        
-          title: "Is Approval Voting Strategyproof?",
-        
-        description: "Well yes, but actually no. Unless...",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/avstratproof/";
-          
-        },
       },{id: "post-why-do-we-row-reduce-what-is-a-matrix",
         
           title: "Why do we row reduce? What IS a matrix?",
