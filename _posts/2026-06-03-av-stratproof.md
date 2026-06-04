@@ -127,7 +127,7 @@ In other words, you have no reason to ever not approve of your absolute favorite
 
 This theorem implies that all "rational" strategies are sincere if there are three or fewer tiers. But Brams and Fishburn also show that with four or more preference tiers, insincere strategies can sometimes be "rational" and optimal (under very contrived scenarios)<d-cite key="bramsFishburn1978approval"></d-cite>. However, Laslier proved in 2009 that under a fairly realistic probabilistic large-electorate model (with a few minor assumptions), a best response in single-winner Approval is always sincere<d-cite key="laslier2009leaderRule"></d-cite>.
 
-Given this theorem, strategyproofness becomes trivial under dichotomous preferences: with only a top and bottom tier, there's exactly one optimal strategy--approve all "good" candidates and reject all "bad" ones. This strategy is necessarily sincere. Thus, Approval voting is strategyproof under dichotomous preferences.
+Given this theorem, strategyproofness becomes trivial under dichotomous preferences: with only a top and bottom tier, there's exactly one optimal strategy--approve all "good" candidates and reject all "bad" ones. This strategy is necessarily sincere. Thus, Approval voting is strategyproof under dichotomous preferences. Specifically, Approval voting is strategyproof for *any* voter with dichotomous preferences, even if other voters have complex preferences.
 
 ## The Dichotomous Goal
 
