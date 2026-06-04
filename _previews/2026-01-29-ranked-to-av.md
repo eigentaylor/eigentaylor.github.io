@@ -29,7 +29,7 @@ toc:
 
 > Approval voting (AV) is a voting method where each voter can "approve" of as many candidates as they like, and the candidate with the most approvals wins.
 
-I have previously discussed the mathematical properties of AV, how a voter might be able to frame their vote as [sincere and strategyproof](../avstratproof){:target="_blank"}, given a [practical case](../practicalapproval){:target="_blank"} for its use in US elections, and also recently proven that [AV is the only internally consistent cardinal method](../consistentcardinal){:target="_blank"}.
+I have previously discussed the mathematical properties of AV, how a voter might be able to frame their vote as [sincere and strategyproof](../av-stratproof){:target="_blank"}, given a [practical case](../practicalapproval){:target="_blank"} for its use in US elections, and also recently proven that [AV is the only internally consistent cardinal method](../consistentcardinal){:target="_blank"}.
 
 In this post, I want to explore a particular and very fun exercise in deducing possible AV outcomes from ranked ballots. This is based on Chapter 2 of [Steven Brams' 2008 text *Mathematics and Democracy*](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy){:target="_blank"}.
 
