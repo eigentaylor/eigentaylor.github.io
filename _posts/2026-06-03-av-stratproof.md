@@ -109,7 +109,7 @@ In scenario 1, $A$ and $B$ are tied for first, with $C$ far behind. Approving bo
 
 In scenario 2, $B$ and $C$ are tied for first, with $A$ far behind. Approving only $A$ leaves the $B$–$C$ tie untouched; approving $A$ and $B$ breaks the tie in favor of $B$ and blocks $C$. So in scenario 2 the optimal ballot is $A$ and $B$.
 
-These two scenarios show that a voter with the same preference order may need to choose different sincere strategies to obtain the best outcome. Therefore, Approval voting is not strategyproof in general.
+These two scenarios show that a voter with the same preference order may need to choose different sincere strategies to obtain the best outcome. Therefore, Approval voting is not strategyproof in general. As Approval is still subject to Gibbard's 1973 theorem<d-cite key="gibbard1973manipulation"></d-cite>, we should not be surprised by this result.
 
 ### Approval is strategyproof?
 
