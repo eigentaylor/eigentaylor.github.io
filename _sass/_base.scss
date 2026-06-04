@@ -397,6 +397,15 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+// Mobile responsive: keep subscribe button compact on small screens
+@media (max-width: 576px) {
+  .navbar.navbar-light .navbar-nav .nav-item .nav-link.nav-link-subscribe {
+    display: inline-block;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+
 .navbar-toggler {
   .icon-bar {
     display: block;
