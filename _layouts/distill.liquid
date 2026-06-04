@@ -86,12 +86,16 @@
 
       {% if should_log_read_time %}
         {%- assign full_word_count = page.content | number_of_words -%}
-        {%- assign full_read_time = full_word_count | divided_by: 180 | plus: 1 -%}
-        <script>console.log('Read time (full): {{ full_read_time }} min read');</script>
+        <script>
+          const fullMinutes = ({{ full_word_count }} / 180) + 1;
+          console.log('Read time (full): ' + fullMinutes.toFixed(2) + ' min read');
+        </script>
         {% if page.exclude_appendix_from_word_count %}
           {%- assign no_appendix_word_count = page.content | content_without_appendix | number_of_words -%}
-          {%- assign no_appendix_read_time = no_appendix_word_count | divided_by: 180 | plus: 1 -%}
-          <script>console.log('Read time (without appendix): {{ no_appendix_read_time }} min read');</script>
+          <script>
+            const noAppendixMinutes = ({{ no_appendix_word_count }} / 180) + 1;
+            console.log('Read time (without appendix): ' + noAppendixMinutes.toFixed(2) + ' min read');
+          </script>
         {% endif %}
       {% endif %}
       <d-title>
