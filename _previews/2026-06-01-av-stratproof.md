@@ -56,11 +56,13 @@ Strategyproofness is slippery and hard to define rigorously. Everyone can easily
 
 Brams and Fishburn<d-cite key="bramsFishburn1978approval"></d-cite> give a somewhat tailored definition in the context of Approval voting, which is what we use here. The following is a little oversimplified for pedagogical purposes.
 
-> **Definition:** A strategy in Approval voting is **sincere** if there are no "holes" in the ballot. In other words, a voter draws a "line of acceptability" in their ranking and approves everyone above that line. For example, you cannot approve of your first and third choices without approving your second choice, because that would imply a "hole" in your ballot.
+> **Definition:** A strategy in Approval voting is **sincere** if there are no "holes" in the ballot. In other words, a voter draws a "line of acceptability" in their ranking and approves everyone above that line.
 >
 > A voting system is **strategyproof** for a given preference order if there is always only one "rational" strategy for any voter with that preference order to use in any scenario, and that strategy is sincere.
 
-I know some people, particularly [Condorcetists](../condorcet-approval/){:target="_blank"}, who dislike this definition of "sincere" because it allows a voter multiple sincere strategies. The objection gets the relationship backwards. Sincerity is defined based on how *ordinal* preferences, which [cannot capture acceptability](../why-condorcet/){:target="_blank"}, can "honestly" be projected onto an Approval ballot.
+For example, you cannot approve of your first and third choices without approving your second choice on a sincere ballot, because that would imply a "hole" in your ballot.
+
+I know some people, particularly [Condorcetists](../condorcet-approval/){:target="_blank"}, who dislike this definition of "sincere" because it allows a voter multiple sincere strategies. The objection gets the relationship backwards. Sincerity is defined based on how *ordinal* preferences--which [cannot capture acceptability](../why-condorcet/){:target="_blank"}--can "honestly" be projected onto an Approval ballot.
 
 One positive aspect of this definition is that two voters who rank $A>B>C$ can vote exclusively for $A$ or for both $A$ and $B$ to show a meaningful difference in how they feel about $B$ relative to $A$. Is $B$ an acceptable backup for $A$, which you are happy to approve of, or is $B$ a lesser evil that you only approve of if you have to? Both of these are sincere strategies, and Approval allows them both to be expressed without forcing the voters to share only the ordinal information which cannot capture that distinction. This is a feature, not a bug, in my view.
 
@@ -69,7 +71,7 @@ Either way, this is the usage of the word "sincerity" in the literature, so we'l
 {% proof A remark on "rationality" %}
 What we are calling "rational" is called "admissible" in the literature. Formally, it just means a strategy or ballot that is not "dominated" by any other strategy or ballot. In other words, there is no other ballot that would give you the same or a better outcome in all possible scenarios.
 
-For example, why would you ever vote for a middle tier candidate, and not your favorite candidate? It doesn't hurt to include your favorite, because you might make them win! Similarly, you should never vote for your least favorite candidate, for the same reason.
+For example in Approval, why would you ever vote for a middle tier candidate, and not your favorite candidate? It doesn't hurt to include your favorite, because you might make them win! Similarly, you should never vote for your least favorite candidate, for the same reason.
 
 We articulate this idea with the word "rational". It would be irrational to submit a ballot which is at most as good and sometimes worse than another ballot. So we can just ignore those ballots, and only consider the rational (admissible) ballots.
 {% endproof %}
@@ -122,7 +124,7 @@ Strategyproofness follows from a result they prove in the paper:
 
 In other words, you have no reason to ever not approve of your absolute favorites, and you will never be compelled to approve of your absolute least favorites. This is not necessarily true in Approval with a runoff<d-cite key="fishburnBrams1981runoff"></d-cite>, which we will not be discussing here.
 
-Brams and Fishburn also show that with four or more preference tiers, insincere strategies can sometimes be optimal (under very contrived scenarios)<d-cite key="bramsFishburn1978approval"></d-cite>. However, Laslier proved in 2009 that under a fairly realistic model (with a few minor assumptions), a best response in single-winner Approval is always sincere<d-cite key="laslier2009leaderRule"></d-cite>.
+This theorem implies that all "rational" strategies are sincere if there are three or fewer tiers. But Brams and Fishburn also show that with four or more preference tiers, insincere strategies can sometimes be "rational" and optimal (under very contrived scenarios)<d-cite key="bramsFishburn1978approval"></d-cite>. However, Laslier proved in 2009 that under a fairly realistic probabilistic large-electorate model (with a few minor assumptions), a best response in single-winner Approval is always sincere<d-cite key="laslier2009leaderRule"></d-cite>.
 
 Given this theorem, strategyproofness becomes trivial under dichotomous preferences: with only a top and bottom tier, there's exactly one optimal strategy--approve all "good" candidates and reject all "bad" ones. This strategy is necessarily sincere. Thus, Approval voting is strategyproof under dichotomous preferences.
 
@@ -152,7 +154,7 @@ The truth is that, although we *could* ask voters to rank candidates, many peopl
 
 "Vote blue no matter who" is an example of a dichotomous preference. A voter who would approve every candidate with an "R" next to their name and disapprove everyone else is effectively operating in the dichotomous domain. This applies to single-issue voters as well.
 
-Many voters can readily categorize candidates into "acceptable" and "unacceptable" buckets without much thought. I would also argue that [compromise](../why-condorcet/){:target="_blank"} and consent are inherently binary concepts. This is precisely what Approval voting captures, which makes it a natural fit for these voters and these goals.
+Many voters can readily categorize candidates into "acceptable" and "unacceptable" buckets without much thought, based on the criteria that matter to them. I have also [argued that compromise](../why-condorcet/){:target="_blank"} and consent are inherently binary concepts. "Acceptable" and "unacceptable" is precisely what Approval voting captures, which makes it a natural fit for these voters and these goals.
 
 ## Conclusion
 
