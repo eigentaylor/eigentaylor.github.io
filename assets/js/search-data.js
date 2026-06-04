@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-arrow-39-s-impossibility-theorem",
+        },{id: "post-is-approval-voting-strategyproof",
+        
+          title: "Is Approval Voting Strategyproof?",
+        
+        description: "Well yes, but actually no. Unless...",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/av-stratproof/";
+          
+        },
+      },{id: "post-arrow-39-s-impossibility-theorem",
         
           title: "Arrow&#39;s Impossibility Theorem",
         
