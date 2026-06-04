@@ -5,7 +5,7 @@
 
     {% if page.collection == 'previews' and page.preview_redirect == true %}
       {%- assign published_url = page.url | replace_first: '/preview/', '/blog/' -%}
-      {%- assign matching_post = site.posts | where: 'url', published_url | first -%}
+      {%- assign matching_post = site.posts | where: 'slug', page.slug | first -%}
       {% if matching_post %}
         <link rel="canonical" href="{{ published_url | absolute_url }}">
         <meta http-equiv="refresh" content="0; url={{ published_url | relative_url }}">
