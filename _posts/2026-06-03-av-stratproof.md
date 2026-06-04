@@ -175,16 +175,16 @@ The remainder of this post covers a few more technical aspects I think are worth
 
 There is a small bonus that follows from strategyproofness on dichotomous preferences. Since any approval ballot is a projection of a voter's preferences onto the dichotomous domain, if we read those preferences literally (the voter prefers all approved candidates over all unapproved candidates), we get a simple guarantee under Approval voting:
 
-- If a candidate you plan to approve is already winning even without your vote, your vote will not change the winner. In particular, your ballot will not cause an unapproved candidate to beat a candidate you approved.
-- If an unapproved candidate is winning even with your vote, there is no deviation of your ballot that would change the outcome to an approved candidate.
+- If a candidate you plan to approve is already winning before you cast your ballot, your vote will not change the winner. In particular, your ballot will not cause an unapproved candidate to beat a candidate you approved.
+- If an unapproved candidate is winning even after you cast your ballot, there is no deviation from the ballot you submitted that would change the outcome to someone your current ballot already approves.
 
 This means your ballot is already doing maximal work for the candidates you approved against those you did not. It's a nontrivial guarantee that few other systems can claim.
 
 Take [ranked choice voting](../ditch-rcv/){:target="_blank"}, for example, in the infamous 2022 Alaska race. [Over 33,000 voters](https://ranked.vote/report/us/ak/2022/08/cd) ranked Republican Sarah Palin first with fellow Republican Nick Begich second, implying they preferred Begich to Democrat Mary Peltola<d-cite key="rankedVote2022alaskaCd"></d-cite>, but Peltola won.
 
-If fewer than 3,000 of those voters had instead insincerely ranked Begich first (burying Palin second), they could have elected Begich instead of Peltola. They were already signaling "Begich over Peltola," but the ranked system required them to misrepresent their ordinal ballot to make that preference decisive. That is a failure of the voting rule to respect explicitly stated preferences; similar events occurred in Burlington, Vermont in 2009.
+If fewer than 3,000 of those voters had instead insincerely ranked Begich first (burying Palin second), they could have elected Begich instead of Peltola. They were already signaling "Begich over Peltola," but the ranked system required them to misrepresent their ordinal preferences to make their ballots decisive. That is a failure of the voting rule to respect explicitly stated preferences. Similar events occurred in [Burlington, Vermont in 2009](https://ranked.vote/report/us/vt/btv/2009/03/mayor).
 
-Under Approval, such voters could simply approve both Palin and Begich and get Begich instead of Peltola without misrepresenting their preferences. There is no need to exaggerate or hide preferences to get the system to respect them (e.g., your feelings about Palin shouldn't prevent Begich from winning if he's preferred). If this reminds you of [IIA](../iia/){:target="_blank"}, that's no accident.
+Under Approval, such voters could simply approve both Palin and Begich and get Begich instead of Peltola without misrepresenting their preferences. There is no need to exaggerate or hide preferences to get the system to respect them (e.g., your feelings about Palin shouldn't prevent Begich from winning over *Peltola* if he's preferred). If this reminds you of [IIA](../iia/){:target="_blank"}, that's no accident.
 
 If a sufficient number of voters find Begich acceptable, he wins. Given that both hardcore Palin supporters and Democrats found Begich more acceptable than their alternatives, it's plausible Begich would have won under Approval.
 
