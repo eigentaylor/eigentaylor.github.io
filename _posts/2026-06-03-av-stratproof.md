@@ -66,7 +66,7 @@ I know some people, particularly [Condorcetists](../condorcet-approval/){:target
 
 One positive aspect of this definition is that two voters who rank $A>B>C$ can vote exclusively for $A$ or for both $A$ and $B$ to show a meaningful difference in how they feel about $B$ relative to $A$. Is $B$ an acceptable backup for $A$, which you are happy to approve of, or is $B$ a lesser evil that you only approve of if you have to? Both of these are sincere strategies, and Approval allows them both to be expressed without forcing the voters to share only the ordinal information which cannot capture that distinction. This is a feature, not a bug, in my view.
 
-Either way, this is the usage of the word "sincerity" in the literature, so we'll stick with it: a voter can be both sincere and strategic. For the pedants in the audience, the following block provides the formal definition.
+Either way, this is the usage of the word "sincerity" in the literature, so we'll stick with it: a voter can be both sincere and strategic. For the pedants in the audience, the following blocks provides the formal definitions.
 
 {% proof A remark on "rationality" %}
 What we are calling "rational" is called "admissible" in the literature. Formally, it just means a strategy or ballot that is not "dominated" by any other strategy or ballot. In other words, there is no other ballot that would give you at least as good in all possible scenarios and strictly better in at least one scenario. So you can just ignore dominated strategies, since they are never optimal.
