@@ -72,9 +72,9 @@ Either way, this is the usage of the word "sincerity" in the literature, so we'l
 {% proof A remark on "rationality" %}
 What we are calling "rational" is called "admissible" in the literature. Formally, it just means a strategy or ballot that is not "dominated" by any other strategy or ballot. In other words, there is no other ballot that would give you at least as good in all possible scenarios and strictly better in at least one scenario. So you can just ignore dominated strategies, since they are never optimal.
 
-For example in Approval, why would you ever vote for a middle tier candidate, and not your favorite candidate? It doesn't hurt to include your favorite, because you might make them win! Similarly, you should never vote for your least favorite candidate, for the same reason.
+For example in choose-one plurality, there is never any reason to vote for your absolute least favorite candidate. There has to be *someone* else you prefer who you can optimally vote for instead. Maybe your second least favorite candidate is the only viable candidate who can defeat your least favorite candidate, so you vote for them instead.
 
-We articulate this idea with the word "rational". It would be irrational to submit a ballot which is at most as good and sometimes worse than another ballot. So we can just ignore those ballots, and only consider the rational (admissible) ballots.
+We articulate this idea with the word "rational". It would be irrational to submit a ballot which is at most as good and sometimes worse than another ballot. So we can just ignore those ballots, and only consider the rational (admissible) ballots. The Brams and Fishburn paper characterizes the rational strategies in Approval and choose-one plurality in more detail <d-cite key="bramsFishburn1978approval"></d-cite>, but we only need a single upcoming result about rational strategies in Approval for our purposes.
 {% endproof %}
 
 {% proof A remark on "sincerity" %}
