@@ -406,6 +406,19 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+// Override gem's mobile navbar: right-align expanded menu items
+@media (max-width: 575.98px) {
+  .navbar {
+    .navbar-collapse-main {
+      text-align: right;
+    }
+
+    .navbar-menu-list {
+      align-items: flex-end;
+    }
+  }
+}
+
 .navbar-toggler {
   .icon-bar {
     display: block;
