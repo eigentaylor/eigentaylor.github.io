@@ -1,0 +1,10 @@
+{% comment %}
+  Override of gem al_icons_styles include.
+  Loads fontawesome/academicons/scholar-icons via the al_icons tag,
+  then adds tabler icons from CDN (not bundled in al_folio_core tailwind).
+{% endcomment %}
+{% al_icons_styles %}
+{% assign tabler_url = site.third_party_libraries['tabler-icons'].url.css %}
+{% if tabler_url and tabler_url != '' %}
+  <link defer rel="stylesheet" type="text/css" href="{{ tabler_url }}">
+{% endif %}

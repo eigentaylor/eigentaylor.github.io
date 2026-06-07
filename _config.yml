@@ -479,6 +479,10 @@ third_party_libraries:
     url:
       css: "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@{{version}}/css/all.min.css"
     version: "7.2.0"
+  tabler-icons:
+    url:
+      css: "https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@{{version}}/dist/tabler-icons.min.css"
+    version: "3.20.0"
   academicons:
     integrity:
       css: "sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw="
