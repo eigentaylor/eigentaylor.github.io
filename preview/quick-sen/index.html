@@ -1,4 +1,4 @@
-<!DOCTYPE html> <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta name="robots" content="noindex, nofollow"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> A Quick Look at Sen's Theorem | eigentaylor </title> <meta name="author" content="Taylor Eigen Fisher"> <meta name="description" content="A brief alternate proof of the theorem that individual sovereignty and efficiency are incompatible."> <meta name="keywords" content="math, blog, differential-equations, linear-algebra, approval-voting"> <link rel="stylesheet" href="/assets/css/bootstrap.min.css?v=a4b3f509e79c54a512b890d73235ef04"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.4/dist/bootstrap-table.min.css" integrity="sha256-uRX+PiRTR4ysKFRCykT8HLuRCub26LgXJZym3Yeom1c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/css/academicons.min.css?v=f0b7046b84e425c55f3463ac249818f5"> <link defer rel="stylesheet" href="/assets/css/scholar-icons.css?v=62b2ac103a88034e6882a5be5f3e2772"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%98%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=d41d8cd98f00b204e9800998ecf8427e"> <link rel="canonical" href="https://eigentaylor.github.io/preview/quick-sen/"> <script src="/assets/js/theme.js?v=48c9b5bd7f2e0605e39e579400e22553"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+<!DOCTYPE html> <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta name="robots" content="noindex, nofollow"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> A Quick Look at Sen's Theorem | eigentaylor </title> <meta name="author" content="Taylor Eigen Fisher"> <meta name="description" content="A brief alternate proof of the theorem that individual sovereignty and efficiency are incompatible."> <meta name="keywords" content="math, blog, differential-equations, linear-algebra, approval-voting"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>:root{--max-content-width:930px}</style> <link rel="stylesheet" href="/assets/css/tailwind.css"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.20.0/dist/tabler-icons.min.css"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/lambdasigma.png"> <link rel="stylesheet" href="/assets/css/main.css"> <link rel="canonical" href="https://eigentaylor.github.io/preview/quick-sen/"> <script src="/assets/js/theme.js"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css" media="none" id="highlight_theme_dark"> <script>
     initTheme();
   </script> <script src="/assets/js/distillpub/template.v2.js"></script> <script src="/assets/js/distillpub/transforms.v2.js"></script> </head> <body> <d-front-matter> <script async type="text/json">
       {
@@ -34,12 +34,767 @@
               ]
             }
           }
-    </script> </d-front-matter> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> eigentaylor </a> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/teaching/">teaching </a> </li> <li class="nav-item"> <a class="nav-link nav-link-subscribe" href="https://buttondown.com/eigentaylor" target="_blank" rel="noopener"> subscribe </a> </li> <li class="nav-item"> <button id="search-toggle" title="Search" onclick="openSearchModal()"> <span class="nav-link">ctrl k <i class="ti ti-search"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="ti ti-sun-moon" id="light-toggle-system"></i> <i class="ti ti-moon-filled" id="light-toggle-dark"></i> <i class="ti ti-sun-filled" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="post distill"> <div class="draft-preview-banner" style="background: #141001; border: 1px solid #fbff07; border-radius: 8px; padding: 12px 20px; margin-bottom: 20px; text-align: center; font-size: 0.95rem; color: #f6bf19;"> 📝 <strong style="color: inherit;">Draft Preview</strong> — This post is not yet published. Please don't share this link widely. </div> <script>
+    </script> </d-front-matter> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> eigentaylor </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/teaching/">teaching </a> </li> <li class="nav-item"> <a class="nav-link nav-link-subscribe" href="https://buttondown.com/eigentaylor" target="_blank" rel="noopener"> subscribe </a> </li> <li class="nav-item"> <button id="search-toggle" title="Search" onclick="openSearchModal()"> <span class="nav-link">ctrl k <i class="ti ti-search"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="ti ti-sun-moon" id="light-toggle-system"></i> <i class="ti ti-moon-filled" id="light-toggle-dark"></i> <i class="ti ti-sun-filled" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="post distill"> <div class="draft-preview-banner" style="background: #141001; border: 1px solid #fbff07; border-radius: 8px; padding: 12px 20px; margin-bottom: 20px; text-align: center; font-size: 0.95rem; color: #f6bf19;"> 📝 <strong style="color: inherit;">Draft Preview</strong> — This post is not yet published. Please don't share this link widely. </div> <script>
           const fullMinutes = (3366 / 180) + 1;
           console.log('Read time (full): ' + fullMinutes.toFixed(2) + ' min read');
         </script> <script>
             const noAppendixMinutes = (3366 / 180) + 1;
             console.log('Read time (without appendix): ' + noAppendixMinutes.toFixed(2) + ' min read');
-          </script> <d-title> <h1>A Quick Look at Sen's Theorem</h1> <p>A brief alternate proof of the theorem that individual sovereignty and efficiency are incompatible.</p> </d-title> <d-byline></d-byline> <d-article> <d-contents> <nav class="l-text figcaption"> <h3>Contents</h3> <div> <a href="#introduction">Introduction</a> </div> <ul> <li> <a href="#liberalism">Liberalism</a> </li> <li> <a href="#pareto-efficiency">Pareto Efficiency</a> </li> </ul> <div> <a href="#proof-by-example">Proof by Example</a> </div> <ul> <li> <a href="#the-cycle-perspective">The Cycle Perspective</a> </li> </ul> <div> <a href="#the-original-example">The original example</a> </div> <div> <a href="#conclusion">Conclusion</a> </div> <div> <a href="#references">References</a> </div> </nav> </d-contents> <h2 id="introduction">Introduction</h2> <p>I may do a much more in-depth post on Sen’s theorem in the future, but for now I just want to give a quick overview of the theorem with a different example than the one Sen uses in his original paper.</p> <p>Among Arrow’s theorem and the theorems of <a href="../gibbard-satt" target="_blank">Gibbard</a>, Sen’s theorem is often overlooked. It is a bit of the “red-headed stepchild” of social choice theory and is often overshadowed by the more famous theorems of Arrow and Gibbard. As a voting theorist, Sen’s theorem is… a bit less consequential than Arrow’s or Gibbard’s theorems.</p> <p>Arrow and Gibbard deal with IIA and strategyproofness, respectively, which are themselves very desirable properties. Their impossibility theorems essentially say that these desirable properties are too restrictive to be satisfied by any reasonable voting system. Sen’s theorem, which deals with “liberalism,” is… less obviously desirable.</p> <h3 id="liberalism">Liberalism</h3> <blockquote> <p><strong>Definition:</strong> (Liberalism) A social welfare function (a function which takes in individual preferences and outputs a social preference order) satisfies liberalism if every individual is decisive over at least one pair of alternatives.</p> </blockquote> <p>This is a pretty powerful property. It basically says that every individual can dictate the social preference order over at least one pair of alternatives. I can sleep on my back or on my stomach, and nobody can stop me!</p> <p>Sen’s theorem shows that this above property is incompatible with Pareto efficiency. But that’s less impressive than it sounds, because Liberalism is an <em>absurdly</em> strong property. Giving every single individual a veto power on <em>something</em> would lead to absolute chaos. So Sen weakens the notion to “minimal liberalism”, which is like the baby version of liberalism, applying to a minimum of two people. But despite this much weaker property, we still can prove an impossibility.</p> <blockquote> <p><strong>Definition:</strong> (Minimal Liberalism) A social welfare function satisfies minimal liberalism if there exist at least two individuals who are “decisive” over some pair of alternatives.</p> </blockquote> <p>Intuitively, this captures a kind of “individual rights.” If I am one of these “decisive” individuals, we might interpret this as follows:</p> <p>If I have the freedom of speech, then I am decisive over the pair of alternatives “speak” (S) and “be quiet” (Q). Therefore, if I prefer to speak (prefer $S&gt;Q$), then the social preference order will reflect my preference. That is, if I rank $S&gt;Q$, then society <em>must</em> rank $S&gt;Q$ as well.</p> <p>Another way to interpret this is that I have a kind of “veto power” over the pair of alternatives $S$ and $Q$. If I prefer $S&gt;Q$, then I absolutely prevent $Q$ from being the top alternative in the social preference order.</p> <p>Similarly, if I choose to prefer $Q&gt;S$, then I force the social preference order to reflect that as well (i.e. $Q&gt;S$ in the social preference order). In this way, I can also “veto” $S$ from being the top alternative in the social preference order. What I say goes! At least for the pair of alternatives I am decisive over.</p> <p>We can associate a social welfare function with a social choice function (a function which takes in individual preferences and outputs a single winning alternative) by defining the social choice function to select the top-ranked alternative in the social preference order (meaning no other alternative is ranked higher). Therefore, if I am decisive over $S$ and $Q$, and I prefer $S&gt;Q$, then the social choice function <em>can never output $Q$</em>.</p> <p>By saying I prefer $S&gt;Q$, I may not guarantee that $S$ is the top-ranked alternative in the social preference order, but I can guarantee that $Q$ is certainly not. Hence, the idea of “veto power”.</p> <h3 id="pareto-efficiency">Pareto Efficiency</h3> <p>The other important concept in Sen’s theorem is “Pareto efficiency”.</p> <blockquote> <p><strong>Definition:</strong> (Pareto Efficiency) A social welfare function satisfies Pareto efficiency if, whenever every individual prefers alternative $A$ to alternative $B$, the social preference order also ranks $A$ above $B$.</p> </blockquote> <p>Another way to think of efficiency is that if there is a “Pareto improvement” (a strictly better alternative that everyone prefers), then we should never choose the worse alternative. If we have a case where everyone prefers $A$ to $B$, and we somehow end up with $B$ as the top-ranked alternative in the social preference order, then that’s sufficient to say that our social welfare function is not Pareto efficient.</p> <p>The final two concepts we need to understand Sen’s theorem are “unrestricted domain” and “transitivity.” Unrestricted domain just means that we allow individuals to have any preference order they want (no ballots or preferences are illegal). Transitivity means that if $A&gt;B$ and $B&gt;C$, then we must have $A&gt;C$. Simple, right?</p> <p>Sen’s theorem can be interpreted as saying that if we have a social welfare function that satisfies minimal liberalism, and we have “unrestricted domain” and “transitivity”, then we cannot have Pareto efficiency. This is not the typical statement of Sen’s theorem, but it is sufficient to prove the theorem. The typical statement is</p> <blockquote> <p><strong>Theorem:</strong> (Sen’s Theorem) There is no social welfare function that satisfies minimal liberalism, Pareto efficiency, unrestricted domain, and transitivity.</p> </blockquote> <p>Sen proves this theorem, and then uses it to show that liberalism and efficiency are <em>also</em> incompatible. This follows immediately, because if you can show that minimal liberalism and efficiency are incompatible, then you have also shown that liberalism and efficiency are incompatible, since minimal liberalism implies liberalism.</p> <p>Like Arrow’s theorem, it’s of the form “you can’t have all of these things at once”. But also like Arrow’s theorem, the proof is generally structured as showing one of the properties is violated if we have all the others. In this case, we will show that if we have minimal liberalism, unrestricted domain, and transitivity, then we cannot have Pareto efficiency.</p> <p>Intuitively, this is a relatively intuitive idea. If we have to respect individual rights (minimal liberalism), then we might be left with an outcome which is clearly not optimal. That is, everyone might be happier with a different choice, but that might come at the cost of violating someone’s rights. This is the essence of Sen’s theorem.</p> <h2 id="proof-by-example">Proof by Example</h2> <p>We are going to prove Sen’s theorem through an example. I personally found Sen’s original example to… not really make a lot of sense. So we are going to go through a different example that I think is a bit more intuitive, and more closely relates to the idea of “individual rights” that Sen is trying to capture with minimal liberalism.</p> <p>We have two individuals, Connor the Conspiracy Theorist ($C$) and Seth the Skeptic ($S$), who work together in the same office. Connor is a strong believer in the “birds aren’t real” conspiracy, and he wants to tell Seth all about it. Connor has the right to free speech, so he is decisive over the pair of alternatives</p> <ul> <li>$T$: “Connor <strong>Tells</strong> Seth that birds aren’t real.” Connor loves to debate people about the fakeness of avians, and he wants to convince Seth of the “truth”.</li> <li>$Q$: “Connor, specifically, must keep <strong>Quiet</strong> and be silenced about the ‘birds aren’t real’ conspiracy.” He is not allowed to tell anyone in the office that birds are fake, though other people in the office still might tell Seth about it.</li> </ul> <p>Seth, on the other hand, has little patience for conspiracy theories, and he just wants to be left alone. He believes he has the right not to be offended by nonsense, so he is decisive over the pair of alternatives</p> <ul> <li>$N$: “Seth <strong>Never</strong> hears about the ‘birds aren’t real’ conspiracy from anyone in the office.” Connor would still be allowed to spread his theory to other people in the workplace, just not to Seth.</li> <li>$T$: “Connor <strong>Tells</strong> Seth about the ‘birds aren’t real’ conspiracy.” Seth can choose to allow Connor to debate him about it.</li> </ul> <p>We assume that Seth’s right not to be offended by nonsense means that he is <em>also</em> decisive over the pair $N$ and $T$. But he can’t force Connor to be quiet ($Q$) and not spread the conspiracy to anyone else in the office, so he is not decisive over $Q$.</p> <p>Connor, however, is not decisive over $N$ because he doesn’t have the right to prevent or force other people to bring it up with Seth. He only has the right to decide whether he, himself, talks about it.</p> <p>This is where Minimal Liberalism starts to run into problems: when people’s individual rights conflict with each other. Connor has the right to free speech, which means he can choose (be decisive) either to be silenced ($Q$) or to speak to Seth ($T$). Seth has the right not to be offended by nonsense, which means he should be able to choose (be decisive) either never to hear about the conspiracy from anyone in the office ($N$) or to hear about it from Connor ($T$). But these rights are in direct conflict with each other.</p> <p>Intuitively, we have an innate sense that the freedom of speech and the right to not be offended by nonsense are contradictory. We are going to mathematically prove that if we must respect both of these rights, then we will end up with a non-optimal outcome.</p> <p>Let’s suppose Seth comes to Human Resources and complains about Connor. HR brings Seth and Connor into the room and tries to figure out what to do. They have to choose between the three alternatives $T$, $Q$, and $N$. HR wants to protect Connor’s freedom of speech, but they also want to protect Seth’s right not to be offended by nonsense.</p> <p>Connor has the preference that, most of all, he wants to tell Seth that birds aren’t real ($T$). And he also absolutely <em>hates</em> the idea that Seth might never hear the “truth” from anyone else in the office ($N$). He is not a fan of being quiet ($Q$), but it’s not as bad as Seth never finding out. Connor believes the truth must come out! So his preference order is $T &gt; Q &gt; N$.</p> <p>Seth, on the other hand, would like never to have to hear about the conspiracy from anyone at work ($N$). However, he is also very principled. He hates misinformation, so he would actually prefer that Connor never spread his theory in the workplace at all ($Q$). It’s just not appropriate! Thus, he actually prefers $Q$ to $N$. But, most of all, he hates the idea of Connor specifically being the one to enlighten him ($T$). So his preference order is $Q &gt; N &gt; T$.</p> <p>We are thus left with</p> <table> <thead> <tr> <th>Person</th> <th>Preference Order</th> </tr> </thead> <tbody> <tr> <td>Connor</td> <td>$T &gt; Q &gt; N$</td> </tr> <tr> <td>Seth</td> <td>$Q &gt; N &gt; T$</td> </tr> </tbody> </table> <p>We now look at the alternatives that each person is decisive over. Connor is decisive over $T$ and $Q$, so if he prefers $T&gt;Q$, then we must have $T&gt;Q$ in the social preference order. Seth is decisive over $T$ and $N$, so if he prefers $N&gt;T$, then we must have $N&gt;T$ in the social preference order. Therefore, we have $N&gt;T$ and $T&gt;Q$ in the social preference order.</p> <p>By transitivity, if we have $N&gt;T$ and $T&gt;Q$, then we must have $N&gt;Q$ in the social preference order. That is, society must rank $N&gt;T&gt;Q$. The social choice must, then, be $N$.</p> <p>From the veto perspective, we have the following:</p> <table> <thead> <tr> <th>Person</th> <th>Decisive Pair</th> <th>Vetoed Alternative</th> </tr> </thead> <tbody> <tr> <td>Connor</td> <td>$T&gt;Q$</td> <td>$Q$</td> </tr> <tr> <td>Seth</td> <td>$N&gt;T$</td> <td>$T$</td> </tr> </tbody> </table> <p>We can’t ever choose $Q$, because Connor’s freedom of speech allows him to veto being silenced ($Q$). We also can’t ever choose $T$, because Seth’s right to not be offended by nonsense allows him to veto being the one Connor personally enlightens ($T$). Therefore, we are forced to choose $N$: Seth won’t have to hear about birds being fake from anyone in the office.</p> <p>Therefore, to respect both of their rights, the HR department decides to impose $N$: a rule that Seth is not to hear about any of it from anyone in the office, while Connor is still allowed to talk to other coworkers about his theory (but only if Seth doesn’t hear about it).</p> <p>Here’s where we run into the problem: Both Connor and Seth prefer $Q$ to $N$. That is, if forced to choose between $Q$ and $N$, both Connor and Seth would prefer $Q$. Thus, there’s actually a better alternative that both Connor and Seth would be happier with.</p> <p>Connor got his worst choice: Seth won’t hear about any of it from anyone in the office ($N$). He would be happier if he, specifically, had to keep quiet ($Q$), while others in the office were still allowed to raise the subject with Seth.</p> <p>Seth is moderately happy: he won’t have to hear about it from anyone while at work ($N$), but he would prefer it if Connor were banned from spreading his theory to anyone in the office ($Q$).</p> <p>Therefore, we have an outcome ($N$) that is Pareto dominated by another outcome ($Q$). By forcing ourselves to respect both of their rights, and satisfy minimal liberalism, we end up with a non-Pareto efficient outcome. This is the essence of Sen’s theorem.</p> <h3 id="the-cycle-perspective">The Cycle Perspective</h3> <p>Another way to conclude the proof is to necessarily impose Pareto efficiency, and then show that we end up with a cycle in the social preference order (contradicting transitivity). If we force Pareto efficiency, then we must absolutely have $Q&gt;N$ in the social preference order. We thus have that</p> <ul> <li>$Q&gt;N$ (by Pareto efficiency)</li> <li>$T&gt;Q$ (by Connor’s liberal decisiveness)</li> <li>$N&gt;T$ (by Seth’s liberal decisiveness)</li> </ul> <p>which creates a cycle.</p> <p>Alternatively, by the veto perspective, we can say that Pareto efficiency vetoes $N$ (by forcing $Q$ over $N$). Thus,</p> <table> <thead> <tr> <th>Vetoed Alternative</th> <th>Reason</th> </tr> </thead> <tbody> <tr> <td>$T$</td> <td>Seth’s liberalism on $T&gt;N$</td> </tr> <tr> <td>$Q$</td> <td>Connor’s liberalism on $T&gt;Q$</td> </tr> <tr> <td>$N$</td> <td>Pareto efficiency on $Q&gt;N$</td> </tr> </tbody> </table> <p>Therefore, no alternative can be chosen without violating someone’s rights, or violating Pareto efficiency. Specifically, Connor vetoed the Pareto efficient alternative $Q$.</p> <p>This example technically only proves the case where the two decisive individuals are decisive over overlapping pairs of alternatives. However, the proof also shows that even if you have two decisive individuals who are decisive over completely disjoint pairs of alternatives, you can still end up with a cycle in the social preference order if you try to impose Pareto efficiency.</p> <p>I encourage you to try to do that yourself! Suppose that $S$ is actually decisive over a alternatives $N$ and $R$, and see if you can find a preference profile that leads to a cycle in the social preference order when you try to impose Pareto efficiency. You can check your answer in the proof below.</p> <details class="proof-disclosure" data-proof-disclosure=""><summary>Formal Proof</summary><div class="proof-content"> <p><strong>Proof of Sen’s Theorem:</strong> Suppose we have two individuals, $C$ and $S$, and we have a social welfare function that satisfies minimal liberalism, unrestricted domain, and transitivity. We will show that this social welfare function cannot satisfy Pareto efficiency.</p> <p>If $C$ and $S$ are decisive on the same pair of alternatives, then we have a direct contradiction. First, we assume that they are decisive over an overlapping pair of alternatives.</p> <p>Suppose that $C$ is decisive over $T$ and $Q$, and that $S$ is decisive over $T$ and $N$. Suppose that the preference orders are as follows:</p> <table> <thead> <tr> <th>Agent</th> <th>Preference Order</th> </tr> </thead> <tbody> <tr> <td>$C$</td> <td>$T &gt; Q &gt; N$</td> </tr> <tr> <td>$S$</td> <td>$Q &gt; N &gt; T$</td> </tr> </tbody> </table> <p>By $C$’s decisiveness over $T$ and $Q$, we have that if $C$ prefers $T&gt;Q$, then we must have $T&gt;Q$ in the social preference order. By $S$’s decisiveness over $T$ and $N$, we have that if $S$ prefers $N&gt;T$, then we must have $N&gt;T$ in the social preference order. Therefore, we have $N&gt;T$ and $T&gt;Q$ in the social preference order.</p> <p>By transitivity, society must rank $N&gt;Q$. However, Pareto efficiency requires that if both $C$ and $S$ prefer $Q&gt;N$, then we must have $Q&gt;N$ in the social preference order. Therefore, Pareto efficiency is violated.</p> <p>Next, suppose that $C$ is decisive over $T$ and $Q$, and that $S$ is decisive over $N$ and $R$, all distinct alternatives. Suppose that the preference orders are as follows:</p> <table> <thead> <tr> <th>Agent</th> <th>Preference Order</th> </tr> </thead> <tbody> <tr> <td>$C$</td> <td>$R &gt; T &gt; Q &gt; N$</td> </tr> <tr> <td>$S$</td> <td>$Q &gt; N &gt; R &gt; T$</td> </tr> </tbody> </table> <p>Then by $C$’s decisiveness over $T$ and $Q$, we have that if $C$ prefers $T&gt;Q$, then we must have $T&gt;Q$ in the social preference order. By $S$’s decisiveness over $N$ and $R$, we have that if $S$ prefers $N&gt;R$, then we must have $N&gt;R$ in the social preference order.</p> <p>Pareto efficiency would require that $R&gt;T$ and $Q&gt;N$. However, we already have that $T&gt;Q$, which alongside $R&gt;T$ implies that $R&gt;Q$. We also already have that $N&gt;R$, which alongside $Q&gt;N$ implies that $Q&gt;R$. Together, we have $R&gt;Q$ and $Q&gt;R$, which is a contradiction. Hence, transitivity would be violated. We therefore cannot satisfy Pareto efficiency. $\square$</p> <p>The veto perspective is still helpful here. The vetoed alternatives are as follows:</p> <table> <thead> <tr> <th>Vetoed Alternative</th> <th>Reason</th> </tr> </thead> <tbody> <tr> <td>$Q$</td> <td>$C$’s liberalism on $T&gt;Q$</td> </tr> <tr> <td>$R$</td> <td>$S$’s liberalism on $N&gt;R$</td> </tr> <tr> <td>$T$</td> <td>Pareto efficiency on $R&gt;T$</td> </tr> <tr> <td>$N$</td> <td>Pareto efficiency on $Q&gt;N$</td> </tr> </tbody> </table> <p>The general “geometry” of the proof is really kind of revealed here. We essentially use liberalism and Pareto efficiency to veto all of the alternatives, which leads to a cycle in the social preference order, or a contradiction in choosing a single winning alternative.</p> </div></details> <h2 id="the-original-example">The original example</h2> <p>His example was that of a Prude and a Lewd, and what they might decide to do with “Lady Chatterley’s Lover”. Essentially, they have to decide between</p> <ul> <li>Nobody reads the book ($N$)</li> <li>Only the Prude reads the book ($P$)</li> <li>Only the Lewd reads the book ($L$)</li> </ul> <p>The preference orders are as follows:</p> <table> <thead> <tr> <th>Person</th> <th>Preference Order</th> </tr> </thead> <tbody> <tr> <td>Prude</td> <td>$N &gt; P &gt; L$</td> </tr> <tr> <td>Lewd</td> <td>$P &gt; L &gt; N$</td> </tr> </tbody> </table> <p>Supposedly, the Prude wants neither of them to read the book. It’s filthy! But, if <em>someone</em> has to read it, it would be better that the Prude reads it (and is appropriately horrified by the contents) than the Lewd (who would be delighted by the contents).</p> <p>The Lewd, on the other hand, for some reason, would rather the Prude read the book to “loosen up”. But if the Prude won’t read the book, then it’s better that the Lewd reads it than nobody reading it at all.</p> <p>I do not like this example because these alternatives are not really mutually exclusive. Why can’t both read the book? Further, does it really make sense that the Lewd wants the Prude to read the book more than he wants to read it himself?</p> <p>I’ve heard that it’s kind of 70’s-coded, as like a censorship kind of thing. So, perhaps this post is just modernizing the example to be more 2020’s-coded, given that free speech vs. offensive speech is kind of a hot button issue today. Anyway.</p> <h2 id="conclusion">Conclusion</h2> <p>Sen’s theorem is controversial, but I won’t get into the general criticisms here. Perhaps in a future post. However, the intuitive idea that respecting individual rights, when they conflict with each other, can lead to suboptimal outcomes seems reasonable to me. The takeaway can be that we may occasionally run into a scenario where achieving an outcome that would be better for everyone would require violating someone’s rights.</p> <p>I just don’t know if this theorem is as ground-shattering as Arrow’s or Gibbard’s theorems. But the proof is kind of neat, and it’s easy to align it to a story, so there you go.</p> <p>Hopefully you found the example that I gave to be somewhat intuitive!</p> <h2 id="references">References</h2> <p>Li, Lingfang &amp; Saari, Donald. (2008). Sen’s theorem: Geometric proof, new interpretations. Social Choice and Welfare. 31. 393-413. 10.1007/s00355-007-0288-2. <a href="https://www.researchgate.net/publication/24064808_Sen's_theorem_Geometric_proof_new_interpretations" rel="external nofollow noopener noreferrer" target="_blank">https://www.researchgate.net/publication/24064808_Sen’s_theorem_Geometric_proof_new_interpretations</a></p> <p>Sen, Amartya Kumar. 1970. The impossibility of a Paretian liberal. Journal of Political Economy 78(1): 152-157. <a href="https://dash.harvard.edu/entities/publication/73120378-8203-6bd4-e053-0100007fdf3b" rel="external nofollow noopener noreferrer" target="_blank">https://dash.harvard.edu/entities/publication/73120378-8203-6bd4-e053-0100007fdf3b</a></p> <h3 id="seths-story">Seth’s Story</h3> <p>Unfortunately for Seth, he is in for an <a href="https://youtu.be/eHpxLF0nXLk?si=14KekjC9t0uRDNpQ" rel="external nofollow noopener noreferrer" target="_blank">unfortunate surprise</a>…</p> </d-article> <d-appendix> <d-footnote-list></d-footnote-list> <d-citation-list></d-citation-list> </d-appendix> <d-bibliography src="/assets/bibliography/"></d-bibliography> <d-article> <h2 class="text-3xl font-semibold mb-4 mt-12">enjoy this article?</h2> <p class="mb-2" style="margin-top: 1.5rem !important">subscribe to be notified of future articles:</p> <div class="newsletter-form-container"> <div class="newsletter-card"> <div class="newsletter-main"> <p class="newsletter-eyebrow">newsletter</p> <h3 class="newsletter-title">join <a href="https://buttondown.com/eigentaylor" target="_blank" rel="noopener noreferrer"><b>the eigenletter</b></a> </h3> <p class="newsletter-subtitle">get an email when i publish something</p> <form class="newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/eigentaylor" method="POST" style="justify-content: flex-start"> <label class="newsletter-form-label" for="bd-email-eigentaylor-preview-quick-sen">Email address</label> <input class="newsletter-form-input" name="email" id="bd-email-eigentaylor-preview-quick-sen" type="email" placeholder="you@example.com" required=""> <button type="submit" class="newsletter-form-button" style="justify-content: flex-start"> Subscribe </button> <button type="button" class="newsletter-loading-button" style="justify-content: flex-start"> Please wait... </button> </form> <div class="newsletter-success" style="justify-content: flex-start"> <p class="newsletter-success-message">You're subscribed!</p> </div> <div class="newsletter-error" style="justify-content: flex-start"> <p class="newsletter-error-message">Oops! Something went wrong, please try again</p> </div> <button class="newsletter-back-button" type="button" onmouseout='this.style.textDecoration="none"' onmouseover='this.style.textDecoration="underline"'> ← Back </button> <p class="newsletter-powered-by"> <a href="https://buttondown.com/refer/eigentaylor" target="_blank" rel="noopener noreferrer"> powered by buttondown. </a> </p> </div> </div> </div> <noscript> <style>.newsletter-form-container{display:none}</style> </noscript> <p class="mb-2">and here are some related posts you might like to read next:</p> <ul class="list-disc pl-8"></ul> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/av-stratproof/">Is Approval Voting Strategyproof?</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/arrows/">Arrow's Impossibility Theorem</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/iia/">Independence of Irrelevant Alternatives</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/why-condorcet/">Is the Condorcet Winner the True Compromise?</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/approval-only/">Why I Currently Only Support Approval</a> </li> <br> <br> <div id="giscus_thread"> <script defer src="/assets/js/giscus-setup.js"></script> <noscript> Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" rel="external nofollow noopener noreferrer" target="_blank">comments powered by giscus.</a> </noscript> </div> </d-article> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Taylor Eigen Fisher. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener noreferrer" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener noreferrer">GitHub Pages</a>. Last updated: June 05, 2026. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script src="/assets/js/distillpub/overrides.js"></script> <script src="/assets/js/theorem-setup.js?v=fa72b401c7748136372a08ffe4075116" type="text/javascript" data-theorem-numbering=""></script> <script defer src="/assets/js/proof-disclosure.js?v=8697f4d86c144b68609b496e1fb064f7" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?v=85ddb88934d28b74e78031fd54cf8308"></script> <script defer src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.4/dist/bootstrap-table.min.js" integrity="sha256-4rppopQE9POKfukn2kEvhJ9Um25Cf6+IDVkARD0xh78=" crossorigin="anonymous"></script> <script src="/assets/js/no_defer.js?v=2781658a0a2b13ed609542042a859126"></script> <script defer src="/assets/js/common.js?v=f9b34a2515d022a003264a1728c0cff6"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=d9f17b6adc2311cbabd747f4538bb15f"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/js/mathjax-setup.js?v=e1740f7aaca67f430c83cdef7fb8768e"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script defer src="/assets/js/progress-bar.js?v=2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script> <script src="/assets/js/vanilla-back-to-top.min.js?v=f40d453793ff4f64e238e420181a1d17"></script> <script>
+          </script> <d-title> <h1>A Quick Look at Sen's Theorem</h1> <p>A brief alternate proof of the theorem that individual sovereignty and efficiency are incompatible.</p> </d-title> <d-byline></d-byline> <d-article> <d-contents> <nav class="l-text figcaption"> <h3>Contents</h3> <div> <a href="#introduction">Introduction</a> </div> <ul> <li> <a href="#liberalism">Liberalism</a> </li> <li> <a href="#pareto-efficiency">Pareto Efficiency</a> </li> </ul> <div> <a href="#proof-by-example">Proof by Example</a> </div> <ul> <li> <a href="#the-cycle-perspective">The Cycle Perspective</a> </li> </ul> <div> <a href="#the-original-example">The original example</a> </div> <div> <a href="#conclusion">Conclusion</a> </div> <div> <a href="#references">References</a> </div> </nav> </d-contents> <h2 id="introduction">Introduction</h2> <p>I may do a much more in-depth post on Sen’s theorem in the future, but for now I just want to give a quick overview of the theorem with a different example than the one Sen uses in his original paper.</p> <p>Among Arrow’s theorem and the theorems of <a href="../gibbard-satt" target="_blank">Gibbard</a>, Sen’s theorem is often overlooked. It is a bit of the “red-headed stepchild” of social choice theory and is often overshadowed by the more famous theorems of Arrow and Gibbard. As a voting theorist, Sen’s theorem is… a bit less consequential than Arrow’s or Gibbard’s theorems.</p> <p>Arrow and Gibbard deal with IIA and strategyproofness, respectively, which are themselves very desirable properties. Their impossibility theorems essentially say that these desirable properties are too restrictive to be satisfied by any reasonable voting system. Sen’s theorem, which deals with “liberalism,” is… less obviously desirable.</p> <h3 id="liberalism">Liberalism</h3> <blockquote> <p><strong>Definition:</strong> (Liberalism) A social welfare function (a function which takes in individual preferences and outputs a social preference order) satisfies liberalism if every individual is decisive over at least one pair of alternatives.</p> </blockquote> <p>This is a pretty powerful property. It basically says that every individual can dictate the social preference order over at least one pair of alternatives. I can sleep on my back or on my stomach, and nobody can stop me!</p> <p>Sen’s theorem shows that this above property is incompatible with Pareto efficiency. But that’s less impressive than it sounds, because Liberalism is an <em>absurdly</em> strong property. Giving every single individual a veto power on <em>something</em> would lead to absolute chaos. So Sen weakens the notion to “minimal liberalism”, which is like the baby version of liberalism, applying to a minimum of two people. But despite this much weaker property, we still can prove an impossibility.</p> <blockquote> <p><strong>Definition:</strong> (Minimal Liberalism) A social welfare function satisfies minimal liberalism if there exist at least two individuals who are “decisive” over some pair of alternatives.</p> </blockquote> <p>Intuitively, this captures a kind of “individual rights.” If I am one of these “decisive” individuals, we might interpret this as follows:</p> <p>If I have the freedom of speech, then I am decisive over the pair of alternatives “speak” (S) and “be quiet” (Q). Therefore, if I prefer to speak (prefer $S&gt;Q$), then the social preference order will reflect my preference. That is, if I rank $S&gt;Q$, then society <em>must</em> rank $S&gt;Q$ as well.</p> <p>Another way to interpret this is that I have a kind of “veto power” over the pair of alternatives $S$ and $Q$. If I prefer $S&gt;Q$, then I absolutely prevent $Q$ from being the top alternative in the social preference order.</p> <p>Similarly, if I choose to prefer $Q&gt;S$, then I force the social preference order to reflect that as well (i.e. $Q&gt;S$ in the social preference order). In this way, I can also “veto” $S$ from being the top alternative in the social preference order. What I say goes! At least for the pair of alternatives I am decisive over.</p> <p>We can associate a social welfare function with a social choice function (a function which takes in individual preferences and outputs a single winning alternative) by defining the social choice function to select the top-ranked alternative in the social preference order (meaning no other alternative is ranked higher). Therefore, if I am decisive over $S$ and $Q$, and I prefer $S&gt;Q$, then the social choice function <em>can never output $Q$</em>.</p> <p>By saying I prefer $S&gt;Q$, I may not guarantee that $S$ is the top-ranked alternative in the social preference order, but I can guarantee that $Q$ is certainly not. Hence, the idea of “veto power”.</p> <h3 id="pareto-efficiency">Pareto Efficiency</h3> <p>The other important concept in Sen’s theorem is “Pareto efficiency”.</p> <blockquote> <p><strong>Definition:</strong> (Pareto Efficiency) A social welfare function satisfies Pareto efficiency if, whenever every individual prefers alternative $A$ to alternative $B$, the social preference order also ranks $A$ above $B$.</p> </blockquote> <p>Another way to think of efficiency is that if there is a “Pareto improvement” (a strictly better alternative that everyone prefers), then we should never choose the worse alternative. If we have a case where everyone prefers $A$ to $B$, and we somehow end up with $B$ as the top-ranked alternative in the social preference order, then that’s sufficient to say that our social welfare function is not Pareto efficient.</p> <p>The final two concepts we need to understand Sen’s theorem are “unrestricted domain” and “transitivity.” Unrestricted domain just means that we allow individuals to have any preference order they want (no ballots or preferences are illegal). Transitivity means that if $A&gt;B$ and $B&gt;C$, then we must have $A&gt;C$. Simple, right?</p> <p>Sen’s theorem can be interpreted as saying that if we have a social welfare function that satisfies minimal liberalism, and we have “unrestricted domain” and “transitivity”, then we cannot have Pareto efficiency. This is not the typical statement of Sen’s theorem, but it is sufficient to prove the theorem. The typical statement is</p> <blockquote> <p><strong>Theorem:</strong> (Sen’s Theorem) There is no social welfare function that satisfies minimal liberalism, Pareto efficiency, unrestricted domain, and transitivity.</p> </blockquote> <p>Sen proves this theorem, and then uses it to show that liberalism and efficiency are <em>also</em> incompatible. This follows immediately, because if you can show that minimal liberalism and efficiency are incompatible, then you have also shown that liberalism and efficiency are incompatible, since minimal liberalism implies liberalism.</p> <p>Like Arrow’s theorem, it’s of the form “you can’t have all of these things at once”. But also like Arrow’s theorem, the proof is generally structured as showing one of the properties is violated if we have all the others. In this case, we will show that if we have minimal liberalism, unrestricted domain, and transitivity, then we cannot have Pareto efficiency.</p> <p>Intuitively, this is a relatively intuitive idea. If we have to respect individual rights (minimal liberalism), then we might be left with an outcome which is clearly not optimal. That is, everyone might be happier with a different choice, but that might come at the cost of violating someone’s rights. This is the essence of Sen’s theorem.</p> <h2 id="proof-by-example">Proof by Example</h2> <p>We are going to prove Sen’s theorem through an example. I personally found Sen’s original example to… not really make a lot of sense. So we are going to go through a different example that I think is a bit more intuitive, and more closely relates to the idea of “individual rights” that Sen is trying to capture with minimal liberalism.</p> <p>We have two individuals, Connor the Conspiracy Theorist ($C$) and Seth the Skeptic ($S$), who work together in the same office. Connor is a strong believer in the “birds aren’t real” conspiracy, and he wants to tell Seth all about it. Connor has the right to free speech, so he is decisive over the pair of alternatives</p> <ul> <li>$T$: “Connor <strong>Tells</strong> Seth that birds aren’t real.” Connor loves to debate people about the fakeness of avians, and he wants to convince Seth of the “truth”.</li> <li>$Q$: “Connor, specifically, must keep <strong>Quiet</strong> and be silenced about the ‘birds aren’t real’ conspiracy.” He is not allowed to tell anyone in the office that birds are fake, though other people in the office still might tell Seth about it.</li> </ul> <p>Seth, on the other hand, has little patience for conspiracy theories, and he just wants to be left alone. He believes he has the right not to be offended by nonsense, so he is decisive over the pair of alternatives</p> <ul> <li>$N$: “Seth <strong>Never</strong> hears about the ‘birds aren’t real’ conspiracy from anyone in the office.” Connor would still be allowed to spread his theory to other people in the workplace, just not to Seth.</li> <li>$T$: “Connor <strong>Tells</strong> Seth about the ‘birds aren’t real’ conspiracy.” Seth can choose to allow Connor to debate him about it.</li> </ul> <p>We assume that Seth’s right not to be offended by nonsense means that he is <em>also</em> decisive over the pair $N$ and $T$. But he can’t force Connor to be quiet ($Q$) and not spread the conspiracy to anyone else in the office, so he is not decisive over $Q$.</p> <p>Connor, however, is not decisive over $N$ because he doesn’t have the right to prevent or force other people to bring it up with Seth. He only has the right to decide whether he, himself, talks about it.</p> <p>This is where Minimal Liberalism starts to run into problems: when people’s individual rights conflict with each other. Connor has the right to free speech, which means he can choose (be decisive) either to be silenced ($Q$) or to speak to Seth ($T$). Seth has the right not to be offended by nonsense, which means he should be able to choose (be decisive) either never to hear about the conspiracy from anyone in the office ($N$) or to hear about it from Connor ($T$). But these rights are in direct conflict with each other.</p> <p>Intuitively, we have an innate sense that the freedom of speech and the right to not be offended by nonsense are contradictory. We are going to mathematically prove that if we must respect both of these rights, then we will end up with a non-optimal outcome.</p> <p>Let’s suppose Seth comes to Human Resources and complains about Connor. HR brings Seth and Connor into the room and tries to figure out what to do. They have to choose between the three alternatives $T$, $Q$, and $N$. HR wants to protect Connor’s freedom of speech, but they also want to protect Seth’s right not to be offended by nonsense.</p> <p>Connor has the preference that, most of all, he wants to tell Seth that birds aren’t real ($T$). And he also absolutely <em>hates</em> the idea that Seth might never hear the “truth” from anyone else in the office ($N$). He is not a fan of being quiet ($Q$), but it’s not as bad as Seth never finding out. Connor believes the truth must come out! So his preference order is $T &gt; Q &gt; N$.</p> <p>Seth, on the other hand, would like never to have to hear about the conspiracy from anyone at work ($N$). However, he is also very principled. He hates misinformation, so he would actually prefer that Connor never spread his theory in the workplace at all ($Q$). It’s just not appropriate! Thus, he actually prefers $Q$ to $N$. But, most of all, he hates the idea of Connor specifically being the one to enlighten him ($T$). So his preference order is $Q &gt; N &gt; T$.</p> <p>We are thus left with</p> <table> <thead> <tr> <th>Person</th> <th>Preference Order</th> </tr> </thead> <tbody> <tr> <td>Connor</td> <td>$T &gt; Q &gt; N$</td> </tr> <tr> <td>Seth</td> <td>$Q &gt; N &gt; T$</td> </tr> </tbody> </table> <p>We now look at the alternatives that each person is decisive over. Connor is decisive over $T$ and $Q$, so if he prefers $T&gt;Q$, then we must have $T&gt;Q$ in the social preference order. Seth is decisive over $T$ and $N$, so if he prefers $N&gt;T$, then we must have $N&gt;T$ in the social preference order. Therefore, we have $N&gt;T$ and $T&gt;Q$ in the social preference order.</p> <p>By transitivity, if we have $N&gt;T$ and $T&gt;Q$, then we must have $N&gt;Q$ in the social preference order. That is, society must rank $N&gt;T&gt;Q$. The social choice must, then, be $N$.</p> <p>From the veto perspective, we have the following:</p> <table> <thead> <tr> <th>Person</th> <th>Decisive Pair</th> <th>Vetoed Alternative</th> </tr> </thead> <tbody> <tr> <td>Connor</td> <td>$T&gt;Q$</td> <td>$Q$</td> </tr> <tr> <td>Seth</td> <td>$N&gt;T$</td> <td>$T$</td> </tr> </tbody> </table> <p>We can’t ever choose $Q$, because Connor’s freedom of speech allows him to veto being silenced ($Q$). We also can’t ever choose $T$, because Seth’s right to not be offended by nonsense allows him to veto being the one Connor personally enlightens ($T$). Therefore, we are forced to choose $N$: Seth won’t have to hear about birds being fake from anyone in the office.</p> <p>Therefore, to respect both of their rights, the HR department decides to impose $N$: a rule that Seth is not to hear about any of it from anyone in the office, while Connor is still allowed to talk to other coworkers about his theory (but only if Seth doesn’t hear about it).</p> <p>Here’s where we run into the problem: Both Connor and Seth prefer $Q$ to $N$. That is, if forced to choose between $Q$ and $N$, both Connor and Seth would prefer $Q$. Thus, there’s actually a better alternative that both Connor and Seth would be happier with.</p> <p>Connor got his worst choice: Seth won’t hear about any of it from anyone in the office ($N$). He would be happier if he, specifically, had to keep quiet ($Q$), while others in the office were still allowed to raise the subject with Seth.</p> <p>Seth is moderately happy: he won’t have to hear about it from anyone while at work ($N$), but he would prefer it if Connor were banned from spreading his theory to anyone in the office ($Q$).</p> <p>Therefore, we have an outcome ($N$) that is Pareto dominated by another outcome ($Q$). By forcing ourselves to respect both of their rights, and satisfy minimal liberalism, we end up with a non-Pareto efficient outcome. This is the essence of Sen’s theorem.</p> <h3 id="the-cycle-perspective">The Cycle Perspective</h3> <p>Another way to conclude the proof is to necessarily impose Pareto efficiency, and then show that we end up with a cycle in the social preference order (contradicting transitivity). If we force Pareto efficiency, then we must absolutely have $Q&gt;N$ in the social preference order. We thus have that</p> <ul> <li>$Q&gt;N$ (by Pareto efficiency)</li> <li>$T&gt;Q$ (by Connor’s liberal decisiveness)</li> <li>$N&gt;T$ (by Seth’s liberal decisiveness)</li> </ul> <p>which creates a cycle.</p> <p>Alternatively, by the veto perspective, we can say that Pareto efficiency vetoes $N$ (by forcing $Q$ over $N$). Thus,</p> <table> <thead> <tr> <th>Vetoed Alternative</th> <th>Reason</th> </tr> </thead> <tbody> <tr> <td>$T$</td> <td>Seth’s liberalism on $T&gt;N$</td> </tr> <tr> <td>$Q$</td> <td>Connor’s liberalism on $T&gt;Q$</td> </tr> <tr> <td>$N$</td> <td>Pareto efficiency on $Q&gt;N$</td> </tr> </tbody> </table> <p>Therefore, no alternative can be chosen without violating someone’s rights, or violating Pareto efficiency. Specifically, Connor vetoed the Pareto efficient alternative $Q$.</p> <p>This example technically only proves the case where the two decisive individuals are decisive over overlapping pairs of alternatives. However, the proof also shows that even if you have two decisive individuals who are decisive over completely disjoint pairs of alternatives, you can still end up with a cycle in the social preference order if you try to impose Pareto efficiency.</p> <p>I encourage you to try to do that yourself! Suppose that $S$ is actually decisive over a alternatives $N$ and $R$, and see if you can find a preference profile that leads to a cycle in the social preference order when you try to impose Pareto efficiency. You can check your answer in the proof below.</p> <details class="proof-disclosure" data-proof-disclosure=""><summary>Formal Proof</summary><div class="proof-content"> <p><strong>Proof of Sen’s Theorem:</strong> Suppose we have two individuals, $C$ and $S$, and we have a social welfare function that satisfies minimal liberalism, unrestricted domain, and transitivity. We will show that this social welfare function cannot satisfy Pareto efficiency.</p> <p>If $C$ and $S$ are decisive on the same pair of alternatives, then we have a direct contradiction. First, we assume that they are decisive over an overlapping pair of alternatives.</p> <p>Suppose that $C$ is decisive over $T$ and $Q$, and that $S$ is decisive over $T$ and $N$. Suppose that the preference orders are as follows:</p> <table> <thead> <tr> <th>Agent</th> <th>Preference Order</th> </tr> </thead> <tbody> <tr> <td>$C$</td> <td>$T &gt; Q &gt; N$</td> </tr> <tr> <td>$S$</td> <td>$Q &gt; N &gt; T$</td> </tr> </tbody> </table> <p>By $C$’s decisiveness over $T$ and $Q$, we have that if $C$ prefers $T&gt;Q$, then we must have $T&gt;Q$ in the social preference order. By $S$’s decisiveness over $T$ and $N$, we have that if $S$ prefers $N&gt;T$, then we must have $N&gt;T$ in the social preference order. Therefore, we have $N&gt;T$ and $T&gt;Q$ in the social preference order.</p> <p>By transitivity, society must rank $N&gt;Q$. However, Pareto efficiency requires that if both $C$ and $S$ prefer $Q&gt;N$, then we must have $Q&gt;N$ in the social preference order. Therefore, Pareto efficiency is violated.</p> <p>Next, suppose that $C$ is decisive over $T$ and $Q$, and that $S$ is decisive over $N$ and $R$, all distinct alternatives. Suppose that the preference orders are as follows:</p> <table> <thead> <tr> <th>Agent</th> <th>Preference Order</th> </tr> </thead> <tbody> <tr> <td>$C$</td> <td>$R &gt; T &gt; Q &gt; N$</td> </tr> <tr> <td>$S$</td> <td>$Q &gt; N &gt; R &gt; T$</td> </tr> </tbody> </table> <p>Then by $C$’s decisiveness over $T$ and $Q$, we have that if $C$ prefers $T&gt;Q$, then we must have $T&gt;Q$ in the social preference order. By $S$’s decisiveness over $N$ and $R$, we have that if $S$ prefers $N&gt;R$, then we must have $N&gt;R$ in the social preference order.</p> <p>Pareto efficiency would require that $R&gt;T$ and $Q&gt;N$. However, we already have that $T&gt;Q$, which alongside $R&gt;T$ implies that $R&gt;Q$. We also already have that $N&gt;R$, which alongside $Q&gt;N$ implies that $Q&gt;R$. Together, we have $R&gt;Q$ and $Q&gt;R$, which is a contradiction. Hence, transitivity would be violated. We therefore cannot satisfy Pareto efficiency. $\square$</p> <p>The veto perspective is still helpful here. The vetoed alternatives are as follows:</p> <table> <thead> <tr> <th>Vetoed Alternative</th> <th>Reason</th> </tr> </thead> <tbody> <tr> <td>$Q$</td> <td>$C$’s liberalism on $T&gt;Q$</td> </tr> <tr> <td>$R$</td> <td>$S$’s liberalism on $N&gt;R$</td> </tr> <tr> <td>$T$</td> <td>Pareto efficiency on $R&gt;T$</td> </tr> <tr> <td>$N$</td> <td>Pareto efficiency on $Q&gt;N$</td> </tr> </tbody> </table> <p>The general “geometry” of the proof is really kind of revealed here. We essentially use liberalism and Pareto efficiency to veto all of the alternatives, which leads to a cycle in the social preference order, or a contradiction in choosing a single winning alternative.</p> </div></details> <h2 id="the-original-example">The original example</h2> <p>His example was that of a Prude and a Lewd, and what they might decide to do with “Lady Chatterley’s Lover”. Essentially, they have to decide between</p> <ul> <li>Nobody reads the book ($N$)</li> <li>Only the Prude reads the book ($P$)</li> <li>Only the Lewd reads the book ($L$)</li> </ul> <p>The preference orders are as follows:</p> <table> <thead> <tr> <th>Person</th> <th>Preference Order</th> </tr> </thead> <tbody> <tr> <td>Prude</td> <td>$N &gt; P &gt; L$</td> </tr> <tr> <td>Lewd</td> <td>$P &gt; L &gt; N$</td> </tr> </tbody> </table> <p>Supposedly, the Prude wants neither of them to read the book. It’s filthy! But, if <em>someone</em> has to read it, it would be better that the Prude reads it (and is appropriately horrified by the contents) than the Lewd (who would be delighted by the contents).</p> <p>The Lewd, on the other hand, for some reason, would rather the Prude read the book to “loosen up”. But if the Prude won’t read the book, then it’s better that the Lewd reads it than nobody reading it at all.</p> <p>I do not like this example because these alternatives are not really mutually exclusive. Why can’t both read the book? Further, does it really make sense that the Lewd wants the Prude to read the book more than he wants to read it himself?</p> <p>I’ve heard that it’s kind of 70’s-coded, as like a censorship kind of thing. So, perhaps this post is just modernizing the example to be more 2020’s-coded, given that free speech vs. offensive speech is kind of a hot button issue today. Anyway.</p> <h2 id="conclusion">Conclusion</h2> <p>Sen’s theorem is controversial, but I won’t get into the general criticisms here. Perhaps in a future post. However, the intuitive idea that respecting individual rights, when they conflict with each other, can lead to suboptimal outcomes seems reasonable to me. The takeaway can be that we may occasionally run into a scenario where achieving an outcome that would be better for everyone would require violating someone’s rights.</p> <p>I just don’t know if this theorem is as ground-shattering as Arrow’s or Gibbard’s theorems. But the proof is kind of neat, and it’s easy to align it to a story, so there you go.</p> <p>Hopefully you found the example that I gave to be somewhat intuitive!</p> <h2 id="references">References</h2> <p>Li, Lingfang &amp; Saari, Donald. (2008). Sen’s theorem: Geometric proof, new interpretations. Social Choice and Welfare. 31. 393-413. 10.1007/s00355-007-0288-2. <a href="https://www.researchgate.net/publication/24064808_Sen's_theorem_Geometric_proof_new_interpretations" rel="external nofollow noopener noreferrer" target="_blank">https://www.researchgate.net/publication/24064808_Sen’s_theorem_Geometric_proof_new_interpretations</a></p> <p>Sen, Amartya Kumar. 1970. The impossibility of a Paretian liberal. Journal of Political Economy 78(1): 152-157. <a href="https://dash.harvard.edu/entities/publication/73120378-8203-6bd4-e053-0100007fdf3b" rel="external nofollow noopener noreferrer" target="_blank">https://dash.harvard.edu/entities/publication/73120378-8203-6bd4-e053-0100007fdf3b</a></p> <h3 id="seths-story">Seth’s Story</h3> <p>Unfortunately for Seth, he is in for an <a href="https://youtu.be/eHpxLF0nXLk?si=14KekjC9t0uRDNpQ" rel="external nofollow noopener noreferrer" target="_blank">unfortunate surprise</a>…</p> </d-article> <d-appendix> <d-footnote-list></d-footnote-list> <d-citation-list></d-citation-list> </d-appendix> <d-bibliography src="/assets/bibliography/"></d-bibliography> <d-article> <h2 class="text-3xl font-semibold mb-4 mt-12">enjoy this article?</h2> <p class="mb-2" style="margin-top: 1.5rem !important">subscribe to be notified of future articles:</p> <div class="newsletter-form-container"> <div class="newsletter-card"> <div class="newsletter-main"> <p class="newsletter-eyebrow">newsletter</p> <h3 class="newsletter-title">join <a href="https://buttondown.com/eigentaylor" target="_blank" rel="noopener noreferrer"><b>the eigenletter</b></a> </h3> <p class="newsletter-subtitle">get an email when i publish something</p> <form class="newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/eigentaylor" method="POST" style="justify-content: flex-start"> <label class="newsletter-form-label" for="bd-email-eigentaylor-preview-quick-sen">Email address</label> <input class="newsletter-form-input" name="email" id="bd-email-eigentaylor-preview-quick-sen" type="email" placeholder="you@example.com" required=""> <button type="submit" class="newsletter-form-button" style="justify-content: flex-start"> Subscribe </button> <button type="button" class="newsletter-loading-button" style="justify-content: flex-start"> Please wait... </button> </form> <div class="newsletter-success" style="justify-content: flex-start"> <p class="newsletter-success-message">You're subscribed!</p> </div> <div class="newsletter-error" style="justify-content: flex-start"> <p class="newsletter-error-message">Oops! Something went wrong, please try again</p> </div> <button class="newsletter-back-button" type="button" onmouseout='this.style.textDecoration="none"' onmouseover='this.style.textDecoration="underline"'> ← Back </button> <p class="newsletter-powered-by"> <a href="https://buttondown.com/refer/eigentaylor" target="_blank" rel="noopener noreferrer"> powered by buttondown. </a> </p> </div> </div> </div> <noscript> <style>.newsletter-form-container{display:none}</style> </noscript> <p class="mb-2">and here are some related posts you might like to read next:</p> <ul class="list-disc pl-8"></ul> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/av-stratproof/">Is Approval Voting Strategyproof?</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/arrows/">Arrow's Impossibility Theorem</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/iia/">Independence of Irrelevant Alternatives</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/why-condorcet/">Is the Condorcet Winner the True Compromise?</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/approval-only/">Why I Currently Only Support Approval</a> </li> <br> <br> <div id="giscus_thread"> <script defer src="/assets/js/giscus-setup.js"></script> <noscript> Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" rel="external nofollow noopener noreferrer" target="_blank">comments powered by giscus.</a> </noscript> </div> </d-article> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Taylor Eigen Fisher. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener noreferrer" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener noreferrer">GitHub Pages</a>. Last updated: June 07, 2026. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js"></script> <script src="/assets/js/distillpub/overrides.js"></script> <script src="/assets/js/theorem-setup.js" type="text/javascript" data-theorem-numbering=""></script> <script defer src="/assets/js/proof-disclosure.js" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js"></script> <script src="/assets/js/no_defer.js"></script> <script defer src="/assets/js/common.js"></script> <script defer src="/assets/js/copy_code.js" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
     addBackToTop();
-  </script> <script type="module" src="/assets/js/search/ninja-keys.min.js?v=a3446f084dcaecc5f75aa1757d087dcf"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/js/search-setup.js?v=6c304f7b1992d4b60f7a07956e52f04a"></script> <script src="/assets/js/search-data.js"></script> <script src="/assets/js/shortcut-key.js?v=6f508d74becd347268a7f822bca7309d"></script> </body> </html>
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "my random projects",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-teaching",
+          title: "teaching",
+          description: "Classes I have officially tutored or TA'd for",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/teaching/";
+          },
+        },{id: "post-is-approval-voting-strategyproof",
+        
+          title: "Is Approval Voting Strategyproof?",
+        
+        description: "Well yes, but actually no. Unless...",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/av-stratproof/";
+          
+        },
+      },{id: "post-arrow-39-s-impossibility-theorem",
+        
+          title: "Arrow's Impossibility Theorem",
+        
+        description: "Walkthrough and proof of the theorem that proves ranked voting systems cannot satisfy seemingly reasonable properties, unless you have infinitely many voters!",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/arrows/";
+          
+        },
+      },{id: "post-independence-of-irrelevant-alternatives",
+        
+          title: "Independence of Irrelevant Alternatives",
+        
+        description: "A brief exploration of the Independence of Irrelevant Alternatives (IIA) condition in voting systems, and why its absence makes voting systems behave irrationally.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/iia/";
+          
+        },
+      },{id: "post-is-the-condorcet-winner-the-true-compromise",
+        
+          title: "Is the Condorcet Winner the True Compromise?",
+        
+        description: "A Condorcet winner may not be a true consensus candidate. Approval voting can find consensus with a simpler ballot.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/why-condorcet/";
+          
+        },
+      },{id: "post-why-i-currently-only-support-approval",
+        
+          title: "Why I Currently Only Support Approval",
+        
+        description: "Why Approval voting is the only system I trust to push for right now.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/approval-only/";
+          
+        },
+      },{id: "post-approval-is-the-perfect-condorcet-method",
+        
+          title: "Approval is the Perfect Condorcet Method",
+        
+        description: "Approval is a perfect Condorcet method, and I have permanently solved the Condorcet paradox. April Fools!",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/condorcet-approval/";
+          
+        },
+      },{id: "post-the-gibbard-satterthwaite-theorem",
+        
+          title: "The Gibbard-Satterthwaite Theorem",
+        
+        description: "A walkthrough and proof of the theorem that proves ranked voting systems must be susceptible to strategic voting.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/gibbard-satt/";
+          
+        },
+      },{id: "post-it-39-s-time-to-ditch-rcv-embrace-approval-voting",
+        
+          title: "It's Time to Ditch RCV, Embrace Approval Voting",
+        
+        description: "It has been tried, and it has failed. Ranked-choice voting must go before it poisons the well for all electoral reform.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/ditch-rcv/";
+          
+        },
+      },{id: "post-approval-voting-is-the-only-internally-consistent-cardinal-method",
+        
+          title: "Approval voting is the Only Internally Consistent Cardinal Method",
+        
+        description: "A proof that Approval voting is the unique score aggregation voting method that satisfies Score-Condorcet-Consistency, an arguably necessary property for a trustworthy voting system.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/consistentcardinal/";
+          
+        },
+      },{id: "post-a-practical-case-for-approval-voting",
+        
+          title: "A Practical Case for Approval Voting",
+        
+        description: "It's not just mathematically elegant, it's the most practical solution for our electoral problems.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/practicalapproval/";
+          
+        },
+      },{id: "post-the-lichtman-perception-paradox",
+        
+          title: "The Lichtman Perception Paradox",
+        
+        description: "A mathematician's take on Allan Lichtman's keys to the White House.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/lichtman/";
+          
+        },
+      },{id: "post-why-do-we-row-reduce-what-is-a-matrix",
+        
+          title: "Why do we row reduce? What IS a matrix?",
+        
+        description: "What does the RREF tell us, and why do we spend so much time on it? Why do we define matrix multiplication the way we do?",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/rref/";
+          
+        },
+      },{id: "post-introduction-to-least-squares-part-2-electric-boogaloo",
+        
+          title: "Introduction to Least Squares Part 2 (Electric Boogaloo)",
+        
+        description: "Why the heck do we multiply by the transpose",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/leastsquarespart2/";
+          
+        },
+      },{id: "post-the-wonderful-world-of-projectors",
+        
+          title: "The Wonderful World of Projectors",
+        
+        description: "They're cool, I promise!",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/projectors/";
+          
+        },
+      },{id: "post-constant-coefficient-odes-made-simple-with-linear-operators",
+        
+          title: "Constant Coefficient ODEs Made Simple with Linear Operators",
+        
+        description: "No more guessing. The linear algebra perspective makes everything obvious.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/linalglinconstcoef/";
+          
+        },
+      },{id: "post-in-defense-of-cramer-39-s-rule",
+        
+          title: "In Defense of Cramer's Rule",
+        
+        description: "(and determinants)",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/cramers/";
+          
+        },
+      },{id: "post-change-of-basis",
+        
+          title: "Change of Basis",
+        
+        description: "the most confusing thing in linear algebra (don't @ me)",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/changeofbasis/";
+          
+        },
+      },{id: "post-linear-constant-coefficient-odes",
+        
+          title: "Linear Constant Coefficient ODEs",
+        
+        description: "the most important topic in an ODE class",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/linconstcoef/";
+          
+        },
+      },{id: "post-integrating-factors-explained",
+        
+          title: "Integrating Factors Explained",
+        
+        description: "the most common way to solve first order linear ODE's",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/integratingfactor/";
+          
+        },
+      },{id: "post-bases-for-the-fundamental-spaces-of-a-matrix",
+        
+          title: "Bases for the fundamental spaces of a matrix",
+        
+        description: "a lot of students struggle with this so here. row space, column space, null space, and left null space.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/rowcolspace/";
+          
+        },
+      },{id: "post-series-solutions-done-quick",
+        
+          title: "Series Solutions Done Quick",
+        
+        description: "the fast way to do series solutions. no reindexing required.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/seriessolutions/";
+          
+        },
+      },{id: "post-column-and-row-perspective",
+        
+          title: "Column and Row Perspective",
+        
+        description: "How to simplify matrix multiplication with the best perspectives (and also find certain inverse matrices fast!)",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/columnperspective/";
+          
+        },
+      },{id: "post-new-ways-to-calculate-normalized-solutions-to-linear-constant-coefficient-differential-equations",
+        
+          title: "New Ways to Calculate Normalized Solutions to Linear Constant-Coefficient Differential Equations",
+        
+        description: "The fastest way for a computer, and a fast way by hand.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/newnormalized/";
+          
+        },
+      },{id: "post-systems-of-linear-difference-equations",
+        
+          title: "Systems of Linear Difference Equations",
+        
+        description: "Like systems of ODEs, but discrete 👀",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/discretesystems/";
+          
+        },
+      },{id: "post-matrix-exponential-formulas-for-2x2-matrices",
+        
+          title: "Matrix Exponential Formulas for 2x2 Matrices",
+        
+        description: "Who needs eigenvectors?",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2x2ezmatrixexp/";
+          
+        },
+      },{id: "post-2x2-matrix-exponential-formulas-with-differential-equations",
+        
+          title: "2x2 Matrix Exponential Formulas with Differential Equations",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2x2matrixexpwde/";
+          
+        },
+      },{id: "post-solving-systems-of-first-order-odes-like-a-baller",
+        
+          title: "Solving systems of first-order ODEs like a baller",
+        
+        description: "some ballin' tips and tricks",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/firstordersystemsquick/";
+          
+        },
+      },{id: "post-shortcuts-for-finding-eigenvalues-and-eigenvectors",
+        
+          title: "Shortcuts for Finding Eigenvalues and Eigenvectors",
+        
+        description: "diagonalization speedrun, let's go",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/eigentricks/";
+          
+        },
+      },{id: "post-easily-solving-autonomous-ivps-off-the-origin",
+        
+          title: "Easily Solving Autonomous IVPs Off the Origin",
+        
+        description: "Easily solving linear homogeneous constant coefficient initial problems when the initial point is not t=0",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/autonomousivps/";
+          
+        },
+      },{id: "post-introduction-to-least-squares",
+        
+          title: "Introduction to Least Squares",
+        
+        description: "How to find the best solution for an inconsistent system",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/leastsquares/";
+          
+        },
+      },{id: "post-finding-taylor-series-of-polynomials-using-synthetic-division",
+        
+          title: "Finding Taylor Series of Polynomials Using Synthetic Division",
+        
+        description: "Wait you can do that? YUP",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/synthetictaylor/";
+          
+        },
+      },{id: "post-a-formula-for-some-particular-solutions",
+        
+          title: "A Formula for Some Particular Solutions",
+        
+        description: "Yet another obnoxious formula for solutions to constant coefficient nonhomogeneous ODE's with common forcing functions.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/exppolynonhomo/";
+          
+        },
+      },{id: "post-matrix-exponentials-using-differential-equations",
+        
+          title: "Matrix Exponentials Using Differential Equations",
+        
+        description: "ok",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/matrixexpwde/";
+          
+        },
+      },{id: "post-exact-equations-done-quick",
+        
+          title: "Exact Equations Done Quick",
+        
+        description: "speedrun WR",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/exacteqs/";
+          
+        },
+      },{id: "post-function-interpolation",
+        
+          title: "Function Interpolation",
+        
+        description: "Find a function that matches your requirements",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/functioninterp/";
+          
+        },
+      },{id: "post-polynomial-interpolation",
+        
+          title: "Polynomial Interpolation",
+        
+        description: "Making your own custom polynomial.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/polyinterp/";
+          
+        },
+      },{id: "post-intro-to-solving-systems-of-first-order-differential-equations",
+        
+          title: "Intro To Solving Systems of First Order Differential Equations",
+        
+        description: "An attempt at an intuitive derivation",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/firstordersystemsolve/";
+          
+        },
+      },{id: "post-variation-of-parameters-using-linear-algebra",
+        
+          title: "Variation of Parameters Using Linear Algebra",
+        
+        description: "linear is best frend :)",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/voplinear/";
+          
+        },
+      },{id: "post-solving-second-order-systems-of-differential-equations",
+        
+          title: "Solving Second Order Systems of Differential Equations",
+        
+        description: "ye",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2ndordersystemsolve/";
+          
+        },
+      },{id: "post-tricks-for-remembering-laplace-transforms",
+        
+          title: "Tricks for Remembering Laplace Transforms",
+        
+        description: "for students and people who forgot",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/laplacetricks/";
+          
+        },
+      },{id: "post-skipping-integration-by-parts-using-euler-39-s-formula",
+        
+          title: "Skipping Integration by Parts Using Euler's Formula",
+        
+        description: "skip or simplify integrals involving trig functions multiplied by exponentials",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/eulersformulabyparts/";
+          
+        },
+      },{id: "post-introduction-to-euler-39-s-formula",
+        
+          title: "Introduction to Euler's Formula",
+        
+        description: "the best formula",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/eulersformula/";
+          
+        },
+      },{id: "post-constructing-integer-2x2-second-order-systems-of-differential-equations-with-integer-solutions",
+        
+          title: "Constructing Integer 2x2 Second Order Systems of Differential Equations with Integer Solutions",
+        
+        description: "It's a lot messier.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/secondordersystems/";
+          
+        },
+      },{id: "post-constructing-integer-2x2-first-order-systems-of-differential-equations-with-integer-solutions",
+        
+          title: "Constructing Integer 2x2 First Order Systems of Differential Equations with Integer Solutions",
+        
+        description: "Nice solutions? Nice.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/firstordersystems/";
+          
+        },
+      },{id: "post-matrix-exponential-formulas-for-2x2-matrices-using-laplace-transforms",
+        
+          title: "Matrix Exponential Formulas for 2x2 Matrices Using Laplace Transforms",
+        
+        description: "this has been rewritten",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/ezmatrixexp/";
+          
+        },
+      },{id: "post-eigendecomposition-of-real-matrices-with-complex-eigenvalues",
+        
+          title: "Eigendecomposition of Real Matrices with Complex Eigenvalues",
+        
+        description: "An attempt at an intuitive derivation.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/complexeigenvalues/";
+          
+        },
+      },{id: "post-solving-multiple-initial-value-problems-with-normalized-solutions",
+        
+          title: "Solving Multiple Initial Value Problems with Normalized Solutions",
+        
+        description: "Solve one, solve them all.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/normalized/";
+          
+        },
+      },{id: "post-constructing-2x2-markov-matrices",
+        
+          title: "Constructing 2x2 Markov Matrices",
+        
+        description: "Build a Markov Chain with desired behavior.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/markovbuild/";
+          
+        },
+      },{id: "post-linear-differential-equation-interpolation",
+        
+          title: "Linear Differential Equation Interpolation",
+        
+        description: "Linear Differential Equations with desired solutions using determinants.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/diffeqinterp/";
+          
+        },
+      },{id: "post-skew-symmetric-matrices-are-cool",
+        
+          title: "Skew-Symmetric Matrices Are Cool",
+        
+        description: "top 10 things YOU didn't know about real skew-symmetric matrices!!! (GONE WRONG) (COPS CALLED)",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/skewsymmetric/";
+          
+        },
+      },{id: "post-the-alpha-method-generalized-exponential-response-formula",
+        
+          title: "The Alpha Method (Generalized Exponential Response Formula)",
+        
+        description: "Easy particular solutions to nonhomoegenous constant coefficient linear differential equations with simple exponential/trigonometric forcing functions.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/alphamethod/";
+          
+        },
+      },{id: "post-implicit-solutions-to-2x2-systems-of-first-order-homogeneous-linear-differential-equations",
+        
+          title: "Implicit Solutions to 2x2 Systems of First-Order Homogeneous Linear Differential Equations",
+        
+        description: "Implicit and explicit solutions for all cases.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2x2implicit/";
+          
+        },
+      },{id: "post-exponentials-of-symmetric-matrices-using-the-spectral-theorem",
+        
+          title: "Exponentials of Symmetric Matrices Using the Spectral Theorem",
+        
+        description: "yeah",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/symmetric-exp/";
+          
+        },
+      },{id: "post-constructing-systems-of-nonlinear-first-order-differential-equations-to-model-population-dynamics",
+        
+          title: "Constructing Systems of Nonlinear First-Order Differential Equations to Model Population Dynamics",
+        
+        description: "Build a system with desired behavior.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/nonlinearbuild/";
+          
+        },
+      },{id: "post-a-different-perspective-of-diagonalization",
+        
+          title: "A Different Perspective of Diagonalization",
+        
+        description: "An (atttempt at an) intuitive approach to similar matrix decomposition.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/diagonalization/";
+          
+        },
+      },{id: "news-a-simple-inline-announcement",
+          title: 'A simple inline announcement.',
+          description: "",
+          section: "News",},{id: "news-a-long-announcement-with-details",
+          title: 'A long announcement with details',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_2/";
+            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
+          title: 'A simple inline announcement with Markdown emoji! <img class="emoji" title=":sparkles:" alt=":sparkles:" src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png" height="20" width="20"> <img class="emoji" title=":smile:" alt=":smile:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png" height="20" width="20">',
+          description: "",
+          section: "News",},{id: "news-new-news-now-upside-down-face",
+          title: 'new news now <img class="emoji" title=":upside_down_face:" alt=":upside_down_face:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f643.png" height="20" width="20">',
+          description: "",
+          section: "News",},{id: "news-updating-posts-to-the-distill-theme",
+          title: 'updating posts to the distill theme',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/distill1/";
+            },},{id: "news-2x2-matrix-exponentials-post-rewritten",
+          title: '2x2 matrix exponentials post rewritten',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/updateezmatrix/";
+            },},{id: "news-back-with-a-few-new-posts",
+          title: 'back with a few new posts',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/backin2022/";
+            },},{id: "projects-av-lab",
+          title: 'AV lab',
+          description: "lightweight lab for approval voting experiments.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/avlab/";
+            },},{id: "projects-margin-matters",
+          title: 'margin matters',
+          description: "interactive presidential election results from 1864-2024 plus too many features to list here!",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/margin-matters/";
+            },},{id: "projects-president-sorter",
+          title: 'president sorter',
+          description: "sort and create a tier list for U.S. presidents",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/pres-sort/";
+            },},{id: "projects-runoff-av",
+          title: 'runoff AV',
+          description: "how does adding runoff affect strategy in approval voting?",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/runoff-av/";
+            },},{id: "projects-satisficing-voter-sim",
+          title: 'satisficing voter sim',
+          description: "comparing voting methods when voters are misinformed and fatigued",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/satisficing-voter-sim/";
+            },},{id: "projects-star-pathology-generator",
+          title: 'STAR pathology generator',
+          description: "quickly generate edge cases and failure modes for STAR voting.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/star-pathology-gen/";
+            },},{id: "projects-title",
+          title: 'Title',
+          description: "desc",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/template/";
+            },},{
+        id: 'social-discord',
+        title: 'Discord',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://discord.com/users/196803594576592896", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%74%61%79%6C%6F%72%65%69%67%65%6E%66%69%73%68%65%72@%67%6D%61%69%6C.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/eigentaylor", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => { setThemeSetting("light"); },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => { setThemeSetting("dark"); },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => { setThemeSetting("system"); },
+    },];
+  </script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
