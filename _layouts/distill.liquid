@@ -184,8 +184,8 @@
         {% if site.disqus_shortname and page.disqus_comments %}{% include disqus.liquid %}{% endif %}
         {% if site.giscus.repo and page.giscus_comments %}
           {% include giscus.liquid %}
+          {% al_comments %}
         {% endif %}
-        {% al_comments %}
       </d-article>
     </div>
 
