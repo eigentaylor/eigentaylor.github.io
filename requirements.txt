@@ -1,4 +1,7 @@
 nbconvert
+pyyaml
+rendercv[full]
+scholarly
 jupyter
 numpy
 pandas

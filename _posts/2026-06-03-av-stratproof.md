@@ -49,7 +49,7 @@ The question we are trying to answer in this post is a simple one:
 
 The short answer is:
 
-![well yes, but actually no](/assets/img/wellyesbutactuallyno.jpg)
+<img src="/assets/img/wellyesbutactuallyno.jpg" alt="well yes, but actually no" style="width:100%; max-width:600px;">
 
 ## What is strategyproofness?
 
