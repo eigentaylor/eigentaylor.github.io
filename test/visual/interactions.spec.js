@@ -46,6 +46,32 @@ test("mobile navbar can expand/collapse", async ({ page }, testInfo) => {
   await expect(nav).not.toHaveClass(/show/);
 });
 
+test("fixed navbar stays pinned to the viewport edges", async ({ page }) => {
+  await preparePage(page, "light");
+  await page.goto("/al-folio/", { waitUntil: "networkidle" });
+  await stabilizeVisuals(page);
+
+  const metrics = await page.evaluate(() => {
+    const nav = document.querySelector("#navbar");
+    if (!nav) {
+      return null;
+    }
+
+    const rect = nav.getBoundingClientRect();
+    return {
+      left: rect.left,
+      right: rect.right,
+      top: rect.top,
+      viewportWidth: window.innerWidth,
+    };
+  });
+
+  expect(metrics).not.toBeNull();
+  expect(Math.abs(metrics.top)).toBeLessThanOrEqual(1);
+  expect(Math.abs(metrics.left)).toBeLessThanOrEqual(1);
+  expect(Math.abs(metrics.right - metrics.viewportWidth)).toBeLessThanOrEqual(1);
+});
+
 test("repositories page renders external stat cards with deterministic fixtures", async ({ page }) => {
   await preparePage(page, "light");
   await page.goto("/al-folio/repositories/", { waitUntil: "networkidle" });

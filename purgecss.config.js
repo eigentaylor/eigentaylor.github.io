@@ -1,6 +1,8 @@
 module.exports = {
   content: ["_site/**/*.html", "_site/**/*.js"],
-  css: ["_site/assets/css/*.css"],
+  // Tailwind v4 utility output already ships only the generated contract we need,
+  // and PurgeCSS has been observed to corrupt custom property syntax in deploys.
+  css: ["_site/assets/css/main.css"],
   output: "_site/assets/css/",
   skippedContentGlobs: ["_site/assets/**/*.html"],
   safelist: {
