@@ -37,11 +37,11 @@ Classes I was/am a TA for.
 ### Spring
 
 - Linear Algebra
-- Calculus II (Two sections)
+- Calculus II
 
 ### Winter
 
-- Discrete Math (Four Sections)
+- Discrete Math
 
 ---
 
@@ -49,7 +49,7 @@ Classes I was/am a TA for.
 
 ### Spring
 
-- Linear Algebra (Two Sections)
+- Linear Algebra
 
 ---
 
@@ -58,7 +58,7 @@ Classes I was/am a TA for.
 ### Fall
 
 - Linear Algebra
-- Differential Equations (Two Sections)
+- Differential Equations
 
 ---
 
