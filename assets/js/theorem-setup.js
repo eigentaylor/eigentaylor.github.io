@@ -19,14 +19,14 @@
     if (!article) return;
     var thisScript = document.currentScript || document.querySelector('script[src*="theorem-setup.js"]');
     var numberingModeRaw = thisScript && thisScript.dataset ? thisScript.dataset.theoremNumbering : "";
-    var numberingMode = numberingModeRaw === "separate" ? "separate" : "separate"; // default to "shared" if not specified or invalid
+    var numberingMode = numberingModeRaw === "separate" ? "separate" : "separate"; // default to "separate" if not specified or invalid
 
     var labelMap = {}; // key -> { number, id, type }
     var counters = {}; // theorem-type -> count
     var sharedCounter = 0;
     var pendingRestatements = [];
 
-    var theoremTypes = ["Definition", "Lemma", "Theorem", "Remark", "Corollary", "Proposition", "Conjecture", "Axiom", "Example", "Assumption"];
+    var theoremTypes = ["Definition", "Lemma", "Theorem", "Remark", "Corollary", "Proposition", "Conjecture", "Axiom", "Example", "Assumption"]; // Extend this list as needed
     var typeReStr = theoremTypes.join("|");
 
     // Match: "Type", optional explicit number, optional parenthetical, then ":"
