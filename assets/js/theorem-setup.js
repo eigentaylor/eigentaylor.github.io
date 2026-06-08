@@ -26,7 +26,7 @@
     var sharedCounter = 0;
     var pendingRestatements = [];
 
-    var theoremTypes = ["Definition", "Lemma", "Theorem", "Remark", "Corollary", "Proposition", "Conjecture", "Axiom", "Example"];
+    var theoremTypes = ["Definition", "Lemma", "Theorem", "Remark", "Corollary", "Proposition", "Conjecture", "Axiom", "Example", "Assumption"];
     var typeReStr = theoremTypes.join("|");
 
     // Match: "Type", optional explicit number, optional parenthetical, then ":"
