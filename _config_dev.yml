@@ -11,6 +11,7 @@ imagemagick:
 
 # disable blog lsi
 lsi: false # produce an index for related posts
+log_read_time_to_console: true
 
 # Remove terser from plugins list to disable JS minification
 plugins:

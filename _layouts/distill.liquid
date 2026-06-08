@@ -83,6 +83,9 @@
       {% if page.exclude_appendix_from_word_count %}
         {% assign should_log_read_time = true %}
       {% endif %}
+      {% unless site.log_read_time_to_console %}
+        {% assign should_log_read_time = false %}
+      {% endunless %}
 
       {% if should_log_read_time %}
         {%- assign full_word_count = page.content | number_of_words -%}
