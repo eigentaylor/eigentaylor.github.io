@@ -8,6 +8,7 @@ importance: 2
 tags: voting
 category: polisci
 featured: false
+theorems: true
 related_posts: true
 pretty_table: true
 exclude_appendix_from_word_count: true
@@ -50,7 +51,7 @@ This is actually a [real dynamic we see in real-world Approval elections](https:
 
 ### An Example of Application
 
-Let's discuss the famous 2000 US Presidential election as an example of how the leader rule would have been applied. We had the following candidates:
+**Example:** Let's discuss the famous 2000 US Presidential election as an example of how the leader rule would have been applied. We had the following candidates:
 
 | Candidate       | Ideology    |
 |-----------------|-------------|
@@ -150,6 +151,8 @@ Laslier also connects this to [Tversky's "elimination by aspects" model of decis
 ## Appendix
 
 This is an example provided by Rob LeGrand of how the leader rule can fail to "find" or converge to the Condorcet winner, unless voters start by identifying the Condorcet winner as the leader.
+
+**Example:**
 
 | Number of Voters | Ranking of Candidates |
 |------------------|-----------------------|
