@@ -2,7 +2,7 @@
 layout: distill
 title: The Leader Rule in Approval Voting
 date: 2026-06-06
-description: An explanation of Laslier's the leader rule strategy in approval voting, and its positive ramifications.
+description: An explanation of Laslier's the leader rule strategy in Approval voting, and its positive ramifications.
 giscus_comments: true
 importance: 2
 tags: voting
@@ -47,7 +47,9 @@ This strategy does not apply cleanly to multi-winner Approval voting, such as th
 
 The core intuition is that applying this strategy is attempting to maximize getting a 'better than (or equal to) expected' outcome, while also keeping your ballot efficient by distinguishing between the main race (between the leader and challenger). By drawing a line of acceptability right above or right below the leader, you are maximizing your influence on the most likely pivotal scenario. Hence, you should be stingy with your approvals when your favorite is likely to win, and prudently generous when your top candidates are unlikely to win.
 
-This is actually a [real dynamic we see in real-world Approval elections](https://felixsargent.com/democracy/2025/08/29/st-louis-approval-voting.html) <d-cite key="sargent2025stlouis"></d-cite>. In an analysis of a St. Louis election by Felix Sargent, we saw heavy bullet voting for frontrunners, and *over 80%* of voters who supported a non-frontunner also supporting another candidate. This example should be taken with a grain of salt, however, since St. Louis uses a top-2 Approval system. [The dynamics and strategy are significantly different for single-round Approval versus Approval with a runoff.](https://www.jstor.org/stable/30023417)<d-cite key="fishburnBrams1981runoff"></d-cite>
+In the 1978 paper by Brams and Fishburn <d-cite key="bramsFishburn1978approval"></d-cite>, they prove that a sincere strategy is not always optimal in Approval voting. However, Laslier proves in his 2009 paper that a best response to his probabilistic large electorate model, the leader rule, is always sincere, based on some reasonable assumptions about voters' beliefs.
+
+This is actually a [real dynamic we see in real-world Approval elections](https://felixsargent.com/democracy/2025/08/29/st-louis-approval-voting.html) <d-cite key="sargent2025stlouis"></d-cite>. In an analysis of a St. Louis election by Felix Sargent, we saw heavy bullet voting for frontrunners, and *over 80%* of voters who supported a non-frontunner also supporting another candidate. This example should be taken with a grain of salt, however, since St. Louis uses a top-2 Approval system, which does not apply neatly to the specific single-winner scenario Laslier's paper focuses on. [The dynamics and strategy are significantly different for single-round Approval versus Approval with a runoff.](https://www.jstor.org/stable/30023417)<d-cite key="fishburnBrams1981runoff"></d-cite>
 
 ### An Example of Application
 
@@ -83,7 +85,7 @@ However, it's worth noting that, in practice, Nader was never a serious contende
 
 What I like about this example is that it really puts a damper on the claim that Approval is agonizingly strategic. In this election, where there are two clear front-runners, the leader rule strategy is actually quite straightforward.
 
-It also stumps the "bullet voting" criticism, because we can see that for many of these voters, bullet voting is prudent for voters who like the front-runners, but voters who most prefer someone nonviable extend their approval to their second choice. This isn't earth-shattering stuff.
+It also stumps the "bullet voting" criticism, because we can see that for many of these voters, bullet voting is prudent for voters who like the front-runners, but voters who most prefer someone nonviable extend their approval to their second choice. This isn't earth-shattering stuff. Approval does not break when voters shrewdly bullet vote when appropriate.
 
 However, it's a strict improvement over our choose-one system, because the voters who like Ralph Nader get to express their support for him without hurting Gore, the most preferred viable candidate. Voters can be [sincere *and* efficient](../av-stratproof){:target="_blank"}, using the leader rule as a simple heuristic to determine where to draw their line of acceptability.
 
@@ -95,45 +97,55 @@ In a large election, the chance that your vote is decisive is essentially zero. 
 
 Laslier calls this the "Florida Tremble," after the infamous 2000 US Presidential election in Florida we just discussed, where it's believed that miscounted votes led to a different outcome. By assuming we have "many" voters, and there's a small chance for one of the bubbles on a voter's ballot to be "miscounted" (deleted), we allow for strategic voting to have a non-zero expected impact on the outcome.
 
-Our ballot then becomes a sort of lottery ticket, which *might* pay off by breaking a tie in a favorable way.
+Our ballot then becomes a sort of lottery ticket, which *might* pay off by breaking a tie in a favorable way if we approve exactly one of the two tied candidates.
 
 Without getting into the weeds of infinitesimal probabilities, and the effect of a "large electorate", the intuitive idea is actually quite straightforward: in a large election, ties are very, very, very unlikely. We thus have the following assumption:
 
-> **Assumption:** In a large election, the most likely event is that your vote does not matter at all. The second most likely event is that your vote is decisive in a tie between the leader and challenger.
+> **Assumption:** In a large election, the most likely event is that your vote does not matter at all. The second most likely event is that your vote is decisive in a tie between the leader and challenger. The most likely pivotal scenario involving any other candidate besides the leader and challenger is that candidate against the leader.
 
 This is actually proved by Laslier in his paper, but we can just treat this as an intuitive assumption.
 
-Since it's not particularly helpful to assume our vote is meaningless, we base our strategy on the second most likely event, which is that our vote is decisive in a tie between the leader and challenger. We should thus for for one and only one of them. That way our vote gives us a better outcome under that pivotal scenario.
+Since it's not particularly helpful to assume our vote is meaningless, we base our strategy on the second most likely event, which is that our vote is decisive in a tie between the leader and challenger. We should thus vote for one and only one of them. That way our vote gives us a better outcome under that pivotal scenario.
 
 Laslier also proves that the most likely pivotal scenario involving any other candidate besides the leader and challenger is still that candidate against the leader. Essentially, for any other "unlikely" candidate to possibly tie with the leader, we would need the leader to lose enough votes to tie with Mr. Unlikely, *and* for all other candidates who got more votes than Mr. Unlikely to lose enough votes to get fewer votes than Mr. Unlikely.
 
-This is an absurdly improbable scenario, but significantly more likely than any other scenario involving Mr. Unlikely. Thus, we compare these unlikely candidates to the leader. This boils down to approving of all candidates we strictly prefer to the leader, and not approving of any candidates we prefer less than the leader.
+This is an absurdly improbable scenario, but significantly more likely than any other scenario where Mr. Unlikely has a chance to win. Thus, we compare these unlikely candidates to the leader. This tells us our optimal lottery ticket of a ballot is to approve of all candidates we strictly prefer to the leader, and not approving of any candidates we prefer less than the leader.
 
-And that's the intuition behind the leader rule. Approve everyone you prefer to the leader, and only approve the leader if you prefer them to the challenger. That's it.
+And that's the intuition behind the leader rule. Approve everyone you prefer to the leader, and only approve the leader if you prefer them to the challenger.
+
+Even though this is based on a model where we're considering that enough ballot errors make our vote matter due to a tie feels quite unrealistic. I argue that it still matches our basic intuition about how elections work under uncertainty (and that is how I've been generally presenting it in this post).
+
+Rather than assume the result is fixed, and variations in results are from *ballot errors*, we can treat the leader as just an "expected winner" based on the information we have, and the challenger as the most likely candidate to overtake the leader, with uncertainty based on things like polling or turnout.
+
+We distinguish between the leader and challenger on our ballot because the most likely upset is if the challenger has a surge of support. Similarly, the approval of unlikely candidates can also be thought of as hedging for a potential major upset, or dark horse surge for a non-front-runner.
 
 ## Condorcet-efficiency of the Leader Rule
 
 One might ask "what happens if everyone uses the leader rule, all at once?" Laslier analyzes this in his paper and proves the following theorem:
 
-> **Theorem:** For a large electorate, if there is an equilibrium with no tie, the winner of the election is a Condorcet winner. If there exists a unique Condorcet winner with a unique "strongest challenger", then there is a unique equilibrium that elects the Condorcet winner.
+> **Theorem:** For a large electorate, if there is an equilibrium with no tie, the winner of the election is a Condorcet winner. If there exists a Condorcet winner <d-footnote>with a unique "strongest challenger"</d-footnote>, then there is a unique equilibrium that elects the Condorcet winner.
 
-Once we realize the mechanics of the leader rule when applied en masse, this is actually not too surprising. Notice that for a non-leader candidate, a voter only approves them *if and only if* they strictly prefer them to the leader. The leader, on the other hand, gets approved by all voters who prefer them to the challenger.
+Once we realize the mechanics of the leader rule when applied en masse, this is actually not too surprising. Notice that for a non-leader candidate, a voter only approves them *if and only if* they strictly prefer them to the leader. The leader, on the other hand, gets approved exclusively by a voter if and only if they prefer the leader to the challenger.
 
-Therefore, if the leader is a unique Condorcet winner, then a strict minority of voters prefer any other candidate to the leader, so they must get under 50% approvals. Whereas the leader gets over 50% approvals, since they are preferred, by definition, to any possible challenger. Hence, the leader retains their lead and wins outright. The equilibrium challenger will be the candidate with the strongest head-to-head result against the leader.
+Thus, if $P(X > Y)$ is the proportion of voters who prefer candidate $X$ to candidate $Y$, then the leader $L$ gets $P(L > C)$ approvals, where $C$ is the challenger. Any other candidate $X$ gets $P(X > L)$ approvals.
+
+Therefore, if the leader is a Condorcet winner, then a strict minority of voters prefer any other candidate to the leader, so they must get under 50% approvals ($P(X > L) < 0.5$ for all $X \neq L$). Whereas the leader gets over 50% approvals, since they are preferred, by definition, to any possible challenger ($P(L > Y) > 0.5$ for all $Y \neq L$). Hence, the leader retains their lead and wins outright. The equilibrium challenger will be the candidate with the strongest head-to-head result against the leader.
 
 However, credit to Rob LeGrand for pointing out to me that it is not necessarily the case that the leader rule converges to the Condorcet winner under all initial conditions. I will put his example in [the appendix](#appendix).
 
-Brams also proves in his 2008 book ["Mathematics and Democracy"](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy)<d-cite key="brams2008mathDemocracy"></d-cite> (pg 39) that an outcome is a *strong* Nash equilibrium if and only if it elects a unique Condorcet winner. More humorously, he also proves that no Condorcet method can guarantee the election of a unique Condorcet winner as a Nash equilibrium. This means, in some ways, that Approval can elect the Condorcet winner more "stably" than any method specifically designed to elect such a candidate.
+Brams also proves in his 2008 book ["Mathematics and Democracy"](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy)<d-cite key="brams2008mathDemocracy"></d-cite> (pg 39) that any outcome which is a *strong* Nash equilibrium must elect a unique Condorcet winner. More humorously, he also proves that no Condorcet method can guarantee the election of a Condorcet winner as a Nash equilibrium. This means, in some ways, that Approval can elect the Condorcet winner more "stably" than any method specifically designed to elect such a candidate.
 
-Rather than criticize Approval for being "too strategic", or "allowing for minority rule", we see that strategy is, paradoxically, one of the mechanisms which leads to *more majoritarian* outcomes in approval voting.
+Rather than criticize Approval for being "too strategic", or "allowing for minority rule", the leader rule tells us that strategy is, paradoxically, one of the mechanisms which can lead to *more majoritarian* outcomes in Approval voting.
 
 ## What if my information is faulty?
 
-It's important to contextualize the fundamental assumptions of the leader rule. To apply it, we are assuming that voters have some information on who the front-runners are, that they can identify a leader and challenger, and that the leader is truly the most likely candidate to win. We assume that we walk into the voting booth, cast our vote, and almost surely the leader wins and our vote was a drop in the bucket. But, *just in case*, our vote might just be a lottery ticket which breaks a tie favorably.
+It's important to contextualize the fundamental assumptions of the leader rule. To apply it, we are assuming that voters have some information on who the front-runners are, that they can identify a leader and challenger. We assume that we walk into the voting booth, cast our vote, and almost surely the leader wins and our vote was a drop in the bucket. But, *just in case*, our vote might just be a lottery ticket which breaks a tie favorably.
 
-But, chances are, you maybe don't have the most detailed polls and news coverage of the school board election you're voting in. Or maybe you do, but the polls aren't exactly Nate Silver-level accurate. What if your information is wrong, or the polls are completely off? What if you misidentify the leader and challenger? What if there are three or four candidates who all seem viable, and you can't identify the leader and challenger at all?
+But, chances are, you maybe don't have the most detailed polls and news coverage of the school board election you're voting in. Or maybe you do, but the polls aren't exactly Nate Silver-level accurate. What if your information is wrong, or determining the leader and challenger with certainty is simply infeasible?
 
-When in doubt, you can fairly reliably fall back on an ["honest ballot" strategy](../av-stratproof){:target="_blank"}, and just vote with your gut. As discussed in that post, Approval has some very nice safety guarantees that make it fairly safe to just vote for everyone you find "acceptable" (however you define that), without worrying about the strategic implications of your vote. Further, when you vote for everyone you find acceptable, you maximize the chance of any acceptable candidate winning, since your ballot does maximal work for the candidates you vote for (which is not a given in other voting methods).
+The fact that your vote is most likely a drop in the bucket goes both ways. It means that your vote is unlikely to be decisive, but it also means that your vote is unlikely to be *wrong* in a way that actively hurts you if you make some sort of strategic error. The leader rule is simply a reliable heuristic, and helps you bring the outcome to be better than or equal to what you expect.
+
+However, when in doubt, you can fairly reliably fall back on an ["honest ballot" strategy](../av-stratproof){:target="_blank"}, and just vote with your gut. As discussed in that post, Approval has some very nice safety guarantees that make it fairly safe to just vote for everyone you find "acceptable" (however you define that), without worrying about the strategic implications of your vote. Further, when you vote for everyone you find acceptable, you maximize the chance of any acceptable candidate winning, since your ballot does maximal work for the candidates you vote for (which is not a given in other voting methods).
 
 You can maybe improve your honest ballot by drawing your line to include one of the front-runners if you can identify one you like. However, at worst, you cast a passively inefficient ballot that, at least, will not actively betray you.
 
@@ -141,12 +153,14 @@ You can maybe improve your honest ballot by drawing your line to include one of 
 
 In essence, we have two different mindsets for how to approach Approval voting strategically:
 
-1. Optimizing for getting an outcome that is better than what you expect, which is achieved by the leader rule.
+1. Optimizing for getting an outcome that is better than or equal to what you expect, which is achieved by the leader rule.
 2. Optimizing for getting any outcome that is acceptable, which is achieved by the honest ballot.
 
-Laslier's contribution to this conversation is an honest truth that your single vote is unlikely to be decisive, but that doesn't mean you shouldn't vote strategically. By applying the leader rule, you are doing your best to move the election towards the best outcome, and the magic is that many people doing this together leads to a more majoritarian outcome.
+Laslier's contribution to this conversation is an honest truth that your single vote is unlikely to be decisive, but that doesn't mean you shouldn't vote strategically. By applying the leader rule, you are doing your best to move the election towards the best outcome for you, and the magic is that many people doing this together leads to a more majoritarian outcome.
 
 Laslier also connects this to [Tversky's "elimination by aspects" model of decision-making](https://journals.sagepub.com/doi/10.1177/0951629808097286) <d-cite key="laslier2009leaderRule"></d-cite>, which is a psychological model of how people make decisions. Laslier claims the leader rule corresponds to this model, by having voters eliminate the possible close races between candidates in order of their likelihood.
+
+In the end, Approval strategy boils down to drawing a line of acceptability. The leader rule is a simple, intuitive, and powerful heuristic for how to draw that line in a way that maximizes your influence on the election outcome. It also has some nice theoretical properties, such as electing the Condorcet winner at equilibrium.
 
 ## Appendix
 
