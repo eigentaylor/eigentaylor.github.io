@@ -179,7 +179,7 @@ We can use this list to determine the exact number of approvals each candidate w
 
 For example, if $A$ is the leader, and $C$ is the challenger, then $A$ will get 66 approvals, from the 66 voters who prefer $A$ to $C$. $C$ will similarly get 34 approvals, from the 34 voters who prefer $C$ to $A$. $B$ and $D$ will get approvals based on their matchup against the leader $A$. $B$ will get 52 approvals, from the 52 voters who prefer $B$ to $A$. $D$ will get 27 approvals, from the 27 voters who prefer $D$ to $A$. Hence, in this case, $C$ becomes the new leader, and $A$ becomes the challenger.
 
-If $B$ is the leader, then after an iteration of the leader rule, then after one iteration $C$ will be the new challenger. The approvals will be:
+If $B$ is the leader, then after an iteration of the leader rule $C$ will be the new challenger. The approvals will be:
 
 | Candidate | Relevant Matchup | Approvals |
 |-----------|------------------|-----------|
