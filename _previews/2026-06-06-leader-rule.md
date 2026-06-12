@@ -74,7 +74,7 @@ Each voter bloc tells us a different story about the leader rule. The top two bl
 
 Both reasonable scenarios lead to the same ballot, which is to approve of Bush and no one else. The same logic applies to the Gore $>$ Bush $>$ Nader voters, who approve of Gore and no one else regardless of who the leader is.
 
-The third bloc also has only one dominant strategy, which is to approve of both Gore and Nader regardless of who the leader is. There's no reason *not* to approve of their favorite candidate Nader, on the off chance a miracle happens and Nader somehow wins. But given that the *real* race is between this bloc's least favorite candidates, they are incentivized to be prudent and approve of Gore as well, to not waste their vote.
+The third bloc also has only one dominant strategy, which is to approve of both Gore and Nader regardless of who the leader is. There's no reason *not* to approve of their favorite candidate Nader, on the off chance a miracle happens and Nader somehow wins (ignoring the Electoral College). But given that the *real* race is between this bloc's least favorite candidates, they are incentivized to be prudent and approve of Gore as well, to not waste their vote.
 
 The fourth bloc, however, has a more interesting story. This group most prefers a frontrunner Gore, but they prefer Nader to Bush. If Gore is the leader, then they should only approve of Gore to maximize their lead over all other candidates. However, if Bush is the leader, then they should approve of both Gore and Nader as a prudent defensive "anyone but Bush" strategy.
 
@@ -136,7 +136,7 @@ Rather than criticize Approval for being "too strategic", or "allowing for minor
 
 It's important to contextualize the fundamental assumptions of the leader rule. To apply it, we are assuming that voters have some information on who the front-runners are, that they can identify a leader and challenger. We assume that we walk into the voting booth, cast our vote, and almost surely the leader wins and our vote was a drop in the ocean. But, *just in case*, our vote might just be a lottery ticket which breaks a tie favorably. But what if your information is wrong, or determining the leader and challenger with certainty is simply infeasible?
 
-The fact that your vote is most likely a drop in the ocean goes both ways. It means that your vote is unlikely to be decisive, but it also means that your vote is unlikely to be *wrong* in a way that actively hurts you if you make some sort of strategic error (since Approval voting cannot [actively betray your preferences](../av-stratproof){:target="_blank"}). The leader rule is simply a reliable heuristic, and helps you bring the outcome to be better than or equal to what you expect.
+The fact that your vote is most likely a drop in the ocean goes both ways. It means that your vote is unlikely to be decisive, but it also means that your vote is unlikely to be *wrong* in a way that actively hurts you if you make some sort of strategic error (since Approval voting cannot [actively betray your preferences](../av-stratproof){:target="_blank"} like Ranked Choice Voting). The leader rule is simply a reliable heuristic, and helps you bring the outcome to be better than or equal to what you expect.
 
 However, when in doubt, you can fairly reliably fall back on an ["honest ballot" strategy](../av-stratproof){:target="_blank"}, and just vote with your gut. As discussed in that post, Approval has some very nice safety guarantees that make it fairly safe to just vote for everyone you find "acceptable" (however you define that), without worrying about the strategic implications of your vote (maybe include a preferable frontrunner if you have one). Further, when you vote for everyone you find acceptable, you maximize the chance of any acceptable candidate winning, since your ballot does maximal work for the candidates you vote for (which is not a given in other voting methods).
 
@@ -166,7 +166,7 @@ This is an example provided by Rob LeGrand of how the leader rule can fail to "f
 | 13               | $D > B > C > A$       |
 | 14               | $D > C > A > B$       |
 
-By ranking the pairwise wins, we will be able to see why the Condorcet winner $B$ cannot become the leader unless they start as the leader.
+The exact numbers are not as important as the pairwise matchups. By ranking the pairwise margins, we will be able to see why the Condorcet winner $B$ cannot become the leader unless they start as the leader.
 
 1. $A$ beats $D$ 73:27
 2. $C$ beats $A$ 66:34
@@ -200,3 +200,7 @@ For example, we saw that if $A$ starts as the leader, then $C$ can become the ne
 $$(A, B) \to (C, B) \to (D, B) \to (A, B) \to \ldots$$
 
 When no Condorcet winner exists (meaning there is a cycle in the pairwise matchups), then the leader rule will have a cycle in "states" of leader and challenger pairs. But this example shows that a cycle can also occur when there is a Condorcet winner and equilibrium. I'd like to eventually publish a post about the dynamical system induced by en masse application of the leader rule.
+
+The structure of this pathology is specifically that $B$ is a milquetoast Condorcet winner, who only wins by very narrow margins, while the other candidates have a volatile cyclic relationship with each other. It should be noted, however, that from the perspective of the electorate, if the election has an outcome at one of these cyclic nodes, then all we would see is a major upset. The expected leader would have a pitiful performance, their strongest challenger would get over 60% of the vote, and $B$ would get over 50%.
+
+From one perspective, this is actually a harmonious outcome, where multiple candidates get majority support, and the candidate who is preferred by a majority over whoever was expected to win, takes office instead. That is, the outcome under the leader rule is still better than expected by a strong majority of voters, even if there was non-convergence that would be invisible to voters.
