@@ -138,11 +138,11 @@ Rather than criticize Approval for being "too strategic", or "allowing for minor
 
 ## What if my information is faulty?
 
-It's important to contextualize the fundamental assumptions of the leader rule. To apply it, we are assuming that voters have some information on who the frontrunners are, that they can identify a leader and challenger. We assume that we walk into the voting booth, cast our vote, and almost surely the leader wins and our vote was a drop in the ocean. But, *just in case*, our vote might just be a lottery ticket which breaks a tie favorably. But what if your information is wrong, or determining the leader and challenger with certainty is simply infeasible?
+The leader rule requires you to identify the frontrunners. But what if you misidentify them, or cannot determine them reliably?
 
-The fact that your vote is most likely a drop in the ocean goes both ways. It means that your vote is unlikely to be decisive, but it also means that your vote is unlikely to be *wrong* in a way that actively hurts you if you make some sort of strategic error (since Approval voting cannot [actively betray your preferences](../av-stratproof){:target="_blank"} like Ranked Choice Voting). The leader rule is simply a reliable heuristic, and helps you bring the outcome to be better than or equal to what you expect.
+Your vote is most likely a drop in the ocean and unlikely to matter, which cuts both ways: it's unlikely to be decisive *and* unlikely to backfire if you misjudge. Approval voting cannot [actively betray your preferences](../av-stratproof){:target="_blank"} like Ranked Choice Voting does. The leader rule is simply a reliable heuristic, and helps you improve on your expected outcome.
 
-However, when in doubt, you can fairly reliably fall back on an ["honest ballot" strategy](../av-stratproof){:target="_blank"}, and just vote with your gut. As discussed in that post, Approval has some very nice safety guarantees that make it fairly safe to just vote for everyone you find "acceptable" (however you define that), without worrying about the strategic implications of your vote (maybe include a preferable frontrunner if you have one). Further, when you vote for everyone you find acceptable, you maximize the chance of any acceptable candidate winning, since your ballot does maximal work for the candidates you vote for (which is not a given in other voting methods).
+If uncertain, you can always fall back on an ["honest ballot" strategy](../av-stratproof){:target="_blank"}: vote for everyone "acceptable" to you (however you define that). Approval's safety guarantees make this safe, and it still maximizes the strength of your ballot for those you vote for.
 
 ## Conclusion
 
@@ -151,9 +151,11 @@ In essence, we have two different mindsets for how to approach Approval voting s
 1. Optimizing for getting an outcome that is better than or equal to what you expect, which is achieved by the leader rule.
 2. Optimizing for getting any outcome that is acceptable, which is achieved by [the honest ballot](../av-stratproof){:target="_blank"}.
 
-Laslier's contribution to this conversation is an honest truth that your single vote is unlikely to be decisive, but that doesn't mean you shouldn't vote strategically. By applying the leader rule, you are doing your best to move the election towards the best outcome for you, and the magic is that many people doing this together leads to a more majoritarian outcome.
+Laslier's contribution to this conversation is an honest truth that your single vote is unlikely to be decisive, but that doesn't mean you can't vote strategically. By applying the leader rule, you are doing your best to move the election towards the best outcome for you, and the magic is that many people doing this together leads to a more majoritarian outcome.
 
-In the end, strategy boils down to drawing a line of acceptability. The leader rule is a simple, intuitive, and powerful heuristic for how to draw that line in a way that maximizes your influence on the election outcome. It also has some nice theoretical properties, such as electing the Condorcet winner at equilibrium. Strategy, I argue, is not a bug of Approval voting, but rather a feature that can lead to more majoritarian outcomes.
+In the end, strategy boils down to drawing a line of acceptability. The leader rule is a simple, intuitive, and powerful heuristic for how to draw that line in a way that maximizes your influence on the election outcome. It also has some nice theoretical properties, such as electing the Condorcet winner at equilibrium.
+
+Strategy, I argue, is not a bug of Approval voting, but rather a feature that can lead to more majoritarian outcomes. The paradox here is striking: by acting strategically with imperfect information, voters do not degrade, but improve the electoral outcome. Individual self-interest, when channeled through the leader rule, naturally aligns with the collective good. This is a rare property in voting systems, and it suggests that Approval voting, far from being a naive or vulnerable method, is remarkably robust to human behavior. The leader rule shows us that even (or especially) when voters are savvy enough to think strategically, Approval naturally produces outcomes that the electorate, as a whole, prefers. That is a [system worth taking seriously](../approval-only){:target="_blank"}.
 
 ## Appendix
 
@@ -181,7 +183,7 @@ The exact numbers are not as important as the pairwise matchups. By ranking the 
 
 We can use this list to determine the exact number of approvals each candidate would get under the leader rule, depending on who the leader and challenger are.
 
-For example, if $A$ is the leader, and $C$ is the challenger, then $A$ will get 66 approvals, from the 66 voters who prefer $A$ to $C$. $C$ will similarly get 34 approvals, from the 34 voters who prefer $C$ to $A$. $B$ and $D$ will get approvals based on their matchup against the leader $A$. $B$ will get 52 approvals, from the 52 voters who prefer $B$ to $A$. $D$ will get 27 approvals, from the 27 voters who prefer $D$ to $A$. Hence, in this case, $C$ becomes the new leader, and $A$ becomes the challenger.
+For example, if $A$ is the leader, and $C$ is the challenger, then $A$ will get 34 approvals, from the 34 voters who prefer $A$ to $C$. $C$ will similarly get 66 approvals, from the 66 voters who prefer $C$ to $A$. $B$ and $D$ will get approvals based on their matchup against the leader $A$. $B$ will get 52 approvals, from the 52 voters who prefer $B$ to $A$. $D$ will get 27 approvals, from the 27 voters who prefer $D$ to $A$. Hence, in this case, $C$ becomes the new leader, and $B$ becomes the challenger.
 
 If $B$ is the leader, then after an iteration of the leader rule $C$ will be the new challenger. The approvals will be:
 
