@@ -172,7 +172,7 @@ Without getting into the weeds of the relative size of near-infinitesimal probab
 
 > **Assumption:** In a large election, the most likely event is that your vote does not matter at all. The second most likely event is that your vote is decisive in a tie between the leader and challenger. The most likely pivotal scenario involving any other candidate besides the leader and challenger is that candidate against the leader. <d-footnote>This is actually proved by Laslier in his paper, but we can just treat this as an intuitive assumption.</d-footnote>
 
-Since it's not particularly helpful to assume our vote is meaningless, we determine our strategy by the most likely pivotal scenarios involving each candidate. The most important being between the leader and challenger. Hence, we always approve exactly one of the two, depending on which one we prefer.
+Since it's not particularly helpful to assume our vote is meaningless, we determine our strategy by the most likely pivotal scenarios involving each candidate. The most important being between the leader and challenger. Therefore, we always approve exactly one of the two, depending on which one we prefer.
 
 Laslier proves that the most likely pivotal scenario involving any non-leader candidate is still that candidate against the leader (and the leader with the challenger). Essentially, for any other "unlikely" candidate (even including the challenger) to possibly tie for first place, we would need all other candidates who got more votes than Mr. Unlikely (which includes at least the leader) to lose enough votes to get the same or fewer votes than Mr. Unlikely<d-footnote>Laslier spends considerable time discussing the probability of three-way ties, which we will completely ignore here</d-footnote>.
 
@@ -208,7 +208,14 @@ The exact numbers are not as important as the pairwise matchups. By ranking the 
 
 We can use this list to determine the exact number of approvals each candidate would get under the leader rule, depending on who the leader and challenger are.
 
-For example, if $A$ is the leader, and $C$ is the challenger, then $A$ will get 34 approvals, from the 34 voters who prefer $A$ to $C$. $C$ will similarly get 66 approvals, from the 66 voters who prefer $C$ to $A$. $B$ and $D$ will get approvals based on their matchup against the leader $A$. $B$ will get 52 approvals, from the 52 voters who prefer $B$ to $A$. $D$ will get 27 approvals, from the 27 voters who prefer $D$ to $A$. Hence, in this case, $C$ becomes the new leader, and $B$ becomes the challenger.
+For example, if $A$ is the leader, and $C$ is the challenger, then
+
+- $A$ will get 34 approvals, from the 34 voters who prefer $A$ to $C$.
+- $C$ will similarly get 66 approvals, from the 66 voters who prefer $C$ to $A$.
+- $B$ will get 52 approvals, from the 52 voters who prefer $B$ to $A$.
+- $D$ will get 27 approvals, from the 27 voters who prefer $D$ to $A$.
+
+Hence, in this case, $C$ becomes the new leader, and $B$ becomes the challenger. We can denote this as a transition from the state (leader, challenger) = $(A, C)$ to the state $(C, B)$.
 
 If $B$ is the leader, then after an iteration of the leader rule $C$ will be the new challenger. The approvals will be:
 
@@ -219,16 +226,16 @@ If $B$ is the leader, then after an iteration of the leader rule $C$ will be the
 | $A$       | $A > B$          | 48        |
 | $D$       | $D > B$          | 44        |
 
-Hence, $B$ remains the leader and wins. This is an equilibrium, since the leader and challenger are the same as the initial leader and challenger, so no voter has an incentive to change their vote.
+We see, $B$ remains the leader and wins. This is an equilibrium, since the leader and challenger are the same as the initial leader and challenger, so no voter has an incentive to change their vote. That is, $(B, X)\to (B, C)$ for any $X$ and $(B, C) \to (B, C)$.
 
 However, if any other candidate starts as the leader, then consider what happens to $B$ and the other candidates:
 
 - $B$ will always get over 50% approvals, since $B$ beats every other candidate in a head-to-head matchup.
 - But there is some other candidate who beats the leader in a head-to-head matchup by 60% or more, so some other candidate will always get more approvals than $B$ and become the new leader instead of $B$.
 
-For example, we saw that if $A$ starts as the leader, then $C$ can become the new leader, because $C$ has a strong head-to-head win against $A$. The cycle of leaders and challengers, denoting (leader, challenger) pairs, is as follows:
+For example, we saw that if $A$ starts as the leader, then $C$ can become the new leader, because $C$ has a strong head-to-head win against $A$. The cycle of leaders and challengers is as follows:
 
-$$(A, B) \to (C, B) \to (D, B) \to (A, B) \to \ldots$$
+$$(A, B) \to (C, B) \to (D, B) \to (A, B) \to \dots$$
 
 When no Condorcet winner exists (meaning there is a cycle in the pairwise matchups), then the leader rule will have a cycle in "states" of leader and challenger pairs. But this example shows that a cycle can also occur when there is a Condorcet winner and equilibrium. I'd like to eventually publish a post about the dynamical system induced by en masse application of the leader rule.
 
