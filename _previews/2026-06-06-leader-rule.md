@@ -4,7 +4,7 @@ title: The Leader Rule in Approval Voting
 date: 2026-06-13
 description: An explanation of Laslier's leader rule strategy in Approval voting, and its positive ramifications.
 giscus_comments: true
-importance: 2
+importance: 1
 tags: voting
 category: polisci
 featured: false
@@ -210,16 +210,16 @@ The exact numbers are not as important as the pairwise matchups. By ranking the 
 
 We can use this list to determine the exact number of approvals each candidate would get under the leader rule, depending on who the leader and challenger are.
 
-For example, if $A$ is the leader, and $C$ is the challenger, then
+For example, if $A$ is the leader, and $B$ is the challenger, then
 
-- $A$ will get 34 approvals, from the 34 voters who prefer $A$ to $C$.
+- $A$ will get 48 approvals, from the 48 voters who prefer $A$ to $B$.
 - $C$ will similarly get 66 approvals, from the 66 voters who prefer $C$ to $A$.
 - $B$ will get 52 approvals, from the 52 voters who prefer $B$ to $A$.
 - $D$ will get 27 approvals, from the 27 voters who prefer $D$ to $A$.
 
-Hence, in this case, $C$ becomes the new leader, and $B$ becomes the challenger. We can denote this as a transition from the state (leader, challenger) = $(A, C)$ to the state $(C, B)$.
+Hence, in this case, $C$ becomes the new leader, and $B$ stays the challenger. We can denote this as a transition from the state (leader, challenger) = $(A, B)$ to the state $(C, B)$.
 
-If $B$ is the leader, then after an iteration of the leader rule $C$ will be the new challenger. The approvals will be:
+If $B$ is the leader, then after an iteration of the leader rule $C$ will be the new challenger. The approvals at the equilibrium state $(B, C)$ are as follows:
 
 | Candidate | Relevant Matchup | Approvals |
 |-----------|------------------|-----------|
