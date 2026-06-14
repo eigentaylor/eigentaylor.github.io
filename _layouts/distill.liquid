@@ -83,6 +83,9 @@
       {% if page.exclude_appendix_from_word_count %}
         {% assign should_log_read_time = true %}
       {% endif %}
+      {% if page.exclude_footnotes_from_word_count %}
+        {% assign should_log_read_time = true %}
+      {% endif %}
       {% unless site.log_read_time_to_console %}
         {% assign should_log_read_time = false %}
       {% endunless %}
@@ -98,6 +101,20 @@
           <script>
             const noAppendixMinutes = ({{ no_appendix_word_count }} / 180) + 1;
             console.log('Read time (without appendix): ' + noAppendixMinutes.toFixed(2) + ' min read');
+          </script>
+        {% endif %}
+        {% if page.exclude_footnotes_from_word_count %}
+          {%- assign no_footnotes_word_count = page.content | content_without_footnotes | number_of_words -%}
+          <script>
+            const noFootnotesMinutes = ({{ no_footnotes_word_count }} / 180) + 1;
+            console.log('Read time (without footnotes): ' + noFootnotesMinutes.toFixed(2) + ' min read');
+          </script>
+        {% endif %}
+        {% if page.exclude_appendix_from_word_count and page.exclude_footnotes_from_word_count %}
+          {%- assign final_word_count = page.content | content_without_appendix | content_without_footnotes | number_of_words -%}
+          <script>
+            const finalMinutes = ({{ final_word_count }} / 180) + 1;
+            console.log('Read time (final): ' + finalMinutes.toFixed(2) + ' min read');
           </script>
         {% endif %}
       {% endif %}

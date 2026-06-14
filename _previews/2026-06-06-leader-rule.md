@@ -12,6 +12,7 @@ theorems: true
 related_posts: true
 pretty_table: true
 exclude_appendix_from_word_count: true
+exclude_footnotes_from_word_count: true
 tikzjax: true
 bibliography: voting.bib
 authors:  

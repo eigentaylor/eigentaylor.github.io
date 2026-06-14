@@ -77,10 +77,14 @@ pagination:
 <p class="card-text">{{ post.description }}</p>
 
                     {% if post.external_source == blank %}
-                      {% assign word_count = post.content | number_of_words %}
+                      {% assign filtered_content = post.content %}
                       {% if post.exclude_appendix_from_word_count %}
-                        {% assign word_count = post.content | content_without_appendix | number_of_words %}
+                        {% assign filtered_content = filtered_content | content_without_appendix %}
                       {% endif %}
+                      {% if post.exclude_footnotes_from_word_count %}
+                        {% assign filtered_content = filtered_content | content_without_footnotes %}
+                      {% endif %}
+                      {% assign word_count = filtered_content | number_of_words %}
                       {% assign read_time = word_count | divided_by: 180 | plus: 1 %}
                     {% else %}
                       {% assign read_time = post.feed_content | strip_html | number_of_words | divided_by: 180 | plus: 1 %}
@@ -122,10 +126,14 @@ pagination:
     {% for post in postlist %}
 
     {% if post.external_source == blank %}
-      {% assign word_count = post.content | number_of_words %}
+      {% assign filtered_content = post.content %}
       {% if post.exclude_appendix_from_word_count %}
-        {% assign word_count = post.content | content_without_appendix | number_of_words %}
+        {% assign filtered_content = filtered_content | content_without_appendix %}
       {% endif %}
+      {% if post.exclude_footnotes_from_word_count %}
+        {% assign filtered_content = filtered_content | content_without_footnotes %}
+      {% endif %}
+      {% assign word_count = filtered_content | number_of_words %}
       {% assign read_time = word_count | divided_by: 180 | plus: 1 %}
     {% else %}
       {% assign read_time = post.feed_content | strip_html | number_of_words | divided_by: 180 | plus: 1 %}
