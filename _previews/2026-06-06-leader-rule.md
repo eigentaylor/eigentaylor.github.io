@@ -139,9 +139,9 @@ Rather than criticize Approval for being "too strategic", or "allowing for minor
 
 The leader rule requires you to identify the frontrunners. But what if you misidentify them, or cannot determine them reliably?
 
-By being strictly monotonic, Approval voting will never weaponize your vote against you (like [Ranked-Choice Voting](../ditch-rcv){:target="_blank"} has done). Your vote will only help the candidates you approve of, and does so maximally. The safety guarantees Approval has mean that, at worst, your ballot can be "[passively inefficient](../av-stratproof){:target="_blank"}".
+By being strictly monotonic and [strategyproof at the ballot level](../av-stratproof){:target="_blank"}, Approval voting will never weaponize your vote against you (like [Ranked-Choice Voting](../ditch-rcv){:target="_blank"} has done). Your vote will only help the candidates you approve of, and does so maximally. The safety guarantees Approval has mean that, at worst, your ballot can be "passively inefficient".
 
-Applying the leader rule even with faulty information is still a decent strategy, because it still attempts to bring the election towards a better outcome than you expect, given the information you have. Indeed, if you at least get the top two candidates right, then your ballot will still likely be efficient, since you will distinguish between them. This is a fairly low bar to clear.
+Applying the leader rule even with faulty information is still a decent strategy, because it still attempts to bring the election towards a better outcome than you expect, given the information you have. Indeed, if you at least get the top two candidates right, then your ballot will still be efficient, since you will distinguish between them. This is a fairly low bar to clear.
 
 ## Conclusion
 
