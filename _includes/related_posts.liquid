@@ -3,12 +3,12 @@
   {% unless have_related_posts %}
     {% assign have_related_posts = true %}
     {% if include.compact %}
-      <ul class="list-disc pl-8"></ul>
+      <ul class="list-disc pl-8">
     {% elsif page.layout == 'post' %}
       <br>
       <hr>
       <br>
-      <ul class="list-disc pl-8"></ul>
+      <ul class="list-disc pl-8">
 
       <!-- Adds related posts to the end of an article -->
       <h2 class="text-3xl font-semibold mb-4 mt-12">enjoy this article?</h2>
@@ -34,6 +34,7 @@
     {% endif %}
   </li>
 {% endfor %}
+</ul>
 {% if site.newsletter.enabled and site.footer_fixed and page.layout != 'distill' %}
   <p class="mb-2" style="margin-top: 1.5rem !important">subscribe to be notified of future articles:</p>
   {% include newsletter.liquid left=true %}
