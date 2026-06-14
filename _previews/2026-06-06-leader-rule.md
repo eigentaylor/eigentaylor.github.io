@@ -57,7 +57,7 @@ This is actually a [real dynamic we see in real-world Approval elections](https:
 
 ### An Example of Application
 
-**Example:** Let's discuss the infamous 2000 US Presidential election as an example of how the leader rule would have been applied. We had the following candidates:
+**Example:** Let's discuss the infamous 2000 US Presidential election as an example of how the leader rule would have been applied. We will assume a national popular vote election, and neglect the Electoral College<d-footnote>The Electoral College adds complexity when it comes to third party wins, which could spoil the ability for your preferred viable candidate to get 270 electoral votes. Under a national popular vote, the leader rule applies cleanly, but with a universal leader and challenger across all states, rather than the leader depending on which state you are in.</d-footnote>. We had the following candidates:
 
 | Candidate       | Ideology    |
 |-----------------|-------------|
@@ -65,7 +65,7 @@ This is actually a [real dynamic we see in real-world Approval elections](https:
 | Al Gore         | Center-left |
 | Ralph Nader     | Left        |
 
-We can ask how different voters would have applied the leader rule in this election, based on who they perceived as the leader and challenger. For example, in California, Gore was clearly the leader and Bush was the challenger, while Bush was the leader and Gore was the challenger in Texas<d-footnote>For the United States, this state-perspective is nice because depending on which state you were in, the leader and challenger were different. Though, the Electoral College adds complexity when it comes to third party wins, which could spoil the ability for your preferred viable candidate to get 270 electoral votes. The risk of approving a third party is asymmetric by state, which we will conveniently ignore here.</d-footnote>. Assuming a general left-right spectrum, we can assume that most voters had the following preferences, and this is how they would have applied the leader rule:
+We can ask how different voters would have applied the leader rule in this election, based on who they perceived as the leader and challenger. Assuming a general left-right spectrum, we can assume that most voters had the following preferences, and this is how they would have applied the leader rule:
 
 | Voter Type               | Approvals (Gore Leader) | Approvals (Bush Leader) |
 |--------------------------|-------------------------|-------------------------|
