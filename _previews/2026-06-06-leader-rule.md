@@ -81,7 +81,7 @@ Each voter bloc tells us a different story about the leader rule. The top two bl
 
 Both reasonable scenarios lead to the same ballot, which is to approve of Bush and no one else. The same logic applies to the Gore $>$ Bush $>$ Nader voters, who approve of Gore and no one else regardless of which of the frontrunners is the leader.
 
-The third bloc also has only one dominant strategy, which is to approve of both Gore and Nader regardless of who the leader is. There's no reason *not* to approve of their favorite candidate Nader, on the off chance a miracle happens and Nader somehow wins (ignoring the Electoral College). But given that the *real* race is between this bloc's least favorite candidates, they are incentivized to be prudent and approve of Gore as well, to not waste their vote.
+The third bloc also has only one dominant strategy, which is to approve of both Gore and Nader regardless of who the leader is. There's no reason *not* to approve of their favorite candidate Nader, on the off chance a miracle happens and Nader somehow wins the popular vote. But given that the *real* race is between this bloc's least favorite candidates, they are incentivized to be prudent and approve of Gore as well, to not waste their vote.
 
 The fourth bloc, however, has a more interesting story. This group most prefers a frontrunner Gore, but they prefer Nader to Bush. If Gore is the leader, then the line is drawn right below the leader Gore, and they thus only approve of Gore to maximize Gore's lead over all other candidates. However, if Bush is the leader, then they draw their line right above Bush, meaning they approve of both Gore and Nader as a prudent defensive "anyone but Bush" strategy.
 
@@ -247,4 +247,4 @@ It should be noted, however, that from the perspective of the electorate, if the
 
 From one perspective, this is actually a harmonious outcome, where multiple candidates get majority support, and the candidate who is preferred by a majority over whoever was expected to win, takes office instead. That is, the outcome under the leader rule is still better than expected by a strong majority of voters, even if there was non-convergence that would be invisible to voters.
 
-A 73% mandate for $A$ does not, to me, seem like a "failure" of the system. Rather, it seems like a refreshing outcome in our highly polarized time. Especially given my [lack of enthusiasm for the Condorcet winner](../why-condorcet){:target="_blank"}. A strong and unquestionable mandate, despite the highly polarized electorate, seems like a positive from where I'm sitting.
+A 73% mandate for $A$ does not, to me, seem like a "failure" of the system. Rather, it seems like a refreshing outcome in our highly polarized time, especially given my [lack of enthusiasm for the Condorcet winner](../why-condorcet){:target="_blank"}. A strong and unquestionable mandate, despite the highly polarized electorate, seems like a positive from where I'm sitting.
