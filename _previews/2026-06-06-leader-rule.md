@@ -210,14 +210,14 @@ The exact numbers are not as important as the pairwise matchups. By ranking the 
 
 We can use this list to determine the exact number of approvals each candidate would get under the leader rule, depending on who the leader and challenger are.
 
-For example, if $A$ is the leader, and $B$ is the challenger, then
+For example, if $D$ is the leader, and $B$ is the challenger, then
 
-- $A$ will get 48 approvals, from the 48 voters who prefer $A$ to $B$.
-- $C$ will similarly get 66 approvals, from the 66 voters who prefer $C$ to $A$.
-- $B$ will get 52 approvals, from the 52 voters who prefer $B$ to $A$.
-- $D$ will get 27 approvals, from the 27 voters who prefer $D$ to $A$.
+- $A$ will get 73 approvals, from the 73 voters who prefer $A$ to $D$.
+- $B$ will get 56 approvals, from the 56 voters who prefer $B$ to $D$.
+- $C$ will similarly get 39 approvals, from the 39 voters who prefer $C$ to $D$.
+- $D$ will get 44 approvals, from the 44 voters who prefer $D$ to $B$.
 
-Hence, in this case, $C$ becomes the new leader, and $B$ stays the challenger. We can denote this as a transition from the state (leader, challenger) = $(A, B)$ to the state $(C, B)$.
+Hence, in this case, $A$ becomes the new leader, and $B$ stays the challenger. We can denote this as a transition from the state (leader, challenger) = $(D, B)$ to the state $(A, B)$.
 
 If $B$ is the leader, then after an iteration of the leader rule $C$ will be the new challenger. The approvals at the equilibrium state $(B, C)$ are as follows:
 
@@ -237,10 +237,14 @@ However, if any other candidate starts as the leader, then consider what happens
 
 For example, we saw that if $A$ starts as the leader, then $C$ can become the new leader, because $C$ has a strong head-to-head win against $A$. The cycle of leaders and challengers is as follows:
 
-$$(A, B) \to (C, B) \to (D, B) \to (A, B) \to \dots$$
+$$(D, B) \to (A, B) \to (C, B) \to (D, B) \to \dots$$
 
 When no Condorcet winner exists (meaning there is a cycle in the pairwise matchups), then the leader rule will have a cycle in "states" of leader and challenger pairs. But this example shows that a cycle can also occur when there is a Condorcet winner and equilibrium. I'd like to eventually publish a post about the dynamical system induced by en masse application of the leader rule.
 
-The structure of this pathology is specifically that $B$ is a milquetoast Condorcet winner, who only wins by very narrow margins, while the other candidates have a volatile cyclic relationship with each other. It should be noted, however, that from the perspective of the electorate, if the election has an outcome at one of these cyclic nodes, then all we would see is a major upset. The expected leader would have a pitiful performance, their strongest challenger would get over 60% of the vote, and $B$ would get over 50%.
+The structure of this pathology is specifically that $B$ is a milquetoast Condorcet winner, who only wins by very narrow margins, while the other candidates have a volatile cyclic relationship with each other.
+
+It should be noted, however, that from the perspective of the electorate, if the election has an outcome at one of these cyclic nodes, then all we would see is a major upset. Suppose that $D$ is the expected leader, and $B$ is the expected challenger. Then, as we saw above, $A$ would surge and win with over 70% approval, while $B$ gets a considerable 56% approval, and the expected winner $D$ gets only 44%.
 
 From one perspective, this is actually a harmonious outcome, where multiple candidates get majority support, and the candidate who is preferred by a majority over whoever was expected to win, takes office instead. That is, the outcome under the leader rule is still better than expected by a strong majority of voters, even if there was non-convergence that would be invisible to voters.
+
+A 73% mandate for $A$ does not, to me, seem like a "failure" of the system. Rather, it seems like a refreshing outcome in our highly polarized time. Especially given my [lack of enthusiasm for the Condorcet winner](../why-condorcet){:target="_blank"}. A strong and unquestionable mandate, despite the highly polarized electorate, seems like a positive from where I'm sitting.
