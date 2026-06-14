@@ -93,6 +93,8 @@ This example also stumps the "bullet voting" criticism, because we can see that 
 
 However, this is a strict improvement over our choose-one system, because the voters who like Ralph Nader get to express their support for him without hurting their viable backup Gore. Voters can be [sincere and efficient simultaneously](../av-stratproof){:target="_blank"}, using the leader rule as a simple heuristic to determine where to draw their line of acceptability.
 
+In the real 2000 election, Gore won the popular vote, but Bush won the electoral college through Florida by a razor-thin margin of 537 votes, while Nader received over 90,000 votes in the same state. If Nader voters were able to approve of both Gore and Nader, then Gore would have likely won Florida and thus the presidency. This is a clear example of how Approval can fix the spoiler effect.
+
 ## The Intuition
 
 Here we get into the basic theoretical justification for the leader rule. I won't get too deep into the math or technical details, but I will try to give an intuitive explanation of the logic behind it. For the actual model Laslier uses, see [the appendix](#appendix). For the full technical details, see Laslier's original paper<d-cite key="laslier2009leaderRule"></d-cite>.
