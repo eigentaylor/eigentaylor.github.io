@@ -93,7 +93,7 @@ This example also stumps the "bullet voting" criticism, because we can see that 
 
 However, this is a strict improvement over our choose-one system, because the voters who like Ralph Nader get to express their support for him without hurting their viable backup Gore. Voters can be [sincere and efficient simultaneously](../av-stratproof){:target="_blank"}, using the leader rule as a simple heuristic to determine where to draw their line of acceptability.
 
-In the real 2000 election, Gore won the popular vote, but Bush won the electoral college through Florida by a razor-thin margin of 537 votes, while Nader received over 90,000 votes in the same state. If Nader voters were able to approve of both Gore and Nader, then Gore would have likely won Florida and thus the presidency. This is a clear example of how Approval can fix the spoiler effect.
+In the real 2000 election, Gore won the popular vote, but Bush won the electoral college through Florida by a razor-thin margin of 537 votes (out of millions), while Nader received over 90,000 votes in the same state. If Nader voters were able to approve of both Gore and Nader, then Gore would have likely won Florida and thus the presidency. This is a clear example of how Approval can fix the spoiler effect.
 
 ## The Intuition
 
@@ -141,7 +141,7 @@ The leader rule requires you to identify the frontrunners. But what if you misid
 
 By being strictly monotonic, Approval voting will never weaponize your vote against you (like [Ranked-Choice Voting](../ditch-rcv){:target="_blank"} has done). Your vote will only help the candidates you approve of, and does so maximally. The safety guarantees Approval has mean that, at worst, your ballot can be "[passively inefficient](../av-stratproof){:target="_blank"}".
 
-Applying the leader rule even with faulty information is still a decent strategy, because it still attempts to bring the election towards a better outcome than you expect, given the information you have.
+Applying the leader rule even with faulty information is still a decent strategy, because it still attempts to bring the election towards a better outcome than you expect, given the information you have. Indeed, if you at least get the top two candidates right, then your ballot will still likely be efficient, since you will distinguish between them. This is a fairly low bar to clear.
 
 ## Conclusion
 
