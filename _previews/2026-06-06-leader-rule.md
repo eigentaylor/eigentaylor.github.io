@@ -111,7 +111,7 @@ And that's the intuition behind the leader rule. Approve everyone you prefer to 
 
 ## Condorcet-efficiency of the Leader Rule
 
-One might ask "what happens if everyone uses the leader rule, all at once?" Laslier analyzes this in his paper, but we must briefly define what a "Condorcet winner" is. Simply, it is just a candidate who would defeat every other candidate in a head-to-head matchup. Many claim that electing the Condorcet winner is the "gold standard", though [I argue that is debatable](../why-condorcet){:target="_blank"}. Laslier proves the following result about the leader rule:
+One might ask "what happens if everyone uses the leader rule, all at once?" Laslier analyzes this in his paper, but we must briefly define what a "Condorcet winner" is. It is simply a candidate who would defeat every other candidate in a head-to-head matchup. Many claim that electing the Condorcet winner is the "gold standard", though [I argue that is debatable](../why-condorcet){:target="_blank"}. Laslier proves the following result about the leader rule:
 
 > **Theorem:** For a large electorate all applying the leader rule, if there is an equilibrium<d-footnote>An "equilibrium" in this context would mean that the result of the election is exactly the same as the expected result (the expected first and second place candidates are the actual first and second place candidates).</d-footnote> with no tie, the winner of the election is a Condorcet winner. If there exists a Condorcet winner <d-footnote>For a unique equilibrium to exist, we need a Condorcet winner with a unique "strongest challenger", meaning there is a single candidate with a strongest head-to-head result against the Condorcet winner.</d-footnote>, then there is a unique equilibrium that elects the Condorcet winner.
 
@@ -137,7 +137,7 @@ Rather than criticize Approval for being "too strategic", or "allowing for minor
 
 The leader rule requires you to identify the frontrunners. But what if you misidentify them, or cannot determine them reliably?
 
-By being strictly monotonic, Approval voting will never weaponize your vote against you (like [Ranked-Choice Voting](../ditch-rcv){:target="_blank"} has done). Your vote will only help the candidates you approve of, and does so maximally. The safety guarantees Approval has means that, at worst, your ballot can be "[passively inefficient](../av-stratproof){:target="_blank"}".
+By being strictly monotonic, Approval voting will never weaponize your vote against you (like [Ranked-Choice Voting](../ditch-rcv){:target="_blank"} has done). Your vote will only help the candidates you approve of, and does so maximally. The safety guarantees Approval has mean that, at worst, your ballot can be "[passively inefficient](../av-stratproof){:target="_blank"}".
 
 Applying the leader rule even with faulty information is still a decent strategy, because it still attempts to bring the election towards a better outcome than you expect, given the information you have.
 
@@ -146,9 +146,9 @@ Applying the leader rule even with faulty information is still a decent strategy
 In essence, we have two different mindsets for how to approach Approval voting strategically:
 
 1. Optimizing for getting an outcome that is better than or equal to what you expect, which is achieved by the leader rule.
-2. Optimizing for getting any outcome that is acceptable, which is achieved by [the honest ballot](../av-stratproof){:target="_blank"}.
+2. Optimizing for getting any outcome that is "acceptable", which is achieved by [the honest ballot](../av-stratproof){:target="_blank"}.
 
-The leader rule, can seem selfish and ruthless. But it, in my view, effectively counters a number of criticisms leveled against Approval voting. Voting strategically really is not that complicated, and involves only identifying the top two frontrunners.
+The leader rule can seem selfish and ruthless. But it, in my view, effectively counters a number of criticisms leveled against Approval voting. Voting strategically really is not that complicated, and involves only identifying the top two frontrunners.
 
 Bullet voting *can be prudent* for voters who like the frontrunners, but voters who most prefer someone nonviable are incentivized to be more generous. This is something voters in St. Louis already intuitively understand<d-cite key="sargent2025stlouis"></d-cite>. The leader rule cuts through the noise and ambiguity with a clean and simple heuristic that is easy to understand and apply.
 
