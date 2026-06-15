@@ -89,7 +89,7 @@ The fourth bloc, however, has a more interesting story. This group most prefers 
 
 That said, it's worth noting that, in practice, Nader was never a serious contender. Hence, the voters in this bloc need not agonize over who the actual leader and challenger are. In this case, it's fairly safe to approve of Nader at their personal discretion, while still surely voting for their most preferred candidate Gore.
 
-It's hard to really claim that Approval is "agonizingly strategic" here. Rather, the leader rule makes it quite intuitive and straightforward to determine how to vote--so long as you can identify the leader and challenger. We can note that even if it's not entirely clear which of the two frontrunners is the leader, since you will still only approve exactly one of the two frontrunners in either case, you will likely not waste your vote even if you misidentify the leader and challenger.
+It's hard to really claim that Approval is "agonizingly strategic" here. Rather, the leader rule makes it quite intuitive and straightforward to determine how to vote--so long as you can identify the leader and challenger. We can note that even if it's not entirely clear which of the two frontrunners is the leader, since you will still only approve exactly one of the two frontrunners in either case, you will likely not waste your vote even if you misidentify the which one is the leader.
 
 This example also stumps the "bullet voting" criticism, because we can see that for many of these voters, bullet voting is prudent for voters who like the frontrunners, but voters who most prefer someone nonviable extend their approval to their second choice. This isn't earth-shattering stuff. Approval does not break when voters shrewdly bullet vote when appropriate.
 
