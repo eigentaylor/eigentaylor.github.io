@@ -1,6 +1,6 @@
 # Development overrides for faster builds
 # Use with: bundle exec jekyll serve --config _config.yml,_config_dev.yml --incremental --livereload
-
+icon: 😏 # classic icon to differentiate tabs that are localhost vs production
 # Disable CSS/HTML minification  
 jekyll-minifier:
   enabled: false
