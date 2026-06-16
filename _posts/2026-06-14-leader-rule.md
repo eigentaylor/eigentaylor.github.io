@@ -41,6 +41,8 @@ toc:
 
 This post is based on a paper by Jean-François Laslier<d-cite key="laslier2009leaderRule"></d-cite>, which introduces the leader rule and analyzes its properties. I would like to give a special thanks to Rob LeGrand for bringing this strategy to my attention. LeGrand, as far as we know, came up with this strategy back in 2002<d-cite key="legrand2002strategyA"></d-cite>, and Laslier published about it in his 2009 paper independently. I find this interesting to bring up, because it shows that this strategy is not just some random "someone just thought of it" strategy, but rather something fundamentally natural and intuitive.
 
+Laslier uses a stricter model than LeGrand which allows for some of the nicer results we will talk about<d-footnote>This includes that all voters have strict rankings with no indifference. This assumption is important for some of the major results, which may not hold otherwise. For a large electorate, I believe this a fairly reasonable assumption.</d-footnote>. I would consider this a brief introduction to the leader rule, and there is much more to say (perhaps for a future post).
+
 In [my last post](../av-stratproof){:target="_blank"}, we discussed how Approval voting is not fully strategyproof (though it's closer than you might think), and what it means for a ballot in Approval to be "sincere"<d-footnote>The definition of "sincere" in Approval essentially boils down to drawing a line of acceptability in your rankings and approving all candidates above that line. See my last post for the full formal definition. In the seminal 1978 paper by Brams and Fishburn<d-cite key="bramsFishburn1978approval"></d-cite>, they proved that under very contrived perfect-knowledge scenarios with four or more candidates, a strategy such as voting for your first and third choice, and not your second, can be optimal.</d-footnote>. Laslier proves that a sincere strategy is always optimal in his model of a large electorate with some uncertainty, and that the leader rule is that best response for single-winner Approval voting (which is sincere) based on relatively minimal information about the state of the race.<d-footnote>The leader rule does not apply cleanly to multi-winner Approval voting, such as the primary for a top 2 runoff. The fact that more than one candidate can win breaks some of the assumptions in the model the leader rule is based on. The dynamics and strategy are significantly different for single-round Approval versus Approval with a runoff<d-cite key="fishburnBrams1981runoff"></d-cite>.</d-footnote>
 
 > **Definition:** (**The Leader Rule**) Identify the top two frontrunners in the election: the "leader" (most likely to win) and the "challenger" (the most likely to overtake the leader). You, as the voter, then
@@ -208,7 +210,7 @@ The exact numbers are not as important as the pairwise matchups. By ranking the 
 5. $B$ beats $A$ 52:48
 6. $B$ beats $C$ 51:49
 
-We can use this list to determine the exact number of approvals each candidate would get under the leader rule, depending on who the leader and challenger are.
+If we assume that every single voter applies the leader rule simultaneously based on a universal common knowledge assumption of the leader and challenger, we can use this list to determine the exact number of approvals each candidate would get under the leader rule, depending on who the leader and challenger are.
 
 For example, if $D$ is the leader, and $B$ is the challenger, then
 
