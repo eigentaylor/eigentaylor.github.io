@@ -1,16 +1,19 @@
 ---
 layout: distill
 title: The Perfection of Approval Voting
-date: 2026-04-15
+date: 2026-06-17
 description: A mathematical dive into the fundamental nature of Approval voting on dichotomous preferences.
 giscus_comments: true
-importance: 3
+importance: 1
 tags: voting
 category: polisci
 featured: false
-related_posts: true
 theorems: true
+related_posts: true
 pretty_table: true
+exclude_appendix_from_word_count: true
+exclude_footnotes_from_word_count: true
+bibliography: voting.bib
 chart:
   plotly: true
 authors:  
@@ -32,18 +35,15 @@ toc:
   - name: The Projection Perspective
   - name: The Canonical Voting System
   - name: Appendix
-  - name: References
 ---
 
 ## Introduction
 
 I've made plenty of [cases for Approval voting recently](../approval-only/){:target="_blank"}. I've talked about it in direct comparison with other methods and why I think it wins out for [various practical reasons](../practicalapproval/){:target="_blank"}. But that's not what I want to do in this post.
 
-Here, I'm going back to my roots. I'm going to talk about the pure math underlying Approval voting, and why it's fundamental in a way that other voting systems just aren't. I will talk about the proofs that--under certain assumptions--Approval actually breaks famous impossibility theorems like [Gibbard-Satterthwaite](../gibbard-satt/){:target="_blank"} and [Arrow's Theorem](../arrows/){:target="_blank"}, and what that means.
+Here, I'm going back to my roots. I'm going to talk about the pure math underlying Approval voting, and why it's fundamental in a way that other voting systems just aren't. I will talk about the proofs that--under certain assumptions--Approval actually breaks famous impossibility theorems like [Gibbard-Satterthwaite](../gibbard-satt/){:target="_blank"} and [Arrow's Theorem](../arrows/){:target="_blank"}, and what that means.<d-footnote>Many of the things I say here about Approval will not be true about Approval with a runoff. The runoff tends to really hamper the honesty incentives of Approval (in theory). In practice, there is evidence to suggest that the runoff might improve outcomes, but that's not what we're talking about here. We're talking about pure, single round, "vanilla" Approval voting.</d-footnote>
 
-This post is inspired and borrows heavily on an amazing paper by [Marc Vorsatz: "Approval voting on dichotomous preferences"](http://www.jstor.org/stable/41106808).
-
-Many of the things I say here about Approval will not be true about Approval with a runoff. The runoff tends to really hamper the honesty incentives of Approval (in theory). In practice, there is evidence to suggest that the runoff might improve outcomes, but that's not what we're talking about here. We're talking about pure, single round, "vanilla" Approval voting.
+This post is inspired and borrows heavily on an amazing paper by Marc Vorsatz<d-cite key="vorsatz2007approvalDichotomous"></d-cite>, as well as a paper by Maniquet and Mongin<d-cite key="maniquetMongin2015approvalArrow"></d-cite>.
 
 ### May's Theorem
 
@@ -56,7 +56,7 @@ To put this in very simple terms:
 - **Anonymous:** No voter bias. Everyone's vote is equal. Waldo doesn't contribute 100 votes just because he owns a hundred shares in the company.
 - **Neutral:** No candidate bias. The system treats all candidates equally. No bias for Bob because his name starts with a B, or because he's an incumbent.
 - **Strictly Monotone:** Your vote actually *matters*. If candidate $x$ is already winning or tied for first, then voting solely for $x$ (or changing your ballot to add a vote for $x$) makes them win outright.
-- **Majority Rule:** (AKA [Condorcet](../condorcet-approval/){:target="_blank"}) You can either give one vote to either candidate, or abstain. The candidate with the most votes wins. If there is a tie, then we just say that both candidates win.
+- **Majority Rule:** (AKA Condorcet) You can either give one vote to either candidate, or abstain. The candidate with the most votes wins. If there is a tie, then we just say that both candidates win.
 
 This is... painfully obvious. I mean, how else would you possibly pick between two people? Just choose the one with the most votes, right?
 
@@ -95,7 +95,7 @@ Vorsatz proposes an example of a committee trying to hire a specialized contract
 
 For example, suppose I love Alice, I think Bob is okay, and I hate Clark. While I technically have three-tiered preferences here, I might decide that Clark is so "unacceptable" that Alice and Bob are both "acceptable" to me. Sure, if it was a runoff between Alice and Bob, I would vote for Alice. But given this is a race between all three, I might decide to just express my preferences more simply as "please, Alice or Bob, just not Clark". If expressed in this way, my preferences have become dichotomous.
 
-There is, in fact, genuine [psychological research](https://doi.org/10.1037/0278-7393.14.3.534) that indicates that people often use binary cutoffs and heuristics as mental shortcuts to make decisions, particularly under time pressure. In that way, Approval's binary cutoff ballot format may actually be more in line with how people naturally think about their preferences, rather than constructing a more complex ranking or rating system. Not everyone is a political junkie, and if you're reading this the probability is high you are not representative of the average voter.
+There is, in fact, genuine psychological research<d-cite key="payneBettmanJohnson1988adaptiveStrategy"></d-cite> that indicates that people often use binary cutoffs and heuristics as mental shortcuts to make decisions, particularly under time pressure. In that way, Approval's binary cutoff ballot format may actually be more in line with how people naturally think about their preferences, rather than constructing a more complex ranking or rating system. Not everyone is a political junkie, and if you're reading this the probability is high you are not representative of the average voter.
 
 However, we won't dwell too much more on this. Regardless of whether you think dichotomous preferences are realistic, it turns out that they are our fundamental ticket out of all the messiness of voting.
 
@@ -142,7 +142,7 @@ If I say that only Alice is good, and lie about liking Bob, then my vote now giv
 
 But Gibbard tells us that if we have three or more candidates, then it can't be strategyproof, right? Not on dichotomous preferences!
 
-In [1978, Brams and Fishburn](https://doi.org/10.2307/1955105) prove that Approval voting is the unique "single ballot non-ranked" voting system (a system where you can give single votes to some number of candidates) which is strategyproof on dichotomous preferences.
+In 1978, Brams and Fishburn prove that Approval voting is the unique "single ballot non-ranked" voting system (a system where you can give single votes to some number of candidates) which is strategyproof on dichotomous preferences<d-cite key="bramsFishburn1978approval"></d-cite>.
 
 The intuition being that
 
@@ -264,9 +264,9 @@ But even though the ballot data *isn't* a perfect representation of reality, it 
 
 In this way, Approval asks voters to project their nuanced preferences into the dichotomous domain. It treats those preferences perfectly, and gives you a winner. We necessarily lose some information in the process. The question is how much that loss of information hurts the outcomes.
 
-As I've also written about before, VSE (Voter Satisfaction Efficiency) is one measure of the outcomes of a system. [Approval gets a VSE range of 89-95%](https://electionscience.github.io/vse-sim/VSEbasic/). Meaning, it gets the "optimal" outcome about 90-95% of the time. That is *absurdly* good, especially in comparison to choose-one voting getting about 75%, and STAR voting clocking in around 91-98%. Approval is not perfect, but it's absurdly good for its simplicity and practicality. And that simplicity comes with the benefit of being particularly robust to insidious pathologies that can arise in more complex systems like RCV and STAR.
+As I've also written about before, VSE (Voter Satisfaction Efficiency) is one measure of the outcomes of a system. Approval gets a VSE range of 89-95%<d-cite key="quinn2017vseSummary"></d-cite>. Meaning, it gets the "optimal" outcome about 90-95% of the time. That is *absurdly* good, especially in comparison to choose-one voting getting about 75%, and STAR voting clocking in around 91-98%. Approval is not perfect, but it's absurdly good for its simplicity and practicality. And that simplicity comes with the benefit of being particularly robust to insidious pathologies that can arise in more complex systems like RCV and STAR.
 
-In a [1998 paper by Regenwetter and Grofman](http://www.jstor.org/stable/2634612), they found that Approval reliably picked the winners of Borda and Condorcet methods in experiments and real world elections when the ordinal preferences were reconstructed. In fact, they even say,
+In a 1998 paper by Regenwetter and Grofman<d-cite key="regenwetterGrofman1998approvalBordaCondorcet"></d-cite>, they found that Approval reliably picked the winners of Borda and Condorcet methods in experiments and real world elections when the ordinal preferences were reconstructed. In fact, they even say,
 
 > "We find no evidence here that approval voting should be replaced by a more elaborate voting scheme." (p. 532)
 
@@ -294,14 +294,3 @@ Approval is the canonical voting system for dichotomous preferences. But manages
 
 If democracy is ultimately about consent, then Approval is the ballot that captures consent most directly: not perfect information, but honest information. It asks each voter for one clear boundary between acceptable and unacceptable, then counts that boundary without distortion. That is why, mathematically, it becomes canonical on dichotomous preferences, and why, practically, it remains so compelling in the real world. We may never build a flawless voting system for every possible psychology, but we can choose one that is fair, transparent, strategy-resistant where it matters, and robust under real conditions. Approval does not promise utopia. It promises clarity, and in collective decision-making, clarity is power.
 
-## References
-
-Brams, S. J., & Fishburn, P. C. (1978). Approval Voting. *The American Political Science Review*, 72(3), 831-847. [https://doi.org/10.2307/1955105](https://doi.org/10.2307/1955105)
-
-Payne, J. W., Bettman, J. R., & Johnson, E. J. (1988). Adaptive strategy selection in decision making. Journal of Experimental Psychology: Learning, Memory, and Cognition, 14(3), 534--552. [https://doi.org/10.1037/0278-7393.14.3.534](https://doi.org/10.1037/0278-7393.14.3.534)
-
-Quinn, J. (2017). Voter Satisfaction Efficiency (VSE) summary. Center for Election Science. [https://electionscience.github.io/vse-sim/VSEbasic/](https://electionscience.github.io/vse-sim/VSEbasic/)
-
-Regenwetter, M., & Grofman, B. (1998). Approval Voting, Borda Winners, and Condorcet Winners: Evidence from Seven Elections. Management Science, 44(4), 520--533. [http://www.jstor.org/stable/2634612](http://www.jstor.org/stable/2634612)
-
-Vorsatz, M. (2007). Approval voting on dichotomous preferences. Social Choice and Welfare, 28(1), 127--141. [http://www.jstor.org/stable/41106808](http://www.jstor.org/stable/41106808)
