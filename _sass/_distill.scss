@@ -73,6 +73,13 @@ d-article {
 
   blockquote {
     border-left: 2px solid var(--global-theme-color) !important;
+    color: var(--global-text-color) !important;
+
+    // Ensure MathJax inside theorem/blockquote text follows theme color.
+    mjx-container,
+    mjx-container * {
+      color: inherit !important;
+    }
   }
 
   // Theorem auto-numbering
