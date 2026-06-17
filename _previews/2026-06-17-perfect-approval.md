@@ -13,6 +13,7 @@ related_posts: true
 pretty_table: true
 exclude_appendix_from_word_count: true
 exclude_footnotes_from_word_count: true
+exclude_proof_blocks_from_word_count: true
 bibliography: voting.bib
 chart:
   plotly: true
@@ -41,7 +42,7 @@ toc:
 
 I've made plenty of [cases for Approval voting recently](../approval-only/){:target="_blank"}. I've talked about it in direct comparison with other methods and why I think it wins out for [various practical reasons](../practicalapproval/){:target="_blank"}. But that's not what I want to do in this post.
 
-Here, I'm going back to my roots. I'm going to talk about the pure math underlying Approval voting, and why it's fundamental in a way that other voting systems just aren't. I will talk about the proofs that--under certain assumptions--Approval actually breaks famous impossibility theorems like [Gibbard-Satterthwaite](../gibbard-satt/){:target="_blank"} and [Arrow's Theorem](../arrows/){:target="_blank"}, and what that means.<d-footnote>Many of the things I say here about Approval will not be true about Approval with a runoff. The runoff tends to really hamper the honesty incentives of Approval (in theory). In practice, there is evidence to suggest that the runoff might improve outcomes, but that's not what we're talking about here. We're talking about pure, single round, "vanilla" Approval voting.</d-footnote>
+Here, I'm going back to my roots. I'm going to talk about the pure math underlying Approval voting, and why it's fundamental in a way that other voting systems just aren't. I will talk about the proofs that--under certain assumptions--Approval actually breaks famous impossibility theorems like [Gibbard's Theorem](../gibbard-intuition/){:target="_blank"} and [Arrow's Theorem](../arrows/){:target="_blank"}, and what that means.<d-footnote>Many of the things I say here about Approval will not be true about Approval with a runoff. The runoff tends to really hamper the honesty incentives of Approval (in theory). In practice, there is evidence to suggest that the runoff might improve outcomes, but that's not what we're talking about here. We're talking about pure, single round, "vanilla" Approval voting.</d-footnote>
 
 This post is inspired and borrows heavily on an amazing paper by Marc Vorsatz<d-cite key="vorsatz2007approvalDichotomous"></d-cite>, as well as a paper by Maniquet and Mongin<d-cite key="maniquetMongin2015approvalArrow"></d-cite>.
 
@@ -49,14 +50,7 @@ This post is inspired and borrows heavily on an amazing paper by Marc Vorsatz<d-
 
 In 1952, just a year after Kenneth Arrow published his impossibility theorem, another Kenneth in social choice theory, Kenneth May, published a theorem of his own.
 
-> **Theorem:** (May's Theorem) Given a race between two candidates, the unique voting system that is anonymous, neutral, and strictly monotone is majority rule.
-
-To put this in very simple terms:
-
-- **Anonymous:** No voter bias. Everyone's vote is equal. Waldo doesn't contribute 100 votes just because he owns a hundred shares in the company.
-- **Neutral:** No candidate bias. The system treats all candidates equally. No bias for Bob because his name starts with a B, or because he's an incumbent.
-- **Strictly Monotone:** Your vote actually *matters*. If candidate $x$ is already winning or tied for first, then voting solely for $x$ (or changing your ballot to add a vote for $x$) makes them win outright.
-- **Majority Rule:** (AKA Condorcet) You can either give one vote to either candidate, or abstain. The candidate with the most votes wins. If there is a tie, then we just say that both candidates win.
+> **Theorem:** (May's Theorem) Given a race between two candidates, the unique voting system that is anonymous<d-footnote>Anonymous means that the system treats all voters equally. No voter has more influence than another.</d-footnote>, neutral<d-footnote>Neutral means that the system treats all candidates equally. No candidate has an inherent advantage over another.</d-footnote>, and strictly monotone<d-footnote>Strictly monotone means that if a candidate is already winning or tied for first, then voting solely for that candidate (or changing your ballot to add a vote for that candidate) makes them win outright.</d-footnote> is majority rule: most votes wins.
 
 This is... painfully obvious. I mean, how else would you possibly pick between two people? Just choose the one with the most votes, right?
 
@@ -70,16 +64,11 @@ Well, for two candidates, this is obvious. But for decades, the extension of thi
 
 A majority of two prefers Rock to Scissors, a majority of two prefers Scissors to Paper, and a majority of two prefers Paper to Rock. So who wins? Majority rule doesn't work here. There is no candidate for which it truly makes sense to elect.
 
-But even before May, we already knew that [three candidates is a big problem, thanks to Arrow](../arrows/){:target="_blank"}. Arrow's theorem says that if you have three or more candidates, there is no voting system that can satisfy a certain set of (supposedly) "reasonable" criteria. You essentially have to pick one of the following:
+But even before May, we already knew that [three candidates is a big problem, thanks to Arrow](../arrows/){:target="_blank"}. Arrow's theorem says that if you have three or more candidates, there is no voting system that can satisfy a certain set of (supposedly) "reasonable" criteria. Specifically, the [independence of irrelevant alternatives](../iia/){:target="_blank"}<d-footnote>Basically, it's possible that adjusting how people treat candidate C can cause the outcome between candidates A and B to change.</d-footnote>.
 
-- **Dictatorship:** One voter gets to decide everything. Waldo's ballot is the only one that counts.
-- **Infinitely many voters:** If you allow for infinitely many voters, Peter Fishburn showed, hilariously, that you can get a "perfect" majority rule voting system using measure theory. See [this post](../arrows/){:target="_blank"} for more on that.
-- **IIA Violation:** The voting system violates the "Independence of Irrelevant Alternatives" criterion, which *loosely* means that an irrelevant spoiler candidate can change the outcome of the election. For example, if Alice originally beats Bob, then the entrance of Clark into the race can cause Bob to win, even if a majority still prefers Alice to Bob.
-- A secret fourth choice we will get to shortly...
+The knife was twisted in the 70's when Gibbard went on to show that strategy is a fundamental part of voting systems, when you have three or more candidates. Essentially, either the system has to be completely unresponsive to your preferences, or you will always have opportunities to get a better outcome by lying to the system<d-footnote>Loosely, there's a bit of nuance to these results, but the takeaway is that any reasonable system will be susceptible to strategic manipulation. Gibbard's more general theorem in 1973 hits essentially everything that could possibly be considered a voting system.</d-footnote>.
 
-The knife was twisted in the 70's when Gibbard went on to show that strategy is a fundamental part of voting systems, when you have three or more candidates. Essentially, either the system has to be completely unresponsive to your preferences, or you will always have opportunities to get a better outcome by lying to the system (loosely, there's a bit of nuance to these results, but the takeaway is that any reasonable system will be susceptible to strategic manipulation). While Gibbard's more general theorem in 1973 hits essentially every voting system (and many more types of things), the [Gibbard-Satterthwaite](../gibbard-satt/){:target="_blank"} theorem is basically a corollary to that result that applies specifically to ranked voting systems.
-
-The standard conclusion to take from these theorems is that there is no "perfect" voting system. You have to compromise somewhere. If you want something democratic and responsive to the voters, you won't be able to guarantee it works ideally in all scenarios. You'll always get a case where lying is profitable, or a spoiler candidate throws the system into chaos. But it turns out that this conclusion is not quite the full story.
+The standard conclusion to take from these theorems is that there is no "perfect" voting system that handles three or more candidates. You have to compromise somewhere. If you want something democratic and responsive to the voters, you won't be able to guarantee it works ideally in all scenarios. You'll always get a case where lying is profitable, or a spoiler candidate throws the system into chaos. But it turns out that this conclusion is not quite the full story.
 
 ## Dichotomous Preferences
 
@@ -87,15 +76,15 @@ It turns out that the true underlying key to May's theorem is not exactly that i
 
 > **Definition:** A voter's preferences are *dichotomous* if they can be represented in a maximum of two tiers. In other words, the voter declares each candidate either "acceptable" or "unacceptable", with no further ranking or differentiation between candidates within those tiers. This can include complete indifference (where all candidates are in the same tier).
 
-It may seem like we're basically lobotomizing the voters here. And critics of Approval often argue that this a serious problem. By squashing the voters' nuanced preferences into just two tiers, it becomes very easy to construct pathologies where voters use very strange Approval thresholds which elect candidates which seem "bad" [based on the ranked data](../why-condorcet/){:target="_blank"}.
+It may seem like we're basically lobotomizing the voters here. And critics of Approval often argue that this a serious problem. By squashing the voters' nuanced preferences into just two tiers, it becomes very easy to construct pathologies where voters use very strange Approval thresholds which elect candidates which seem "bad" [based exclusively on the ranked data, which does not capture anything about acceptability or compromise](../why-condorcet/){:target="_blank"}.
 
 But, from another perspective, when faced with many options, there's an argument that we often do simplify our preferences by just partitioning candidates into "good" and "bad" buckets. Particularly when information is scarce, or we haven't had time to develop more nuanced preferences.
 
-Vorsatz proposes an example of a committee trying to hire a specialized contractor. At the early stages of the process, it may be easier to just label candidates as "qualified" or "unqualified", rather than trying to rank them in a more detailed way. But, more generally, there is an argument to make that even in high stakes elections, voters can identify a set of "acceptable" candidates that they would be happy to see win, and a set of "unacceptable" candidates that they would not want to see win, even if they have an underlying ranking of the candidates.
+Vorsatz proposes an example of a committee trying to hire a specialized contractor. At the early stages of the process, it may be easier to just label candidates as "qualified" or "unqualified", rather than trying to rank them in a more detailed way. But, more generally, there is an argument to make that even in high stakes elections, [voters can identify a set of "acceptable" candidates that they would be happy to see win, and a set of "unacceptable" candidates that they would not want to see win](../av-stratproof/){:target="_blank"}, even if they have an underlying ranking of the candidates.
 
 For example, suppose I love Alice, I think Bob is okay, and I hate Clark. While I technically have three-tiered preferences here, I might decide that Clark is so "unacceptable" that Alice and Bob are both "acceptable" to me. Sure, if it was a runoff between Alice and Bob, I would vote for Alice. But given this is a race between all three, I might decide to just express my preferences more simply as "please, Alice or Bob, just not Clark". If expressed in this way, my preferences have become dichotomous.
 
-There is, in fact, genuine psychological research<d-cite key="payneBettmanJohnson1988adaptiveStrategy"></d-cite> that indicates that people often use binary cutoffs and heuristics as mental shortcuts to make decisions, particularly under time pressure. In that way, Approval's binary cutoff ballot format may actually be more in line with how people naturally think about their preferences, rather than constructing a more complex ranking or rating system. Not everyone is a political junkie, and if you're reading this the probability is high you are not representative of the average voter.
+There is, in fact, genuine psychological research<d-cite key="payneBettmanJohnson1988adaptiveStrategy"></d-cite> that indicates that people often use binary cutoffs and [heuristics](../leader-rule/){:target="_blank"} as mental shortcuts to make decisions, particularly under time pressure. In that way, Approval's binary cutoff ballot format may actually be more in line with how people naturally think about their preferences, rather than constructing a more complex ranking or rating system. Not everyone is a political junkie, and if you're reading this the probability is high you are not representative of the average voter.
 
 However, we won't dwell too much more on this. Regardless of whether you think dichotomous preferences are realistic, it turns out that they are our fundamental ticket out of all the messiness of voting.
 
@@ -121,6 +110,7 @@ But to extend May's theorem to more than two candidates, we need a fourth criter
 
 To get a sense for what this means in practice, let's say that initially we have that Alice and Bob are currently tied for first. I prefer Alice over Clark, and so I voted accordingly (voting that Alice is good and Clark is bad). Strategyproofness means that I can't change my ballot to something else and get a better outcome, such as making Alice win.
 
+{% proof Example %}
 Here's an example to show what that might look like. Suppose we have a voting system where you submit your "good" and "bad" candidates. If you say that $n$ candidates are good, then each gets $\frac{1}{n}$ points, and the candidate with the most points wins. This is anonymous, neutral, and monotone, but it's not strategyproof.
 
 Consider the following scenario: Suppose that currently, Alice is behind Clark by half a point, while Bob and Dylan are behind both of them.
@@ -139,6 +129,7 @@ Let's assume my true preference is that Alice and Bob are both good, and both Cl
 | A         | 2        | 0.66     | 1.66     | 0.66     | A wins     |
 
 If I say that only Alice is good, and lie about liking Bob, then my vote now gives Alice a *full* point, and Bob gets zero. This would give Alice a third of a point more than Clark, and make her win outright. If I'm honest, then my support is diluted between Alice and Bob, and Alice doesn't get enough support to win. I thus have an incentive to lie. This violates strategyproofness.
+{% endproof %}
 
 But Gibbard tells us that if we have three or more candidates, then it can't be strategyproof, right? Not on dichotomous preferences!
 
@@ -155,17 +146,7 @@ So voting exclusively for all good candidates and no bad candidates is *uniquely
 
 This is worth emphasizing: strategyproofness is inherently achievable on dichotomous preferences. Essentially, each voter has two "blobs" of candidates: the good and the bad. Each voter just wants *any* candidate from the good blob to win, and *no* candidate from the bad blob to win. So there's nothing better to do than to fully support every option in the good blob and fully oppose every option in the bad blob. This is exactly what Approval voting does, and so Approval voting is strategyproof on dichotomous preferences.
 
-Since Approval picks the candidate with the most approvals, it's simply "counting" voters or support. One person, one vote! So making sure you're counted fully for all the good, and not at all for the bad, is the best you can possibly do. Why would you ever do anything else?
-
-However, it's also worth emphasizing that strategyproofness, when defined *mathematically* has a very specific meaning different from the natural intuition that we've been using. They're equivalent in a sense, but not exactly the same.
-
-The math doesn't *know* what your true underlying preference is. It just knows the ballot you submitted. So strategyproofness is defined more in terms of how the outcome changes relative to the original ballot you submitted, or were planning to submit. For our example above, the ballot where I approved of both Alice and Bob clearly said "I prefer Alice to Clark", because I approved of Alice and not Clark. But changing my ballot, by pretending I didn't like Bob, made Alice win outright. I was already saying that I liked Alice more than Clark, but it took a lie or exaggeration for the system to *respect* that preference and give me Alice as the winner over Clark. My ballot had potential to be decisive, but *wasn't* without strategic manipulation.
-
-Gibbard's theorem loosely says that if you have three or more candidates, then no voting system (including Approval!) can be strategyproof. Intuitively meaning that you can be clearly telling the voting system "I prefer Alice to Clark!", but you need to lie about your preferences in some other way--for example, pretending you changed your mind about Bob versus Alice--to change the outcome from Clark winning to Alice winning.
-
-Approval is not strategyproof when you have three or more tiers of preference. Then there can certainly be strategic consideration as to where to cut off your threshold of acceptability. *However*, based purely on the ballot data, Approval *does* hold a strategyproofness property. If you are already disapproving of Clark, you don't need to exaggerate to make sure your ballot fully counts against him. The ballot never betrays what you tell it. That is *not* a given in any other voting system.
-
-This makes an Approval ballot incredibly "honest" in a way that other ballots aren't. Any other system, you might tell the system a preference, but need to lie or exaggerate in some other way to get the system to respect that preference. Voting for your favorite in STAR or RCV might give you your worst nightmare due to runoff rounds or vote transfers. Not in Approval!
+I recently published a post that touches on this more [which you can read here](../av-stratproof/){:target="_blank"}, however I may go on this a little more deeply in the future. But, in short, Approval is in many senses "safer" than other major systems like STAR voting, Condorcet systems, and especially [Ranked Choice Voting](../ditch-rcv/){:target="_blank"}.
 
 ### Uniqueness of Approval
 
@@ -173,7 +154,7 @@ Alright, so Approval is anonymous, neutral, strictly monotone, and strategyproof
 
 > **Theorem:** (Vorsatz, 2007) Approval voting is the *unique* voting system that is anonymous, neutral, strictly monotone, and strategyproof on dichotomous preferences.\label{approval-unique}
 
-It's not just that Approval happens to be so, it's that Approval is the *only* system that can satisfy these criteria. If you define a voting system that is anonymous, neutral, strictly monotone, and strategyproof on dichotomous preferences, then you can show it is *exactly* Approval voting. No other system can satisfy these criteria. And it gets even better...
+It's not just that Approval happens to be so, it's that Approval is the *only* system that can satisfy all of these criteria simultaneously. If you define a voting system that is anonymous, neutral, strictly monotone, and strategyproof on dichotomous preferences, then you can show it is *exactly* Approval voting. No other system can satisfy these criteria. And it gets even better...
 
 > **Theorem:** (Vorsatz, 2007) The four criteria of anonymity, neutrality, strict monotonicity, and strategyproofness on dichotomous preferences are independent (Theorem \ref{approval-unique} is "tight"). That is, for each criterion, there exists a voting system that satisfies the other three criteria but violates that one.
 
@@ -293,4 +274,3 @@ In the context of a voting system, the "model" is the voting system itself, and 
 Approval is the canonical voting system for dichotomous preferences. But manages to stay an excellent voting system for all preferences. It just asks a different question than I think many in the electoral reform space *think* should be asked. It doesn't care about the order of your preferences, which obscures all sense of acceptability. It doesn't care about the intensity of your preferences, which are prone to exaggeration and misrepresentation. It just asks you who you want to support. Isn't that the most fundamental question we should be asking? Who do *you* actually want to win?
 
 If democracy is ultimately about consent, then Approval is the ballot that captures consent most directly: not perfect information, but honest information. It asks each voter for one clear boundary between acceptable and unacceptable, then counts that boundary without distortion. That is why, mathematically, it becomes canonical on dichotomous preferences, and why, practically, it remains so compelling in the real world. We may never build a flawless voting system for every possible psychology, but we can choose one that is fair, transparent, strategy-resistant where it matters, and robust under real conditions. Approval does not promise utopia. It promises clarity, and in collective decision-making, clarity is power.
-
