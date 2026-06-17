@@ -13,7 +13,6 @@ related_posts: true
 pretty_table: true
 exclude_appendix_from_word_count: true
 exclude_footnotes_from_word_count: true
-tikzjax: true
 bibliography: voting.bib
 thumbnail: /assets/img/1984.gif
 authors:  
