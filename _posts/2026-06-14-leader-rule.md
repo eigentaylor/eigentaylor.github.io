@@ -49,7 +49,7 @@ In [my last post](../av-stratproof){:target="_blank"}, we discussed how Approval
 >
 > 1. approve all candidates that you prefer strictly to the leader
 > 2. only approve the leader if you prefer them to the challenger.
-> 3. Do not approve of any other candidates (i.e. those you like less than the leader).
+> 3. do not approve of any other candidates (i.e. those you like less than the leader).
 
 To phrase it another way, if you prefer the leader to the challenger, approve of the leader and all candidates you prefer to the leader (draw your line right under the leader). If you prefer the challenger to the leader, approve only the candidates you prefer to the leader, and do not approve of the leader (draw your line right above the leader). The line is always right above or right below the leader.
 
