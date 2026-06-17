@@ -22,6 +22,10 @@ module Jekyll
       input.to_s.gsub(/<d-footnote\b[^>]*>.*?<\/d-footnote>/im, '')
     end
 
+    def content_without_proof_blocks(input)
+      input.to_s.gsub(/<details\b[^>]*data-proof-disclosure[^>]*>.*?<\/details>/im, '')
+    end
+
     def words_without_appendix(input)
       main_content = content_without_appendix(input)
       count_words_in_html(main_content)

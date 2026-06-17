@@ -84,6 +84,9 @@ pagination:
                       {% if post.exclude_footnotes_from_word_count %}
                         {% assign filtered_content = filtered_content | content_without_footnotes %}
                       {% endif %}
+                      {% if post.exclude_proof_blocks_from_word_count %}
+                        {% assign filtered_content = filtered_content | content_without_proof_blocks %}
+                      {% endif %}
                       {% assign word_count = filtered_content | number_of_words %}
                       {% assign read_time = word_count | divided_by: 180 | plus: 1 %}
                     {% else %}
@@ -132,6 +135,9 @@ pagination:
       {% endif %}
       {% if post.exclude_footnotes_from_word_count %}
         {% assign filtered_content = filtered_content | content_without_footnotes %}
+      {% endif %}
+      {% if post.exclude_proof_blocks_from_word_count %}
+        {% assign filtered_content = filtered_content | content_without_proof_blocks %}
       {% endif %}
       {% assign word_count = filtered_content | number_of_words %}
       {% assign read_time = word_count | divided_by: 180 | plus: 1 %}
