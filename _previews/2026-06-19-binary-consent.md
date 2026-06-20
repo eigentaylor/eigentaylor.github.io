@@ -50,6 +50,9 @@ My problem with the idea that acceptability is determined by utility is that I d
 
 [Laslier's leader rule](../leader-rule/){:target="_blank"} <d-cite key="laslier2009leaderRule"></d-cite> proves the best response to a particular probability model is to define your threshold $\tau$ to be equal to the utility of the expected winner, or right above it.
 
+- If you prefer the leader $L$ to the challenger, your approval ballot is $$\{X:u(X)\geq u(L)\}$$
+- If you prefer the challenger to the leader $L$, your approval ballot is $$\{X:u(X)>u(L)\}$$
+
 Consider a voter who rates candidate A as a 5/5, candidate B has a 4/5, candidate C as a 1/5, and candidate D as a 0/5.
 
 If Candidate A is the expected winner, then the leader rule says there's no reason to compromise and approve anyone else. The voter has leverage, and no need to compromise. The threshold in this scenario is very high, because their expected outcome is very positive.
