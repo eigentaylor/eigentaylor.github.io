@@ -74,7 +74,7 @@ At risk of sounding like I'm telling you to eat your vegetables before dessert, 
 
 To steal a quote from a fellow [advocate of Approval voting](https://whelmedcitizen.substack.com),
 
-> "Approval is not less expressive, it's more honest. RCV/STAR let you say more. Approval lets you mean what you say -- Approval is the only system where support is real. You don't have to choose like under Plurality. No rankings you don't mean. No scores you have to game." --Amanda Mahlendorf
+> "Approval is not less expressive, it's more honest<d-footnote>By "honest", we mean that an approval means exactly what it says: if you approve a candidate, you are counted in their approval tally exactly as cast, with no reinterpretation or weighting. This contrasts with systems like RCV or STAR, where the meaning of your vote can be context-dependent and may be interpreted in a way that you did not intend. I intend to write a full post on this topic.</d-footnote>. RCV/STAR let you say more. Approval lets you mean what you say -- Approval is the only system where support is real. You don't have to choose like under Plurality. No rankings you don't mean. No scores you have to game." --Amanda Mahlendorf
 
 Approval collects a simpler signal, but treats it with full fidelity: if a voter approves a candidate, that approval is counted exactly as cast, without any need for complex tabulation, weighting, or runoff logic. There is no ambiguity about what the voter meant, and no opportunity for the system to "reinterpret" the ballot in a way that could produce counterintuitive or seemingly unfair outcomes. The winner is the candidate who could convince the most voters to express that signal, from which there is no room for debate or reinterpretation: the ballots speak for themselves.
 
