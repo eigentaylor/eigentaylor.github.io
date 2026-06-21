@@ -32,6 +32,7 @@ toc:
     subsections:
       - name: Ballot Design
       - name: Cognitive Simplicity
+      - name: System Agreement
       - name: Pass-Fail Criteria
       - name: Strategy is Minimal
       - name: It Fits the Condorcet Ideal
@@ -42,21 +43,21 @@ toc:
 
 ## Introduction
 
-For a while now, Condorcet methods have gotten the short end of the stick in the reform space. The distaster known as [Ranked Choice Voing](../ditch-rcv/){:target="_blank"} has dominated the space as a whole, but particularly ranked ballots. Cardinal methods like Approval and STAR have been the main challengers, and while the Equal Vote Coalition "approves" of their flavor of Condorcet ("Ranked Robin"), Condorcet has not gained much traction.
+For a while now, Condorcet methods have gotten the short end of the stick in the reform space. The disaster known as [Ranked Choice Voting](../ditch-rcv/){:target="_blank"} has dominated the space as a whole, but particularly ranked ballots. Cardinal methods like Approval and STAR have been the main challengers, and while the Equal Vote Coalition "approves" of their flavor of Condorcet ("Ranked Robin"), Condorcet has not gained much traction.
 
 Now, if you are reading this blog, you probably know I am an Approval die-hard. I think it is [the most practical and effective reform we should be supporting right now](../approval-only/){:target="_blank"}. However, I would like to share my positive thoughts here in this post.
 
-I first heard about the system proposed by Better Choices through a bill in Ohio which would implement a "Top 3 Condorcet" system, where a jungle primary would be held and the top three candidates would advance to a final election conducted using a kind of Condorcet method. But before we start flying into the jargon, let's ensure we are clear about what the hell I'm even talking about.
+I first heard about the system proposed by Better Choices through a bill in Ohio which would implement a "Top 3 Condorcet" system, where a jungle primary would be held and the top three candidates would advance to a final election conducted using a kind of Condorcet method. But before we start getting too lost into the jargon, let's ensure we are clear about what the hell I'm even talking about.
 
 ### Condorcet Methods
 
 A Condorcet winner is a candidate who would win a head-to-head matchup against every other candidate. Simple, right? I have [my issues with the idea of the Condorcet winner as a measure of "consensus"](../why-condorcet/){:target="_blank"}, but *in practice* all "good" methods (Approval, STAR, Score, etc.) are going to agree on the best candidate, who is likely a Condorcet winner.
 
-A Condorcet method is just a voting system that usually takes in a ranked ballot and then evaluates the head-to-head matchups between every pair of candidates to determine if there is a Condorcet winner. Some are complex, some are simple, some are a single method that is designed to pick the Condorcet winner if one exists, and some just say "elect the Condorcet winner if they exist, else do this other thing".
+A Condorcet method is just a voting system (that usually takes in a ranked ballot) and then evaluates the head-to-head matchups between every pair of candidates to determine if there is a Condorcet winner. Some are complex, some are simple, some are a single method that is designed to pick the Condorcet winner if one exists, and some just say "elect the Condorcet winner if they exist, else do this other thing".
 
 ### Jungle Primaries
 
-A jungle primary is a type of primary election in which all candidates for a given office compete in a single primary, regardless of party affiliation. The idea is to force candidates to be held accountable to all voters, rather than just those from their party. The *hope* is that this would moderate candidates and third parties. This has not happened in the slightest because voters can still only choose a single candidate.
+A jungle primary is a type of primary election in which all candidates for a given office compete in a single primary, regardless of party affiliation. The idea is to force candidates to be held accountable to all voters, rather than just those from their party<d-footnote>For example, in a state like California, the election is often decided entirely in the Democratic primary, with Republicans getting effectively no say in the outcome.</d-footnote>. The *hope* is that this would moderate candidates and boost third parties. This has not happened in the slightest because voters can still only choose a single candidate.
 
 When votes are a scarce resource, this leads to rallying behind the most viable candidate from your favorite major party, and rampant vote splitting from voters who are naive enough to support less popular candidates.
 
@@ -94,7 +95,7 @@ This is also nice because this should make it much easier to implement on existi
 
 ### Cognitive Simplicity
 
-The choice of three is a very good move, I think. A two-candidate runoff is very nice because the race is very cognitively simple. You just pick who you like better, and it means you get more time to decide who you think is genuinely better. It's fully strategyproof, and your vote absolutely counts.
+The choice of three is a very good move, I think. A two-candidate runoff is very nice because the race is very cognitively simple. You just pick who you like better, and it means you get more time to decide who you think is genuinely better. It's fully strategyproof (in the runoff step) <d-cite key="may1952simpleMajority"></d-cite>, and your vote absolutely counts.
 
 With three candidates, it's only *slightly* worse in that respect. Three is not *too many*. Four is kind of pushing it, in my view. Three also means that voting in each matchup is entirely tractable! Asking voters directly "who do you prefer out of these two" is still a simple question. There's still potential strategic considerations but, at the moment, it seems very minimal.
 
@@ -106,21 +107,25 @@ Further, when restricted to three candidates, minimax agrees with Ranked Pairs, 
 
 ### Pass-Fail Criteria
 
-Condorcet does not, in general, satisfy the participation criteron. That is, participating in an election might end up giving you a *worse* outcome than if you had abstained. However, this only occurs with four or more candidates.
+Condorcet does not, in general, satisfy the participation criterion. That is, participating in an election might end up giving you a *worse* outcome than if you had abstained. However, this *generally* only occurs with four or more candidates.
 
-With three candidates, there are no participation failures. No monotonicity violation like in RCV either. Further, when outside of a cycle, the system will satisfy [IIA](../iia/){:target="_blank"}!
+With three candidates (or at least the system being considered here), there are no participation failures. No monotonicity violation like in RCV either. You also get reversal-symmetry<d-cite key="brandt2025condorcet"></d-cite>. Further, when outside of a cycle, the system will satisfy [IIA](../iia/){:target="_blank"}!
+
+Condorcet, in general, can fail some desirable criteria, but minimax is actually quite robust in the three candidate case. This system essentially funnels down Condorcet into the scenario where it really shines.
 
 ### Strategy is Minimal
 
-In practice, voting is pretty straightforward. If you have a favorite, you vote for them in both their matchups. Then you can *also* vote for your second choice against your third choice. Easy-peasy.
+(in the runoff step)
+
+In practice, voting in this system is pretty straightforward. If you have a favorite, you vote for them in both their matchups. Then you can *also* vote for your second choice against your third choice. Easy-peasy.
 
 No system is going to be strategyproof in general, but I think Condorcet methods like this are about as robust as you can get. I do not see any realistic case where a voter has serious incentive to lie on their ballot. Especially when there isn't a cycle.
 
 The nice thing about minimax is that it's fairly robust to attempts to throw a cycle. If a Condorcet winner exists, then suppose a coalition purposefully buries them in their weakest matchup. If they are *somehow* able to do this in a way that creates a cycle, then most likely that weakest win of the Condorcet winner becomes the weakest loss of the whole election. Hence the winner is likely unchanged. The coalition would need to be coordinated and large enough to turn it into a strong loss.
 
-If, let's say instead, a coalition tries to manipulate the outcome to change the winner from the honest Condorcet winner Alice to Bob (who won his matchup against Clark), then such a voter would need to make Alice lose to Bob. But that means that voters who previously *honestly* voted for Alice over Bob, would need to lie and vote for Bob over Alice. Which would... give those voters a strictly worse outcome. Why would they do this?
+If, let's say instead, a coalition tries to manipulate the outcome to change the winner from the honest Condorcet winner Alice to Bob (who won his matchup against Clark and would become the new Condorcet winner), then voters in that coalition would need to make Alice lose to Bob. But that means that voters who *honestly* voted for Alice over Bob, would need to lie and vote for Bob over Alice. Which would... give those voters a strictly worse outcome. Why would they do this?
 
-Condorcet methods, particularly minimax, are just remarkably robust in practice. There's seriously no realistic incentive to lie in such a method. It's a genuine strength I appreciate, even as an Approval voting enthusiast.
+Condorcet methods, particularly minimax, are just remarkably robust in practice. There's seriously no realistic incentive to lie in such a method in my view. It's a genuine strength I appreciate of Condorcet, even as an Approval voting enthusiast.
 
 ### It Fits the Condorcet Ideal
 
@@ -146,13 +151,13 @@ More candidates will run, there will be more spoilers and confusion, and the ele
 
 The issue with jungle primaries *is not that the runoff is between two candidates*. The issue is the vote splitting! Any proposal which does not fix this does not have my endorsement.
 
-If, instead, Better Choices were to use Approval voting in the first round, then I think this could be one of the most robust systems currently in conversation. *Seriously*.
+If, instead, Better Choices were to use Approval voting in the first round, then I think this could be one of (if not *the*) most robust systems currently in conversation. *Seriously*.
 
 Cursory VSE simulations have been somewhat favorable to this system. I may have to correct this paragraph of the post later, but it appears that Approval Top 2 outperforms Choose-one Top 3 Condorcet, but Approval Top 3 Condorcet potentially outperforms both. However, I'm not yet confident enough in the code I have to make definitive claims, and further testing and validation are needed before drawing firm conclusions.
 
 ## Conclusion
 
-This system has potential, but only if it addresses the fundamental issue of vote splitting in the primary by using Approval voting. Without this change, the system is going to be a downgrade from any system that uses Approval in the process. That is, going to Approval Top 2 instead would be a much stronger improvement than *only* changing the runoff step.
+This system has potential, but only if it addresses the fundamental issue of vote splitting in the primary by using Approval voting. Without this change, the system is going to be a downgrade from any system that uses Approval in the process. That is, going to Approval Top 2 instead would be a much stronger improvement than *only* changing the runoff step.<d-footnote>Is it a step in the right direction? I'm skeptical. I think if we do this and leave the primary as a choose-one election, the fundamental issue of vote splitting delivering poor outcomes will remain, one more slot or not. And, with more slots means more candidates running, which may exacerbate the issues with the primary even more. I firmly require the jungle primary to be held under Approval, or else I think the system will fail to address the core problem effectively (and potentially delay meaningful reform which could fix the fundamental issue of vote splitting).</d-footnote>
 
 What remains to be seen for me is
 
