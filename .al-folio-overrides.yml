@@ -4,6 +4,8 @@
 # Run `bundle exec al-folio upgrade overrides audit` to review upstream diffs before gem upgrades.
 
 overrides:
+  assets/js/distillpub:
+    - overrides.js
   _includes:
     - distill_scripts.liquid
     - header.liquid
