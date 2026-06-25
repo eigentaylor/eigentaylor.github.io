@@ -15,6 +15,7 @@ pretty_table: true
 exclude_appendix_from_word_count: true
 exclude_footnotes_from_word_count: true
 exclude_proof_blocks_from_word_count: true
+citation: true
 bibliography: voting.bib
 chart:
   plotly: true
