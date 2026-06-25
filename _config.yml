@@ -295,6 +295,7 @@ defaults:
       preview_redirect: true
       exclude_appendix_from_word_count: true
       collapse_appendix: false
+      citation: true
 
 sass:
   style: compressed
