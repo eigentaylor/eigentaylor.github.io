@@ -286,6 +286,11 @@ defaults:
     values:
       sitemap: false
   - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      citation: true
+  - scope:
       path: "_previews"
       type: "previews"
     values:
@@ -298,7 +303,7 @@ defaults:
       exclude_footnotes_from_word_count: true
       exclude_proof_blocks_from_word_count: true
       collapse_appendix: false
-      citation: true
+      citation: false
 
 sass:
   style: compressed
