@@ -102,22 +102,22 @@
         {% if page.exclude_appendix_from_word_count %}
           {%- assign no_appendix_word_count = page.content | content_without_appendix | number_of_words -%}
           <script>
-            const noAppendixMinutes = ({{ no_appendix_word_count }} / 180) + 1;
-            console.log('Read time (without appendix): ' + noAppendixMinutes.toFixed(2) + ' min read');
+            const appendixMinutes = ({{ full_word_count }} - {{ no_appendix_word_count }}) / 180;
+            console.log('Read time (appendix): ' + appendixMinutes.toFixed(2) + ' min read');
           </script>
         {% endif %}
         {% if page.exclude_footnotes_from_word_count %}
           {%- assign no_footnotes_word_count = page.content | content_without_footnotes | number_of_words -%}
           <script>
-            const noFootnotesMinutes = ({{ no_footnotes_word_count }} / 180) + 1;
-            console.log('Read time (without footnotes): ' + noFootnotesMinutes.toFixed(2) + ' min read');
+            const footnotesMinutes = ({{ full_word_count }} - {{ no_footnotes_word_count }}) / 180;
+            console.log('Read time (footnotes): ' + footnotesMinutes.toFixed(2) + ' min read');
           </script>
         {% endif %}
         {% if page.exclude_proof_blocks_from_word_count %}
           {%- assign no_proof_word_count = page.content | content_without_proof_blocks | number_of_words -%}
           <script>
-            const noProofMinutes = ({{ no_proof_word_count }} / 180) + 1;
-            console.log('Read time (without proof blocks): ' + noProofMinutes.toFixed(2) + ' min read');
+            const proofMinutes = ({{ full_word_count }} - {{ no_proof_word_count }}) / 180;
+            console.log('Read time (proof blocks): ' + proofMinutes.toFixed(2) + ' min read');
           </script>
         {% endif %}
         {%- assign _filter_count = 0 -%}
