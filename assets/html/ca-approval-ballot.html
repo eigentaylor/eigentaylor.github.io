@@ -18,11 +18,11 @@
       background: white;
     }
 
-    /* ── header ── */
+    /* ── light header ── */
     .ballot-header {
-      background: #f5f5f5;
-      border-bottom: 1px solid #ddd;
-      color: #444;
+      background: #ddeaf3;
+      border-bottom: 2px solid #a8c4d8;
+      color: #1a3a5c;
       padding: 10px 28px;
       font-size: 11px;
       font-weight: bold;
@@ -32,8 +32,8 @@
 
     /* ── mode toggle ── */
     .mode-bar {
-      background: white;
-      border-bottom: 1px solid #e0e0e0;
+      background: #f3f6f9;
+      border-bottom: 1px solid #d6dde4;
       padding: 9px 28px;
       display: flex;
       align-items: center;
@@ -43,7 +43,7 @@
 
     .mode-label {
       font-size: 11px;
-      color: #888;
+      color: #666;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -54,38 +54,36 @@
       padding: 5px 13px;
       font-size: 11.5px;
       font-weight: bold;
-      border: 1.5px solid #bbb;
+      border: 2px solid #3a6ea5;
       border-radius: 4px;
       cursor: pointer;
       background: white;
-      color: #555;
-      transition: background 0.15s, color 0.15s, border-color 0.15s;
+      color: #3a6ea5;
+      transition: background 0.15s, color 0.15s;
       line-height: 1.4;
     }
 
     .mode-btn.active {
-      background: #333;
-      border-color: #333;
+      background: #3a6ea5;
       color: white;
     }
 
     .mode-btn:hover:not(.active) {
-      background: #f0f0f0;
-      border-color: #999;
+      background: #e6eef6;
     }
 
     /* ── instruction banner ── */
     .instruction {
-      background: #fafafa;
-      border-bottom: 1px solid #e8e8e8;
-      padding: 8px 28px;
+      background: #f0f6fb;
+      border-left: 4px solid #3a6ea5;
+      padding: 8px 18px 8px 14px;
       font-size: 12px;
-      color: #555;
+      color: #333;
       line-height: 1.55;
     }
 
     .instruction strong {
-      color: #222;
+      color: #1a3a5c;
     }
 
     /* ── candidate rows ── */
@@ -111,9 +109,10 @@
       background: #ffffff;
     }
 
-    /* hover: darken the bubble border to hint it's clickable */
+    /* hover: tint the bubble to hint it's clickable */
     .candidate-row:hover .bubble:not(.filled) {
-      border-color: #555;
+      border-color: #3a6ea5;
+      background: #e8f2fa;
     }
 
     .candidate-name {
@@ -144,8 +143,8 @@
 
     /* ── tally ── */
     .tally-bar {
-      background: #f5f5f5;
-      border-top: 1px solid #e0e0e0;
+      background: #f3f6f9;
+      border-top: 1px solid #d6dde4;
       padding: 10px 28px;
       font-size: 12.5px;
       color: #444;
@@ -158,16 +157,16 @@
 
     .tally-prefix {
       font-weight: bold;
-      color: #222;
+      color: #1a3a5c;
       flex-shrink: 0;
     }
 
     .tally-names {
-      color: #444;
+      color: #333;
     }
 
     .tally-bar.empty {
-      color: #aaa;
+      color: #999;
       font-style: italic;
     }
   </style>
