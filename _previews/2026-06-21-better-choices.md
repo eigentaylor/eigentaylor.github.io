@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: Better Choices Has a Neat Idea
-date: 2026-06-21
+date: 2026-06-26
 description: What I like about the system proposed by Better Choices, and my concerns.
 giscus_comments: true
 importance: 3
@@ -21,7 +21,7 @@ authors:
   - name: Taylor Eigen Fisher
     url: ""
     affiliations:
-      name: None
+      name: Equal Vote Coalition (volunteer)
 toc:
   - name: Introduction
     subsections:
@@ -116,6 +116,14 @@ This is also nice because this should make it much easier to implement on existi
 
 The only question that remains is if the voters will understand how these head-to-head matchups translate to a winner. Will they be confused and expect the one who wins any matchup by the most is crowned the winner? Or will they understand the Condorcet principle at play?
 
+### So Much Better Than RCV
+
+I wish it didn't *need* to be said, but it does. Compared to this, RCV is legitimately awful. The practical drawbacks of RCV are not as blatant with only three candidates (you only effectively need to keep track of nine tallies with three candidates), but we have seen RCV fail utterly in elections with three viable candidates, such as [Alaska and Burlington](../ditch-rcv/){:target="_blank"}.
+
+If they had used this system instead, a number of major issues would have been prevented. For those who aren't anti-RCV-pilled yet, Condorcet is what Fairvote *tells you RCV is, but actually isn't*.
+
+In this system, you get to vote for your favorite, but you also get to 
+
 ### Cognitive Simplicity
 
 The choice of three is a very good move, I think. A two-candidate runoff is very nice because the race is very cognitively simple. You just pick who you like better, and it means you get more time to decide who you think is genuinely better. It's fully strategyproof (in the runoff step) <d-cite key="may1952simpleMajority"></d-cite>, and your vote absolutely counts.
@@ -176,9 +184,9 @@ The issue with jungle primaries *is not that the runoff is between two candidate
 
 If, instead, Better Choices were to use Approval voting in the first round, then I think this could be one of (if not *the*) most robust systems currently in conversation. *Seriously*.
 
-Cursory VSE simulations have been somewhat favorable to this system. I may have to correct this paragraph of the post later, but it appears that Approval Top-2 outperforms Choose-one Top-3 Condorcet, but Approval Top-3 Condorcet potentially outperforms both. However, I'm not yet confident enough in the code I have to make definitive claims, and further testing and validation are needed before drawing firm conclusions.
+Cursory VSE simulations have been very favorable to this system. I may have to correct this paragraph of the post later, but it appears that Approval Top-2 outperforms Choose-one Top-3 Condorcet, but Approval Top-3 Condorcet potentially outperforms both. However, I'm not yet confident enough in the code I have to make definitive claims, and further testing and validation are needed before drawing firm conclusions.
 
-My other major concern is the Condorcet cycle. What happens when a cycle necessarily occurs. Unlike a Choose-one election where the only tie is a near-zero probability of an exact 50:50 split in the vote, a sort of "tie" in this method would involve all candidates winning and losing exactly one matchup. When the tiebreaker is used, will voters accept that results? Or will it undermine the legitimacy of the election? The empirical rarity of cycles does not have me convinced that such an event could be as catastrophic to the system as [Burlington 2009 or Alaska 2022 were to RCV](../ditch-rcv/){:target="_blank"}.
+My other major concern is the Condorcet cycle. What happens when a cycle necessarily occurs. Unlike a top-2 election where the only tie is a literal split in the vote, a sort of "tie" in this method would involve all candidates winning and losing exactly one matchup. When the tiebreaker is used, will voters accept that results? Or will it undermine the legitimacy of the election? The empirical rarity of cycles does not have me convinced that such an event could be as catastrophic to the system as [Burlington 2009 or Alaska 2022 were to RCV](../ditch-rcv/){:target="_blank"}.
 
 ## Conclusion
 
@@ -190,6 +198,8 @@ What remains to be seen for me is
 2. Will this proposal actually *play* to voters. Will voters vote "yes" if it's on the ballot? Will they like it enough to keep it around if it passes? Will politicians support and push for it, without it becoming a partisan disaster like RCV has been?
 3. Will this system be able to weather Condorcet cycles in a way that maintains voter confidence and legitimacy?
 
-At the moment, Approval Top 2 seems like a much safer system to back. The fact it's *already* being used in St. Louis <d-cite key="sargent2025stlouis"></d-cite> is a fantastic thing to be able to point to, advocacy-wise. I feel like Approval is a safer bet, potentially just based on simplicity.
+As I've said before, basically all "good" voting methods are going to agree most of the time, and will largely all defuse polarization and encourage more representative candidates. With that in mind, I think the most practical and voter-friendly system is very likely the best one. I think Approval Top-2 is tested, excellent, and one of the most voter-friendly systems. But I could see an argument that by taking in one more candidate from the Approval jungle (which would reduce the number of lockouts), this slightly more expressive--but still grounded and digestible--general election ballot could make a more *palatable* reform that people can get excited about.
+
+At the moment, Approval Top-2 seems like a much safer system to back. The fact it's *already* being used in St. Louis <d-cite key="sargent2025stlouis"></d-cite> is a fantastic thing to be able to point to, advocacy-wise.
 
 However, I *do* genuinely like this system. I hope that Better Choices decides to go with Approval voting in the first round, and then I would consider this a top-tier method (should it prove politically viable). I am absolutely keeping my eye on this.
