@@ -47,7 +47,7 @@ For a while now, Condorcet methods have gotten the short end of the stick in the
 
 Now, if you are reading this blog, you probably know I am an Approval die-hard. I think it is [the most practical and effective reform we should be supporting right now](../approval-only/){:target="_blank"}. However, I would like to share my positive thoughts here in this post.
 
-I first heard about the system proposed by Better Choices through a bill in Ohio which would implement a "Top 3 Condorcet" system, where a jungle primary would be held and the top three candidates would advance to a final election conducted using a kind of Condorcet method. But before we start getting too lost into the jargon, let's ensure we are clear about what the hell I'm even talking about.
+I first heard about the system proposed by Better Choices through a bill in Ohio which would implement a "Top-3 Condorcet" system, where a jungle primary would be held and the top three candidates would advance to a final election conducted using a kind of Condorcet method. But before we start getting too lost into the jargon, let's ensure we are clear about what the hell I'm even talking about.
 
 ### Condorcet Methods
 
@@ -57,7 +57,13 @@ A Condorcet method is just a voting system (that usually takes in a ranked ballo
 
 ### Jungle Primaries
 
-A jungle primary is a type of primary election in which all candidates for a given office compete in a single primary, regardless of party affiliation. The idea is to force candidates to be held accountable to all voters, rather than just those from their party<d-footnote>For example, in a state like California, the election is often decided entirely in the Democratic primary, with Republicans getting effectively no say in the outcome.</d-footnote>. The *hope* is that this would moderate candidates and boost third parties. This has not happened in the slightest because voters can still only choose a single candidate.
+I just [published a post about California's Top-2 system](../ca-top-2/){:target="_blank"} in which I talk about the issues with jungle primaries and vote splitting. The fundamental idea is this:
+
+> Put all candidates on a single primary ballot, from every party, let people vote, and then the top vote-getters advance to a final runoff.
+
+This is technically a "nonpartisan blanket primary" but that's so wordy, let's just call it a "jungle".
+
+The idea is to force candidates to be held accountable to all voters, rather than just those from their party<d-footnote>For example, in a state like California, the election would often be decided entirely in the Democratic primary, with Republicans getting effectively no say in the outcome.</d-footnote>. The *hope* is that this would elevate consensus candidates with low visibility and boost third parties. This has not happened in the slightest because voters can still only choose a single candidate.
 
 When votes are a scarce resource, this leads to rallying behind the most viable candidate from your favorite major party, and rampant vote splitting from voters who are naive enough to support less popular candidates.
 
