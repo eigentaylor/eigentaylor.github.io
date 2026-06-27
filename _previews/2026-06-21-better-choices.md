@@ -124,6 +124,8 @@ With three candidates, it's only *slightly* worse in that respect, in my opinion
 
 I've been skeptical of runoffs in the past, due to potential strategy concerns <d-cite key="fishburnBrams1981runoff"></d-cite>. However, in practice, I've been convinced that Approval with a runoff in particular is quite robust, since it lets voters feel safer being more generous with their approvals than they might otherwise be. The runoff step also allows for a real choice to distinguish between the options for all voters, even if they didn't distinguish previously.
 
+I've also shared many issues with Condorcet methods in past posts. However, I believe the restriction of the Condorcet mechanism to the runoff step, among 3 candidates, essentially quells all of my concerns. I've always *liked* Condorcet in the abstract, and this feels like the *right way to do it*.
+
 ### System Agreement
 
 Further, when restricted to three candidates, minimax agrees with Ranked Pairs, Schulze, and other top-tier Condorcet methods. Ranked Pairs and Schulze are robust, but harder to explain. The fact the very simple "least bad loss" system agrees with them is very satisfying to me.
