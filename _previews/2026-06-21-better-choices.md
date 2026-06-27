@@ -102,9 +102,9 @@ Alright, I'm just gonna kind of nerd out here.
 
 ### Ballot Design
 
-I have many problems with ranked methods. But one that I've come to appreciate is that voters have no idea how their ranked ballot is going to be counted. If you place a bunch of ranked ballots in front of people and say "choose a winner", they're probably going to do something of the following
+I have many problems with ranked methods <d-cite key="mit2023maineRcv"></d-cite>. But one that I've come to appreciate is that voters have no idea how their ranked ballot is going to be counted. If you place a bunch of ranked ballots in front of people and say "choose a winner", they're probably going to do one of the following
 
-1. A points system (Borda). Top rank gets a certain number of points, the second rank gets fewer points, and so on down the line. Most points wins.
+1. A points system (Borda). Top rank gets a certain number of points, the second rank gets fewer points, and so on down the line. Most points wins.<d-footnote>I once tried to describe Condorcet to a friend (who is very intelligent) and they immediately invented Borda on the spot.</d-footnote>
 2. Vote transferring (RCV). Eliminate candidates and transfer votes.
 3. Pairwise comparison (Condorcet). Maybe a clever voter might ask "what if we just compare each candidate head-to-head against every other candidate and see who wins the most matchups?"
 
