@@ -43,7 +43,7 @@ toc:
 
 ## Introduction
 
-For a while now, Condorcet methods have gotten the short end of the stick in the reform space. The disaster known as [Ranked Choice Voting](../ditch-rcv/){:target="_blank"} has dominated the space as a whole, but particularly ranked ballots. Cardinal methods like Approval and STAR have been the main challengers, and while the Equal Vote Coalition "approves" of their flavor of Condorcet ("Ranked Robin"), Condorcet has not gained much traction.
+For a while now, Condorcet methods have gotten the short end of the stick in the reform space. The disaster known as [Ranked Choice Voting](../ditch-rcv/){:target="_blank"} has dominated the space as a whole, but particularly ranked ballots. Cardinal methods like Approval and STAR have been the main challengers, and while the Equal Vote Coalition "approves" of their flavor of Condorcet ("Ranked Robin"), Condorcet has not yet gained much traction.
 
 Now, if you are reading this blog, you probably know I am an Approval die-hard. I think it is [the most practical and effective reform we should be supporting right now](../approval-only/){:target="_blank"}. However, I would like to share my positive thoughts here in this post.
 
@@ -67,7 +67,7 @@ The idea is to force candidates to be held accountable to all voters, rather tha
 
 When votes are a scarce resource, this leads to rallying behind the most viable candidate from your favorite major party, and rampant vote splitting from voters who are naive enough to support less popular candidates.
 
-In my view, any system that uses a Choose-one Jungle primary is a non-starter. It's simply *awful*. The issue with the jungle primary is *not* the runoff step, but the vote splitting. However, we will come back to this. First, we should discuss what Better Choices is actually advocating for.
+In my view, [any system that uses a Choose-one Jungle primary is a non-starter](../ca-top-2/){:target="_blank"}. It's simply *awful*. The issue with the jungle primary is *not* the runoff step, but the vote splitting. However, we will come back to this. First, we should discuss what Better Choices is actually advocating for.
 
 ## The Better Choices System
 
@@ -114,17 +114,19 @@ This is one thing I like about Approval: it's not hard to guess that a bubble is
 
 This is also nice because this should make it much easier to implement on existing voting machines, which is something I really like about Approval! Tallying becomes exceptionally simple: it's just three different matchups (six total tallies) instead of one. That's not absurdly overcomplicated.
 
+The only question that remains is if the voters will understand how these head-to-head matchups translate to a winner. Will they be confused and expect the one who wins any matchup by the most is crowned the winner? Or will they understand the Condorcet principle at play?
+
 ### Cognitive Simplicity
 
 The choice of three is a very good move, I think. A two-candidate runoff is very nice because the race is very cognitively simple. You just pick who you like better, and it means you get more time to decide who you think is genuinely better. It's fully strategyproof (in the runoff step) <d-cite key="may1952simpleMajority"></d-cite>, and your vote absolutely counts.
 
-With three candidates, it's only *slightly* worse in that respect. Three is not *too many*. Four is kind of pushing it, in my view. Three also means that voting in each matchup is entirely tractable! Asking voters directly "who do you prefer out of these two" is still a simple question. There's still potential strategic considerations but, at the moment, it seems very minimal.
+With three candidates, it's only *slightly* worse in that respect, in my opinion. Three is not *too many*. Four is kind of pushing it. Three also means that voting in each matchup is entirely tractable! Asking voters directly "who do you prefer out of these two" is still a simple question. There's still potential strategic considerations but, at the moment, it seems very minimal.
 
-I've been skeptical of runoffs in the past, due to potential strategy concerns <d-cite key="fishburnBrams1981runoff"></d-cite>. However, in practice, I've been convinced that Approval with a runoff in particular is quite robust, since it lets voters feel safer being more generous with their approvals than they might otherwise be. The runoff step also allows for a real choice to distinguish between the options for all voters, even if they didn't distinguish previously. The same *somewhat* applies to Choose-one, since it's very possible most voters did not distinguish between the eventual top two winners of the first round.
+I've been skeptical of runoffs in the past, due to potential strategy concerns <d-cite key="fishburnBrams1981runoff"></d-cite>. However, in practice, I've been convinced that Approval with a runoff in particular is quite robust, since it lets voters feel safer being more generous with their approvals than they might otherwise be. The runoff step also allows for a real choice to distinguish between the options for all voters, even if they didn't distinguish previously.
 
 ### System Agreement
 
-Further, when restricted to three candidates, minimax agrees with Ranked Pairs, Schulze, and other Condorcet methods. Ranked Pairs and Schulze are robust, but harder to explain. The fact the very simple "least bad loss" system agrees with them is very satisfying to me.
+Further, when restricted to three candidates, minimax agrees with Ranked Pairs, Schulze, and other top-tier Condorcet methods. Ranked Pairs and Schulze are robust, but harder to explain. The fact the very simple "least bad loss" system agrees with them is very satisfying to me.
 
 ### Pass-Fail Criteria
 
@@ -140,13 +142,13 @@ Condorcet, in general, can fail some desirable criteria, but minimax is actually
 
 In practice, voting in this system is pretty straightforward. If you have a favorite, you vote for them in both their matchups. Then you can *also* vote for your second choice against your third choice. Easy-peasy.
 
-No system is going to be strategyproof in general, but I think Condorcet methods like this are about as robust as you can get. I do not see any realistic case where a voter has serious incentive to lie on their ballot. Especially when there isn't a cycle.
+No system is going to be strategyproof in general, but I think Condorcet methods like this are about as robust as you can get. I do not see any realistic case where a voter has serious incentive to lie on their ballot. Especially when there isn't a cycle. At worst, maybe the expected winner is your second choice, and so you "bury" them by voting for your least favorite over them in that matchup? But that requires helping your least favorite, which is risky.
 
 The nice thing about minimax is that it's fairly robust to attempts to throw a cycle. If a Condorcet winner exists, then suppose a coalition purposefully buries them in their weakest matchup. If they are *somehow* able to do this in a way that creates a cycle, then most likely that weakest win of the Condorcet winner becomes the weakest loss of the whole election. Hence the winner is likely unchanged. The coalition would need to be coordinated and large enough to turn it into a strong loss.
 
 If, let's say instead, a coalition tries to manipulate the outcome to change the winner from the honest Condorcet winner Alice to Bob (who won his matchup against Clark and would become the new Condorcet winner), then voters in that coalition would need to make Alice lose to Bob. But that means that voters who *honestly* voted for Alice over Bob, would need to lie and vote for Bob over Alice. Which would... give those voters a strictly worse outcome. Why would they do this?
 
-Condorcet methods, particularly minimax, are just remarkably robust in practice. There's seriously no realistic incentive to lie in such a method in my view. It's a genuine strength I appreciate of Condorcet, even as an Approval voting enthusiast.
+Condorcet methods, particularly minimax, are just remarkably robust in practice. There's seriously no realistic incentive to lie in such a method in my view, even if a theoretical incentive provably exists. It's a genuine strength I appreciate of Condorcet, even as an Approval voting enthusiast.
 
 ### It Fits the Condorcet Ideal
 
@@ -160,31 +162,32 @@ Why would you do this? If you have a favorite, why would you vote against them? 
 
 ## Where I'm Skeptical
 
-As I said before, my biggest issue is the choose-one primary. If this system uses the choose-one primary, we will still be plagued by vote-splitting, spoilers, and potential lockouts<d-footnote>This was a serious concern in the recent 2026 California Governor's race, where there was at one point a serious chance of the runoff being two Republicans. Regardless of your political stance, a Republican governor of California is an objectively unrepresentative choice in 2026.</d-footnote>.
+As I said before, my biggest issue is the choose-one primary. If this system uses the choose-one primary, we will still be plagued by vote-splitting, spoilers, and won't be allowing a [nursery effect for broadly acceptable candidates](../ca-top-2/){:target="_blank"} (see this post for more details on all my issues with a choose-one jungle).
 
-There will be no nursery effect where moderates and third parties can gain enough support to ever make it into the runoff. Just increasing the number of candidates you take won't change the fundamental dynamics. Instead of the race being between *three* serious candidates and plagued by spoilers (as we have seen in the top 2 system), we will see the race expand to four serious candidates and likely even more spoilers <d-cite key="cox1994sntv"></d-cite>.
+Just increasing the number of candidates you take won't change the fundamental dynamics. Instead of the race being between *three* serious candidates and plagued by spoilers (as we have seen in the top 2 system), we will likely see the race expand to four serious candidates--split among the various internal factions of the two major parties--and likely even more spoilers <d-cite key="cox1994sntv"></d-cite>.
 
-This is just what a choose-one multi-winner election with $M$ seats *does*. You get a Duvergerian abandonment of anyone outside of the top $M+1$ candidates, as strategic voters concentrate their support on the leading candidates to avoid wasting their votes.
+This is just what a choose-one multi-winner election with $M$ seats *does*. You get a Duvergerian abandonment of anyone outside of the top $M+1$ candidates, as strategic voters concentrate their support on the leading candidates to avoid wasting their votes. More candidates will run, there will be more spoilers and confusion, and the election will still be chaotic, strategic, and partisan, as voters rally behind the most established major party candidates who are perceived as the safest choices.
 
-In California, where Better Choices seems to want to implement their system, the 2026 Governor's race has 61 candidates on the ballot (many of which had dropped out). Are you trying to tell me there are going to be *fewer* candidates running if the number of potential winners *expands*?
-
-More candidates will run, there will be more spoilers and confusion, and the election will still be chaotic, strategic, and partisan, as voters rally behind the most established major party candidates who are perceived as the safest choices.
+The only thing that will be fixed is the lockout problem. But, diversity does not necessarily equal a competitive election (in fact, it can cause the opposite). And I much prefer a competitive election with a real choice than a foregone conclusion full of diversity.
 
 The issue with jungle primaries *is not that the runoff is between two candidates*. The issue is the vote splitting! Any proposal which does not fix this does not have my endorsement.
 
 If, instead, Better Choices were to use Approval voting in the first round, then I think this could be one of (if not *the*) most robust systems currently in conversation. *Seriously*.
 
-Cursory VSE simulations have been somewhat favorable to this system. I may have to correct this paragraph of the post later, but it appears that Approval Top 2 outperforms Choose-one Top 3 Condorcet, but Approval Top 3 Condorcet potentially outperforms both. However, I'm not yet confident enough in the code I have to make definitive claims, and further testing and validation are needed before drawing firm conclusions.
+Cursory VSE simulations have been somewhat favorable to this system. I may have to correct this paragraph of the post later, but it appears that Approval Top-2 outperforms Choose-one Top-3 Condorcet, but Approval Top-3 Condorcet potentially outperforms both. However, I'm not yet confident enough in the code I have to make definitive claims, and further testing and validation are needed before drawing firm conclusions.
+
+My other major concern is the Condorcet cycle. What happens when a cycle necessarily occurs. Unlike a Choose-one election where the only tie is a near-zero probability of an exact 50:50 split in the vote, a sort of "tie" in this method would involve all candidates winning and losing exactly one matchup. When the tiebreaker is used, will voters accept that results? Or will it undermine the legitimacy of the election? The empirical rarity of cycles does not have me convinced that such an event could be as catastrophic to the system as [Burlington 2009 or Alaska 2022 were to RCV](../ditch-rcv/){:target="_blank"}.
 
 ## Conclusion
 
-This system has potential, but only if it addresses the fundamental issue of vote splitting in the primary by using Approval voting. Without this change, the system is going to be a downgrade from any system that uses Approval in the process. That is, going to Approval Top 2 instead would be a much stronger improvement than *only* changing the runoff step.<d-footnote>Is it a step in the right direction? I'm skeptical. I think if we do this and leave the primary as a choose-one election, the fundamental issue of vote splitting delivering poor outcomes will remain, one more slot or not. And, with more slots means more candidates running, which may exacerbate the issues with the primary even more. I firmly require the jungle primary to be held under Approval, or else I think the system will fail to address the core problem effectively (and potentially delay meaningful reform which could fix the fundamental issue of vote splitting).</d-footnote>
+This system has potential, but only if it addresses the fundamental issue of vote splitting in the primary by using Approval voting. Without this change, the system is going to be a downgrade from any system that uses Approval in the process. That is, going to Approval Top-2 instead would be a much stronger improvement than *only* changing the runoff step.<d-footnote>Is it a step in the right direction? I'm skeptical. I think if we do this and leave the primary as a choose-one election, the fundamental issue of vote splitting delivering poor outcomes will remain, one more slot or not. And, with more slots means more candidates running, which may exacerbate the issues with the primary even more. I firmly require the jungle primary to be held under Approval, or else I think the system will fail to address the core problem effectively (and potentially delay meaningful reform which could fix the fundamental issue of vote splitting).</d-footnote>
 
 What remains to be seen for me is
 
 1. Will Better Choices see the necessity of implementing Approval voting in the first round to address the vote-splitting issue?
-2. Will this proposal actually *play* to voters. Will voters vote "yes" if it's on the ballot? Will politicians support and push for it, without it becoming a partisan disaster like RCV has been?
+2. Will this proposal actually *play* to voters. Will voters vote "yes" if it's on the ballot? Will they like it enough to keep it around if it passes? Will politicians support and push for it, without it becoming a partisan disaster like RCV has been?
+3. Will this system be able to weather Condorcet cycles in a way that maintains voter confidence and legitimacy?
 
-At the moment, Approval Top 2 seems like a much better system to back. The fact it's *already* being used in St. Louis <d-cite key="sargent2025stlouis"></d-cite> is a fantastic thing to be able to point to, advocacy-wise. I feel like Approval is a safer bet, potentially just based on simplicity.
+At the moment, Approval Top 2 seems like a much safer system to back. The fact it's *already* being used in St. Louis <d-cite key="sargent2025stlouis"></d-cite> is a fantastic thing to be able to point to, advocacy-wise. I feel like Approval is a safer bet, potentially just based on simplicity.
 
-However, I *do* genuinely like this system. I hope that Better Choices decides to go with Approval voting in the first round, and then I would consider this a top-tier method (should it prove politically viable).
+However, I *do* genuinely like this system. I hope that Better Choices decides to go with Approval voting in the first round, and then I would consider this a top-tier method (should it prove politically viable). I am absolutely keeping my eye on this.
