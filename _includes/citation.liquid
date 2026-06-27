@@ -5,7 +5,7 @@
 if you found this useful, please cite this as:
 
 {% capture citation_quote -%}
-> {{ site.last_name }}, {{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} ({{ page.date | date: "%b %Y" }}). {{ page.title }}. {{ site.url }}{{ page.url }}.
+> {{ site.last_name }}, {{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} ({{ page.date | date: "%b %Y" }}). {{ page.title }}. {{ site.url }}{{ page.url }}. Accessed {{ "now" | date: "%b %d, %Y" }}.
 {%- endcapture %}
 {{ citation_quote | markdownify }}
 
@@ -19,7 +19,8 @@ if you found this useful, please cite this as:
   howpublished = { {{- site.url }}},
   year         = { {{- page.date | date: "%Y" -}} },
   month        = { {{- page.date | date: "%b" -}} },
-  url          = { {{- site.url }}{{ page.url -}} }
+  url          = { {{- site.url }}{{ page.url -}} },
+  urldate      = { {{- "now" | date: "%Y-%m-%d" -}} }
 }
 ```
 {%- endcapture %}
