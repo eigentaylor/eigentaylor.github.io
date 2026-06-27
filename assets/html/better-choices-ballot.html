@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Head-to-Head Ballot</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #eae6e0;
+    }
+
+    .outer {
+      padding: 28px 24px 20px;
+    }
+
+    h2.title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 28px;
+      text-align: center;
+      color: #0d1b3e;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 18px;
+    }
+
+    .instruction {
+      font-size: 12.5px;
+      color: #444;
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+
+    .instruction strong { color: #111; }
+
+    /* ── Desktop column headers ── */
+    .col-headers {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .col-header {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.9px;
+      color: #888;
+      padding: 0 4px;
+    }
+
+    /* ── Paired rows ── */
+    .pair {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 12px;
+      margin-bottom: 12px;
+      align-items: stretch;
+    }
+
+    .pair:last-of-type { margin-bottom: 0; }
+
+    /* On mobile: stack matchup above result, hide desktop headers */
+    @media (max-width: 560px) {
+      .col-headers { display: none; }
+      .pair {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+      h2.title { font-size: 22px; }
+      .outer { padding: 20px 16px 16px; }
+    }
+
+    /* ── Matchup card ── */
+    .matchup-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+    }
+
+    .candidate-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 13px 16px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .candidate-row:not(:last-child) {
+      border-bottom: 1px solid #ececec;
+    }
+
+    .candidate-row:hover .bubble:not(.filled) {
+      border-color: #555;
+      background: #f0f4ff;
+    }
+
+    .bubble {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2.5px solid #aaa;
+      background: white;
+      flex-shrink: 0;
+      transition: background 0.12s, border-color 0.12s;
+    }
+
+    .bubble.filled {
+      border-color: #1a1a1a;
+      background: #1a1a1a;
+    }
+
+    .candidate-name {
+      font-size: 16px;
+      color: #111;
+      font-weight: 500;
+    }
+
+    /* ── Result card ── */
+    .result-card {
+      background: white;
+      border-radius: 10px;
+      padding: 14px 18px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .result-label {
+      font-size: 11.5px;
+      color: #888;
+      margin-bottom: 5px;
+    }
+
+    .result-name {
+      font-size: 22px;
+      font-weight: bold;
+      color: #3a7a22;
+      line-height: 1.1;
+    }
+
+    .result-name.empty {
+      font-size: 16px;
+      color: #ccc;
+      font-weight: normal;
+      font-style: italic;
+    }
+
+    /* ── Caption ── */
+    .caption {
+      margin-top: 14px;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+    }
+
+    .caption a {
+      color: #3a6ea5;
+      text-decoration: none;
+    }
+
+    .caption a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+<div class="outer" id="outer">
+  <h2 class="title">Try It</h2>
+  <p class="subtitle">Fill in the ballot below and see how your vote is counted in each head-to-head matchup.</p>
+
+  <p class="instruction"><strong>To vote, darken the circle next to your preferred candidate in each matchup.</strong> If you do not darken a circle in a matchup, no preference is recorded for that matchup.</p>
+
+  <!-- Desktop column headers -->
+  <div class="col-headers">
+    <span class="col-header">Matchup</span>
+    <span class="col-header">Your Vote</span>
+  </div>
+
+  <!-- Row 0: Alice vs Bob -->
+  <div class="pair">
+    <div class="matchup-card">
+      <div class="candidate-row" onclick="vote(0,'Alice')">
+        <div class="bubble" id="b0-Alice"></div>
+        <span class="candidate-name">Alice</span>
+      </div>
+      <div class="candidate-row" onclick="vote(0,'Bob')">
+        <div class="bubble" id="b0-Bob"></div>
+        <span class="candidate-name">Bob</span>
+      </div>
+    </div>
+    <div class="result-card">
+      <div class="result-label">Alice vs Bob</div>
+      <div class="result-name empty" id="res-0">—</div>
+    </div>
+  </div>
+
+  <!-- Row 1: Alice vs Clark -->
+  <div class="pair">
+    <div class="matchup-card">
+      <div class="candidate-row" onclick="vote(1,'Alice')">
+        <div class="bubble" id="b1-Alice"></div>
+        <span class="candidate-name">Alice</span>
+      </div>
+      <div class="candidate-row" onclick="vote(1,'Clark')">
+        <div class="bubble" id="b1-Clark"></div>
+        <span class="candidate-name">Clark</span>
+      </div>
+    </div>
+    <div class="result-card">
+      <div class="result-label">Alice vs Clark</div>
+      <div class="result-name empty" id="res-1">—</div>
+    </div>
+  </div>
+
+  <!-- Row 2: Bob vs Clark -->
+  <div class="pair">
+    <div class="matchup-card">
+      <div class="candidate-row" onclick="vote(2,'Bob')">
+        <div class="bubble" id="b2-Bob"></div>
+        <span class="candidate-name">Bob</span>
+      </div>
+      <div class="candidate-row" onclick="vote(2,'Clark')">
+        <div class="bubble" id="b2-Clark"></div>
+        <span class="candidate-name">Clark</span>
+      </div>
+    </div>
+    <div class="result-card">
+      <div class="result-label">Bob vs Clark</div>
+      <div class="result-name empty" id="res-2">—</div>
+    </div>
+  </div>
+
+  <p class="caption">Ballot format by <a href="https://www.betterchoices.vote/top3" target="_blank" rel="noopener">Better Choices</a> — learn more at betterchoices.vote.</p>
+</div>
+
+<script>
+  // votes[i] = candidate name | null
+  // matchup 0: Alice vs Bob  |  matchup 1: Alice vs Clark  |  matchup 2: Bob vs Clark
+  const votes = [null, null, null];
+  const pairs = [['Alice','Bob'], ['Alice','Clark'], ['Bob','Clark']];
+
+  function sendHeight() {
+    const h = document.getElementById('outer').getBoundingClientRect().height;
+    window.parent.postMessage({ condorcetHeight: Math.ceil(h) }, '*');
+  }
+  new ResizeObserver(sendHeight).observe(document.getElementById('outer'));
+
+  function vote(idx, candidate) {
+    votes[idx] = votes[idx] === candidate ? null : candidate;
+    render();
+  }
+
+  function render() {
+    pairs.forEach((pair, i) => {
+      pair.forEach(c => {
+        const el = document.getElementById('b' + i + '-' + c);
+        if (el) el.classList.toggle('filled', votes[i] === c);
+      });
+    });
+
+    [0,1,2].forEach(i => {
+      const el = document.getElementById('res-' + i);
+      if (votes[i]) {
+        el.textContent = votes[i];
+        el.className = 'result-name';
+      } else {
+        el.textContent = '—';
+        el.className = 'result-name empty';
+      }
+    });
+  }
+
+  render();
+</script>
+</body>
+</html>

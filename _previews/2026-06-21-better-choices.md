@@ -79,6 +79,21 @@ After the initial primary, the final election is between three candidates. Let's
 
 Just like a choose-one or Approval system, there's a bubble next to each name. Voters then vote in each individual matchup, indicating their preference for one candidate over the other.
 
+<iframe id="better-choices-frame" src="/assets/html/better-choices-ballot.html"
+  width="100%" height="520" scrolling="no"
+  frameborder="0"
+  style="border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.18); display: block; margin-top: 1rem; overflow: hidden;"
+  title="Interactive head-to-head ballot – Alice, Bob, and Clark">
+</iframe>
+<script>
+window.addEventListener("message", function(e) {
+  if (e.data && e.data.condorcetHeight) {
+    var f = document.getElementById("better-choices-frame");
+    if (f) f.style.height = e.data.condorcetHeight + "px";
+  }
+});
+</script>
+
 If a candidate wins both of their matchups, they are elected. If no candidate wins both matchups, the candidate with the "least bad loss" (the one who lost by the smallest margin) is elected<d-footnote>This is called "minimax".</d-footnote>.
 
 ## Why This is Cool
