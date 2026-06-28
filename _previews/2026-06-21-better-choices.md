@@ -121,7 +121,9 @@ I wish it didn't *need* to be said, but it does. Compared to this, RCV is legiti
 
 If they had used this system instead, a number of major issues would have been prevented. For those who aren't anti-RCV-pilled yet, Condorcet is what Fairvote *tells you RCV is, but actually isn't*.
 
-In this system, you get to vote for your favorite, but you also get to 
+In this system, you get to vote for your favorite, but you also get to support your second choice against your least favorite. This is what RCV fails to do. The major RCV failures stemmed from nonviable candidates *not* getting eliminated. Specifically, candidates who would lose in every head-to-head matchup got more first-choice votes than the broad consensus option--whose support was more widely distributed in second choices--and hence were not eliminated.
+
+Instead of looking at the first-choice votes--which says nothing about how broadly acceptable or unpalatable a candidate is--this system looks at the head-to-head matchups. A metric which is easier to count, and is far more indicative of a strong candidate. 
 
 ### Cognitive Simplicity
 
@@ -142,6 +144,8 @@ Further, when restricted to three candidates, minimax agrees with Ranked Pairs, 
 Condorcet does not, in general, satisfy the participation criterion. That is, participating in an election might end up giving you a *worse* outcome than if you had abstained. However, this *generally* only occurs with four or more candidates.
 
 With three candidates (or at least the system being considered here), there are no participation failures. No monotonicity violation like in RCV either. You also get reversal-symmetry<d-cite key="brandt2025condorcet"></d-cite>. Further, when outside of a cycle, the system will satisfy [IIA](../iia/){:target="_blank"}!
+
+Minimax also [does not generally satisfy the Condorcet loser criterion](https://en.wikipedia.org/wiki/Condorcet_loser_criterion#Minimax), but *does* with three candidates<d-footnote>This is easily seen by case analysis (if a Condorcet loser exists among three candidates, then a Condorcet winner must also exist and would be elected instead) or the equivalence with Ranked Pairs/Schulze, which do satisfy the Condorcet loser criterion for any number of candidates.</d-footnote>.
 
 Condorcet, in general, can fail some desirable criteria, but minimax is actually quite robust in the three candidate case. This system essentially funnels down Condorcet into the scenario where it really shines.
 
