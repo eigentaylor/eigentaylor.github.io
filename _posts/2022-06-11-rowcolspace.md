@@ -3,7 +3,6 @@ layout: distill
 title: Bases for the fundamental spaces of a matrix
 date: 2022-6-11
 description: a lot of students struggle with this so here. row space, column space, null space, and left null space.
-giscus_comments: true
 importance: 2
 tags: best
 categories: linear-algebra

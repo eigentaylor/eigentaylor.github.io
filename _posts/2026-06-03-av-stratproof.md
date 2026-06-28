@@ -3,7 +3,6 @@ layout: distill
 title: Is Approval Voting Strategyproof?
 date: 2026-06-04
 description: Well yes, but actually no. Unless...
-giscus_comments: true
 importance: 2
 tags: voting
 category: polisci

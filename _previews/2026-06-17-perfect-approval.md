@@ -3,7 +3,6 @@ layout: distill
 title: The Perfection of Approval Voting
 date: 2026-06-17
 description: A mathematical dive into the fundamental nature of Approval voting on dichotomous preferences.
-giscus_comments: true
 importance: 1
 tags: voting
 category: polisci

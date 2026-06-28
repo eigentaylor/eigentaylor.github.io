@@ -3,7 +3,6 @@ layout: distill
 title: Easily Solving Autonomous IVPs Off the Origin
 date: 2021-10-18 0
 description: Easily solving linear homogeneous constant coefficient initial problems when the initial point is not t=0
-giscus_comments: true
 importance: 2
 category: differential-equations
 authors:

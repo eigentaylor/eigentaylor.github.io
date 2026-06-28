@@ -3,7 +3,6 @@ layout: distill
 title: The Leader Rule in Approval Voting
 date: 2026-06-14
 description: An explanation of Laslier's leader rule strategy in Approval voting, and its positive ramifications.
-giscus_comments: true
 importance: 1
 tags: voting
 category: polisci

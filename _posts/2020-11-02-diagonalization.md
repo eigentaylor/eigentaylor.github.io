@@ -3,7 +3,6 @@ layout: distill
 title: A Different Perspective of Diagonalization
 date: 2020-11-02
 description: An (atttempt at an) intuitive approach to similar matrix decomposition.
-giscus_comments: true
 importance: 5
 categories: linear-algebra
 authors:

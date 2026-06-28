@@ -3,7 +3,6 @@ layout: distill
 title: Matrix Exponential Formulas for 2x2 Matrices
 date: 2021-12-13
 description: Who needs eigenvectors?
-giscus_comments: true
 importance: 1
 categories: differential-equations
 tags: best matrix-exponentials systems-of-differential-equations

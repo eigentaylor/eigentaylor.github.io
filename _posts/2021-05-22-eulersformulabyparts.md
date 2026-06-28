@@ -3,7 +3,6 @@ layout: page
 title: Skipping Integration by Parts Using Euler's Formula
 date: 2021-05-22 0
 description: skip or simplify integrals involving trig functions multiplied by exponentials
-giscus_comments: true
 importance: 2
 categories: calculus
 ---

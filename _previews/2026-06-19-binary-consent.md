@@ -3,7 +3,6 @@ layout: distill
 title: Consent is Binary
 date: 2026-06-19
 description: What an Approval ballot captures that scores and rankings cannot.
-giscus_comments: true
 importance: 3
 tags: voting
 category: polisci

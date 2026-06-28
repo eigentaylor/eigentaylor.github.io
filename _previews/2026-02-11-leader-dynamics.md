@@ -3,7 +3,6 @@ layout: distill
 title: The Approval Dynamics of Laslier's Leader Rule
 date: 2026-03-07
 description: How the leader rule induces a graph and dynamical system on candidate perceptions.
-giscus_comments: true
 importance: 2
 tags: voting
 category: polisci

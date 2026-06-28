@@ -3,7 +3,6 @@ layout: distill
 title: The Gibbard-Satterthwaite Theorem
 date: 2026-03-02
 description: A walkthrough and proof of the theorem that proves ranked voting systems must be susceptible to strategic voting.
-giscus_comments: true
 importance: 3
 tags: voting
 category: polisci

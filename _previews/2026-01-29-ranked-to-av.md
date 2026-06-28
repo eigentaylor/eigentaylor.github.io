@@ -3,7 +3,6 @@ layout: distill
 title: Deducing Possible Approval Outcomes from Ranked Ballots
 date: 2026-01-29
 description: A theoretical and practical exploration of cutting through the inherent indeterminacy of approval voting using ranked ballots. Exploring AK 2022 and a notable Minnesota election.
-giscus_comments: true
 importance: 2
 tags: voting
 category: polisci

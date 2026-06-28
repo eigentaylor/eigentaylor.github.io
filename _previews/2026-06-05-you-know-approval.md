@@ -3,7 +3,6 @@ layout: distill
 title: You Already Understand Approval Voting
 date: 2026-06-05
 description: It's really not that complicated.
-giscus_comments: true
 importance: 3
 tags: voting
 category: polisci

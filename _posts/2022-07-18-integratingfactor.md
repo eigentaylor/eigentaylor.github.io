@@ -3,7 +3,6 @@ layout: distill
 title: Integrating Factors Explained
 date: 2022-07-18 0
 description: the most common way to solve first order linear ODE's
-giscus_comments: true
 related_posts: true
 importance: 3
 categories: differential-equations

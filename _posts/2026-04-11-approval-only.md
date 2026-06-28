@@ -3,7 +3,6 @@ layout: distill
 title: Why I Currently Only Support Approval
 date: 2026-04-11
 description: Why Approval voting is the only system I trust to push for right now.
-giscus_comments: true
 importance: 1
 tags: voting
 category: polisci

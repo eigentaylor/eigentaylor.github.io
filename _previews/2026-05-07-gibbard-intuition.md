@@ -3,7 +3,6 @@ layout: distill
 title: The Intuition Behind Gibbard's Theorem
 date: 2026-05-07
 description: An intuitive breakdown of Gibbard's more general 1973 theorem on the manipulation of voting schemes.
-giscus_comments: true
 importance: 3
 tags: voting
 category: polisci

@@ -3,7 +3,6 @@ layout: distill
 title: Linear Constant Coefficient ODEs
 date: 2022-07-21 0
 description: the most important topic in an ODE class
-giscus_comments: true
 related_posts: true
 importance: 3
 categories: differential-equations

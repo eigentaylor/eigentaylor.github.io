@@ -3,7 +3,6 @@ layout: distill
 title: Better Choices Has a Neat Idea
 date: 2026-06-26
 description: What I like about the system proposed by Better Choices, and my concerns.
-giscus_comments: true
 importance: 3
 tags: voting
 category: polisci

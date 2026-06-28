@@ -3,7 +3,6 @@ layout: page
 title: Solving Second Order Systems of Differential Equations
 date: 2021-06-20
 description: ye
-giscus_comments: true
 importance: 4
 categories: differential-equations
 categories: systems-of-differential-equations

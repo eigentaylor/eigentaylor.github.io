@@ -3,7 +3,6 @@ layout: page
 title: A Formula for Some Particular Solutions
 date: 2021-09-22 0
 description: Yet another obnoxious formula for solutions to constant coefficient nonhomogeneous ODE's with common forcing functions.
-giscus_comments: true
 importance: 4
 categories: differential-equations
 ---

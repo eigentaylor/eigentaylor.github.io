@@ -3,7 +3,6 @@ layout: distill
 title: Solving systems of first-order ODEs like a baller
 date: 2021-12-02 0
 description: some ballin' tips and tricks
-giscus_comments: true
 importance: 1
 categories: differential-equations
 tags: best systems-of-differential-equations

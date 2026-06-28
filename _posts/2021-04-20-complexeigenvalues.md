@@ -3,7 +3,6 @@ layout: page
 title: Eigendecomposition of Real Matrices with Complex Eigenvalues
 date: 2021-04-20
 description: An attempt at an intuitive derivation.
-giscus_comments: true
 importance: 5
 categories: linear-algebra
 ---

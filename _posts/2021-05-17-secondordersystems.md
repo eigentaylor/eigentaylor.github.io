@@ -3,7 +3,6 @@ layout: page
 title: Constructing Integer 2x2 Second Order Systems of Differential Equations with Integer Solutions
 date: 2021-05-17
 description: It's a lot messier.
-giscus_comments: true
 importance: 3
 categories: works-in-progress
 ---

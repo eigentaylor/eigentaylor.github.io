@@ -3,7 +3,6 @@ layout: distill
 title: Constructing Systems of Nonlinear First-Order Differential Equations to Model Population Dynamics
 date: 2020-11-30 0
 description: Build a system with desired behavior.
-giscus_comments: true
 importance: 3
 categories: differential-equations
 tags: systems-of-differential-equations

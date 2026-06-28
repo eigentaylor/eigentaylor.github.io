@@ -295,6 +295,7 @@ defaults:
       exclude_proof_blocks_from_word_count: true
       collapse_appendix: false
       citation: true
+      giscus_comments: true
   - scope:
       path: "_previews"
       type: "previews"
@@ -309,6 +310,7 @@ defaults:
       exclude_proof_blocks_from_word_count: true
       collapse_appendix: false
       citation: false
+      giscus_comments: false
 
 sass:
   style: compressed

@@ -3,7 +3,6 @@ layout: distill
 title: Approval voting is the Only Condorcet-Consistent SCORE Method
 date: 2026-01-25
 description: A proof that Approval voting is the unique score aggregation voting method that always elects the Condorcet winner induced by the ballot data.
-giscus_comments: true
 importance: 2
 tags: voting
 category: polisci

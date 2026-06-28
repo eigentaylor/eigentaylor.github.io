@@ -3,7 +3,6 @@ layout: page
 title: Exponentials of Symmetric Matrices Using the Spectral Theorem
 date: 2020-12-01 
 description: yeah
-giscus_comments: true
 importance: 5
 categories: linear-algebra
 tags: matrix-exponentials 

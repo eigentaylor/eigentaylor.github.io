@@ -3,7 +3,6 @@ layout: distill
 title: Is the Condorcet Winner the True Compromise?
 date: 2026-04-15
 description: A Condorcet winner may not be a true consensus candidate. Approval voting can find consensus with a simpler ballot.
-giscus_comments: true
 importance: 3
 tags: voting
 category: polisci

@@ -3,7 +3,6 @@ layout: page
 title: Variation of Parameters Using Linear Algebra
 date: 2021-06-24 0
 description: linear is best frend :)
-giscus_comments: true
 importance: 4
 categories: differential-equations
 ---
