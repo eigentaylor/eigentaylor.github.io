@@ -1,266 +1,277 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CA Governor 2026 – Interactive Ballot</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CA Governor 2026 – Interactive Ballot</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: white;
-      /* no min-height: 100vh — let content dictate size */
-    }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: white;
+        /* no min-height: 100vh — let content dictate size */
+      }
 
-    .ballot-wrap {
-      max-width: 100%;
-      background: white;
-    }
+      .ballot-wrap {
+        max-width: 100%;
+        background: white;
+      }
 
-    /* ── light header ── */
-    .ballot-header {
-      background: #ddeaf3;
-      border-bottom: 2px solid #a8c4d8;
-      color: #1a3a5c;
-      padding: 10px 28px;
-      font-size: 11px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
+      /* ── light header ── */
+      .ballot-header {
+        background: #ddeaf3;
+        border-bottom: 2px solid #a8c4d8;
+        color: #1a3a5c;
+        padding: 10px 28px;
+        font-size: 11px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
 
-    /* ── mode toggle ── */
-    .mode-bar {
-      background: #f3f6f9;
-      border-bottom: 1px solid #d6dde4;
-      padding: 9px 28px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
+      /* ── mode toggle ── */
+      .mode-bar {
+        background: #f3f6f9;
+        border-bottom: 1px solid #d6dde4;
+        padding: 9px 28px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
 
-    .mode-label {
-      font-size: 11px;
-      color: #666;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      flex-shrink: 0;
-    }
+      .mode-label {
+        font-size: 11px;
+        color: #666;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        flex-shrink: 0;
+      }
 
-    .mode-btn {
-      padding: 5px 13px;
-      font-size: 11.5px;
-      font-weight: bold;
-      border: 2px solid #3a6ea5;
-      border-radius: 4px;
-      cursor: pointer;
-      background: white;
-      color: #3a6ea5;
-      transition: background 0.15s, color 0.15s;
-      line-height: 1.4;
-    }
+      .mode-btn {
+        padding: 5px 13px;
+        font-size: 11.5px;
+        font-weight: bold;
+        border: 2px solid #3a6ea5;
+        border-radius: 4px;
+        cursor: pointer;
+        background: white;
+        color: #3a6ea5;
+        transition:
+          background 0.15s,
+          color 0.15s;
+        line-height: 1.4;
+      }
 
-    .mode-btn.active {
-      background: #3a6ea5;
-      color: white;
-    }
+      .mode-btn.active {
+        background: #3a6ea5;
+        color: white;
+      }
 
-    .mode-btn:hover:not(.active) {
-      background: #e6eef6;
-    }
+      .mode-btn:hover:not(.active) {
+        background: #e6eef6;
+      }
 
-    /* ── instruction banner ── */
-    .instruction {
-      background: #f0f6fb;
-      border-left: 4px solid #3a6ea5;
-      padding: 8px 18px 8px 14px;
-      font-size: 12px;
-      color: #333;
-      line-height: 1.55;
-    }
+      /* ── instruction banner ── */
+      .instruction {
+        background: #f0f6fb;
+        border-left: 4px solid #3a6ea5;
+        padding: 8px 18px 8px 14px;
+        font-size: 12px;
+        color: #333;
+        line-height: 1.55;
+      }
 
-    .instruction strong {
-      color: #1a3a5c;
-    }
+      .instruction strong {
+        color: #1a3a5c;
+      }
 
-    /* ── candidate rows ── */
-    .candidate-row {
-      display: flex;
-      align-items: center;
-      padding: 0 44px 0 68px;
-      height: 88px;
-      cursor: pointer;
-      user-select: none;
-      border-bottom: 1px solid #c0d5db;
-    }
+      /* ── candidate rows ── */
+      .candidate-row {
+        display: flex;
+        align-items: center;
+        padding: 0 44px 0 68px;
+        height: 88px;
+        cursor: pointer;
+        user-select: none;
+        border-bottom: 1px solid #c0d5db;
+      }
 
-    .candidate-row:last-child {
-      border-bottom: none;
-    }
+      .candidate-row:last-child {
+        border-bottom: none;
+      }
 
-    .candidate-row:nth-child(odd) {
-      background: #d4e8ed;
-    }
+      .candidate-row:nth-child(odd) {
+        background: #d4e8ed;
+      }
 
-    .candidate-row:nth-child(even) {
-      background: #ffffff;
-    }
+      .candidate-row:nth-child(even) {
+        background: #ffffff;
+      }
 
-    /* hover: tint the bubble to hint it's clickable */
-    .candidate-row:hover .bubble:not(.filled) {
-      border-color: #505153;
-      background: #e8f2fa;
-    }
+      /* hover: tint the bubble to hint it's clickable */
+      .candidate-row:hover .bubble:not(.filled) {
+        border-color: #505153;
+        background: #e8f2fa;
+      }
 
-    .candidate-name {
-      flex: 1;
-      font-size: 21px;
-      font-weight: bold;
-      color: #111;
-      line-height: 1.2;
-    }
+      .candidate-name {
+        flex: 1;
+        font-size: 21px;
+        font-weight: bold;
+        color: #111;
+        line-height: 1.2;
+      }
 
-    /* ── bubble ──
+      /* ── bubble ──
        Empty  → white bg, gray border
        Filled → solid blue, blue border  */
-    .bubble {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      border: 3px solid #999;
-      background: white;
-      flex-shrink: 0;
-      transition: background 0.12s, border-color 0.12s;
-    }
+      .bubble {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 3px solid #999;
+        background: white;
+        flex-shrink: 0;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+      }
 
-    .bubble.filled {
-      background: #000000;
-      border-color: #424242;
-    }
+      .bubble.filled {
+        background: #000000;
+        border-color: #424242;
+      }
 
-    /* ── tally ── */
-    .tally-bar {
-      background: #f3f6f9;
-      border-top: 1px solid #d6dde4;
-      padding: 10px 28px;
-      font-size: 12.5px;
-      color: #444;
-      min-height: 42px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
+      /* ── tally ── */
+      .tally-bar {
+        background: #f3f6f9;
+        border-top: 1px solid #d6dde4;
+        padding: 10px 28px;
+        font-size: 12.5px;
+        color: #444;
+        min-height: 42px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
 
-    .tally-prefix {
-      font-weight: bold;
-      color: #1a3a5c;
-      flex-shrink: 0;
-    }
+      .tally-prefix {
+        font-weight: bold;
+        color: #1a3a5c;
+        flex-shrink: 0;
+      }
 
-    .tally-names {
-      color: #333;
-    }
+      .tally-names {
+        color: #333;
+      }
 
-    .tally-bar.empty {
-      color: #999;
-      font-style: italic;
-    }
-  </style>
-</head>
-<body>
-<div class="ballot-wrap" id="wrap">
-  <div class="ballot-header">Governor &nbsp;·&nbsp; State of California &nbsp;·&nbsp; 2026 Primary Election</div>
+      .tally-bar.empty {
+        color: #999;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ballot-wrap" id="wrap">
+      <div class="ballot-header">Governor &nbsp;·&nbsp; State of California &nbsp;·&nbsp; 2026 Primary Election</div>
 
-  <div class="mode-bar">
-    <span class="mode-label">Ballot type:</span>
-    <button class="mode-btn" id="btn-single" onclick="setMode('single')">Current – Vote for One</button>
-    <button class="mode-btn active" id="btn-approval" onclick="setMode('approval')">Approval – Vote for All You Support</button>
-  </div>
+      <div class="mode-bar">
+        <span class="mode-label">Ballot type:</span>
+        <button class="mode-btn" id="btn-single" onclick="setMode('single')">Current – Vote for One</button>
+        <button class="mode-btn active" id="btn-approval" onclick="setMode('approval')">Approval – Vote for All You Support</button>
+      </div>
 
-  <div class="instruction" id="instruction-text">
-    <strong>APPROVAL VOTING:</strong> Mark the bubble next to <strong>each candidate you approve of</strong>. You may vote for as many as you wish.
-  </div>
+      <div class="instruction" id="instruction-text">
+        <strong>APPROVAL VOTING:</strong> Mark the bubble next to <strong>each candidate you approve of</strong>. You may vote for as many as you
+        wish.
+      </div>
 
-  <div id="ballot"></div>
+      <div id="ballot"></div>
 
-  <div class="tally-bar empty" id="tally">No candidates selected.</div>
-</div>
+      <div class="tally-bar empty" id="tally">No candidates selected.</div>
+    </div>
 
-<script>
-  const candidates = [
-    { name: "Xavier Becerra", party: "D" },
-    { name: "Steve Hilton",   party: "R" },
-    { name: "Tom Steyer",     party: "D" },
-    { name: "Chad Bianco",    party: "R" },
-    { name: "Katie Porter",   party: "D" },
-  ];
+    <script>
+      const candidates = [
+        { name: "Xavier Becerra", party: "D" },
+        { name: "Steve Hilton", party: "R" },
+        { name: "Tom Steyer", party: "D" },
+        { name: "Chad Bianco", party: "R" },
+        { name: "Katie Porter", party: "D" },
+      ];
 
-  let mode = "approval";
-  let approved = new Set();
+      let mode = "approval";
+      let approved = new Set();
 
-  /* ── tell parent our current height so the iframe never scrolls ── */
-  function sendHeight() {
-    const h = document.getElementById("wrap").getBoundingClientRect().height;
-    window.parent.postMessage({ caBallotheight: Math.ceil(h) }, "*");
-  }
-  new ResizeObserver(sendHeight).observe(document.getElementById("wrap"));
+      /* ── tell parent our current height so the iframe never scrolls ── */
+      function sendHeight() {
+        const h = document.getElementById("wrap").getBoundingClientRect().height;
+        window.parent.postMessage({ caBallotheight: Math.ceil(h) }, "*");
+      }
+      new ResizeObserver(sendHeight).observe(document.getElementById("wrap"));
 
-  function setMode(m) {
-    mode = m;
-    approved.clear();
-    document.getElementById("btn-single").classList.toggle("active", m === "single");
-    document.getElementById("btn-approval").classList.toggle("active", m === "approval");
+      function setMode(m) {
+        mode = m;
+        approved.clear();
+        document.getElementById("btn-single").classList.toggle("active", m === "single");
+        document.getElementById("btn-approval").classList.toggle("active", m === "approval");
 
-    const instr = document.getElementById("instruction-text");
-    if (m === "approval") {
-      instr.innerHTML = "<strong>APPROVAL VOTING:</strong> Mark the bubble next to <strong>each candidate you approve of</strong>. You may vote for as many as you wish.";
-    } else {
-      instr.innerHTML = "<strong>CURRENT SYSTEM:</strong> Mark the bubble next to <strong>one candidate only</strong>. Only one may be selected.";
-    }
-    render();
-  }
+        const instr = document.getElementById("instruction-text");
+        if (m === "approval") {
+          instr.innerHTML =
+            "<strong>APPROVAL VOTING:</strong> Mark the bubble next to <strong>each candidate you approve of</strong>. You may vote for as many as you wish.";
+        } else {
+          instr.innerHTML = "<strong>CURRENT SYSTEM:</strong> Mark the bubble next to <strong>one candidate only</strong>. Only one may be selected.";
+        }
+        render();
+      }
 
-  function toggle(i) {
-    if (mode === "single") {
-      approved = approved.has(i) ? new Set() : new Set([i]);
-    } else {
-      if (approved.has(i)) approved.delete(i); else approved.add(i);
-    }
-    render();
-  }
+      function toggle(i) {
+        if (mode === "single") {
+          approved = approved.has(i) ? new Set() : new Set([i]);
+        } else {
+          if (approved.has(i)) approved.delete(i);
+          else approved.add(i);
+        }
+        render();
+      }
 
-  function render() {
-    const ballotEl = document.getElementById("ballot");
-    ballotEl.innerHTML = "";
+      function render() {
+        const ballotEl = document.getElementById("ballot");
+        ballotEl.innerHTML = "";
 
-    candidates.forEach((c, i) => {
-      const row = document.createElement("div");
-      row.className = "candidate-row";
-      row.innerHTML =
-        `<span class="candidate-name">${c.name} (${c.party})</span>` +
-        `<div class="bubble${approved.has(i) ? " filled" : ""}"></div>`;
-      row.addEventListener("click", () => toggle(i));
-      ballotEl.appendChild(row);
-    });
+        candidates.forEach((c, i) => {
+          const row = document.createElement("div");
+          row.className = "candidate-row";
+          row.innerHTML =
+            `<span class="candidate-name">${c.name} (${c.party})</span>` + `<div class="bubble${approved.has(i) ? " filled" : ""}"></div>`;
+          row.addEventListener("click", () => toggle(i));
+          ballotEl.appendChild(row);
+        });
 
-    const tallyEl = document.getElementById("tally");
-    if (approved.size === 0) {
-      tallyEl.className = "tally-bar empty";
-      tallyEl.textContent = "No candidates selected.";
-    } else {
-      const names = [...approved].map(i => candidates[i].name);
-      tallyEl.className = "tally-bar";
-      tallyEl.innerHTML =
-        `<span class="tally-prefix">Approved (${approved.size}):</span>` +
-        `<span class="tally-names">${names.join(", ")}</span>`;
-    }
-  }
+        const tallyEl = document.getElementById("tally");
+        if (approved.size === 0) {
+          tallyEl.className = "tally-bar empty";
+          tallyEl.textContent = "No candidates selected.";
+        } else {
+          const names = [...approved].map((i) => candidates[i].name);
+          tallyEl.className = "tally-bar";
+          tallyEl.innerHTML =
+            `<span class="tally-prefix">Approved (${approved.size}):</span>` + `<span class="tally-names">${names.join(", ")}</span>`;
+        }
+      }
 
-  render();
-</script>
-</body>
+      render();
+    </script>
+  </body>
 </html>
