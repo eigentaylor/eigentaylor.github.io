@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Condorcet Election</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --alice: #7052b8;
+      --bob:   #2a8a70;
+      --clark: #c4612a;
+      --navy:  #0d1b3e;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f0ece4;
+    }
+
+    .outer {
+      padding: 20px 20px 16px;
+    }
+
+    h2.title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 22px;
+      color: var(--navy);
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      color: #666;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    /* ── Slider cards ── */
+    .sliders {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .slider-card {
+      background: white;
+      border-radius: 10px;
+      padding: 10px 16px 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+    }
+
+    .matchup-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .cname {
+      font-size: 13.5px;
+      font-weight: bold;
+      flex-shrink: 0;
+      width: 46px;
+    }
+
+    .cname.alice { color: var(--alice); }
+    .cname.bob   { color: var(--bob); }
+    .cname.clark { color: var(--clark); }
+    .cname.right { text-align: right; }
+
+    .slider-wrap {
+      flex: 1;
+      position: relative;
+    }
+
+    /* ── 50% tick mark ── */
+    .center-tick {
+      position: absolute;
+      left: calc(50% - 2px);
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 24px;           /* extends well above & below the 7px track */
+      background: white;
+      border-radius: 2px;
+      /* Dark ring makes it visible against any gradient color */
+      box-shadow: 0 0 0 2px rgba(0,0,0,0.40), 0 1px 4px rgba(0,0,0,0.18);
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    /* share-label: highlight when at exact tie */
+    .share-label.is-tie {
+      font-weight: bold;
+      color: #555;
+    }
+
+    /* Range input — gradient track via CSS custom props, updated by JS */
+    input[type=range] {
+      --lc: #aaa;
+      --rc: #aaa;
+      --fp: 50%;
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 7px;
+      border-radius: 4px;
+      background: linear-gradient(
+        to right,
+        var(--lc) 0%, var(--lc) var(--fp),
+        var(--rc) var(--fp), var(--rc) 100%
+      );
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* Chrome / Safari thumb */
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: white;
+      border: 2.5px solid #aaa;
+      cursor: pointer;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.22);
+    }
+
+    /* Firefox track */
+    input[type=range]::-moz-range-track {
+      height: 7px;
+      border-radius: 4px;
+      background: linear-gradient(
+        to right,
+        var(--lc) 0%, var(--lc) var(--fp),
+        var(--rc) var(--fp), var(--rc) 100%
+      );
+      border: none;
+    }
+
+    /* Firefox thumb */
+    input[type=range]::-moz-range-thumb {
+      -moz-appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: white;
+      border: 2.5px solid #aaa;
+      cursor: pointer;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.22);
+    }
+
+    .share-label {
+      text-align: center;
+      font-size: 11.5px;
+      color: #777;
+    }
+
+    /* ── Result cards ── */
+    .result-card {
+      border-radius: 10px;
+      padding: 13px 18px;
+      margin-bottom: 10px;
+      color: white;
+      background: var(--navy);
+    }
+
+    .result-badge {
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #8fa0c0;
+      margin-bottom: 4px;
+    }
+
+    .result-name {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 25px;
+      font-weight: bold;
+      line-height: 1.1;
+    }
+
+    .result-name.alice { color: #c4b4f4; }
+    .result-name.bob   { color: #84d8bc; }
+    .result-name.clark { color: #f4b07a; }
+    .result-name.tie   { color: #ccc; }
+
+    .result-desc {
+      font-size: 11.5px;
+      color: #8fa0c0;
+      margin-top: 4px;
+    }
+
+    .result-card.tie-card { background: #5a5a5a; }
+
+    /* Cycle variant — lighter card with a divider inside */
+    .result-card.cycle-card {
+      background: white;
+      color: var(--navy);
+      border: 1px solid #ddd;
+    }
+
+    .cycle-head {
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .cycle-chain {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .cycle-node {
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .cycle-node.alice { color: var(--alice); }
+    .cycle-node.bob   { color: var(--bob); }
+    .cycle-node.clark { color: var(--clark); }
+
+    .cycle-arrow { font-size: 14px; color: #bbb; }
+
+    .cycle-divider {
+      height: 1px;
+      background: #e8e4de;
+      margin: 0 -18px 12px;
+    }
+
+    .minimax-badge {
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #888;
+      margin-bottom: 4px;
+    }
+
+    .minimax-name {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .minimax-name.alice { color: var(--alice); }
+    .minimax-name.bob   { color: var(--bob); }
+    .minimax-name.clark { color: var(--clark); }
+    .minimax-name.tie   { color: #666; }
+
+    .minimax-desc {
+      font-size: 11.5px;
+      color: #777;
+      margin-top: 3px;
+    }
+
+    /* ── Caption ── */
+    .caption {
+      font-size: 11.5px;
+      color: #888;
+      font-style: italic;
+      text-align: center;
+      line-height: 1.55;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+<div class="outer" id="outer">
+  <h2 class="title">Who Wins?</h2>
+  <p class="subtitle">Drag the sliders to set vote shares in each head-to-head matchup.</p>
+
+  <div class="sliders">
+    <!-- Alice vs Bob -->
+    <div class="slider-card">
+      <div class="matchup-row">
+        <span class="cname alice">Alice</span>
+        <div class="slider-wrap">
+          <input type="range" id="sl-ab" min="0" max="100" value="55" oninput="update()">
+          <div class="center-tick"></div>
+        </div>
+        <span class="cname bob right">Bob</span>
+      </div>
+      <div class="share-label" id="lbl-ab"></div>
+    </div>
+
+    <!-- Alice vs Clark -->
+    <div class="slider-card">
+      <div class="matchup-row">
+        <span class="cname alice">Alice</span>
+        <div class="slider-wrap">
+          <input type="range" id="sl-ac" min="0" max="100" value="60" oninput="update()">
+          <div class="center-tick"></div>
+        </div>
+        <span class="cname clark right">Clark</span>
+      </div>
+      <div class="share-label" id="lbl-ac"></div>
+    </div>
+
+    <!-- Bob vs Clark -->
+    <div class="slider-card">
+      <div class="matchup-row">
+        <span class="cname bob">Bob</span>
+        <div class="slider-wrap">
+          <input type="range" id="sl-bc" min="0" max="100" value="70" oninput="update()">
+          <div class="center-tick"></div>
+        </div>
+        <span class="cname clark right">Clark</span>
+      </div>
+      <div class="share-label" id="lbl-bc"></div>
+    </div>
+  </div>
+
+  <div id="result"></div>
+
+  <p class="caption">Default: Alice leads in both her matchups and wins — even though Bob beats Clark by a much larger margin. In a Condorcet election, consistency across all matchups is what matters, not raw margin size.</p>
+</div>
+
+<script>
+  const COL = { Alice: '#7052b8', Bob: '#2a8a70', Clark: '#c4612a' };
+  const CLS = { Alice: 'alice', Bob: 'bob', Clark: 'clark' };
+
+  function sendHeight() {
+    const h = document.getElementById('outer').getBoundingClientRect().height;
+    window.parent.postMessage({ condorcetElectionHeight: Math.ceil(h) }, '*');
+  }
+  new ResizeObserver(sendHeight).observe(document.getElementById('outer'));
+
+  function setSlider(id, val, lc, rc, lblId, lName, rName) {
+    const sl = document.getElementById(id);
+    sl.style.setProperty('--lc', lc);
+    sl.style.setProperty('--rc', rc);
+    sl.style.setProperty('--fp', val + '%');
+    const lbl = document.getElementById(lblId);
+    const isTie = val === 50;
+    lbl.textContent = isTie
+      ? `${lName} 50% — ${rName} 50% (Tie)`
+      : `${lName} ${val}% — ${rName} ${100 - val}%`;
+    lbl.classList.toggle('is-tie', isTie);
+  }
+
+  function update() {
+    const ab = +document.getElementById('sl-ab').value;
+    const ac = +document.getElementById('sl-ac').value;
+    const bc = +document.getElementById('sl-bc').value;
+
+    setSlider('sl-ab', ab, COL.Alice, COL.Bob,   'lbl-ab', 'Alice', 'Bob');
+    setSlider('sl-ac', ac, COL.Alice, COL.Clark, 'lbl-ac', 'Alice', 'Clark');
+    setSlider('sl-bc', bc, COL.Bob,   COL.Clark, 'lbl-bc', 'Bob',   'Clark');
+
+    // mXY > 0 means left candidate beats right
+    const mAB = ab - 50;  // Alice's advantage over Bob
+    const mAC = ac - 50;  // Alice's advantage over Clark
+    const mBC = bc - 50;  // Bob's advantage over Clark
+
+    const el = document.getElementById('result');
+
+    // Condorcet winner first — the third matchup being a tie is irrelevant
+    if      (mAB > 0 && mAC > 0) { el.innerHTML = condorcetHTML('Alice', CLS.Alice, 'Wins both head-to-head matchups'); }
+    else if (mAB < 0 && mBC > 0) { el.innerHTML = condorcetHTML('Bob',   CLS.Bob,   'Wins both head-to-head matchups'); }
+    else if (mAC < 0 && mBC < 0) { el.innerHTML = condorcetHTML('Clark', CLS.Clark, 'Wins both head-to-head matchups'); }
+    // No Condorcet winner — now a tie in a relevant matchup matters
+    else if (mAB === 0 || mAC === 0 || mBC === 0) {
+      el.innerHTML = condorcetHTML(null, null, 'Exact tie in one or more matchups — no Condorcet winner.');
+      sendHeight(); return;
+    }
+    else {
+      // Cycle — identify direction
+      // Case A: Alice→Bob→Clark→Alice (mAB>0, mBC>0, mAC<0)
+      // Case B: Bob→Alice→Clark→Bob   (mAB<0, mAC>0, mBC<0)
+      const chain = (mAB > 0 && mBC > 0)
+        ? ['Alice', 'Bob', 'Clark', 'Alice']
+        : ['Bob', 'Alice', 'Clark', 'Bob'];
+
+      // Minimax: worst margin per candidate (most negative = biggest loss)
+      // Alice margins: vs Bob = mAB, vs Clark = mAC
+      // Bob margins:   vs Alice = -mAB, vs Clark = mBC
+      // Clark margins: vs Alice = -mAC, vs Bob = -mBC
+      const worsts = {
+        Alice: Math.min(mAB, mAC),
+        Bob:   Math.min(-mAB, mBC),
+        Clark: Math.min(-mAC, -mBC),
+      };
+      const best = Math.max(worsts.Alice, worsts.Bob, worsts.Clark);
+      const winners = ['Alice', 'Bob', 'Clark'].filter(c => worsts[c] === best);
+
+      el.innerHTML = cycleHTML(chain, winners);
+    }
+
+    sendHeight();
+  }
+
+  function condorcetHTML(name, cls, desc) {
+    if (!name) {
+      return `<div class="result-card tie-card">
+        <div class="result-badge">Result</div>
+        <div class="result-name tie">Tie</div>
+        <div class="result-desc">${desc}</div>
+      </div>`;
+    }
+    return `<div class="result-card">
+      <div class="result-badge">Condorcet Winner</div>
+      <div class="result-name ${cls}">${name}</div>
+      <div class="result-desc">${desc}</div>
+    </div>`;
+  }
+
+  function cycleHTML(chain, winners) {
+    const chainHTML = chain.map((n, i) =>
+      `<span class="cycle-node ${CLS[n]}">${n}</span>${i < chain.length - 1 ? '<span class="cycle-arrow"> → </span>' : ''}`
+    ).join('');
+
+    let minimaxHTML;
+    if (winners.length === 1) {
+      const w = winners[0];
+      minimaxHTML = `
+        <div class="minimax-badge">Minimax Winner (tiebreaker)</div>
+        <div class="minimax-name ${CLS[w]}">${w}</div>
+        <div class="minimax-desc">Smallest margin of loss</div>`;
+    } else {
+      minimaxHTML = `
+        <div class="minimax-badge">Minimax (tiebreaker)</div>
+        <div class="minimax-name tie">Tie</div>
+        <div class="minimax-desc">${winners.join(' & ')} share the smallest margin of loss</div>`;
+    }
+
+    return `<div class="result-card cycle-card">
+      <div class="cycle-head">No Condorcet Winner — Cycle</div>
+      <div class="cycle-chain">${chainHTML}</div>
+      <div class="cycle-divider"></div>
+      ${minimaxHTML}
+    </div>`;
+  }
+
+  update();
+</script>
+</body>
+</html>
