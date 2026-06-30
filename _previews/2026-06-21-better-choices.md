@@ -63,11 +63,11 @@ I just [published a post about California's Top-2 system](../ca-top-2/){:target=
 
 This is technically a "nonpartisan blanket primary" but that's so wordy, let's just call it a "jungle".
 
-The idea is to force candidates to be held accountable to all voters, rather than just those from their party<d-footnote>For example, in a state like California, the election would often be decided entirely in the Democratic primary, with Republicans getting effectively no say in the outcome.</d-footnote>. The *hope* is that this would elevate consensus candidates with low visibility and boost third parties. This has not happened in the slightest because voters can still only choose a single candidate.
+The idea is to force candidates to be held accountable to all voters, rather than just those from their party<d-footnote>For example, in a state like California, the election would often be decided entirely in the Democratic primary, with Republicans getting effectively no say in the outcome.</d-footnote>. The *hope* is that this would elevate consensus candidates with low visibility and boost third parties. This has largely not materialized because voters can still only choose a single candidate.
 
 When votes are a scarce resource, this leads to rallying behind the most viable candidate from your favorite major party, and rampant vote splitting from voters who are naive enough to support less popular candidates.
 
-In my view, [any system that uses a Choose-one Jungle primary is a non-starter](../ca-top-2/){:target="_blank"}. It's simply *awful*. The issue with the jungle primary is *not* the runoff step, but the vote splitting. However, we will come back to this. First, we should discuss what Better Choices is actually advocating for.
+In my view, [any system that uses a choose-one jungle primary is a non-starter](../ca-top-2/){:target="_blank"}. It's simply *awful*. The issue with the jungle primary is *not* the runoff step, but the vote splitting. However, we will come back to this. First, we should discuss what Better Choices is actually advocating for.
 
 ## The Better Choices System
 
@@ -111,7 +111,7 @@ window.addEventListener("message", function(e) {
 });
 </script>
 
-## Why This is Cool
+## Why This Is Cool
 
 Alright, I'm just gonna kind of nerd out here.
 
@@ -125,13 +125,13 @@ I have many problems with ranked methods <d-cite key="mit2023maineRcv"></d-cite>
 
 I think this is a *big problem with ranked ballots*. It should, in my view, be explicitly clear and obvious what the system is going to do with your vote, and how it's going to be counted and tallied to determine the winner.
 
-This is one thing I like about Approval: it's not hard to guess that a bubble is a vote. That's how Choose-one voting works, and Approval works the same way. Hence, Better Choices' system uses that *same* interface to its advantage. I think the idea of head-to-head matchups becomes much more obvious.
+This is one thing I like about Approval: it's not hard to guess that a bubble is a vote. That's how choose-one voting works, and Approval works the same way. Hence, Better Choices' system uses that *same* interface to its advantage. I think the idea of head-to-head matchups becomes much more obvious.
 
 This is also nice because this should make it much easier to implement on existing voting machines, which is something I really like about Approval! Tallying becomes exceptionally simple: it's just three different matchups (six total tallies) instead of one. That's not absurdly overcomplicated.
 
 The only question that remains is if the voters will understand how these head-to-head matchups translate to a winner. Will they be confused and expect the one who wins any matchup by the most is crowned the winner? Or will they understand the Condorcet principle at play?
 
-I am someone who is very concerned with a hostile ballot. As far as ballots go, this is an extremely friendly ballot, especially relative to RCV and STAR. But it is objectively more complex than a Choose-one or Approval ballot. Therefore, it's entirely possible that *even this* system could be too complex for voters to find palatable<d-footnote>My mother found it too confusing, and that's a bad sign because she is a smart lady.</d-footnote>. I want rigorous and unbiased/independent usability studies before I jump on board the bandwagon. But if there's *any* way to make Condorcet methods work, it's probably this or nothing.
+I am someone who is very concerned about reforms with a hostile ballot. As far as ballots go, this is an extremely friendly ballot, especially relative to RCV and STAR. But it is objectively more complex than a choose-one or Approval ballot. Therefore, it's entirely possible that *even this* system could be too complex for voters to find palatable<d-footnote>My mother found it too confusing, and that's a bad sign because she is a smart lady.</d-footnote>. I want rigorous and unbiased/independent usability studies before I jump on board the bandwagon. But if there's *any* way to make Condorcet methods work, it's probably this or nothing.
 
 ### So Much Better Than RCV
 
@@ -143,9 +143,9 @@ In this system, you get to vote for your favorite, but you also get to support y
 
 The major RCV failures stemmed from nonviable candidates *not* getting eliminated. Specifically, candidates with fervent but thin support, who would lose in every head-to-head matchup, got more first-choice votes than the broad consensus option--whose support was more widely distributed in second choices--and hence were not eliminated. This left voters who ranked that nonviable candidate first holding the bag when their honest support eliminated their backup candidate, and their first choice was unable to win against their least favorite.
 
-RCV *ignored* the data voters were clearly communicated down in their second choice: that they preferred the consensus option as a second choice to their least favorite. The system was too shortsighted, only looked at these voters' first-choice<d-footnote>This is why Later No Harm is a joke criterion that nobody who understands social choice takes as anything close to "desirable". By protecting your first choice from your later choices, the system can't <em>save</em> your second choice if your first is nonviable. That's what happened in Burlington and Alaska. Later No Harm is incompatible with No Favorite Betrayal. If you want to protect your first choice from your second choice, you will often have to betray your honest first choice or else risk electing your last choice directly directly as a result of your honesty.</d-footnote>. The system proposed by Better Choices *explicitly* asks for this information, and uses it faithfully.
+RCV *ignored* the data voters were clearly communicated through their second choice rankings: that they preferred the consensus option as a second choice to their least favorite. The system was too shortsighted--it only looked at these voters' first-choices<d-footnote>This is why Later No Harm is a joke criterion that nobody who understands social choice takes as anything close to "desirable". By protecting your first choice from your later choices, the system can't <em>save</em> your second choice if your first is nonviable. That's what happened in Burlington and Alaska. <a href="https://electowiki.org/wiki/Later-no-harm_criterion">Later No Harm is incompatible with No Favorite Betrayal</a>. If you want to protect your first choice from your second choice, you will often have to betray your honest first choice or else risk electing your last choice directly as a result of your honesty.</d-footnote>. The system proposed by Better Choices *explicitly* asks for this information, and uses it faithfully.
 
-Instead of looking at the first-choice votes--which says nothing about how broadly acceptable or unpalatable a candidate is--this system looks at the head-to-head matchups. A metric which is easier to count, and is far more indicative of a strong candidate.
+Instead of looking at the first-choice votes--which say nothing about how broadly acceptable or unpalatable a candidate is--this system looks at the head-to-head matchups. A metric which is easier to count, and is far more indicative of a strong candidate.
 
 ### Cognitive Simplicity
 
@@ -159,7 +159,7 @@ I've also shared many issues with Condorcet methods in past posts. However, I be
 
 ### System Agreement
 
-Further, when restricted to three candidates, minimax agrees with Ranked Pairs, Schulze, and other top-tier Condorcet methods. Ranked Pairs and Schulze are robust, but harder to explain. The fact the very simple "least bad loss" system agrees with them is very satisfying to me.
+Further, when restricted to three candidates, minimax agrees with Ranked Pairs and Schulze<d-cite key="brandt2025condorcet"></d-cite>, which are top-shelf Condorcet methods. Ranked Pairs and Schulze are robust, but harder to explain. The fact that the very simple "least bad loss" system agrees with them is very satisfying to me.
 
 ### Pass-Fail Criteria
 
@@ -171,7 +171,7 @@ Minimax also [does not generally satisfy the Condorcet loser criterion](https://
 
 Condorcet, in general, can fail some desirable criteria. In fact, minimax, in general, often fails a number of nice properties. But minimax is actually quite robust in the three candidate case, because it's essentially a shortcut for more robust methods like Ranked Pairs and Schulze. This system essentially funnels down Condorcet into the scenario where it really shines.
 
-### Strategy is Minimal
+### Strategy Is Minimal
 
 (in the runoff step)
 
@@ -215,7 +215,7 @@ Condorcet methods, particularly minimax/ranked pairs, are just remarkably robust
 
 I wrote in [a very cheeky past post](../condorcet-approval/){:target="_blank"} about how ranked Condorcet methods are a mere approximation of who would win in every matchup. *Runoff dominance* is what I see as the Condorcet ideal (though Condorcet himself may not necessarily agree). I actually mentioned in that post that you would need voters to vote in every matchup to truly claim you elected the Condorcet winner. Turns out there's now a system that does precisely this! I think that's cool.
 
-### You can vote intransitively
+### You Can Vote Intransitively
 
 This is just funny. If you are feeling cheeky, you have full freedom to say "I prefer Alice to Bob, I prefer Bob to Clark, and I prefer Clark to Alice". You can't do this in a ranked method!
 
@@ -223,7 +223,7 @@ Why would you do this? If you have a favorite, why would you vote against them? 
 
 ## Where I'm Skeptical
 
-As I said before, my biggest issue is the choose-one primary. If this system uses the choose-one primary, we will still be plagued by vote-splitting, spoilers, and won't be allowing a [nursery effect for broadly acceptable candidates](../ca-top-2/){:target="_blank"} (see this post for more details on all my issues with a choose-one jungle).
+As I said before, my biggest issue is the choose-one primary. If this system uses the choose-one primary, we will still be plagued by vote-splitting and spoilers, with no [nursery effect for broadly acceptable candidates](../ca-top-2/){:target="_blank"} (see this post for more details on all my issues with a choose-one jungle).
 
 Just increasing the number of candidates you take won't change the fundamental dynamics. Instead of the race being between *three* serious candidates and plagued by spoilers (as we have seen in the top 2 system), we will likely see the race expand to four serious candidates--split among the various internal factions of the two major parties--and likely even more spoilers <d-cite key="cox1994sntv"></d-cite>.
 
@@ -235,9 +235,9 @@ The issue with jungle primaries *is not that the runoff is between two candidate
 
 If, instead, Better Choices were to use Approval voting in the first round, then I think this could be one of (if not *the*) most robust systems currently in conversation. *Seriously*.
 
-[Cursory VSE simulations](https://eigentaylor.github.io/satisficing-voter-sim/) in my model of epistemic noise and ballot fatigue have been very favorable to this system. I may have to correct this paragraph of the post later, but Approval Top-3 Condorcet is potentially the most robust system by far, if we assume no epistemic noise in the runoff election. Comparing Approval Top-2 with Plurality Top-3 Condorcet, they are quite competitive, and perform better in different situations. Approval is much more robust to a crowded field, however. That said, I'm not yet confident enough in the code I have to make definitive claims, and further testing and validation are needed before drawing firm conclusions. But the evidence thus far seems to put the ranking of AT3C over AT2 over PT3C, in a holistic sense.
+[Cursory VSE simulations](https://eigentaylor.github.io/satisficing-voter-sim/) in my model of epistemic noise and ballot fatigue have been very favorable to this system. I may have to correct this paragraph of the post later, but Approval Top-3 Condorcet (AT3C) is potentially the most robust system by far, if we assume no epistemic noise in the runoff election. Comparing Approval Top-2 (AT2) with Plurality Top-3 Condorcet (PT3C), they are quite competitive, and perform better in different situations. AT2 is much more robust to a crowded field, however. That said, I'm not yet confident enough in the code I have to make definitive claims, and further testing and validation are needed before drawing firm conclusions. But the evidence thus far seems to put the ranking of AT3C over AT2 over PT3C, in a holistic sense.
 
-My other major concern is the Condorcet cycle. What happens when a cycle necessarily occurs. Unlike a top-2 election where the only tie is a literal split in the vote, a sort of "tie" in this method would involve all candidates winning and losing exactly one matchup. When the tiebreaker is used, will voters accept that results? Or will it undermine the legitimacy of the election? The empirical rarity of cycles does not have me convinced that such an event could be as catastrophic to the system as [Burlington 2009 or Alaska 2022 were to RCV](../ditch-rcv/){:target="_blank"}.
+My other major concern is the Condorcet cycle. What happens when a cycle necessarily occurs. Unlike a top-2 election where the only tie is a literal split in the vote, a sort of "tie" in this method would involve all candidates winning and losing exactly one matchup. When the tiebreaker is used, will voters accept that result? Or will it undermine the legitimacy of the election? The empirical rarity of cycles does not fully reassure me that if such an event occurred, it wouldn't be as catastrophic to the system as [Burlington 2009 or Alaska 2022 were to RCV](../ditch-rcv/){:target="_blank"}.
 
 ## Conclusion
 
@@ -251,6 +251,6 @@ What remains to be seen for me is
 
 As I've said before, basically all "good" voting methods<d-footnote>Primarily, Approval, Condorcet, and STAR voting. RCV is a noticeable downgrade from these systems.</d-footnote> are going to agree most of the time, and will largely all defuse polarization and encourage more representative candidates. With that in mind, I think the most practical and voter-friendly system is very likely the best one. I think Approval Top-2 is tested, excellent, and one of the most voter-friendly systems. But I could see an argument that by taking in one more candidate from the Approval jungle (which would reduce the number of lockouts), this slightly more expressive--but still grounded and digestible--general election ballot could make a more *palatable* reform that people can get excited about.
 
-At the moment, Approval Top-2 seems like a much safer system to back. The fact it's *already* being used in St. Louis <d-cite key="sargent2025stlouis"></d-cite> is a fantastic thing to be able to point to, advocacy-wise.
+At the moment, Approval Top-2 seems like a much safer system to back. The fact that it's *already* being used in St. Louis <d-cite key="sargent2025stlouis"></d-cite> is a fantastic thing to be able to point to, advocacy-wise.
 
 However, I *do* genuinely like this system. I hope that Better Choices decides to go with Approval voting in the first round, and then I would consider this a top-tier method (should it prove politically viable). I am absolutely keeping my eye on this.
