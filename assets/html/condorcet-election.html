@@ -86,6 +86,23 @@
         text-align: right;
       }
 
+      /* Glow on the winner label in each matchup card */
+      .cname.winning.alice {
+        text-shadow:
+          0 0 6px rgba(112, 82, 184, 0.7),
+          0 0 14px rgba(112, 82, 184, 0.35);
+      }
+      .cname.winning.bob {
+        text-shadow:
+          0 0 6px rgba(42, 138, 112, 0.7),
+          0 0 14px rgba(42, 138, 112, 0.35);
+      }
+      .cname.winning.clark {
+        text-shadow:
+          0 0 6px rgba(196, 97, 42, 0.7),
+          0 0 14px rgba(196, 97, 42, 0.35);
+      }
+
       .slider-wrap {
         flex: 1;
         position: relative;
@@ -261,7 +278,7 @@
       .cycle-divider {
         height: 1px;
         background: #e8e4de;
-        margin: 0 -18px 12px;
+        margin: 12px -18px 12px;
       }
 
       .minimax-badge {
@@ -413,12 +430,12 @@
         <!-- Alice vs Bob -->
         <div class="slider-card" id="card-0">
           <div class="matchup-row">
-            <span class="cname alice">Alice</span>
+            <span class="cname alice" id="cn-ab-l">Alice</span>
             <div class="slider-wrap">
               <input type="range" id="sl-ab" min="0" max="100" value="55" oninput="onSliderInput()" />
               <div class="center-tick"></div>
             </div>
-            <span class="cname bob right">Bob</span>
+            <span class="cname bob right" id="cn-ab-r">Bob</span>
           </div>
           <div class="share-label" id="lbl-ab"></div>
           <div class="strategy-hint" id="hint-0"></div>
@@ -427,12 +444,12 @@
         <!-- Alice vs Clark -->
         <div class="slider-card" id="card-1">
           <div class="matchup-row">
-            <span class="cname alice">Alice</span>
+            <span class="cname alice" id="cn-ac-l">Alice</span>
             <div class="slider-wrap">
               <input type="range" id="sl-ac" min="0" max="100" value="60" oninput="onSliderInput()" />
               <div class="center-tick"></div>
             </div>
-            <span class="cname clark right">Clark</span>
+            <span class="cname clark right" id="cn-ac-r">Clark</span>
           </div>
           <div class="share-label" id="lbl-ac"></div>
           <div class="strategy-hint" id="hint-1"></div>
@@ -441,12 +458,12 @@
         <!-- Bob vs Clark -->
         <div class="slider-card" id="card-2">
           <div class="matchup-row">
-            <span class="cname bob">Bob</span>
+            <span class="cname bob" id="cn-bc-l">Bob</span>
             <div class="slider-wrap">
               <input type="range" id="sl-bc" min="0" max="100" value="70" oninput="onSliderInput()" />
               <div class="center-tick"></div>
             </div>
-            <span class="cname clark right">Clark</span>
+            <span class="cname clark right" id="cn-bc-r">Clark</span>
           </div>
           <div class="share-label" id="lbl-bc"></div>
           <div class="strategy-hint" id="hint-2"></div>
@@ -496,18 +513,30 @@
         const mAC = ac - 50; // Alice's advantage over Clark
         const mBC = bc - 50; // Bob's advantage over Clark
 
+        // Glow the overall election winner's name in every slider card
+        const CNAME_IDS = { Alice: ["cn-ab-l", "cn-ac-l"], Bob: ["cn-ab-r", "cn-bc-l"], Clark: ["cn-ac-r", "cn-bc-r"] };
+        const ALL_CN = ["cn-ab-l", "cn-ac-l", "cn-ab-r", "cn-bc-l", "cn-ac-r", "cn-bc-r"];
+        function setWinner(name) {
+          ALL_CN.forEach((id) => document.getElementById(id).classList.remove("winning"));
+          if (name && CNAME_IDS[name]) CNAME_IDS[name].forEach((id) => document.getElementById(id).classList.add("winning"));
+        }
+
         const el = document.getElementById("result");
 
         // Condorcet winner first — the third matchup being a tie is irrelevant
         if (mAB > 0 && mAC > 0) {
+          setWinner("Alice");
           el.innerHTML = condorcetHTML("Alice", CLS.Alice, "Wins both head-to-head matchups");
         } else if (mAB < 0 && mBC > 0) {
+          setWinner("Bob");
           el.innerHTML = condorcetHTML("Bob", CLS.Bob, "Wins both head-to-head matchups");
         } else if (mAC < 0 && mBC < 0) {
+          setWinner("Clark");
           el.innerHTML = condorcetHTML("Clark", CLS.Clark, "Wins both head-to-head matchups");
         }
         // No Condorcet winner — now a tie in a relevant matchup matters
         else if (mAB === 0 || mAC === 0 || mBC === 0) {
+          setWinner(null);
           el.innerHTML = condorcetHTML(null, null, "Exact tie in one or more matchups — no Condorcet winner.");
           sendHeight();
           return;
@@ -529,6 +558,7 @@
           const best = Math.max(worsts.Alice, worsts.Bob, worsts.Clark);
           const winners = ["Alice", "Bob", "Clark"].filter((c) => worsts[c] === best);
 
+          setWinner(winners.length === 1 ? winners[0] : null);
           el.innerHTML = cycleHTML(chain, winners);
         }
 
@@ -570,10 +600,10 @@
         }
 
         return `<div class="result-card cycle-card">
+      ${minimaxHTML}
+      <div class="cycle-divider"></div>
       <div class="cycle-head">No Condorcet Winner — Cycle</div>
       <div class="cycle-chain">${chainHTML}</div>
-      <div class="cycle-divider"></div>
-      ${minimaxHTML}
     </div>`;
       }
 
