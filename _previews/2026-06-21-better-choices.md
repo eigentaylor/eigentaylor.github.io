@@ -95,35 +95,56 @@ window.addEventListener("message", function(e) {
 
 If a candidate wins both of their matchups, they are elected. If no candidate wins both matchups, the candidate with the "least bad loss" (the one who lost by the smallest margin) is elected<d-footnote>This is called "minimax".</d-footnote>.
 
+<iframe id="condorcet-election-frame" src="/assets/html/condorcet-election.html"
+  width="100%" height="480" scrolling="no"
+  frameborder="0"
+  style="border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.18); display: block; margin-top: 1rem; overflow: hidden;"
+  title="Interactive Condorcet/minimax election visualization">
+</iframe>
+<script>
+window.addEventListener("message", function(e) {
+  if (e.data && e.data.condorcetElectionHeight) {
+    var f = document.getElementById("condorcet-election-frame");
+    if (f) f.style.height = e.data.condorcetElectionHeight + "px";
+  }
+});
+</script>
+
 ## Why This is Cool
 
 Alright, I'm just gonna kind of nerd out here.
 
 ### Ballot Design
 
-I have many problems with ranked methods <d-cite key="mit2023maineRcv"></d-cite>. But one that I've come to appreciate is that voters have no idea how their ranked ballot is going to be counted. If you place a bunch of ranked ballots in front of people and say "choose a winner", they're probably going to do one of the following
+I have many problems with ranked methods <d-cite key="mit2023maineRcv"></d-cite>. But one that I've come to appreciate is that voters have no idea how their ranked ballot is going to be counted. If you place a bunch of ranked ballots in front of people and say "choose a winner", they're probably going to do one of the following:
 
-1. A points system (Borda). Top rank gets a certain number of points, the second rank gets fewer points, and so on down the line. Most points wins.<d-footnote>I once tried to describe Condorcet to a friend (who is very intelligent) and they immediately invented Borda on the spot.</d-footnote>
+1. A points system (Borda). Top rank gets a certain number of points, the second rank gets fewer points, and so on down the line. Most points wins.<d-footnote>I once tried to describe Condorcet to a friend (who is very intelligent) and they immediately invented Borda on the spot.</d-footnote> Or perhaps they'll invent a weighted average system!
 2. Vote transferring (RCV). Eliminate candidates and transfer votes.
 3. Pairwise comparison (Condorcet). Maybe a clever voter might ask "what if we just compare each candidate head-to-head against every other candidate and see who wins the most matchups?"
 
 I think this is a *big problem with ranked ballots*. It should, in my view, be explicitly clear and obvious what the system is going to do with your vote, and how it's going to be counted and tallied to determine the winner.
 
-This is one thing I like about Approval: it's not hard to guess that a bubble is a vote. That's how Choose-one voting works, and Approval works the same way. Hence, Better Choices' system uses that *same* interface to its advantage. I think the idea of head-to-head matchups becomes incredibly obvious.
+This is one thing I like about Approval: it's not hard to guess that a bubble is a vote. That's how Choose-one voting works, and Approval works the same way. Hence, Better Choices' system uses that *same* interface to its advantage. I think the idea of head-to-head matchups becomes much more obvious.
 
 This is also nice because this should make it much easier to implement on existing voting machines, which is something I really like about Approval! Tallying becomes exceptionally simple: it's just three different matchups (six total tallies) instead of one. That's not absurdly overcomplicated.
 
 The only question that remains is if the voters will understand how these head-to-head matchups translate to a winner. Will they be confused and expect the one who wins any matchup by the most is crowned the winner? Or will they understand the Condorcet principle at play?
 
+I am someone who is very concerned with a hostile ballot. As far as ballots go, this is an extremely friendly ballot, especially relative to RCV and STAR. But it is objectively more complex than a Choose-one or Approval ballot. Therefore, it's entirely possible that *even this* system could be too complex for voters to find palatable<d-footnote>My mother found it too confusing, and that's a bad sign because she is a smart lady. I would want rigorous and unbiased/independent usability studies before I jump on board.</d-footnote>. But if there's *any* way to make Condorcet methods work, it's probably this or nothing.
+
 ### So Much Better Than RCV
 
-I wish it didn't *need* to be said, but it does. Compared to this, RCV is legitimately awful. The practical drawbacks of RCV are not as blatant with only three candidates (you only effectively need to keep track of nine tallies with three candidates), but we have seen RCV fail utterly in elections with three viable candidates, such as [Alaska and Burlington](../ditch-rcv/){:target="_blank"}.
+I wish it didn't *need* to be said, but it does. Compared to this, RCV is legitimately awful. The practical drawbacks of RCV are not as blatant with only three candidates (you only effectively need to keep track of nine tallies with three candidates<d-footnote>The number of bullet voters, and the six possible transfers: $A\to B$, $A\to C$, $B\to A$, etc.</d-footnote>), but we have seen RCV fail utterly in elections with three viable candidates, such as [Alaska and Burlington](../ditch-rcv/){:target="_blank"}.
 
 If they had used this system instead, a number of major issues would have been prevented. For those who aren't anti-RCV-pilled yet, Condorcet is what Fairvote *tells you RCV is, but actually isn't*.
 
-In this system, you get to vote for your favorite, but you also get to support your second choice against your least favorite. This is what RCV fails to do. The major RCV failures stemmed from nonviable candidates *not* getting eliminated. Specifically, candidates who would lose in every head-to-head matchup got more first-choice votes than the broad consensus option--whose support was more widely distributed in second choices--and hence were not eliminated.
+In this system, you get to vote for your favorite, but you also get to support your second choice against your least favorite. This is what RCV fails to do. Most voters *assume* ranking a second choice fortifies against their least favorite, but that's not how RCV works. It is, however, exactly what this system does when you vote for your second choice against your least favorite in that matchup.
 
-Instead of looking at the first-choice votes--which says nothing about how broadly acceptable or unpalatable a candidate is--this system looks at the head-to-head matchups. A metric which is easier to count, and is far more indicative of a strong candidate. 
+The major RCV failures stemmed from nonviable candidates *not* getting eliminated. Specifically, candidates with fervent but thin support, who would lose in every head-to-head matchup, got more first-choice votes than the broad consensus option--whose support was more widely distributed in second choices--and hence were not eliminated. This left voters who ranked that nonviable candidate first holding the bag when their honest support eliminated their backup candidate, and their first choice was unable to win against their least favorite.
+
+RCV *ignored* the data voters were clearly communicated down in their second choice: that they preferred the consensus option as a second choice to their least favorite. The system was too shortsighted, only looked at these voters' first-choice<d-footnote>This is why Later No Harm is a joke criterion that nobody who understands social choice takes as anything close to "desirable". By protecting your first choice from your later choices, the system can't <em>save</em> your second choice if your first is nonviable. That's what happened in Burlington and Alaska. Later No Harm is incompatible with No Favorite Betrayal. If you want to protect your first choice from your second choice, you will often have to betray your honest first choice or else risk electing your last choice directly directly as a result of your honesty.</d-footnote>. The system proposed by Better Choices *explicitly* asks for this information, and uses it faithfully.
+
+Instead of looking at the first-choice votes--which says nothing about how broadly acceptable or unpalatable a candidate is--this system looks at the head-to-head matchups. A metric which is easier to count, and is far more indicative of a strong candidate.
 
 ### Cognitive Simplicity
 
@@ -147,7 +168,7 @@ With three candidates (or at least the system being considered here), there are 
 
 Minimax also [does not generally satisfy the Condorcet loser criterion](https://en.wikipedia.org/wiki/Condorcet_loser_criterion#Minimax), but *does* with three candidates<d-footnote>This is easily seen by case analysis (if a Condorcet loser exists among three candidates, then a Condorcet winner must also exist and would be elected instead) or the equivalence with Ranked Pairs/Schulze, which do satisfy the Condorcet loser criterion for any number of candidates.</d-footnote>.
 
-Condorcet, in general, can fail some desirable criteria, but minimax is actually quite robust in the three candidate case. This system essentially funnels down Condorcet into the scenario where it really shines.
+Condorcet, in general, can fail some desirable criteria. In fact, minimax, in general, often fails a number of nice properties. But minimax is actually quite robust in the three candidate case, because it's essentially a shortcut for more robust methods like Ranked Pairs and Schulze. This system essentially funnels down Condorcet into the scenario where it really shines.
 
 ### Strategy is Minimal
 
@@ -159,13 +180,39 @@ No system is going to be strategyproof in general, but I think Condorcet methods
 
 The nice thing about minimax is that it's fairly robust to attempts to throw a cycle. If a Condorcet winner exists, then suppose a coalition purposefully buries them in their weakest matchup. If they are *somehow* able to do this in a way that creates a cycle, then most likely that weakest win of the Condorcet winner becomes the weakest loss of the whole election. Hence the winner is likely unchanged. The coalition would need to be coordinated and large enough to turn it into a strong loss.
 
-If, let's say instead, a coalition tries to manipulate the outcome to change the winner from the honest Condorcet winner Alice to Bob (who won his matchup against Clark and would become the new Condorcet winner), then voters in that coalition would need to make Alice lose to Bob. But that means that voters who *honestly* voted for Alice over Bob, would need to lie and vote for Bob over Alice. Which would... give those voters a strictly worse outcome. Why would they do this?
+I made [a simple model you can check out here](https://eigentaylor.github.io/weakest-link/graph.html) which shows how insincere deviations can affect the outcome of a Condorcet election if a coalition is able to coordinate and change the relative size of the margins. Out of a total 48 state nodes, only 6 of them had *some* path to a profitable change. Only 2 of them had an adjacent node with a profitable change, and they were both in a cycle. The amount of work, coordination, and *foresight* required would let me sleep soundly at night telling laypeople there's effectively no reason to ever lie in a system using this method.
 
-Condorcet methods, particularly minimax, are just remarkably robust in practice. There's seriously no realistic incentive to lie in such a method in my view, even if a theoretical incentive provably exists. It's a genuine strength I appreciate of Condorcet, even as an Approval voting enthusiast.
+{% proof Strategy details %}
+If you are interested, you can use the playground above to see the strategy in action. Suppose you are a voter who most prefers Alice, then Bob, then Clark. Then insincere voting would involve moving any of the sliders to the left.
+
+<iframe id="condorcet-election-frame" src="/assets/html/condorcet-election.html"
+  width="100%" height="480" scrolling="no"
+  frameborder="0"
+  style="border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.18); display: block; margin-top: 1rem; overflow: hidden;"
+  title="Interactive Condorcet/minimax election visualization">
+</iframe>
+<script>
+window.addEventListener("message", function(e) {
+  if (e.data && e.data.condorcetElectionHeight) {
+    var f = document.getElementById("condorcet-election-frame");
+    if (f) f.style.height = e.data.condorcetElectionHeight + "px";
+  }
+});
+</script>
+
+The following two scenarios are the [only cases](https://eigentaylor.github.io/weakest-link/graph.html) where you might have an incentive to vote insincerely:
+
+1. **Bob Burial**: If we have a cycle where Alice beats Clark by the largest margin, Bob beats Alice by the second largest margin, and Clark beats Bob by the smallest margin, then Bob wins through the tiebreaker. If you bury Bob in his matchup against Clark (move the bottom slider to the left), until Alice's loss to Bob is the smallest margin, then Alice wins. This is a profitable deviation for you, but it requires a *very* specific cycle to occur.
+2. **Alice Betrayal**: If we have a cycle where Clark beats Alice by the largest margin, Alice beats Bob by the second largest margin, and Bob beats Clark by the smallest margin, then Clark wins through the tiebreaker. If you bury Alice in her matchup against Bob (move the top slider to the left), until Bob's loss to Alice is the smallest margin, then Bob wins.
+
+These scenarios are absurdly unlikely to both occur and be predicted, since cycles are so empirically rare. Further, you would both need to be confident in the relative margins of the matchups, and be able to coordinate with other voters to actually *change* the order of the margins. This is a lot of work, and requires a lot of coordination and foresight. In practice, I do not see this as a realistic concern.
+{% endproof %}
+
+Condorcet methods, particularly minimax/ranked pairs, are just remarkably robust in practice, especially to coordinated manipulation. As far as voting systems go, this is probably the most honest system you can get, and that's genuinely nice.
 
 ### It Fits the Condorcet Ideal
 
-I wrote in [a very cheeky past post](../condorcet-approval/){:target="_blank"} about how ranked Condorcet methods are a mere approximation of who would win in every matchup. *Runoff dominance* is what I see as the Condorcet ideal (though Condorcet may not necessarily agree). I actually mentioned in that post that you would need voters to vote in every matchup to truly claim you elected the Condorcet winner. Turns out there's now a system that does precisely this! I think that's cool.
+I wrote in [a very cheeky past post](../condorcet-approval/){:target="_blank"} about how ranked Condorcet methods are a mere approximation of who would win in every matchup. *Runoff dominance* is what I see as the Condorcet ideal (though Condorcet himself may not necessarily agree). I actually mentioned in that post that you would need voters to vote in every matchup to truly claim you elected the Condorcet winner. Turns out there's now a system that does precisely this! I think that's cool.
 
 ### You can vote intransitively
 
@@ -187,7 +234,7 @@ The issue with jungle primaries *is not that the runoff is between two candidate
 
 If, instead, Better Choices were to use Approval voting in the first round, then I think this could be one of (if not *the*) most robust systems currently in conversation. *Seriously*.
 
-Cursory VSE simulations have been very favorable to this system. I may have to correct this paragraph of the post later, but it appears that Approval Top-2 outperforms Choose-one Top-3 Condorcet, but Approval Top-3 Condorcet potentially outperforms both. However, I'm not yet confident enough in the code I have to make definitive claims, and further testing and validation are needed before drawing firm conclusions.
+[Cursory VSE simulations](https://eigentaylor.github.io/satisficing-voter-sim/) have been very favorable to this system. I may have to correct this paragraph of the post later, but it appears that Approval Top-2 outperforms Choose-one Top-3 Condorcet, but Approval Top-3 Condorcet potentially outperforms both. However, I'm not yet confident enough in the code I have to make definitive claims, and further testing and validation are needed before drawing firm conclusions.
 
 My other major concern is the Condorcet cycle. What happens when a cycle necessarily occurs. Unlike a top-2 election where the only tie is a literal split in the vote, a sort of "tie" in this method would involve all candidates winning and losing exactly one matchup. When the tiebreaker is used, will voters accept that results? Or will it undermine the legitimacy of the election? The empirical rarity of cycles does not have me convinced that such an event could be as catastrophic to the system as [Burlington 2009 or Alaska 2022 were to RCV](../ditch-rcv/){:target="_blank"}.
 
