@@ -1,446 +1,690 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Condorcet Election</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Condorcet Election</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    :root {
-      --alice: #7052b8;
-      --bob:   #2a8a70;
-      --clark: #c4612a;
-      --navy:  #0d1b3e;
-    }
+      :root {
+        --alice: #7052b8;
+        --bob: #2a8a70;
+        --clark: #c4612a;
+        --navy: #0d1b3e;
+      }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f0ece4;
-    }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f0ece4;
+      }
 
-    .outer {
-      padding: 20px 20px 16px;
-    }
+      .outer {
+        padding: 20px 20px 16px;
+      }
 
-    h2.title {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 22px;
-      color: var(--navy);
-      text-align: center;
-      margin-bottom: 4px;
-    }
+      h2.title {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 22px;
+        color: var(--navy);
+        text-align: center;
+        margin-bottom: 4px;
+      }
 
-    .subtitle {
-      font-size: 12px;
-      color: #666;
-      text-align: center;
-      margin-bottom: 14px;
-    }
+      .subtitle {
+        font-size: 12px;
+        color: #666;
+        text-align: center;
+        margin-bottom: 14px;
+      }
 
-    /* ── Slider cards ── */
-    .sliders {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
+      /* ── Slider cards ── */
+      .sliders {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
 
-    .slider-card {
-      background: white;
-      border-radius: 10px;
-      padding: 10px 16px 8px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.10);
-    }
+      .slider-card {
+        background: white;
+        border-radius: 10px;
+        padding: 10px 16px 8px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      }
 
-    .matchup-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 6px;
-    }
+      .matchup-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 6px;
+      }
 
-    .cname {
-      font-size: 13.5px;
-      font-weight: bold;
-      flex-shrink: 0;
-      width: 46px;
-    }
+      .cname {
+        font-size: 13.5px;
+        font-weight: bold;
+        flex-shrink: 0;
+        width: 46px;
+      }
 
-    .cname.alice { color: var(--alice); }
-    .cname.bob   { color: var(--bob); }
-    .cname.clark { color: var(--clark); }
-    .cname.right { text-align: right; }
+      .cname.alice {
+        color: var(--alice);
+      }
+      .cname.bob {
+        color: var(--bob);
+      }
+      .cname.clark {
+        color: var(--clark);
+      }
+      .cname.right {
+        text-align: right;
+      }
 
-    .slider-wrap {
-      flex: 1;
-      position: relative;
-    }
+      /* Glow on the winner label in each matchup card */
+      .cname.winning.alice {
+        text-shadow:
+          0 0 6px rgba(112, 82, 184, 0.7),
+          0 0 14px rgba(112, 82, 184, 0.35);
+      }
+      .cname.winning.bob {
+        text-shadow:
+          0 0 6px rgba(42, 138, 112, 0.7),
+          0 0 14px rgba(42, 138, 112, 0.35);
+      }
+      .cname.winning.clark {
+        text-shadow:
+          0 0 6px rgba(196, 97, 42, 0.7),
+          0 0 14px rgba(196, 97, 42, 0.35);
+      }
 
-    /* ── 50% tick mark ── */
-    .center-tick {
-      position: absolute;
-      left: calc(50% - 2px);
-      top: 50%;
-      transform: translateY(-50%);
-      width: 4px;
-      height: 24px;           /* extends well above & below the 7px track */
-      background: white;
-      border-radius: 2px;
-      /* Dark ring makes it visible against any gradient color */
-      box-shadow: 0 0 0 2px rgba(0,0,0,0.40), 0 1px 4px rgba(0,0,0,0.18);
-      pointer-events: none;
-      z-index: 5;
-    }
+      .slider-wrap {
+        flex: 1;
+        position: relative;
+      }
 
-    /* share-label: highlight when at exact tie */
-    .share-label.is-tie {
-      font-weight: bold;
-      color: #555;
-    }
+      /* ── 50% tick mark ── */
+      .center-tick {
+        position: absolute;
+        left: calc(50% - 2px);
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 24px; /* extends well above & below the 7px track */
+        background: white;
+        border-radius: 2px;
+        /* Dark ring makes it visible against any gradient color */
+        box-shadow:
+          0 0 0 2px rgba(0, 0, 0, 0.4),
+          0 1px 4px rgba(0, 0, 0, 0.18);
+        pointer-events: none;
+        z-index: 5;
+      }
 
-    /* Range input — gradient track via CSS custom props, updated by JS */
-    input[type=range] {
-      --lc: #aaa;
-      --rc: #aaa;
-      --fp: 50%;
-      -webkit-appearance: none;
-      appearance: none;
-      width: 100%;
-      height: 7px;
-      border-radius: 4px;
-      background: linear-gradient(
-        to right,
-        var(--lc) 0%, var(--lc) var(--fp),
-        var(--rc) var(--fp), var(--rc) 100%
-      );
-      outline: none;
-      cursor: pointer;
-    }
+      /* share-label: highlight when at exact tie */
+      .share-label.is-tie {
+        font-weight: bold;
+        color: #555;
+      }
 
-    /* Chrome / Safari thumb */
-    input[type=range]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: white;
-      border: 2.5px solid #aaa;
-      cursor: pointer;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.22);
-    }
+      /* Range input — gradient track via CSS custom props, updated by JS */
+      input[type="range"] {
+        --lc: #aaa;
+        --rc: #aaa;
+        --fp: 50%;
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 7px;
+        border-radius: 4px;
+        background: linear-gradient(to right, var(--lc) 0%, var(--lc) var(--fp), var(--rc) var(--fp), var(--rc) 100%);
+        outline: none;
+        cursor: pointer;
+      }
 
-    /* Firefox track */
-    input[type=range]::-moz-range-track {
-      height: 7px;
-      border-radius: 4px;
-      background: linear-gradient(
-        to right,
-        var(--lc) 0%, var(--lc) var(--fp),
-        var(--rc) var(--fp), var(--rc) 100%
-      );
-      border: none;
-    }
+      /* Chrome / Safari thumb */
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: white;
+        border: 2.5px solid #aaa;
+        cursor: pointer;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
+      }
 
-    /* Firefox thumb */
-    input[type=range]::-moz-range-thumb {
-      -moz-appearance: none;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: white;
-      border: 2.5px solid #aaa;
-      cursor: pointer;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.22);
-    }
+      /* Firefox track */
+      input[type="range"]::-moz-range-track {
+        height: 7px;
+        border-radius: 4px;
+        background: linear-gradient(to right, var(--lc) 0%, var(--lc) var(--fp), var(--rc) var(--fp), var(--rc) 100%);
+        border: none;
+      }
 
-    .share-label {
-      text-align: center;
-      font-size: 11.5px;
-      color: #777;
-    }
+      /* Firefox thumb */
+      input[type="range"]::-moz-range-thumb {
+        -moz-appearance: none;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: white;
+        border: 2.5px solid #aaa;
+        cursor: pointer;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
+      }
 
-    /* ── Result cards ── */
-    .result-card {
-      border-radius: 10px;
-      padding: 13px 18px;
-      margin-bottom: 10px;
-      color: white;
-      background: var(--navy);
-    }
+      .share-label {
+        text-align: center;
+        font-size: 11.5px;
+        color: #777;
+      }
 
-    .result-badge {
-      font-size: 10.5px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #8fa0c0;
-      margin-bottom: 4px;
-    }
+      /* ── Result cards ── */
+      .result-card {
+        border-radius: 10px;
+        padding: 13px 18px;
+        margin-bottom: 10px;
+        color: white;
+        background: var(--navy);
+      }
 
-    .result-name {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 25px;
-      font-weight: bold;
-      line-height: 1.1;
-    }
+      .result-badge {
+        font-size: 10.5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #8fa0c0;
+        margin-bottom: 4px;
+      }
 
-    .result-name.alice { color: #c4b4f4; }
-    .result-name.bob   { color: #84d8bc; }
-    .result-name.clark { color: #f4b07a; }
-    .result-name.tie   { color: #ccc; }
+      .result-name {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 25px;
+        font-weight: bold;
+        line-height: 1.1;
+      }
 
-    .result-desc {
-      font-size: 11.5px;
-      color: #8fa0c0;
-      margin-top: 4px;
-    }
+      .result-name.alice {
+        color: #c4b4f4;
+      }
+      .result-name.bob {
+        color: #84d8bc;
+      }
+      .result-name.clark {
+        color: #f4b07a;
+      }
+      .result-name.tie {
+        color: #ccc;
+      }
 
-    .result-card.tie-card { background: #5a5a5a; }
+      .result-desc {
+        font-size: 11.5px;
+        color: #8fa0c0;
+        margin-top: 4px;
+      }
 
-    /* Cycle variant — lighter card with a divider inside */
-    .result-card.cycle-card {
-      background: white;
-      color: var(--navy);
-      border: 1px solid #ddd;
-    }
+      .result-card.tie-card {
+        background: #5a5a5a;
+      }
 
-    .cycle-head {
-      font-size: 10.5px;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: #888;
-      margin-bottom: 8px;
-    }
+      /* Cycle variant — lighter card with a divider inside */
+      .result-card.cycle-card {
+        background: white;
+        color: var(--navy);
+        border: 1px solid #ddd;
+      }
 
-    .cycle-chain {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      flex-wrap: wrap;
-      margin-bottom: 12px;
-    }
+      .cycle-head {
+        font-size: 10.5px;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: #888;
+        margin-bottom: 8px;
+      }
 
-    .cycle-node {
-      font-size: 15px;
-      font-weight: bold;
-    }
+      .cycle-chain {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+      }
 
-    .cycle-node.alice { color: var(--alice); }
-    .cycle-node.bob   { color: var(--bob); }
-    .cycle-node.clark { color: var(--clark); }
+      .cycle-node {
+        font-size: 15px;
+        font-weight: bold;
+      }
 
-    .cycle-arrow { font-size: 14px; color: #bbb; }
+      .cycle-node.alice {
+        color: var(--alice);
+      }
+      .cycle-node.bob {
+        color: var(--bob);
+      }
+      .cycle-node.clark {
+        color: var(--clark);
+      }
 
-    .cycle-divider {
-      height: 1px;
-      background: #e8e4de;
-      margin: 0 -18px 12px;
-    }
+      .cycle-arrow {
+        font-size: 14px;
+        color: #bbb;
+      }
 
-    .minimax-badge {
-      font-size: 10.5px;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: #888;
-      margin-bottom: 4px;
-    }
+      .cycle-divider {
+        height: 1px;
+        background: #e8e4de;
+        margin: 12px -18px 12px;
+      }
 
-    .minimax-name {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 22px;
-      font-weight: bold;
-    }
+      .minimax-badge {
+        font-size: 10.5px;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: #888;
+        margin-bottom: 4px;
+      }
 
-    .minimax-name.alice { color: var(--alice); }
-    .minimax-name.bob   { color: var(--bob); }
-    .minimax-name.clark { color: var(--clark); }
-    .minimax-name.tie   { color: #666; }
+      .minimax-name {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 22px;
+        font-weight: bold;
+      }
 
-    .minimax-desc {
-      font-size: 11.5px;
-      color: #777;
-      margin-top: 3px;
-    }
+      .minimax-name.alice {
+        color: var(--alice);
+      }
+      .minimax-name.bob {
+        color: var(--bob);
+      }
+      .minimax-name.clark {
+        color: var(--clark);
+      }
+      .minimax-name.tie {
+        color: #666;
+      }
 
-    /* ── Caption ── */
-    .caption {
-      font-size: 11.5px;
-      color: #888;
-      font-style: italic;
-      text-align: center;
-      line-height: 1.55;
-      margin-top: 10px;
-    }
-  </style>
-</head>
-<body>
-<div class="outer" id="outer">
-  <h2 class="title">Who Wins?</h2>
-  <p class="subtitle">Drag the sliders to set vote shares in each head-to-head matchup.</p>
+      .minimax-desc {
+        font-size: 11.5px;
+        color: #777;
+        margin-top: 3px;
+      }
 
-  <div class="sliders">
-    <!-- Alice vs Bob -->
-    <div class="slider-card">
-      <div class="matchup-row">
-        <span class="cname alice">Alice</span>
-        <div class="slider-wrap">
-          <input type="range" id="sl-ab" min="0" max="100" value="55" oninput="update()">
-          <div class="center-tick"></div>
+      /* ── Strategy presets (hidden unless ?strategy param) ── */
+      .strategy-section {
+        display: none;
+        background: white;
+        border-radius: 10px;
+        padding: 10px 16px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 8px;
+      }
+
+      .strategy-head {
+        font-size: 10.5px;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: #888;
+        margin-bottom: 8px;
+      }
+
+      .preset-btns {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .preset-btn {
+        padding: 5px 14px;
+        font-size: 12px;
+        font-weight: bold;
+        border: 2px solid #c8c0b0;
+        border-radius: 6px;
+        background: white;
+        color: #555;
+        cursor: pointer;
+        transition:
+          background 0.12s,
+          border-color 0.12s,
+          color 0.12s;
+      }
+
+      .preset-btn:hover:not(.active) {
+        background: #f5f1ea;
+        border-color: #999;
+      }
+
+      .preset-btn.active {
+        background: var(--navy);
+        color: white;
+        border-color: var(--navy);
+      }
+
+      .preset-btn.reset-btn {
+        border-style: dashed;
+        color: #999;
+      }
+
+      .preset-btn.reset-btn:hover {
+        color: #555;
+        border-color: #888;
+        background: #f5f1ea;
+      }
+
+      /* Hint strip shown on the strategic slider card */
+      .strategy-hint {
+        display: none;
+        align-items: center;
+        gap: 8px;
+        margin-top: 7px;
+        padding: 5px 10px;
+        background: #fef7e6;
+        border: 1.5px solid #f0c840;
+        border-radius: 6px;
+        font-size: 11.5px;
+        color: #7a5800;
+        line-height: 1.4;
+      }
+
+      .slider-card.strategic .strategy-hint {
+        display: flex;
+      }
+
+      .hint-arrow {
+        font-size: 18px;
+        font-weight: bold;
+        flex-shrink: 0;
+      }
+
+      /* ── Caption ── */
+      .caption {
+        font-size: 11.5px;
+        color: #888;
+        font-style: italic;
+        text-align: center;
+        line-height: 1.55;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer" id="outer">
+      <h2 class="title">Who Wins?</h2>
+      <p class="subtitle">Drag the sliders to set vote shares in each head-to-head matchup.</p>
+
+      <!-- Strategy preset bar — only shown when ?strategy param is present -->
+      <div class="strategy-section" id="strategy-section">
+        <div class="strategy-head">Strategy Scenarios</div>
+        <div class="preset-btns">
+          <button class="preset-btn" id="btn-p0" onclick="applyPreset(0)">Scenario 1</button>
+          <button class="preset-btn" id="btn-p1" onclick="applyPreset(1)">Scenario 2</button>
+          <button class="preset-btn reset-btn" onclick="clearPreset()">Reset</button>
         </div>
-        <span class="cname bob right">Bob</span>
       </div>
-      <div class="share-label" id="lbl-ab"></div>
+
+      <div class="sliders">
+        <!-- Alice vs Bob -->
+        <div class="slider-card" id="card-0">
+          <div class="matchup-row">
+            <span class="cname alice" id="cn-ab-l">Alice</span>
+            <div class="slider-wrap">
+              <input type="range" id="sl-ab" min="0" max="100" value="55" oninput="onSliderInput()" />
+              <div class="center-tick"></div>
+            </div>
+            <span class="cname bob right" id="cn-ab-r">Bob</span>
+          </div>
+          <div class="share-label" id="lbl-ab"></div>
+          <div class="strategy-hint" id="hint-0"></div>
+        </div>
+
+        <!-- Alice vs Clark -->
+        <div class="slider-card" id="card-1">
+          <div class="matchup-row">
+            <span class="cname alice" id="cn-ac-l">Alice</span>
+            <div class="slider-wrap">
+              <input type="range" id="sl-ac" min="0" max="100" value="60" oninput="onSliderInput()" />
+              <div class="center-tick"></div>
+            </div>
+            <span class="cname clark right" id="cn-ac-r">Clark</span>
+          </div>
+          <div class="share-label" id="lbl-ac"></div>
+          <div class="strategy-hint" id="hint-1"></div>
+        </div>
+
+        <!-- Bob vs Clark -->
+        <div class="slider-card" id="card-2">
+          <div class="matchup-row">
+            <span class="cname bob" id="cn-bc-l">Bob</span>
+            <div class="slider-wrap">
+              <input type="range" id="sl-bc" min="0" max="100" value="70" oninput="onSliderInput()" />
+              <div class="center-tick"></div>
+            </div>
+            <span class="cname clark right" id="cn-bc-r">Clark</span>
+          </div>
+          <div class="share-label" id="lbl-bc"></div>
+          <div class="strategy-hint" id="hint-2"></div>
+        </div>
+      </div>
+
+      <div id="result"></div>
+
+      <p class="caption">
+        Default: Alice leads in both her matchups and wins — even though Bob beats Clark by a much larger margin. In a Condorcet election, consistency
+        across all matchups is what matters, not raw margin size.
+      </p>
     </div>
 
-    <!-- Alice vs Clark -->
-    <div class="slider-card">
-      <div class="matchup-row">
-        <span class="cname alice">Alice</span>
-        <div class="slider-wrap">
-          <input type="range" id="sl-ac" min="0" max="100" value="60" oninput="update()">
-          <div class="center-tick"></div>
-        </div>
-        <span class="cname clark right">Clark</span>
-      </div>
-      <div class="share-label" id="lbl-ac"></div>
-    </div>
+    <script>
+      const COL = { Alice: "#7052b8", Bob: "#2a8a70", Clark: "#c4612a" };
+      const CLS = { Alice: "alice", Bob: "bob", Clark: "clark" };
 
-    <!-- Bob vs Clark -->
-    <div class="slider-card">
-      <div class="matchup-row">
-        <span class="cname bob">Bob</span>
-        <div class="slider-wrap">
-          <input type="range" id="sl-bc" min="0" max="100" value="70" oninput="update()">
-          <div class="center-tick"></div>
-        </div>
-        <span class="cname clark right">Clark</span>
-      </div>
-      <div class="share-label" id="lbl-bc"></div>
-    </div>
-  </div>
+      function sendHeight() {
+        const h = document.getElementById("outer").getBoundingClientRect().height;
+        window.parent.postMessage({ condorcetElectionHeight: Math.ceil(h) }, "*");
+      }
+      new ResizeObserver(sendHeight).observe(document.getElementById("outer"));
 
-  <div id="result"></div>
+      function setSlider(id, val, lc, rc, lblId, lName, rName) {
+        const sl = document.getElementById(id);
+        sl.style.setProperty("--lc", lc);
+        sl.style.setProperty("--rc", rc);
+        sl.style.setProperty("--fp", val + "%");
+        const lbl = document.getElementById(lblId);
+        const isTie = val === 50;
+        lbl.textContent = isTie ? `${lName} 50% — ${rName} 50% (Tie)` : `${lName} ${val}% — ${rName} ${100 - val}%`;
+        lbl.classList.toggle("is-tie", isTie);
+      }
 
-  <p class="caption">Default: Alice leads in both her matchups and wins — even though Bob beats Clark by a much larger margin. In a Condorcet election, consistency across all matchups is what matters, not raw margin size.</p>
-</div>
+      function update() {
+        const ab = +document.getElementById("sl-ab").value;
+        const ac = +document.getElementById("sl-ac").value;
+        const bc = +document.getElementById("sl-bc").value;
 
-<script>
-  const COL = { Alice: '#7052b8', Bob: '#2a8a70', Clark: '#c4612a' };
-  const CLS = { Alice: 'alice', Bob: 'bob', Clark: 'clark' };
+        setSlider("sl-ab", ab, COL.Alice, COL.Bob, "lbl-ab", "Alice", "Bob");
+        setSlider("sl-ac", ac, COL.Alice, COL.Clark, "lbl-ac", "Alice", "Clark");
+        setSlider("sl-bc", bc, COL.Bob, COL.Clark, "lbl-bc", "Bob", "Clark");
 
-  function sendHeight() {
-    const h = document.getElementById('outer').getBoundingClientRect().height;
-    window.parent.postMessage({ condorcetElectionHeight: Math.ceil(h) }, '*');
-  }
-  new ResizeObserver(sendHeight).observe(document.getElementById('outer'));
+        // mXY > 0 means left candidate beats right
+        const mAB = ab - 50; // Alice's advantage over Bob
+        const mAC = ac - 50; // Alice's advantage over Clark
+        const mBC = bc - 50; // Bob's advantage over Clark
 
-  function setSlider(id, val, lc, rc, lblId, lName, rName) {
-    const sl = document.getElementById(id);
-    sl.style.setProperty('--lc', lc);
-    sl.style.setProperty('--rc', rc);
-    sl.style.setProperty('--fp', val + '%');
-    const lbl = document.getElementById(lblId);
-    const isTie = val === 50;
-    lbl.textContent = isTie
-      ? `${lName} 50% — ${rName} 50% (Tie)`
-      : `${lName} ${val}% — ${rName} ${100 - val}%`;
-    lbl.classList.toggle('is-tie', isTie);
-  }
+        // Glow the overall election winner's name in every slider card
+        const CNAME_IDS = { Alice: ["cn-ab-l", "cn-ac-l"], Bob: ["cn-ab-r", "cn-bc-l"], Clark: ["cn-ac-r", "cn-bc-r"] };
+        const ALL_CN = ["cn-ab-l", "cn-ac-l", "cn-ab-r", "cn-bc-l", "cn-ac-r", "cn-bc-r"];
+        function setWinner(name) {
+          ALL_CN.forEach((id) => document.getElementById(id).classList.remove("winning"));
+          if (name && CNAME_IDS[name]) CNAME_IDS[name].forEach((id) => document.getElementById(id).classList.add("winning"));
+        }
 
-  function update() {
-    const ab = +document.getElementById('sl-ab').value;
-    const ac = +document.getElementById('sl-ac').value;
-    const bc = +document.getElementById('sl-bc').value;
+        const el = document.getElementById("result");
 
-    setSlider('sl-ab', ab, COL.Alice, COL.Bob,   'lbl-ab', 'Alice', 'Bob');
-    setSlider('sl-ac', ac, COL.Alice, COL.Clark, 'lbl-ac', 'Alice', 'Clark');
-    setSlider('sl-bc', bc, COL.Bob,   COL.Clark, 'lbl-bc', 'Bob',   'Clark');
+        // Condorcet winner first — the third matchup being a tie is irrelevant
+        if (mAB > 0 && mAC > 0) {
+          setWinner("Alice");
+          el.innerHTML = condorcetHTML("Alice", CLS.Alice, "Wins both head-to-head matchups");
+        } else if (mAB < 0 && mBC > 0) {
+          setWinner("Bob");
+          el.innerHTML = condorcetHTML("Bob", CLS.Bob, "Wins both head-to-head matchups");
+        } else if (mAC < 0 && mBC < 0) {
+          setWinner("Clark");
+          el.innerHTML = condorcetHTML("Clark", CLS.Clark, "Wins both head-to-head matchups");
+        }
+        // No Condorcet winner — now a tie in a relevant matchup matters
+        else if (mAB === 0 || mAC === 0 || mBC === 0) {
+          setWinner(null);
+          el.innerHTML = condorcetHTML(null, null, "Exact tie in one or more matchups — no Condorcet winner.");
+          sendHeight();
+          return;
+        } else {
+          // Cycle — identify direction
+          // Case A: Alice→Bob→Clark→Alice (mAB>0, mBC>0, mAC<0)
+          // Case B: Bob→Alice→Clark→Bob   (mAB<0, mAC>0, mBC<0)
+          const chain = mAB > 0 && mBC > 0 ? ["Alice", "Bob", "Clark", "Alice"] : ["Bob", "Alice", "Clark", "Bob"];
 
-    // mXY > 0 means left candidate beats right
-    const mAB = ab - 50;  // Alice's advantage over Bob
-    const mAC = ac - 50;  // Alice's advantage over Clark
-    const mBC = bc - 50;  // Bob's advantage over Clark
+          // Minimax: worst margin per candidate (most negative = biggest loss)
+          // Alice margins: vs Bob = mAB, vs Clark = mAC
+          // Bob margins:   vs Alice = -mAB, vs Clark = mBC
+          // Clark margins: vs Alice = -mAC, vs Bob = -mBC
+          const worsts = {
+            Alice: Math.min(mAB, mAC),
+            Bob: Math.min(-mAB, mBC),
+            Clark: Math.min(-mAC, -mBC),
+          };
+          const best = Math.max(worsts.Alice, worsts.Bob, worsts.Clark);
+          const winners = ["Alice", "Bob", "Clark"].filter((c) => worsts[c] === best);
 
-    const el = document.getElementById('result');
+          setWinner(winners.length === 1 ? winners[0] : null);
+          el.innerHTML = cycleHTML(chain, winners);
+        }
 
-    // Condorcet winner first — the third matchup being a tie is irrelevant
-    if      (mAB > 0 && mAC > 0) { el.innerHTML = condorcetHTML('Alice', CLS.Alice, 'Wins both head-to-head matchups'); }
-    else if (mAB < 0 && mBC > 0) { el.innerHTML = condorcetHTML('Bob',   CLS.Bob,   'Wins both head-to-head matchups'); }
-    else if (mAC < 0 && mBC < 0) { el.innerHTML = condorcetHTML('Clark', CLS.Clark, 'Wins both head-to-head matchups'); }
-    // No Condorcet winner — now a tie in a relevant matchup matters
-    else if (mAB === 0 || mAC === 0 || mBC === 0) {
-      el.innerHTML = condorcetHTML(null, null, 'Exact tie in one or more matchups — no Condorcet winner.');
-      sendHeight(); return;
-    }
-    else {
-      // Cycle — identify direction
-      // Case A: Alice→Bob→Clark→Alice (mAB>0, mBC>0, mAC<0)
-      // Case B: Bob→Alice→Clark→Bob   (mAB<0, mAC>0, mBC<0)
-      const chain = (mAB > 0 && mBC > 0)
-        ? ['Alice', 'Bob', 'Clark', 'Alice']
-        : ['Bob', 'Alice', 'Clark', 'Bob'];
+        sendHeight();
+      }
 
-      // Minimax: worst margin per candidate (most negative = biggest loss)
-      // Alice margins: vs Bob = mAB, vs Clark = mAC
-      // Bob margins:   vs Alice = -mAB, vs Clark = mBC
-      // Clark margins: vs Alice = -mAC, vs Bob = -mBC
-      const worsts = {
-        Alice: Math.min(mAB, mAC),
-        Bob:   Math.min(-mAB, mBC),
-        Clark: Math.min(-mAC, -mBC),
-      };
-      const best = Math.max(worsts.Alice, worsts.Bob, worsts.Clark);
-      const winners = ['Alice', 'Bob', 'Clark'].filter(c => worsts[c] === best);
-
-      el.innerHTML = cycleHTML(chain, winners);
-    }
-
-    sendHeight();
-  }
-
-  function condorcetHTML(name, cls, desc) {
-    if (!name) {
-      return `<div class="result-card tie-card">
+      function condorcetHTML(name, cls, desc) {
+        if (!name) {
+          return `<div class="result-card tie-card">
         <div class="result-badge">Result</div>
         <div class="result-name tie">Tie</div>
         <div class="result-desc">${desc}</div>
       </div>`;
-    }
-    return `<div class="result-card">
+        }
+        return `<div class="result-card">
       <div class="result-badge">Condorcet Winner</div>
       <div class="result-name ${cls}">${name}</div>
       <div class="result-desc">${desc}</div>
     </div>`;
-  }
+      }
 
-  function cycleHTML(chain, winners) {
-    const chainHTML = chain.map((n, i) =>
-      `<span class="cycle-node ${CLS[n]}">${n}</span>${i < chain.length - 1 ? '<span class="cycle-arrow"> → </span>' : ''}`
-    ).join('');
+      function cycleHTML(chain, winners) {
+        const chainHTML = chain
+          .map((n, i) => `<span class="cycle-node ${CLS[n]}">${n}</span>${i < chain.length - 1 ? '<span class="cycle-arrow"> → </span>' : ""}`)
+          .join("");
 
-    let minimaxHTML;
-    if (winners.length === 1) {
-      const w = winners[0];
-      minimaxHTML = `
+        let minimaxHTML;
+        if (winners.length === 1) {
+          const w = winners[0];
+          minimaxHTML = `
         <div class="minimax-badge">Minimax Winner (tiebreaker)</div>
         <div class="minimax-name ${CLS[w]}">${w}</div>
         <div class="minimax-desc">Smallest margin of loss</div>`;
-    } else {
-      minimaxHTML = `
+        } else {
+          minimaxHTML = `
         <div class="minimax-badge">Minimax (tiebreaker)</div>
         <div class="minimax-name tie">Tie</div>
-        <div class="minimax-desc">${winners.join(' & ')} share the smallest margin of loss</div>`;
-    }
+        <div class="minimax-desc">${winners.join(" & ")} share the smallest margin of loss</div>`;
+        }
 
-    return `<div class="result-card cycle-card">
+        return `<div class="result-card cycle-card">
+      ${minimaxHTML}
+      <div class="cycle-divider"></div>
       <div class="cycle-head">No Condorcet Winner — Cycle</div>
       <div class="cycle-chain">${chainHTML}</div>
-      <div class="cycle-divider"></div>
-      ${minimaxHTML}
     </div>`;
-  }
+      }
 
-  update();
-</script>
-</body>
+      // ── Strategy mode ──────────────────────────────────────────────────────────
+      // Activated by loading the iframe with ?strategy in the URL.
+      // The first embed (no param) is unaffected.
+
+      const STRATEGY_MODE = new URLSearchParams(window.location.search).has("strategy");
+
+      if (STRATEGY_MODE) {
+        document.getElementById("strategy-section").style.display = "block";
+      }
+
+      // Each preset: slider values + which card gets the annotation and what it says.
+      const PRESETS = [
+        {
+          ab: 35,
+          ac: 75,
+          bc: 45,
+          hint: { card: 2, arrow: "←", text: "Try moving this slider left until Alice wins" },
+        },
+        {
+          ab: 65,
+          ac: 25,
+          bc: 60,
+          hint: { card: 0, arrow: "←", text: "Try moving this slider left until Bob wins" },
+        },
+      ];
+
+      let activePreset = null;
+
+      function applyPreset(idx) {
+        activePreset = idx;
+        const p = PRESETS[idx];
+
+        // Set slider values and re-render
+        document.getElementById("sl-ab").value = p.ab;
+        document.getElementById("sl-ac").value = p.ac;
+        document.getElementById("sl-bc").value = p.bc;
+        update();
+
+        // Mark strategic card and populate hint
+        [0, 1, 2].forEach((i) => {
+          const card = document.getElementById("card-" + i);
+          const hint = document.getElementById("hint-" + i);
+          if (i === p.hint.card) {
+            card.classList.add("strategic");
+            hint.innerHTML = `<span class="hint-arrow">${p.hint.arrow}</span><span>${p.hint.text}</span>`;
+          } else {
+            card.classList.remove("strategic");
+            hint.innerHTML = "";
+          }
+        });
+
+        // Update button active state
+        document.getElementById("btn-p0").classList.toggle("active", idx === 0);
+        document.getElementById("btn-p1").classList.toggle("active", idx === 1);
+
+        // Re-measure after the hint strip is in the DOM
+        sendHeight();
+      }
+
+      function clearPreset() {
+        activePreset = null;
+        [0, 1, 2].forEach((i) => {
+          document.getElementById("card-" + i).classList.remove("strategic");
+          document.getElementById("hint-" + i).innerHTML = "";
+        });
+        document.getElementById("btn-p0").classList.remove("active");
+        document.getElementById("btn-p1").classList.remove("active");
+        sendHeight();
+      }
+
+      // When the user manually moves a slider, clear the preset annotation
+      // so the strategic highlight doesn't mislead about the current state.
+      function onSliderInput() {
+        if (activePreset !== null) clearPreset();
+        update();
+      }
+
+      update();
+    </script>
+  </body>
 </html>
