@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: Better Choices Has a Neat Idea
-date: 2026-06-26
+date: 2026-06-30
 description: What I like about the system proposed by Better Choices, and my concerns.
 importance: 3
 tags: voting
@@ -30,6 +30,7 @@ toc:
   - name: Why This is Cool
     subsections:
       - name: Ballot Design
+      - name: So Much Better Than RCV
       - name: Cognitive Simplicity
       - name: System Agreement
       - name: Pass-Fail Criteria
@@ -130,7 +131,7 @@ This is also nice because this should make it much easier to implement on existi
 
 The only question that remains is if the voters will understand how these head-to-head matchups translate to a winner. Will they be confused and expect the one who wins any matchup by the most is crowned the winner? Or will they understand the Condorcet principle at play?
 
-I am someone who is very concerned with a hostile ballot. As far as ballots go, this is an extremely friendly ballot, especially relative to RCV and STAR. But it is objectively more complex than a Choose-one or Approval ballot. Therefore, it's entirely possible that *even this* system could be too complex for voters to find palatable<d-footnote>My mother found it too confusing, and that's a bad sign because she is a smart lady. I would want rigorous and unbiased/independent usability studies before I jump on board.</d-footnote>. But if there's *any* way to make Condorcet methods work, it's probably this or nothing.
+I am someone who is very concerned with a hostile ballot. As far as ballots go, this is an extremely friendly ballot, especially relative to RCV and STAR. But it is objectively more complex than a Choose-one or Approval ballot. Therefore, it's entirely possible that *even this* system could be too complex for voters to find palatable<d-footnote>My mother found it too confusing, and that's a bad sign because she is a smart lady.</d-footnote>. I want rigorous and unbiased/independent usability studies before I jump on board the bandwagon. But if there's *any* way to make Condorcet methods work, it's probably this or nothing.
 
 ### So Much Better Than RCV
 
@@ -240,15 +241,15 @@ My other major concern is the Condorcet cycle. What happens when a cycle necessa
 
 ## Conclusion
 
-This system has potential, but only if it addresses the fundamental issue of vote splitting in the primary by using Approval voting. Without this change, the system is going to be a downgrade from any system that uses Approval in the process. That is, going to Approval Top-2 instead would be a much stronger improvement than *only* changing the runoff step.<d-footnote>Is it a step in the right direction? I'm skeptical. I think if we do this and leave the primary as a choose-one election, the fundamental issue of vote splitting delivering poor outcomes will remain, one more slot or not. And, with more slots means more candidates running, which may exacerbate the issues with the primary even more. I firmly require the jungle primary to be held under Approval, or else I think the system will fail to address the core problem effectively (and potentially delay meaningful reform which could fix the fundamental issue of vote splitting).</d-footnote>
+This system has potential, but only if it addresses the fundamental issue of vote splitting in the primary by using Approval voting. Without this change, I believe the system is going to be a downgrade from any system that uses Approval in the process. That is, going to Approval Top-2 instead would be a much stronger improvement than *only* changing the runoff step.<d-footnote>Is it a step in the right direction? I'm skeptical. I think if we do this and leave the primary as a choose-one election, the fundamental issue of vote splitting delivering poor outcomes will remain, one more slot or not. And, with more slots means more candidates running, which may exacerbate the issues with the primary even more. I firmly require the jungle primary to be held under Approval, or else I think the system will fail to address the core problem effectively (and potentially delay meaningful reform which could fix the fundamental issue of vote splitting). That is, my foremost concern is the opportunity cost of not patching the primary election when that seems like the most pressing issue.</d-footnote>
 
 What remains to be seen for me is
 
 1. Will Better Choices see the necessity of implementing Approval voting in the first round to address the vote-splitting issue?
-2. Will this proposal actually *play* to voters. Will voters vote "yes" if it's on the ballot? Will they like it enough to keep it around if it passes? Will politicians support and push for it, without it becoming a partisan disaster like RCV has been?
+2. Will this proposal actually *play* to voters. Will voters vote "yes" if it's on the ballot? Will they like it enough to keep it around if it passes? Will politicians support and push for it, without it becoming a partisan disaster like RCV has been? Are there unbiased usability studies that show voters can understand the ballot and the system?
 3. Will this system be able to weather Condorcet cycles in a way that maintains voter confidence and legitimacy?
 
-As I've said before, basically all "good" voting methods are going to agree most of the time, and will largely all defuse polarization and encourage more representative candidates. With that in mind, I think the most practical and voter-friendly system is very likely the best one. I think Approval Top-2 is tested, excellent, and one of the most voter-friendly systems. But I could see an argument that by taking in one more candidate from the Approval jungle (which would reduce the number of lockouts), this slightly more expressive--but still grounded and digestible--general election ballot could make a more *palatable* reform that people can get excited about.
+As I've said before, basically all "good" voting methods<d-footnote>Primarily, Approval, Condorcet, and STAR voting. RCV is a noticeable downgrade from these systems.</d-footnote> are going to agree most of the time, and will largely all defuse polarization and encourage more representative candidates. With that in mind, I think the most practical and voter-friendly system is very likely the best one. I think Approval Top-2 is tested, excellent, and one of the most voter-friendly systems. But I could see an argument that by taking in one more candidate from the Approval jungle (which would reduce the number of lockouts), this slightly more expressive--but still grounded and digestible--general election ballot could make a more *palatable* reform that people can get excited about.
 
 At the moment, Approval Top-2 seems like a much safer system to back. The fact it's *already* being used in St. Louis <d-cite key="sargent2025stlouis"></d-cite> is a fantastic thing to be able to point to, advocacy-wise.
 
