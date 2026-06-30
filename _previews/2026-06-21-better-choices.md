@@ -218,7 +218,7 @@ I wrote in [a very cheeky past post](../condorcet-approval/){:target="_blank"} a
 
 This is just funny. If you are feeling cheeky, you have full freedom to say "I prefer Alice to Bob, I prefer Bob to Clark, and I prefer Clark to Alice". You can't do this in a ranked method!
 
-Why would you do this? If you have a favorite, why would you vote against them? Well, this is America. You can do whatever you damn well please. Humans are messy, so *maybe* being intransitive floats your boat. I won't judge.
+Why would you do this? If you have a favorite, why would you vote against them? Well, this is America. You can do whatever you gosh darn please. *Maybe* being intransitive floats your boat. I won't judge. Or maybe you're just being silly.
 
 ## Where I'm Skeptical
 
@@ -234,7 +234,7 @@ The issue with jungle primaries *is not that the runoff is between two candidate
 
 If, instead, Better Choices were to use Approval voting in the first round, then I think this could be one of (if not *the*) most robust systems currently in conversation. *Seriously*.
 
-[Cursory VSE simulations](https://eigentaylor.github.io/satisficing-voter-sim/) have been very favorable to this system. I may have to correct this paragraph of the post later, but it appears that Approval Top-2 outperforms Choose-one Top-3 Condorcet, but Approval Top-3 Condorcet potentially outperforms both. However, I'm not yet confident enough in the code I have to make definitive claims, and further testing and validation are needed before drawing firm conclusions.
+[Cursory VSE simulations](https://eigentaylor.github.io/satisficing-voter-sim/) in my model of epistemic noise and ballot fatigue have been very favorable to this system. I may have to correct this paragraph of the post later, but Approval Top-3 Condorcet is potentially the most robust system by far, if we assume no epistemic noise in the runoff election. Comparing Approval Top-2 with Plurality Top-3 Condorcet, they are quite competitive, and perform better in different situations. Approval is much more robust to a crowded field, however. That said, I'm not yet confident enough in the code I have to make definitive claims, and further testing and validation are needed before drawing firm conclusions. But the evidence thus far seems to put the ranking of AT3C over AT2 over PT3C, in a holistic sense.
 
 My other major concern is the Condorcet cycle. What happens when a cycle necessarily occurs. Unlike a top-2 election where the only tie is a literal split in the vote, a sort of "tie" in this method would involve all candidates winning and losing exactly one matchup. When the tiebreaker is used, will voters accept that results? Or will it undermine the legitimacy of the election? The empirical rarity of cycles does not have me convinced that such an event could be as catastrophic to the system as [Burlington 2009 or Alaska 2022 were to RCV](../ditch-rcv/){:target="_blank"}.
 
