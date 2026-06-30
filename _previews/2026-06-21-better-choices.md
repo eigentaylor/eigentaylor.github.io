@@ -186,7 +186,7 @@ I made [a simple model you can check out here](https://eigentaylor.github.io/wea
 If you are interested, you can use the playground above to see the strategy in action. Suppose you are a voter who most prefers Alice, then Bob, then Clark. Then insincere voting would involve moving any of the sliders to the left.
 
 <iframe id="condorcet-election-frame" src="/assets/html/condorcet-election.html?strategy"
-  width="100%" height="480" scrolling="no"
+  width="100%" height="680" scrolling="no"
   frameborder="0"
   style="border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.18); display: block; margin-top: 1rem; overflow: hidden;"
   title="Interactive Condorcet/minimax election visualization">
@@ -202,8 +202,8 @@ window.addEventListener("message", function(e) {
 
 The following two scenarios are the [only cases](https://eigentaylor.github.io/weakest-link/graph.html) where you might have an incentive to vote insincerely:
 
-1. **Bob Burial**: If we have a cycle where Alice beats Clark by the largest margin, Bob beats Alice by the second largest margin, and Clark beats Bob by the smallest margin, then Bob wins through the tiebreaker. If you bury Bob in his matchup against Clark (move the bottom slider to the left), until Alice's loss to Bob is the smallest margin, then Alice wins. This is a profitable deviation for you, but it requires a *very* specific cycle to occur.
-2. **Alice Betrayal**: If we have a cycle where Clark beats Alice by the largest margin, Alice beats Bob by the second largest margin, and Bob beats Clark by the smallest margin, then Clark wins through the tiebreaker. If you bury Alice in her matchup against Bob (move the top slider to the left), until Bob's loss to Alice is the smallest margin, then Bob wins.
+1. **Bob Burial**: If we have a cycle where Alice beats Clark by the largest margin, Bob beats Alice by the second largest margin, and Clark beats Bob by the smallest margin, then Bob wins through the tiebreaker. If you bury Bob in his matchup against Clark (move the bottom slider to the left, representing many voters insincerely changing their vote from Bob over Clark to Clark over Bob), until Alice's loss to Bob is the smallest margin, then Alice wins. This is a profitable deviation for you, but it requires a *very* specific cycle to occur.
+2. **Alice Betrayal**: If we have a cycle where Clark beats Alice by the largest margin, Alice beats Bob by the second largest margin, and Bob beats Clark by the smallest margin, then Clark wins through the tiebreaker. If you bury Alice in her matchup against Bob (move the top slider to the left, representing many voters insincerely changing their vote from Alice over Bob to Bob over Alice), until Bob's loss to Alice is the smallest margin, then Bob wins.
 
 These scenarios are absurdly unlikely to both occur and be predicted, since cycles are so empirically rare. Further, you would both need to be confident in the relative margins of the matchups, and be able to coordinate with other voters to actually *change* the order of the margins. This is a lot of work, and requires a lot of coordination and foresight. In practice, I do not see this as a realistic concern.
 {% endproof %}
