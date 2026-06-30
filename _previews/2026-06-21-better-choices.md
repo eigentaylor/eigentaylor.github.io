@@ -185,7 +185,7 @@ I made [a simple model you can check out here](https://eigentaylor.github.io/wea
 {% proof Strategy details %}
 If you are interested, you can use the playground above to see the strategy in action. Suppose you are a voter who most prefers Alice, then Bob, then Clark. Then insincere voting would involve moving any of the sliders to the left.
 
-<iframe id="condorcet-election-frame" src="/assets/html/condorcet-election.html"
+<iframe id="condorcet-election-frame" src="/assets/html/condorcet-election.html?strategy"
   width="100%" height="480" scrolling="no"
   frameborder="0"
   style="border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.18); display: block; margin-top: 1rem; overflow: hidden;"

@@ -262,6 +262,87 @@
       margin-top: 3px;
     }
 
+    /* ── Strategy presets (hidden unless ?strategy param) ── */
+    .strategy-section {
+      display: none;
+      background: white;
+      border-radius: 10px;
+      padding: 10px 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+      margin-bottom: 8px;
+    }
+
+    .strategy-head {
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .preset-btns {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .preset-btn {
+      padding: 5px 14px;
+      font-size: 12px;
+      font-weight: bold;
+      border: 2px solid #c8c0b0;
+      border-radius: 6px;
+      background: white;
+      color: #555;
+      cursor: pointer;
+      transition: background 0.12s, border-color 0.12s, color 0.12s;
+    }
+
+    .preset-btn:hover:not(.active) {
+      background: #f5f1ea;
+      border-color: #999;
+    }
+
+    .preset-btn.active {
+      background: var(--navy);
+      color: white;
+      border-color: var(--navy);
+    }
+
+    .preset-btn.reset-btn {
+      border-style: dashed;
+      color: #999;
+    }
+
+    .preset-btn.reset-btn:hover {
+      color: #555;
+      border-color: #888;
+      background: #f5f1ea;
+    }
+
+    /* Hint strip shown on the strategic slider card */
+    .strategy-hint {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      margin-top: 7px;
+      padding: 5px 10px;
+      background: #fef7e6;
+      border: 1.5px solid #f0c840;
+      border-radius: 6px;
+      font-size: 11.5px;
+      color: #7a5800;
+      line-height: 1.4;
+    }
+
+    .slider-card.strategic .strategy-hint { display: flex; }
+
+    .hint-arrow {
+      font-size: 18px;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
     /* ── Caption ── */
     .caption {
       font-size: 11.5px;
@@ -278,44 +359,57 @@
   <h2 class="title">Who Wins?</h2>
   <p class="subtitle">Drag the sliders to set vote shares in each head-to-head matchup.</p>
 
+  <!-- Strategy preset bar — only shown when ?strategy param is present -->
+  <div class="strategy-section" id="strategy-section">
+    <div class="strategy-head">Strategy Scenarios</div>
+    <div class="preset-btns">
+      <button class="preset-btn" id="btn-p0" onclick="applyPreset(0)">Scenario 1</button>
+      <button class="preset-btn" id="btn-p1" onclick="applyPreset(1)">Scenario 2</button>
+      <button class="preset-btn reset-btn" onclick="clearPreset()">Reset</button>
+    </div>
+  </div>
+
   <div class="sliders">
     <!-- Alice vs Bob -->
-    <div class="slider-card">
+    <div class="slider-card" id="card-0">
       <div class="matchup-row">
         <span class="cname alice">Alice</span>
         <div class="slider-wrap">
-          <input type="range" id="sl-ab" min="0" max="100" value="55" oninput="update()">
+          <input type="range" id="sl-ab" min="0" max="100" value="55" oninput="onSliderInput()">
           <div class="center-tick"></div>
         </div>
         <span class="cname bob right">Bob</span>
       </div>
       <div class="share-label" id="lbl-ab"></div>
+      <div class="strategy-hint" id="hint-0"></div>
     </div>
 
     <!-- Alice vs Clark -->
-    <div class="slider-card">
+    <div class="slider-card" id="card-1">
       <div class="matchup-row">
         <span class="cname alice">Alice</span>
         <div class="slider-wrap">
-          <input type="range" id="sl-ac" min="0" max="100" value="60" oninput="update()">
+          <input type="range" id="sl-ac" min="0" max="100" value="60" oninput="onSliderInput()">
           <div class="center-tick"></div>
         </div>
         <span class="cname clark right">Clark</span>
       </div>
       <div class="share-label" id="lbl-ac"></div>
+      <div class="strategy-hint" id="hint-1"></div>
     </div>
 
     <!-- Bob vs Clark -->
-    <div class="slider-card">
+    <div class="slider-card" id="card-2">
       <div class="matchup-row">
         <span class="cname bob">Bob</span>
         <div class="slider-wrap">
-          <input type="range" id="sl-bc" min="0" max="100" value="70" oninput="update()">
+          <input type="range" id="sl-bc" min="0" max="100" value="70" oninput="onSliderInput()">
           <div class="center-tick"></div>
         </div>
         <span class="cname clark right">Clark</span>
       </div>
       <div class="share-label" id="lbl-bc"></div>
+      <div class="strategy-hint" id="hint-2"></div>
     </div>
   </div>
 
@@ -438,6 +532,76 @@
       <div class="cycle-divider"></div>
       ${minimaxHTML}
     </div>`;
+  }
+
+  // ── Strategy mode ──────────────────────────────────────────────────────────
+  // Activated by loading the iframe with ?strategy in the URL.
+  // The first embed (no param) is unaffected.
+
+  const STRATEGY_MODE = new URLSearchParams(window.location.search).has('strategy');
+
+  if (STRATEGY_MODE) {
+    document.getElementById('strategy-section').style.display = 'block';
+  }
+
+  // Each preset: slider values + which card gets the annotation and what it says.
+  const PRESETS = [
+    {
+      ab: 35, ac: 75, bc: 45,
+      hint: { card: 0, arrow: '←', text: 'Slider moved left — try moving it right to see the honest outcome' }
+    },
+    {
+      ab: 65, ac: 25, bc: 60,
+      hint: { card: 1, arrow: '←', text: 'Slider moved left — try moving it right to see the honest outcome' }
+    }
+  ];
+
+  let activePreset = null;
+
+  function applyPreset(idx) {
+    activePreset = idx;
+    const p = PRESETS[idx];
+
+    // Set slider values and re-render
+    document.getElementById('sl-ab').value = p.ab;
+    document.getElementById('sl-ac').value = p.ac;
+    document.getElementById('sl-bc').value = p.bc;
+    update();
+
+    // Mark strategic card and populate hint
+    [0, 1, 2].forEach(i => {
+      const card = document.getElementById('card-' + i);
+      const hint = document.getElementById('hint-' + i);
+      if (i === p.hint.card) {
+        card.classList.add('strategic');
+        hint.innerHTML =
+          `<span class="hint-arrow">${p.hint.arrow}</span><span>${p.hint.text}</span>`;
+      } else {
+        card.classList.remove('strategic');
+        hint.innerHTML = '';
+      }
+    });
+
+    // Update button active state
+    document.getElementById('btn-p0').classList.toggle('active', idx === 0);
+    document.getElementById('btn-p1').classList.toggle('active', idx === 1);
+  }
+
+  function clearPreset() {
+    activePreset = null;
+    [0, 1, 2].forEach(i => {
+      document.getElementById('card-' + i).classList.remove('strategic');
+      document.getElementById('hint-' + i).innerHTML = '';
+    });
+    document.getElementById('btn-p0').classList.remove('active');
+    document.getElementById('btn-p1').classList.remove('active');
+  }
+
+  // When the user manually moves a slider, clear the preset annotation
+  // so the strategic highlight doesn't mislead about the current state.
+  function onSliderInput() {
+    if (activePreset !== null) clearPreset();
+    update();
   }
 
   update();
