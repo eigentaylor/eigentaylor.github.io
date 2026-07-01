@@ -119,7 +119,7 @@ Alright, I'm just gonna kind of nerd out here.
 
 I have many problems with ranked methods <d-cite key="mit2023maineRcv"></d-cite>. But one that I've come to appreciate is that voters have no idea how their ranked ballot is going to be counted. If you place a bunch of ranked ballots in front of people and say "choose a winner", they're probably going to do one of the following:
 
-1. A points system (Borda). Top rank gets a certain number of points, the second rank gets fewer points, and so on down the line. Most points wins.<d-footnote>I once tried to describe Condorcet to a friend (who is very intelligent) and they immediately invented Borda on the spot.</d-footnote> Or perhaps they'll invent a weighted average system!
+1. A points system (Borda). Top rank gets a certain number of points, the second rank gets fewer points, and so on down the line. Most points wins.<d-footnote>I once tried to describe Condorcet to a friend (who is very intelligent) and they immediately invented Borda on the spot. Clay Shentrup has found the same thing, including from people who live in San Francisco, a location that actually uses RCV. People who use RCV think they know how it works, but usually are horrified when they are actually told the truth.</d-footnote> Or perhaps they'll invent a weighted average system!
 2. Vote transferring (RCV). Eliminate candidates and transfer votes.
 3. Pairwise comparison (Condorcet). Maybe a clever voter might ask "what if we just compare each candidate head-to-head against every other candidate and see who wins the most matchups?"
 
@@ -165,7 +165,7 @@ Further, when restricted to three candidates, minimax agrees with Ranked Pairs a
 
 Condorcet does not, in general, satisfy the participation criterion. That is, participating in an election might end up giving you a *worse* outcome than if you had abstained. However, this *generally* only occurs with four or more candidates.
 
-With three candidates (or at least the system being considered here), there are no participation failures. No monotonicity violation like in RCV either. You also get reversal-symmetry<d-cite key="brandt2025condorcet"></d-cite>. Further, when outside of a cycle, the system will satisfy [IIA](../iia/){:target="_blank"}!
+With three candidates (or at least the system being considered here), there are no participation failures. No monotonicity violation like in RCV either<d-footnote>This is not that surprising. Monotonicity is actually really hard to violate. Some call it a "free" property, because you need to define an absurdly convoluted system to break it. The fact any seriously considered system fails it is a wonder. Condorcet does not fail monotonicit, but it's worth mentioning it here.</d-footnote>. You also get reversal-symmetry<d-cite key="brandt2025condorcet"></d-cite>. Further, when outside of a cycle, the system will satisfy [IIA](../iia/){:target="_blank"}!
 
 Minimax also [does not generally satisfy the Condorcet loser criterion](https://en.wikipedia.org/wiki/Condorcet_loser_criterion#Minimax), but *does* with three candidates<d-footnote>This is easily seen by case analysis (if a Condorcet loser exists among three candidates, then a Condorcet winner must also exist and would be elected instead) or the equivalence with Ranked Pairs/Schulze, which do satisfy the Condorcet loser criterion for any number of candidates.</d-footnote>.
 
@@ -184,7 +184,19 @@ The nice thing about minimax is that it's fairly robust to attempts to throw a c
 I made [a simple model you can check out here](https://eigentaylor.github.io/weakest-link/graph.html) which shows how insincere deviations can affect the outcome of a Condorcet election if a coalition is able to coordinate and change the relative size of the margins. Out of a total 48 state nodes, only 6 of them had *some* path to a profitable change. Only 2 of them had an adjacent node with a profitable change, and they were both in a cycle. The amount of work, coordination, and *foresight* required would let me sleep soundly at night telling laypeople there's effectively no reason to ever lie in a system using this method.
 
 {% proof Strategy details %}
-If you are interested, you can use the playground above to see the strategy in action. Suppose you are a voter who most prefers Alice, then Bob, then Clark. Then insincere voting would involve moving any of the sliders to the left.
+My model is a bit tricky to explain, but the basic idea is that the election is decided entirely by the relative sizes of the margins in each matchup. For example, if Alice beats Bob by 10 votes, Bob beats Clark by 5 votes, and Clark beats Alice by 1 vote, then we can describe that via
+
+$$(A>B) > (B>C) > (C>A)$$
+
+where the ">" indicates the relative size of the margins. In this case, Alice's win over Bob is the largest margin, Bob's win over Clark is the second largest margin, and Clark's win over Alice is the smallest margin. Hence, Alice wins through the minimax tiebreaker.
+
+My model is a graph of all $3!\cdot 2^3=48$ possible configurations of the relative margins, and edges between them represent deviations by a coalition of voters who sincerely vote for $A$ over $B$, $B$ over $C$, and $C$ over $A$, but then insincerely deviate in some say. For example, if the coalition insincerely votes for $C$ over $B$, then this scenario has an edge to the scenario
+
+$$(A>B) > (C>A) > (B>C)$$
+
+because a sufficient coalition of voters doing this deviation could only *possibly* change the outcome by changing the relative size of the margins. In this case, by voting for $C$ over $B$, the coalition has changed the least bad loss from Clark's win over Alice to Bob's win over Clark, and hence Clark now wins through the minimax tiebreaker. This is an *unprofitable* deviation, because the coalition has elected their worst candidate, Clark instead of their best candidate, Alice.
+
+If you are interested, you can use the playground below to see the profitable strategies in action. Suppose you are a voter who most prefers Alice, then Bob, then Clark. Then insincere voting would involve moving any of the sliders to the left.
 
 <iframe id="condorcet-election-frame" src="/assets/html/condorcet-election.html?strategy"
   width="100%" height="480" scrolling="yes"
