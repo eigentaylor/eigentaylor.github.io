@@ -206,6 +206,7 @@ kramdown:
 # Includes & excludes
 include: ["_pages"]
 exclude:
+  - .venv/
   - al-folio-upgrade-report.md
   - bibliography/
   - _bibliography/
