@@ -20,7 +20,7 @@ authors:
   - name: Taylor Eigen Fisher
     url: ""
     affiliations:
-      name: Equal Vote Coalition (volunteer)
+      name: Equal Vote Coalition (Volunteer)
 toc:
   - name: Introduction
     subsections:
@@ -115,7 +115,7 @@ The contrapositive of this theorem is that any profitable simple manipulation mu
 {% proof Click to expand proof %}
 **Proof:** The above theorem handles the case where $P$ has a Condorcet winner, so we only need to consider the case where $P$ has no Condorcet winner. Suppose $P$ has no Condorcet winner, and let $Q=(0,1)P$ be the result of a swap of the second kind.
 
-For $n=3$, a cycle means that every candidate loses exactly one matchup. Hence, flipping any single matchup results in the existence of a Condorcet winner. In particular, because we have given $Y_1$ the victory over $X_1$ by reversing the smallest matchup, $Y_1$ now wins two matchups and is the Condorcet winner of $Q$. Hence, $f(Q)=Y_1$. Thus, $f(Q)=Y_1=f(P)$. Hence, the manipulation is not profitable. 
+For $n=3$, a cycle means that every candidate loses exactly one matchup. Hence, flipping any single matchup results in the existence of a Condorcet winner. In particular, because we have given $Y_1$ the victory over $X_1$ by reversing the smallest matchup, $Y_1$ now wins two matchups and is the Condorcet winner of $Q$. Hence, $f(Q)=Y_1$. Thus, $f(Q)=Y_1=f(P)$. Hence, the manipulation is not profitable.
 
 Consider $n=4$. For $n=4$, it's possible to flip a matchup in a cycle and stay in a cycle, in which case this is genuinely profitable. If $f(P)=P(1)(2)=Y_1$ and $Q=(0,1)P$, then $Q(1)(2)=X_1$. To flip the weakest matchup of $X_1>Y_1$ to $Y_1>X_1$, then the coalition must sincerely prefer $X_1\succ Y_1$, and insincerely bury $X_1$ under $Y_1$ until $Y_1$ defeats $X_1$ by the smallest margin. Thus, $f(Q)=X_1\succ Y_1=f(P)$, and the manipulation is profitable. $\square$
 {% endproof %}
