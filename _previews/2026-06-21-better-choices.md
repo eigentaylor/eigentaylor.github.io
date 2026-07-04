@@ -39,31 +39,25 @@ toc:
 
 ## Introduction
 
-For a while now, Condorcet methods have gotten the short end of the stick in the reform space. The disaster known as [Ranked Choice Voting](../ditch-rcv/){:target="_blank"} has dominated the space as a whole, but particularly ranked ballots. Cardinal methods like Approval and STAR have been the main challengers, and while the Equal Vote Coalition "approves" of their flavor of Condorcet ("Ranked Robin"), Condorcet has not yet gained much traction.
+For a while now, Condorcet methods have gotten the short end of the stick in the reform space. The disaster known as [Ranked Choice Voting](../ditch-rcv/){:target="_blank"} has dominated the space as a whole, but particularly ranked ballots. Cardinal methods like Approval and STAR have been the main challengers, and while the Equal Vote Coalition "approves" of their flavor of Condorcet (["Ranked Robin"](https://www.equal.vote/ranked_robin)), Condorcet has not yet gained much traction.
 
 Now, if you are reading this blog, you probably know I am an Approval die-hard. I think it is [the most practical and effective reform we should be supporting right now](../approval-only/){:target="_blank"}. However, I would like to share my positive thoughts here in this post.
 
-I first heard about the system proposed by Better Choices through a bill in Ohio which would implement a "Top-3 Condorcet" system, where a jungle primary would be held and the top three candidates would advance to a final election conducted using a kind of Condorcet method. But before we start getting too lost in the jargon, let's ensure we are clear about what the hell I'm even talking about.
+I first heard about the system proposed by [Better Choices](https://www.betterchoices.vote/top3) through a bill in [Ohio](https://www.betterchoicesohio.org/) which would implement a "Top-3 Condorcet" system, where a jungle primary would be held and the top three candidates would advance to a final election conducted using a kind of Condorcet method. They call this system "Consensus Choice Voting. But before we start getting too lost in the jargon, let's ensure we are clear about what the hell I'm even talking about.
 
 ### Condorcet Methods
 
 A Condorcet winner is a candidate who would win a head-to-head matchup against every other candidate. Simple, right? I have [my issues with the idea of the Condorcet winner as a measure of "consensus"](../why-condorcet/){:target="_blank"}, but *in practice* all "good" methods (Approval, STAR, Score, etc.) are going to agree on the best candidate, who is likely a Condorcet winner.
 
-A Condorcet method is just a voting system (that usually takes in a ranked ballot) and then evaluates the head-to-head matchups between every pair of candidates to determine if there is a Condorcet winner. Some are complex, some are simple, some are a single method that is designed to pick the Condorcet winner if one exists, and some just say "elect the Condorcet winner if they exist, else do this other thing".
+A Condorcet method is just a voting system (that usually takes in a ranked ballot) and then evaluates the head-to-head matchups between every pair of candidates to determine if there is a Condorcet winner, and then elects them.
 
 ### Jungle Primaries
 
 I just [published a post about California's Top-2 system](../ca-top-2/){:target="_blank"} in which I talk about the issues with jungle primaries and vote splitting. The fundamental idea is this:
 
-> Put all candidates on a single primary ballot, from every party, let people vote, and then the top vote-getters advance to a final runoff.
-
-This is technically a "nonpartisan blanket primary" but that's so wordy, let's just call it a "jungle".
+> Put all candidates on a single primary ballot, from every party, let people vote, and then the top vote-getters advance to a final runoff<d-footnote>This is technically a "nonpartisan blanket primary" but that's so wordy, let's just call it a "jungle".</d-footnote>.
 
 The idea is to force candidates to be held accountable to all voters, rather than just those from their party<d-footnote>For example, in a state like California, the election would often be decided entirely in the Democratic primary, with Republicans getting effectively no say in the outcome.</d-footnote>. The *hope* is that this would elevate consensus candidates with low visibility and boost third parties. This has largely not materialized because voters can still only choose a single candidate.
-
-When votes are a scarce resource, this leads to rallying behind the most viable candidate from your favorite major party, and rampant vote splitting from voters who are idealistic enough to support nonviable candidates.
-
-In my view, [any system that uses a choose-one jungle primary is a non-starter](../ca-top-2/){:target="_blank"}. It's simply *awful*. The issue with the jungle primary is *not* the runoff step, but the vote splitting. However, we will come back to this. First, we should discuss what Better Choices is actually advocating for.
 
 ## The Better Choices System
 
@@ -90,7 +84,7 @@ window.addEventListener("message", function(e) {
 });
 </script>
 
-If a candidate wins both of their matchups, they are elected. If no candidate wins both matchups, the candidate with the "least bad loss" (the one who lost by the smallest margin) is elected<d-footnote>This is called "minimax".</d-footnote>.
+If a candidate wins both of their matchups, they are elected. If no candidate wins both matchups, the candidate with the "least bad loss" (the one who lost by the smallest margin) is elected<d-footnote>This is called "minimax". Essentialy, if that everyone loses at least one race, then we pick the one who lost by the smallest amount.</d-footnote>.
 
 <iframe id="condorcet-election-frame" src="/assets/html/condorcet-election.html"
   width="100%" height="480" scrolling="no"
@@ -113,9 +107,9 @@ Alright, I'm just gonna kind of nerd out here.
 
 ### Ballot Design
 
-I have many problems with ranked methods <d-cite key="mit2023maineRcv"></d-cite>. But one that I've come to appreciate is that voters have no idea how their ranked ballot is going to be counted. Ask a voter if they understand how RCV works (even people who vote in RCV elections), or how their ballot is counted, and they will almost certainly say yes. But if you ask them to explain it, most reveal a fundamental misunderstanding--and are often horrified when told how it actually works.<d-footnote>I once tried to describe Condorcet to a friend (an intelligent guy) and they immediately invented Borda on the spot. Top rank gets 3 points, second rank gets 2, and last gets 1. I have heard similar stories from people like Clay Shentrup and Hayden Sasswood.</d-footnote>.
+I have many problems with ranked methods<d-cite key="mit2021maineRcv"></d-cite>. But one that I've come to appreciate is that voters have no idea how their ranked ballot is going to be counted. Ask a voter if they understand how RCV works (even people who vote in RCV elections), or how their ballot is counted, and they will almost certainly say yes. But if you ask them to explain it, most reveal a fundamental misunderstanding--and are often horrified when told how it actually works.<d-footnote>I once tried to describe Condorcet to a friend (an intelligent guy) and they immediately invented Borda on the spot. Top rank gets 3 points, second rank gets 2, and last gets 1. I have heard similar stories from people like Clay Shentrup and Hayden Sasswood.</d-footnote>.
 
-I think this is a *big problem with ranked ballots*. It should, in my view, be explicitly clear and obvious what the system is going to do with your vote, and how it's going to be counted and tallied to determine the winner.
+I think this is a *big problem with ranked ballots*. It should, in my view, be explicitly clear and obvious what the system is going to do with your vote, and how it's going to be counted and tallied to determine the winner. When you rank candidates, there is an expectation from voters that the system is going to "respect" their rankings, and use the data properly.
 
 This is one thing I like about Approval: it's not hard to understand that a bubble is a vote. That's how choose-one voting works, and Approval works the same way, using the same interface. Hence, the Better Choices system uses that *same* interface to its advantage. I think the idea of head-to-head matchups becomes much *more* obvious<d-footnote>A typical Condorcet method interprets a ranking like $A>B>C$ as one vote for $A$ over $B$, one vote for $A$ over $C$, and one vote for $B$ over $C$. Some voters might misunderstand and assume that $A$ gets "extra points" for being higher over $C$. By dropping the ranking interface, such misunderstandings can be reduced.</d-footnote>.
 
@@ -143,13 +137,13 @@ I've also shared many issues with Condorcet methods in past posts. However, I be
 
 ### System Agreement
 
-Further, when restricted to three candidates, minimax agrees with Ranked Pairs and Schulze<d-cite key="brandt2025condorcet"></d-cite>, which are top-shelf Condorcet methods. Ranked Pairs and Schulze are robust, but *much* harder to explain. The fact that the very simple "least bad loss" system agrees with them is satisfying to me. This means the system is both robust *and* easy to explain, which are both seriously important properties for a voting system to have.
+Further, when restricted to three candidates, minimax agrees with [Ranked Pairs](https://en.wikipedia.org/wiki/Ranked_pairs) and [Schulze](https://en.wikipedia.org/wiki/Schulze_method)<d-cite key="brandt2025condorcet"></d-cite>, which are top-shelf Condorcet methods. Ranked Pairs and Schulze are robust, but *much* harder to explain. The fact that the very simple "least bad loss" system agrees with them is satisfying to me. This means the system is both robust *and* easy to explain, which are both seriously important properties for a voting system to have.
 
 ### Pass-Fail Criteria
 
-Condorcet, in general, can fail some desirable criteria. For example, it can fail the participation criterion. That is, participating in an election might end up giving you a *worse* outcome than if you had abstained. However, this *generally* only occurs with four or more candidates.
+Condorcet, in general, can fail some desirable criteria. For example, it can fail the [participation criterion](https://en.wikipedia.org/wiki/Participation_criterion). That is, participating in an election might end up giving you a *worse* outcome than if you had abstained. However, this *generally* only occurs with four or more candidates.
 
-With three candidates (or at least the system being considered here), there are no participation failures. No monotonicity violation like in RCV either<d-footnote>This is not that surprising. Monotonicity is actually really hard to violate. Some call it a "free" property, because you need to define an absurdly convoluted system to break it. The fact any seriously considered system fails it is a wonder. Condorcet does not fail monotonicity, but it's worth mentioning it here because of RCV.</d-footnote><d-cite key="brandt2025condorcet"></d-cite>. Minimax also [does not generally satisfy the Condorcet loser criterion](https://en.wikipedia.org/wiki/Condorcet_loser_criterion#Minimax), but *does* with three candidates<d-footnote>This is easily seen by case analysis (if a Condorcet loser exists among three candidates, then a Condorcet winner must also exist and would be elected instead) or the equivalence with Ranked Pairs/Schulze, which do satisfy the Condorcet loser criterion for any number of candidates.</d-footnote>. Further, when outside of a cycle, the system will satisfy [IIA](../iia/){:target="_blank"}!
+With three candidates (or at least the system being considered here), there are no participation failures. No monotonicity violation like in RCV either<d-footnote>This is not that surprising. Monotonicity is actually really hard to violate. Some call it a "free" property, because you need to define an absurdly convoluted system to break it. The fact any seriously considered system fails it is a wonder. Condorcet does not fail monotonicity, but it's worth mentioning it here because of RCV.</d-footnote><d-cite key="brandt2025condorcet"></d-cite>. Minimax also [does not generally satisfy the Condorcet loser criterion](https://en.wikipedia.org/wiki/Condorcet_loser_criterion#Minimax), but *does* with three candidates<d-footnote>This is easily seen by case analysis (if a Condorcet loser exists among three candidates, then a Condorcet winner must also exist and would be elected instead) or the equivalence with Ranked Pairs/Schulze, which do satisfy the Condorcet loser criterion for any number of candidates.</d-footnote>.
 
 This system essentially funnels down Condorcet into the perfect conditions where it really shines.
 
@@ -163,7 +157,7 @@ I made [a simple model you can check out here](https://eigentaylor.github.io/wea
 
 ### A Few Curiosities
 
-This system actually realizes what I'd call the "Condorcet ideal". Since voters participate in every matchup directly, you can genuinely claim the winner would beat everyone in a head-to-head runoff, not merely by approximating from voter rankings. I wrote a cheeky post in the past about how ranked Condorcet methods are only approximations of this; turns out there's now a system that does it for real.
+This system actually realizes what I'd call the "Condorcet ideal". Since voters participate in every matchup directly, you can genuinely claim the winner would beat everyone in a head-to-head runoff, not merely by approximating from voter rankings. I wrote [a cheeky post](../condorcet-approval/){:target="_blank"} in the past about how ranked Condorcet methods are only approximations of this; turns out there's now a system that does it for real.
 
 Oh, and if you're feeling mischievous: you can vote intransitively. Alice over Bob, Bob over Clark, Clark over Alice. You can't do that in a ranked method. I have no idea why you'd want to, but this is America. Be free of the shackles of transitivity!
 
