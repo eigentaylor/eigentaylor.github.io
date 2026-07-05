@@ -76,6 +76,13 @@
         </div>
       {% endif %}
 
+      {%- assign final_content = page.content -%}
+      {%- if page.exclude_appendix_from_word_count %}{%- assign final_content = final_content | content_without_appendix -%}{%- endif -%}
+      {%- if page.exclude_footnotes_from_word_count %}{%- assign final_content = final_content | content_without_footnotes -%}{%- endif -%}
+      {%- if page.exclude_proof_blocks_from_word_count %}{%- assign final_content = final_content | content_without_proof_blocks -%}{%- endif -%}
+      {%- assign final_word_count = final_content | number_of_words -%}
+      {%- assign final_read_time = final_word_count | divided_by: 180 | plus: 1 -%}
+
       {% assign should_log_read_time = false %}
       {% if page.draft_preview %}
         {% assign should_log_read_time = true %}
@@ -125,11 +132,6 @@
         {%- if page.exclude_footnotes_from_word_count %}{%- assign _filter_count = _filter_count | plus: 1 -%}{%- endif -%}
         {%- if page.exclude_proof_blocks_from_word_count %}{%- assign _filter_count = _filter_count | plus: 1 -%}{%- endif -%}
         {% if _filter_count >= 2 %}
-          {%- assign _final_content = page.content -%}
-          {%- if page.exclude_appendix_from_word_count %}{%- assign _final_content = _final_content | content_without_appendix -%}{%- endif -%}
-          {%- if page.exclude_footnotes_from_word_count %}{%- assign _final_content = _final_content | content_without_footnotes -%}{%- endif -%}
-          {%- if page.exclude_proof_blocks_from_word_count %}{%- assign _final_content = _final_content | content_without_proof_blocks -%}{%- endif -%}
-          {%- assign final_word_count = _final_content | number_of_words -%}
           <script>
             const finalMinutes = ({{ final_word_count }} / 180) + 1;
             console.log('Read time (final): ' + finalMinutes.toFixed(2) + ' min read');
@@ -141,7 +143,7 @@
         <p>{{ page.description }}</p>
       </d-title>
       {% if page.authors %}
-        <d-byline></d-byline>
+        <d-byline data-read-time="{{ final_read_time }} min read"></d-byline>
       {% endif %}
 
       <d-article>
