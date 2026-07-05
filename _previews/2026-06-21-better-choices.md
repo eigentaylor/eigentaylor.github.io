@@ -155,7 +155,7 @@ In practice, voting in this system is pretty straightforward. If you have a favo
 
 No system is going to be strategyproof in general, but I think Condorcet methods like this are about as robust as you can get. I do not see any realistic case where a voter has serious incentive to lie on their ballot. Especially when there isn't a cycle. As far as voting systems go, this is probably the most honest system you can get, and that's genuinely nice.
 
-I made [a simple model you can check out here](https://eigentaylor.github.io/weakest-link/graph.html) which shows how insincere deviations can affect the outcome of a Condorcet election if a coalition is able to coordinate and change the relative size of the margins, and I'm going to write a whole post about this model and my findings. Look forward to that!
+I made [a simple model you can check out here](https://eigentaylor.github.io/weakest-link/graph.html) which shows how insincere deviations can affect the outcome of a Condorcet election if a coalition is able to coordinate and change the relative size of the margins, and I'm going to write a whole post about this model and my findings. In short: the cases where lying is profitable are rare and specific. Look forward to that!
 
 ### A Few Curiosities
 
