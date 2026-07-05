@@ -6,7 +6,9 @@ nav: true
 nav_order: 1
 pagination:
   enabled: true
-  collection: posts
+  # collection is intentionally omitted here so it inherits from the global
+  # `pagination.collection` setting in _config.yml (overridden per-environment
+  # in _config_dev.yml to include _previews)
   permalink: /page/:num/
   per_page: 5
   sort_field: date

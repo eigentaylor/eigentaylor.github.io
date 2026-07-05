@@ -124,6 +124,7 @@ lsi: false # produce an index for related posts
 # Pagination
 pagination:
   enabled: true
+  collection: posts # overridden to "posts,previews" in _config_dev.yml
 
 related_blog_posts:
   enabled: true
