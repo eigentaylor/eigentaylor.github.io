@@ -46,7 +46,7 @@ I first heard about the system proposed by [Better Choices](https://www.betterch
 
 ### Condorcet Methods
 
-A **Condorcet winner** is a candidate who would win a head-to-head matchup against every other candidate. Simple, right?
+A **Condorcet winner** is a candidate who would win a head-to-head matchup against every other candidate. Simple, right? It's just like a round-robin tournament, where every candidate faces off against every other candidate. If one candidate wins all of their matchups, they are the Condorcet winner.
 
 I have [my issues with the idea of the Condorcet winner as a measure of "consensus"](../why-condorcet/){:target="_blank"}, but *in practice* all "good" methods (Approval, STAR, Score, etc.), even if they do not explicitly satisfy the Condorcet criterion, are going to agree on the best candidate, who is likely a Condorcet winner.
 
