@@ -71,9 +71,9 @@ We can thus define the decision rule of the Better Choices system as a function 
 
 ### Permutations of Matchups
 
-We denote $$\sigma\in\{(0,1),(1,2),\ldots,(n-1,n)\}\subset S_{n+1}$$ as permutations on the matchups themselves, and we define
+We denote $$\sigma\in\left\{(i,i+1): 0\leq i<\binom{n}{2}\right\}\subset S_{\binom{n}{2}+1}$$ as permutations on the matchups themselves, and we define
 
-$$\sigma P(i)=P(\sigma(i))$$
+$$(\sigma P)(i)=P(\sigma(i))$$
 
 For example, if $P=(A>B)<(B>C)<(C>A)$, then $(1,2)P=(B>C)<(A>B)<(C>A)$, and $(0,1)P=(B>A)<(B>C)<(C>A)$.
 
