@@ -23,9 +23,14 @@ authors:
       name: Equal Vote Coalition (Volunteer)
 toc:
   - name: Introduction
+  - name: The Model
     subsections:
-      - name: Condorcet Methods
-  - name: The Better Choices System
+      - name: Permutations of Matchups
+      - name: The Graph
+  - name: Starting with a Condorcet Winner
+  - name: Profitable Cycles
+  - name: Complex Manipulations
+  - name: Conclusion
 ---
 
 ## Introduction
