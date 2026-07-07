@@ -149,10 +149,10 @@ Therefore, we need *only* consider the $(1,2)$ swap of the first kind, which swa
 
 We then have that $f(P)=\operatorname{lose}(P_1)=\ell_1$ and $f(Q)=\operatorname{lose}(Q_1)=\ell_2$. Hence, we must have that a coalition of voters sincerely prefers $\ell_2\succ\ell_1$, but change their ballot in some other way. There are exactly two ways for a coalition to manipulate the election to achieve a $(1,2)$ swap.
 
-| Manipulation                | Sincere Preference  | Insincere Deviation |
-|-----------------------------|---------------------|---------------------|
-| Strengthen $w_1\to\ell_1$   | $\ell_1\succ w_1$   | $w_1\succ\ell_1$    |
-| Weaken $w_2\to\ell_2$       | $w_2\succ\ell_2$    | $\ell_2\succ w_2$   |
+| Manipulation                | Sincere Preference  | Insincere Deviation | Outcome Change     |
+|-----------------------------|---------------------|---------------------|--------------------|
+| Strengthen $w_1\to\ell_1$   | $\ell_1\succ w_1$   | $w_1\succ\ell_1$    | $\ell_1\to \ell_2$ |
+| Weaken $w_2\to\ell_2$       | $w_2\succ\ell_2$    | $\ell_2\succ w_2$   | $\ell_1\to \ell_2$ |
 
 We consider each case individually:
 
@@ -167,7 +167,7 @@ Using that $P$ is a cycle, meaning every candidate must lose exactly one matchup
 
 This [interactive tool](https://eigentaylor.github.io/weakest-link/graph.html) visualizes these states and the manipulations available to a coalition preferring $A\succ B\succ C$.
 
-> **Corollary:** For a coalition of voters with preference $A\succ B\succ C$, the non-adjacent deviation of voting for $C$ over $A$ is never profitable. That is, a coalition of voters who sincerely prefer $A\succ B\succ C$ can never profitably manipulate the election by insincerely voting $C\succ A$ instead of $A\succ C$.
+> **Corollary:** For a coalition of voters with preference $A\succ B\succ C$, the simple manipulation caused by performing a non-adjacent deviation of voting for $C$ over $A$ is never profitable. That is, a coalition of voters who sincerely prefer $A\succ B\succ C$ can never profitably manipulate the election by insincerely voting $C\succ A$ instead of $A\succ C$.
 
 {% proof Click to expand proof %}
 **Proof:** Copying the logic from the previous proof, suppose that $f(P)=\ell_1$ and $f(Q)=\ell_2$ for $Q=(1,2)P$, both cyclic scenarios. We want a profitable deviation, meaning the voters prefer $\ell_2\succ\ell_1$. By the table in the previous proof we must either have
@@ -188,7 +188,7 @@ We can thus guarantee that there is *never* a reason in any scenario to vote for
 
 We have found exactly two states for $n=3$ that have a profitable simple manipulation. However, we can also ask if these two nodes are themselves reachable by manipulations from other nodes via the same coalition of voters. For example, is it possible for there to be a $P$ with a Condorcet winner such that by multiple manipulations, the coalition can eventually reach one of these two nodes and profitably change the winner?
 
-The answer is yes. We can consider a "complex manipulation" to be a sequence of simple manipulations where each intermediate state is weakly preferred to the previous state by the coalition. That is, if $S^{(0)}\to S^{(1)}\to\cdots\to S^{(k)}$ is a complex manipulation, then we have that $f(S^{(k)})\succ f(S^{(0)})$.
+The answer is yes. We can consider a "complex manipulation" to be a sequence of simple manipulations where the final state is strictly preferred to the initial state by the coalition. That is, if $S^{(0)}\to S^{(1)}\to\cdots\to S^{(k)}$ is a complex manipulation, then we have that $f(S^{(k)})\succ f(S^{(0)})$. This is a much weaker requirement than having a chain of weakly preferred states, since we only require that the final state be strictly preferred to the initial state. It turns out that all complex manipulations are weakly preferred at all intermediate states, but we do not require that to be the case.
 
 For the $P=\langle C\to B\mid B\to A\mid A\to C\rangle$ case, we can "move backwards" along the insincere misrepresentation of $C\succ B$, by fortifying the $B\to C$ matchup. Hence, we get a chain
 
