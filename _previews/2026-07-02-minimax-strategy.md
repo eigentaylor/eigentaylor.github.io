@@ -45,7 +45,7 @@ For example, if Alice wins both of her head-to-head matchups against Bob and Cla
 
 Condorcet methods do not generally satisfy the participation criterion, but [the Better Choices system *does*](../better-choices/){:target="_blank"}<d-cite key="brandt2025condorcet"></d-cite>. That is, you can generally feel safe that you aren't going to get a *worse* outcome by participating, but you might ask how much strategic pressure there is to spend the night before the election scheming up a complex strategy to game the election. Unlike RCV where there's probably good reason to check that you aren't about to walk into a center-squeeze and elect your worst nightmare, Condorcet methods are generally more robust.
 
-But unlike a typical Condorcet method, where voters submit rankings, voters in the Better Choices system can submit much more complex preferences that cannot be expressed in a simple ranking. For example, a voter can say they vote for Rock over Paper, Paper over Scissors, and Scissors over Paper. This is a perfectly valid ballot in the Better Choices system, but it is not a valid ranking because it is not transitive.
+But unlike a typical Condorcet method, where voters submit rankings, voters in the Better Choices system can submit much more complex preferences that cannot be expressed in a simple ranking. For example, a voter can say they vote for Rock over Scissors, Scissors over Paper, and Paper over Rock. This is a perfectly valid ballot in the Better Choices system, but it is not a valid ranking because it is not transitive.
 
 One might wonder if this system is *more* manipulable than a typical Condorcet method, since voters can submit more complex preferences. I will show that this system is no more manipulable than a typical Condorcet method, and the fact that the runoff is restricted to three candidates makes it extremely robust.
 
@@ -188,7 +188,7 @@ We can thus guarantee that there is *never* a reason in any scenario to vote for
 
 We have found exactly two states for $n=3$ that have a profitable simple manipulation. However, we can also ask if these two nodes are themselves reachable by manipulations from other nodes via the same coalition of voters. For example, is it possible for there to be a $P$ with a Condorcet winner such that by multiple manipulations, the coalition can eventually reach one of these two nodes and profitably change the winner?
 
-The answer is yes. We can consider a "complex manipulation" to be a sequence of simple manipulations where each intermediate node is weakly preferred to the previous node by the coalition. That is, if $P_0\to P_1\to\cdots\to P_k$ is a complex manipulation, then we have that $f(P_i)\succeq f(P_{i+1})$ for all $i<k$.
+The answer is yes. We can consider a "complex manipulation" to be a sequence of simple manipulations where each intermediate node is weakly preferred to the previous node by the coalition. That is, if $P_0\to P_1\to\cdots\to P_k$ is a complex manipulation, then we have that $f(P_k)\succ f(P_{0})$.
 
 For the $P=(C>B)<(B>A)<(A>C)$ case, we can "move backwards" along the insincere misrepresentation of $C\succ B$, by fortifying the $B>C$ matchup. Hence, we get a chain
 
