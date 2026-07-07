@@ -62,11 +62,11 @@ The idea is to force candidates to be held accountable to all voters, rather tha
 
 ## The Better Choices System
 
-Their proposal is as follows: after the initial primary, the final election is between three candidates. Let's call them Alice, Bob, and Clark. Voters will walk into the booth and see three different races.
+Their proposal is as follows: after the initial primary, the final election is between three candidates. Let's use a classic example of the 1992 presidential election, between George H. W. Bush, Bill Clinton, and Ross Perot. Voters would see three matchups on the ballot: Voters will walk into the booth and see three different races.
 
-1. Alice versus Bob
-2. Alice versus Clark
-3. Bob versus Clark
+1. George H. W. Bush versus Bill Clinton
+2. George H. W. Bush versus Ross Perot
+3. Bill Clinton versus Ross Perot
 
 Just like a choose-one or Approval system, there's a bubble next to each name. Voters then vote in each individual matchup, indicating their preference for one candidate over the other.
 
@@ -74,7 +74,7 @@ Just like a choose-one or Approval system, there's a bubble next to each name. V
   width="100%" height="520" scrolling="no"
   frameborder="0"
   style="border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.18); display: block; margin-top: 1rem; overflow: hidden;"
-  title="Interactive head-to-head ballot – Alice, Bob, and Clark">
+  title="Interactive head-to-head ballot – George H. W. Bush, Bill Clinton, and Ross Perot">
 </iframe>
 <script>
 window.addEventListener("message", function(e) {
@@ -84,9 +84,11 @@ window.addEventListener("message", function(e) {
   }
 });
 </script>
-<br>
+<br> 
 
 If a candidate wins both of their matchups, they are elected. If no candidate wins both matchups, the candidate with the "least bad loss" (the one who lost by the smallest margin) is elected<d-footnote>This is called "minimax". Essentially, if everyone loses at least one race, then we pick the one who lost by the smallest amount.</d-footnote>.
+
+[Nearly 20% of voters in 1992 voted for Ross Perot](https://en.wikipedia.org/wiki/1992_United_States_presidential_election) (almost 20 million votes!), and he was a broadly acceptable candidate. In this system, voters could say "I prefer Perot over Bush, and I prefer Perot over Clinton", but *also* have a say in the matchup between Bush and Clinton. If a majority of voters preferred Perot over both Bush and Clinton, he would be elected. But if he was not the Condorcet winner, these Perot supporters would still have a say between Bush and Clinton, rather than being forced to betray their true favorite to have a say in the primary contest.
 
 <iframe id="condorcet-election-frame" src="/assets/html/condorcet-election.html"
   width="100%" height="480" scrolling="no"
@@ -161,7 +163,7 @@ I made [a simple model you can check out here](https://eigentaylor.github.io/wea
 
 This system actually realizes what I'd call the "Condorcet ideal". Since voters participate in every matchup directly, you can more confidently claim the winner would beat everyone in a head-to-head runoff, rather than approximate head-to-head results from ranked data. I wrote [a cheeky post](../condorcet-approval/){:target="_blank"} in the past about how ranked Condorcet methods are only approximations of this; turns out there's now a system that does it for real.
 
-Oh, and if you're feeling mischievous: you can vote intransitively. Alice over Bob, Bob over Clark, Clark over Alice. You can't do that in a ranked method. I have no idea why you'd want to, but in this system you are free of the shackles of transitivity!
+Oh, and if you're feeling mischievous: you can vote intransitively. Rock over Scissors, Scissors over Paper, Paper over Rock. You can't do that in a ranked method. I have no idea why you'd want to, but in this system you are free of the shackles of transitivity!
 
 ## Where I'm Skeptical
 
