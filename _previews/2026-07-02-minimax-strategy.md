@@ -139,10 +139,10 @@ Therefore, we need *only* consider the $(1,2)$ swap of the first kind, which swa
 
 ## Profitable Cycles
 
-> **Theorem:** For $n=3$ candidates, there are exactly two $P$ out of the 48 total nodes which have a profitable simple manipulation, and they both contain a cycle. Specifically, they are
+> **Theorem:** For $n=3$ candidates, fix a coalition with preferences $A\succ B\succ C$. For this coalition, exactly two $P$ out of the 48 total nodes have a profitable simple manipulation for this coalition, and they both contain a cycle. Specifically, they are
 >
-> 1. $P=\langle C\to B\mid B\to A\mid A\to C\rangle$, with $f(P)=B$ which can be manipulated to $Q=\langle B\to A\mid C\to B\mid A\to C\rangle$ with $f(Q)=A$ by voters who prefer $A\succ B\succ C$ choosing to insincerely vote $C\succ B$ instead of $B\succ C$.
-> 2. $P=\langle B\to C\mid A\to B\mid C\to A\rangle$, with $f(P)=C$ which can be manipulated to $Q=\langle A\to B\mid B\to C\mid C\to A\rangle$ with $f(Q)=B$ by voters who prefer $A\succ B\succ C$ choosing to insincerely vote $B\succ A$ instead of $A\succ B$.
+> 1. $P=\langle C\to B\mid B\to A\mid A\to C\rangle$, with $f(P)=B$ which can be manipulated to $Q=\langle B\to A\mid C\to B\mid A\to C\rangle$ with $f(Q)=A$ by the coalition choosing to insincerely vote $C\succ B$ instead of $B\succ C$.
+> 2. $P=\langle B\to C\mid A\to B\mid C\to A\rangle$, with $f(P)=C$ which can be manipulated to $Q=\langle A\to B\mid B\to C\mid C\to A\rangle$ with $f(Q)=B$ by the coalition choosing to insincerely vote $B\succ A$ instead of $A\succ B$.
 
 {% proof Click to expand proof %}
 **Proof:** Based on our results above, we can restrict ourselves to considering cases where $f((1,2)P)\succ f(P)$, and $P$ has no Condorcet winner. Since $(1,2)$ is a swap of the first kind, $Q=(1,2)P$ must also be a cycle.
