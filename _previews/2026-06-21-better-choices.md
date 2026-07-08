@@ -119,7 +119,7 @@ This is one thing I like about Approval: it's not hard to understand that a bubb
 
 This also simplifies implementation on existing voting machines, which is something I really like about Approval! Tallying becomes exceptionally simple: it's just three different matchups (six total tallies). That's not absurdly overcomplicated.
 
-One key question that remains is whether voters will understand how these head-to-head matchups translate to a winner. Will they be confused and expect that the candidate who wins any matchup by the most votes is crowned the winner? Or will they understand the Condorcet principle at play?
+One key question that remains is whether voters will understand how these head-to-head matchups translate to a winner. If Alice wins her matchups by narrow margins, but Bob clobbers Clark in a landslide, will voters expect that Bob should win? Or will they understand the Condorcet principle at play?
 
 Ballot usability matters enormously to me. As far as design goes, this is an extremely friendly ballot, especially relative to RCV and STAR voting. But it is objectively more complex than a choose-one or Approval ballot. Therefore, it's entirely possible that *even this* system could be too complex for voters to find palatable<d-footnote>My mother found it too confusing, and that's not a good sign.</d-footnote>.
 
