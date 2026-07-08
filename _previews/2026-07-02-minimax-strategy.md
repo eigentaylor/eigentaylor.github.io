@@ -167,6 +167,23 @@ Using that $P$ is a cycle, meaning every candidate must lose exactly one matchup
 
 This [interactive tool](https://eigentaylor.github.io/weakest-link/graph.html) visualizes these states and the manipulations available to a coalition preferring $A\succ B\succ C$.
 
+If you are interested, you can use the playground below to see the profitable strategies in action. Suppose you are a voter who most prefers Alice, then Bob, then Clark. Then insincere voting would involve moving any of the sliders to the left.
+
+<iframe id="condorcet-election-frame" src="/assets/html/condorcet-election.html?strategy"
+  width="100%" height="480" scrolling="yes"
+  frameborder="0"
+  style="border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.18); display: block; margin-top: 1rem; overflow: hidden;"
+  title="Interactive Condorcet/minimax election visualization">
+</iframe>
+<script>
+window.addEventListener("message", function(e) {
+  if (e.data && e.data.condorcetElectionHeight) {
+    var f = document.getElementById("condorcet-election-frame");
+    if (f) f.style.height = e.data.condorcetElectionHeight + "px";
+  }
+});
+</script>
+
 > **Corollary:** For a coalition of voters with preference $A\succ B\succ C$, the simple manipulation caused by performing a non-adjacent deviation of voting for $C$ over $A$ is never profitable. That is, a coalition of voters who sincerely prefer $A\succ B\succ C$ can never profitably manipulate the election by insincerely voting $C\succ A$ instead of $A\succ C$.
 
 {% proof Click to expand proof %}
