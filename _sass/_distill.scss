@@ -319,7 +319,14 @@ d-appendix {
     color: var(--global-distill-app-color) !important;
   }
 
-  a,
+  a {
+    color: var(--global-theme-color) !important;
+
+    &:hover {
+      color: var(--global-hover-color) !important;
+    }
+  }
+
   a.footnote-backlink {
     color: var(--global-distill-app-color) !important;
 
