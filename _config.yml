@@ -11,6 +11,9 @@ contact_note: >
   you can send me a DM on discord @eigentaylor (just tell me you found me through my website)
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   i do math sometimes
+author_bio_text: >
+  Taylor Eigen Fisher is a mathematician, tutor, and advocate for Approval voting. They received
+  their master's degree in mathematics from UC Riverside and volunteer with the Equal Vote Coalition.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
@@ -299,6 +302,7 @@ defaults:
       citation: true
       giscus_comments: true
       related_posts: true
+      author_bio: true
   - scope:
       path: "_previews"
       type: "previews"
@@ -315,6 +319,7 @@ defaults:
       citation: false
       giscus_comments: false
       related_posts: true
+      author_bio: true
 
 sass:
   style: compressed

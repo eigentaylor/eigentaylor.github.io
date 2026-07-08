@@ -219,10 +219,16 @@
             {% include related_posts.liquid %}
           {% endif %}
         {% endif %}
-        <br>
-        <br>
+        {% if page.author_bio or page.citation %}
+          <br>
+          <hr>
+          <br>
+        {% endif %}
+        {% if page.author_bio %}
+          {% include author_bio.liquid %}
+        {% endif %}
         {% if page.citation %}
-          {% include citation.liquid %}
+          {% include citation.liquid skip_divider=true %}
         {% endif %}
         {% if site.disqus_shortname and page.disqus_comments %}{% include disqus.liquid %}{% endif %}
         {% if site.giscus.repo and page.giscus_comments %}

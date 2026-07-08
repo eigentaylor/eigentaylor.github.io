@@ -1369,6 +1369,31 @@ ninja-keys::part(ninja-input-wrapper) {
   gap: 18px;
 }
 
+// author bio
+.author-bio-card {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 12px;
+  padding: 16px;
+  background: var(--global-card-bg-color);
+  margin: 1.25rem 0;
+}
+
+.author-bio-eyebrow {
+  margin: 0 0 4px 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--global-theme-color);
+}
+
+.author-bio-text {
+  color: var(--global-text-color);
+
+  p {
+    margin: 0;
+  }
+}
+
 .newsletter-main {
   width: 100%;
 }
