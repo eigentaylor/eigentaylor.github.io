@@ -184,6 +184,14 @@ window.addEventListener("message", function(e) {
 });
 </script>
 
+We also get a few corollaries from this result.
+
+> **Corollary:** A node has a profitable simple manipulation for some coalition of voters if and only if it is cyclic. Further, that coalition is unique.
+
+{% proof Click to expand proof %}
+**Proof:** The proof above is exhaustive, and explicitly constructs the precise coalition preference which leads to a profitable simple manipulation for each cyclic node. Further, there are 12 cyclic nodes for $n=3$, which will be some relabeling of the two profitable nodes above (the orbit of the two nodes under $S_3$). Hence, for each cyclic node, there is exactly one coalition of voters who can profitably manipulate the election. $\square$
+{% endproof %}
+
 > **Corollary:** For a coalition of voters with preference $A\succ B\succ C$, the simple manipulation caused by performing a non-adjacent deviation of voting for $C$ over $A$ is never profitable. That is, a coalition of voters who sincerely prefer $A\succ B\succ C$ can never profitably manipulate the election by insincerely voting $C\succ A$ instead of $A\succ C$.
 
 {% proof Click to expand proof %}
@@ -205,7 +213,7 @@ We can thus guarantee that there is *never* a reason in any scenario to vote for
 
 We have found exactly two states for $n=3$ that have a profitable simple manipulation. However, we can also ask if these two nodes are themselves reachable by manipulations from other nodes via the same coalition of voters. For example, is it possible for there to be a $P$ with a Condorcet winner such that by multiple manipulations, the coalition can eventually reach one of these two nodes and profitably change the winner?
 
-The answer is yes. We can consider a "complex manipulation" to be a sequence of simple manipulations where the final state is strictly preferred to the initial state by the coalition. That is, if $S^{(0)}\to S^{(1)}\to\cdots\to S^{(k)}$ is a complex manipulation, then we have that $f(S^{(k)})\succ f(S^{(0)})$. This is a much weaker requirement than having a chain of weakly preferred states, since we only require that the final state be strictly preferred to the initial state. It turns out that all complex manipulations are weakly preferred at all intermediate states, but we do not require that to be the case.
+The answer is yes. We can consider a "complex manipulation" to be a sequence of simple manipulations where the final state is strictly preferred to the initial state by the coalition. That is, if $S^{(0)}\to S^{(1)}\to\cdots\to S^{(k)}$ is a complex manipulation, then we have that $f(S^{(k)})\succ f(S^{(0)})$. This is a much stronger requirement than having a chain of weakly preferred states, since we only require that the final state be strictly preferred to the initial state. It turns out that all complex manipulations are weakly preferred at all intermediate states, but we do not require that to be the case.
 
 For the $P=\langle C\to B\mid B\to A\mid A\to C\rangle$ case, we can "move backwards" along the insincere misrepresentation of $C\succ B$, by fortifying the $B\to C$ matchup. Hence, we get a chain
 
