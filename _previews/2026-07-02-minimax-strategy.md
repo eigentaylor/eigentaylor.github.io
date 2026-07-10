@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: Strategic Resilience of the Better Choices System
-date: 2026-07-02
+date: 2026-07-10
 description: A model of manipulability in the Better Choices voting system, and why it's so difficult.
 importance: 3
 tags: voting
@@ -27,6 +27,7 @@ toc:
     subsections:
       - name: Permutations of Matchups
       - name: The Graph
+  - name: Simple Manipulations
   - name: Starting with a Condorcet Winner
   - name: Profitable Cycles
   - name: Complex Manipulations
@@ -37,9 +38,9 @@ toc:
 
 The [Better Choices system](../better-choices/){:target="_blank"} is a very interesting flavor of Condorcet where voters vote in all three head-to-head matchups between the candidates who make it to a top-3 runoff. I wrote about my complex thoughts on it in my last posts, but here I want to expound on the strategic resilience of the system.
 
-The winner in this system is the candidate who wins both of their most head-to-head matchups. If there is a tie, and nobody wins both, the winner is determined by minimax (the candidate with the least bad loss wins if every candidate loses at least one matchup).
+The winner in this system is the candidate who wins both of their head-to-head matchups (a "Condorcet winner"). If there is a tie, and nobody wins both, the winner is determined by minimax (the candidate with the least bad loss wins if every candidate loses at least one matchup).
 
-For example, if Alice wins both of her head-to-head matchups against Bob and Clark, then Alice is the winner outright. Suppose instead that Alice beats Bob by 300 votes, Bob beats Clark by 200 votes, and Clark beats Alice by 100 votes. Then Alice loses by the least amount (100 votes) and is the winner by the minimax tiebreaker.
+For example, if Alice wins both of her head-to-head matchups against Bob and Clark, then Alice is the winner outright. Suppose instead that Alice beats Bob by 10%, Bob beats Clark by 5%, and Clark beats Alice by 1%. Then Alice loses by the least amount (1%) and is the winner by the minimax tiebreaker.
 
 [Ranked voting methods are not strategyproof](../gibbard-satt/){:target="_blank"}, but some are more manipulable than others. [Ranked-Choice Voting](../ditch-rcv/){:target="_blank"} is infamous (or should be) for its horrendous participation failures and strategic vulnerabilities. In both Burlington and Alaska, voters went to the polls, voted for their favorite candidate, and through that changed the outcome from their viable backup candidate to their least favorite candidate. Therefore, there is reason to consider a ranked voting system and ask "is this going to bite me for participating honestly?"
 
@@ -61,13 +62,13 @@ $$P = \langle P_1 \mid P_2 \mid \cdots \mid P_m \rangle, \quad P_i = (w_i \to \e
 
 where $w_i$ is the winner and $\ell_i$ is the loser of the $i$-th matchup, with matchups ordered so that $P_1$ has the smallest margin and $P_m$ has the largest. We write $\operatorname{win}(P_i)=w_i$ and $\operatorname{lose}(P_i)=\ell_i$. For example in $n=3$, the state $\langle C\to B \mid B\to A \mid A\to C\rangle$ means $C$ defeats $B$ by the smallest margin, $B$ defeats $A$ by the middle margin, and $A$ defeats $C$ by the largest margin. We also keep a mirror entry $P_0 = (\ell_1\to w_1)$, the reverse of the smallest-margin matchup.
 
-Note that there are $\binom{3}{2}!\times 2^3=48$ possible states for 3 candidates, since there are $3!$ ways to order the matchups and $2^3$ ways to choose the winner of each matchup. In general, for $n$ candidates, there are $\binom{n}{2}!\times 2^{\binom{n}{2}}$ possible states.
+Note that there are $\binom{3}{2}!\times 2^3=48$ possible states for 3 candidates, since there are $3!$ ways to order the matchups and $2^3$ ways to choose the winner of each matchup. Out of the 48 nodes, 12 contain a cycle, and each candidate has 12 nodes in which they are a Condorcet winner. In general, for $n$ candidates, there are $\binom{n}{2}!\times 2^{\binom{n}{2}}$ possible states.
 
 The only way for the result of an election to possibly change is to change the relative sizes of the matchups. For example, if a coalition were to attempt to manipulate the election in $n=3$ by swapping their sincere votes for $\ell_2\to w_2$ with $w_2\to\ell_2$, then a sufficiently coordinated and large coalition might end up making the $w_2\to\ell_2$ matchup the largest margin, and the previous largest margin matchup $P_3$ would then become the middle margin matchup. Or, perhaps, the coalition might be able to change sincere votes for $w_1\to\ell_1$ into $\ell_1\to w_1$, which would reverse the smallest margin matchup such that $P_1=(\ell_1\to w_1)$, meaning that $\ell_1$ now *defeats* $w_1$ by the smallest margin.
 
 Focusing instead on individual voters, or ranking profiles, is not necessary or helpful. Particularly because all the matchups are independent, any possible margins list can be achieved by some profile of voters. Hence, we can focus entirely on the election results themselves, through the only method of manipulation: a coalition of voters changing their sincere votes to attempt to change the relative sizes of the matchups.
 
-We can thus define the decision rule of the Better Choices system as a function where if $P$ has a Condorcet winner $X$ (i.e. if there exist two distinct $i,j$ such that $\operatorname{win}(P_i)=\operatorname{win}(P_j)=X$, meaning that $X$ defeats both of the other candidates), then $f(P)=X$. Otherwise, if $P$ has no Condorcet winner, then minimax determines $f(P)=\operatorname{lose}(P_1)=\operatorname{win}(P_0)$, the candidate who loses by the least amount.
+We can thus define the decision rule of the Better Choices system as a function where if $P$ has a Condorcet winner $W$ (i.e. if there exist two distinct $i,j$ such that $\operatorname{win}(P_i)=\operatorname{win}(P_j)=W$, meaning that $W$ defeats both of the other candidates), then $f(P)=W$. Otherwise, if $P$ has no Condorcet winner, then minimax determines $f(P)=\operatorname{lose}(P_1)=\operatorname{win}(P_0)$, the candidate who loses by the least amount.
 
 ### Permutations of Matchups
 
@@ -95,11 +96,32 @@ I remark that to even possibly do a simple manipulation, particularly in a large
 
 Our question is when a coalition of voters can manipulate the election to change the winner profitably. That is, if $f(P)=X$ and $f(Q)=Y$, then we say that the coalition can manipulate the election from $P$ to $Q$ if $Y$ is preferred to $X$ by the coalition ($f(Q)\succ f(P)$, where we use $\succ$ to denote the manipulating coalition's preference). The work of Gibbard<d-cite key="gibbard1973manipulation"></d-cite> ensures that such manipulations are always possible, but we will show that they are *very* difficult to achieve in practice.
 
+## Simple Manipulations
+
+> **Definition:** Fix a coalition with preference $A\succ B\succ C$. A matchup $w\to \ell$ is **concordant** (with the coalition) if the coalition prefers $w\succ \ell$, and **discordant** otherwise. The coalition's sincere ballot is to vote $A\succ B$, $A\succ C$, and $B\succ C$. A matchup is concordant exactly when its current winner is the candidate the coalition sincerely votes for in that pair.
+
+To define what a "profitable manipulation" truly is, we have to establish the perspective of the coalition who is attempting to game the system.
+
+> **Definition:** A simple manipulation is **profitable** for a coalition if the winner of the election after the manipulation is strictly preferred by the coalition to the winner before the manipulation. That is, if $P$ and $Q$ are connected by an edge, then the manipulation from $P$ to $Q$ is profitable if $f(Q)\succ f(P)$.
+
+We now have to connect what kinds of manipulations are possible by a fixed coalition of voters.
+
+> **Lemma:** (One-Way Push) On each pair of candidates, the coalition can move the margin only **toward** its less preferred candidate. Therefore, a swap of the second kind (changing the smallest matchup from $w_1\to\ell_1$ to $\ell_1\to w_1$) is only achievable if the coalition sincerely prefers $w_1\succ\ell_1$. A swap of the first kind (swapping the relative sizes of $P_i$ and $P_{i+1}$ for $i>0$) is only achievable if the coalition sincerely prefers $w_{i+1}\succ \ell_{i+1}$ or $\ell_i\succ w_i$.\label{one-way-push}
+
+{% proof Click to expand proof %}
+**Proof**: To achieve a swap of the second kind, the initial sincere state must have more voters preferring $w_1\succ \ell_1$ than the opposite. To flip this, the coalition must initially be sincerely voting this way. Thus, the coalition must sincerely prefer $w_1\succ \ell_1$ to achieve a swap of the second kind.
+
+For a swap of the first kind, there are two ways to achieve this.
+
+1. Strengthen the $w_i\to\ell_i$ matchup to be stronger than the $w_{i+1}\to\ell_{i+1}$ matchup. To do this, the coalition must initially be voting $\ell_i\succ w_i$, and flip their vote. Hence, they sincerely prefer $\ell_i\succ w_i$.
+2. Weaken the $w_{i+1}\to\ell_{i+1}$ matchup to be weaker than the $w_i\to\ell_i$ matchup. To do this, the coalition must initially be voting $w_{i+1}\succ \ell_{i+1}$, and flip their vote. Hence, they sincerely prefer $w_{i+1}\succ \ell_{i+1}$. $\square$
+{% endproof %}
+
 ## Starting with a Condorcet Winner
 
 We start with an extremely cheery theorem.
 
-> **Theorem:** If $P$ has a Condorcet winner $X$, then there is no simple manipulation of $P$ that can profitably change the winner. That is, if $f(P)=X$ and $Q$ is connected to $P$ by an edge, then either $f(Q)=X$ or $f(P)\succ f(Q)$. In other words, $f(P)\succeq f(\sigma P)$.
+> **Theorem:** If $P$ has a Condorcet winner $X$, then there is no simple manipulation of $P$ that can profitably change the winner. That is, if $f(P)=X$ and $Q$ is connected to $P$ by an edge, then either $f(Q)=X$ or $f(P)\succ f(Q)$ ($f(P)\succeq f(\sigma P)$).\label{condorcet-stability}
 
 {% proof Click to expand proof %}
 **Proof:** Suppose $P$ has a Condorcet winner $W$. Then $W$ wins both of its head-to-head matchups against the other two candidates. Hence, a swap of the first kind cannot change the winner, since it preserves all current winners and losers of the matchups. We thus only need to consider a swap of the second kind, which reverses the smallest matchup.
@@ -115,34 +137,34 @@ In all cases, we have $f(P)\succeq f(Q)$, and the theorem is proven. $\square$
 
 The contrapositive of this theorem is that any profitable simple manipulation must start with a state that has no Condorcet winner, and must instead begin in a cycle. Cycles are empirically rare (in RCV elections, at least), and hence it seems unlikely that such a scenario is likely to occur. However, we can further show that the exact requirements for a cycle with profitable manipulations are even stricter still.
 
-> **Corollary:** A simple manipulation using a swap of the second kind (reversing the smallest matchup) is never profitable for $n=3$. It can be profitable for $n>3$.
+> **Corollary:** A simple manipulation using a swap of the second kind (reversing the smallest matchup) is never profitable for $n=3$. It can be profitable for $n>3$.\label{second-kind-manipulation}
 
 {% proof Click to expand proof %}
 **Proof:** The above theorem handles the case where $P$ has a Condorcet winner, so we only need to consider the case where $P$ has no Condorcet winner. Suppose $P$ has no Condorcet winner, and let $Q=(0,1)P$ be the result of a swap of the second kind.
 
-For $n=3$, a cycle means that every candidate loses exactly one matchup. Hence, flipping any single matchup results in the existence of a Condorcet winner. In particular, because we have given $\ell_1$ the victory over $w_1$ by reversing the smallest matchup, $\ell_1$ now wins two matchups and is the Condorcet winner of $Q$. Hence, $f(Q)=\ell_1$. Thus, $f(Q)=\ell_1=f(P)$. Hence, the manipulation is not profitable.
+For $n=3$, a cycle means that every candidate loses exactly one matchup. Hence, flipping any single matchup results in the existence of a Condorcet winner. In particular, because we have given $\ell_1$ the victory over $w_1$ by reversing the smallest matchup, $\ell_1$ now wins two matchups and is the Condorcet winner of $Q$. Hence, $f(Q)=\ell_1$. Thus, $f(Q)=\ell_1=f(P)$. Therefore, the manipulation is not profitable.
 
-Consider $n=4$. For $n=4$, it's possible to flip a matchup in a cycle and stay in a cycle, in which case this is genuinely profitable. If $f(P)=\operatorname{lose}(P_1)=\ell_1$ and $Q=(0,1)P$, then $\operatorname{lose}(Q_1)=w_1$. To flip the weakest matchup of $w_1\to\ell_1$ to $\ell_1\to w_1$, the coalition must sincerely prefer $w_1\succ\ell_1$, and insincerely bury $w_1$ under $\ell_1$ until $\ell_1$ defeats $w_1$ by the smallest margin. Thus, $f(Q)=w_1\succ\ell_1=f(P)$, and the manipulation is profitable. $\square$
+Consider $n=4$. For $n=4$, it's possible to flip a matchup in a cycle and stay in a cycle, in which case this is genuinely profitable. If $f(P)=\operatorname{lose}(P_1)=\ell_1$ and $Q=(0,1)P$, then $f(Q)=\operatorname{lose}(Q_1)=w_1$. By lemma \ref{one-way-push}, the coalition must sincerely prefer $w_1\succ\ell_1$ to perform a swap of the second kind. Thus, $f(Q)=w_1\succ\ell_1=f(P)$, and the manipulation is profitable. $\square$
 {% endproof %}
 
 This is genuinely one spot where the massive dominance of $n=3$ elections is a benefit over taking the system to $n>3$ (at least with a minimax tiebreaker). This showcases how minimax is less robust for larger $n$, but is extremely robust for $n=3$ [due to its agreement with Ranked Pairs and Schulze](../better-choices/){:target="_blank"}<d-cite key="brandt2025condorcet"></d-cite>.
 
 This further narrows the field of possible ways to profitably manipulate the election for $n=3$. Not only must the election begin in a cycle, but it cannot be profitably changed by changing the winner of the weakest margin. The only remaining possibility is to swap the relative strengths of the existing matchups. But we have yet to eliminate all never-profitable manipulations.
 
-> **Lemma:** A simple manipulation created by the permutation $(i,i+1)$ for $i>1$ never changes the winner of an election, and hence is never profitable for any $n$.
+> **Lemma:** A simple manipulation created by the permutation $(i,i+1)$ for $i>1$ never changes the winner of an election, and hence is never profitable for any $n$.\label{first-kind-manipulation}
 
 {% proof Click to expand proof %}
 **Proof:** If $P$ has a Condorcet winner, then the $(i,i+1)$ swap for $i>1$ preserves the winner, and hence is not profitable. If $P$ has no Condorcet winner, then $f(P)=\operatorname{lose}(P_1)$. But $Q_1=P_1$, and hence $f(Q)=\operatorname{lose}(Q_1)=\operatorname{lose}(P_1)=f(P)$. Hence, the manipulation is not profitable. $\square$
 {% endproof %}
 
-Therefore, we need *only* consider the $(1,2)$ swap of the first kind, which swaps the relative strengths of the two weakest matchups, on $P$ which contains a cycle. We have eliminated $(0,1)$ and $(2,3),(3,4),\ldots,(m-1,m)$ as profitable manipulations, and hence we have reduced the field of possible profitable manipulations to a very small set of possibilities.
+Therefore, for $n=3$, we need *only* consider the $(1,2)$ swap of the first kind, which swaps the relative strengths of the two weakest matchups, on $P$ which contains a cycle. We have eliminated $(0,1)$ and $(2,3)$ as profitable manipulations, and hence we have reduced the field of possible profitable manipulations to a very small set of possibilities.
 
 ## Profitable Cycles
 
 > **Theorem:** For $n=3$ candidates, fix a coalition with preferences $A\succ B\succ C$. For this coalition, exactly two $P$ out of the 48 total nodes have a profitable simple manipulation for this coalition, and they both contain a cycle. Specifically, they are
 >
-> 1. $P=\langle C\to B\mid B\to A\mid A\to C\rangle$, with $f(P)=B$ which can be manipulated to $Q=\langle B\to A\mid C\to B\mid A\to C\rangle$ with $f(Q)=A$ by the coalition choosing to insincerely vote $C\succ B$ instead of $B\succ C$.
-> 2. $P=\langle B\to C\mid A\to B\mid C\to A\rangle$, with $f(P)=C$ which can be manipulated to $Q=\langle A\to B\mid B\to C\mid C\to A\rangle$ with $f(Q)=B$ by the coalition choosing to insincerely vote $B\succ A$ instead of $A\succ B$.
+> 1. $G_1=\langle C\to B\mid B\to A\mid A\to C\rangle$, with $f(G_1)=B$ which can be manipulated to $Q_1=\langle B\to A\mid C\to B\mid A\to C\rangle$ with $f(Q_1)=A$ by the coalition choosing to insincerely vote $C\succ B$ instead of $B\succ C$.
+> 2. $G_2=\langle B\to C\mid A\to B\mid C\to A\rangle$, with $f(G_2)=C$ which can be manipulated to $Q_2=\langle A\to B\mid B\to C\mid C\to A\rangle$ with $f(Q_2)=B$ by the coalition choosing to insincerely vote $B\succ A$ instead of $A\succ B$.\label{profitable-cycles}
 
 {% proof Click to expand proof %}
 **Proof:** Based on our results above, we can restrict ourselves to considering cases where $f((1,2)P)\succ f(P)$, and $P$ has no Condorcet winner. Since $(1,2)$ is a swap of the first kind, $Q=(1,2)P$ must also be a cycle.
@@ -158,11 +180,11 @@ We consider each case individually:
 
 **Case 1**: Strengthen $w_1\to\ell_1$. In this case, the coalition must sincerely prefer $\ell_1\succ w_1$, and prefer the altered outcome $\ell_2\succ\ell_1$. Hence, we must have that $\ell_2\succ\ell_1\succ w_1$. Let us label this preference $A\succ B\succ C$ ($A=\ell_2$, $B=\ell_1$, $C=w_1$). Then we have that $P_1=(C\to B)$ and $\operatorname{lose}(P_2)=A$.
 
-Using that $P$ is a cycle, meaning every candidate must lose exactly one matchup, we deduce that $\ell_3=C$, $w_3=A$, and $\operatorname{win}(P_2)=B$. Hence, $P=\langle C\to B\mid B\to A\mid A\to C\rangle$, and $Q=(1,2)P=\langle B\to A\mid C\to B\mid A\to C\rangle$. This is one of the two profitable manipulations, where $f(P)=B$ and $f(Q)=A$. The manipulation done, specifically, by voters who sincerely prefer $B\succ C$ but insincerely vote $C\succ B$ instead. By burying their second favorite, they cause their favorite to win.
+Using that $P$ is a cycle, meaning every candidate must lose exactly one matchup, we deduce that $\ell_3=C$, $w_3=A$, and $\operatorname{win}(P_2)=B$. Hence, $P=\langle C\to B\mid B\to A\mid A\to C\rangle$, and $Q=(1,2)P=\langle B\to A\mid C\to B\mid A\to C\rangle$. This is one of the two profitable manipulations, where $f(P)=B$ and $f(Q)=A$. The manipulation is done, specifically, by voters who sincerely prefer $B\succ C$ but insincerely vote $C\succ B$ instead. By burying their second favorite, they cause their favorite to win.
 
 **Case 2**: Weaken $w_2\to\ell_2$. In this case, the coalition must sincerely prefer $w_2\succ\ell_2$, and prefer the altered outcome $\ell_2\succ\ell_1$. Hence, we must have that $w_2\succ\ell_2\succ\ell_1$. Let us label this preference $A\succ B\succ C$ ($A=w_2$, $B=\ell_2$, $C=\ell_1$). Then we have that $P_2=(A\to B)$ and $\operatorname{lose}(P_1)=C$.
 
-Using that $P$ is a cycle, meaning every candidate must lose exactly one matchup, we deduce that $\ell_3=C$, $w_3=A$, and $\operatorname{win}(P_1)=B$. Hence, $P=\langle B\to C\mid A\to B\mid C\to A\rangle$, and $Q=(1,2)P=\langle A\to B\mid B\to C\mid C\to A\rangle$. This is the second profitable manipulation, where $f(P)=C$ and $f(Q)=B$. The manipulation done, specifically, by voters who sincerely prefer $A\succ B$ but insincerely vote $B\succ A$ instead. By betraying their favorite, they allow their second favorite to win instead of their least favorite.
+Using that $P$ is a cycle, meaning every candidate must lose exactly one matchup, we deduce that $\ell_3=C$, $w_3=A$, and $\operatorname{win}(P_1)=B$. Hence, $P=\langle B\to C\mid A\to B\mid C\to A\rangle$, and $Q=(1,2)P=\langle A\to B\mid B\to C\mid C\to A\rangle$. This is the second profitable manipulation, where $f(P)=C$ and $f(Q)=B$. The manipulation is done, specifically, by voters who sincerely prefer $A\succ B$ but insincerely vote $B\succ A$ instead. By betraying their favorite, they allow their second favorite to win instead of their least favorite.
 {% endproof %}
 
 This [interactive tool](https://eigentaylor.github.io/weakest-link/graph.html) visualizes these states and the manipulations available to a coalition preferring $A\succ B\succ C$.
@@ -183,22 +205,25 @@ window.addEventListener("message", function(e) {
   }
 });
 </script>
+<br>
 
 We also get a few corollaries from this result.
 
 > **Corollary:** A node has a profitable simple manipulation for some coalition of voters if and only if it is cyclic. Further, that coalition is unique.
 
 {% proof Click to expand proof %}
-**Proof:** The proof above is exhaustive, and explicitly constructs the precise coalition preference which leads to a profitable simple manipulation for each cyclic node. Further, there are 12 cyclic nodes for $n=3$, which will be some relabeling of the two profitable nodes above (the orbit of the two nodes under $S_3$). Hence, for each cyclic node, there is exactly one coalition of voters who can profitably manipulate the election. $\square$
+**Proof:** The proof for Theorem \ref{profitable-cycles} is exhaustive, and explicitly constructs the precise coalition preference which leads to a profitable simple manipulation for each cyclic node. Using any relabeling of the candidates (from the six elements of $S_3$) will yield a unique alternate cycle structure and a new unique coalition. In total, this will yield $$\vert S_3\vert \cdot \vert\{G_1,G_2\}\vert=12$$ unique nodes, each containing a cycle. However, there are only 12 cyclic nodes total, so each cyclic $P$ must admit some profitable simple manipulation for some coalition. $\square$
 {% endproof %}
+
+We can thus say that in any cycle, there is some group who could stand to profit. However, this would require foreknowledge of the exact cycle structure for that coalition to know a manipulation is even possible, in addition to the resources required to perform the manipulation.
 
 > **Corollary:** For a coalition of voters with preference $A\succ B\succ C$, the simple manipulation caused by performing a non-adjacent deviation of voting for $C$ over $A$ is never profitable. That is, a coalition of voters who sincerely prefer $A\succ B\succ C$ can never profitably manipulate the election by insincerely voting $C\succ A$ instead of $A\succ C$.
 
 {% proof Click to expand proof %}
-**Proof:** Copying the logic from the previous proof, suppose that $f(P)=\ell_1$ and $f(Q)=\ell_2$ for $Q=(1,2)P$, both cyclic scenarios. We want a profitable deviation, meaning the voters prefer $\ell_2\succ\ell_1$. By the table in the previous proof we must either have
+**Proof:** Copying the logic from the proof of Theorem \ref{profitable-cycles}, suppose that $f(P)=\ell_1$ and $f(Q)=\ell_2$ for $Q=(1,2)P$, both cyclic scenarios. We want a profitable deviation, meaning the voters must prefer $\ell_2\succ\ell_1$. By lemma \ref{one-way-push}, the only way to achieve the $(1,2)$ swap is by either sincerely preferring
 
-- $\ell_1\succ w_1$ where $A=\ell_1$ and $C=w_1$, or
-- $w_2\succ\ell_2$ where $A=w_2$ and $C=\ell_2$.
+- $\ell_1\succ w_1$. For the manipulation to require betraying $A\succ C$, we need $A=\ell_1$ and $C=w_1$, or
+- $w_2\succ\ell_2$ where, similarly, we would need $A=w_2$ and $C=\ell_2$.
 
 For case 1: $A=\ell_1$ is the most preferred candidate, so we cannot have $\ell_2\succ\ell_1=A$.
 
@@ -241,19 +266,14 @@ This gives us six nodes total (four plus two). Six scenarios where, theoreticall
 
 Some of these theorems do generalize beyond $n=3$, but I caution at the overall expectation of robustness. Minimax, for its wonderful simplicity and ease of explanation (relative to something like Schulze), is not a very robust Condorcet method.
 
-If you can use this model to say more interesting things about Minimax<d-footnote>I bet you can maybe generalize this model to say some interesting things about Ranked Pairs, too.</d-footnote> for $n>3$, let me know in the comments below!
+If you can use this model to say more interesting things about Minimax for $n>3$, or perhaps generalize this model to say some interesting things about Ranked Pairs, let me know in the comments below! I developed a somewhat analogous model for IRV (Ranked-Choice voting), which I may write about in a future post.
 
 ## Conclusion
 
-In practice, to subvert or profitably manipulate this type of election, you would have to
+In practice, to subvert or profitably manipulate this type of election, you would first need the resources to organize widespread dishonesty (without tipping off opponents who could organize counterstrategy). But in addition to that, the amount of foreknowledge of the precise structure of the matchups is extensive to be able to predict that the coalition with your exact ordering of the three candidates has opportunity to manipulate the election.
 
-1. Foresee that the election will produce a cycle
-2. Be able to gauge the relative strengths of the matchups to know *which* two matchups are the weakest (and you better be sure about the order)
-3. Be able to coordinate a large coalition of voters to insincerely change their votes in the exact right way to achieve the swap.
-4. Have that coalition be sufficiently large that you can actually change the relative strengths of the matchups, and hopefully disturb nothing else in the election (and hope nobody performs any counterstrategy to negate your efforts).
+Further, the manipulations would require convincing voters to either vote for their least favorite over their backup choice, or to betray their favorite in favor of their second choice. 
 
-Or, if you somehow actually have the resources to perform a *strong* manipulation, then you still have to be quite confident about the relative margins of the other matchups.
-
-I simply do not see this as a practical concern. If you are a voter voting in such an election, I cannot recommend enough that you vote sincerely. There is effectively no way to do this without an unrealistic amount of knowledge, foresight, confidence, and *resources*.
+I simply do not see this as a practical concern. If you are a voter voting in such an election, I cannot recommend enough that you vote sincerely. There is effectively no way to game the result without an unrealistic amount of knowledge, foresight, confidence, and *resources*.
 
 Just vote honestly. Vote for your favorite in their matchups. Vote for your second choice against your last choice. This system gives you the opportunity to have say in every single race, whether it is competitive or not. Don't think about strategy, just vote.
