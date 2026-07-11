@@ -70,6 +70,8 @@ Focusing instead on individual voters, or ranking profiles, is not necessary or 
 
 We can thus define the decision rule of the Better Choices system as a function where if $P$ has a Condorcet winner $W$ (i.e. if there exist two distinct $i,j$ such that $\operatorname{win}(P_i)=\operatorname{win}(P_j)=W$, meaning that $W$ defeats both of the other candidates), then $f(P)=W$. Otherwise, if $P$ has no Condorcet winner, then minimax determines $f(P)=\operatorname{lose}(P_1)=\operatorname{win}(P_0)$, the candidate who loses by the least amount.
 
+The question we investigate is not in the realm of game theory or psychology. Instead, we ask "if an omniscient coalition of voters had the ability to perfectly coordinate and execute a manipulation, would it be profitable for them to do so?"
+
 ### Permutations of Matchups
 
 We denote $$\sigma\in\left\{(i,i+1): 0\leq i<m\right\}\subset S_{m+1}$$ as permutations on the matchups themselves, and we define
@@ -98,13 +100,11 @@ Our question is when a coalition of voters can manipulate the election to change
 
 ## Simple Manipulations
 
-> **Definition:** Fix a coalition with preference $A\succ B\succ C$. A matchup $w\to \ell$ is **concordant** (with the coalition) if the coalition prefers $w\succ \ell$, and **discordant** otherwise. The coalition's sincere ballot is to vote $A\succ B$, $A\succ C$, and $B\succ C$. A matchup is concordant exactly when its current winner is the candidate the coalition sincerely votes for in that pair.
-
-Note: we assume the coalition has transitive preferences. However, technically, there is not a particular reason to require this. But it simplifies the analysis, and is a reasonable assumption to make about voters.
-
 To define what a "profitable manipulation" truly is, we have to establish the perspective of the coalition who is attempting to game the system.
 
 > **Definition:** A simple manipulation is **profitable** for a coalition if the winner of the election after the manipulation is strictly preferred by the coalition to the winner before the manipulation. That is, if $P$ and $Q$ are connected by an edge, then the manipulation from $P$ to $Q$ is profitable if $f(Q)\succ f(P)$.
+
+For example, if $f(P)=B$ and $f(Q)=A$, then the manipulation from $P$ to $Q$ is profitable for a coalition with preference $A\succ B\succ C$, but not for a coalition with preference $B\succ A\succ C$<d-footnote>We assume the coalition has transitive preferences. However, technically, there is not a particular reason to require this. But it simplifies the analysis, and is a reasonable assumption to make about voters.</d-footnote>.
 
 We now have to connect what kinds of manipulations are possible by a fixed coalition of voters.
 
@@ -222,7 +222,7 @@ We also get a few corollaries from this result.
 **Proof:** The proof for Theorem \ref{profitable-cycles} is exhaustive, and explicitly constructs the precise coalition preference which leads to a profitable simple manipulation for each cyclic node ($\ell_2\succ\ell_1\succ w_1$ or $w_2\succ\ell_2\succ\ell_1$). Using any relabeling of the candidates (from the six elements of $S_3$) will yield a unique alternate cycle structure and a new unique coalition. In total, this will yield $$\vert S_3\vert \cdot \vert\{G_1,G_2\}\vert=12$$ unique nodes, each containing a cycle. However, there are only 12 cyclic nodes total, so each cyclic $P$ must admit some profitable simple manipulation for some coalition. $\square$
 {% endproof %}
 
-We can thus say that in any cycle, there is some group who could stand to profit. However, this would require foreknowledge of the exact cycle structure for that coalition to know a manipulation is even possible, in addition to the resources required to perform the manipulation.
+We can thus say that in any cycle, there is some group who could stand to profit. However, this would require foreknowledge of both that there would be a cycle, and the exact cycle structure for that coalition to know a manipulation is even possible, in addition to the resources required to perform the manipulation.
 
 > **Corollary:** For a coalition of voters with preference $A\succ B\succ C$, the simple manipulation caused by performing a non-adjacent deviation of voting for $C$ over $A$ is never profitable. That is, a coalition of voters who sincerely prefer $A\succ B\succ C$ can never profitably manipulate the election by insincerely voting $C\succ A$ instead of $A\succ C$.
 
@@ -246,6 +246,8 @@ We can thus guarantee that there is *never* a reason in any scenario to vote for
 We have found exactly two states for $n=3$ that have a profitable simple manipulation per coalition. However, we can also ask if these two nodes are themselves reachable by manipulations from other nodes by the same coalition of voters. For example, is it possible for there to be a $P$ with a Condorcet winner such that by multiple manipulations, the coalition can eventually reach one of these two nodes and profitably change the winner?
 
 The answer is yes. We can consider a "complex manipulation" to be a sequence of simple manipulations where the final state is strictly preferred to the initial state by the coalition. That is, if $P^{(0)}\to P^{(1)}\to\cdots\to P^{(k)}$ is a complex manipulation, then we have that $f(P^{(k)})\succ f(P^{(0)})$. We place no requirement on intermediate states--only the endpoint matters.<d-footnote>It turns out this makes no difference: the six profitable states below are the same whether one requires every intermediate state to be weakly preferred, or only that the final state beat the initial one. The necessary conditions used in the classification theorem are conditions on the starting state alone (the ratchets below are path-independent), so allowing non-monotone dips can't enlarge the set of profitable starting states; and the chains exhibited below are already monotone, so requiring monotonicity can't shrink it either.</d-footnote>
+
+> **Definition:** Fix a coalition with preference $A\succ B\succ C$. A matchup $w\to \ell$ is **concordant** (with the coalition) if the coalition prefers $w\succ \ell$, and **discordant** otherwise. The coalition's sincere ballot is to vote $A\succ B$, $A\succ C$, and $B\succ C$. A matchup is concordant exactly when its current winner is the candidate the coalition sincerely votes for in that pair.
 
 To see exactly which states these are, we need one more piece of machinery: a sense of which way a coalition's lies can push a matchup, and how that accumulates over a sequence of deviations.
 
@@ -271,7 +273,7 @@ In plain terms: a coalition can deepen its lies, but it can never take them back
 **Proof:** By Theorem \ref{profitable-cycles}, these are the only two strictly $f$-improving edges in the entire deviation graph for this coalition. Any profitable path must contain at least one strictly improving step, and that step must be one of these two. $\square$
 {% endproof %}
 
-So a state admits a profitable complex manipulation if and only if it can reach $G_1$ or $G_2$ without ever crossing a strictly improving edge first--that is, we are really asking which states are *ancestors* of a gate, not which states a gate can reach.
+So a state admits a profitable complex manipulation if and only if it can reach $G_1$ or $G_2$ without starting at a preferable outcome--that is, we are really asking which states are *ancestors* of a gate (that have the same or a worse outcome), not which states a gate can reach.
 
 > **Theorem:** For $n=3$ and a fixed coalition $A\succ B\succ C$, exactly six of the 48 states admit a profitable complex manipulation: the four states of the burial chain
 >
@@ -291,7 +293,7 @@ By the Ratchets, reaching $G_1=\langle C\to B\mid B\to A\mid A\to C\rangle$ requ
 Hand-enumerating the states satisfying these conditions (ruling out states where these conditions would force a different Condorcet winner) leaves exactly four $B$-outcome candidates for $G_1$ and two $C$-outcome candidates for $G_2$--and the chains displayed above show each candidate reaches its gate through legal, outcome-preserving steps, which gives sufficiency. *(Full case-by-case enumeration to be filled in.)* $\square$
 {% endproof %}
 
-> **Corollary:** (Single-lie sufficiency) Every profitable complex manipulation reduces to a single lie told at increasing strength. The four burial-chain states are profitably manipulated by the lone insincere vote $C\succ B$ (burying $B$), pushed to increasing depth; the two betrayal-chain states by the lone insincere vote $B\succ A$ (betraying $A$). The six states differ only in *how far* the lie must be pushed--1 to 4 margin ranks.\label{single-lie}
+> **Corollary:** (Single-lie sufficiency) Every profitable complex manipulation can be reduced to a single lie told at increasing strength. The four burial-chain states are profitably manipulated by the lone insincere vote $C\succ B$ (burying $B$), pushed to increasing depth; the two betrayal-chain states by the lone insincere vote $B\succ A$ (betraying $A$). The six states differ only in *how far* the lie must be pushed--1 to 4 margin ranks.\label{single-lie}
 
 {% proof Click to expand proof %}
 **Proof:** Read the arrows in the chains above: every edge in the burial chain is the $C\succ B$ deviation applied with more mass; every edge in the betrayal chain is $B\succ A$. $\square$
@@ -307,7 +309,7 @@ Three of the four burial-chain states have a Condorcet winner--namely $B$, the c
 **Proof:** Reaching outcome $A$ requires passing through $G_1$, which contains $A\to C$. But any path out of the $C$-outcome class passes through $G_2$'s exit $Q_2=\langle A\to B\mid B\to C\mid C\to A\rangle$, which contains $C\to A$--permanently, by (R1). $\square$
 {% endproof %}
 
-Even a maximally resourced, perfectly informed coalition improves its outcome by at most one preference notch, and only from six of the forty-eight starting states.
+Even a maximally resourced, perfectly informed coalition improves its outcome by at most one preference notch, and only from six of the forty-eight starting states, half of which are cycles.
 
 ### Generalizing to More Candidates
 
