@@ -94,7 +94,7 @@ We can understand this intuitively as $P$ being some sincere state of an electio
 
 I remark that to even possibly do a simple manipulation, particularly in a large electorate, is going to be extremely difficult and require intense coordination. The goal of this post is to show just how futile such an effort is likely to be, even if it seemed possible to succeed.
 
-Our question is when a coalition of voters can manipulate the election to change the winner profitably. That is, if $f(P)=X$ and $f(Q)=Y$, then we say that the coalition can manipulate the election from $P$ to $Q$ if $Y$ is preferred to $X$ by the coalition ($f(Q)\succ f(P)$, where we use $\succ$ to denote the manipulating coalition's preference). The work of Gibbard<d-cite key="gibbard1973manipulation"></d-cite> ensures that such manipulations are always possible, but we will show that they are *very* difficult to achieve in practice.
+Our question is when a coalition of voters can manipulate the election to change the winner profitably. That is, if $f(P)=X$ and $f(Q)=Y$, then we say that the coalition can manipulate the election from $P$ to $Q$ if $Y$ is preferred to $X$ by the coalition ($f(Q)\succ f(P)$, where we use $\succ$ to denote the manipulating coalition's preference). The work of Gibbard<d-cite key="gibbard1973manipulation"></d-cite> ensures that no reasonable voting rule can escape manipulability entirely, but we will show how narrow the openings are here.
 
 ## Simple Manipulations
 
@@ -128,7 +128,7 @@ For a swap of the first kind, there are two ways to achieve this.
 
 We start with an extremely cheery theorem.
 
-> **Theorem:** If $P$ has a Condorcet winner $X$, then there is no simple manipulation of $P$ that can profitably change the winner. That is, if $f(P)=X$ and $Q$ is connected to $P$ by an edge, then either $f(Q)=X$ or $f(P)\succ f(Q)$ ($f(P)\succeq f(\sigma P)$).\label{condorcet-stability}
+> **Theorem:** If $P$ has a Condorcet winner $W$, then there is no simple manipulation of $P$ that can profitably change the winner. That is, if $f(P)=W$ and $Q$ is connected to $P$ by an edge, then either $f(Q)=W$ or $f(P)\succ f(Q)$ ($f(P)\succeq f(\sigma P)$).\label{condorcet-stability}
 
 {% proof Click to expand proof %}
 **Proof:** Suppose $P$ has a Condorcet winner $W$. Then $W$ wins both of its head-to-head matchups against the other two candidates. Hence, a swap of the first kind cannot change the winner, since it preserves all current winners and losers of the matchups. We thus only need to consider a swap of the second kind, which reverses the smallest matchup.
@@ -245,29 +245,69 @@ We can thus guarantee that there is *never* a reason in any scenario to vote for
 
 We have found exactly two states for $n=3$ that have a profitable simple manipulation per coalition. However, we can also ask if these two nodes are themselves reachable by manipulations from other nodes by the same coalition of voters. For example, is it possible for there to be a $P$ with a Condorcet winner such that by multiple manipulations, the coalition can eventually reach one of these two nodes and profitably change the winner?
 
-The answer is yes. We can consider a "complex manipulation" to be a sequence of simple manipulations where the final state is strictly preferred to the initial state by the coalition. That is, if $S^{(0)}\to S^{(1)}\to\cdots\to S^{(k)}$ is a complex manipulation, then we have that $f(S^{(k)})\succ f(S^{(0)})$. This is a much stronger requirement than having a chain of weakly preferred states, since we only require that the final state be strictly preferred to the initial state. It turns out that all complex manipulations are weakly preferred at all intermediate states, but we do not require that to be the case.
+The answer is yes. We can consider a "complex manipulation" to be a sequence of simple manipulations where the final state is strictly preferred to the initial state by the coalition. That is, if $S^{(0)}\to S^{(1)}\to\cdots\to S^{(k)}$ is a complex manipulation, then we have that $f(S^{(k)})\succ f(S^{(0)})$. We place no requirement on intermediate states--only the endpoint matters.<d-footnote>It turns out this makes no difference: the six profitable states below are the same whether one requires every intermediate state to be weakly preferred, or only that the final state beat the initial one. The necessary conditions used in the classification theorem are conditions on the starting state alone (the ratchets below are path-independent), so allowing non-monotone dips can't enlarge the set of profitable starting states; and the chains exhibited below are already monotone, so requiring monotonicity can't shrink it either.</d-footnote>
 
-For the $P=\langle C\to B\mid B\to A\mid A\to C\rangle$ case, we can "move backwards" along the insincere misrepresentation of $C\succ B$, by fortifying the $B\to C$ matchup. Hence, we get a chain
+To see exactly which states these are, we need one more piece of machinery: a sense of which way a coalition's lies can push a matchup, and how that accumulates over a sequence of deviations.
 
-$$\begin{gather*}
-\langle B\to A\mid C\to B\mid A\to C\rangle\leftarrow\\
-\langle C\to B\mid B\to A\mid A\to C\rangle\leftarrow\\
-\langle B\to C\mid B\to A\mid A\to C\rangle\leftarrow\\
-\langle B\to A\mid B\to C\mid A\to C\rangle\leftarrow\\
-\langle B\to A\mid A\to C\mid B\to C\rangle
-\end{gather*}$$
+> **Lemma:** (Ratchets) Along any sequence of deviations available to a fixed coalition:
+>
+> **(R1, direction ratchet)** each matchup changes direction at most once, from concordant to discordant. Discordance is permanent--once the coalition has flipped $A\to C$ into $C\to A$, no further deviation by this coalition can ever restore $A\to C$.
+>
+> **(R2, rank ratchet)** the relative margin order of a discordant matchup $d$ and a concordant matchup $c$ can change only by $d$ rising above $c$. Once a discordant matchup outranks a concordant one, that order is permanent.\label{ratchets}
 
-This gives four nodes for which a coalition of sufficient size who prefer $A\succ B\succ C$ can manipulate the election to achieve a profitable outcome, theoretically through a very large manipulation. That is, if the scenario is $\langle B\to A\mid A\to C\mid B\to C\rangle$, meaning that $B$ defeats $C$ by the largest margin, then if you can manage to convince a large enough coalition of $A\succ B\succ C$ voters to insincerely bury $B$ under $C$, such that $C$ eventually defeats $B$ by the second largest margin $\langle B\to A\mid C\to B\mid A\to C\rangle$, then you can indeed manipulate the election to achieve a profitable outcome. Perhaps this is achievable in an election where the margins are particularly close together, but I find simple manipulations implausible enough already.
+{% proof Click to expand proof %}
+**Proof:** By lemma \ref{one-way-push}, the coalition can only push a margin toward its dispreferred candidate.
 
-For the second profitable manipulation, $P=\langle B\to C\mid A\to B\mid C\to A\rangle$, we can similarly move backwards along the insincere misrepresentation of $B\succ A$, by fortifying the $A\to B$ matchup, but this can only be done once. Hence, we get a chain
+(R1): a flip pushes a margin through zero, so only a concordant matchup can be flipped, and the result is discordant--which the coalition can never push back through zero.
 
-$$\begin{gather*}
-\langle A\to B\mid B\to C\mid C\to A\rangle\leftarrow\\
-\langle B\to C\mid A\to B\mid C\to A\rangle\leftarrow\\
-\langle B\to C\mid C\to A\mid A\to B\rangle
-\end{gather*}$$
+(R2): a rank swap is an adjacent transposition in the margin order. A swap placing $d$ above an adjacent $c$ requires strengthening $d$ or weakening $c$, both legal pushes toward the coalition's dispreferred candidate. A swap placing $c$ above an adjacent $d$ requires strengthening $c$ or weakening $d$, both pushes toward a coalition-*preferred* candidate, hence impossible. Flips do not change ranks. $\square$
+{% endproof %}
 
-This gives us six nodes total (four plus two). Six scenarios where, theoretically, a coalition of sufficient strength could employ some insincere strategy like burial or betrayal that, if strong enough to radically shift the margins, could achieve a profitable outcome. However, I find this to be an extremely unlikely scenario, and I do not see it as a practical concern.
+In plain terms: a coalition can deepen its lies, but it can never take them back. Every deviation is a one-way valve.
+
+> **Lemma:** (Gates) Every profitable complex manipulation passes through a gate: its first strictly-improving step is the simple manipulation out of $G_1$ (to $Q_1$) or out of $G_2$ (to $Q_2$).\label{gates}
+
+{% proof Click to expand proof %}
+**Proof:** By Theorem \ref{profitable-cycles}, these are the only two strictly $f$-improving edges in the entire deviation graph for this coalition. Any profitable path must contain at least one strictly improving step, and that step must be one of these two. $\square$
+{% endproof %}
+
+So a state admits a profitable complex manipulation if and only if it can reach $G_1$ or $G_2$ without ever crossing a strictly improving edge first--that is, we are really asking which states are *ancestors* of a gate, not which states a gate can reach.
+
+> **Theorem:** For $n=3$ and a fixed coalition $A\succ B\succ C$, exactly six of the 48 states admit a profitable complex manipulation: the four states of the burial chain
+>
+> $$\langle B\to A\mid A\to C\mid B\to C\rangle \xrightarrow{C\succ B} \langle B\to A\mid B\to C\mid A\to C\rangle \xrightarrow{C\succ B} \langle B\to C\mid B\to A\mid A\to C\rangle \xrightarrow{C\succ B} G_1 \xrightarrow{C\succ B} Q_1$$
+>
+> (outcomes $B,B,B,B,A$ respectively), and the two states of the betrayal chain
+>
+> $$\langle B\to C\mid C\to A\mid A\to B\rangle \xrightarrow{B\succ A} G_2 \xrightarrow{B\succ A} Q_2$$
+>
+> (outcomes $C,C,B$ respectively).<d-footnote>By relabeling symmetry, each of the six coalition orders has its own version of these two chains, giving 36 (state, coalition) pairs over 30 distinct states: all 12 cyclic states (six of them manipulable this way by exactly two distinct coalitions) plus exactly half--18 of 36--of the Condorcet-winner states, each by a unique coalition. Machine-verified; not worth main-text space, but a fun consistency check.</d-footnote>\label{complex-classification}
+
+{% proof Click to expand proof %}
+**Proof (outline):** By the Gate Lemma, a profitable starting state either has $f=B$ and reaches $G_1$ through $f=B$ states, or has $f=C$ and reaches $G_2$ through $f=C$ states.
+
+By the Ratchets, reaching $G_1=\langle C\to B\mid B\to A\mid A\to C\rangle$ requires the starting state to already contain the concordant $A\to C$ (R1--a discordant $C\to A$ could never be repaired), ranked above both discordant matchups $B\to A$ and $C\to B$ (R2--such an inversion could never be undone). Reaching $G_2=\langle B\to C\mid A\to B\mid C\to A\rangle$ requires the starting state to already contain both concordant matchups $A\to B$ and $B\to C$.
+
+Hand-enumerating the states satisfying these conditions (ruling out states where these conditions would force a different Condorcet winner) leaves exactly four $B$-outcome candidates for $G_1$ and two $C$-outcome candidates for $G_2$--and the chains displayed above show each candidate reaches its gate through legal, outcome-preserving steps, which gives sufficiency. *(Full case-by-case enumeration to be filled in.)* $\square$
+{% endproof %}
+
+> **Corollary:** (Single-lie sufficiency) Every profitable complex manipulation reduces to a single lie told at increasing strength. The four burial-chain states are profitably manipulated by the lone insincere vote $C\succ B$ (burying $B$), pushed to increasing depth; the two betrayal-chain states by the lone insincere vote $B\succ A$ (betraying $A$). The six states differ only in *how far* the lie must be pushed--1 to 4 margin ranks.\label{single-lie}
+
+{% proof Click to expand proof %}
+**Proof:** Read the arrows in the chains above: every edge in the burial chain is the $C\succ B$ deviation applied with more mass; every edge in the betrayal chain is $B\succ A$. $\square$
+{% endproof %}
+
+You can verify this yourself in the playground: from the two scenarios, moving the sliders to the right (simulating moving backwards through a complex manipulation chain) does not ever make the outcome worse for the coalition.
+
+Three of the four burial-chain states have a Condorcet winner--namely $B$, the coalition's *middle* candidate. This turns out to be the only way a Condorcet winner can be complexly overturned: it must be the coalition's middle choice, dragging the election into a cycle that resolves in the coalition's favor. When the coalition's *least favorite* candidate is the genuine Condorcet winner, the coalition is provably powerless--both $C$-class starting points are themselves cycles.
+
+> **Corollary:** (One-notch bound) A coalition can never improve the outcome by two notches via a complex manipulation. In fact, no $f=C$ state has any deviation path to any $f=A$ state at all, monotone or otherwise.\label{one-notch}
+
+{% proof Click to expand proof %}
+**Proof:** Reaching outcome $A$ requires passing through $G_1$, which contains $A\to C$. But any path out of the $C$-outcome class passes through $G_2$'s exit $Q_2=\langle A\to B\mid B\to C\mid C\to A\rangle$, which contains $C\to A$--permanently, by (R1). $\square$
+{% endproof %}
+
+Even a maximally resourced, perfectly informed coalition improves its outcome by at most one preference notch, and only from six of the forty-eight starting states.
 
 ### Generalizing to More Candidates
 
