@@ -4,6 +4,13 @@
   };
 </script>
 
+<!-- jQuery (required by distillpub/overrides.js and Common JS below) -->
+<script
+  src="{{ site.third_party_libraries.jquery.url.js }}"
+  integrity="{{ site.third_party_libraries.jquery.integrity.js }}"
+  crossorigin="anonymous"
+></script>
+
 <!-- Core navigation/runtime scripts -->
 <script src="{{ '/assets/js/nav-toggle.js' | relative_url | bust_file_cache }}"></script>
 {% if site.al_folio.compat.bootstrap.enabled %}

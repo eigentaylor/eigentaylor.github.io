@@ -81,24 +81,57 @@ $(document).ready(function () {
     });
   }
 
-  // add css to jupyter notebooks
-  const cssLink = document.createElement("link");
-  cssLink.href = "../css/jupyter.css";
-  cssLink.rel = "stylesheet";
-  cssLink.type = "text/css";
-
+  // add css to jupyter notebooks and match the site's light/dark theme
   let jupyterTheme = determineComputedTheme();
 
-  $(".jupyter-notebook-iframe-container iframe").each(function () {
-    $(this).contents().find("head").append(cssLink);
+  const applyJupyterIframeTheme = (iframe) => {
+    const $iframe = $(iframe);
+    const cssLink = document.createElement("link");
+    cssLink.href = "../css/jupyter.css";
+    cssLink.rel = "stylesheet";
+    cssLink.type = "text/css";
+    $iframe.contents().find("head").append(cssLink);
 
-    if (jupyterTheme == "dark") {
-      $(this).bind("load", function () {
-        $(this).contents().find("body").attr({
-          "data-jp-theme-light": "false",
-          "data-jp-theme-name": "JupyterLab Dark",
-        });
-      });
+    // The notebook export also bakes in a plain `pre { background-color: #282828;
+    // color: #f8f8f0 }` rule from the classic nbconvert template. It's not scoped to
+    // any jp-theme class, so it always wins over the reactive .highlight background
+    // beneath it — coincidentally fine-looking in dark mode, but unreadable dark-on-
+    // dark in light mode. Force it to follow the same reactive variables instead.
+    const themeOverride = document.createElement("style");
+    themeOverride.textContent = `
+      pre, code {
+        background: var(--jp-cell-editor-background) !important;
+        background-color: var(--jp-cell-editor-background) !important;
+        color: var(--jp-mirror-editor-variable-color) !important;
+      }
+    `;
+    $iframe.contents().find("head").append(themeOverride);
+
+    $iframe.contents().find("body").attr({
+      "data-jp-theme-light": jupyterTheme == "dark" ? "false" : "true",
+      "data-jp-theme-name": jupyterTheme == "dark" ? "JupyterLab Dark" : "JupyterLab Light",
+    });
+
+    // jupyter.css's dark theme reads --global-bg-color for its background, but that
+    // variable is only defined on the parent site's page, not inside the notebook's
+    // own (separate) document, so it resolves to nothing there. Mirror it in so the
+    // notebook's background actually matches instead of staying transparent.
+    const iframeDoc = iframe.contentDocument;
+    const globalBgColor = getComputedStyle(document.documentElement).getPropertyValue("--global-bg-color");
+    if (iframeDoc && iframeDoc.documentElement && globalBgColor) {
+      iframeDoc.documentElement.style.setProperty("--global-bg-color", globalBgColor.trim());
+    }
+  };
+
+  $(".jupyter-notebook-iframe-container iframe").each(function () {
+    // The iframe may have already finished loading by the time this script runs
+    // (deferred scripts execute after DOMContentLoaded), in which case a "load"
+    // listener registered now would never fire. Apply immediately when possible,
+    // and still listen for "load" as a fallback for slower iframes.
+    if (this.contentDocument && this.contentDocument.readyState === "complete") {
+      applyJupyterIframeTheme(this);
+    } else {
+      $(this).on("load", () => applyJupyterIframeTheme(this));
     }
   });
 
