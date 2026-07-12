@@ -58,7 +58,7 @@ I primarily focus on the three candidate case, but some of these results general
 
 ## The Model
 
-Rather than have a profile or voter-centric model, we focus entirely on the election results themselves. Precise margins are not as important as their relative sizes (particularly for minimax). Hence, we identify election states with an ordered sequence of matchup results. We define a state as
+Rather than have a profile or voter-centric model, we focus entirely on the election results themselves. Precise margins are not as important as their relative sizes (particularly for minimax). Hence, we identify election states with an ordered sequence of matchup results. For an election with $n$ candidates, we define a state as
 
 $$P = \langle P_1 \mid P_2 \mid \cdots \mid P_m \rangle, \quad P_i = (w_i \to \ell_i), \quad m = \tbinom{n}{2}$$
 
@@ -130,7 +130,7 @@ For a swap of the first kind, there are two ways to achieve this.
 
 We start with an extremely cheery theorem.
 
-> **Theorem:** If $P$ has a Condorcet winner $W$, then there is no simple manipulation of $P$ that can profitably change the winner. That is, if $f(P)=W$ and $Q$ is connected to $P$ by an edge, then either $f(Q)=W$ or $f(P)\succ f(Q)$ ($f(P)\succeq f(\sigma P)$).\label{condorcet-stability}
+> **Theorem:** For any $n\geq 3$, if $P$ has a Condorcet winner $W$, then there is no simple manipulation of $P$ that can profitably change the winner. That is, if $f(P)=W$ and $Q$ is connected to $P$ by an edge, then either $f(Q)=W$ or $f(P)\succ f(Q)$ ($f(P)\succeq f(\sigma P)$).\label{condorcet-stability}
 
 {% proof Click to expand proof %}
 **Proof:** Suppose $P$ has a Condorcet winner $W$. Then $W$ wins both of its head-to-head matchups against the other two candidates. Hence, a swap of the first kind cannot change the winner, since it preserves all current winners and losers of the matchups. We thus only need to consider a swap of the second kind, which reverses the smallest matchup.
@@ -145,6 +145,8 @@ In all cases, we have $f(P)\succeq f(Q)$, and the theorem is proven. $\square$
 {% endproof %}
 
 We note that this theorem is only about *simple manipulations*--that is, a single swap of the first or second kind. We have not yet said anything about whether a manipulation that could perform a more radical adjustment to the matchups could be profitable. We will consider that question in the [Complex Manipulations](#complex-manipulations) section below (in fact, some nodes with a Condorcet winner *are* susceptible to profitable complex manipulations, theoretically gameable by a sufficiently massive coordinated coalition). However, if we assume that a coalition is only powerful enough to perform a single manipulation, then this theorem shows that the far and away most common scenario (starting with a Condorcet winner) is completely immune to profitable manipulation.
+
+From another perspective, if we view this from the perspective that, as an individual voter, our one vote is at most going to influence the election via a single swap of the first or second kind, then the theorem assures us that if there is a Condorcet winner, there is no reason not to just vote sincerely according to our true preferences. Any deviation from sincere voting, if it can only enact a simple manipulation, will lead to an outcome that is no better, or worse, than voting sincerely.
 
 The contrapositive of this theorem is that any profitable simple manipulation must start with a state that has no Condorcet winner, and must instead begin in a cycle. Cycles are empirically rare (in RCV elections, at least), and hence it seems unlikely that such a scenario is likely to occur. However, we can further show that the exact requirements for a cycle with profitable manipulations are even stricter still.
 
@@ -162,7 +164,7 @@ This is a stark case where the choice of $n=3$ elections is a benefit over takin
 
 This further narrows the field of possible ways to profitably manipulate the election for $n=3$. Not only must the election begin in a cycle by Theorem \ref{condorcet-stability}, but it cannot be profitably changed by changing the winner of the weakest margin. The only remaining possibility is to swap the relative strengths of the existing matchups. But we have yet to eliminate all never-profitable manipulations.
 
-> **Lemma:** A simple manipulation created by the permutation $(i,i+1)$ for $i>1$ never changes the winner of an election, and hence is never profitable for any $n$.\label{first-kind-manipulation}
+> **Lemma:** A simple manipulation created by the permutation $(i,i+1)$ for $i>1$ never changes the winner of an election, and hence is never profitable for any $n\geq 3$.\label{first-kind-manipulation}
 
 {% proof Click to expand proof %}
 **Proof:** If $P$ has a Condorcet winner, then the $(i,i+1)$ swap for $i>1$ preserves the winner, and hence is not profitable. If $P$ has no Condorcet winner, then $f(P)=\operatorname{lose}(P_1)$. But $Q_1=P_1$, and hence $f(Q)=\operatorname{lose}(Q_1)=\operatorname{lose}(P_1)=f(P)$. Hence, the manipulation is not profitable. $\square$
@@ -251,7 +253,7 @@ We can thus guarantee that there is *never* a reason in any scenario to vote for
 
 We have found exactly two states for $n=3$ that have a profitable simple manipulation per coalition. However, we can also ask if these two nodes are themselves reachable by manipulations from other nodes by the same coalition of voters. For example, is it possible for there to be a $P$ with a Condorcet winner such that by multiple manipulations, the coalition can eventually reach one of these two nodes and profitably change the winner?
 
-The answer is yes--but since only one election ever really happens, we have to be careful about what a "complex manipulation" is. For this section, we will fix a coalition of voters with preference $A\succ B\succ C$.
+The answer is yes--but since only one election ever really happens, we have to be careful about what a "complex manipulation" is. For this section, we will fix a coalition of voters with preference $A\succ B\succ C$, and also assume $n=3$ for the remainder of the discussion.
 
 > **Definition:** Fix the sincere state $P_0$ (every voter, including the coalition, votes honestly), and define $R(P_0)$ as the set of states $Q$ the coalition can produce by chaining simple manipulations admissible by the one-way push lemma--treating $P_0$ itself as the ground truth, independently of the others. A **complex manipulation** is a state $Q\in R(P_0)$ with $f(Q)\succ f(P_0)$.
 
@@ -319,7 +321,7 @@ You can also verify this yourself in [the playground](#a-playground): from the t
 
 Three of the four burial-chain states have a Condorcet winner--namely $B$, the coalition's *middle* candidate. This turns out to be the only way a Condorcet winner can be complexly overturned: it must be the coalition's middle choice, dragging the election into a cycle that resolves in the coalition's favor. When the coalition's *least favorite* candidate is the genuine Condorcet winner, the coalition is provably powerless--both $C$-class starting points are themselves cycles.
 
-Perhaps it does not feel so cheery to be "powerless" to overturn the election when your least favorite candidate is the Condorcet winner, but perhaps from another perspective this is a comforting guarantee that if your least favorite candidate is a genuine Condorcet winner, there is nothing more you can do than to vote against them in both of their matchups. This is in contrast to [Ranked-Choice voting](../ditch-rcv/){:target="_blank"}, where many Kurt Wright and Sarah Palin voters, in Burlington and Alaska, respectively, could have elected their second choice over their last choice by betraying their favorite.<d-footnote>In the Burlington case, Andy Montroll was by far the most common second choice of Kurt Wright voters (Montroll was the Condorcet winner). Wright was a Condorcet loser, and thus incapable of winning the election (despite being the plurality winner). Had Wright voters instead voted for Montroll to ensure Bob Kiss (the eventual winner) was eliminated instead, then they would have achieved a preferable outcome. Alaska was a similar case, where the Condorcet loser Palin escaped elimination, leading to a loss in the final round. Had the Palin voters ranked the other Republican, Nick Begich (the Condorcet winner), first instead, the Democrat Mary Peltola would not have been elected.</d-footnote>
+Perhaps it does not feel so cheery to be "powerless" to overturn the election when your least favorite candidate is the Condorcet winner, but perhaps from another perspective this is a comforting guarantee that a fringe group cannot spoil the election against the majority's clear preference. This is in contrast to [Ranked-Choice voting](../ditch-rcv/){:target="_blank"}, where a Condorcet winner can sometimes be eliminated early due to vote splitting, allowing a less-preferred candidate to win.
 
 > **Corollary:** (One-notch bound) A coalition can never improve the outcome by two notches via a complex manipulation. In fact, no $f=C$ state has any deviation path to any $f=A$ state at all, monotone or otherwise.\label{one-notch}
 
