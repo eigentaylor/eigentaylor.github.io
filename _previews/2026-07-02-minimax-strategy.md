@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: Strategic Resilience of the Better Choices System
-date: 2026-07-10
+date: 2026-07-12
 description: A model of manipulability in the Better Choices voting system, and why it's so difficult to game.
 importance: 3
 tags: voting
@@ -34,6 +34,9 @@ toc:
   - name: Profitable Cycles
   - name: Complex Manipulations
   - name: Conclusion
+  - name: Appendix
+    subsections:
+      - name: Just How Likely Are These Scenarios?
 ---
 
 ## Introduction
@@ -343,8 +346,36 @@ If you can use this model to say more interesting things about Minimax for $n>3$
 
 In practice, to subvert or profitably manipulate this type of election, you would first need the resources to organize widespread dishonesty (without tipping off opponents who could organize counterstrategy). But in addition to that, the amount of foreknowledge of the precise structure of the matchups is extensive to be able to predict that the coalition with your exact ordering of the three candidates has opportunity to manipulate the election.
 
-Further, the manipulations would require convincing voters to either vote for their least favorite over their backup choice, or to betray their favorite in favor of their second choice. 
+Further, the manipulations would require convincing voters to either vote for their least favorite over their backup choice, or to betray their favorite in favor of their second choice.
 
 I simply do not see this as a practical concern. If you are a voter voting in such an election, I cannot recommend enough that you vote sincerely. There is effectively no way to game the result without an unrealistic amount of knowledge, foresight, confidence, and *resources*.
 
 Just vote honestly. Vote for your favorite in their matchups. Vote for your second choice against your last choice. This system gives you the opportunity to have say in every single race, whether it is competitive or not. Don't think about strategy, just vote.
+
+## Appendix
+
+### Just How Likely Are These Scenarios?
+
+The model I've developed is pure in the sense that it gives us the objective election states that *might* be manipulable, and the precise manipulations that *could* be profitable. This is a necessary condition, but it is not sufficient. For example, if we have a node at the start of a burial chain where $B$ is a Condorcet winner, then is it even necessarily possible that there are *enough* $A\succ B\succ C$ voters to even push the election into $Q_1$? If there are not, then the manipulation is not just impractical, but impossible.
+
+To give at least a *basic* answer to this, we look at a few models for how voters might be distributed, and do some basic simulations.
+
+We use a few different models for how voters might be distributed, including a few "impartial culture" models, a mallows model, and a spatial model. Impartial culture models ["maximize the probability of Condorcet cycles"](https://electowiki.org/wiki/Condorcet_paradox#Modeling_Condorcet_cycles), and hence these results are very likely upper bounds on the *actual* probability of these scenarios. All of this to say, please take the following results with a healthy dose of salt.
+
+We investigate the following questions:
+
+1. How likely are these manipulable scenarios to occur at all? Particularly, how common are cycles, the gates we have found, and the states that can reach the gates?
+2. What do the *margins* tend to look like at these states? This tells us both how *feasible* it would be to manipulate, and simultaneously how *precise* the knowledge would have to be to both (a) know that the scenario is manipulable, and (b) know *exactly how much* to manipulate it.
+3. What proportion of the $A\succ B\succ C$ voters would need to insincerely vote to enact the manipulation? This gives us a sense of how *practically* feasible the manipulation is (assuming the coalition had the perfect knowledge and resources to pull it off).
+
+The following is a jupyter notebook with the code and results for these simulations.
+
+{::nomarkdown}
+{% assign jupyter_path = 'assets/jupyter/better_choices_simulations.ipynb' | relative_url %}
+{% capture notebook_exists %}{% file_exists assets/jupyter/better_choices_simulations.ipynb %}{% endcapture %}
+{% if notebook_exists == 'true' %}
+  {% jupyter_notebook jupyter_path %}
+{% else %}
+  <p>Sorry, the notebook you are looking for does not exist.</p>
+{% endif %}
+{:/nomarkdown}
