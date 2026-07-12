@@ -383,11 +383,11 @@ The following is a jupyter notebook with the code and results for these simulati
 {% endif %}
 {:/nomarkdown}
 
-The lesson? You may pick at most one of the following:
+The lesson? When it comes to manipulation, you may pick at most one of the following:
 
-1. Likely
-2. Detectable
-3. Cheap
+1. Manipulation opportunities are likely
+2. The opportunity is detectable in advance
+3. The manipulation is affordable
 
 | | chaotic cultures (IC-like) | realistic cultures (IAC, spatial) |
 |---|---|---|
@@ -398,6 +398,8 @@ The lesson? You may pick at most one of the following:
 If a manipulation is cheap, that means the margins are close (too close to identify in advance with any confidence).
 
 If a manipulation could be detected, then that generally requires more insincere voters than the coalition is likely to be able to coordinate.
+
+Under the more realistic models, manipulations were unfeasible in most of the scenarios that corresponded to our identified manipulable states. Under the more chaotic models, manipulations were often feasible, but the scenarios were essentially undetectable in advance.
 
 Note that this model says nothing about psychology or human messiness. Will voters naively attempt to game the system? Probably. And that could potentially harm the outcomes.
 
