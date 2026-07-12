@@ -37,6 +37,7 @@ toc:
   - name: Appendix
     subsections:
       - name: Just How Likely Are These Scenarios?
+      - name: A Jupyter Notebook
 ---
 
 ## Introduction
@@ -368,6 +369,8 @@ We investigate the following questions:
 2. What do the *margins* tend to look like at these states? This tells us both how *feasible* it would be to manipulate, and simultaneously how *precise* the knowledge would have to be to both (a) know that the scenario is manipulable, and (b) know *exactly how much* to manipulate it.
 3. What proportion of the $A\succ B\succ C$ voters would need to insincerely vote to enact the manipulation? This gives us a sense of how *practically* feasible the manipulation is (assuming the coalition had the perfect knowledge and resources to pull it off).
 
+### A Jupyter Notebook
+
 The following is a jupyter notebook with the code and results for these simulations.
 
 {::nomarkdown}
@@ -379,3 +382,25 @@ The following is a jupyter notebook with the code and results for these simulati
   <p>Sorry, the notebook you are looking for does not exist.</p>
 {% endif %}
 {:/nomarkdown}
+
+The lesson? You may pick at most one of the following:
+
+1. Likely
+2. Detectable
+3. Cheap
+
+| | chaotic cultures (IC-like) | realistic cultures (IAC, spatial) |
+|---|---|---|
+| manipulable state occurs | ~1.4% of elections at a gate | ~0.02–1% |
+| state detectable by polling | essentially never | often, but then... |
+| lie is affordable | yes (~0.3% of voters) | usually not (20–50%+ of voters, often exceeding the coalition entirely) |
+
+If a manipulation is cheap, that means the margins are close (too close to identify in advance with any confidence).
+
+If a manipulation could be detected, then that generally requires more insincere voters than the coalition is likely to be able to coordinate.
+
+Note that this model says nothing about psychology or human messiness. Will voters naively attempt to game the system? Probably. And that could potentially harm the outcomes.
+
+However, these are toy models. Impartial culture models are not exactly known for their realism, and even the more "realistic" models are still just that--models. The real world is messy, and there are many factors that could make these scenarios more or less likely, more or less detectable, and more or less affordable.
+
+However, I do feel confident *enough* to say that voting insincerely in this system is more likely to make things worse than better.
