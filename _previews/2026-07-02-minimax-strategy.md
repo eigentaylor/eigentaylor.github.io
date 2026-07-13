@@ -177,7 +177,7 @@ This further narrows the field of possible ways to profitably manipulate the ele
 **Proof:** If $P$ has a Condorcet winner, then the $(i,i+1)$ swap for $i>1$ preserves the winner, and hence is not profitable. If $P$ has no Condorcet winner, then $f(P)=\operatorname{lose}(P_1)$. But $Q_1=P_1$, and hence $f(Q)=\operatorname{lose}(Q_1)=\operatorname{lose}(P_1)=f(P)$. Hence, the manipulation is not profitable. $\square$
 {% endproof %}
 
-Therefore, for $n=3$, we need *only* consider the $(1,2)$ swap of the first kind, which swaps the relative strengths of the two weakest matchups, on $P$ which contains a cycle. We have eliminated $(0,1)$ and $(2,3)$ as profitable manipulations, and hence we have reduced the field of possible profitable manipulations to a very small set of possibilities.
+Therefore, for $n=3$, we need *only* consider the $(1,2)$ swap of the first kind, which swaps the relative strengths of the two weakest matchups, on $P$ which contains a cycle. We have eliminated $(0,1)$ and $(2,3)$ as profitable manipulations, and hence we have reduced the field of possible profitable manipulations to a very small set of possibilities<d-footnote>Even for $n>3$, we have reduced the profitable simple manipulation space to $$\{(0,1),(1,2)\}$$. That is to say, only a swap of the second kind, or a swap of the two weakest matchups can ever possibly be profitable.</d-footnote>.
 
 ## Profitable Cycles
 
@@ -206,6 +206,10 @@ Using that $P$ is a cycle, meaning every candidate must lose exactly one matchup
 
 Using that $P$ is a cycle, meaning every candidate must lose exactly one matchup, we deduce that $\ell_3=C$, $w_3=A$, and $\operatorname{win}(P_1)=B$. Hence, $P=\langle B\to C\mid A\to B\mid C\to A\rangle$, and $Q=(1,2)P=\langle A\to B\mid B\to C\mid C\to A\rangle$. This is the second profitable manipulation, where $f(P)=C$ and $f(Q)=B$. The manipulation is done, specifically, by voters who sincerely prefer $A\succ B$ but insincerely vote $B\succ A$ instead. By betraying their favorite, they allow their second favorite to win instead of their least favorite.
 {% endproof %}
+
+Something worth observing is how $G_1$ and $G_2$ are mirror images of each other. The candidates in each matchup are the same, but the winners and losers are reversed. This can be achieved by taking an election in $G_1$ and reversing the preferences of all voters. In that sense, $G_1$ and $G_2$ are "dual" to each other, and the manipulations are also dual to each other.
+
+Perhaps more intriguingly, the mirror symmetry extends to $Q_1$ and $Q_2$ as well, as does the manipulation. The mirror of a burial for a $A\succ B\succ C$ coalition is a betrayal for a $C\succ B\succ A$ coalition, and vice versa. What does not carry over is profitability.
 
 This [interactive tool](https://eigentaylor.github.io/weakest-link/graph.html) visualizes these states and the manipulations available to a coalition preferring $A\succ B\succ C$.
 
