@@ -400,11 +400,13 @@ The lesson? When it comes to manipulation, you may pick at most one of the follo
 | state detectable by polling | essentially never | often, but then... |
 | lie is affordable | yes (~0.3% of voters) | usually not (20–50%+ of ALL voters, more than the coalition has most of the time) |
 
-If a manipulation is cheap, that means the margins are close (too close to identify in advance with any confidence).
+Cycles are fairly rare. And even when a more common manipulable state for a coalition, that has a Condorcet winner (in the Burial chain), does occur, it is exceptionally likely that the numbers required to manipulate the election (pushing it into a cycle and beyond to $Q_1$) are more than the coalition can muster.
 
 If a manipulation could be detected, then that generally requires more insincere voters than the coalition is likely to be able to coordinate.
 
-Note that this model says nothing about psychology or human messiness. Will voters naively attempt to game the system anyway? Probably. And that could potentially harm the outcomes.
+If a manipulation is cheap, that means the margins are close (too close to identify in advance with any confidence).
+
+Note that this model says nothing about psychology or human messiness. Will voters naively attempt to game the system anyway? Perhaps, conditioned by choose-one voting, will they perform the betrayal because they believe their favorite is nonviable? Probably. And that could potentially harm the outcomes.
 
 However, these are toy models. Impartial culture models are not exactly known for their realism, and even the more "realistic" models are still just that--models. The real world is messy, and there are many factors that could make these scenarios more or less likely, more or less detectable, and more or less affordable.
 
