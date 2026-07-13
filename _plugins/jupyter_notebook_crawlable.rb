@@ -7,9 +7,11 @@ require 'cgi'
 #
 # This overrides the same tag name so every existing `{% jupyter_notebook %}` call keeps its
 # iframe (unchanged, for real browsers) and additionally gets a plain-HTML rendering of the
-# same notebook inlined directly into the page, collapsed in a <details> block so it doesn't
-# clutter the visual layout. That inlined copy is what makes the code/text/plots visible to a
-# plain page fetch. Registered from an `:after_init` hook so it wins over the gem's own
+# same notebook inlined directly into the page. That inlined copy is visually hidden from
+# sighted users (clipped off-screen, not `display:none`) using the standard "sr-only"
+# accessibility technique, so it stays in the raw HTML and the accessibility tree without
+# adding any visible UI. That's what makes the code/text/plots visible to a plain page fetch.
+# Registered from an `:after_init` hook so it wins over the gem's own
 # `Liquid::Template.register_tag` call, which runs first (site `_plugins` load before gems).
 module Jekyll
   module Tags
@@ -57,16 +59,27 @@ module Jekyll
         body = convert_notebook_body(site, source_path)
         return "" unless body
 
+        # Standard WAI/Bootstrap "sr-only" recipe: clipped to 1x1px and pulled out of flow
+        # rather than `display:none`/`visibility:hidden`, so it's dropped from sighted
+        # rendering but stays in the raw HTML and the accessibility tree (screen readers,
+        # crawlers, page-fetch tools) instead of being removed from both.
         <<~HTML
-          <details data-jupyter-notebook-disclosure style="margin: 1rem 0;">
-            <summary style="cursor: pointer; font-weight: 600;">View notebook as text (code, output, and plots)</summary>
-            <div class="jupyter-notebook-text" style="overflow-x: auto;">#{body}</div>
+          <details data-jupyter-notebook-disclosure class="jupyter-notebook-sr-only">
+            <summary>View notebook as text (code, output, and plots)</summary>
+            <div>#{body}</div>
           </details>
           <style>
-            .jupyter-notebook-text pre { white-space: pre-wrap; overflow-wrap: break-word; }
-            .jupyter-notebook-text img { max-width: 100%; height: auto; }
-            .jupyter-notebook-text table { border-collapse: collapse; max-width: 100%; }
-            .jupyter-notebook-text th, .jupyter-notebook-text td { border: 1px solid currentColor; padding: 0.3em 0.6em; }
+            .jupyter-notebook-sr-only {
+              position: absolute;
+              width: 1px;
+              height: 1px;
+              padding: 0;
+              margin: -1px;
+              overflow: hidden;
+              clip: rect(0, 0, 0, 0);
+              white-space: nowrap;
+              border: 0;
+            }
           </style>
         HTML
       rescue StandardError => e
