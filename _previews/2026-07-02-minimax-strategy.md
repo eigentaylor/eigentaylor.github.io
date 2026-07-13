@@ -131,6 +131,8 @@ For a swap of the first kind, there are two ways to achieve this.
 2. Weaken the $w_{i+1}\to\ell_{i+1}$ matchup to be weaker than the $w_i\to\ell_i$ matchup. To do this, the coalition must initially be voting $w_{i+1}\succ \ell_{i+1}$, and flip their vote. Hence, they sincerely prefer $w_{i+1}\succ \ell_{i+1}$. $\square$
 {% endproof %}
 
+Intuitively, we can imagine the manipulations that a coalition can do as only being able to "push" the margins away from their more preferred candidate and toward their less preferred candidate. If the election is three simultaneous games of tug-of-war, a sincere vote is pulling as hard as possible on the correct side of each rope. To manipulate the election is to let slack into the rope, in order to get a better outcome. You can't pull the rope any harder, but you can let it slacken.
+
 ## Starting with a Condorcet Winner
 
 We start with an extremely cheery theorem.
@@ -237,7 +239,7 @@ We also get a few corollaries from this result.
 
 We can thus say that in any cycle, there is some group who could stand to profit. However, this would require foreknowledge of both that there would be a cycle, and the exact cycle structure for that coalition to know a manipulation is even possible, in addition to the resources required to perform the manipulation.
 
-> **Corollary:** For a coalition of voters with preference $A\succ B\succ C$, the simple manipulation caused by performing a non-adjacent deviation of voting for $C$ over $A$ is never profitable. That is, a coalition of voters who sincerely prefer $A\succ B\succ C$ can never profitably manipulate the election by insincerely voting $C\succ A$ instead of $A\succ C$.
+> **Corollary:** For $n=3$ and a coalition of voters with preference $A\succ B\succ C$, the simple manipulation caused by performing a non-adjacent deviation of voting for $C$ over $A$ is never profitable. That is, submitting an intransitive ballot like $A\succ B$, $B\succ C$, and $C\succ A$ instead of the sincere $A\succ B$, $A\succ C$, and $B\succ C$ is never profitable for any $P$.\label{no-intransitive-manipulation}
 
 {% proof Click to expand proof %}
 **Proof:** Copying the logic from the proof of Theorem \ref{profitable-cycles}, suppose that $f(P)=\ell_1$ and $f(Q)=\ell_2$ for $Q=(1,2)P$, both cyclic scenarios. We want a profitable deviation, meaning the voters must prefer $\ell_2\succ\ell_1$. By lemma \ref{one-way-push}, the only way to achieve the $(1,2)$ swap is by either sincerely preferring
@@ -252,7 +254,7 @@ For case 2: $C=\ell_2$ is the least preferred candidate, so we cannot have $\ell
 Therefore, in both cases, we cannot have a profitable manipulation by insincerely voting $C\succ A$ instead of $A\succ C$. $\square$
 {% endproof %}
 
-We can thus guarantee that there is *never* a reason in any scenario to vote for your *least favorite candidate* over your *most favorite candidate*. This proves that this system is no more manipulable than a typical Condorcet method, but is in fact *less* manipulable than some Condorcet methods involving four or more candidates.
+We can thus guarantee that there is *never* a reason in any scenario to vote for your *least favorite candidate* over your *most favorite candidate*. This proves that, despite allowing greater expression than a ranked Condorcet method, this system is no more manipulable than a typical Condorcet method that uses a ranked ballot.
 
 ## Complex Manipulations
 
@@ -304,15 +306,15 @@ achieved by the coalition insincerely voting $C\succ A$. The initial state $P_0$
 
 So a state admits a profitable complex manipulation if and only if it can reach $G_1$ or $G_2$ without starting at a more preferable outcome--that is, we are really asking which states are *ancestors* of a gate (that have the same or a worse outcome), not which states a gate can reach.
 
-> **Theorem:** For $n=3$ and a fixed coalition $A\succ B\succ C$, exactly six of the 48 states admit a profitable complex manipulation: the four states of the burial chain
+> **Theorem:** For $n=3$ and a fixed coalition $A\succ B\succ C$, exactly six of the 48 states admit a profitable complex manipulation: $G_1$ and three states that can reach $G_1$:
 >
 > $$\langle B\to A\mid A\to C\mid B\to C\rangle \xrightarrow{C\succ B} \langle B\to A\mid B\to C\mid A\to C\rangle \xrightarrow{C\succ B} \langle B\to C\mid B\to A\mid A\to C\rangle \xrightarrow{C\succ B} G_1 \xrightarrow{C\succ B} Q_1$$
 >
-> (outcomes $B,B,B,B,A$ respectively), and the two states of the betrayal chain
+> (outcomes $B,B,B,B,A$ respectively), and $G_2$ and one state that can reach $G_2$:
 >
 > $$\langle B\to C\mid C\to A\mid A\to B\rangle \xrightarrow{B\succ A} G_2 \xrightarrow{B\succ A} Q_2$$
 >
-> (outcomes $C,C,B$ respectively).<d-footnote>By relabeling symmetry, each of the six coalition orders has its own version of these two chains, giving 36 (state, coalition) pairs over 30 distinct states: all 12 cyclic states (six of them manipulable this way by exactly two distinct coalitions) plus exactly half--18 of 36--of the Condorcet-winner states, each by a unique coalition. Machine-verified; not worth main-text space, but a fun consistency check.</d-footnote>\label{complex-classification}
+> (outcomes $C,C,B$ respectively).<d-footnote>By relabeling symmetry, each of the six coalition orders has its own version of these two chains, giving 36 (state, coalition) pairs over 30 distinct states: all 12 cyclic states (six of them manipulable this way by exactly two distinct coalitions) plus exactly half--18 of 36--of the Condorcet-winner states, each by a unique coalition. Machine-verified.</d-footnote>\label{complex-classification}
 
 This was a machine-verified result, and is not worth the space to write out the full proof here (which would involve tedious backtracking). But you can see for yourself by following [this link](https://eigentaylor.github.io/weakest-link/graph.html), hovering over gates ($G_1$ and $G_2$), and then holding down the "ctrl" key to see the single step preimages of the gates, and following the paths backwards to weakly worse outcomes. $G_2$ has *one* $C$ outcome preimage, which only has an $A$ outcome preimage (which marks the end of the betrayal chain). $G_1$ can go back up to three steps, all with $B$ outcomes, before reaching a state with only an $A$ outcome preimage (which marks the end of the burial chain).
 
@@ -328,13 +330,13 @@ Three of the four burial-chain states have a Condorcet winner--namely $B$, the c
 
 Perhaps it does not feel so cheery to be "powerless" to overturn the election when your least favorite candidate is the Condorcet winner, but perhaps from another perspective this is a comforting guarantee that a fringe group cannot spoil the election against the majority's clear preference. This is in contrast to [Ranked-Choice voting](../ditch-rcv/){:target="_blank"}, where a Condorcet winner can sometimes be eliminated early due to vote splitting, allowing a less-preferred candidate to win.
 
-> **Corollary:** (One-notch bound) A coalition can never improve the outcome by two notches via a complex manipulation. In fact, no $f=C$ state has any deviation path to any $f=A$ state at all, monotone or otherwise.\label{one-notch}
+> **Corollary:** (One-notch bound) A coalition can never improve the outcome by two notches via a complex manipulation. In particular, if $f(P_0)=C$ and $f(Q)=A$, then $Q\notin R(P_0)$.\label{one-notch}
 
 {% proof Click to expand proof %}
-**Proof:** Reaching outcome $A$ requires passing through $G_1$, which contains $A\to C$. But any path out of the $C$-outcome class passes through $G_2$'s exit $Q_2=\langle A\to B\mid B\to C\mid C\to A\rangle$, which contains $C\to A$, contradicting the reachability lemma. $\square$
+**Proof:** Reaching outcome $A$ from a $P_0$ such that $A\succ f(P_0)$ requires passing through $G_1$, which contains $A\to C$. But any path out of the $C$-outcome class passes through $G_2$'s exit $Q_2=\langle A\to B\mid B\to C\mid C\to A\rangle$, which contains $C\to A$, contradicting the reachability lemma. $\square$
 {% endproof %}
 
-This result was also machine-verified. From $Q_2$, you can reach a few $B$-outcome states (none that can reach $G_1$), but eventually all paths lead to $C$-outcome state.
+This result was also machine-verified. From $Q_2$, you can reach a few $B$-outcome states (none that can reach $G_1$), but eventually all paths lead to $C$-outcome state. This result also follows from the fact that $G_2\notin R(G_1)$.
 
 Even a maximally resourced, perfectly informed coalition improves its outcome by at most one preference notch, and only from six of the forty-eight starting states, half of which are cycles.
 
