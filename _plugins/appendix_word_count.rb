@@ -26,6 +26,10 @@ module Jekyll
       input.to_s.gsub(/<details\b[^>]*data-proof-disclosure[^>]*>.*?<\/details>/im, '')
     end
 
+    def content_without_jupyter_notebook_text(input)
+      input.to_s.gsub(/<details\b[^>]*data-jupyter-notebook-disclosure[^>]*>.*?<\/details>/im, '')
+    end
+
     def words_without_appendix(input)
       main_content = content_without_appendix(input)
       count_words_in_html(main_content)

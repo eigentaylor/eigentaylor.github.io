@@ -76,7 +76,7 @@
         </div>
       {% endif %}
 
-      {%- assign final_content = page.content -%}
+      {%- assign final_content = page.content | content_without_jupyter_notebook_text -%}
       {%- if page.exclude_appendix_from_word_count %}{%- assign final_content = final_content | content_without_appendix -%}{%- endif -%}
       {%- if page.exclude_footnotes_from_word_count %}{%- assign final_content = final_content | content_without_footnotes -%}{%- endif -%}
       {%- if page.exclude_proof_blocks_from_word_count %}{%- assign final_content = final_content | content_without_proof_blocks -%}{%- endif -%}
