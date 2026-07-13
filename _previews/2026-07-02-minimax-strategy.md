@@ -355,6 +355,8 @@ Just vote honestly. Vote for your favorite in their matchups. Vote for your seco
 
 ## Appendix
 
+For the particularly technical readers, or those who want to look at pretty graphs, I have included a jupyter notebook with the code and results for some simulations investigating the likelihood of these scenarios occurring in practice, and how detectable and affordable they are.
+
 ### Just How Likely Are These Scenarios?
 
 The model I've developed is pure in the sense that it gives us the objective election states that *might* be manipulable, and the precise manipulations that *could* be profitable. This is a necessary condition, but it is not sufficient. For example, if we have a node at the start of a burial chain where $B$ is a Condorcet winner, then is it even necessarily possible that there are *enough* $A\succ B\succ C$ voters to even push the election into $Q_1$? If there are not, then the manipulation is not just impractical, but impossible.
@@ -383,6 +385,16 @@ The following is a jupyter notebook with the code and results for these simulati
 {% endif %}
 {:/nomarkdown}
 
+To summarize the results of these simulations:
+
+Cycle rarity depends on the mode, but can be as common as ~9% in chaotic models, and as rare as 0.11% in spatial model. Gate rarity also depends, but ranged from under 0.02% (spatial) to about 1.5% across models. The states that can reach the gates are more common, in total ranging from about 9-14%, even in the more realistic models. We must then ask how detectable these scenarios are, and how affordable the manipulations are.
+
+In the chaotic models, the margins are far too close to detect, even as a generous 1% margin of error. In the spatial model, over 90% of the margins are under a 3.5% margin of error (the [typical polling error](https://www.tandfonline.com/doi/full/10.1080/01621459.2018.1448823)), but often above a 1% margin of error. The next question is then how many voters would need to insincerely vote to enact the manipulation.
+
+At the gates themselves, the manipulations are often affordable in the chaotic models (~0.3% of voters), with about 1.4% of voters in the spatial model.
+
+In the chaotic models, manipulations were always feasible (due to the close margins). However, the median share of the coalition needed to manipulate in the spatial model is 239%--with only 11% of cases being feasible for the spatial model.
+
 The lesson? When it comes to manipulation, you may pick at most one of the following:
 
 1. Manipulation opportunities are likely
@@ -393,15 +405,13 @@ The lesson? When it comes to manipulation, you may pick at most one of the follo
 |---|---|---|
 | manipulable state occurs | ~1.4% of elections at a gate | ~0.02–1% |
 | state detectable by polling | essentially never | often, but then... |
-| lie is affordable | yes (~0.3% of voters) | usually not (20–50%+ of voters, often exceeding the coalition entirely) |
+| lie is affordable | yes (~0.3% of voters) | usually not (20–50%+ of ALL voters, more than the coalition has most of the time) |
 
 If a manipulation is cheap, that means the margins are close (too close to identify in advance with any confidence).
 
 If a manipulation could be detected, then that generally requires more insincere voters than the coalition is likely to be able to coordinate.
 
-Under the more realistic models, manipulations were unfeasible in most of the scenarios that corresponded to our identified manipulable states. Under the more chaotic models, manipulations were often feasible, but the scenarios were essentially undetectable in advance.
-
-Note that this model says nothing about psychology or human messiness. Will voters naively attempt to game the system? Probably. And that could potentially harm the outcomes.
+Note that this model says nothing about psychology or human messiness. Will voters naively attempt to game the system anyway? Probably. And that could potentially harm the outcomes.
 
 However, these are toy models. Impartial culture models are not exactly known for their realism, and even the more "realistic" models are still just that--models. The real world is messy, and there are many factors that could make these scenarios more or less likely, more or less detectable, and more or less affordable.
 
