@@ -1,0 +1,1072 @@
+<!DOCTYPE html> <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta name="robots" content="noindex, nofollow"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Is STAR more manipulable than IRV? A model of manipulability | Taylor Eigen Fisher </title> <meta name="author" content="Taylor Eigen Fisher"> <meta name="description" content="Why 'just vote honestly' might not be the best policy in STAR voting."> <meta name="keywords" content="math, blog, approval-voting, social-choice, voting, differential-equations, linear-algebra, taylor-eigen-fisher"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>:root{--max-content-width:930px}</style> <link rel="stylesheet" href="/assets/css/tailwind.css"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.20.0/dist/tabler-icons.min.css"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/lambdasigma.png"> <link rel="stylesheet" href="/assets/css/main.css"> <link rel="canonical" href="https://eigentaylor.github.io/preview/irv-star-strat/"> <script src="/assets/js/theme.js"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> <script src="/assets/js/distillpub/template.v2.js"></script> <script src="/assets/js/distillpub/transforms.v2.js"></script> </head> <body> <d-front-matter> <script async type="text/json">
+      {
+            "title": "Is STAR more manipulable than IRV? A model of manipulability",
+            "description": "Why 'just vote honestly' might not be the best policy in STAR voting.",
+            "published": "July 15, 2026",
+            "authors": [
+              
+              {
+                "author": "Taylor Eigen Fisher",
+                "authorURL": "",
+                "affiliations": [
+                  {
+                    "name": "Equal Vote Coalition (Volunteer)",
+                    "url": ""
+                  }
+                ]
+              }
+              
+            ],
+            "katex": {
+              "delimiters": [
+                {
+                  "left": "$",
+                  "right": "$",
+                  "display": false
+                },
+                {
+                  "left": "$$",
+                  "right": "$$",
+                  "display": true
+                }
+              ]
+            }
+          }
+    </script> </d-front-matter> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Taylor Eigen Fisher </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/teaching/">teaching </a> </li> <li class="nav-item"> <a class="nav-link nav-link-subscribe" href="https://buttondown.com/eigentaylor" target="_blank" rel="noopener"> subscribe </a> </li> <li class="nav-item"> <button id="search-toggle" title="Search" onclick="openSearchModal()"> <span class="nav-link">ctrl k <i class="ti ti-search"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="ti ti-sun-moon" id="light-toggle-system"></i> <i class="ti ti-moon-filled" id="light-toggle-dark"></i> <i class="ti ti-sun-filled" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="post distill"> <div class="draft-preview-banner" style="background: #141001; border: 1px solid #fbff07; border-radius: 8px; padding: 12px 20px; margin-bottom: 20px; text-align: center; font-size: 0.95rem; color: #f6bf19;"> 📝 <strong style="color: inherit;">Draft Preview</strong> — This post is not yet published. Please don't share this link widely. </div> <d-title> <h1>Is STAR more manipulable than IRV? A model of manipulability</h1> <p>Why 'just vote honestly' might not be the best policy in STAR voting.</p> </d-title> <d-byline data-read-time="18 min read"></d-byline> <d-article> <d-contents> <nav class="l-text figcaption"> <h3>Contents</h3> <div> <a href="#introduction">Introduction</a> </div> <ul> <li> <a href="#decoupled-metrics">Decoupled Metrics</a> </li> <li> <a href="#the-obvious-differences">The Obvious Differences</a> </li> </ul> <div> <a href="#the-model">The Model</a> </div> <div> <a href="#the-moves">The Moves</a> </div> <ul> <li> <a href="#irv">IRV</a> </li> <li> <a href="#star">STAR</a> </li> </ul> <div> <a href="#profitable-manipulations">Profitable Manipulations</a> </div> <div> <a href="#complex-manipulations">Complex Manipulations</a> </div> <div> <a href="#appendix">Appendix</a> </div> </nav> </d-contents> <h2 id="introduction">Introduction</h2> <p>It should be clear up-front that this model says nothing about the probability of the situations we will be discussing. Rather, this is more in the vein of the Brams and Fishburn 1981 paper on strategy in Approval voting with a runoff <d-cite key="fishburnBrams1981runoff"></d-cite>.</p> <p>We assume perfect knowledge of the underlying tournament structure, and the ranked order of candidates by their “votes” (or “points”) in the case of STAR. We are simply asking how voters might strategize to optimize the outcome. We are also restricting our attention to a three-candidate election, which is the simplest case where we can have a non-trivial final round.</p> <p>IRV (Instant-Runoff Voting or “Ranked Choice Voting”<d-footnote>We will be using IRV in this post for explicit clarity that we are discussing the system that eliminates the candidate with the lowest number of votes in each round until one candidate remains. So as not to be confused with other ranked voting system which do not have the problems we will be discussing today, like Condorcet methods.</d-footnote>) and STAR are very different systems in ballot and quality of outcomes <d-cite key="quinn2017vseSummary"></d-cite>, but they share some common features. The final result is determined by a pairwise comparison of candidates, and to get into the final round, you must not have the lowest number of votes among the top three candidates. With exactly three candidates, the two systems are essentially identical in mechanism: the candidate with the lowest number of votes is eliminated, and the winner is the candidate among the remaining two who defeats the other in a pairwise comparison.</p> <h3 id="decoupled-metrics">Decoupled Metrics</h3> <p>What got me thinking about this model is the fact that both systems have the outcome determined by a pairwise comparison, but <em>how</em> the candidates get into the final round has relatively little predictive power for pairwise competence.</p> <p>In Burlington, Vermont, in 2009, the candidate who had the most votes among the top three candidates in the mayoral race, Kurt Wright, was a Condorcet loser. Meaning, in a pairwise comparison, he would have lost to each of the other two candidates (Bob Kiss and Andy Montroll). The lowest vote-getter, Andy Montroll, was the Condorcet winner, meaning he would have won in a pairwise comparison against each of the other two candidates. Montroll was also the majority second choice of both Kiss and Wright voters. In the final round, more votes transferred to Kiss than to Wright, and Kiss ended up winning. A “come-from-behind” victory for Kiss.</p> <p>In a recent <a href="https://youtu.be/Vte4nly_Neg?si=Pu7zC9ajh9oZf4x5" rel="external nofollow noopener noreferrer" target="_blank">video posted by The Equal Vote Coalition</a>, they rightly highlight one of (the many) major flaws in IRV: The promise that <strong>“if my candidate can’t win, then my vote will transfer”</strong> is a complete <strong>lie</strong>. Kurt Wright <em>literally</em> could not win, but their votes did not transfer to a more viable second choice, like Montroll. Had these voters betrayed their nonviable first choice and insincerely ranked Montroll first, they would have secured a better outcome than their least preferred candidate winning.</p> <p>Here’s the problem: STAR can have the exact same problem. Suppose your favorite candidate is Alice. She’s a firebrand who gets the most stars, but she’s polarizing and would lose in a pairwise comparison against the other two candidates, Bob and Clark. Bob is your backup, but gets third place, while Clark gets second place. The runoff is then between Alice and Clark, and Clark wins. But you look at the reported precinct level pairwise results and see that Bob would have defeated both Alice and Clark in a pairwise comparison. If you, and all the other Alice-first-Bob-second voters had just given Bob more stars, then maybe Bob would have made it to the final round instead of Clark. Alice still loses, but at least you get your backup candidate as the winner instead of your least preferred candidate.</p> <p>This situation is possible in both STAR and IRV. The fundamental issue being an inevitable reliance on a pairwise check of competence, when pairwise competence is not the metric used to decide <em>which two candidates to check</em>.</p> <h3 id="the-obvious-differences">The Obvious Differences</h3> <p>Now, I should be up-front that as far as voting systems go, <a href="../ditch-rcv/" target="_blank">IRV is far, far worse</a> than STAR voting. It’s not even close.</p> <p>However, I have been working on a post investigating the manipulability of the <a href="../better-choices/" target="_blank">Better Choices voting system</a> (a form of minimax), and I wanted to design a similar model for IRV. Eventually, I realized that STAR is an even better fit for the model, due to the structural similarities.</p> <p>There are a number of differences that make STAR better, but the most important difference to highlight with respect to this model is that stars are genuinely a <em>better</em> measure of the strength of a candidate than conditional transfers of active votes. What inspired this investigation is the dissonance between the pairwise check and how we get there. STAR supporters claim that their system has great “honesty” incentives<d-footnote>We won't be touching on the philosophical question of what "honesty" means with a score ballot. That's a can of worms not worth delving into.</d-footnote>, but I want to challenge this by viewing it through a different angle: is there strategic pressure to alter your vote in order to get a better outcome? If so, then I would say the system has questionable “honesty” incentives.<d-footnote>As a supporter of Approval voting, perhaps stones should not be thrown from glass houses. However, I find the volatile participation failures and betrayals that we will investigate far more troubling than "Approval encourages you to vote strategically". It does. But paradoxically, that tends to make outcomes better. My contention is more that "if you care about being able to cast an "honest" ballot without worry, I think you should be looking at Condorcet methods instead, rather than STAR voting.</d-footnote></p> <h2 id="the-model">The Model</h2> <p>We define a set of equivalence classes of “election states” involving three candidates. We identify an election state via the following notation:</p> \[P=\langle X &lt; Y &lt; Z\mid T\rangle\] <p>Where $X$ is the candidate with the least votes, $Y$ is the candidate with the second most votes, and $Z$ is the candidate with the most votes. $T$ is the “tournament structure”, which is the set of pairwise comparisons between candidates.</p> <p>For example, $T$ could be $X\to Y, X\to Z, Y\to Z$, which would mean that $X$ beats $Y$ and $Z$, and $Y$ beats $Z$. In this case, $X$ is the Condorcet winner, and $Z$ is the Condorcet loser. The 2009 Burlington election would be an element of this node’s equivalence class, with $X$ being Andy Montroll, $Y$ being Bob Kiss, and $Z$ being Kurt Wright.</p> <p>In both STAR and IRV, the decision rule is as follows:</p> <blockquote> <p>$f(P)=Y$ if $Y\to Z$ and $f(P)=Z$ if $Z\to Y$.</p> </blockquote> <p>In other words, the winner is the candidate among the top two vote-getters who wins the pairwise comparison. In IRV, $X$ is eliminated and their votes will transfer such that the candidate who wins the pairwise comparison will end up with more votes, and in STAR $X$ simply is ignored for the runoff step.</p> <p>We focus our assumption on a coalition of voters who prefer $A\succ B\succ C$. We assume that $P$ is some “sincere” election state, meaning that the voters in the coalition are all voting “honestly”. We then ask what potential manipulations that coalition could make to move it to another election state $P’$, and whether that manipulation would lead to a better outcome for the coalition (i.e. if $f(P’)\succ f(P)$ where $\succ$ denotes the coalition’s preference relation).</p> <p>In IRV, the sincere vote is exactly $A\succ B\succ C$. In STAR, the sincere vote is assumed to be $A=5, B=x, C=0$ where $x$ is some number between 0 and 5. We denote this vote as “$5-x-0$”.</p> <p>We have $3!\cdot 2^3=48$ possible election states ($3!$ for the permutations of $X,Y,Z$ and $2^3$ for all possible tournament structures). We can then define a directed graph where the nodes are these election states, and there is a directed edge from $P$ to $P’$ if there is some manipulation that voters could make to move from $P$ to $P’$. We can then analyze the structure of this graph to understand the manipulability of the system.</p> <p>Suppose, for example, that we are in STAR voting, and the sincere election state is $P=\langle B&lt;A&lt;C\mid T\rangle$ where $T$ is $B\to A, B\to C, C\to A$. If the coalition all change their votes to $5-4-0$, then $B$ gets a sudden influx of stars, and the new election state could be $P’=\langle A&lt;B&lt;C\mid T\rangle$. In this case, the winner changes from $C$ to $B$, which is a better outcome for the coalition.</p> <p>This can also work in IRV. If the coalition abandons $A$ (perhaps realizing they cannot win) and insincerely ranks $B$ first, then the same manipulation can occur<d-footnote>The node $P=\langle B&lt;A&lt;C\mid T\rangle$ where $T$ is $B\to A, B\to C, C\to A$ contains the Alaska 2022 special election in IRV where $B$ is Nick Begich, $A$ is Sarah Palin, and $C$ is mary Peltola. Indeed, had Palin voters abandoned her for Begich, Begich would have won instead of Peltola. Nearly 60% of voters cast a ballot with a Republican as their first choice, but a Democrat ended up representing Alaska.</d-footnote>. We would thus say that $P$ “has an edge” to $P’$ in both IRV and STAR. This is one example of a “profitable” manipulation”.</p> <blockquote> <p><strong>Definition:</strong> A “simple manipulation” involves an adjacent swap of candidates in the total points order (i.e. $X&lt;Y&lt;Z$ becomes $Y&lt;X&lt;Z$ or $X&lt;Z&lt;Y$).</p> </blockquote> <p>We start with simple manipulations because those are the most likely effects of an attempted manipulation by a coalition.</p> <h2 id="the-moves">The Moves</h2> <p>We now define the possible manipulations that voters can make in each system.</p> <h3 id="irv">IRV</h3> <p>In IRV, the room for manipulation is fairly limited. You really only have two moves:</p> <ol> <li>Abandon $A$ and rank $B$ first ($A\succ B\succ C$ becomes $B\succ A\succ C$). This makes $A$ lose votes and $B$ gain votes.</li> <li>Abandon $A$ and rank $C$ first ($A\succ B\succ C$ becomes $C\succ A\succ B$). This makes $A$ lose votes and $C$ gain votes.</li> </ol> <p>In short, “betraying” your first choice and voting for someone else. Doing one of the can change the tournament structure. However, for now, we assume that the amount of flipped votes needed to flip the order of total votes is small enough that it does not change the tournament structure. We will relax this assumption later.</p> <blockquote> <p><strong>Lemma:</strong> Any simple manipulations in IRV by an $A\succ B\succ C$ coalition has a net effect of one of the following:</p> <ol> <li>If $B$ and $C$ are adjacent in scores, then a valid move is to swap their positions in total votes.</li> <li>If $A$ and $X$ are adjacent in scores, with $A$ being above $X$, then a valid move is to swap their positions in total votes.</li> </ol> <p>In particular, we cannot swap $A$ and $Y$ if $Y$ is adjacent to $A$ in scores but $Y$ has more votes than $A$.\label{irv-moves}</p> </blockquote> <details class="proof-disclosure" data-proof-disclosure=""><summary>Click to expand proof</summary><div class="proof-content"> <p><strong>Proof:</strong> Suppose $B$ and $C$ are adjacent in scores. Then, if the coalition abandons $A$ and ranks the lower of $B$ and $C$ first, then that candidate will gain votes. This can potentially flip the order of $B$ and $C$ in total votes. This applies symmetrically to both $B$ and $C$, so any adjacent swap of $B$ and $C$ is a valid manipulation.</p> <p>Suppose $A$ and $X$ are adjacent in scores, with $A$ being above $X$. Then, if the coalition abandons $A$ and ranks $X$ first, then $X$ will gain votes and $A$ will lose votes. This can potentially flip the order of $A$ and $X$ in total votes.</p> <p>However, if $Y$ is adjacent to $A$ in scores but $Y$ has more votes than $A$, then any change in the first rank by the coalition can only ever increase the distance between $A$ and $Y$ in total votes, but cannot flip their order. Therefore, swapping $A$ and $Y$ is not a valid manipulation if $Y$ has more votes than $A$. $\square$</p> </div></details> <h3 id="star">STAR</h3> <p>In STAR, the room for manipulation is much larger, due to the more expressive ballot. However, will will generously restrict ourselves to “sincere strategies”, meaning that the coalition voters will always give $A$ a strictly higher score than $B$, and $B$ a strictly higher score than $C$.</p> <blockquote> <p><strong>Lemma:</strong> Any adjacent swap of candidates in total votes can be achieved in STAR by a simple manipulation except for if $C$ and $A$ are adjacent in scores, with $C$ being above $A$.\label{start-moves}</p> </blockquote> <p>The intuition for this is straightforward. If the coalition, en masse, moves from $5-x-0$ to $5-4-0$, then $B$ gets a sudden influx of stars, and $B$ can move above any candidate that was previously above it. If the coalition moves from $5-x-0$ to $5-1-0$, then $B$ suddenly loses a lot of stars, and $B$ can move below any candidate that was previously below it.</p> <p>If the coalition moves from $5-x-0$ to $(x+1)-x-0$ or $5-x-(x-1)$, then that can move $A$ down or $C$ up. What cannot be done, however, is to close the distance between $A$ and $C$ if $C$ is above $A$ in scores, because the coalition cannot give $A$ more stars than 5, and cannot give $C$ fewer stars than 0. So if $C$ is above $A$, then the coalition cannot swap their positions in total votes.</p> <p>The above describe “sincere deviations”, where the order of the candidates is preserved on all ballots of the coalition. If we allow for insincere deviations, then these manipulations become easier, but may alter the tournament structure.</p> <p>This means that STAR has a “greater attack surface” than IRV. Unlike IRV, there is no possible way to move your favorite candidate up above anyone else. You can only ever move your favorite <em>down</em>. In STAR, this is not the case. Because your support for all candidates is counted simultaneously, that allows for more “levers” of manipulation.</p> <h2 id="profitable-manipulations">Profitable Manipulations</h2> <blockquote> <p><strong>Theorem:</strong> If $P$ has a profitable simple manipulation in IRV or STAR ($n=3$), then it involves swapping the positions of the candidates in second and third place in total votes.</p> </blockquote> <details class="proof-disclosure" data-proof-disclosure=""><summary>Click to expand proof</summary><div class="proof-content"> <p><strong>Proof:</strong> Swapping the top two candidates in total votes has no impact on the outcome, because the winner is determined by the pairwise comparison between the top two candidates.</p> <p>The only way to change the outcome is to change who the runoff is between. That can only be done by an adjacent swap of the candidates in second and third place in total votes. $\square$</p> </div></details> <p>(possibly more axiomatic characterization of the manipulability of IRV and STAR)</p> <blockquote> <p><strong>Theorem:</strong> (IRV Simple Manipulability) There are exactly 8 election states that have a profitable simple manipulation in IRV. Six of them involving betraying your first choice for your second choice, and two of them involve betraying your first choice for your third choice.</p> </blockquote> <p>And STAR</p> <blockquote> <p><strong>Theorem:</strong> (STAR Simple Manipulability) There are exactly 12 election states that have a profitable simple manipulation in STAR. Six of them can be achieved by changing the ballots to $5-4-0$ (boosting $B$), and six of them involve changing the ballots to $5-1-0$ (starving $B$). In fact, moving $A$ below $C$ is never profitable.</p> </blockquote> <details class="proof-disclosure" data-proof-disclosure=""><summary>Click to expand proof</summary><div class="proof-content"> <p><strong>Proof:</strong> We suffice to list the profitable manipulations that were found by the computer search. But I think it’s worth proving why moving $A$ below $C$ is never profitable. For moving $A$ below $C$ to be a feasible simple manipulation that <em>could</em> be profitable, we would need to have the election state $P=\langle C&lt;A&lt;B\mid T\rangle$, so that moving $A$ below $C$ would change the runoff. However, in this case, the outcome is only between $A$ or $B$. For this to be profitable, we cannot have the best candidate win in the initial state, since then it can only get worse. Hence, $f(P)=B$, implying that $B\to A$ in the tournament structure.</p> <p>Suppose we do the simple manipulation of moving $A$ below $C$ to the node $P’=\langle A&lt;C&lt;B\mid T\rangle$. Then, the outcome is between $C$ and $B$. Regardless of the choice, this is weakly dispreferred to the original outcome of $B$, meaning a profitable manipulation is impossible. $\square$</p> </div></details> <p>We will include a jupyter notebook with all of the election states and their profitable manipulations in the <a href="#appendix">appendix</a>.</p> <p>This means that in STAR voting, the strategy can, theoretically live entirely in how many stars you give your second choice candidate. A voter could theoretically maintain their sincere ordering by moving their second choice to 4 stars or 1 star, but a more desperate coalition might move them to 5 stars or 0 stars–as well as potentially move their favorite to 0 or their least favorite to 5, depending on how confident they are that the runoff needs to be changed–which could alter the tournament structure.</p> <p>From another perspective, this could be seen as strategic pressure to give your second choice candidate a score that is more or fewer than you would otherwise. That is, perhaps you would have given your second choice 3 stars, but because of the unfavorable tournament structure, you are pressured to move them up or down to try to get a more favorable runoff.</p> <h2 id="complex-manipulations">Complex Manipulations</h2> <blockquote> <p><strong>Definition:</strong> A “complex manipulation” is any manipulation of states $P_0\to\ldots\to P_k$ such that $f(P_k)\succ f(P_0)$ by the coalition.</p> </blockquote> <p>We now characterize what complex manipulations are possible in IRV and STAR. For this section, we focus on the three candidate case for simplicity.</p> <blockquote> <p><strong>Lemma:</strong> For $n=3$, in both STAR and IRV, all complex manipulations reduce down to moving the candidate with the greatest total votes down to third place ($X&lt;Y&lt;Z$ to $Z&lt;X&lt;Y$). In STAR this is possible if and only if $Z\neq C$. In IRV, this is possible if and only if $Z=A$.</p> </blockquote> <details class="proof-disclosure" data-proof-disclosure=""><summary>Click to expand proof</summary><div class="proof-content"> <p><strong>Proof:</strong> By lemma \ref{star-moves}, if $C$ is the candidate with the greatest total votes, then there is no way to move $C$ down to third place, because at some point it would have to swap with $A$, which is impossible. If $Z\neq C$, then there is no restriction on which candidates it can be moved below.</p> <p>For IRV, by lemma \ref{irv-moves}, if $Z\neq A$, then there is no way to move $Z$ down to third place, because at some point it would have to swap with $A$, which is impossible. If $Z=A$, then there is no restriction on which candidates it can be moved below. $\square$</p> </div></details> <blockquote> <p><strong>Theorem:</strong> Any complex manipulation in IRV is achievable by a simple manipulation. That is, if moving the candidate in first place down to last is profitable, then the same outcome could be achieved by just moving third place to second. There exist cases in STAR where a complex manipulation is profitable from a state that cannot be achieved by a simple manipulation from that state.</p> </blockquote> <p>This is machine verified. This does indeed narrow down where manipulations in IRV need occur (for $n=3$). This does also mean that there are more states in STAR such that there’s pressure to really try to bury whichever candidate is in first place.</p> <blockquote> <p><strong>Theorem:</strong> For $n=3$, there are exactly 8 election states that have a profitable manipulation (of any sort) in IRV. There are exactly 18 states in STAR that have a profitable manipulation (of any sort).</p> </blockquote> <p>This means that there are more than twice as many states in STAR for which there is pressure to consider how to rank your second choice candidate to attempt to manipulate the election. However, once again, this says nothing about the probability of these states occurring in practice. It could very well be that the 8 states in IRV are more likely to occur than the 18 states in STAR. What we can say is that there are more states in STAR where strategic consideration of how to fill out your ballot could occur (should you be able to predict an unfavorable tournament structure and total star placement of the candidates).</p> <h2 id="conclusion">Conclusion</h2> <p>I think the comparison between IRV and STAR has to be done carefully. With IRV, it’s much harder to manipulate the outcome. Your vote is a precious resource that has to be spent wisely, and the transfers are unpredictable. Further, to manipulate the outcome, you have to vote insincerely.</p> <p>STAR, however, has much more room for manipulation while voting in a sincere order. That is, these manipulations are in a sense “free”. Changing from $5-1-0$ to $5-4-0$ costs nothing in your influence in the runoff step, but can legitimately alter the outcome based on who gets into the runoff step. I think this means that voters in STAR have to be genuinely conscious of how their vote might affect the runoff.</p> <p>One of my biggest problems with IRV is that it’s so short-sighted. The candidates who make it into the final round are not decided, in my opinion, by a good metric (first-choice or active votes potentially after transfer). In STAR, I find a similar problem. I think simultaneously counted scores <em>are</em> certainly a <em>better</em> metric to measure the quality of a candidate, but I still feel uncomfortable that this metric is still fairly decoupled from pairwise competence.</p> <p>If my favorite candidate is a Condorcet loser who gets the most stars, and my backup didn’t even make it into the runoff (and was a Condorcet winner), I am going to feel a bit swindled. Just as I would be in IRV in the same situation (like the Kurt Wright &gt; Andy Montroll voters in Burlington).</p> <p>Even though there are significantly <em>more</em> situations in STAR where strategic voting can be profitable, that doesn’t mean they will be more common than the fewer cases that exist in IRV. It could very well be the opposite is true.</p> <p>But I have to wonder: if we care about pairwise competence, why not just use a system that elects the Condorcet winner (for which it is far safer to vote with complete honesty)? Or if we care about stars and scores, why not just go with straight SCORE voting? Or we could just go for <a href="../approval-only/" target="_blank">Approval voting</a> which will give us maximal legitimacy, outcome quality essentially <em>as good as STAR</em>, all with a much simpler ballot.</p> <p>I do not see STAR as a system that is the “best” at anything, but rather tries to be “very good” at basically everything almost all of the time, in practice. I don’t think there’s anything wrong with that, but I, personally, very much care about the <a href="../av-stratproof/" target="_blank">“safety” of a voter in casting their ballot</a>. And after the <a href="../ditch-rcv/" target="_blank">failure of IRV</a>, where the supporters <em>knew</em> of the flaws that had happened in Burlington but flagrantly ignored them so that it happened <em>again</em> in Alaska, I am <strong>extremely wary</strong> of systems with highly visible failure modes, or runoff mechanics that can betray voters who are trying to vote sincerely. I think Condorcet methods and Approval are generally safer systems to vote in without causing a catastrophic change to who the runoff is between.</p> <p>This is not to pass any sort of final judgment on STAR voting as a system. I <a href="../approval-only/" target="_blank">still do not quite endorse it</a>, and I do think that the “honesty” incentives are not as strong as some supporters claim. But is it more manipulable than IRV? Probably not. But I think there is good reason to be cautious in how you fill out your STAR ballot.</p> <h2 id="appendix">Appendix</h2> <h3 id="a-jupyter-notebook">A Jupyter Notebook</h3> <div class="jupyter-notebook" style="position: relative; width: 100%; margin: 0 auto;"> <div class="jupyter-notebook-iframe-container"> <iframe src="/assets/jupyter/irv_star_graph.ipynb.html" style="position: absolute; top: 0; left: 0; border-style: none;" width="100%" height="100%" onload="this.parentElement.style.paddingBottom = (this.contentWindow.document.documentElement.scrollHeight + 10) + 'px'"></iframe> </div> </div> <details data-jupyter-notebook-disclosure class="jupyter-notebook-sr-only"> <summary>View notebook as text (code, output, and plots)</summary> <div> <main> <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c903698c"> <div class="jp-Cell-inputWrapper" tabindex="0"> <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser"> </div> <div class="jp-InputArea jp-Cell-inputArea"> <div class="jp-InputPrompt jp-InputArea-prompt"> </div> <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown"> <h2 id="Nodes">Nodes<a class="anchor-link" href="#Nodes">¶</a> </h2> </div> </div> </div> </div> <div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4ec05ff7"> <div class="jp-Cell-inputWrapper" tabindex="0"> <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser"> </div> <div class="jp-InputArea jp-Cell-inputArea"> <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div> <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline"> <div class="cm-editor cm-s-jupyter"> <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">deque</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">display</span>
+
+<span class="c1"># the LaTeX in these tables is inline math, so it wraps mid-expression at</span>
+<span class="c1"># the default (narrow) column width -- keep every cell on one line, and let</span>
+<span class="c1"># the table scroll horizontally instead of squeezing columns to fit</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'''&lt;style&gt;</span>
+<span class="s1">  .dataframe td, .dataframe th { white-space: nowrap; padding: 4px 12px; }</span>
+<span class="s1">  table.dataframe { display: block; overflow-x: auto; }</span>
+<span class="s1">&lt;/style&gt;'''</span><span class="p">))</span>
+
+<span class="n">BR</span> <span class="o">=</span> <span class="s1">'@@BR@@'</span>   <span class="c1"># placeholder for a real &lt;br&gt;, inserted after pandas escapes the cell text</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">show</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">to_html</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">BR</span><span class="p">,</span> <span class="s1">'&lt;br&gt;'</span><span class="p">)))</span>
+
+<span class="n">CANDS</span> <span class="o">=</span> <span class="s1">'ABC'</span>
+<span class="n">ORDERS</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">permutations</span><span class="p">(</span><span class="n">CANDS</span><span class="p">))</span>       <span class="c1"># 6 vote-count orderings, least -&gt; most</span>
+<span class="n">PAIRS</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'B'</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">)]</span>        <span class="c1"># the 3 pairwise matchups</span>
+<span class="n">RANK</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'A'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>                     <span class="c1"># coalition preference A &gt; B &gt; C</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">tournaments</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">bits</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="nb">frozenset</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">if</span> <span class="n">win</span> <span class="k">else</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">win</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">PAIRS</span><span class="p">,</span> <span class="n">bits</span><span class="p">))</span>
+
+<span class="n">TOURNAMENTS</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">tournaments</span><span class="p">())</span>                   <span class="c1"># 8 tournament structures T</span>
+<span class="n">NODES</span> <span class="o">=</span> <span class="p">[(</span><span class="n">order</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span> <span class="k">for</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">ORDERS</span> <span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="n">TOURNAMENTS</span><span class="p">]</span>   <span class="c1"># P = &lt;order | T&gt;</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">ORDERS</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">TOURNAMENTS</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">NODES</span><span class="p">)</span>
+</pre></div> </div> </div> </div> </div> <div class="jp-Cell-outputWrapper"> <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser"> </div> <div class="jp-OutputArea jp-Cell-outputArea"> <div class="jp-OutputArea-child"> <div class="jp-OutputPrompt jp-OutputArea-prompt"></div> <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0"> <style>.dataframe td,.dataframe th{white-space:nowrap;padding:4px 12px}table.dataframe{display:block;overflow-x:auto}</style> </div> </div> <div class="jp-OutputArea-child jp-OutputArea-executeResult"> <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div> <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0"> <pre>(6, 8, 48)</pre> </div> </div> </div> </div> </div> <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=380ded6f"> <div class="jp-Cell-inputWrapper" tabindex="0"> <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser"> </div> <div class="jp-InputArea jp-Cell-inputArea"> <div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div> <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline"> <div class="cm-editor cm-s-jupyter"> <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">winner</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+    <span class="c1"># f(P): the pairwise winner between the top two vote-getters</span>
+    <span class="n">order</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">node</span>
+    <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">order</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">order</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">y</span> <span class="k">if</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> <span class="ow">in</span> <span class="n">T</span> <span class="k">else</span> <span class="n">z</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fmt_order</span><span class="p">(</span><span class="n">order</span><span class="p">):</span>
+    <span class="c1"># {&lt;} instead of &lt; : braced, "&lt;" is an ordinary atom instead of a</span>
+    <span class="c1"># relation, which keeps nbconvert's MathJax (linebreaks.automatic=True)</span>
+    <span class="c1"># from splitting the formula onto multiple lines at each "&lt;"</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"$</span><span class="se">\\</span><span class="s2">langle </span><span class="si">{</span><span class="s1">'{&lt;}'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">order</span><span class="p">)</span><span class="si">}</span><span class="s2"> </span><span class="se">\\</span><span class="s2">rangle$"</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fmt_T</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">free</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="c1"># X -&gt; Y means X defeats Y; `free`, if given, is the one matchup that</span>
+    <span class="c1"># never actually got consulted, shown as X &lt;-&gt; Y instead. One matchup</span>
+    <span class="c1"># per line (BR), since three side by side is hard to scan.</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">PAIRS</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">free</span> <span class="ow">and</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">}</span> <span class="o">==</span> <span class="nb">set</span><span class="p">(</span><span class="n">free</span><span class="p">):</span>
+            <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'$</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> </span><span class="se">\\</span><span class="s1">leftrightarrow </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">$'</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="n">T</span> <span class="k">else</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+            <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'$</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1"> </span><span class="se">\\</span><span class="s1">to </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">$'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">BR</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">free_matchup</span><span class="p">(</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="p">):</span>
+    <span class="c1"># the one matchup (if any) where T1, T2 disagree</span>
+    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">PAIRS</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="n">T1</span><span class="p">)</span> <span class="o">!=</span> <span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="n">T2</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">frozenset</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div> </div> </div> </div> </div> </div> <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5665db35"> <div class="jp-Cell-inputWrapper" tabindex="0"> <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser"> </div> <div class="jp-InputArea jp-Cell-inputArea"> <div class="jp-InputPrompt jp-InputArea-prompt"> </div> <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown"> <h2 id="IRV-and-STAR-graphs">IRV and STAR graphs<a class="anchor-link" href="#IRV-and-STAR-graphs">¶</a> </h2> </div> </div> </div> </div> <div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6bfa3116"> <div class="jp-Cell-inputWrapper" tabindex="0"> <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser"> </div> <div class="jp-InputArea jp-Cell-inputArea"> <div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div> <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline"> <div class="cm-editor cm-s-jupyter"> <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">swap</span><span class="p">(</span><span class="n">order</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+    <span class="n">lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
+    <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lst</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">lst</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">irv_moves</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+    <span class="c1"># any adjacent swap in scores, unless it's moving A up</span>
+    <span class="n">order</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">node</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">order</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'A'</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">swap</span><span class="p">(</span><span class="n">order</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">T</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">star_moves</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+    <span class="c1"># any adjacent swap in scores, unless it's moving A above C</span>
+    <span class="n">order</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">node</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">order</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'A'</span> <span class="ow">and</span> <span class="n">order</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'C'</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">swap</span><span class="p">(</span><span class="n">order</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">),</span> <span class="n">T</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+<span class="n">irv_graph</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="n">irv_moves</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">NODES</span><span class="p">}</span>
+<span class="n">star_graph</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="n">star_moves</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">NODES</span><span class="p">}</span>
+
+<span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">irv_graph</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">star_graph</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</pre></div> </div> </div> </div> </div> <div class="jp-Cell-outputWrapper"> <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser"> </div> <div class="jp-OutputArea jp-Cell-outputArea"> <div class="jp-OutputArea-child jp-OutputArea-executeResult"> <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div> <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0"> <pre>(64, 80)</pre> </div> </div> </div> </div> </div> <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=aa21c712"> <div class="jp-Cell-inputWrapper" tabindex="0"> <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser"> </div> <div class="jp-InputArea jp-Cell-inputArea"> <div class="jp-InputPrompt jp-InputArea-prompt"> </div> <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown"> <h2 id="Simple-manipulations-(A%E2%89%BBB%E2%89%BBC-coalition)">Simple manipulations (A≻B≻C coalition)<a class="anchor-link" href="#Simple-manipulations-(A%E2%89%BBB%E2%89%BBC-coalition)">¶</a> </h2> </div> </div> </div> </div> <div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4a08acad"> <div class="jp-Cell-inputWrapper" tabindex="0"> <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser"> </div> <div class="jp-InputArea jp-Cell-inputArea"> <div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div> <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline"> <div class="cm-editor cm-s-jupyter"> <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mover</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">move</span><span class="p">):</span>
+    <span class="c1"># the one candidate whose position changes upward in this swap</span>
+    <span class="n">order</span><span class="p">,</span> <span class="n">new_order</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">move</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="k">if</span> <span class="n">order</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">!=</span> <span class="n">new_order</span><span class="p">[</span><span class="n">k</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="n">order</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">order</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>   <span class="c1"># (who moves up, who it passes)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">move_desc_irv</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">move</span><span class="p">):</span>
+    <span class="c1"># every IRV move is the coalition abandoning A -- the mover is who they</span>
+    <span class="c1"># rank first instead</span>
+    <span class="n">up</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">mover</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">move</span><span class="p">)</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">'Betray A for </span><span class="si">{</span><span class="n">up</span><span class="si">}</span><span class="s1">'</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">move_desc_star</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">move</span><span class="p">):</span>
+    <span class="c1"># every profitable STAR move runs through B's score: 5-4-0 boosts B</span>
+    <span class="c1"># past whoever was above it, 5-1-0 starves B below whoever passes it</span>
+    <span class="n">up</span><span class="p">,</span> <span class="n">down</span> <span class="o">=</span> <span class="n">mover</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">move</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">up</span> <span class="o">==</span> <span class="s1">'B'</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">'5-4-0'</span>
+    <span class="k">if</span> <span class="n">down</span> <span class="o">==</span> <span class="s1">'B'</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">'5-1-0'</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">up</span><span class="si">}</span><span class="s1"> up past </span><span class="si">{</span><span class="n">down</span><span class="si">}</span><span class="s1">'</span>   <span class="c1"># not used by any profitable move here</span>
+
+<span class="n">COLS_SIMPLE</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'start'</span><span class="p">,</span> <span class="s1">'tournament'</span><span class="p">,</span> <span class="s1">'move'</span><span class="p">,</span> <span class="s1">'end'</span><span class="p">,</span> <span class="s1">'f(start)'</span><span class="p">,</span> <span class="s1">'f(end)'</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">has_simple_manipulation</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">graph</span><span class="p">):</span>
+    <span class="n">f0</span> <span class="o">=</span> <span class="n">winner</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">any</span><span class="p">(</span><span class="n">RANK</span><span class="p">[</span><span class="n">winner</span><span class="p">(</span><span class="n">mv</span><span class="p">)]</span> <span class="o">&gt;</span> <span class="n">RANK</span><span class="p">[</span><span class="n">f0</span><span class="p">]</span> <span class="k">for</span> <span class="n">mv</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">node</span><span class="p">])</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">simple_manipulations</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">describe</span><span class="p">):</span>
+    <span class="c1"># group by (start order, end order, f(start), f(end)), ignoring T --</span>
+    <span class="c1"># a group of 2 differs only in one pairwise matchup that never actually</span>
+    <span class="c1"># got consulted, so we collapse it into a single row and mark that</span>
+    <span class="c1"># matchup as free (&lt;-&gt;) in the tournament column instead of listing</span>
+    <span class="c1"># both tournament structures separately</span>
+    <span class="n">groups</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">NODES</span><span class="p">:</span>
+        <span class="n">f0</span> <span class="o">=</span> <span class="n">winner</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">move</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">node</span><span class="p">]:</span>
+            <span class="n">f1</span> <span class="o">=</span> <span class="n">winner</span><span class="p">(</span><span class="n">move</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">RANK</span><span class="p">[</span><span class="n">f1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">RANK</span><span class="p">[</span><span class="n">f0</span><span class="p">]:</span>
+                <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">move</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">f0</span><span class="p">,</span> <span class="n">f1</span><span class="p">)</span>
+                <span class="n">groups</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">order0</span><span class="p">,</span> <span class="n">order1</span><span class="p">,</span> <span class="n">f0</span><span class="p">,</span> <span class="n">f1</span><span class="p">),</span> <span class="n">nodes</span> <span class="ow">in</span> <span class="n">groups</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">T0</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">free</span> <span class="o">=</span> <span class="n">free_matchup</span><span class="p">(</span><span class="n">T0</span><span class="p">,</span> <span class="n">nodes</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="n">node0</span><span class="p">,</span> <span class="n">move0</span> <span class="o">=</span> <span class="p">(</span><span class="n">order0</span><span class="p">,</span> <span class="n">T0</span><span class="p">),</span> <span class="p">(</span><span class="n">order1</span><span class="p">,</span> <span class="n">T0</span><span class="p">)</span>
+        <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">'start'</span><span class="p">:</span> <span class="n">fmt_order</span><span class="p">(</span><span class="n">order0</span><span class="p">),</span> <span class="s1">'tournament'</span><span class="p">:</span> <span class="n">fmt_T</span><span class="p">(</span><span class="n">T0</span><span class="p">,</span> <span class="n">free</span><span class="p">),</span>
+                     <span class="s1">'move'</span><span class="p">:</span> <span class="n">describe</span><span class="p">(</span><span class="n">node0</span><span class="p">,</span> <span class="n">move0</span><span class="p">),</span> <span class="s1">'end'</span><span class="p">:</span> <span class="n">fmt_order</span><span class="p">(</span><span class="n">order1</span><span class="p">),</span>
+                     <span class="s1">'f(start)'</span><span class="p">:</span> <span class="n">f0</span><span class="p">,</span> <span class="s1">'f(end)'</span><span class="p">:</span> <span class="n">f1</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">COLS_SIMPLE</span><span class="p">)</span>
+
+<span class="n">irv_simple_df</span> <span class="o">=</span> <span class="n">simple_manipulations</span><span class="p">(</span><span class="n">irv_graph</span><span class="p">,</span> <span class="n">move_desc_irv</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">irv_simple_df</span><span class="p">)</span>
+</pre></div> </div> </div> </div> </div> <div class="jp-Cell-outputWrapper"> <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser"> </div> <div class="jp-OutputArea jp-Cell-outputArea"> <div class="jp-OutputArea-child"> <div class="jp-OutputPrompt jp-OutputArea-prompt"></div> <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0"> <table border="1" class="dataframe"> <thead> <tr style="text-align: right;"> <th></th> <th>start</th> <th>tournament</th> <th>move</th> <th>end</th> <th>f(start)</th> <th>f(end)</th> </tr> </thead> <tbody> <tr> <th>0</th> <td>$\langle B{&lt;}A{&lt;}C \rangle$</td> <td>$A \leftrightarrow B$<br>$B \to C$<br>$C \to A$</td> <td>Betray A for B</td> <td>$\langle A{&lt;}B{&lt;}C \rangle$</td> <td>C</td> <td>B</td> </tr> <tr> <th>1</th> <td>$\langle B{&lt;}C{&lt;}A \rangle$</td> <td>$A \to B$<br>$B \leftrightarrow C$<br>$C \to A$</td> <td>Betray A for B</td> <td>$\langle C{&lt;}B{&lt;}A \rangle$</td> <td>C</td> <td>A</td> </tr> <tr> <th>2</th> <td>$\langle B{&lt;}C{&lt;}A \rangle$</td> <td>$B \to A$<br>$B \leftrightarrow C$<br>$C \to A$</td> <td>Betray A for B</td> <td>$\langle C{&lt;}B{&lt;}A \rangle$</td> <td>C</td> <td>B</td> </tr> <tr> <th>3</th> <td>$\langle C{&lt;}B{&lt;}A \rangle$</td> <td>$B \to A$<br>$B \leftrightarrow C$<br>$A \to C$</td> <td>Betray A for C</td> <td>$\langle B{&lt;}C{&lt;}A \rangle$</td> <td>B</td> <td>A</td> </tr> </tbody> </table> </div> </div> </div> </div> </div> <div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=19f81257"> <div class="jp-Cell-inputWrapper" tabindex="0"> <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser"> </div> <div class="jp-InputArea jp-Cell-inputArea"> <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div> <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline"> <div class="cm-editor cm-s-jupyter"> <div class="highlight hl-ipython3"><pre><span></span><span class="n">star_simple_df</span> <span class="o">=</span> <span class="n">simple_manipulations</span><span class="p">(</span><span class="n">star_graph</span><span class="p">,</span> <span class="n">move_desc_star</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">star_simple_df</span><span class="p">)</span>
+</pre></div> </div> </div> </div> </div> <div class="jp-Cell-outputWrapper"> <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser"> </div> <div class="jp-OutputArea jp-Cell-outputArea"> <div class="jp-OutputArea-child"> <div class="jp-OutputPrompt jp-OutputArea-prompt"></div> <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0"> <table border="1" class="dataframe"> <thead> <tr style="text-align: right;"> <th></th> <th>start</th> <th>tournament</th> <th>move</th> <th>end</th> <th>f(start)</th> <th>f(end)</th> </tr> </thead> <tbody> <tr> <th>0</th> <td>$\langle A{&lt;}B{&lt;}C \rangle$</td> <td>$A \leftrightarrow B$<br>$B \to C$<br>$A \to C$</td> <td>5-1-0</td> <td>$\langle B{&lt;}A{&lt;}C \rangle$</td> <td>B</td> <td>A</td> </tr> <tr> <th>1</th> <td>$\langle A{&lt;}B{&lt;}C \rangle$</td> <td>$A \leftrightarrow B$<br>$C \to B$<br>$A \to C$</td> <td>5-1-0</td> <td>$\langle B{&lt;}A{&lt;}C \rangle$</td> <td>C</td> <td>A</td> </tr> <tr> <th>2</th> <td>$\langle B{&lt;}A{&lt;}C \rangle$</td> <td>$A \leftrightarrow B$<br>$B \to C$<br>$C \to A$</td> <td>5-4-0</td> <td>$\langle A{&lt;}B{&lt;}C \rangle$</td> <td>C</td> <td>B</td> </tr> <tr> <th>3</th> <td>$\langle B{&lt;}C{&lt;}A \rangle$</td> <td>$A \to B$<br>$B \leftrightarrow C$<br>$C \to A$</td> <td>5-4-0</td> <td>$\langle C{&lt;}B{&lt;}A \rangle$</td> <td>C</td> <td>A</td> </tr> <tr> <th>4</th> <td>$\langle B{&lt;}C{&lt;}A \rangle$</td> <td>$B \to A$<br>$B \leftrightarrow C$<br>$C \to A$</td> <td>5-4-0</td> <td>$\langle C{&lt;}B{&lt;}A \rangle$</td> <td>C</td> <td>B</td> </tr> <tr> <th>5</th> <td>$\langle C{&lt;}B{&lt;}A \rangle$</td> <td>$B \to A$<br>$B \leftrightarrow C$<br>$A \to C$</td> <td>5-1-0</td> <td>$\langle B{&lt;}C{&lt;}A \rangle$</td> <td>B</td> <td>A</td> </tr> </tbody> </table> </div> </div> </div> </div> </div> <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cf4b8aa0"> <div class="jp-Cell-inputWrapper" tabindex="0"> <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser"> </div> <div class="jp-InputArea jp-Cell-inputArea"> <div class="jp-InputPrompt jp-InputArea-prompt"> </div> <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown"> <h2 id="Complex-manipulations">Complex manipulations<a class="anchor-link" href="#Complex-manipulations">¶</a> </h2> </div> </div> </div> </div> <div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=793baf32"> <div class="jp-Cell-inputWrapper" tabindex="0"> <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser"> </div> <div class="jp-InputArea jp-Cell-inputArea"> <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div> <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline"> <div class="cm-editor cm-s-jupyter"> <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">shortest_multistep_path</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">graph</span><span class="p">):</span>
+    <span class="c1"># shortest walk of &gt;= 2 safe steps (every node visited weakly preferred,</span>
+    <span class="c1"># &gt;=, to f(start)) ending at a node strictly preferred to f(start).</span>
+    <span class="c1"># A direct 1-step (simple) manipulation, if one exists, is ignored here</span>
+    <span class="c1"># on purpose -- see the `has simple too` column below.</span>
+    <span class="n">f0</span> <span class="o">=</span> <span class="n">winner</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+    <span class="n">dist</span> <span class="o">=</span> <span class="p">{</span><span class="n">start</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+    <span class="n">prev</span> <span class="o">=</span> <span class="p">{</span><span class="n">start</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+    <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="n">start</span><span class="p">])</span>
+    <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+        <span class="n">cur</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">nxt</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">cur</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">nxt</span> <span class="ow">in</span> <span class="n">dist</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">f1</span> <span class="o">=</span> <span class="n">winner</span><span class="p">(</span><span class="n">nxt</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">RANK</span><span class="p">[</span><span class="n">f1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">RANK</span><span class="p">[</span><span class="n">f0</span><span class="p">]:</span>
+                <span class="k">continue</span>              <span class="c1"># would regress below the start, not a safe step</span>
+            <span class="n">dist</span><span class="p">[</span><span class="n">nxt</span><span class="p">]</span> <span class="o">=</span> <span class="n">dist</span><span class="p">[</span><span class="n">cur</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">prev</span><span class="p">[</span><span class="n">nxt</span><span class="p">]</span> <span class="o">=</span> <span class="n">cur</span>
+            <span class="k">if</span> <span class="n">RANK</span><span class="p">[</span><span class="n">f1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">RANK</span><span class="p">[</span><span class="n">f0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">dist</span><span class="p">[</span><span class="n">nxt</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">path</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="n">nxt</span><span class="p">],</span> <span class="n">cur</span>
+                <span class="k">while</span> <span class="n">p</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+                    <span class="n">p</span> <span class="o">=</span> <span class="n">prev</span><span class="p">[</span><span class="n">p</span><span class="p">]</span>
+                <span class="k">return</span> <span class="n">path</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nxt</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+<span class="n">COLS_COMPLEX</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'start'</span><span class="p">,</span> <span class="s1">'tournament'</span><span class="p">,</span> <span class="s1">'path'</span><span class="p">,</span> <span class="s1">'steps'</span><span class="p">,</span> <span class="s1">'f(start)'</span><span class="p">,</span> <span class="s1">'f(end)'</span><span class="p">,</span> <span class="s1">'has simple too'</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">complex_manipulations</span><span class="p">(</span><span class="n">graph</span><span class="p">):</span>
+    <span class="c1"># every state with a profitable walk of 2+ safe steps, whether or not a</span>
+    <span class="c1"># shorter (simple) manipulation is *also* available from it -- grouped</span>
+    <span class="c1"># and collapsed the same way as simple_manipulations above. T is fixed</span>
+    <span class="c1"># for the whole walk, so it's shown once rather than repeated per node.</span>
+    <span class="n">groups</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">NODES</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">shortest_multistep_path</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">graph</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">f0</span><span class="p">,</span> <span class="n">f1</span> <span class="o">=</span> <span class="n">winner</span><span class="p">(</span><span class="n">path</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">winner</span><span class="p">(</span><span class="n">path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">o</span> <span class="k">for</span> <span class="n">o</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">path</span><span class="p">),</span> <span class="n">f0</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span> <span class="n">has_simple_manipulation</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">graph</span><span class="p">))</span>
+        <span class="n">groups</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">node</span><span class="p">,</span> <span class="n">path</span><span class="p">))</span>
+
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">orders</span><span class="p">,</span> <span class="n">f0</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span> <span class="n">hs</span><span class="p">),</span> <span class="n">members</span> <span class="ow">in</span> <span class="n">groups</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">T0</span> <span class="o">=</span> <span class="n">members</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">free</span> <span class="o">=</span> <span class="n">free_matchup</span><span class="p">(</span><span class="n">T0</span><span class="p">,</span> <span class="n">members</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">members</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">'start'</span><span class="p">:</span> <span class="n">fmt_order</span><span class="p">(</span><span class="n">orders</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="s1">'tournament'</span><span class="p">:</span> <span class="n">fmt_T</span><span class="p">(</span><span class="n">T0</span><span class="p">,</span> <span class="n">free</span><span class="p">),</span>
+                     <span class="s1">'path'</span><span class="p">:</span> <span class="s1">' → '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fmt_order</span><span class="p">(</span><span class="n">o</span><span class="p">)</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">orders</span><span class="p">),</span>
+                     <span class="s1">'steps'</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">orders</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
+                     <span class="s1">'f(start)'</span><span class="p">:</span> <span class="n">f0</span><span class="p">,</span> <span class="s1">'f(end)'</span><span class="p">:</span> <span class="n">f1</span><span class="p">,</span> <span class="s1">'has simple too'</span><span class="p">:</span> <span class="n">hs</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">COLS_COMPLEX</span><span class="p">)</span>
+
+<span class="n">irv_complex_df</span> <span class="o">=</span> <span class="n">complex_manipulations</span><span class="p">(</span><span class="n">irv_graph</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">irv_complex_df</span><span class="p">)</span>
+</pre></div> </div> </div> </div> </div> <div class="jp-Cell-outputWrapper"> <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser"> </div> <div class="jp-OutputArea jp-Cell-outputArea"> <div class="jp-OutputArea-child"> <div class="jp-OutputPrompt jp-OutputArea-prompt"></div> <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0"> <table border="1" class="dataframe"> <thead> <tr style="text-align: right;"> <th></th> <th>start</th> <th>tournament</th> <th>path</th> <th>steps</th> <th>f(start)</th> <th>f(end)</th> <th>has simple too</th> </tr> </thead> <tbody> <tr> <th>0</th> <td>$\langle B{&lt;}A{&lt;}C \rangle$</td> <td>$A \leftrightarrow B$<br>$B \to C$<br>$C \to A$</td> <td>$\langle B{&lt;}A{&lt;}C \rangle$ → $\langle A{&lt;}B{&lt;}C \rangle$ → $\langle A{&lt;}C{&lt;}B \rangle$</td> <td>2</td> <td>C</td> <td>B</td> <td>True</td> </tr> <tr> <th>1</th> <td>$\langle B{&lt;}C{&lt;}A \rangle$</td> <td>$A \to B$<br>$B \leftrightarrow C$<br>$C \to A$</td> <td>$\langle B{&lt;}C{&lt;}A \rangle$ → $\langle C{&lt;}B{&lt;}A \rangle$ → $\langle C{&lt;}A{&lt;}B \rangle$</td> <td>2</td> <td>C</td> <td>A</td> <td>True</td> </tr> <tr> <th>2</th> <td>$\langle B{&lt;}C{&lt;}A \rangle$</td> <td>$B \to A$<br>$B \leftrightarrow C$<br>$C \to A$</td> <td>$\langle B{&lt;}C{&lt;}A \rangle$ → $\langle C{&lt;}B{&lt;}A \rangle$ → $\langle C{&lt;}A{&lt;}B \rangle$</td> <td>2</td> <td>C</td> <td>B</td> <td>True</td> </tr> <tr> <th>3</th> <td>$\langle C{&lt;}B{&lt;}A \rangle$</td> <td>$B \to A$<br>$B \leftrightarrow C$<br>$A \to C$</td> <td>$\langle C{&lt;}B{&lt;}A \rangle$ → $\langle B{&lt;}C{&lt;}A \rangle$ → $\langle B{&lt;}A{&lt;}C \rangle$</td> <td>2</td> <td>B</td> <td>A</td> <td>True</td> </tr> </tbody> </table> </div> </div> </div> </div> </div> <div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=88e84e67"> <div class="jp-Cell-inputWrapper" tabindex="0"> <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser"> </div> <div class="jp-InputArea jp-Cell-inputArea"> <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div> <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline"> <div class="cm-editor cm-s-jupyter"> <div class="highlight hl-ipython3"><pre><span></span><span class="n">star_complex_df</span> <span class="o">=</span> <span class="n">complex_manipulations</span><span class="p">(</span><span class="n">star_graph</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">star_complex_df</span><span class="p">)</span>
+</pre></div> </div> </div> </div> </div> <div class="jp-Cell-outputWrapper"> <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser"> </div> <div class="jp-OutputArea jp-Cell-outputArea"> <div class="jp-OutputArea-child"> <div class="jp-OutputPrompt jp-OutputArea-prompt"></div> <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0"> <table border="1" class="dataframe"> <thead> <tr style="text-align: right;"> <th></th> <th>start</th> <th>tournament</th> <th>path</th> <th>steps</th> <th>f(start)</th> <th>f(end)</th> <th>has simple too</th> </tr> </thead> <tbody> <tr> <th>0</th> <td>$\langle A{&lt;}C{&lt;}B \rangle$</td> <td>$A \leftrightarrow B$<br>$B \to C$<br>$A \to C$</td> <td>$\langle A{&lt;}C{&lt;}B \rangle$ → $\langle A{&lt;}B{&lt;}C \rangle$ → $\langle B{&lt;}A{&lt;}C \rangle$</td> <td>2</td> <td>B</td> <td>A</td> <td>False</td> </tr> <tr> <th>1</th> <td>$\langle A{&lt;}C{&lt;}B \rangle$</td> <td>$A \leftrightarrow B$<br>$C \to B$<br>$A \to C$</td> <td>$\langle A{&lt;}C{&lt;}B \rangle$ → $\langle A{&lt;}B{&lt;}C \rangle$ → $\langle B{&lt;}A{&lt;}C \rangle$</td> <td>2</td> <td>C</td> <td>A</td> <td>False</td> </tr> <tr> <th>2</th> <td>$\langle B{&lt;}A{&lt;}C \rangle$</td> <td>$A \leftrightarrow B$<br>$B \to C$<br>$C \to A$</td> <td>$\langle B{&lt;}A{&lt;}C \rangle$ → $\langle A{&lt;}B{&lt;}C \rangle$ → $\langle A{&lt;}C{&lt;}B \rangle$</td> <td>2</td> <td>C</td> <td>B</td> <td>True</td> </tr> <tr> <th>3</th> <td>$\langle B{&lt;}C{&lt;}A \rangle$</td> <td>$A \to B$<br>$B \leftrightarrow C$<br>$C \to A$</td> <td>$\langle B{&lt;}C{&lt;}A \rangle$ → $\langle C{&lt;}B{&lt;}A \rangle$ → $\langle C{&lt;}A{&lt;}B \rangle$</td> <td>2</td> <td>C</td> <td>A</td> <td>True</td> </tr> <tr> <th>4</th> <td>$\langle B{&lt;}C{&lt;}A \rangle$</td> <td>$B \to A$<br>$B \leftrightarrow C$<br>$C \to A$</td> <td>$\langle B{&lt;}C{&lt;}A \rangle$ → $\langle C{&lt;}B{&lt;}A \rangle$ → $\langle C{&lt;}A{&lt;}B \rangle$</td> <td>2</td> <td>C</td> <td>B</td> <td>True</td> </tr> <tr> <th>5</th> <td>$\langle C{&lt;}A{&lt;}B \rangle$</td> <td>$B \to A$<br>$B \leftrightarrow C$<br>$A \to C$</td> <td>$\langle C{&lt;}A{&lt;}B \rangle$ → $\langle C{&lt;}B{&lt;}A \rangle$ → $\langle B{&lt;}C{&lt;}A \rangle$</td> <td>2</td> <td>B</td> <td>A</td> <td>False</td> </tr> <tr> <th>6</th> <td>$\langle C{&lt;}B{&lt;}A \rangle$</td> <td>$B \to A$<br>$B \leftrightarrow C$<br>$A \to C$</td> <td>$\langle C{&lt;}B{&lt;}A \rangle$ → $\langle B{&lt;}C{&lt;}A \rangle$ → $\langle B{&lt;}A{&lt;}C \rangle$</td> <td>2</td> <td>B</td> <td>A</td> <td>True</td> </tr> </tbody> </table> </div> </div> </div> </div> </div> <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=51b418de"> <div class="jp-Cell-inputWrapper" tabindex="0"> <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser"> </div> <div class="jp-InputArea jp-Cell-inputArea"> <div class="jp-InputPrompt jp-InputArea-prompt"> </div> <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown"> <h2 id="Total-manipulable-states">Total manipulable states<a class="anchor-link" href="#Total-manipulable-states">¶</a> </h2> </div> </div> </div> </div> <div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=93703ede"> <div class="jp-Cell-inputWrapper" tabindex="0"> <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser"> </div> <div class="jp-InputArea jp-Cell-inputArea"> <div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div> <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline"> <div class="cm-editor cm-s-jupyter"> <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># a state is manipulable if it has a simple manipulation, a complex one, or both</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">is_manipulable</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">graph</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">has_simple_manipulation</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">graph</span><span class="p">)</span> <span class="ow">or</span> <span class="n">shortest_multistep_path</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">graph</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+<span class="n">irv_manipulable</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">NODES</span> <span class="k">if</span> <span class="n">is_manipulable</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">irv_graph</span><span class="p">)}</span>
+<span class="n">star_manipulable</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">NODES</span> <span class="k">if</span> <span class="n">is_manipulable</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">star_graph</span><span class="p">)}</span>
+
+<span class="c1"># cross-check against the two tables above: each row stands for 2 states if</span>
+<span class="c1"># its tournament column has a free (&lt;-&gt;) matchup, 1 otherwise; complex rows</span>
+<span class="c1"># with `has simple too` would double-count a state already covered by the</span>
+<span class="c1"># simple table, so skip those</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">table_count</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">skip_has_simple</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="p">[</span><span class="s1">'has simple too'</span><span class="p">]]</span> <span class="k">if</span> <span class="n">skip_has_simple</span> <span class="ow">and</span> <span class="s1">'has simple too'</span> <span class="ow">in</span> <span class="n">df</span> <span class="k">else</span> <span class="n">df</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">2</span> <span class="k">if</span> <span class="s1">'leftrightarrow'</span> <span class="ow">in</span> <span class="n">t</span> <span class="k">else</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">[</span><span class="s1">'tournament'</span><span class="p">])</span>
+
+<span class="n">irv_from_tables</span> <span class="o">=</span> <span class="n">table_count</span><span class="p">(</span><span class="n">irv_simple_df</span><span class="p">)</span> <span class="o">+</span> <span class="n">table_count</span><span class="p">(</span><span class="n">irv_complex_df</span><span class="p">,</span> <span class="n">skip_has_simple</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">star_from_tables</span> <span class="o">=</span> <span class="n">table_count</span><span class="p">(</span><span class="n">star_simple_df</span><span class="p">)</span> <span class="o">+</span> <span class="n">table_count</span><span class="p">(</span><span class="n">star_complex_df</span><span class="p">,</span> <span class="n">skip_has_simple</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">irv_from_tables</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">irv_manipulable</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">star_from_tables</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">star_manipulable</span><span class="p">)</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">'IRV'</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">irv_manipulable</span><span class="p">),</span> <span class="s1">'STAR'</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">star_manipulable</span><span class="p">)},</span> <span class="n">name</span><span class="o">=</span><span class="s1">'manipulable states (of 48)'</span><span class="p">)</span>
+</pre></div> </div> </div> </div> </div> <div class="jp-Cell-outputWrapper"> <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser"> </div> <div class="jp-OutputArea jp-Cell-outputArea"> <div class="jp-OutputArea-child jp-OutputArea-executeResult"> <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div> <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0"> <pre>IRV      8
+STAR    18
+Name: manipulable states (of 48), dtype: int64</pre> </div> </div> </div> </div> </div> </main> </div> </details> <style>.jupyter-notebook-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style> <h3 id="a-remark-on-approval-top-2">A Remark on Approval Top-2</h3> <p>It’s worth mentioning at least that theoretically we could apply this model to Approval Top-2 (Approval with a runoff step). If we assume the sincere state for an $A\succ B\succ C$ coalition is to approve $A$, not approve $C$, and either approve or not approve $B$ (varying from voter to voter), then the effective moves are <em>identical</em> to that of STAR voting. This is, in fact, essentially the model used by Brams and Fishburn in their 1981 paper on Approval with a runoff <d-cite key="fishburnBrams1981runoff"></d-cite>.</p> <p>However, I would argue a very slight nuance between the two systems. With STAR, the tournament structure is truly set in stone during the election. The runoff is automatic. But in Approval, the runoff is delayed. Hence, the expected tournament during the primary election could change during the campaign leading up to the general, as people learn about the candidates and watch the debates, they could change their minds.</p> <p>I believe there is a stark difference between the following two scenarios:</p> <ol> <li>Approving a seemingly strong candidate into the runoff who, during the general election campaign, suffers a scandal which makes them nonviable, and wishing you had approved of a safer candidate who didn’t make it into the runoff.</li> <li>Voting sincerely for your candidates, only to find out the candidate you supported into the runoff had objectively no chance of winning, and the system did not allow your support to transfer to a more viable backup (which can occur in both IRV and STAR).</li> </ol> <p>The second seems like a betrayal of a different nature.</p> </d-article> <d-appendix> <d-footnote-list></d-footnote-list> <d-citation-list></d-citation-list> </d-appendix> <d-bibliography src="/assets/bibliography/voting.bib"></d-bibliography> <d-article> <h2 class="text-3xl font-semibold mb-4 mt-12">enjoy this article?</h2> <p class="mb-2" style="margin-top: 1.5rem !important">subscribe to be notified of future articles:</p> <div class="newsletter-form-container"> <div class="newsletter-card"> <div class="newsletter-main"> <p class="newsletter-eyebrow">newsletter</p> <h3 class="newsletter-title">join <a href="https://buttondown.com/eigentaylor" target="_blank" rel="noopener noreferrer"><b>the eigenletter</b></a> </h3> <p class="newsletter-subtitle">get an email when i publish something</p> <form class="newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/eigentaylor" method="POST" style="justify-content: flex-start"> <label class="newsletter-form-label" for="bd-email-eigentaylor-preview-irv-star-strat">Email address</label> <input class="newsletter-form-input" name="email" id="bd-email-eigentaylor-preview-irv-star-strat" type="email" placeholder="you@example.com" required=""> <button type="submit" class="newsletter-form-button" style="justify-content: flex-start"> Subscribe </button> <button type="button" class="newsletter-loading-button" style="justify-content: flex-start"> Please wait... </button> </form> <div class="newsletter-success" style="justify-content: flex-start"> <p class="newsletter-success-message">You're subscribed!</p> </div> <div class="newsletter-error" style="justify-content: flex-start"> <p class="newsletter-error-message">Oops! Something went wrong, please try again</p> </div> <button class="newsletter-back-button" type="button" onmouseout='this.style.textDecoration="none"' onmouseover='this.style.textDecoration="underline"'> ← Back </button> <p class="newsletter-powered-by"> <a href="https://buttondown.com/refer/eigentaylor" target="_blank" rel="noopener noreferrer"> powered by buttondown. </a> </p> </div> </div> </div> <noscript> <style>.newsletter-form-container{display:none}</style> </noscript> <p class="mb-2">and here are some related posts you might like to read next:</p> <ul class="list-disc pl-8"> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/better-choices/">Better Choices Has a Neat Idea</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/ca-top-2/">Dear California, the Top-2 Is Not the Problem</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/leader-rule/">The Leader Rule in Approval Voting</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/av-stratproof/">Is Approval Voting Strategyproof?</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/arrows/">Arrow's Impossibility Theorem</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/iia/">Independence of Irrelevant Alternatives</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/why-condorcet/">Is the Condorcet Winner the True Compromise?</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/approval-only/">Why I Currently Only Support Approval</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/condorcet-approval/">Approval is the Perfect Condorcet Method</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/gibbard-satt/">The Gibbard-Satterthwaite Theorem</a> </li> </ul> <br> <hr> <br> <div class="author-bio-card"> <p class="author-bio-eyebrow">about the author</p> <div class="author-bio-text"> <p>Taylor Eigen Fisher is a mathematician, tutor, and advocate for Approval voting. They received their master’s degree in mathematics from UC Riverside and volunteer with the Equal Vote Coalition.</p> </div> </div> </d-article> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Taylor Eigen Fisher. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener noreferrer" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener noreferrer">GitHub Pages</a>. Last updated: July 16, 2026. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/nav-toggle.js"></script> <script src="/assets/js/distillpub/overrides.js"></script> <script src="/assets/js/distill-read-time.js"></script> <script src="/assets/js/theorem-setup.js" type="text/javascript" data-theorem-numbering=""></script> <script defer src="/assets/js/proof-disclosure.js" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/plotly.js@3.0.1/dist/plotly.min.js" integrity="sha256-oy6Be7Eh6eiQFs5M7oXuPxxm9qbJXEtTpfSI93dW16Q=" crossorigin="anonymous"></script> <script defer src="/assets/al_charts/js/plotly-setup.js" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js"></script> <script src="/assets/js/no_defer.js"></script> <script defer src="/assets/js/common.js"></script> <script defer src="/assets/js/copy_code.js" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "my random projects",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-teaching",
+          title: "teaching",
+          description: "Classes I have officially tutored or TA'd for",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/teaching/";
+          },
+        },{id: "post-better-choices-has-a-neat-idea",
+        
+          title: "Better Choices Has a Neat Idea",
+        
+        description: "What I like about the system proposed by Better Choices, and my concerns.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/better-choices/";
+          
+        },
+      },{id: "post-dear-california-the-top-2-is-not-the-problem",
+        
+          title: "Dear California, the Top-2 Is Not the Problem",
+        
+        description: "Many reforms are being proposed for California, but only Approval voting in the primary will address the real issue.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/ca-top-2/";
+          
+        },
+      },{id: "post-the-leader-rule-in-approval-voting",
+        
+          title: "The Leader Rule in Approval Voting",
+        
+        description: "An explanation of Laslier's leader rule strategy in Approval voting, and its positive ramifications.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/leader-rule/";
+          
+        },
+      },{id: "post-is-approval-voting-strategyproof",
+        
+          title: "Is Approval Voting Strategyproof?",
+        
+        description: "Well yes, but actually no. Unless...",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/av-stratproof/";
+          
+        },
+      },{id: "post-arrow-39-s-impossibility-theorem",
+        
+          title: "Arrow's Impossibility Theorem",
+        
+        description: "Walkthrough and proof of the theorem that proves ranked voting systems cannot satisfy seemingly reasonable properties, unless you have infinitely many voters!",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/arrows/";
+          
+        },
+      },{id: "post-independence-of-irrelevant-alternatives",
+        
+          title: "Independence of Irrelevant Alternatives",
+        
+        description: "A brief exploration of the Independence of Irrelevant Alternatives (IIA) condition in voting systems, and why its absence makes voting systems behave irrationally.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/iia/";
+          
+        },
+      },{id: "post-is-the-condorcet-winner-the-true-compromise",
+        
+          title: "Is the Condorcet Winner the True Compromise?",
+        
+        description: "A Condorcet winner may not be a true consensus candidate. Approval voting can find consensus with a simpler ballot.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/why-condorcet/";
+          
+        },
+      },{id: "post-why-i-currently-only-support-approval",
+        
+          title: "Why I Currently Only Support Approval",
+        
+        description: "Why Approval voting is the only system I trust to push for right now.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/approval-only/";
+          
+        },
+      },{id: "post-approval-is-the-perfect-condorcet-method",
+        
+          title: "Approval is the Perfect Condorcet Method",
+        
+        description: "Approval is a perfect Condorcet method, and I have permanently solved the Condorcet paradox. April Fools!",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/condorcet-approval/";
+          
+        },
+      },{id: "post-the-gibbard-satterthwaite-theorem",
+        
+          title: "The Gibbard-Satterthwaite Theorem",
+        
+        description: "A walkthrough and proof of the theorem that proves ranked voting systems must be susceptible to strategic voting.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/gibbard-satt/";
+          
+        },
+      },{id: "post-it-39-s-time-to-ditch-rcv-embrace-approval-voting",
+        
+          title: "It's Time to Ditch RCV, Embrace Approval Voting",
+        
+        description: "It has been tried, and it has failed. Ranked-choice voting must go before it poisons the well for all electoral reform.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/ditch-rcv/";
+          
+        },
+      },{id: "post-approval-voting-is-the-only-condorcet-consistent-score-method",
+        
+          title: "Approval voting is the Only Condorcet-Consistent SCORE Method",
+        
+        description: "A proof that Approval voting is the unique score aggregation voting method that always elects the Condorcet winner induced by the ballot data.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/consistentcardinal/";
+          
+        },
+      },{id: "post-a-practical-case-for-approval-voting",
+        
+          title: "A Practical Case for Approval Voting",
+        
+        description: "It's not just mathematically elegant, it's the most practical solution for our electoral problems.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/practicalapproval/";
+          
+        },
+      },{id: "post-the-lichtman-perception-paradox",
+        
+          title: "The Lichtman Perception Paradox",
+        
+        description: "A mathematician's take on Allan Lichtman's keys to the White House.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/lichtman/";
+          
+        },
+      },{id: "post-why-do-we-row-reduce-what-is-a-matrix",
+        
+          title: "Why do we row reduce? What IS a matrix?",
+        
+        description: "What does the RREF tell us, and why do we spend so much time on it? Why do we define matrix multiplication the way we do?",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/rref/";
+          
+        },
+      },{id: "post-introduction-to-least-squares-part-2-electric-boogaloo",
+        
+          title: "Introduction to Least Squares Part 2 (Electric Boogaloo)",
+        
+        description: "Why the heck do we multiply by the transpose",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/leastsquarespart2/";
+          
+        },
+      },{id: "post-the-wonderful-world-of-projectors",
+        
+          title: "The Wonderful World of Projectors",
+        
+        description: "They're cool, I promise!",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/projectors/";
+          
+        },
+      },{id: "post-constant-coefficient-odes-made-simple-with-linear-operators",
+        
+          title: "Constant Coefficient ODEs Made Simple with Linear Operators",
+        
+        description: "No more guessing. The linear algebra perspective makes everything obvious.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/linalglinconstcoef/";
+          
+        },
+      },{id: "post-in-defense-of-cramer-39-s-rule",
+        
+          title: "In Defense of Cramer's Rule",
+        
+        description: "(and determinants)",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/cramers/";
+          
+        },
+      },{id: "post-change-of-basis",
+        
+          title: "Change of Basis",
+        
+        description: "the most confusing thing in linear algebra (don't @ me)",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/changeofbasis/";
+          
+        },
+      },{id: "post-linear-constant-coefficient-odes",
+        
+          title: "Linear Constant Coefficient ODEs",
+        
+        description: "the most important topic in an ODE class",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/linconstcoef/";
+          
+        },
+      },{id: "post-integrating-factors-explained",
+        
+          title: "Integrating Factors Explained",
+        
+        description: "the most common way to solve first order linear ODE's",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/integratingfactor/";
+          
+        },
+      },{id: "post-bases-for-the-fundamental-spaces-of-a-matrix",
+        
+          title: "Bases for the fundamental spaces of a matrix",
+        
+        description: "a lot of students struggle with this so here. row space, column space, null space, and left null space.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/rowcolspace/";
+          
+        },
+      },{id: "post-series-solutions-done-quick",
+        
+          title: "Series Solutions Done Quick",
+        
+        description: "the fast way to do series solutions. no reindexing required.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/seriessolutions/";
+          
+        },
+      },{id: "post-column-and-row-perspective",
+        
+          title: "Column and Row Perspective",
+        
+        description: "How to simplify matrix multiplication with the best perspectives (and also find certain inverse matrices fast!)",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/columnperspective/";
+          
+        },
+      },{id: "post-new-ways-to-calculate-normalized-solutions-to-linear-constant-coefficient-differential-equations",
+        
+          title: "New Ways to Calculate Normalized Solutions to Linear Constant-Coefficient Differential Equations",
+        
+        description: "The fastest way for a computer, and a fast way by hand.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/newnormalized/";
+          
+        },
+      },{id: "post-systems-of-linear-difference-equations",
+        
+          title: "Systems of Linear Difference Equations",
+        
+        description: "Like systems of ODEs, but discrete 👀",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/discretesystems/";
+          
+        },
+      },{id: "post-matrix-exponential-formulas-for-2x2-matrices",
+        
+          title: "Matrix Exponential Formulas for 2x2 Matrices",
+        
+        description: "Who needs eigenvectors?",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2x2ezmatrixexp/";
+          
+        },
+      },{id: "post-2x2-matrix-exponential-formulas-with-differential-equations",
+        
+          title: "2x2 Matrix Exponential Formulas with Differential Equations",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2x2matrixexpwde/";
+          
+        },
+      },{id: "post-solving-systems-of-first-order-odes-like-a-baller",
+        
+          title: "Solving systems of first-order ODEs like a baller",
+        
+        description: "some ballin' tips and tricks",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/firstordersystemsquick/";
+          
+        },
+      },{id: "post-shortcuts-for-finding-eigenvalues-and-eigenvectors",
+        
+          title: "Shortcuts for Finding Eigenvalues and Eigenvectors",
+        
+        description: "diagonalization speedrun, let's go",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/eigentricks/";
+          
+        },
+      },{id: "post-easily-solving-autonomous-ivps-off-the-origin",
+        
+          title: "Easily Solving Autonomous IVPs Off the Origin",
+        
+        description: "Easily solving linear homogeneous constant coefficient initial problems when the initial point is not t=0",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/autonomousivps/";
+          
+        },
+      },{id: "post-introduction-to-least-squares",
+        
+          title: "Introduction to Least Squares",
+        
+        description: "How to find the best solution for an inconsistent system",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/leastsquares/";
+          
+        },
+      },{id: "post-finding-taylor-series-of-polynomials-using-synthetic-division",
+        
+          title: "Finding Taylor Series of Polynomials Using Synthetic Division",
+        
+        description: "Wait you can do that? YUP",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/synthetictaylor/";
+          
+        },
+      },{id: "post-a-formula-for-some-particular-solutions",
+        
+          title: "A Formula for Some Particular Solutions",
+        
+        description: "Yet another obnoxious formula for solutions to constant coefficient nonhomogeneous ODE's with common forcing functions.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/exppolynonhomo/";
+          
+        },
+      },{id: "post-matrix-exponentials-using-differential-equations",
+        
+          title: "Matrix Exponentials Using Differential Equations",
+        
+        description: "ok",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/matrixexpwde/";
+          
+        },
+      },{id: "post-exact-equations-done-quick",
+        
+          title: "Exact Equations Done Quick",
+        
+        description: "speedrun WR",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/exacteqs/";
+          
+        },
+      },{id: "post-function-interpolation",
+        
+          title: "Function Interpolation",
+        
+        description: "Find a function that matches your requirements",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/functioninterp/";
+          
+        },
+      },{id: "post-polynomial-interpolation",
+        
+          title: "Polynomial Interpolation",
+        
+        description: "Making your own custom polynomial.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/polyinterp/";
+          
+        },
+      },{id: "post-intro-to-solving-systems-of-first-order-differential-equations",
+        
+          title: "Intro To Solving Systems of First Order Differential Equations",
+        
+        description: "An attempt at an intuitive derivation",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/firstordersystemsolve/";
+          
+        },
+      },{id: "post-variation-of-parameters-using-linear-algebra",
+        
+          title: "Variation of Parameters Using Linear Algebra",
+        
+        description: "linear is best frend :)",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/voplinear/";
+          
+        },
+      },{id: "post-solving-second-order-systems-of-differential-equations",
+        
+          title: "Solving Second Order Systems of Differential Equations",
+        
+        description: "ye",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2ndordersystemsolve/";
+          
+        },
+      },{id: "post-tricks-for-remembering-laplace-transforms",
+        
+          title: "Tricks for Remembering Laplace Transforms",
+        
+        description: "for students and people who forgot",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/laplacetricks/";
+          
+        },
+      },{id: "post-skipping-integration-by-parts-using-euler-39-s-formula",
+        
+          title: "Skipping Integration by Parts Using Euler's Formula",
+        
+        description: "skip or simplify integrals involving trig functions multiplied by exponentials",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/eulersformulabyparts/";
+          
+        },
+      },{id: "post-introduction-to-euler-39-s-formula",
+        
+          title: "Introduction to Euler's Formula",
+        
+        description: "the best formula",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/eulersformula/";
+          
+        },
+      },{id: "post-constructing-integer-2x2-second-order-systems-of-differential-equations-with-integer-solutions",
+        
+          title: "Constructing Integer 2x2 Second Order Systems of Differential Equations with Integer Solutions",
+        
+        description: "It's a lot messier.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/secondordersystems/";
+          
+        },
+      },{id: "post-constructing-integer-2x2-first-order-systems-of-differential-equations-with-integer-solutions",
+        
+          title: "Constructing Integer 2x2 First Order Systems of Differential Equations with Integer Solutions",
+        
+        description: "Nice solutions? Nice.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/firstordersystems/";
+          
+        },
+      },{id: "post-matrix-exponential-formulas-for-2x2-matrices-using-laplace-transforms",
+        
+          title: "Matrix Exponential Formulas for 2x2 Matrices Using Laplace Transforms",
+        
+        description: "this has been rewritten",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/ezmatrixexp/";
+          
+        },
+      },{id: "post-eigendecomposition-of-real-matrices-with-complex-eigenvalues",
+        
+          title: "Eigendecomposition of Real Matrices with Complex Eigenvalues",
+        
+        description: "An attempt at an intuitive derivation.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/complexeigenvalues/";
+          
+        },
+      },{id: "post-solving-multiple-initial-value-problems-with-normalized-solutions",
+        
+          title: "Solving Multiple Initial Value Problems with Normalized Solutions",
+        
+        description: "Solve one, solve them all.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/normalized/";
+          
+        },
+      },{id: "post-constructing-2x2-markov-matrices",
+        
+          title: "Constructing 2x2 Markov Matrices",
+        
+        description: "Build a Markov Chain with desired behavior.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/markovbuild/";
+          
+        },
+      },{id: "post-linear-differential-equation-interpolation",
+        
+          title: "Linear Differential Equation Interpolation",
+        
+        description: "Linear Differential Equations with desired solutions using determinants.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/diffeqinterp/";
+          
+        },
+      },{id: "post-skew-symmetric-matrices-are-cool",
+        
+          title: "Skew-Symmetric Matrices Are Cool",
+        
+        description: "top 10 things YOU didn't know about real skew-symmetric matrices!!! (GONE WRONG) (COPS CALLED)",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/skewsymmetric/";
+          
+        },
+      },{id: "post-the-alpha-method-generalized-exponential-response-formula",
+        
+          title: "The Alpha Method (Generalized Exponential Response Formula)",
+        
+        description: "Easy particular solutions to nonhomoegenous constant coefficient linear differential equations with simple exponential/trigonometric forcing functions.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/alphamethod/";
+          
+        },
+      },{id: "post-implicit-solutions-to-2x2-systems-of-first-order-homogeneous-linear-differential-equations",
+        
+          title: "Implicit Solutions to 2x2 Systems of First-Order Homogeneous Linear Differential Equations",
+        
+        description: "Implicit and explicit solutions for all cases.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2x2implicit/";
+          
+        },
+      },{id: "post-exponentials-of-symmetric-matrices-using-the-spectral-theorem",
+        
+          title: "Exponentials of Symmetric Matrices Using the Spectral Theorem",
+        
+        description: "yeah",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/symmetric-exp/";
+          
+        },
+      },{id: "post-constructing-systems-of-nonlinear-first-order-differential-equations-to-model-population-dynamics",
+        
+          title: "Constructing Systems of Nonlinear First-Order Differential Equations to Model Population Dynamics",
+        
+        description: "Build a system with desired behavior.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/nonlinearbuild/";
+          
+        },
+      },{id: "post-a-different-perspective-of-diagonalization",
+        
+          title: "A Different Perspective of Diagonalization",
+        
+        description: "An (atttempt at an) intuitive approach to similar matrix decomposition.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/diagonalization/";
+          
+        },
+      },{id: "news-a-simple-inline-announcement",
+          title: 'A simple inline announcement.',
+          description: "",
+          section: "News",},{id: "news-a-long-announcement-with-details",
+          title: 'A long announcement with details',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_2/";
+            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
+          title: 'A simple inline announcement with Markdown emoji! <img class="emoji" title=":sparkles:" alt=":sparkles:" src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png" height="20" width="20"> <img class="emoji" title=":smile:" alt=":smile:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png" height="20" width="20">',
+          description: "",
+          section: "News",},{id: "news-new-news-now-upside-down-face",
+          title: 'new news now <img class="emoji" title=":upside_down_face:" alt=":upside_down_face:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f643.png" height="20" width="20">',
+          description: "",
+          section: "News",},{id: "news-updating-posts-to-the-distill-theme",
+          title: 'updating posts to the distill theme',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/distill1/";
+            },},{id: "news-2x2-matrix-exponentials-post-rewritten",
+          title: '2x2 matrix exponentials post rewritten',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/updateezmatrix/";
+            },},{id: "news-back-with-a-few-new-posts",
+          title: 'back with a few new posts',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/backin2022/";
+            },},{id: "projects-av-lab",
+          title: 'AV lab',
+          description: "lightweight lab for approval voting experiments.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/avlab/";
+            },},{id: "projects-margin-matters",
+          title: 'margin matters',
+          description: "interactive presidential election results from 1864-2024 plus too many features to list here!",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/margin-matters/";
+            },},{id: "projects-open-primary-sim",
+          title: 'open primary sim',
+          description: "simulation of plurality vs approval open primaries with different sized general election pools based on US state data",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/open-primary-sim/";
+            },},{id: "projects-president-sorter",
+          title: 'president sorter',
+          description: "sort and create a tier list for U.S. presidents",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/pres-sort/";
+            },},{id: "projects-runoff-av",
+          title: 'runoff AV',
+          description: "how does adding runoff affect strategy in approval voting?",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/runoff-av/";
+            },},{id: "projects-santa-hat-pfp",
+          title: 'santa hat pfp',
+          description: "put a santa hat on a picture",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/santahat/";
+            },},{id: "projects-satisficing-voter-sim",
+          title: 'satisficing voter sim',
+          description: "comparing voting methods when voters are misinformed and fatigued",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/satisficing-voter-sim/";
+            },},{id: "projects-star-pathology-generator",
+          title: 'STAR pathology generator',
+          description: "quickly generate edge cases and failure modes for STAR voting.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/star-pathology-gen/";
+            },},{id: "projects-title",
+          title: 'Title',
+          description: "desc",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/template/";
+            },},{id: "projects-weakest-link",
+          title: 'weakest link',
+          description: "a graph model of strategy in the better choices top 3 system",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/weakest-link/";
+            },},{
+        id: 'social-discord',
+        title: 'Discord',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://discord.com/users/196803594576592896", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%74%61%79%6C%6F%72%65%69%67%65%6E%66%69%73%68%65%72@%67%6D%61%69%6C.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/eigentaylor", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => { setThemeSetting("light"); },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => { setThemeSetting("dark"); },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => { setThemeSetting("system"); },
+    },];
+  </script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
