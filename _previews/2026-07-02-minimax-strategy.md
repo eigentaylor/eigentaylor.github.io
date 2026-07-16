@@ -62,13 +62,13 @@ Rather than have a profile or voter-centric model, we focus entirely on the elec
 
 $$P = \langle P_1 \mid P_2 \mid \cdots \mid P_m \rangle, \quad P_i = (w_i \to \ell_i), \quad m = \tbinom{n}{2}$$
 
-where $w_i$ is the winner and $\ell_i$ is the loser of the $i$-th matchup, with matchups ordered so that $P_1$ has the smallest margin and $P_m$ has the largest. We write $\operatorname{win}(P_i)=w_i$ and $\operatorname{lose}(P_i)=\ell_i$. For example in $n=3$, the state $\langle C\to B \mid B\to A \mid A\to C\rangle$ means $C$ defeats $B$ by the smallest margin, $B$ defeats $A$ by the middle margin, and $A$ defeats $C$ by the largest margin. We also keep a mirror entry $P_0 = (\ell_1\to w_1)$, the reverse of the smallest-margin matchup.
+where $w_i$ is the winner and $\ell_i$ is the loser of the $i$-th matchup, with matchups ordered so that $P_1$ has the smallest margin and $P_m$ has the largest. We write $\operatorname{win}(P_i)=w_i$ and $\operatorname{lose}(P_i)=\ell_i$. For example, in $n=3$, the state $\langle C\to B \mid B\to A \mid A\to C\rangle$ means $C$ defeats $B$ by the smallest margin, $B$ defeats $A$ by the middle margin, and $A$ defeats $C$ by the largest margin. We also keep a mirror entry $P_0 = (\ell_1\to w_1)$, the reverse of the smallest-margin matchup.
 
 Note that there are $\binom{3}{2}!\times 2^3=48$ possible states for 3 candidates, since there are $3!$ ways to order the matchups and $2^3$ ways to choose the winner of each matchup<d-footnote>We can also understand the collection of these states as equivalence classes of all possible elections that can happen in this system. For any election (neglecting any with tied margins), it must fall into one of these 48 states, based on the raw results and order of the margins.</d-footnote>. Out of the 48 nodes, 12 contain a cycle, and each candidate has 12 nodes in which they are a Condorcet winner. In general, for $n$ candidates, there are $\binom{n}{2}!\times 2^{\binom{n}{2}}$ possible states, which grows rapidly as $n$ increases. Already at $n=4$, there are over 46 thousand possible states.
 
 The only way for the result of an election to possibly change is to change the relative sizes of the matchups. For example, if a coalition were to attempt to manipulate the election in $n=3$ by swapping their sincere votes for $\ell_2\succ w_2$ with $w_2\succ \ell_2$, then a sufficiently coordinated and large coalition might end up making the $w_2\to\ell_2$ matchup the largest margin, and the previous largest margin matchup $P_3$ would then become the middle margin matchup. Or, perhaps, the coalition might be able to change sincere votes for $w_1\to\ell_1$ into $\ell_1\to w_1$, which would reverse the smallest margin matchup such that $P_1=(\ell_1\to w_1)$, meaning that $\ell_1$ now *defeats* $w_1$ by the smallest margin.
 
-Focusing instead on individual voters, or ranking profiles, is not necessary or helpful. Particularly because all the matchups are independent, any possible margins list can be achieved by some profile of voters. Hence, we can focus entirely on the election results themselves, through the only method of manipulation: a coalition of voters changing their sincere votes to attempt to change the relative sizes of the matchups.
+Focusing instead on individual voters, or ranking profiles, is not necessary or helpful, particularly because all the matchups are independent: any possible margins list can be achieved by some profile of voters. Hence, we can focus entirely on the election results themselves, through the only method of manipulation: a coalition of voters changing their sincere votes to attempt to change the relative sizes of the matchups.
 
 We can thus define the decision rule of the Better Choices system as a function where if $P$ has a Condorcet winner $W$ (i.e. if there exist two distinct $i,j$ such that $\operatorname{win}(P_i)=\operatorname{win}(P_j)=W$, meaning that $W$ defeats both of the other candidates), then $f(P)=W$. Otherwise, if $P$ has no Condorcet winner, then minimax determines $f(P)=\operatorname{lose}(P_1)=\operatorname{win}(P_0)$, the candidate who loses by the least amount.
 
@@ -106,7 +106,7 @@ To define what a "profitable manipulation" truly is, we have to establish the pe
 
 > **Definition:** A simple manipulation is **profitable** for a coalition if the winner of the election after the manipulation is strictly preferred by the coalition to the winner before the manipulation. That is, if $P$ and $Q$ are connected by an edge, then the manipulation from $P$ to $Q$ is profitable if $f(Q)\succ f(P)$.
 
-For example, if $f(P)=B$ and $f(Q)=A$, then the manipulation from $P$ to $Q$ is profitable for a coalition with preference $A\succ B\succ C$, but not for a coalition with preference $B\succ A\succ C$<d-footnote>We assume the coalition has transitive preferences. However, technically, there is not a particular reason to require this. But it simplifies the analysis, and is a reasonable assumption to make about voters.</d-footnote>.
+For example, if $f(P)=B$ and $f(Q)=A$, then the manipulation from $P$ to $Q$ is profitable for a coalition with preference $A\succ B\succ C$, but not for a coalition with preference $B\succ A\succ C$<d-footnote>We assume the coalition has transitive preferences. However, technically, there isn't a strong reason to require this. But it simplifies the analysis, and is a reasonable assumption to make about voters.</d-footnote>.
 
 We now have to connect what kinds of manipulations are possible by a fixed coalition of voters.
 
@@ -139,7 +139,7 @@ We start with an extremely cheery theorem.
 
 We consider three cases exhaustively. Let $P_1=(w_1\to\ell_1)$ be the smallest matchup, and $Q=(0,1)P$ be the result of the swap. Then we have three cases:
 
-1. If $W\neq w_1$, then $W$ still wins both of their matchups after the swap, and hence is still the Condorcet winner.
+1. If $W\neq w_1$, then $W$ still wins both of its matchups after the swap, and hence is still the Condorcet winner.
 2. If $W=w_1$, then $\ell_1$ now wins their matchup against $W$. If this creates a cycle, then $f(Q)=\operatorname{lose}(Q_1)=w_1=W$, and the winner is unchanged.
 3. If $W=w_1$ and $\ell_1$ becomes the new Condorcet winner, then $f(Q)=\ell_1$. However, by lemma \ref{one-way-push}, this swap of the second kind is only possible if the coalition sincerely preferred $w_1\succ\ell_1$, and hence $w_1=f(P)\succ f(Q)=\ell_1$.
 
@@ -263,7 +263,7 @@ The answer is yes--but since only one election ever really happens, we have to b
 
 > **Definition:** Fix the sincere state $P_0$ (every voter, including the coalition, votes honestly), and define $R(P_0)$ as the set of states $Q$ the coalition can produce by chaining simple manipulations admissible by the one-way push lemma--treating $P_0$ itself as the ground truth, independently of the others. A **complex manipulation** is a state $Q\in R(P_0)$ with $f(Q)\succ f(P_0)$.
 
-Though we have so far avoided talking about "margins", or specific profiles, it is worth considering that perspective here for intuitive purposes. We can imagine this as moving from $P_0$ to $Q$ through the coalition choosing to insincerely vote in various ways, changing the margins enough to reorder the matchups, or perhaps to flip some matchups which start out "favorable" to the coalition to be "unfavorable". So long as the margins in $Q$ are the same or "worse" for the coalition than in $P_0$. We do not require that lies cannot be "undone", so long as at no point are the margins more favorable to the coalition than in $P_0$.
+Though we have so far avoided talking about "margins", or specific profiles, it is worth considering that perspective here for intuitive purposes. We can imagine this as moving from $P_0$ to $Q$ through the coalition choosing to insincerely vote in various ways, changing the margins enough to reorder the matchups, or perhaps to flip some matchups which start out "favorable" to the coalition to be "unfavorable". We do not require that lies cannot be "undone", so long as at no point are the margins more favorable to the coalition than in $P_0$.
 
 For example, if $A\to B$ is a sincere 71%-margin matchup--favoring the coalition who prefers $A\succ B$--in $P_0$, any intermediate margins can land anywhere from 71% for $A$ down to however far the coalition can force it toward $B$--including landing right back at 71% for $A$, by completely undoing all the lies. We only require that at no point can the margin be more than 71% for $A$.
 
@@ -327,7 +327,7 @@ You can also verify this yourself in [the playground](#a-playground): from the t
 
 Three of the four burial-chain states have a Condorcet winner--namely $B$, the coalition's *middle* candidate. This turns out to be the only way a Condorcet winner can be complexly overturned: it must be the coalition's middle choice, dragging the election into a cycle that resolves in the coalition's favor. When the coalition's *least favorite* candidate is the genuine Condorcet winner, the coalition is provably powerless--both $C$-class starting points are themselves cycles.
 
-Perhaps it does not feel so cheery to be "powerless" to overturn the election when your least favorite candidate is the Condorcet winner, but perhaps from another perspective this is a comforting guarantee that a fringe group cannot spoil the election against the majority's clear preference. This is in contrast to [Ranked-Choice voting](../ditch-rcv/){:target="_blank"}, where a Condorcet winner can sometimes be eliminated early due to vote splitting, allowing a less-preferred candidate to win.
+Perhaps it does not feel so cheery to be "powerless" to overturn the election when your least favorite candidate is the Condorcet winner, but perhaps from another perspective this is a comforting guarantee that a fringe group cannot spoil the election against the majority's clear preference. This is in contrast to [Ranked-Choice Voting](../ditch-rcv/){:target="_blank"}, where a Condorcet winner can sometimes be eliminated early due to vote splitting, allowing a less-preferred candidate to win.
 
 > **Corollary:** (One-notch bound) A coalition can never improve the outcome by two notches via a complex manipulation. In particular, if $f(P_0)=C$ and $f(Q)=A$, then $Q\notin R(P_0)$.\label{one-notch}
 
@@ -343,7 +343,7 @@ Even a maximally resourced, perfectly informed coalition improves its outcome by
 
 Some of these theorems do generalize beyond $n=3$, but I caution at the overall expectation of robustness. Minimax, for its wonderful simplicity and ease of explanation (relative to something like Schulze), is not a very robust Condorcet method.
 
-If you can use this model to say more interesting things about Minimax for $n>3$, or perhaps generalize this model to say some interesting things about Ranked Pairs, let me know in the comments below! I developed a somewhat analogous model for IRV (Ranked-Choice voting), which I may write about in a future post.
+If you can use this model to say more interesting things about Minimax for $n>3$, or perhaps generalize this model to say some interesting things about Ranked Pairs, let me know in the comments below! I developed a somewhat analogous model for IRV (Ranked-Choice Voting), which I may write about in a future post.
 
 ## Conclusion
 
@@ -353,11 +353,11 @@ Further, the manipulations would require convincing voters to either vote for th
 
 I simply do not see this as a practical concern. If you are a voter voting in such an election, I cannot recommend enough that you vote sincerely. There is effectively no way to game the result without an unrealistic amount of knowledge, foresight, confidence, and *resources*.
 
-Just vote honestly. Vote for your favorite in their matchups. Vote for your second choice against your last choice. This system gives you the opportunity to have say in every single race, whether it is competitive or not. Don't think about strategy, just vote.
+Just vote honestly. Vote for your favorite in its matchups. Vote for your second choice against your last choice. This system gives you the opportunity to have say in every single race, whether it is competitive or not. Don't think about strategy, just vote.
 
 ## Appendix
 
-For the particularly technical readers, or those who want to look at pretty graphs, I have included a jupyter notebook with the code and results for some simulations investigating the likelihood of these scenarios occurring in practice, and how detectable and affordable they are.
+For the particularly technical readers, or those who want to look at pretty graphs, I have included a Jupyter notebook with the code and results for some simulations investigating the likelihood of these scenarios occurring in practice, and how detectable and affordable they are.
 
 ### Just How Likely Are These Scenarios?
 
@@ -375,7 +375,7 @@ We investigate the following questions:
 
 ### A Jupyter Notebook
 
-The following is a jupyter notebook with the code and results for these simulations.
+The following is a Jupyter notebook with the code and results for these simulations.
 
 {::nomarkdown}
 {% assign jupyter_path = 'assets/jupyter/better_choices_simulations.ipynb' | relative_url %}
@@ -401,9 +401,9 @@ The lesson? When it comes to manipulation, you may pick at most one of the follo
 | state detectable by polling | essentially never | often, but then... |
 | lie is affordable | yes (~0.3% of voters) | usually not (20–50%+ of ALL voters, more than the coalition has most of the time) |
 
-Cycles are fairly rare. And even when a more common manipulable state for a coalition, that has a Condorcet winner (in the Burial chain), does occur, it is exceptionally likely that the numbers required to manipulate the election (pushing it into a cycle and beyond to $Q_1$) are more than the coalition can muster.
+Cycles are fairly rare. And even when a more common manipulable state for a coalition, that has a Condorcet winner (in the burial chain), does occur, it is exceptionally likely that the numbers required to manipulate the election (pushing it into a cycle and beyond to $Q_1$) are more than the coalition can muster.
 
-If a manipulation could be detected, then that generally requires more insincere voters than the coalition is likely to be able to coordinate.
+If a manipulation could be detected, then it generally requires more insincere voters than the coalition is likely to be able to coordinate.
 
 If a manipulation is cheap, that means the margins are close (too close to identify in advance with any confidence).
 
