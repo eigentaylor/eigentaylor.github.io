@@ -8,11 +8,6 @@ tags: voting
 category: polisci
 featured: false
 theorems: true
-related_posts: true
-pretty_table: true
-exclude_appendix_from_word_count: true
-exclude_footnotes_from_word_count: true
-exclude_proof_blocks_from_word_count: true
 bibliography: voting.bib
 chart:
   plotly: true
