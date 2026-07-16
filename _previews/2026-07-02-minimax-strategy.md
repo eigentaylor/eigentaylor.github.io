@@ -40,7 +40,7 @@ toc:
 
 The [Better Choices system](../better-choices/){:target="_blank"} is a very interesting flavor of Condorcet where voters vote in all three head-to-head matchups between the candidates who make it to a top-3 runoff. I wrote about my complex thoughts on it in my last posts, but here I want to expound on the strategic resilience of the system.
 
-The winner in this system is the candidate who wins both of their head-to-head matchups (a "Condorcet winner"). If there is a tie, and nobody wins both, the winner is determined by minimax (the candidate with the least bad loss wins if every candidate loses at least one matchup).
+The winner in this system is the candidate who wins both of their head-to-head matchups (a "Condorcet winner"). If there is a "tie"--where every candidate wins and loses exactly one matchup, and nobody wins both--the winner is determined by "minimax" (the candidate with the least bad loss wins if every candidate loses at least one matchup).
 
 For example, if Alice wins both of her head-to-head matchups against Bob and Clark, then Alice is the winner outright. Suppose instead that Alice beats Bob by 10%, Bob beats Clark by 5%, and Clark beats Alice by 1%. Then Alice loses by the least amount (1%) and is the winner by the minimax tiebreaker.
 
@@ -261,7 +261,7 @@ We have found exactly two states for $n=3$ that have a profitable simple manipul
 
 The answer is yes--but since only one election ever really happens, we have to be careful about what a "complex manipulation" is. For this section, we will fix a coalition of voters with preference $A\succ B\succ C$, and also assume $n=3$ for the remainder of the discussion.
 
-> **Definition:** Fix the sincere state $P_0$ (every voter, including the coalition, votes honestly), and define $R(P_0)$ as the set of states $Q$ the coalition can produce by chaining simple manipulations admissible by the one-way push lemma--treating $P_0$ itself as the ground truth, independently of the others. A **complex manipulation** is a state $Q\in R(P_0)$ with $f(Q)\succ f(P_0)$.
+> **Definition:** Fix the sincere state $P_0$ (every voter, including the coalition, votes honestly), and define $R(P_0)$ as the set of states $Q$ the coalition can produce by chaining simple manipulations admissible by the one-way push lemma--treating $P_0$ itself as the ground truth, independently of what the one-way push lemma would allow at intermediate nodes. A **complex manipulation** is a state $Q\in R(P_0)$ with $f(Q)\succ f(P_0)$.
 
 Though we have so far avoided talking about "margins", or specific profiles, it is worth considering that perspective here for intuitive purposes. We can imagine this as moving from $P_0$ to $Q$ through the coalition choosing to insincerely vote in various ways, changing the margins enough to reorder the matchups, or perhaps to flip some matchups which start out "favorable" to the coalition to be "unfavorable". We do not require that lies cannot be "undone", so long as at no point are the margins more favorable to the coalition than in $P_0$.
 
@@ -313,7 +313,7 @@ So a state admits a profitable complex manipulation if and only if it can reach 
 >
 > $$\langle B\to C\mid C\to A\mid A\to B\rangle \xrightarrow{B\succ A} G_2 \xrightarrow{B\succ A} Q_2$$
 >
-> (outcomes $C,C,B$ respectively).<d-footnote>By relabeling symmetry, each of the six coalition orders has its own version of these two chains, giving 36 (state, coalition) pairs over 30 distinct states: all 12 cyclic states (six of them manipulable this way by exactly two distinct coalitions) plus exactly half--18 of 36--of the Condorcet-winner states, each by a unique coalition. Machine-verified.</d-footnote>\label{complex-classification}
+> (outcomes $C,C,B$ respectively).<d-footnote>By relabeling symmetry, each of the six coalition orders has its own version of these two chains, giving 36 (state, coalition) pairs across 30 distinct states: all 12 cyclic states (six of them manipulable this way by exactly two distinct coalitions) plus exactly half--18 of 36--of the Condorcet-winner states, each by a unique coalition. Machine-verified.</d-footnote>\label{complex-classification}
 
 This was a machine-verified result, and is not worth the space to write out the full proof here (which would involve tedious backtracking). But you can see for yourself by following [this link](https://eigentaylor.github.io/weakest-link/graph.html), hovering over gates ($G_1$ and $G_2$), and then holding down the "ctrl" key to see the single step preimages of the gates, and following the paths backwards to weakly worse outcomes. $G_2$ has *one* $C$ outcome preimage, which only has an $A$ outcome preimage (which marks the end of the betrayal chain). $G_1$ can go back up to three steps, all with $B$ outcomes, before reaching a state with only an $A$ outcome preimage (which marks the end of the burial chain).
 
@@ -347,7 +347,7 @@ If you can use this model to say more interesting things about Minimax for $n>3$
 
 ## Conclusion
 
-In practice, to subvert or profitably manipulate this type of election, you would first need the resources to organize widespread dishonesty (without tipping off opponents who could organize counterstrategy). But in addition to that, the amount of foreknowledge of the precise structure of the matchups is extensive to be able to predict that the coalition with your exact ordering of the three candidates has opportunity to manipulate the election.
+In practice, to subvert or profitably manipulate this type of election, you would first need the resources to organize widespread dishonesty (without tipping off opponents who could organize counterstrategy). But in addition to that, the amount of foreknowledge about the precise structure of the matchups is extensive--you'd need to know that a coalition with your exact preference ordering even has an opportunity to manipulate the election.
 
 Further, the manipulations would require convincing voters to either vote for their least favorite over their backup choice, or to betray their favorite in favor of their second choice.
 
@@ -395,13 +395,7 @@ The lesson? When it comes to manipulation, you may pick at most one of the follo
 2. The opportunity is detectable in advance
 3. The manipulation is affordable
 
-| | chaotic cultures (IC-like) | realistic cultures (IAC, spatial) |
-|---|---|---|
-| manipulable state occurs | ~1.4% of elections at a gate | ~0.02–1% |
-| state detectable by polling | essentially never | often, but then... |
-| lie is affordable | yes (~0.3% of voters) | usually not (20–50%+ of ALL voters, more than the coalition has most of the time) |
-
-Cycles are fairly rare. And even when a more common manipulable state for a coalition, that has a Condorcet winner (in the burial chain), does occur, it is exceptionally likely that the numbers required to manipulate the election (pushing it into a cycle and beyond to $Q_1$) are more than the coalition can muster.
+Cycles are fairly rare. And even when a more common manipulable state occurs-- one with a Condorcet winner from the burial chain--it is exceptionally likely that the number of voters required to manipulate the election (pushing it into a cycle and beyond to $Q_1$) is more than the coalition can muster.
 
 If a manipulation could be detected, then it generally requires more insincere voters than the coalition is likely to be able to coordinate.
 
