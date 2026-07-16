@@ -399,7 +399,7 @@ Cycles are fairly rare. And even when a more common manipulable state occurs-- o
 
 If a manipulation could be detected, then it generally requires more insincere voters than the coalition is likely to be able to coordinate.
 
-If a manipulation is cheap, that means the margins are close (too close to identify in advance with any confidence).
+If a manipulation is cheap, that means the margins are close (too close to identify in advance with any confidence<d-cite key="ShiraniMehrpolling"></d-cite>).
 
 Note that this model says nothing about psychology or human messiness. Will voters naively attempt to game the system anyway? Perhaps, conditioned by choose-one voting, will they perform the betrayal because they believe their favorite is nonviable? Probably. And that could potentially harm the outcomes.
 
