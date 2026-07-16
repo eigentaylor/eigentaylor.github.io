@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: Strategic Resilience of the Better Choices System
-date: 2026-07-12
+date: 2026-07-15
 description: A model of manipulability in the Better Choices voting system, and why it's so difficult to game.
 importance: 3
 tags: voting
