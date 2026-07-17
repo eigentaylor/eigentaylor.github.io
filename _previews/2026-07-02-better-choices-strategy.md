@@ -58,7 +58,7 @@ I primarily focus on the three candidate case, but some of these results general
 
 ## The Model
 
-Rather than have a profile or voter-centric model, we focus entirely on the election results themselves. Precise margins are not as important as their relative sizes (particularly for minimax). Hence, we identify election states with an ordered sequence of matchup results. For an election with $n$ candidates, we define a state as
+Rather than have a profile or voter-centric model, we focus entirely on the election results themselves. Precise margins are not as important as their relative sizes (particularly for minimax). Hence, we identify election states with an ordered sequence of matchup results. For an election with 3 candidates, we define a state as
 
 $$P = \langle P_1 \mid P_2 \mid P_3 \rangle, \quad P_i = (w_i \to \ell_i)$$
 
@@ -78,7 +78,7 @@ The question we investigate is not in the realm of game theory or psychology. In
 
 ### Permutations of Matchups
 
-We denote $$\sigma\in\left\{(i,i+1): 0\leq i<m\right\}\subset S_{m+1}$$ as permutations on the matchups themselves, and we define
+We denote $$\sigma\in\left\{(i,i+1): 0\leq i<3\right\}\subset S_4$$ as permutations on the matchups themselves, and we define
 
 $$(\sigma P)_i = P_{\sigma(i)}$$
 
@@ -94,7 +94,7 @@ We call a permutation $$\sigma=(i,i+1)$$ for $i>0$ a "swap of the first kind", a
 
 Rather than considering the election states as a set of isolated nodes, we can consider them as a directed graph. The nodes are the election states, and the edges are the possible manipulations of the election. We can then ask questions about how easy it is to manipulate the election, and how many manipulations are required to achieve a profitable manipulation.
 
-We define a directed graph on the set of all possible election states, where two states $P$ and $Q$ are connected by an edge if there exists a permutation $$\sigma\in\{(0,1),(1,2),\ldots,(m-1,m)\}$$ such that $Q=\sigma P$. That is, two states are connected if one can be obtained from the other by swapping the relative sizes of two matchups or reversing the smallest matchup.
+We define a directed graph on the set of all possible election states, where two states $P$ and $Q$ are connected by an edge if there exists a permutation $$\sigma\in\{(0,1),(1,2),(2,3)\}$$ such that $Q=\sigma P$. That is, two states are connected if one can be obtained from the other by swapping the relative sizes of two matchups or reversing the smallest matchup.
 
 We can understand this intuitively as $P$ being some sincere state of an election (where every voter is casting a fully honest ballot), and $Q$ being the result where a coalition of voters has insincerely changed their votes (deviated) such that they have successfully changed the relative sizes of the matchups. If $P$ and $Q$ are connected by an edge, then we say that $Q$ is achieved by a "simple manipulation" of $P$.
 
@@ -156,12 +156,14 @@ From another perspective, if we view this from the perspective that, as an indiv
 
 The contrapositive of this theorem is that any profitable simple manipulation must start with a state that has no Condorcet winner, and must instead begin in a cycle. Cycles are empirically rare (in RCV elections, at least), and hence it seems unlikely that such a scenario is likely to occur. However, we can further show that the exact requirements for a cycle with profitable manipulations are even stricter still.
 
-> **Corollary:** A simple manipulation using a swap of the second kind (reversing the smallest matchup) is never profitable.\label{second-kind-manipulation}
+> **Corollary:** A simple manipulation using a swap of the second kind (reversing the smallest matchup) is never profitable for any $n\geq3$. Specifically, it never changes the winner.\label{second-kind-manipulation}
 
 {% proof Click to expand proof %}
 **Proof:** The above theorem handles the case where $P$ has a Condorcet winner, so we only need to consider the case where $P$ has no Condorcet winner. Suppose $P$ has no Condorcet winner, and let $Q=(0,1)P$ be the result of a swap of the second kind.
 
-For $n=3$, a cycle means that every candidate loses exactly one matchup. Hence, flipping any single matchup results in the existence of a Condorcet winner. In particular, because we have given $\ell_1$ the victory over $w_1$ by reversing the smallest matchup, $\ell_1$ now wins two matchups and is the Condorcet winner of $Q$. Hence, $f(Q)=\ell_1$. Thus, $f(Q)=\ell_1=f(P)$. Therefore, the manipulation is not profitable. $\square$
+For $n=3$, a cycle means that every candidate loses exactly one matchup. Hence, flipping any single matchup results in the existence of a Condorcet winner. In particular, because we have given $\ell_1$ the victory over $w_1$ by reversing the smallest matchup, $\ell_1$ now wins two matchups and is the Condorcet winner of $Q$. Hence, $f(Q)=\ell_1$. Thus, $f(Q)=\ell_1=f(P)$. Therefore, the manipulation is not profitable.
+
+This does, in fact, generalize beyond $n=3$. If $P$ is cyclic, the above argument holds for if $Q$ now has a Condorcet winner. However, if $Q$ is still cyclic, then this new loss cannot be any candidate's worse loss. Therefore, the winner is still preserved. $\square$
 {% endproof %}
 
 This further narrows the field of possible ways to profitably manipulate the election for $n=3$. Not only must the election begin in a cycle by Theorem \ref{condorcet-stability}, but it cannot be profitably changed by changing the winner of the weakest margin. The only remaining possibility is to swap the relative strengths of the existing matchups. But we have yet to eliminate all never-profitable manipulations.
