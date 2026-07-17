@@ -303,13 +303,13 @@ $$P_0=\langle C\to A\mid B\to C\mid A\to B\rangle \xrightarrow{C\succ A} \langle
 
 achieved by the coalition insincerely voting $C\succ A$. The initial state $P_0$ has outcome $A$, and the gate $G_2$ has outcome $C$, which can be manipulated to $B$. But this is overall a loss for the coalition. Hence, we need $f(G_2)\succeq f(P_0)$ to ensure these are actually profitable manipulations.
 
-So a state admits a profitable complex manipulation if and only if it can reach $G_1$ or $G_2$ without starting at a more preferable outcome--that is, we are really asking which states are *ancestors* of a gate (that have the same or a worse outcome), not which states a gate can reach.
+So a state admits a profitable complex manipulation if and only if it can reach $G_1$ or $G_2$ without starting at a more preferable outcome--that is, we are really asking which states are *ancestors* of a gate ($P_0$ such that $G_i\in R(P_0)$ that have the same or a worse outcome than $G_i$), not which states a gate can reach.
 
-> **Theorem:** For $n=3$ and a fixed coalition $A\succ B\succ C$, exactly six of the 48 states admit a profitable complex manipulation: $G_1$ and three states that can reach $G_1$:
+> **Theorem:** For $n=3$ and a fixed coalition $A\succ B\succ C$, exactly six of the 48 states admit a profitable complex manipulation: $G_1$ and three ancestors of $G_1$:
 >
 > $$\langle B\to A\mid A\to C\mid B\to C\rangle \xrightarrow{C\succ B} \langle B\to A\mid B\to C\mid A\to C\rangle \xrightarrow{C\succ B} \langle B\to C\mid B\to A\mid A\to C\rangle \xrightarrow{C\succ B} G_1 \xrightarrow{C\succ B} Q_1$$
 >
-> (outcomes $B,B,B,B,A$ respectively), and $G_2$ and one state that can reach $G_2$:
+> (outcomes $B,B,B,B,A$ respectively). As well as $G_2$ and one ancestor of $G_2$:
 >
 > $$\langle B\to C\mid C\to A\mid A\to B\rangle \xrightarrow{B\succ A} G_2 \xrightarrow{B\succ A} Q_2$$
 >
@@ -338,6 +338,14 @@ Perhaps it does not feel so cheery to be "powerless" to overturn the election wh
 This result was also machine-verified. From $Q_2$, you can reach a few $B$-outcome states (none that can reach $G_1$), but eventually all paths lead to $C$-outcome state. This result also follows from the fact that $G_2\notin R(G_1)$.
 
 Even a maximally resourced, perfectly informed coalition improves its outcome by at most one preference notch, and only from six of the forty-eight starting states, half of which are cycles.
+
+We leave one final cheery corollary:
+
+> **Corollary:** (No Favorite Betrayal Under a Condorcet Winner) If $P$ has a Condorcet winner, there is no profitable complex manipulation for any coalition of voters involving betraying their favorite candidate in favor of a less-preferred candidate. That is, for any voter preferring $A\succ B\succ C$ in a state with a sincere Condorcet winner, then they can always vote $A\succ B$ and $A\succ C$ without fear of a profitable manipulation that would have been available had they instead voted $B\succ A$ or $C\succ A$.\label{no-favorite-betrayal}
+
+{% proof Click to expand proof %}
+**Proof:** This is also a machine-verified result, but there is some intuition for this. Gate 2 has two concordant matchups, and hence can only be reached from a state with two or more concordant matchups. If all three matchups are concordant, then $A$ would be a Condorcet winner, meaning there would be no profitable deviation from that node. Hence, any ancestor node where $A$ does not win must have the exact same matchup structure (a cycle). $\square$
+{% endproof %}
 
 ### Generalizing to More Candidates
 
@@ -403,6 +411,6 @@ If a manipulation is cheap, that means the margins are close (too close to ident
 
 Note that this model says nothing about psychology or human messiness. Will voters naively attempt to game the system anyway? Perhaps, conditioned by choose-one voting, will they perform the betrayal because they believe their favorite is nonviable? Probably. And that could potentially harm the outcomes.
 
-However, these are toy models. Impartial culture models are not exactly known for their realism, and even the more "realistic" models are still just that--models. The real world is messy, and there are many factors that could make these scenarios more or less likely, more or less detectable, and more or less affordable.
+We must keep in mind that these are toy models. Impartial culture models are not exactly known for their realism, and even the more "realistic" models are still just that--models. The real world is messy, and there are many factors that could make these scenarios more or less likely, more or less detectable, and more or less affordable.
 
-However, I do feel confident *enough* to say that voting insincerely in this system is more likely to make things worse than better.
+However, I do feel confident *enough* to say that voting insincerely in this system is more likely to make things worse than better. Just vote honestly.
