@@ -146,9 +146,11 @@ We consider three cases exhaustively. Let $P_1=(w_1\to\ell_1)$ be the smallest m
 In all cases, we have $f(P)\succeq f(Q)$, and the theorem is proven. $\square$
 {% endproof %}
 
+And already, in most elections, we have proven there's no serious need for strategic voting.
+
 We note that this theorem is only about *simple manipulations*--that is, a single swap of the first or second kind. We have not yet said anything about whether a manipulation that could perform a more radical adjustment to the matchups could be profitable. We will consider that question in the [Complex Manipulations](#complex-manipulations) section below (in fact, some nodes with a Condorcet winner *are* susceptible to profitable complex manipulations, theoretically gameable by a sufficiently massive coordinated coalition). However, if we assume that a coalition is only powerful enough to perform a single manipulation, then this theorem shows that the far and away most common scenario (starting with a Condorcet winner) is completely immune to profitable manipulation.
 
-From another perspective, if we view this from the perspective that, as an individual voter, our one vote is at most going to influence the election via a single swap of the first or second kind, then the theorem assures us that if there is a Condorcet winner, there is no reason not to just vote sincerely according to our true preferences. Any deviation from sincere voting, if it can only enact a simple manipulation, will lead to an outcome that is no better, or worse, than voting sincerely.
+From another perspective, if we view this from the perspective that, as an individual voter, changing our one vote to something insincere is at most going to change the result via a single swap, then the theorem assures us that if there is a Condorcet winner, there is no reason not to just vote sincerely according to our true preferences. Any deviation from sincere voting, if it can only enact a simple manipulation, will lead to an outcome that is no better, or worse, than voting sincerely.
 
 The contrapositive of this theorem is that any profitable simple manipulation must start with a state that has no Condorcet winner, and must instead begin in a cycle. Cycles are empirically rare (in RCV elections, at least), and hence it seems unlikely that such a scenario is likely to occur. However, we can further show that the exact requirements for a cycle with profitable manipulations are even stricter still.
 
@@ -253,7 +255,7 @@ For case 2: $C=\ell_2$ is the least preferred candidate, so we cannot have $\ell
 Therefore, in both cases, we cannot have a profitable manipulation by insincerely voting $C\succ A$ instead of $A\succ C$. $\square$
 {% endproof %}
 
-We can thus guarantee that there is *never* a reason in any scenario to vote for your *least favorite candidate* over your *most favorite candidate*. This proves that, despite allowing greater expression than a ranked Condorcet method, this system is no more manipulable than a typical Condorcet method that uses a ranked ballot.
+We can thus guarantee that there is *never* a reason in any scenario to vote for your *least favorite candidate* over your *most favorite candidate*. This proves that, despite allowing greater expression than a ranked Condorcet method (in allowing intransitive ballots), this system is no more manipulable than a typical Condorcet method that uses a ranked ballot. Voting intransitively never provides an advantage in any scenario for $n=3$.
 
 ## Complex Manipulations
 
@@ -341,11 +343,13 @@ Even a maximally resourced, perfectly informed coalition improves its outcome by
 
 We leave one final cheery corollary:
 
-> **Corollary:** (No Favorite Betrayal Under a Condorcet Winner) If $P$ has a Condorcet winner, there is no profitable complex manipulation for any coalition of voters involving betraying their favorite candidate in favor of a less-preferred candidate. That is, for any voter preferring $A\succ B\succ C$ in a state with a sincere Condorcet winner, then they can always vote $A\succ B$ and $A\succ C$ without fear of a profitable manipulation that would have been available had they instead voted $B\succ A$ or $C\succ A$.\label{no-favorite-betrayal}
+> **Corollary:** (No Favorite Betrayal Under a Condorcet Winner) If $P$ has a Condorcet winner, there is no profitable manipulation (complex or otherwise) for any coalition of voters involving betraying their favorite candidate in favor of a less-preferred candidate. That is, for any voter preferring $A\succ B\succ C$ in a state with a sincere Condorcet winner, then they can always vote $A\succ B$ and $A\succ C$ without fear of a profitable manipulation that would have been available had they instead voted $B\succ A$ or $C\succ A$.\label{no-favorite-betrayal}
 
 {% proof Click to expand proof %}
 **Proof:** This is also a machine-verified result, but there is some intuition for this. Gate 2 has two concordant matchups, and hence can only be reached from a state with two or more concordant matchups. If all three matchups are concordant, then $A$ would be a Condorcet winner, meaning there would be no profitable deviation from that node. Hence, any ancestor node where $A$ does not win must have the exact same matchup structure (a cycle). $\square$
 {% endproof %}
+
+Betrayal is only profitable if you happen to be in $G_2$, or its single cyclic ancestor (where $A$ is not the winner). This cyclic ancestor is *not reachable* from any state with a Condorcet winner that is not your favorite candidate.
 
 ### Generalizing to More Candidates
 
