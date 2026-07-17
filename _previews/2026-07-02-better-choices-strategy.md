@@ -60,9 +60,9 @@ I primarily focus on the three candidate case, but some of these results general
 
 Rather than have a profile or voter-centric model, we focus entirely on the election results themselves. Precise margins are not as important as their relative sizes (particularly for minimax). Hence, we identify election states with an ordered sequence of matchup results. For an election with $n$ candidates, we define a state as
 
-$$P = \langle P_1 \mid P_2 \mid \cdots \mid P_m \rangle, \quad P_i = (w_i \to \ell_i), \quad m = \tbinom{n}{2}$$
+$$P = \langle P_1 \mid P_2 \mid P_3 \rangle, \quad P_i = (w_i \to \ell_i)$$
 
-where $w_i$ is the winner and $\ell_i$ is the loser of the $i$-th matchup, with matchups ordered so that $P_1$ has the smallest margin and $P_m$ has the largest. We write $\operatorname{win}(P_i)=w_i$ and $\operatorname{lose}(P_i)=\ell_i$. For example, in $n=3$, the state $\langle C\to B \mid B\to A \mid A\to C\rangle$ means $C$ defeats $B$ by the smallest margin, $B$ defeats $A$ by the middle margin, and $A$ defeats $C$ by the largest margin. We also keep a mirror entry $P_0 = (\ell_1\to w_1)$, the reverse of the smallest-margin matchup.
+where $w_i$ is the winner and $\ell_i$ is the loser of the $i$-th matchup, with matchups ordered so that $P_1$ has the smallest margin and $P_3$ has the largest. We write $\operatorname{win}(P_i)=w_i$ and $\operatorname{lose}(P_i)=\ell_i$. For example, the state $\langle C\to B \mid B\to A \mid A\to C\rangle$ means $C$ defeats $B$ by the smallest margin, $B$ defeats $A$ by the middle margin, and $A$ defeats $C$ by the largest margin. We also keep a mirror entry $P_0 = (\ell_1\to w_1)$, the reverse of the smallest-margin matchup.
 
 Note that there are $\binom{3}{2}!\times 2^3=48$ possible states for 3 candidates, since there are $3!$ ways to order the matchups and $2^3$ ways to choose the winner of each matchup<d-footnote>We can also understand the collection of these states as equivalence classes of all possible elections that can happen in this system. For any election (neglecting any with tied margins), it must fall into one of these 48 states, based on the raw results and order of the margins.</d-footnote>. Out of the 48 nodes, 12 contain a cycle, and each candidate has 12 nodes in which they are a Condorcet winner. In general, for $n$ candidates, there are $\binom{n}{2}!\times 2^{\binom{n}{2}}$ possible states, which grows rapidly as $n$ increases. Already at $n=4$, there are over 46 thousand possible states. For this discussion, we will restrict ourselves to the $n=3$ case, as that is the proposal by Better Choices for Democracy<d-footnote>It also makes the analysis exceptionally simple. You can decide the <em>real</em> reason.</d-footnote>.
 
@@ -141,8 +141,8 @@ We start with an extremely cheery theorem.
 
 We consider three cases exhaustively. Let $P_1=(w_1\to\ell_1)$ be the smallest matchup, and $Q=(0,1)P$ be the result of the swap. Then we have three cases:
 
-1. If $W\neq w_1$, then $W$ still wins both of its matchups after the swap, and hence is still the Condorcet winner.
-2. If $W=w_1$, then $\ell_1$ now wins their matchup against $W$. If this creates a cycle, then $f(Q)=\operatorname{lose}(Q_1)=w_1=W$, and the winner is unchanged.
+1. If $W\neq w_1$, then $W$ still wins all of its matchups after the swap, and hence is still the Condorcet winner.
+2. If $W=w_1$, then $\ell_1$ now wins their matchup against $W$. If this creates a cycle, then $w_1$ now has exactly one pairwise loss, which is the smallest margin of the whole election. Thus, $w_1$ will be chosen by the minimax tiebreaker and the winner is unchanged.
 3. If $W=w_1$ and $\ell_1$ becomes the new Condorcet winner, then $f(Q)=\ell_1$. However, by lemma \ref{one-way-push}, this swap of the second kind is only possible if the coalition sincerely preferred $w_1\succ\ell_1$, and hence $w_1=f(P)\succ f(Q)=\ell_1$.
 
 In all cases, we have $f(P)\succeq f(Q)$, and the theorem is proven. $\square$
@@ -156,27 +156,38 @@ From another perspective, if we view this from the perspective that, as an indiv
 
 The contrapositive of this theorem is that any profitable simple manipulation must start with a state that has no Condorcet winner, and must instead begin in a cycle. Cycles are empirically rare (in RCV elections, at least), and hence it seems unlikely that such a scenario is likely to occur. However, we can further show that the exact requirements for a cycle with profitable manipulations are even stricter still.
 
-> **Corollary:** A simple manipulation using a swap of the second kind (reversing the smallest matchup) is never profitable for $n=3$. It can be profitable for $n>3$.\label{second-kind-manipulation}
+> **Corollary:** A simple manipulation using a swap of the second kind (reversing the smallest matchup) is never profitable.\label{second-kind-manipulation}
 
 {% proof Click to expand proof %}
 **Proof:** The above theorem handles the case where $P$ has a Condorcet winner, so we only need to consider the case where $P$ has no Condorcet winner. Suppose $P$ has no Condorcet winner, and let $Q=(0,1)P$ be the result of a swap of the second kind.
 
-For $n=3$, a cycle means that every candidate loses exactly one matchup. Hence, flipping any single matchup results in the existence of a Condorcet winner. In particular, because we have given $\ell_1$ the victory over $w_1$ by reversing the smallest matchup, $\ell_1$ now wins two matchups and is the Condorcet winner of $Q$. Hence, $f(Q)=\ell_1$. Thus, $f(Q)=\ell_1=f(P)$. Therefore, the manipulation is not profitable.
-
-Consider $n=4$. For $n=4$, it's possible to flip a matchup in a cycle and stay in a cycle, in which case this is genuinely profitable. If $f(P)=\operatorname{lose}(P_1)=\ell_1$ and $Q=(0,1)P$, then $f(Q)=\operatorname{lose}(Q_1)=w_1$. By lemma \ref{one-way-push}, the coalition must sincerely prefer $w_1\succ\ell_1$ to perform a swap of the second kind. Thus, $f(Q)=w_1\succ\ell_1=f(P)$, and the manipulation is profitable. $\square$
+For $n=3$, a cycle means that every candidate loses exactly one matchup. Hence, flipping any single matchup results in the existence of a Condorcet winner. In particular, because we have given $\ell_1$ the victory over $w_1$ by reversing the smallest matchup, $\ell_1$ now wins two matchups and is the Condorcet winner of $Q$. Hence, $f(Q)=\ell_1$. Thus, $f(Q)=\ell_1=f(P)$. Therefore, the manipulation is not profitable. $\square$
 {% endproof %}
-
-This is a stark case where the choice of $n=3$ elections is a benefit over taking the system to $n>3$ (at least with a minimax tiebreaker). This showcases how minimax is less robust for larger $n$, but is extremely robust for $n=3$ [due to its agreement with Ranked Pairs and Schulze](../better-choices/){:target="_blank"}<d-cite key="brandt2025condorcet"></d-cite>.
 
 This further narrows the field of possible ways to profitably manipulate the election for $n=3$. Not only must the election begin in a cycle by Theorem \ref{condorcet-stability}, but it cannot be profitably changed by changing the winner of the weakest margin. The only remaining possibility is to swap the relative strengths of the existing matchups. But we have yet to eliminate all never-profitable manipulations.
 
-> **Lemma:** A simple manipulation created by the permutation $(i,i+1)$ for $i>1$ never changes the winner of an election, and hence is never profitable for any $n\geq 3$.\label{first-kind-manipulation}
+> **Lemma:** A simple manipulation created by the permutation $(2,3)$ never changes the winner of an election, and hence is never profitable. For $n>3$, a manipulation of the form $(i,i+1)$ for $i>1$, can be profitable.\label{first-kind-manipulation}
 
 {% proof Click to expand proof %}
-**Proof:** If $P$ has a Condorcet winner, then the $(i,i+1)$ swap for $i>1$ preserves the winner, and hence is not profitable. If $P$ has no Condorcet winner, then $f(P)=\operatorname{lose}(P_1)$. But $Q_1=P_1$, and hence $f(Q)=\operatorname{lose}(Q_1)=\operatorname{lose}(P_1)=f(P)$. Hence, the manipulation is not profitable. $\square$
+**Proof:** If $P$ has a Condorcet winner, then the $(i,i+1)$ swap for $i>1$ preserves the winner, and hence is not profitable. If $P$ has no Condorcet winner, then $f(P)=\operatorname{lose}(P_1)$. But $Q_1=P_1$, and hence $f(Q)=\operatorname{lose}(Q_1)=\operatorname{lose}(P_1)=f(P)$. Hence, the manipulation is not profitable for $n=3$. 
+
+Consider the following case for $n=4$:
+
+1. $B\to A$ (smallest margin)
+2. $C\to A$
+3. $D\to A$
+4. $B\to C$
+5. $D\to B$
+6. $C\to D$ (largest margin)
+
+No candidate wins all of their matchups, so we examine the worst loss suffered by each candidate. In this case, all of $A$'s losses are by smaller margins than of any other candidate, so minimax would select $A$. But if we apply $(3,4)$, which swaps the third and fourth matchups, then $C$'s only loss becomes smaller than $A$'s worst loss, and hence $C$ is the new winner.
+
+The manipulation would be possible if a coalition of voters who sincerely prefer $C\succ A\succ D$ were to insincerely vote $D\succ A$ in order to strengthen $A$'s loss to $D$ enough to make it worse than $C$'s loss to $B$, which would be profitable. $\square$
 {% endproof %}
 
-Therefore, for $n=3$, we need *only* consider the $(1,2)$ swap of the first kind, which swaps the relative strengths of the two weakest matchups, on $P$ which contains a cycle. We have eliminated $(0,1)$ and $(2,3)$ as profitable manipulations, and hence we have reduced the field of possible profitable manipulations to a very small set of possibilities<d-footnote>Even for $n>3$, we have reduced the profitable simple manipulation space to $(0,1)$ and $(1,2)$. That is to say, only a swap of the second kind, or a swap of the two weakest matchups can ever possibly be profitable.</d-footnote>.
+This is a stark case where the choice of $n=3$ elections is a benefit over taking the system to $n>3$ (at least with a minimax tiebreaker). In the original state, it had selected the Condorcet loser $A$, and was manipulated to pick someone else. This showcases how minimax is less robust for larger $n$, but is extremely robust for $n=3$ [due to its agreement with Ranked Pairs and Schulze](../better-choices/){:target="_blank"}<d-cite key="brandt2025condorcet"></d-cite>.
+
+Therefore, for $n=3$, we need *only* consider the $(1,2)$ swap of the first kind, which swaps the relative strengths of the two weakest matchups, on $P$ which contains a cycle. We have eliminated $(0,1)$ and $(2,3)$ as profitable manipulations, and hence we have reduced the field of possible profitable manipulations to a very small set of possibilities.
 
 ## Profitable Cycles
 
@@ -355,9 +366,7 @@ Betrayal is only profitable if you happen to be in $G_2$, or its single cyclic a
 
 ### Generalizing to More Candidates
 
-Some of these theorems do generalize beyond $n=3$, but I caution at the overall expectation of robustness. Minimax, for its wonderful simplicity and ease of explanation (relative to something like Schulze), is not a very robust Condorcet method.
-
-If you can use this model to say more interesting things about Minimax for $n>3$, or perhaps generalize this model to say some interesting things about Ranked Pairs, let me know in the comments below! I developed a somewhat analogous model for IRV (Ranked-Choice Voting), which I may write about in a future post.
+Some of these theorems do generalize beyond $n=3$, but many do not. If you can use this model to say more interesting things about Minimax for $n>3$, or perhaps generalize this model to say some interesting things about Ranked Pairs, let me know in the comments below! I developed a somewhat analogous model for IRV (Ranked-Choice Voting) and STAR voting, which I plan to write about in a future post.
 
 ## Conclusion
 
