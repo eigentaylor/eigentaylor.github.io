@@ -440,6 +440,7 @@ We investigate the following questions:
 
 The following is a Jupyter notebook with the code and results for these simulations.
 
+{% proof Click to view the simulations notebook %}
 {::nomarkdown}
 {% assign jupyter_path = 'assets/jupyter/better_choices_simulations.ipynb' | relative_url %}
 {% capture notebook_exists %}{% file_exists assets/jupyter/better_choices_simulations.ipynb %}{% endcapture %}
@@ -449,6 +450,7 @@ The following is a Jupyter notebook with the code and results for these simulati
   <p>Sorry, the notebook you are looking for does not exist.</p>
 {% endif %}
 {:/nomarkdown}
+{% endproof %}
 
 ### Final Remarks
 
