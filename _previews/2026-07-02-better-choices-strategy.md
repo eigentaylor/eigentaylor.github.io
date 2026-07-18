@@ -304,6 +304,10 @@ $$\text{value}(d)_Q\geq\text{value}(d)_{P_0}>\text{value}(c)_{P_0}\geq\text{valu
 and $d$ still outranks $c$ in $Q$. $\square$
 {% endproof %}
 
+We state the following equivalent formulation of reachability without proof:
+
+> **Corollary:** (Ancestral Reachability) For matchups $c\neq d$ with $c$ concordant in $Q\in R(P_0)$: if $c$ outranks $d$ in $Q$, then either $d$ is concordant in $P_0$ or $c$ also outranks $d$ in $P_0$.\label{ancestral-reachability}
+
 A complex manipulation is profitable exactly when $Q$ satisfies (a) and (b) relative to $P_0$, and $f(Q)\succ f(P_0)$.
 
 We note that $R$ is transitive: if $G\in R(P_0)$ and $Q\in R(G)$, then $Q\in R(P_0)$ (pushing further, in the same dispreferred direction, from an already-reachable state is still reachable from $P_0$--conditions (a) and (b) chain directly). This lets us reuse the two single-step profitable manipulations we already found:
@@ -342,7 +346,29 @@ This was a machine-verified result, and is not worth the space to write out the 
 
 Three of the four burial-chain states have a Condorcet winner--namely $B$, the coalition's *middle* candidate. This turns out to be the only way a Condorcet winner can be complexly overturned: it must be the coalition's middle choice, dragging the election into a cycle that resolves in the coalition's favor. When the coalition's *least favorite* candidate is the genuine Condorcet winner, the coalition is provably powerless--both $C$-class starting points are themselves cycles.
 
-This is a comforting guarantee that a fringe group, who ranks the genuine Condorcet winner last, cannot spoil the election against the majority's clear preference. This is in contrast to [Ranked-Choice Voting](../ditch-rcv/){:target="_blank"}, where a Condorcet winner can sometimes be eliminated early due to vote splitting or manipulation<d-footnote>Suppose that the Condorcet winner $C$ gets the second most votes in RCV when there are three candidates remaining (meaning $C$ will win), and the supporters of the candidate with the most votes $A$ rank $C$ last. Then $A$ supporters can insincerely boost the last place candidate $B$, for which their candidate has a favorable matchup ($A\to B$). The Condorcet winner may then be eliminated and $A$ will win instead of the Condorcet winner. This shows that in RCV, a Condorcet winner can be toppled by gaming the eliminations.</d-footnote>.
+This is a comforting guarantee that a fringe group, who ranks the genuine Condorcet winner last, cannot spoil the election against the majority's clear preference in any way. This is in contrast to [Ranked-Choice Voting](../ditch-rcv/){:target="_blank"}, where a Condorcet winner can sometimes be eliminated early due to vote splitting or manipulation<d-footnote>Suppose that the Condorcet winner $C$ gets the second most votes in RCV when there are three candidates remaining (meaning $C$ will win), and the supporters of the candidate with the most votes $A$ rank $C$ last. Then $A$ supporters can insincerely boost the last place candidate $B$, for which their candidate has a favorable matchup ($A\to B$). The Condorcet winner may then be eliminated and $A$ will win instead of the Condorcet winner. This shows that in RCV, a Condorcet winner can be toppled by gaming the eliminations.</d-footnote>.
+
+We can actually characterize all Condorcet-winner states in terms of their vulnerability to complex manipulations.
+
+> **Theorem:** (Burial vulnerability) Let $P$ be a state with a Condorcet winner $W$. Denote $L$ the Condorcet loser in $P$, and $F$ the candidate who wins exactly one matchup ($F\to L$). Then $P$ is vulnerable to a complex burial manipulation from a coalition (ranking $F\succ W\succ L$) if and only if the margin of $F\to L$ is *wider* than the margin of $W\to F$ (that is, $F$ has a "shadow win" stronger than $F$'s loss to $W$). This implies that exactly half of all nodes with a Condorcet winner (18 out of 36) are vulnerable to a complex burial manipulation by some coalition, and half are completely immune to manipulation outright.
+
+{% proof Click to expand proof %}
+**Proof:** This follows directly from the reachability lemma and the characterization of the burial chain. $G_1$, using the labels of $F\succ W\succ L$, is
+
+$$G_1 = \langle L\to W\mid W\to F\mid F\to L\rangle.$$
+
+which has exactly one concordant matchup (the shadow win $F\to L$, which is the strongest). By Corollary \ref{ancestral-reachability} to infer about a potential ancestor state where $W$ is a Condorcet winner, using $c=F\to L$ and $d=W\to F$, either $d$ must be concordant in the ancestor state or $F\to L$ must start outranking $W\to F$.
+
+Since we are only looking at ancestors where $W$ is a Condorcet winner, meaning $W\to F$ cannot be concordant, we need that $F\to L$ still outranks $W\to F$ in the ancestor state.
+
+Therefore, the gate $G_1$ is only reachable from a state where $W$ is indeed the Condorcet winner if and only if the margin of $F\to L$ is wider than the margin of $W\to F$.
+
+For any node with the tournament structure $W\to F$, $W\to L$, $F\to L$, there are exactly three (out of $3! = 6$) orders of those matchups that have $F\to L$ outrank $W\to F$. That splits the Condorcet winner states evenly into those that are vulnerable to complex burial manipulations and those that are immune. $\square$
+
+(Machine-verified in the [verification notebook](#a-verification-notebook))
+{% endproof %}
+
+We note that this theorem provides further Condorcet stability, because if a Condorcet winner has the strongest pairwise margins, then it is immune to complex burial manipulations by any coalition. It also singles out exactly which non-Condorcet winners can ever possibly be elevated to victory through complex burial manipulations: ones who win by more than they lose to the Condorcet winner.
 
 > **Corollary:** (One-notch bound) A coalition can never improve the outcome by two notches via a complex manipulation. In particular, if $f(P_0)=C$ and $f(Q)=A$, then $Q\notin R(P_0)$.\label{one-notch}
 
