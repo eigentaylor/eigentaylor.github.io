@@ -32,8 +32,9 @@ toc:
   - name: Conclusion
   - name: Appendix
     subsections:
+      - name: A Verification Notebook
       - name: Just How Likely Are These Scenarios?
-      - name: A Jupyter Notebook
+      - name: A Simulations Notebook
       - name: Final Remarks
 ---
 
@@ -329,7 +330,7 @@ So a state admits a profitable complex manipulation if and only if it can reach 
 >
 > $$\langle B\to C\mid C\to A\mid A\to B\rangle \xrightarrow{B\succ A} G_2 \xrightarrow{B\succ A} Q_2$$
 >
-> (outcomes $C,C,B$ respectively).<d-footnote>By relabeling symmetry, each of the six coalition orders has its own version of these two chains, giving 36 (state, coalition) pairs across 30 distinct states: all 12 cyclic states (six of them manipulable this way by exactly two distinct coalitions) plus exactly half--18 of 36--of the Condorcet-winner states, each by a unique coalition. Machine-verified.</d-footnote>\label{complex-classification}
+> (outcomes $C,C,B$ respectively).<d-footnote>By relabeling symmetry, each of the six coalition orders has its own version of these two chains, giving 36 (state, coalition) pairs across 30 distinct states: all 12 cyclic states (six of them manipulable this way by exactly two distinct coalitions) plus exactly half--18 of 36--of the Condorcet-winner states, each by a unique coalition. <a href="#a-verification-notebook">Machine-verified</a>.</d-footnote>\label{complex-classification}
 
 This was a machine-verified result, and is not worth the space to write out the full proof here (which would involve tedious backtracking). But you can see for yourself by following [this link](https://eigentaylor.github.io/weakest-link/graph.html), hovering over gates ($G_1$ and $G_2$), and then holding down the "ctrl" key to see the single step preimages of the gates, and following the paths backwards to weakly worse outcomes. $G_2$ has *one* $C$ outcome preimage, which only has an $A$ outcome preimage (which marks the end of the betrayal chain). $G_1$ can go back up to three steps, all with $B$ outcomes, before reaching a state with only an $A$ outcome preimage (which marks the end of the burial chain).
 
@@ -349,7 +350,7 @@ This is a comforting guarantee that a fringe group, who ranks the genuine Condor
 **Proof:** Reaching outcome $A$ from a $P_0$ such that $A\succ f(P_0)$ requires passing through $G_1$, which contains $A\to C$. But any path out of the $C$-outcome class passes through $G_2$'s exit $Q_2=\langle A\to B\mid B\to C\mid C\to A\rangle$, which contains $C\to A$, contradicting the reachability lemma \ref{reachability}. $\square$
 {% endproof %}
 
-This result was also machine-verified. From $Q_2$, you can reach a few $B$-outcome states (none that can reach $G_1$), but eventually all paths lead back to worse $C$-outcome state. This result also follows from the fact that $G_2\notin R(G_1)$.
+This result was also [machine-verified](#a-verification-notebook). From $Q_2$, you can reach a few $B$-outcome states (none that can reach $G_1$), but eventually all paths lead back to worse $C$-outcome state. This result also follows from the fact that $G_2\notin R(G_1)$.
 
 Even a maximally resourced, perfectly informed coalition improves its outcome by at most one preference notch, and only from six of the forty-eight starting states, half of which are cycles.
 
@@ -358,7 +359,7 @@ We leave one final cheery corollary:
 > **Corollary:** (No Favorite Betrayal Under a Condorcet Winner) If $P$ has a Condorcet winner, there is no profitable manipulation (complex or otherwise) for any coalition of voters involving betraying their favorite candidate in favor of a less-preferred candidate. That is, for any voter preferring $A\succ B\succ C$ in a state with a sincere Condorcet winner, then they can always vote $A\succ B$ and $A\succ C$ without fear of a profitable manipulation that would have been available had they instead voted $B\succ A$ or $C\succ A$.\label{no-favorite-betrayal}
 
 {% proof Click to expand proof %}
-**Proof:** This is also a machine-verified result, but there is some intuition for this. Gate 2 has two concordant matchups, and hence can only be reached from a state with the same two or more concordant matchups. If all three matchups are concordant, then $A$ would be a Condorcet winner, meaning there would be no profitable deviation from that node. Hence, any ancestor node of $G_2$ where $A$ does not win must have the exact same matchup structure (a cycle). $\square$
+**Proof:** This is also a [machine-verified](#a-verification-notebook) result, but there is some intuition for this. Gate 2 has two concordant matchups, and hence can only be reached from a state with the same two or more concordant matchups. If all three matchups are concordant, then $A$ would be a Condorcet winner, meaning there would be no profitable deviation from that node. Hence, any ancestor node of $G_2$ where $A$ does not win must have the exact same matchup structure (a cycle). $\square$
 {% endproof %}
 
 Betrayal is only profitable if you happen to be in $G_2$, or its single cyclic ancestor (where $A$ is not the winner). This cyclic ancestor is *not reachable* from any state with a Condorcet winner that is not your favorite candidate.
@@ -377,7 +378,21 @@ Just vote honestly. Vote for your favorite in its matchups. Vote for your second
 
 ## Appendix
 
-For the particularly technical readers, or those who want to look at pretty graphs, I have included a Jupyter notebook with the code and results for some simulations investigating the likelihood of these scenarios occurring in practice, and how detectable and affordable they are.
+For the particularly technical readers, or those who want to look at pretty graphs, I have included two Jupyter notebooks. The first brute-forces every claim above marked "machine-verified"--the 48-state model, the theorems, and the two manipulation chains--independently of the proofs given in the text. The second runs some simulations investigating the likelihood of these scenarios occurring in practice, and how detectable and affordable they are.
+
+### A Verification Notebook
+
+Several results above--the six-state classification, the 36/30 split in its footnote, the one-notch bound, the no-favorite-betrayal corollary--are flagged as "machine-verified" rather than written out by hand. The notebook below re-derives all of them independently: it builds the 48-state model from scratch, brute-forces every theorem and corollary in the post by exhaustive search over all states and coalitions, and reconstructs the burial and betrayal chains by graph search rather than copying them from the text above. It also plots both chains, showing which states are cycles versus Condorcet winners and which single insincere vote drives each step.
+
+{::nomarkdown}
+{% assign verification_jupyter_path = 'assets/jupyter/better_choices_verification.ipynb' | relative_url %}
+{% capture verification_notebook_exists %}{% file_exists assets/jupyter/better_choices_verification.ipynb %}{% endcapture %}
+{% if verification_notebook_exists == 'true' %}
+  {% jupyter_notebook verification_jupyter_path %}
+{% else %}
+  <p>Sorry, the notebook you are looking for does not exist.</p>
+{% endif %}
+{:/nomarkdown}
 
 ### Just How Likely Are These Scenarios?
 
@@ -393,7 +408,7 @@ We investigate the following questions:
 2. What do the *margins* tend to look like at these states? This tells us both how *feasible* it would be to manipulate, and simultaneously how *precise* the knowledge would have to be to both (a) know that the scenario is manipulable, and (b) know *exactly how much* to manipulate it.
 3. What proportion of the $A\succ B\succ C$ voters would need to insincerely vote to enact the manipulation? This gives us a sense of how *practically* feasible the manipulation is (assuming the coalition had the perfect knowledge and resources to pull it off).
 
-### A Jupyter Notebook
+### A Simulations Notebook
 
 The following is a Jupyter notebook with the code and results for these simulations.
 
