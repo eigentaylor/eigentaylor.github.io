@@ -175,6 +175,23 @@ d-article {
         margin-bottom: 0.75rem;
       }
     }
+
+    // Full-height click target over the left padding gutter so a long, expanded
+    // block (e.g. an embedded notebook) can be collapsed without scrolling back
+    // up to the summary. Sits in the blank padding strip, so it never covers content.
+    .proof-disclosure-rail {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 12px;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+
+      &:hover {
+        background-color: color-mix(in srgb, var(--global-theme-color) 25%, transparent);
+      }
+    }
   }
 
   details.appendix-disclosure {

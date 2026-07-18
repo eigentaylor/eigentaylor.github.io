@@ -14,7 +14,7 @@ module Jekyll
         caption = converter.convert(caption_src).gsub(/<\/?p[^>]*>/, '').chomp
         body = converter.convert(super(context))
 
-        "<details class=\"proof-disclosure\" data-proof-disclosure><summary>#{caption}</summary><div class=\"proof-content\">#{body}</div></details>"
+        "<details class=\"proof-disclosure\" data-proof-disclosure><summary>#{caption}</summary><div class=\"proof-disclosure-rail\" data-proof-disclosure-rail aria-hidden=\"true\" title=\"Collapse\"></div><div class=\"proof-content\">#{body}</div></details>"
       end
     end
   end

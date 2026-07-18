@@ -72,10 +72,32 @@
         maybeOpenFromHash();
     }
 
+    // The rail runs the full height of the block, so it stays clickable at
+    // whatever scroll position the user is at inside a long expanded proof
+    // (e.g. an embedded notebook), without needing to scroll back to the summary.
+    function initProofDisclosureRails() {
+        document.addEventListener("click", function (event) {
+            var rail = event.target.closest && event.target.closest("[data-proof-disclosure-rail]");
+            if (!rail) return;
+
+            var details = rail.closest("details.proof-disclosure");
+            if (!details) return;
+
+            details.open = !details.open;
+            rail.title = details.open ? "Collapse" : "Expand";
+
+            if (!details.open) {
+                details.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        });
+    }
+
     if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", initProofDisclosures);
+        document.addEventListener("DOMContentLoaded", initProofDisclosureRails);
     } else {
         initProofDisclosures();
+        initProofDisclosureRails();
     }
 
     window.addEventListener("hashchange", maybeOpenFromHash);
