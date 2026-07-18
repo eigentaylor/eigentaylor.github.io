@@ -404,12 +404,13 @@ Just vote honestly. Vote for your favorite in its matchups. Vote for your second
 
 ## Appendix
 
-For the particularly technical readers, or those who want to look at pretty graphs, I have included two Jupyter notebooks. The first brute-forces every claim above marked "machine-verified"--the 48-state model, the theorems, and the two manipulation chains--independently of the proofs given in the text. The second runs some simulations investigating the likelihood of these scenarios occurring in practice, and how detectable and affordable they are.
+For the particularly technical readers, or those who want to look at pretty graphs, I have included two Jupyter notebooks. The first brute-forces every claim above marked "machine-verified" independently of the proofs given in the text. The second runs some simulations investigating the likelihood of these scenarios occurring in practice, and how detectable and affordable they are.
 
 ### A Verification Notebook
 
-Several results above--the six-state classification, the 36/30 split in its footnote, the one-notch bound, the no-favorite-betrayal corollary--are flagged as "machine-verified" rather than written out by hand. The notebook below re-derives all of them independently: it builds the 48-state model from scratch, brute-forces every theorem and corollary in the post by exhaustive search over all states and coalitions, and reconstructs the burial and betrayal chains by graph search rather than copying them from the text above. It also plots both chains, showing which states are cycles versus Condorcet winners and which single insincere vote drives each step.
+Several results above are flagged as "machine-verified" rather than written out by hand. The notebook below re-derives all of them independently for the sake of transparency.
 
+{% proof Click to view the verification notebook %}
 {::nomarkdown}
 {% assign verification_jupyter_path = 'assets/jupyter/better_choices_verification.ipynb' | relative_url %}
 {% capture verification_notebook_exists %}{% file_exists assets/jupyter/better_choices_verification.ipynb %}{% endcapture %}
@@ -419,6 +420,7 @@ Several results above--the six-state classification, the 36/30 split in its foot
   <p>Sorry, the notebook you are looking for does not exist.</p>
 {% endif %}
 {:/nomarkdown}
+{% endproof %}
 
 ### Just How Likely Are These Scenarios?
 
