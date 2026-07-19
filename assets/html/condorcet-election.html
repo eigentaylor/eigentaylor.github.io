@@ -314,6 +314,68 @@
         margin-top: 3px;
       }
 
+      /* ── Current-state notation (strategy mode only) ── */
+      .state-notation {
+        display: none;
+        text-align: center;
+        font-size: 13.5px;
+        background: white;
+        border-radius: 10px;
+        padding: 10px 14px;
+        margin-bottom: 10px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        border: 1.5px solid transparent;
+        transition:
+          box-shadow 0.15s,
+          border-color 0.15s;
+      }
+
+      .state-notation .state-bracket {
+        color: #aaa;
+        font-weight: bold;
+      }
+
+      .state-notation .state-node {
+        font-weight: bold;
+      }
+      .state-notation .state-node.alice {
+        color: var(--alice);
+      }
+      .state-notation .state-node.bob {
+        color: var(--bob);
+      }
+      .state-notation .state-node.clark {
+        color: var(--clark);
+      }
+
+      .state-notation .state-arrow {
+        color: #999;
+        margin: 0 1px;
+      }
+
+      .state-notation .state-sep {
+        color: #ccc;
+        margin: 0 8px;
+      }
+
+      .state-notation .landmark-label {
+        font-size: 10.5px;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        color: #a07800;
+        font-weight: bold;
+        margin-bottom: 6px;
+      }
+
+      /* Glow when the current state matches a named gate/result or a step
+         in the burial/betrayal manipulation chains. */
+      .state-notation.landmark {
+        border-color: #f0c840;
+        box-shadow:
+          0 0 10px rgba(240, 200, 64, 0.55),
+          0 1px 4px rgba(0, 0, 0, 0.1);
+      }
+
       /* ── Strategy presets (hidden unless ?strategy param) ── */
       .strategy-section {
         display: none;
@@ -428,6 +490,8 @@
         </div>
       </div>
 
+      <div class="state-notation" id="state-notation"></div>
+
       <div class="sliders">
         <!-- Alice vs Bob -->
         <div class="slider-card" id="card-0">
@@ -514,6 +578,8 @@
         const mAB = ab - 50; // Alice's advantage over Bob
         const mAC = ac - 50; // Alice's advantage over Clark
         const mBC = bc - 50; // Bob's advantage over Clark
+
+        if (STRATEGY_MODE) updateStateNotation(mAB, mAC, mBC);
 
         // Glow the overall election winner's name in every slider card
         const CNAME_IDS = { Alice: ["cn-ab-l", "cn-ac-l"], Bob: ["cn-ab-r", "cn-bc-l"], Clark: ["cn-ac-r", "cn-bc-r"] };
@@ -617,7 +683,63 @@
 
       if (STRATEGY_MODE) {
         document.getElementById("strategy-section").style.display = "block";
+        document.getElementById("state-notation").style.display = "block";
         document.getElementById("caption").style.display = "none";
+      }
+
+      // ── Current-state notation ──────────────────────────────────────────────
+      // Renders the tournament as ⟨ winner→loser | winner→loser | winner→loser ⟩,
+      // ordered weakest matchup first — the notation used in the blog post — and
+      // glows when the state exactly matches a named gate/result (G1, G2, Q1, Q2)
+      // or a step in the burial/betrayal manipulation chains. Matching is by
+      // sign pattern + margin-strength order, so it lights up for the whole
+      // region, not just the exact preset values.
+
+      const MATCHUP_ENDS = { AB: ["Alice", "Bob"], AC: ["Alice", "Clark"], BC: ["Bob", "Clark"] };
+
+      const LANDMARKS = [
+        { label: "Burial chain — 3 steps from the gate", signs: { AB: -1, AC: 1, BC: 1 }, order: ["AB", "AC", "BC"] },
+        { label: "Burial chain — 2 steps from the gate", signs: { AB: -1, AC: 1, BC: 1 }, order: ["AB", "BC", "AC"] },
+        { label: "Burial chain — 1 step from the gate", signs: { AB: -1, AC: 1, BC: 1 }, order: ["BC", "AB", "AC"] },
+        { label: "G₁ — the burial gate", signs: { AB: -1, AC: 1, BC: -1 }, order: ["BC", "AB", "AC"] },
+        { label: "Q₁ — burial succeeds, Alice wins", signs: { AB: -1, AC: 1, BC: -1 }, order: ["AB", "BC", "AC"] },
+        { label: "Betrayal chain — 1 step from the gate", signs: { AB: 1, AC: -1, BC: 1 }, order: ["BC", "AC", "AB"] },
+        { label: "G₂ — the betrayal gate", signs: { AB: 1, AC: -1, BC: 1 }, order: ["BC", "AB", "AC"] },
+        { label: "Q₂ — betrayal succeeds, Bob wins", signs: { AB: 1, AC: -1, BC: 1 }, order: ["AB", "BC", "AC"] },
+      ];
+
+      function classifyState(mAB, mAC, mBC) {
+        if (mAB === 0 || mAC === 0 || mBC === 0) return null;
+        const vals = { AB: mAB, AC: mAC, BC: mBC };
+        const signs = { AB: mAB > 0 ? 1 : -1, AC: mAC > 0 ? 1 : -1, BC: mBC > 0 ? 1 : -1 };
+        const order = ["AB", "AC", "BC"].sort((a, b) => Math.abs(vals[a]) - Math.abs(vals[b]));
+        return (
+          LANDMARKS.find(
+            (lm) => lm.signs.AB === signs.AB && lm.signs.AC === signs.AC && lm.signs.BC === signs.BC && lm.order.every((k, i) => k === order[i])
+          ) || null
+        );
+      }
+
+      function formatStateNotation(mAB, mAC, mBC) {
+        if (mAB === 0 || mAC === 0 || mBC === 0) {
+          return '<span class="state-bracket">⟨</span> tie in a matchup — no strict order <span class="state-bracket">⟩</span>';
+        }
+        const vals = { AB: mAB, AC: mAC, BC: mBC };
+        const order = ["AB", "AC", "BC"].sort((a, b) => Math.abs(vals[a]) - Math.abs(vals[b]));
+        const parts = order.map((key) => {
+          const [l, r] = MATCHUP_ENDS[key];
+          const [w, lo] = vals[key] > 0 ? [l, r] : [r, l];
+          return `<span class="state-node ${CLS[w]}">${w}</span><span class="state-arrow">→</span><span class="state-node ${CLS[lo]}">${lo}</span>`;
+        });
+        return `<span class="state-bracket">⟨</span> ${parts.join('<span class="state-sep">|</span>')} <span class="state-bracket">⟩</span>`;
+      }
+
+      function updateStateNotation(mAB, mAC, mBC) {
+        const el = document.getElementById("state-notation");
+        const landmark = classifyState(mAB, mAC, mBC);
+        el.classList.toggle("landmark", !!landmark);
+        const labelHTML = landmark ? `<div class="landmark-label">${landmark.label}</div>` : "";
+        el.innerHTML = labelHTML + formatStateNotation(mAB, mAC, mBC);
       }
 
       // Default slider values, used to restore the sliders when the preset is reset.
