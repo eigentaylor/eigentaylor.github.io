@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: Strategic Resilience of the Better Choices System
-date: 2026-07-16
+date: 2026-07-18
 description: A model of manipulability in the Better Choices voting system, and why it's so difficult to game.
 importance: 3
 tags: voting
@@ -29,6 +29,8 @@ toc:
   - name: Starting with a Condorcet Winner
   - name: Profitable Cycles
   - name: Complex Manipulations
+    subsections:
+      - name: The Manipulation Chains
   - name: Conclusion
   - name: Appendix
     subsections:
@@ -325,6 +327,8 @@ $$P_0=\langle C\to A\mid B\to C\mid A\to B\rangle \xrightarrow{C\succ A} \langle
 achieved by the coalition insincerely voting $C\succ A$. The initial state $P_0$ has outcome $A$, and the gate $G_2$ has outcome $C$, which can be manipulated to $B$. But this is overall a loss for the coalition. Hence, we need $f(G_2)\succeq f(P_0)$ to ensure these are actually profitable manipulations.
 
 So a state admits a profitable complex manipulation if and only if it can reach $G_1$ or $G_2$ without starting at a more preferable outcome--that is, we are really asking which states are "*ancestors*" of a gate ($P_0$ such that $G_i\in R(P_0)$ that have the same or a worse outcome than $G_i$), not which states a gate can reach.
+
+## The Manipulation Chains
 
 > **Theorem:** For $n=3$ and a fixed coalition $A\succ B\succ C$, exactly six of the 48 states admit a profitable complex manipulation: $G_1$ and three ancestors of $G_1$ (the "burial chain"):
 >
