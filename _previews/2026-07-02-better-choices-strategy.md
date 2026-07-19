@@ -414,7 +414,9 @@ Just vote honestly. Vote for your favorite in its matchups. Vote for your second
 
 ## Appendix
 
-For the particularly technical readers, or those who want to look at pretty graphs, I have included two Jupyter notebooks. The first brute-forces every claim above marked "machine-verified" independently of the proofs given in the text. The second runs some simulations investigating the likelihood of these scenarios occurring in practice, and how detectable and affordable they are.
+For the particularly technical readers, or those who want to look at pretty graphs, I have included two Jupyter notebooks. I am not a coder, so the code was written with AI assistance.
+
+The first notebook essentially brute-forces every claim above marked "machine-verified" independently of the proofs given in the text. The second runs some simulations investigating the likelihood of these scenarios occurring in practice, and how detectable and affordable they are.
 
 ### A Verification Notebook
 
@@ -434,11 +436,9 @@ Several results above are flagged as "machine-verified" rather than written out 
 
 ### Just How Likely Are These Scenarios?
 
-The model I've developed is pure in the sense that it gives us the objective election states that *might* be manipulable, and the precise manipulations that *could* be profitable. This is a necessary condition, but it is not sufficient. For example, if we have a node at the start of a burial chain where $B$ is a Condorcet winner, then is it even necessarily possible that there are *enough* $A\succ B\succ C$ voters to even push the election into $Q_1$? If there are not, then the manipulation is not just impractical, but impossible.
+The model I've developed is pure in the sense that it gives us the objective election states that *might* be manipulable, and the precise manipulations that *could* be profitable. This is a necessary condition, but it says nothing about feasibility. For example, if we have a node at the start of a burial chain where $B$ is a Condorcet winner, then is it even necessarily possible that there are *enough* $A\succ B\succ C$ voters to even push the election into $Q_1$? If there are not, then the manipulation is not just impractical, but impossible.
 
-To give at least a *basic* answer to this, we look at a few models for how voters might be distributed, and do some basic simulations.
-
-We use a few different models for how voters might be distributed, including a few "impartial culture" models<d-footnote>These are models where each voter's preferences are drawn independently and uniformly at random. We include both transitive-only and cyclic preferences included.</d-footnote>, a Mallows model<d-footnote>The Mallows model generates voter preferences that are centered around a reference ranking, with a parameter controlling the dispersion around this reference.</d-footnote>, and a spatial model<d-footnote>In the spatial model, voters and candidates are placed in an ideological space, and voters rank candidates based on proximity.</d-footnote>. Impartial culture models ["maximize the probability of Condorcet cycles"](https://electowiki.org/wiki/Condorcet_paradox#Modeling_Condorcet_cycles), and hence these results are very likely upper bounds on the *actual* probability of these scenarios. All of this to say, please take the following results with a healthy dose of salt.
+To give at least a *basic* answer to this, we look at a few different models for how voters might be distributed, and do some basic simulations. Including a few "impartial culture" models<d-footnote>These are models where each voter's preferences are drawn independently and uniformly at random. We include both transitive-only with different voter numbers and cyclic preferences included.</d-footnote>, a Mallows model<d-footnote>The Mallows model generates voter preferences that are centered around a reference ranking, with a parameter controlling the dispersion around this reference.</d-footnote>, and a spatial model<d-footnote>In the spatial model, voters and candidates are placed in an ideological space, and voters rank candidates based on proximity.</d-footnote>. Impartial culture models ["maximize the probability of Condorcet cycles"](https://electowiki.org/wiki/Condorcet_paradox#Modeling_Condorcet_cycles), and hence these results are very likely upper bounds on the *actual* probability of these scenarios. All of this to say, please take the following results with a healthy dose of salt.
 
 We investigate the following questions:
 
@@ -479,6 +479,6 @@ However, the likelihood of these opportunities occurring in practice is also of 
 
 Note that this model says nothing about psychology or human messiness. Will voters naively attempt to game the system anyway? Probably. Perhaps, conditioned by choose-one voting, they perform the betrayal because they believe their favorite is nonviable. And that could potentially harm the outcomes.
 
-We must keep in mind that these are toy models. Impartial culture models are not exactly known for their realism, and even the more "realistic" models are still just that--models. The real world is messy, and there are many factors that could make these scenarios more or less likely, more or less detectable, and more or less affordable.
+We must keep in mind that these are toy models. Impartial culture models are not exactly known for their realism (especially when cyclic preferences are allowed, which implies one in four voters has an intransitive preference), and even the more "realistic" models are still just that--models. The real world is messy, and there are many factors that could make these scenarios more or less likely, more or less detectable, and more or less affordable.
 
 However, I do feel confident *enough* to say that voting insincerely in this system is more likely to make things worse than better. Just vote honestly.
