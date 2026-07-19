@@ -52,7 +52,7 @@ But unlike a typical Condorcet method, where voters submit rankings, voters in t
 
 One might wonder if this system is *more* manipulable than a typical Condorcet method, since voters can submit more complex preferences. I will show that this system is no more manipulable than a typical Condorcet method--that is to say that an intransitive ballot does not create an advantageous position for a transitive voter.
 
-In this post, I define a model of strategic manipulation in this system and show that it is *very* difficult to manipulate. In practice, there is essentially no reason to vote in any way but with complete honesty.
+In this post, I define a model of strategic manipulation in this system and show that it is *very* difficult to manipulate. In practice, there is essentially no reason to vote in any way but with complete honesty. It should be noted that this is not a question of "if voters act strategically (for no good reason), how good are the outcomes<d-footnote>This is often what VSE<d-cite key="quinn2017vseSummary"></d-cite> and other <a href="https://www.equal.vote/gaming_the_vote">"gameability" simulations</a> do: If voters apply a specific, coded strategy, how do the outcomes fare?</d-footnote>?" Think of this model as measuring how successful a heist, executed by a perfectly coordinated omniscient voter bloc, can possibly be.
 
 I primarily focus on the three candidate case, but some of these results generalize beyond that. Warning to the reader: this post is a bit more technical than my usual.
 
@@ -428,7 +428,7 @@ The model I've developed is pure in the sense that it gives us the objective ele
 
 To give at least a *basic* answer to this, we look at a few models for how voters might be distributed, and do some basic simulations.
 
-We use a few different models for how voters might be distributed, including a few "impartial culture" models, a mallows model, and a spatial model. Impartial culture models ["maximize the probability of Condorcet cycles"](https://electowiki.org/wiki/Condorcet_paradox#Modeling_Condorcet_cycles), and hence these results are very likely upper bounds on the *actual* probability of these scenarios. All of this to say, please take the following results with a healthy dose of salt.
+We use a few different models for how voters might be distributed, including a few "impartial culture" models<d-footnote>These are models where each voter's preferences are drawn independently and uniformly at random. We include both transitive-only and cyclic preferences included.</d-footnote>, a mallows model<d-footnote>The Mallows model generates voter preferences that are centered around a reference ranking, with a parameter controlling the dispersion around this reference.</d-footnote>, and a spatial model<d-footnote>In the spatial model, voters and candidates are placed in an ideological space, and voters rank candidates based on proximity.</d-footnote>. Impartial culture models ["maximize the probability of Condorcet cycles"](https://electowiki.org/wiki/Condorcet_paradox#Modeling_Condorcet_cycles), and hence these results are very likely upper bounds on the *actual* probability of these scenarios. All of this to say, please take the following results with a healthy dose of salt.
 
 We investigate the following questions:
 
@@ -460,11 +460,12 @@ The lesson? When it comes to manipulation, you may pick at most one of the follo
 2. The opportunity is detectable in advance
 3. The manipulation is affordable
 
-Cycles are fairly rare. And even when a more common manipulable state occurs-- one with a Condorcet winner from the burial chain--it is exceptionally likely that the number of voters required to manipulate the election (pushing it into a cycle and beyond to $Q_1$) is more than the coalition can muster.
+The primary dichotomy is as follows:
 
-If a manipulation could be detected, then it generally requires more insincere voters than the coalition is likely to be able to coordinate.
+- If a manipulation could be detected, then it generally requires more insincere voters than the coalition is likely to be able to coordinate.
+- If a manipulation is cheap, that means the margins are close (too close to identify in advance with any confidence<d-cite key="ShiraniMehrpolling"></d-cite>).
 
-If a manipulation is cheap, that means the margins are close (too close to identify in advance with any confidence<d-cite key="ShiraniMehrpolling"></d-cite>).
+However, the likelihood of these opportunities occurring in practice is also of consideration. In the models where cycles are most likely (impartial culture, particularly when voters can have cyclic preferences themselves), the margins are almost always too small to detect. In the more realistic models, the states are obscenely rare, but highly visible (making them completely infeasible to exploit).
 
 Note that this model says nothing about psychology or human messiness. Will voters naively attempt to game the system anyway? Probably. Perhaps, conditioned by choose-one voting, they perform the betrayal because they believe their favorite is nonviable. And that could potentially harm the outcomes.
 
