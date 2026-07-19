@@ -422,6 +422,8 @@
         <div class="preset-btns">
           <button class="preset-btn" id="btn-p0" onclick="applyPreset(0)">Scenario 1 (<em>G</em><sub>1</sub>)</button>
           <button class="preset-btn" id="btn-p1" onclick="applyPreset(1)">Scenario 2 (<em>G</em><sub>2</sub>)</button>
+          <button class="preset-btn" id="btn-p2" onclick="applyPreset(2)">Burial Chain (start)</button>
+          <button class="preset-btn" id="btn-p3" onclick="applyPreset(3)">Betrayal Chain (start)</button>
           <button class="preset-btn reset-btn" onclick="clearPreset()">Reset</button>
         </div>
       </div>
@@ -635,6 +637,23 @@
           bc: 55,
           hint: { card: 0, arrow: "←", text: "Try moving this slider left until Bob wins" },
         },
+        {
+          // Start of the burial chain: Bob already beats both Alice and Clark outright.
+          // Sliding only this matchup (the one lie, buried deeper and deeper) walks
+          // through every burial-chain state and eventually flips the winner to Alice.
+          ab: 40,
+          ac: 65,
+          bc: 70,
+          hint: { card: 2, arrow: "←", text: "Bob wins outright here — keep moving this slider left through several stages until Alice wins" },
+        },
+        {
+          // Start of the betrayal chain: a genuine cycle, Clark wins the minimax tiebreak.
+          // Sliding only this matchup (the one lie) walks through the gate and flips to Bob.
+          ab: 70,
+          ac: 35,
+          bc: 55,
+          hint: { card: 0, arrow: "←", text: "Clark wins this cycle's tiebreak — keep moving this slider left until Bob wins" },
+        },
       ];
 
       let activePreset = null;
@@ -663,8 +682,7 @@
         });
 
         // Update button active state
-        document.getElementById("btn-p0").classList.toggle("active", idx === 0);
-        document.getElementById("btn-p1").classList.toggle("active", idx === 1);
+        PRESETS.forEach((_, i) => document.getElementById("btn-p" + i).classList.toggle("active", idx === i));
 
         // Re-measure after the hint strip is in the DOM
         sendHeight();
@@ -676,8 +694,7 @@
           document.getElementById("card-" + i).classList.remove("strategic");
           document.getElementById("hint-" + i).innerHTML = "";
         });
-        document.getElementById("btn-p0").classList.remove("active");
-        document.getElementById("btn-p1").classList.remove("active");
+        PRESETS.forEach((_, i) => document.getElementById("btn-p" + i).classList.remove("active"));
       }
 
       // "Reset" button — clears the preset annotations AND restores the sliders
