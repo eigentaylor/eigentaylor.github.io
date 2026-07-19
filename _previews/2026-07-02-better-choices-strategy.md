@@ -64,6 +64,8 @@ In this post, I define a model of strategic manipulation in this system and show
 
 I primarily focus on the three-candidate case, but some of these results generalize beyond that. Warning to the reader: this post is a bit more technical than my usual.
 
+You can go to [this link](https://eigentaylor.github.io/weakest-link/graph.html) to see the sort of visual "companion tool" to the analysis below.
+
 ## The Model
 
 Rather than have a profile- or voter-centric model, we focus entirely on the election results themselves. Precise margins are not as important as their relative sizes (particularly for minimax). Hence, we identify election states with an ordered sequence of matchup results. For an election with 3 candidates, we define a state as
@@ -466,9 +468,8 @@ The following is a Jupyter notebook with the code and results for these simulati
 
 The lesson? When it comes to manipulation, you may pick at most one of the following:
 
-1. The opportunity is likely
-2. The opportunity is detectable in advance
-3. The manipulation is affordable
+1. The opportunity is detectable in advance
+2. The manipulation is affordable
 
 The primary dichotomy is as follows:
 
