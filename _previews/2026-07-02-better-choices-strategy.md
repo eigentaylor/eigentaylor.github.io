@@ -32,6 +32,7 @@ toc:
   - name: Complex Manipulations
     subsections:
       - name: The Manipulation Chains
+      - name: Generalizing to More Candidates
   - name: Conclusion
   - name: Appendix
     subsections:
@@ -61,11 +62,11 @@ One might wonder if this system is *more* manipulable than a typical Condorcet m
 
 In this post, I define a model of strategic manipulation in this system and show that it is *very* difficult to manipulate. In practice, there is essentially no reason to vote in any way but with complete honesty. It should be noted that this is not a question of "if voters act strategically (for no good reason), how good are the outcomes<d-footnote>This is often what VSE<d-cite key="quinn2017vseSummary"></d-cite> and other <a href="https://www.equal.vote/gaming_the_vote">"gameability" simulations</a> do: If voters apply a specific, coded strategy, how do the outcomes fare?</d-footnote>?" Think of this model as measuring how successful a heist, executed by a perfectly coordinated omniscient voter bloc, can possibly be.
 
-I primarily focus on the three candidate case, but some of these results generalize beyond that. Warning to the reader: this post is a bit more technical than my usual.
+I primarily focus on the three-candidate case, but some of these results generalize beyond that. Warning to the reader: this post is a bit more technical than my usual.
 
 ## The Model
 
-Rather than have a profile or voter-centric model, we focus entirely on the election results themselves. Precise margins are not as important as their relative sizes (particularly for minimax). Hence, we identify election states with an ordered sequence of matchup results. For an election with 3 candidates, we define a state as
+Rather than have a profile- or voter-centric model, we focus entirely on the election results themselves. Precise margins are not as important as their relative sizes (particularly for minimax). Hence, we identify election states with an ordered sequence of matchup results. For an election with 3 candidates, we define a state as
 
 $$P = \langle P_1 \mid P_2 \mid P_3 \rangle, \quad P_i = (w_i \to \ell_i)$$
 
@@ -333,7 +334,7 @@ achieved by the coalition insincerely voting $C\succ A$. The initial state $P_0$
 
 So a state admits a profitable complex manipulation if and only if it can reach $G_1$ or $G_2$ without starting at a more preferable outcome--that is, we are really asking which states are "*ancestors*" of a gate ($P_0$ such that $G_i\in R(P_0)$ that have the same or a worse outcome than $G_i$), not which states a gate can reach.
 
-## The Manipulation Chains
+### The Manipulation Chains
 
 > **Theorem:** For $n=3$ and a fixed coalition $A\succ B\succ C$, exactly six of the 48 states admit a profitable complex manipulation: $G_1$ and three ancestors of $G_1$ (the "burial chain"):
 >
@@ -345,7 +346,7 @@ So a state admits a profitable complex manipulation if and only if it can reach 
 >
 > (outcomes $C,C,B$ respectively).<d-footnote>By relabeling symmetry, each of the six coalition orders has its own version of these two chains, giving 36 (state, coalition) pairs across 30 distinct states: all 12 cyclic states (six of them manipulable this way by exactly two distinct coalitions) plus exactly half--18 of 36--of the Condorcet-winner states, each by a unique coalition. <a href="#a-verification-notebook">Machine-verified</a>.</d-footnote>\label{complex-classification}
 
-This was a machine-verified result, and is not worth the space to write out the full proof here (which would involve tedious backtracking). But you can see for yourself by following [this link](https://eigentaylor.github.io/weakest-link/graph.html), hovering over gates ($G_1$ and $G_2$), and then holding down the "ctrl" key to see the single step preimages of the gates, and following the paths backwards to weakly worse outcomes. $G_2$ has *one* $C$ outcome preimage, which only has an $A$ outcome preimage (which marks the end of the betrayal chain). $G_1$ can go back up to three steps, all with $B$ outcomes, before reaching a state with only an $A$ outcome preimage (which marks the end of the burial chain).
+This was a machine-verified result, and is not worth the space to write out the full proof here (which would involve tedious backtracking). But you can see for yourself by following [this link](https://eigentaylor.github.io/weakest-link/graph.html), hovering over gates ($G_1$ and $G_2$), and then holding down the "ctrl" key to see the single-step preimages of the gates, and following the paths backwards to weakly worse outcomes. $G_2$ has *one* $C$ outcome preimage, which only has an $A$ outcome preimage (which marks the end of the betrayal chain). $G_1$ can go back up to three steps, all with $B$ outcomes, before reaching a state with only an $A$ outcome preimage (which marks the end of the burial chain).
 
 > **Corollary:** (Single-lie sufficiency) Every profitable complex manipulation can be reduced to a single lie told at increasing strength. The four burial-chain states are profitably manipulated by the lone insincere vote $C\succ B$ (burying $B$), pushed to increasing depth; the two betrayal-chain states by the lone insincere vote $B\succ A$ (betraying $A$). The six states differ only in *how far* the lie must be pushed--1 to 4 margin ranks.\label{single-lie}
 
@@ -377,7 +378,7 @@ For any node with the tournament structure $W\to F$, $W\to L$, $F\to L$, there a
 (Machine-verified in the [verification notebook](#a-verification-notebook))
 {% endproof %}
 
-We note that this theorem provides further Condorcet stability, because if a Condorcet winner has the strongest pairwise margins, then it is immune to complex burial manipulations by any coalition. It also singles out exactly which non-Condorcet winners can ever possibly be elevated to victory through complex burial manipulations: ones who win by more than they lose to the Condorcet winner.
+We note that this theorem provides further Condorcet stability. For example, if a Condorcet winner has the strongest pairwise margins, then it is immune to complex burial manipulations by any coalition. It also singles out exactly which non-Condorcet winners can ever possibly be elevated to victory through complex burial manipulations: ones who win by more than they lose to the Condorcet winner.
 
 > **Corollary:** (One-notch bound) A coalition can never improve the outcome by two notches via a complex manipulation. In particular, if $f(P_0)=C$ and $f(Q)=A$, then $Q\notin R(P_0)$.\label{one-notch}
 
@@ -405,7 +406,7 @@ Some of these theorems do generalize beyond $n=3$, but many do not. If you can u
 
 ## Conclusion
 
-I came up with this model to investigate if the fact that being able to vote in a cycle would give voters an opportunity to subvert the election. The answer, as we have proved, is a clear **no**. We have shown the stability of a Condorcet winner to simple manipulation, the 2/48 states where a profitable simple manipulation is possible for a coalition, and the modest addition of 4 additional states where a more complex (but likely infeasible--see [the appendix](#appendix)) manipulation could occur. We also proved that outside of a particular cycle structure, the system satisfies No Favorite Betrayal.
+I came up with this model to investigate whether being able to vote in a cycle would give voters an opportunity to subvert the election. The answer, as we have proved, is a clear **no**. We have shown the stability of a Condorcet winner to simple manipulation, the 2/48 states where a profitable simple manipulation is possible for a coalition, and the modest addition of 4 additional states where a more complex (but likely infeasible--see [the appendix](#appendix)) manipulation could occur. We also proved that outside of the betrayal chain, the system satisfies No Favorite Betrayal.
 
 To subvert an election, one must first start in or push the sincere election state into a cycle. And even then, the result can only be moved up a single step in the preference ordering. Though a perfectly strategyproof voting system does not exist with three or more candidates<d-cite key="gibbard1973manipulation"></d-cite>, this system is potentially the closest one can truly get.
 
@@ -437,7 +438,7 @@ The model I've developed is pure in the sense that it gives us the objective ele
 
 To give at least a *basic* answer to this, we look at a few models for how voters might be distributed, and do some basic simulations.
 
-We use a few different models for how voters might be distributed, including a few "impartial culture" models<d-footnote>These are models where each voter's preferences are drawn independently and uniformly at random. We include both transitive-only and cyclic preferences included.</d-footnote>, a mallows model<d-footnote>The Mallows model generates voter preferences that are centered around a reference ranking, with a parameter controlling the dispersion around this reference.</d-footnote>, and a spatial model<d-footnote>In the spatial model, voters and candidates are placed in an ideological space, and voters rank candidates based on proximity.</d-footnote>. Impartial culture models ["maximize the probability of Condorcet cycles"](https://electowiki.org/wiki/Condorcet_paradox#Modeling_Condorcet_cycles), and hence these results are very likely upper bounds on the *actual* probability of these scenarios. All of this to say, please take the following results with a healthy dose of salt.
+We use a few different models for how voters might be distributed, including a few "impartial culture" models<d-footnote>These are models where each voter's preferences are drawn independently and uniformly at random. We include both transitive-only and cyclic preferences included.</d-footnote>, a Mallows model<d-footnote>The Mallows model generates voter preferences that are centered around a reference ranking, with a parameter controlling the dispersion around this reference.</d-footnote>, and a spatial model<d-footnote>In the spatial model, voters and candidates are placed in an ideological space, and voters rank candidates based on proximity.</d-footnote>. Impartial culture models ["maximize the probability of Condorcet cycles"](https://electowiki.org/wiki/Condorcet_paradox#Modeling_Condorcet_cycles), and hence these results are very likely upper bounds on the *actual* probability of these scenarios. All of this to say, please take the following results with a healthy dose of salt.
 
 We investigate the following questions:
 
