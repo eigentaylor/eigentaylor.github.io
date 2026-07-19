@@ -235,26 +235,6 @@ Perhaps more intriguingly, the mirror symmetry extends to $Q_1$ and $Q_2$ as wel
 
 This [interactive tool](https://eigentaylor.github.io/weakest-link/graph.html) visualizes these states and the manipulations available to a coalition preferring $A\succ B\succ C$.
 
-### A Playground
-
-If you are interested, you can use the playground below to see the profitable strategies in action. Suppose you are a voter who most prefers Alice, then Bob, then Clark. Then insincere voting would involve moving any of the sliders to the left.
-
-<iframe id="condorcet-election-frame" src="/assets/html/condorcet-election.html?strategy"
-  width="100%" height="480" scrolling="yes"
-  frameborder="0"
-  style="border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.18); display: block; margin-top: 1rem; overflow: hidden;"
-  title="Interactive Condorcet/minimax election visualization">
-</iframe>
-<script>
-window.addEventListener("message", function(e) {
-  if (e.data && e.data.condorcetElectionHeight) {
-    var f = document.getElementById("condorcet-election-frame");
-    if (f) f.style.height = e.data.condorcetElectionHeight + "px";
-  }
-});
-</script>
-<br>
-
 ### Corollaries of Profitable Simple Manipulations
 
 We also get a few corollaries from this result.
@@ -350,6 +330,26 @@ So a state admits a profitable complex manipulation if and only if it can reach 
 
 This was a machine-verified result, and is not worth the space to write out the full proof here (which would involve tedious backtracking). But you can see for yourself by following [this link](https://eigentaylor.github.io/weakest-link/graph.html), hovering over gates ($G_1$ and $G_2$), and then holding down the "ctrl" key to see the single-step preimages of the gates, and following the paths backwards to weakly worse outcomes. $G_2$ has *one* $C$ outcome preimage, which only has an $A$ outcome preimage (which marks the end of the betrayal chain). $G_1$ can go back up to three steps, all with $B$ outcomes, before reaching a state with only an $A$ outcome preimage (which marks the end of the burial chain).
 
+### A Playground
+
+If you are interested, you can use the playground below to see the profitable strategies in action. Suppose you are a voter who most prefers Alice, then Bob, then Clark. Then insincere voting would involve moving any of the sliders to the left.
+
+<iframe id="condorcet-election-frame" src="/assets/html/condorcet-election.html?strategy"
+  width="100%" height="480" scrolling="yes"
+  frameborder="0"
+  style="border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.18); display: block; margin-top: 1rem; overflow: hidden;"
+  title="Interactive Condorcet/minimax election visualization">
+</iframe>
+<script>
+window.addEventListener("message", function(e) {
+  if (e.data && e.data.condorcetElectionHeight) {
+    var f = document.getElementById("condorcet-election-frame");
+    if (f) f.style.height = e.data.condorcetElectionHeight + "px";
+  }
+});
+</script>
+<br>
+
 > **Corollary:** (Single-lie sufficiency) Every profitable complex manipulation can be reduced to a single lie told at increasing strength. The four burial-chain states are profitably manipulated by the lone insincere vote $C\succ B$ (burying $B$), pushed to increasing depth; the two betrayal-chain states by the lone insincere vote $B\succ A$ (betraying $A$). The six states differ only in *how far* the lie must be pushed--1 to 4 margin ranks.\label{single-lie}
 
 {% proof Click to expand proof %}
@@ -379,6 +379,8 @@ For any node with the tournament structure $W\to F$, $W\to L$, $F\to L$, there a
 
 (Machine-verified in the [verification notebook](#a-verification-notebook))
 {% endproof %}
+
+You can see this in the [playground](#a-playground) above by making a slight adjustment to the Burial Chain scenario. Move the top slider until Bob defeats Alice by a wider margin than Alice defeats Clark. ex. by default Alice beats Clark 65:35, and Bob beats Alice 60:40. Change the Bob-Alice matchup to 66:34 for Bob, and then try the burial manipulation of moving the bottom slider to the left. You will see that the manipulation now elects Clark instead of Alice.
 
 We note that this theorem provides further Condorcet stability. For example, if a Condorcet winner has the strongest pairwise margins, then it is immune to complex burial manipulations by any coalition. It also singles out exactly which non-Condorcet winners can ever possibly be elevated to victory through complex burial manipulations: ones who win by more than they lose to the Condorcet winner.
 
