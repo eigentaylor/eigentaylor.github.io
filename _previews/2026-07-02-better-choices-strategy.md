@@ -17,6 +17,7 @@ authors:
     affiliations:
       name: Equal Vote Coalition (Volunteer)
 toc:
+  - name: Abstract
   - name: Introduction
   - name: The Model
     subsections:
@@ -39,6 +40,10 @@ toc:
       - name: A Simulations Notebook
       - name: Final Remarks
 ---
+
+## Abstract
+
+The [Better Choices system](../better-choices/){:target="_blank"} lets voters submit intransitive preferences that no ranked ballot could express. I model the system purely in terms of outcomes--a directed graph over the 48 possible outcome states for three candidates, with edges standing in for the only moves a coalition can make--and use it to show that manipulation is extraordinarily narrow: a Condorcet winner can never be unseated by a single move, the system satisfies No Favorite Betrayal when the sincere state of the election has a Condorcet winner, only 2 of 48 states admit any profitable one-step manipulation, chaining moves together never gains more than one preference notch, and intransitive ballots never help at all. Simulations against several voter models confirm these scenarios are either too rare, too small-margin to detect, or too costly to organize in practice. The upshot: just vote honestly.
 
 ## Introduction
 
@@ -400,9 +405,9 @@ Some of these theorems do generalize beyond $n=3$, but many do not. If you can u
 
 ## Conclusion
 
-In practice, to subvert or profitably manipulate this type of election, you would first need the resources to organize widespread dishonesty (without tipping off opponents who could organize counterstrategy). But in addition to that, the amount of foreknowledge about the precise structure of the matchups is extensive--you'd need to know that a coalition with your exact preference ordering even has an opportunity to manipulate the election.
+I came up with this model to investigate if the fact that being able to vote in a cycle would give voters an opportunity to subvert the election. The answer, as we have proved, is a clear **no**. We have shown the stability of a Condorcet winner to simple manipulation, the 2/48 states where a profitable simple manipulation is possible for a coalition, and the modest addition of 4 additional states where a more complex (but likely infeasible--see [the appendix](#appendix)) manipulation could occur. We also proved that outside of a particular cycle structure, the system satisfies No Favorite Betrayal.
 
-I simply do not see this as a practical concern. If you are a voter voting in such an election, I cannot recommend enough that you vote sincerely. There is effectively no way to game the result without an unrealistic amount of knowledge, foresight, confidence, and *resources*.
+To subvert an election, one must first start in or push the sincere election state into a cycle. And even then, the result can only be moved up a single step in the preference ordering. Though a perfectly strategyproof voting system does not exist with three or more candidates<d-cite key="gibbard1973manipulation"></d-cite>, this system is potentially the closest one can truly get.
 
 Just vote honestly. Vote for your favorite in its matchups. Vote for your second choice against your last choice. This system gives you the opportunity to have say in every single race, whether it is competitive or not. Don't think about strategy, just vote.
 
