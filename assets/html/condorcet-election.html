@@ -849,11 +849,10 @@
         sendHeight();
       }
 
-      // When the user manually moves a slider, clear the preset annotation
-      // (but leave slider values alone) so the strategic highlight doesn't
-      // mislead about the current state.
+      // Manually moving a slider leaves the active preset's hint in place —
+      // it stays visible as guidance while dragging through the manipulation,
+      // and only clears via Reset or by picking a different preset.
       function onSliderInput() {
-        if (activePreset !== null) clearPresetAnnotations();
         update();
       }
 
