@@ -25,13 +25,13 @@ toc:
       - name: The Graph
   - name: Simple Manipulations
     subsections:
-      - name: A Playground
       - name: Corollaries of Profitable Simple Manipulations
   - name: Starting with a Condorcet Winner
   - name: Profitable Cycles
   - name: Complex Manipulations
     subsections:
       - name: The Manipulation Chains
+      - name: A Playground
       - name: Generalizing to More Candidates
   - name: Conclusion
   - name: Appendix
@@ -80,7 +80,7 @@ The only way for the result of an election to possibly change is to change the r
 
 Focusing instead on individual voters, or ranking profiles, is not necessary or helpful, particularly because all the matchups are independent: any possible margins list can be achieved by some profile of voters. Hence, we can focus entirely on the election results themselves, through the only method of manipulation: a coalition of voters changing their sincere votes to attempt to change the relative sizes of the matchups.
 
-> **Lemma:** For $n=3$ candidates, every cycle involves each candidate losing and winning exactly one matchup. Hence, for $n=3$, a candidate's worst loss and their only loss are the same thing, so minimax selects $\operatorname{lose}(P_1)$ in the case of a cycle.
+> **Lemma:** For $n=3$ candidates, every cycle involves each candidate losing and winning exactly one matchup. Hence, for $n=3$, a candidate's worst loss and their only loss are the same thing, so minimax selects $\operatorname{lose}(P_1)$ in the case of a cycle.\label{cycle-single-loss}
 
 We can thus define the decision rule of the Better Choices system as a function where if $P$ has a Condorcet winner $W$ (i.e. if there exist two distinct $i,j$ such that $\operatorname{win}(P_i)=\operatorname{win}(P_j)=W$, meaning that $W$ defeats both of the other candidates), then $f(P)=W$. Otherwise, if $P$ has no Condorcet winner, then minimax determines $f(P)=\operatorname{lose}(P_1)=\operatorname{win}(P_0)$, the candidate who loses by the least amount.
 
@@ -168,7 +168,7 @@ From another perspective, if we view this from the perspective that, as an indiv
 
 The contrapositive of this theorem is that any profitable simple manipulation must start with a state that has no Condorcet winner (a cycle). Cycles are empirically rare (in RCV elections, at least), and hence it seems unlikely that such a scenario is likely to occur. However, we can further show that the exact requirements for a cycle with profitable manipulations are even stricter still.
 
-> **Corollary:** A simple manipulation using a swap of the second kind (reversing the smallest matchup) is never profitable for any $n\geq3$.\label{second-kind-manipulation}
+> **Lemma:** A simple manipulation using a swap of the second kind (reversing the smallest matchup) is never profitable for any $n\geq3$.\label{second-kind-manipulation}
 
 {% proof Click to expand proof %}
 **Proof:** The above theorem handles the case where $P$ has a Condorcet winner, so we only need to consider the case where $P$ has no Condorcet winner. Suppose $P$ has no Condorcet winner, and let $Q=(0,1)P$ be the result of a swap of the second kind.
@@ -278,7 +278,7 @@ To return to the tug-of-war analogy, we can imagine a complex manipulation as a 
 
 Using "concordant" and "discordant" as defined above, we can characterize the states reachable from $P_0$ by the coalition's manipulations.
 
-> **Lemma:** (Reachability) $Q\in R(P_0)$ if and only if
+> **Theorem:** (Reachability) $Q\in R(P_0)$ if and only if
 >
 > **(a)** every matchup concordant in $Q$ is concordant in $P_0$; and
 >
@@ -302,7 +302,7 @@ A complex manipulation is profitable exactly when $Q$ satisfies (a) and (b) rela
 
 We note that $R$ is transitive: if $G\in R(P_0)$ and $Q\in R(G)$, then $Q\in R(P_0)$ (pushing further, in the same dispreferred direction, from an already-reachable state is still reachable from $P_0$--conditions (a) and (b) chain directly). This lets us reuse the two single-step profitable manipulations we already found:
 
-> **Lemma:** (Gates) Every profitable complex manipulation passes through a gate: its first strictly-improving step is the simple manipulation out of $G_1$ (to $Q_1$) or out of $G_2$ (to $Q_2$).\label{gates}
+> **Corollary:** (Gates) Every profitable complex manipulation passes through a gate: its first strictly-improving step is the simple manipulation out of $G_1$ (to $Q_1$) or out of $G_2$ (to $Q_2$).\label{gates}
 
 {% proof Click to expand proof %}
 **Proof:** By Theorem \ref{profitable-cycles}, these are the only two strictly $f$-improving edges in the entire deviation graph for this coalition. Any profitable path must contain at least one strictly improving step, and that step must be one of these two. $\square$
@@ -365,7 +365,7 @@ We can actually characterize all Condorcet-winner states in terms of their vulne
 > **Theorem:** (Burial vulnerability) Let $P$ be a state with a Condorcet winner $W$. Denote $L$ the Condorcet loser in $P$, and $F$ the candidate who wins exactly one matchup ($F\to L$). Then $P$ is vulnerable to a complex burial manipulation from a coalition (ranking $F\succ W\succ L$) if and only if the margin of $F\to L$ is *wider* than the margin of $W\to F$ (that is, $F$ has a "shadow win" stronger than $F$'s loss to $W$). This implies that exactly half of all nodes with a Condorcet winner (18 out of 36) are vulnerable to a complex burial manipulation by some coalition, and half are completely immune to manipulation outright.
 
 {% proof Click to expand proof %}
-**Proof:** This follows directly from the reachability lemma and the characterization of the burial chain. $G_1$, using the labels of $F\succ W\succ L$, is
+**Proof:** This follows directly from the Reachability theorem and the characterization of the burial chain. $G_1$, using the labels of $F\succ W\succ L$, is
 
 $$G_1 = \langle L\to W\mid W\to F\mid F\to L\rangle.$$
 
@@ -387,16 +387,16 @@ We note that this theorem provides further Condorcet stability. For example, if 
 > **Corollary:** (One-notch bound) A coalition can never improve the outcome by two notches via a complex manipulation. In particular, if $f(P_0)=C$ and $f(Q)=A$, then $Q\notin R(P_0)$.\label{one-notch}
 
 {% proof Click to expand proof %}
-**Proof:** Reaching outcome $A$ from a $P_0$ such that $A\succ f(P_0)$ requires passing through $G_1$, which contains $A\to C$. But any path out of the $C$-outcome class passes through $G_2$'s exit $Q_2=\langle A\to B\mid B\to C\mid C\to A\rangle$, which contains $C\to A$, contradicting the reachability lemma \ref{reachability}. $\square$
+**Proof:** Reaching outcome $A$ from a $P_0$ such that $A\succ f(P_0)$ requires passing through $G_1$, which contains $A\to C$. But any path out of the $C$-outcome class passes through $G_2$'s exit $Q_2=\langle A\to B\mid B\to C\mid C\to A\rangle$, which contains $C\to A$, contradicting the Reachability theorem \ref{reachability}. $\square$
 {% endproof %}
 
 This result was also [machine-verified](#a-verification-notebook). From $Q_2$, you can reach a few $B$-outcome states (none that can reach $G_1$), but eventually all paths lead back to worse $C$-outcome state. This result also follows from the fact that $G_2\notin R(G_1)$.
 
 Even a maximally resourced, perfectly informed coalition improves its outcome by at most one preference notch, and only from six of the forty-eight starting states, half of which are cycles.
 
-We leave one final cheery corollary:
+We leave one final cheery result:
 
-> **Corollary:** (No Favorite Betrayal Under a Condorcet Winner) If $P$ has a Condorcet winner, there is no profitable manipulation (complex or otherwise) for any coalition of voters involving betraying their favorite candidate in favor of a less-preferred candidate. That is, for any voter preferring $A\succ B\succ C$ in a state with a sincere Condorcet winner, then they can always vote $A\succ B$ and $A\succ C$ without fear of a profitable manipulation that would have been available had they instead voted $B\succ A$ or $C\succ A$.\label{no-favorite-betrayal}
+> **Theorem:** (No Favorite Betrayal Under a Condorcet Winner) If $P$ has a Condorcet winner, there is no profitable manipulation (complex or otherwise) for any coalition of voters involving betraying their favorite candidate in favor of a less-preferred candidate. That is, for any voter preferring $A\succ B\succ C$ in a state with a sincere Condorcet winner, then they can always vote $A\succ B$ and $A\succ C$ without fear of a profitable manipulation that would have been available had they instead voted $B\succ A$ or $C\succ A$.\label{no-favorite-betrayal}
 
 {% proof Click to expand proof %}
 **Proof:** This is also a [machine-verified](#a-verification-notebook) result, but there is some intuition for this. Gate 2 has two concordant matchups, and hence can only be reached from a state with the same two or more concordant matchups. If all three matchups are concordant, then $A$ would be a Condorcet winner, meaning there would be no profitable deviation from that node. Hence, any ancestor node of $G_2$ where $A$ does not win must have the exact same matchup structure (a cycle). $\square$
