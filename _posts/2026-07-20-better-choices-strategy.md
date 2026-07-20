@@ -399,7 +399,9 @@ We leave one final cheery result:
 > **Theorem:** (No Favorite Betrayal Under a Condorcet Winner) If $P$ has a Condorcet winner, there is no profitable manipulation (complex or otherwise) for any coalition of voters involving betraying their favorite candidate in favor of a less-preferred candidate. That is, for any voter preferring $A\succ B\succ C$ in a state with a sincere Condorcet winner, then they can always vote $A\succ B$ and $A\succ C$ without fear of a profitable manipulation that would have been available had they instead voted $B\succ A$ or $C\succ A$.\label{no-favorite-betrayal}
 
 {% proof Click to expand proof %}
-**Proof:** This is also a [machine-verified](#a-verification-notebook) result, but there is some intuition for this. Gate 2 has two concordant matchups, and hence can only be reached from a state with the same two or more concordant matchups. If all three matchups are concordant, then $A$ would be a Condorcet winner, meaning there would be no profitable deviation from that node. Hence, any ancestor node of $G_2$ where $A$ does not win must have the exact same matchup structure (a cycle). $\square$
+**Proof:** This is also a [machine-verified](#a-verification-notebook) result, but there is some intuition for this. To reach Gate 1, the Burial chain only requires manipulating your vote in the $B$ vs $C$ matchup. There are, in fact, steps on the chain that *could* be achieved with a $B\succ A$ deviation, as well as a $C\succ B$ deviation. However, by single-lie sufficiency, only the $C\succ B$ is *required*. In fact, since the final step requires making $C\to B$ stronnger than $B\to A$, doing any $B\succ A$ deviation actually makes the manipulation *more difficult*. Therefore, while the burial chain could theoretically include some $B\succ A$ deviations, they are ultimately *counterproductive* and unnecessary. Thus, we focus on the betrayal chain:
+
+Gate 2 has two concordant matchups, and hence can only be reached from a state with the same two or more concordant matchups. If all three matchups are concordant, then $A$ would be a Condorcet winner, meaning there would be no profitable deviation from that node. Hence, any ancestor node of $G_2$ where $A$ does not win must have the exact same matchup structure (a cycle). $\square$
 {% endproof %}
 
 Betrayal is only profitable if you happen to be in $G_2$, or its single cyclic ancestor (where $A$ is not the winner). This cyclic ancestor is *not reachable* from any state with a Condorcet winner that is not your favorite candidate.
@@ -420,7 +422,7 @@ Just vote honestly. Vote for your favorite in its matchups. Vote for your second
 
 For the particularly technical readers, or those who want to look at pretty graphs, I have included two Jupyter notebooks. I am not a coder, so the code was written with AI assistance.
 
-The first notebook essentially brute-forces every claim above marked "machine-verified" independently of the proofs given in the text. The second runs some simulations investigating the likelihood of these scenarios occurring in practice, and how detectable and affordable they are.
+The first notebook essentially brute-forces every claim above marked "machine-verified" independently of the proofs given in the text, as well as the [interactive github pages site](https://eigentaylor.github.io/weakest-link/graph.html). The second runs some simulations investigating the likelihood of these scenarios occurring in practice, and how detectable and affordable they are.
 
 ### A Verification Notebook
 
@@ -470,13 +472,8 @@ The following is a Jupyter notebook with the code and results for these simulati
 
 The lesson? When it comes to manipulation, you may pick at most one of the following:
 
-1. The opportunity is detectable in advance
-2. The manipulation is affordable
-
-The primary dichotomy is as follows:
-
-- If a manipulation could be detected, then it generally requires more insincere voters than the coalition is likely to be able to coordinate.
-- If a manipulation is cheap, that means the margins are close (too close to identify in advance with any confidence<d-cite key="ShiraniMehrpolling"></d-cite>).
+1. The opportunity is detectable in advance: If a manipulation could be detected, then it generally requires more insincere voters than the coalition is likely to be able to coordinate.
+2. The manipulation is affordable: If a manipulation is cheap, that means the margins are close (too close to identify in advance with any confidence<d-cite key="ShiraniMehrpolling"></d-cite>).
 
 However, the likelihood of these opportunities occurring in practice is also of consideration. In the models where cycles are most likely (impartial culture, particularly when voters can have cyclic preferences themselves), the margins are almost always too small to detect. In the more realistic models, the states are obscenely rare, but highly visible (making them completely infeasible to exploit).
 
