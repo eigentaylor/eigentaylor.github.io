@@ -226,12 +226,12 @@ Using that $P$ is a cycle, meaning every candidate must lose exactly one matchup
 
 **Case 2**: Weaken $w_2\to\ell_2$. In this case, the coalition must sincerely prefer $w_2\succ\ell_2$, and prefer the altered outcome $\ell_2\succ\ell_1$. Hence, we must have that $w_2\succ\ell_2\succ\ell_1$. Let us label this preference $A\succ B\succ C$ ($A=w_2$, $B=\ell_2$, $C=\ell_1$). Then we have that $P_2=(A\to B)$ and $\operatorname{lose}(P_1)=C$.
 
-Similarly as we did for the first case, we deduce that $\ell_3=C$, $w_3=A$, and $\operatorname{win}(P_1)=B$. Hence, $P=\langle B\to C\mid A\to B\mid C\to A\rangle$, and $Q=(1,2)P=\langle A\to B\mid B\to C\mid C\to A\rangle$. This is the second profitable manipulation, where $f(P)=C$ and $f(Q)=B$. The manipulation is done, specifically, by voters who sincerely prefer $A\succ B$ but insincerely vote $B\succ A$ instead. By betraying their favorite, they allow their second favorite to win instead of their least favorite.
+Similarly as we did for the first case, we deduce that $\ell_3=C$, $w_3=A$, and $\operatorname{win}(P_1)=B$. Hence, $P=\langle B\to C\mid A\to B\mid C\to A\rangle$, and $Q=(1,2)P=\langle A\to B\mid B\to C\mid C\to A\rangle$. This is the second profitable manipulation, where $f(P)=C$ and $f(Q)=B$. The manipulation is done, specifically, by voters who sincerely prefer $A\succ B$ but insincerely vote $B\succ A$ instead. By betraying their favorite, they allow their second favorite to win instead of their least favorite. $\square$
 {% endproof %}
 
-Something worth observing is how $G_1$ and $G_2$ are mirror images of each other. The candidates in each matchup are the same, but the winners and losers are reversed. This can be achieved by taking an election in $G_1$ and reversing the preferences of all voters. In that sense, $G_1$ and $G_2$ are "dual" to each other, and the manipulations are also dual to each other.
+Something worth observing is how $G_1$ and $G_2$ are mirror images of each other. The candidates in each matchup are the same, but the winners and losers are reversed. This can be achieved by taking an election in $G_1$ and reversing the preferences of all voters. In that sense, $G_1$ and $G_2$, as well as their respective manipulations, are "dual" to each other.
 
-Perhaps more intriguingly, the mirror symmetry extends to $Q_1$ and $Q_2$ as well, as does the manipulation. The mirror of a burial for a $A\succ B\succ C$ coalition is a betrayal for a $C\succ B\succ A$ coalition, and vice versa. What does not carry over is profitability.
+Perhaps more intriguingly, the mirror symmetry extends to $Q_1$ and $Q_2$ as well. The mirror of a burial for a $A\succ B\succ C$ coalition is a betrayal for a $C\succ B\succ A$ coalition, and vice versa. What does not carry over is profitability.
 
 This [interactive tool](https://eigentaylor.github.io/weakest-link/graph.html) visualizes these states and the manipulations available to a coalition preferring $A\succ B\succ C$.
 
@@ -247,7 +247,7 @@ We also get a few corollaries from this result.
 
 We can thus say that in any cycle, there is some group who could stand to profit. However, this would require foreknowledge of both that there would be a cycle, and the exact cycle structure for that coalition to know a manipulation is even possible, in addition to the resources required to perform the manipulation.
 
-> **Corollary:** For $n=3$ and a coalition of voters with preference $A\succ B\succ C$, the simple manipulation caused by performing a non-adjacent deviation of voting for $C$ over $A$ is never profitable. That is, submitting an intransitive ballot like $A\succ B$, $B\succ C$, and $C\succ A$ instead of the sincere $A\succ B$, $A\succ C$, and $B\succ C$ is never profitable for any $P$.\label{no-intransitive-manipulation}
+> **Corollary:** For $n=3$ and a coalition of voters with preference $A\succ B\succ C$, the simple manipulation caused by performing a non-adjacent deviation of voting for $C$ over $A$ is never profitable. That is, submitting an intransitive ballot like $A\succ B$, $B\succ C$, and $C\succ A$ instead of the sincere $A\succ B$, $A\succ C$, and $B\succ C$ is never profitable for any $P$. This also implies that it is never profitable to vote for your least favorite candidate over your favorite.\label{no-intransitive-manipulation}
 
 {% proof Click to expand proof %}
 **Proof:** Copying the logic from the proof of Theorem \ref{profitable-cycles}, suppose that $f(P)=\ell_1$ and $f(Q)=\ell_2$ for $Q=(1,2)P$, both cyclic scenarios. We want a profitable deviation, meaning the voters must prefer $\ell_2\succ\ell_1$. By lemma \ref{one-way-push}, the only way to achieve the $(1,2)$ swap is by either sincerely preferring
@@ -262,7 +262,7 @@ For case 2: $C=\ell_2$ is the least preferred candidate, so we cannot have $\ell
 Therefore, in both cases, we cannot have a profitable manipulation by insincerely voting $C\succ A$ instead of $A\succ C$. $\square$
 {% endproof %}
 
-We can thus guarantee that there is *never* a reason in any scenario to vote for your *least favorite candidate* over your *most favorite candidate*. This proves that, despite allowing greater expression than a ranked Condorcet method (in allowing intransitive ballots), this system is no more manipulable than a typical Condorcet method that uses a ranked ballot. Voting intransitively never provides an advantage in any scenario for $n=3$.
+We can thus guarantee that there is *never* a reason in any scenario to vote for your *least favorite candidate* over your *most favorite candidate*. This proves that, despite allowing greater expression than a ranked Condorcet method (in allowing intransitive ballots), this system is no more manipulable than a typical Condorcet method that uses a ranked ballot. Voting intransitively never provides an advantage in any scenario.
 
 ## Complex Manipulations
 
@@ -294,11 +294,11 @@ $$\text{value}(d)_Q\geq\text{value}(d)_{P_0}>\text{value}(c)_{P_0}\geq\text{valu
 and $d$ still outranks $c$ in $Q$. $\square$
 {% endproof %}
 
-We state the following equivalent formulation of reachability without proof:
+A complex manipulation is profitable exactly when $Q$ satisfies (a) and (b) relative to $P_0$, and $f(Q)\succ f(P_0)$.
+
+We state the following equivalent (contrapositive) formulation of reachability without proof:
 
 > **Corollary:** (Ancestral Reachability) For matchups $c\neq d$ with $c$ concordant in $Q\in R(P_0)$: if $c$ outranks $d$ in $Q$, then either $d$ is concordant in $P_0$ or $c$ also outranks $d$ in $P_0$.\label{ancestral-reachability}
-
-A complex manipulation is profitable exactly when $Q$ satisfies (a) and (b) relative to $P_0$, and $f(Q)\succ f(P_0)$.
 
 We note that $R$ is transitive: if $G\in R(P_0)$ and $Q\in R(G)$, then $Q\in R(P_0)$ (pushing further, in the same dispreferred direction, from an already-reachable state is still reachable from $P_0$--conditions (a) and (b) chain directly). This lets us reuse the two single-step profitable manipulations we already found:
 
@@ -380,7 +380,7 @@ For any node with the tournament structure $W\to F$, $W\to L$, $F\to L$, there a
 (Machine-verified in the [verification notebook](#a-verification-notebook))
 {% endproof %}
 
-You can see this in the [playground](#a-playground) above by making a slight adjustment to the Burial Chain scenario. Move the top slider until Bob defeats Alice by a wider margin than Alice defeats Clark. ex. by default Alice beats Clark 65:35, and Bob beats Alice 60:40. Change the Bob-Alice matchup to 66:34 for Bob, and then try the burial manipulation of moving the bottom slider to the left. You will see that the manipulation now elects Clark instead of Alice.
+You can see this in the [playground](#a-playground) above by making a slight adjustment to the Burial Chain scenario. Move the top slider until Bob defeats Alice by a wider margin than Alice defeats Clark. ex. by default Alice beats Clark 65:35, and Alice loses to Bob 40:60. Change the Alice-Bob matchup to 34:66 for Bob, and then try the burial manipulation of moving the bottom slider to the left. You will see that the manipulation now elects Clark instead of Alice.
 
 We note that this theorem provides further Condorcet stability. For example, if a Condorcet winner has the strongest pairwise margins, then it is immune to complex burial manipulations by any coalition<d-footnote>Interestingly, in spatial simulations, the vulnerable states appear significantly more often than vulnerable states. About 60-65% of the time. This is due to the geometry, where $L$ is the farthest from the center.</d-footnote>. It also singles out exactly which non-Condorcet winners can ever possibly be elevated to victory through complex burial manipulations: ones who win by more than they lose to the Condorcet winner.
 
