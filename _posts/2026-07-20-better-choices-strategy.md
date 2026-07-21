@@ -424,7 +424,7 @@ Just vote honestly. Vote for your favorite in its matchups. Vote for your second
 
 For the particularly technical readers, or those who want to look at pretty graphs, I have included two Jupyter notebooks. I am not a coder, so the code was written with AI assistance.
 
-The first notebook essentially brute-forces every claim above marked "machine-verified" independently of the proofs given in the text, as well as the [interactive GitHub pages site](https://eigentaylor.github.io/weakest-link/graph.html). The second runs some simulations investigating the likelihood of these scenarios occurring in practice, and how detectable and affordable they are.
+The first notebook essentially brute-forces every claim above marked "machine-verified" independently of the proofs given in the text, as well as the [interactive GitHub Pages site](https://eigentaylor.github.io/weakest-link/graph.html). The second runs some simulations investigating the likelihood of these scenarios occurring in practice, and how detectable and affordable they are.
 
 ### A Verification Notebook
 
