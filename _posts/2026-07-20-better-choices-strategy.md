@@ -48,7 +48,7 @@ The [system proposed by Better Choices for Democracy](../better-choices/){:targe
 
 ## Introduction
 
-[Better Choices for Democracy](https://www.betterchoices.vote/top3) ([more details here](../better-choices/){:target="_blank"}) is pushing a very interesting flavor of Condorcet where voters vote in all three head-to-head matchups between the candidates who make it to a top-3 runoff. I wrote about my complex thoughts on it in my last posts, but here I want to expound on the strategic resilience of the system.
+[Better Choices for Democracy](https://www.betterchoices.vote/top3) ([more details here](../better-choices/){:target="_blank"}) is pushing a very interesting flavor of Condorcet where voters vote in all three head-to-head matchups between the candidates who make it to a top-3 runoff. I wrote about my complex thoughts on it in my last post, but here I want to expound on the strategic resilience of the system.
 
 The winner in this system is the candidate who wins both of their head-to-head matchups (a "Condorcet winner"). If there is a "tie"--where every candidate wins and loses exactly one matchup, and nobody wins both--the winner is determined by "minimax" (the candidate with the least bad loss wins if every candidate loses at least one matchup)<d-footnote>This is not the proper definition of minimax for $n>3$ candidates. However, it is a short and practical definition for the three-candidate case considered here. It should also be noted that at $n=3$, this definition matches with both the Ranked Pairs and Schulze methods.<d-cite key="brandt2025condorcet"></d-cite></d-footnote>.
 
@@ -58,13 +58,13 @@ As with any voting system, we can ask how manipulable the system is. That is, ho
 
 But unlike a typical Condorcet method, where voters submit rankings, voters in the Better Choices system can submit much more complex preferences that cannot be expressed on a typical ranked ballot. For example, a voter can say they vote for Rock over Scissors, Scissors over Paper, and Paper over Rock. This is a perfectly valid ballot in the Better Choices system, but it is not a valid ranking because it is not transitive.
 
-One might wonder if this system is *more* manipulable than a typical Condorcet method, since voters can submit more complex preferences. I will show that this system is no more manipulable than a typical Condorcet method--that is to say that an intransitive ballot does not create an advantageous position for a transitive voter.
+One might wonder if this system is *more* manipulable than a typical Condorcet method, since voters can submit more complex preferences. I will show that this system is no more manipulable than a typical Condorcet method--that is to say that an intransitive ballot creates no advantageous position for a voter with transitive preferences.
 
 In this post, I define a model of strategic manipulation in this system and show that it is *very* difficult to manipulate. In practice, there is essentially no reason to vote in any way but with complete honesty. It should be noted that this is not a question of "if voters act strategically (for no good reason), how good are the outcomes<d-footnote>This is often what VSE<d-cite key="quinn2017vseSummary"></d-cite> and other <a href="https://www.equal.vote/gaming_the_vote">"gameability" simulations</a> do: If voters apply a specific, coded strategy, how do the outcomes fare?</d-footnote>?" Think of this model as measuring how successful a heist, executed by a perfectly coordinated omniscient voter bloc, can possibly be.
 
 I primarily focus on the three-candidate case, but some of these results generalize beyond that. Warning to the reader: this post is a bit more technical than my usual.
 
-You can go to [this link](https://eigentaylor.github.io/weakest-link/graph.html) to see the sort of visual "companion tool" to the analysis below.
+You can go to [this link](https://eigentaylor.github.io/weakest-link/graph.html) to see a visual "companion tool" to the analysis below.
 
 ## The Model
 
@@ -166,7 +166,7 @@ We note that this theorem is only about *simple manipulations*--that is, a singl
 
 From another perspective, if we view this from the perspective that, as an individual voter, changing our one vote to something insincere is at most going to change the result via a single swap, then the theorem assures us that if there is a Condorcet winner, there is no reason not to just vote sincerely according to our true preferences. Any deviation from sincere voting, if it can only enact a simple manipulation, will lead to an outcome that is no better, or worse, than voting sincerely.
 
-The contrapositive of this theorem is that any profitable simple manipulation must start with a state that has no Condorcet winner (a cycle). Cycles are empirically rare (in RCV elections, at least), and hence it seems unlikely that such a scenario is likely to occur. However, we can further show that the exact requirements for a cycle with profitable manipulations are even stricter still.
+The contrapositive of this theorem is that any profitable simple manipulation must start with a state that has no Condorcet winner (a cycle). Cycles are empirically rare (in RCV elections, at least), and hence these scenarios are unlikely to occur. However, we can further show that the exact requirements for a cycle with profitable manipulations are even stricter still.
 
 > **Lemma:** A simple manipulation using a swap of the second kind (reversing the smallest matchup) is never profitable for any $n\geq3$.\label{second-kind-manipulation}
 
@@ -314,7 +314,7 @@ $$P_0=\langle C\to A\mid B\to C\mid A\to B\rangle \xrightarrow{C\succ A} \langle
 
 achieved by the coalition insincerely voting $C\succ A$. The initial state $P_0$ has outcome $A$, and the gate $G_2$ has outcome $C$, which can be manipulated to $B$. But this is overall a loss for the coalition. Hence, we need $f(G_2)\succeq f(P_0)$ to ensure these are actually profitable manipulations.
 
-So a state admits a profitable complex manipulation if and only if it can reach $G_1$ or $G_2$ without starting at a more preferable outcome--that is, we are really asking which states are "*ancestors*" of a gate ($P_0$ such that $G_i\in R(P_0)$ that have the same or a worse outcome than $G_i$), not which states a gate can reach.
+So a state admits a profitable complex manipulation if and only if it can reach $G_1$ or $G_2$ without starting at a more preferable outcome--that is, we are really asking which states are "*ancestors*" of a gate ($P_0$ such that $G_i\in R(P_0)$ and have the same or a worse outcome than $G_i$), not which states a gate can reach.
 
 ### The Manipulation Chains
 
@@ -328,7 +328,7 @@ So a state admits a profitable complex manipulation if and only if it can reach 
 >
 > (outcomes $C,C,B$ respectively).<d-footnote>By relabeling symmetry, each of the six coalition orders has its own version of these two chains, giving 36 (state, coalition) pairs across 30 distinct states: all 12 cyclic states (six of them manipulable this way by exactly two distinct coalitions) plus exactly half--18 of 36--of the Condorcet-winner states, each by a unique coalition. <a href="#a-verification-notebook">Machine-verified</a>.</d-footnote>\label{complex-classification}
 
-This was a machine-verified result, and is not worth the space to write out the full proof here (which would involve tedious backtracking). But you can see for yourself by following [this link](https://eigentaylor.github.io/weakest-link/graph.html), hovering over gates ($G_1$ and $G_2$), and then holding down the "ctrl" key to see the single-step preimages of the gates, and following the paths backwards to weakly worse outcomes. $G_2$ has *one* $C$ outcome preimage, which only has an $A$ outcome preimage (which marks the end of the betrayal chain). $G_1$ can go back up to three steps, all with $B$ outcomes, before reaching a state with only an $A$ outcome preimage (which marks the end of the burial chain).
+This was a [machine-verified](#a-verification-notebook) result, and is not worth the space to write out the full proof here (which would involve tedious backtracking). But you can see for yourself by following [this link](https://eigentaylor.github.io/weakest-link/graph.html), hovering over gates ($G_1$ and $G_2$), and then holding down the "ctrl" key to see the single-step preimages of the gates, and following the paths backwards to weakly worse outcomes. $G_2$ has *one* $C$-outcome preimage, which only has an $A$-outcome preimage (which marks the end of the betrayal chain). $G_1$ can go back up to three steps, all with $B$-outcomes, before reaching a state with only an $A$-outcome preimage (which marks the end of the burial chain).
 
 ### A Playground
 
@@ -377,52 +377,54 @@ Therefore, the gate $G_1$ is only reachable from a state where $W$ is indeed the
 
 For any node with the tournament structure $W\to F$, $W\to L$, $F\to L$, there are exactly three (out of $3! = 6$) orders of those matchups that have $F\to L$ outrank $W\to F$. That splits the Condorcet winner states evenly into those that are vulnerable to complex burial manipulations and those that are immune. $\square$
 
-(Machine-verified in the [verification notebook](#a-verification-notebook))
+[Machine-verified](#a-verification-notebook)
 {% endproof %}
 
-You can see this in the [playground](#a-playground) above by making a slight adjustment to the Burial Chain scenario. Move the top slider until Bob defeats Alice by a wider margin than Alice defeats Clark. ex. by default Alice beats Clark 65:35, and Alice loses to Bob 40:60. Change the Alice-Bob matchup to 34:66 for Bob, and then try the burial manipulation of moving the bottom slider to the left. You will see that the manipulation now elects Clark instead of Alice. (Or just load the "Burial Chain (Clark wins)" preset above, which sets up exactly this adjustment.)
+You can see this in the [playground](#a-playground) above by making a slight adjustment to the Burial Chain scenario. Move the top slider until Bob defeats Alice by a wider margin than Alice defeats Clark. ex. by default Alice beats Clark 65:35, and Alice loses to Bob 40:60. Change the Alice-Bob matchup to 34:66 for Bob, and then try the burial manipulation of moving the bottom slider to the left. You will see that the manipulation now elects Clark instead of Alice. (Or just load the "Burial Chain (Broken)" preset above, which sets up exactly this adjustment.)
 
-We note that this theorem provides further Condorcet stability. For example, if a Condorcet winner has the strongest pairwise margins, then it is immune to complex burial manipulations by any coalition<d-footnote>Interestingly, in spatial simulations, the vulnerable states appear significantly more often than vulnerable states. About 60-65% of the time. This is due to the geometry, where $L$ is the farthest from the center.</d-footnote>. It also singles out exactly which non-Condorcet winners can ever possibly be elevated to victory through complex burial manipulations: ones who win by more than they lose to the Condorcet winner.
+We note that this theorem provides further Condorcet stability. For example, if a Condorcet winner has the strongest pairwise margins, then it is immune to complex burial manipulations by any coalition<d-footnote>Interestingly, in spatial simulations, the vulnerable states appear significantly more often than immune states--about 60-65% of the time. This is due to the geometry, where $L$ is the farthest from the center.</d-footnote>. It also singles out exactly which non-Condorcet winners can ever possibly be elevated to victory through complex burial manipulations: ones who win by more than they lose to the Condorcet winner.
 
 > **Corollary:** (One-notch bound) A coalition can never improve the outcome by two notches via a complex manipulation. In particular, if $f(P_0)=C$ and $f(Q)=A$, then $Q\notin R(P_0)$.\label{one-notch}
 
 {% proof Click to expand proof %}
 **Proof:** Reaching outcome $A$ from a $P_0$ such that $A\succ f(P_0)$ requires passing through $G_1$, which contains $A\to C$. But any path out of the $C$-outcome class passes through $G_2$'s exit $Q_2=\langle A\to B\mid B\to C\mid C\to A\rangle$, which contains $C\to A$, contradicting the Reachability theorem \ref{reachability}. $\square$
+
+[Machine-verified](#a-verification-notebook)
 {% endproof %}
 
-This result was also [machine-verified](#a-verification-notebook). From $Q_2$, you can reach a few $B$-outcome states (none that can reach $G_1$), but eventually all paths lead back to worse $C$-outcome state. This result also follows from the fact that $G_2\notin R(G_1)$.
+From $Q_2$, you can reach a few $B$-outcome states (none that can reach $G_1$), but eventually all paths lead back to a worse $C$-outcome state. This result also follows from the fact that $G_2\notin R(G_1)$.
 
-Even a maximally resourced, perfectly informed coalition improves its outcome by at most one preference notch, and only from six of the forty-eight starting states, half of which are cycles.
+Even a maximally resourced, perfectly informed coalition improves its outcome by at most one preference notch, and only from 6 of the 48 starting states, half of which are cycles.
 
 We leave one final cheery result:
 
 > **Theorem:** (No Favorite Betrayal Under a Condorcet Winner) If $P$ has a Condorcet winner, there is no profitable manipulation (complex or otherwise) for any coalition of voters involving betraying their favorite candidate in favor of a less-preferred candidate. That is, for any voter preferring $A\succ B\succ C$ in a state with a sincere Condorcet winner, then they can always vote $A\succ B$ and $A\succ C$ without fear of a profitable manipulation that would have been available had they instead voted $B\succ A$ or $C\succ A$.\label{no-favorite-betrayal}
 
 {% proof Click to expand proof %}
-**Proof:** This is also a [machine-verified](#a-verification-notebook) result, but there is some intuition for this. To reach Gate 1, the Burial chain only requires manipulating your vote in the $B$ vs $C$ matchup. There are, in fact, steps on the chain that *could* be achieved with a $B\succ A$ deviation, as well as a $C\succ B$ deviation (ex. the $(1,2)$ swap of $B\to A$ and $B\to C$). However, by single-lie sufficiency, only the $C\succ B$ is *required*. In fact, since the final step requires making $C\to B$ stronger than $B\to A$, doing any $B\succ A$ deviation actually makes the manipulation *more difficult*. Therefore, while the burial chain could theoretically include some $B\succ A$ deviations, they are ultimately *counterproductive* and completely unnecessary. Thus, we focus on the betrayal chain:
+**Proof:** This is also a [machine-verified](#a-verification-notebook) result, but there is some intuition for this. To reach $G_1$, the burial chain only requires manipulating your vote in the $B$ vs $C$ matchup. There are, in fact, steps on the chain that *could* be achieved with a $B\succ A$ deviation, as well as a $C\succ B$ deviation (ex. the $(1,2)$ swap of $B\to A$ and $B\to C$). However, by single-lie sufficiency, only the $C\succ B$ is *required*. In fact, since the final step requires making $C\to B$ stronger than $B\to A$, doing any $B\succ A$ deviation actually makes the manipulation *more difficult*. Therefore, while the burial chain could theoretically include some $B\succ A$ deviations, they are ultimately *counterproductive* and completely unnecessary. Thus, we focus on the betrayal chain:
 
-Gate 2 has two concordant matchups, and hence can only be reached from a state with the same two or more concordant matchups. If all three matchups are concordant, then $A$ would be a Condorcet winner, meaning there would be no profitable deviation from that node. Hence, any ancestor node of $G_2$ where $A$ does not win must have the exact same matchup structure (a cycle). $\square$
+$G_2$ has two concordant matchups, and hence can only be reached from a state with the same two or more concordant matchups. If all three matchups are concordant, then $A$ would be a Condorcet winner, meaning there would be no profitable deviation from that node. Hence, any ancestor node of $G_2$ where $A$ does not win must have the exact same matchup structure (a cycle). $\square$
 {% endproof %}
 
 Betrayal is only profitable if you happen to be in $G_2$, or its single cyclic ancestor (where $A$ is not the winner). This cyclic ancestor is *not reachable* from any state with a Condorcet winner that is not your favorite candidate.
 
 ### Generalizing to More Candidates
 
-Some of these theorems do generalize beyond $n=3$, but many do not. If you can use this model to say more interesting things about Minimax for $n>3$, or perhaps generalize this model to say some interesting things about Ranked Pairs, let me know in the comments below! I developed a somewhat analogous model for IRV (Ranked-Choice Voting) and STAR voting, which I plan to write about in a future post.
+Some of these theorems do generalize beyond $n=3$, but many do not. If you can use this model to say more interesting things about minimax for $n>3$, or perhaps generalize this model to say some interesting things about Ranked Pairs, let me know in the comments below! I developed a somewhat analogous model for IRV (Ranked-Choice Voting) and STAR voting, which I plan to write about in a future post.
 
 ## Conclusion
 
 I came up with this model to investigate whether being able to vote in a cycle would give voters an opportunity to subvert the election. The answer, as we have proved, is a clear **no**. We have shown the stability of a Condorcet winner to simple manipulation, the 2/48 states where a profitable simple manipulation is possible for a coalition, and the modest addition of 4 additional states where a more complex (but likely infeasible--see [the appendix](#appendix)) manipulation could occur. We also proved that outside of the betrayal chain, the system satisfies No Favorite Betrayal.
 
-To subvert an election, one must first start in or push the sincere election state into a cycle. And even then, the result can only be moved up a single step in the preference ordering. Though a perfectly strategyproof voting system does not exist with three or more candidates<d-cite key="gibbard1973manipulation"></d-cite>, this system is potentially the closest one can truly get.
+To subvert an election, one must first start in or push the sincere election state into a cycle. And even then, the result can only be moved up a single step in the preference ordering. Though a perfectly strategyproof voting system does not exist with three or more candidates<d-cite key="gibbard1973manipulation"></d-cite>, this system is potentially the closest one can get in practice.
 
-Just vote honestly. Vote for your favorite in its matchups. Vote for your second choice against your last choice. This system gives you the opportunity to have say in every single race, whether it is competitive or not. Don't think about strategy, just vote.
+Just vote honestly. Vote for your favorite in its matchups. Vote for your second choice against your last choice. This system gives you the opportunity to have a say in every single race, whether it is competitive or not. Don't think about strategy, just vote.
 
 ## Appendix
 
 For the particularly technical readers, or those who want to look at pretty graphs, I have included two Jupyter notebooks. I am not a coder, so the code was written with AI assistance.
 
-The first notebook essentially brute-forces every claim above marked "machine-verified" independently of the proofs given in the text, as well as the [interactive github pages site](https://eigentaylor.github.io/weakest-link/graph.html). The second runs some simulations investigating the likelihood of these scenarios occurring in practice, and how detectable and affordable they are.
+The first notebook essentially brute-forces every claim above marked "machine-verified" independently of the proofs given in the text, as well as the [interactive GitHub pages site](https://eigentaylor.github.io/weakest-link/graph.html). The second runs some simulations investigating the likelihood of these scenarios occurring in practice, and how detectable and affordable they are.
 
 ### A Verification Notebook
 
