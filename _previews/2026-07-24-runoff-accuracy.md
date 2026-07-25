@@ -36,7 +36,6 @@ toc:
     subsections:
       - name: Condorcet Efficiency
       - name: SCORE vs STAR
-      - name: Better Choices Proposals
       - name: The Jupyter Notebook
 ---
 
@@ -116,7 +115,7 @@ We define three parameters that we can adjust to simulate adverse conditions for
 
 ### Epistemic Noise
 
-We add noise to the voter's perceived utility of each candidate, simulating the fact that voters are often misinformed or otherwise unable to accurately evaluate the candidates.
+We add noise to the voter's perceived utility of each candidate, simulating the fact that voters are often misinformed or otherwise unable to accurately evaluate the candidates. We adjust this with the $t$ parameter, which is the correlation between the voter's true utility and their perceived utility.
 
 If $u_i(c)$ is the true utility of candidate $c$ for voter $i$, then we can define a voter's perceived utility as:
 
@@ -126,7 +125,7 @@ Where $\epsilon_{ic} \sim N(0,1)$. Then $t$ is exactly the Pearson correlation c
 
 ### Unfamiliarity
 
-We draw an awareness/prominence ranking for each election, simulating that everyone knows the frontrunner, but as you go down the number of voters who are aware of each candidate decreases. The probability that a voter is aware of candidate $c$ is given by:
+We draw an awareness/prominence ranking for each election, simulating that everyone knows the frontrunner, but as you go down the number of voters who are aware of each candidate decreases. For the selected $\alpha$ "awareness" parameter, the probability that a voter is aware of candidate $c$ is given by:
 
 $$P_{\text{aware}}(c) = \alpha^{\text{prominence_rank}(c)}$$
 
@@ -134,7 +133,7 @@ This ranking is independent of candidate quality, representing how a terrible ca
 
 ### Fatigue
 
-While prominence is global to the election, fatigue is local to the voter. We draw a random fatigue ranking for each voter, as a stand-in for ballot-order rotation. As voters go down the ballot, they are more likely to be fatigued and simply stop looking at names. Maybe they need to pick up their kids from soccer practice, or they came from a long day at work, or they just don't care. The probability that a voter is not fatigued enough to vote for candidate $c$ is given by:
+While prominence is global to the election, fatigue is local to the voter. We draw a random fatigue ranking for each voter, as a stand-in for ballot-order rotation. As voters go down the ballot, they are more likely to be fatigued and simply stop looking at names. Maybe they need to pick up their kids from soccer practice, or they came from a long day at work, or they just don't care. For the "fatigue" parameter $\ell$, the probability that a voter is not fatigued enough to vote for candidate $c$ is given by:
 
 $$P_{\text{not fatigued}}(voter, c) = \ell^{\text{fatigue_position}(voter, c)}$$
 
@@ -152,11 +151,11 @@ This model essentially turns voters from robots, patient enough to thoughtfully 
 
 My hypothesis is that the runoff step can act as a corrective mechanism for misinformed voters in the primary step, whereas the more complex single-round mechanism suffers from "garbage in, garbage out" issues.
 
-However, there are a few ways that we could model improved voter information in the runoff step. We assume that in the primary election (say, in June) voters are tired and didn't have time to research all candidates in the crowded field. They vote imperfectly based on their limited knowledge (ex. vibes, not reading the candidate's website). But just how much more informed are voters in the runoff (say, in November)?
+However, there are a few ways that we could model improved voter information in the runoff step. We assume that in the primary election (say, in June) voters are tired and didn't have time to research all candidates in the crowded field. They vote imperfectly based on their limited knowledge (ex. vibes, not reading the candidate's website). But just how much more informed are voters in the runoff (say, in November<d-footnote>In California, the primary is in June with the general election top-2 runoff about five months later in November. In St. Louis, the general is only one month after the Approval primary. Either way, that is a fair amount of time to find out who the general election candidates are.</d-footnote>)?
 
-Under the most pessimistic conditions, we could imagine that the voter has absolutely no time to update their beliefs. The voter essentially falls into a coma until November, and then casts the same basic vote as they did in the primary. This is how STAR functions *almost exactly*. The flawed understanding carries over to the runoff step, without a chance to be corrected. However, it is even worse with STAR, because if you gave both finalists an equal score, you have no chance to influence the outcome. As the number of candidates increases, you eventually cannot give every candidate a distinct score, meaning you cannot necessarily influence the runoff unless you are viability aware and specifically distinguish between the two expected finalists.
+Under the most pessimistic conditions, we could imagine that the voter has absolutely no time to update their beliefs. The voter essentially falls into a coma until November, and then casts the same basic vote as they did in the primary. This is how STAR functions *almost exactly*. The flawed understanding carries over to the runoff step, without a chance to be corrected. However, this is not quite how STAR works, because if you gave both finalists an equal score, you have no chance to influence the outcome. If you would have given the finalists a 3.9 and a 4.1, but rounded both to a 4, you have no chance to influence that runoff outcome. As the number of candidates increases, you eventually cannot give every candidate a distinct score, meaning you cannot necessarily influence the runoff unless you are viability aware and specifically distinguish between the two expected finalists.
 
-Under slightly more optimistic conditions, we can suppose that in the time between the primary and runoff, voters at least know who everyone in the runoff step actually are, though their preferences could still be noisy and in the wrong direction. This is how we define the baseline delayed runoff systems to work (Approval Top-2, Plurality Top-2, and Approval/Plurality Top-3 Condorcet).
+Under slightly more optimistic conditions, we can suppose that in the time between the primary and runoff, voters at least know who everyone in the runoff step actually are, though their preferences could still be noisy and in the wrong direction. This is how we define the baseline delayed runoff systems to work (Approval Top-2 and Plurality Top-2).
 
 The most optimistic assumption is that voters have had time to research the candidates in the runoff step, watching the debates, reading the websites, and generally becoming more informed about the candidates. We include "noiseless" alternates of each delayed runoff system which uses this assumption. It's likely that the reality of the situation is somewhere between the baseline and noiseless assumptions.
 
@@ -222,33 +221,25 @@ If we suppose that expressiveness begets complexity which makes the system *less
 
 ## Appendix
 
-## Other Findings
-
 ### Condorcet Efficiency
 
 This is a little funnier. Under ideal conditions, Schulze has 100% Condorcet efficiency, as expected. However, under adverse conditions, the system designed specifically to elect the Condorcet winner becomes worse at electing the true Condorcet winner than STAR, Approval Top-2, *and* even base Approval (though the gap is very small except for Approval Top-2). It seems that Cardinal systems, at least in this model, are actually better at electing the Condorcet winner than a system designed specifically to do so.
 
-Even Plurality Top-2 did exceptionally well, by the runoff alone. I also implemented Plurality Top-3 Condorcet (and Approval Top-3 Condorcet) [as per the Better Choices system](../better-choices), and these did even better than the Top-2 versions (unsurprisingly, particularly for a race with only 6 candidates, advancing half the candidates is bound to greatly increase the chance of the Condorcet winner being in the runoff).
+Even Plurality Top-2 did exceptionally well, by the runoff alone.
 
 It appears that if your desire is truly to elect the Condorcet winner no matter the cost, then a runoff method is the way to go if voters are not ideal.
 
 ### SCORE vs STAR
 
-I also measured the difference between STAR voting and just plain 5-point scoring (SCORE). The difference is fairly negligible, but SCORE appears to have a slight edge under high friction. STAR gains its edge back as conditions become more ideal.
+I also measured the difference between STAR voting and just plain 5-point scoring (SCORE, i.e. STAR's own ballots with the runoff step switched off) to isolate the runoff's own net effect from everything else STAR does. The difference is fairly negligible in aggregate, but STAR appears to gain a slight edge as friction decreases towards ideal conditions. With low friction, it's very hard to tell. If I had to pick a side, the general benefits of the runoff seem to outweigh the costs (even for just the strategic incentives).
 
-I had wondered if the adverse conditions might damage outcomes significantly because voters would accidentally vote against their interest in the runoff step. This seemed to have a small effect, but not particularly significant. In evaluating STAR versus SCORE, I found that the difference in VSE was negligible.
-
-### Better Choices Proposals
-
-I also implemented the Better Choices proposals for Top-3 Condorcet under both a Plurality and Approval primary. These did exceptionally well, particularly the Approval Top-3 Condorcet. However, with three candidates the idealized perfect runoff seems even more of a stretch. If we suppose that noise and awareness are less improved with three candidates than two, then it's not immediately obvious if Approval Top-2 would actually perform worse than the Top-3 methods (though I suspect it would).
-
-The surprise is how much better Plurality Top-3 Condorcet does than Approval Top-2. It seems that for a small number of candidates (like 6, the default of the simulations) means that taking in an extra candidate has a greater impact than Approval in the primary.
-
-This ambiguous advantage disappeared immediately as the number of candidates increased. Taking in one more candidate does not offset the issues of vote-splitting that Approval remedies.
-
-However, Approval Top-3 Condorcet may be the most robust system overall considered here. If Better Choices chooses to use Approval rather than Plurality in the primary of their Condorcet Top-3, they may have the best of both worlds. However, Approval Top-2 is also exceptionally robust, far simpler, and already in use in St. Louis <d-cite key="sargent2025stlouis"></d-cite>.
+I had wondered if the adverse conditions might damage outcomes significantly because voters would accidentally vote against their interest in the runoff step. In aggregate, this seemed to have a small effect, but not particularly significant. See the Findings section above for the sharper, per-election version of this same question.
 
 ## The Jupyter Notebook
+
+I am sure this post is going to be particularly controversial, so the full simulation is embedded below rather than just summarized. Before any of the findings above are computed, Sections 12-13 of the notebook sanity-check the simulation itself against externally published VSE values (from the original `vse-sim` project). It seems to be working correctly, though the floor of the ranges appears lower than the ranges generally reported by advocates.
+
+I encourage anyone who is interested to run the notebook themselves and scrutinize my methodology!
 
 {::nomarkdown}
 {% assign verification_jupyter_path = 'assets/jupyter/vse_simulation.ipynb' | relative_url %}
