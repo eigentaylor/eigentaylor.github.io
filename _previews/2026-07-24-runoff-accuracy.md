@@ -33,8 +33,9 @@ toc:
       - name: Condorcet Efficiency
       - name: SCORE vs STAR
       - name: Better Choices Proposals
-  - name: The Jupyter Notebook
   - name: Conclusion
+    subsections:
+      - name: The Jupyter Notebook
 ---
 
 ## Introduction
@@ -166,18 +167,6 @@ This ambiguous advantage disappeared immediately as the number of candidates inc
 
 However, Approval Top-3 Condorcet may be the most robust system overall considered here. If Better Choices chooses to use Approval rather than Plurality in the primary of their Condorcet Top-3, they may have the best of both worlds. However, Approval Top-2 is also exceptionally robust, far simpler, and already in use in St. Louis <d-cite key="sargent2025stlouis"></d-cite>.
 
-## The Jupyter Notebook
-
-{::nomarkdown}
-{% assign verification_jupyter_path = 'assets/jupyter/vse_simulation.ipynb' | relative_url %}
-{% capture verification_notebook_exists %}{% file_exists assets/jupyter/vse_simulation.ipynb %}{% endcapture %}
-{% if verification_notebook_exists == 'true' %}
-  {% jupyter_notebook verification_jupyter_path %}
-{% else %}
-  <p>Sorry, the notebook you are looking for does not exist.</p>
-{% endif %}
-{:/nomarkdown}
-
 ## Conclusion
 
 It is absolutely undeniable that, with perfectly informed voters who fill out their ballots completely and accurately, STAR is an objectively more accurate mechanism than Approval. That granularity is a genuine strength when the data is high quality. However, that granularity becomes a liability when the data you collect is noisy or incomplete.
@@ -206,3 +195,17 @@ The fact that my simulations show that this more complex process is actually *le
 It is impossible to know for sure how actual real world conditions map onto the parameters I have defined in this simulation. Even mild friction could be pessimistic for a high profile election (especially if the field is not particularly crowded). However, I do believe that the narrowing of the gap between STAR and Approval, with Approval Top-2 surpassing it easily, under even mild adverse conditions is remarkable.
 
 If we suppose that expressiveness begets complexity which makes the system *less* politically viable, and *also* makes it less robust to real-world conditions, then Approval voting (particularly with a runoff) seems to dominate STAR in every way that matters. However, that is just my opinion.
+
+## Appendix
+
+## The Jupyter Notebook
+
+{::nomarkdown}
+{% assign verification_jupyter_path = 'assets/jupyter/vse_simulation.ipynb' | relative_url %}
+{% capture verification_notebook_exists %}{% file_exists assets/jupyter/vse_simulation.ipynb %}{% endcapture %}
+{% if verification_notebook_exists == 'true' %}
+  {% jupyter_notebook verification_jupyter_path %}
+{% else %}
+  <p>Sorry, the notebook you are looking for does not exist.</p>
+{% endif %}
+{:/nomarkdown}
