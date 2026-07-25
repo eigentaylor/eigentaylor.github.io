@@ -34,6 +34,7 @@ toc:
       - name: SCORE vs STAR
       - name: Better Choices Proposals
   - name: Conclusion
+  - name: Appendix
     subsections:
       - name: The Jupyter Notebook
 ---
