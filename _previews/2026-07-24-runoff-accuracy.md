@@ -30,12 +30,13 @@ toc:
   - name: Findings
     subsections:
       - name: The Approval-STAR Gap
-      - name: Condorcet Efficiency
-      - name: SCORE vs STAR
-      - name: Better Choices Proposals
+      - name: STAR Runoff Betrayal
   - name: Conclusion
   - name: Appendix
     subsections:
+      - name: Condorcet Efficiency
+      - name: SCORE vs STAR
+      - name: Better Choices Proposals
       - name: The Jupyter Notebook
 ---
 
@@ -188,7 +189,7 @@ Based on this, I would say that for something like a committee trying to decide 
 
 Electing a city council, however, is a different story. I do not find it plausible that voters are going to be able to give thoughtful and accurate scores to all candidates for a local election. A simpler system like Approval, with a delayed runoff, seems more likely to produce better outcomes if the data collected from voters is likely low quality. Under such conditions, the gain from Approval to STAR appears to be negligible.
 
-Specifically, the proposal to eliminate primary elections and have a single round STAR election instead seems like the worst of both worlds. Instead, an all-candidate primary under Approval with a delayed runoff seems to be the most robust system for electing candidates.
+Specifically, the proposal to eliminate primary elections and have a single round STAR election instead seems like the worst of both worlds. Instead, an all-candidate primary under Approval with a delayed runoff seems to be the most robust system for electing candidates. Given that the standard is already to have two elections, a winnowing primary process and a general election, I see no downside to a second election (ex. cost, turnout, etc.).
 
 Independent of the results of these simulations is the fact that STAR is an objectively more complex system than Approval. And that seems exceptionally important for evaluation of political viability.
 
