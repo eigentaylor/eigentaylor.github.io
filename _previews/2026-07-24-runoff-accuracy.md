@@ -47,7 +47,7 @@ These are, of course, just simulations, however. VSE does not say anything about
 
 I interpret VSE as just a simple measure of "aggregation competence": how well a voting system can aggregate the preferences that are fed into it. If a system is *good*, then it almost surely has solid VSE. Choose-one voting, for example, has awful VSE when voters are simulated to just vote honestly. This is because the system is so coarse that it cannot look beyond the top choice of each voter, and thus consensus candidates are often buried by vote-splitting. However, VSE on its own does not say anything about whether or not a system is "good" in the real world.
 
-The Equal Vote Coalition pushes three systems, which all have high VSE: STAR, Approval, and Condorcet<d-footnote>Technically, they champion their particular flavor of Condorcet, "Ranked Robin", but the differences are minor and not relevant to this discussion. In what follows, we will focus on the Schulze method, which is particularly robust and used in a number of organizations for their internal elections.</d-footnote>:
+The Equal Vote Coalition pushes three systems, which all have high VSE: STAR, Approval, and Condorcet<d-footnote>Technically, they champion their particular flavor of Condorcet, "Ranked Robin", but the differences are minor and not relevant to this discussion. In what follows, we will focus on the Schulze method, which is particularly robust and used in a number of organizations for their internal elections.</d-footnote>. We include the numbers that Jamison Quinn and others have reported for these systems in 2017 <d-cite key="quinn2017vseSummary"></d-cite> rather than the numbers I got from running the code today (they are generally the same but with a lower floor):
 
 - Approval voting: Voters can approve of as many candidates as they like, and the candidate with the most approvals wins. This is a system with surprisingly high VSE (up to about 95%) for its simplicity.
 - Condorcet methods: Voters rank candidates and the candidate who defeats all others is the winner (with some tiebreaker if no candidate is a Condorcet winner). This system gets up to about 98% VSE, though its lower bound is fairly low under strategic voting, despite the fact that strategic voting is just [not very effective in Condorcet methods](./better-choices-strategy/). The fact is, pairwise dominance (while not a prerequisite for being the utility maximizer) is objectively a strong predictor of high utility.
@@ -94,8 +94,6 @@ If $u_i(c)$ is the true utility of candidate $c$ for voter $i$, then we can defi
 
 $$u'_i(c) = t\cdot u_i(c) + \sqrt{1-t^2}\cdot \sigma_i \cdot \epsilon_{ic}$$
 
-$$\text{perceived}{ij} = t \cdot \text{true}{ij} + \sqrt{1 - t^2} \cdot \sigma_i \cdot \text{noise}_{ij}$$
-
 Where $\epsilon_{ic} \sim N(0,1)$. Then $t$ is exactly the Pearson correlation coefficient between the true and perceived utilities, scaled by the voter's utility variance $\sigma_i$. If $t=1$, then the voter is perfectly informed, and if $t=0$, then the voter's perceived utilities are pure noise. We use one global $t$ for all voters.
 
 ### Unfamiliarity
@@ -118,7 +116,7 @@ Unfamiliarity and fatigue interact in an interesting way. To be able to vote for
 
 $$P_{\text{genuine}} = P_{\text{aware}} \times P_{\text{not fatigued}}$$
 
-If the check fails, then the utility for that candidate is set to be equal to that of their least liked known candidate. This simulates the voters to basically say "I don't know them, so I'll leave them off my ballot".
+If the check fails, then the utility for that candidate is set to be just below that of their least liked known candidate. This simulates the voters to basically say "I don't know them, so I'll leave them off my ballot". This simulates how Schulze (Condorcet) would interpret a truncated ballot: all unranked candidates are below all ranked ones, and treated as the voter being indifferent between them. For cardinal systems, this functionally gives unknown candidates a 0 score (unapproved for Approval).
 
 ## The Runoff Assumptions
 
@@ -130,15 +128,15 @@ However, there are a few ways that we could model improved voter information in 
 
 We assume that in the primary election (say, in June) has tired voters who didn't have time to research all candidates in the crowded field. They vote imperfectly based on their limited knowledge (ex. vibes, not reading the candidate's website). But just how much more informed are voters in the runoff (say, in November)?
 
-Under the most pessimistic conditions, we could imagine that the voter has absolutely no time to update their beliefs. Almost like the runoff step is that same day, or done right after casting their primary ballot (or perhaps, they fell into a brief coma). We do not assume this, but do measure it later on.
+Under the most pessimistic conditions, we could imagine that the voter has absolutely no time to update their beliefs. Almost like the runoff step is that same day, or done right after casting their primary ballot (or perhaps, they fell into a brief coma). This is how STAR functions *exactly*. The flawed understanding carries over to the runoff step, without a chance to be corrected.
 
-Under slightly more optimistic conditions, we can suppose that in the time between the primary and runoff, voters at least know who everyone in the runoff step actually are, though their preferences could still be noisy and in the wrong direction. This is how we define the basic runoff systems.
+Under slightly more optimistic conditions, we can suppose that in the time between the primary and runoff, voters at least know who everyone in the runoff step actually are, though their preferences could still be noisy and in the wrong direction. This is how we define the baseline delayed runoff systems to work.
 
-The most optimistic assumption is that voters have had time to research the candidates in the runoff step, watching the debates, reading the websites, and generally becoming more informed about the candidates. This is how we define the "noiseless" runoff systems.
+The most optimistic assumption is that voters have had time to research the candidates in the runoff step, watching the debates, reading the websites, and generally becoming more informed about the candidates. We include "noiseless" alternates of each delayed runoff system which uses this assumption. It's likely that the reality of the situation is somewhere between the baseline and noiseless assumptions.
 
 ### Justification
 
-I will not pretend that these assumptions are not particularly optimistic for a delayed runoff (especially for Approval Top-2). Indeed, I might even call it "cheating"! However, I think seeing what the simulations actually say when we suppose that a runoff step could genuinely act as a corrective mechanism for the misinformed voters in the primary step is important.
+I will not pretend that these assumptions are not particularly optimistic for a delayed runoff (especially for Approval Top-2). Indeed, I might even call it "cheating"! However, I think seeing what the simulations actually say when we suppose that a runoff step could genuinely act as a corrective mechanism for the misinformed voters in the primary step is important. Further, I believe there should be some difference between the coma model, that STAR actually functionally uses, and the delayed runoff model.
 
 We can at least see how *much* of a difference it makes. Further, we do, in fact, measure the range of conditions between the pessimistic and optimistic assumptions, compared to a STAR baseline. We will see that even under exceptionally minimal improvements in the runoff step, Approval Top-2 gains an advantage over STAR.
 
@@ -192,8 +190,8 @@ In a time when it's not even clear that the simplest voting system, Approval, is
 
 Though the sample size for how these two systems fare at the ballot box is small, the results are concerning:
 
-- Approval was voted in by overwhelming numbers (over 60%) of voters in Fargo, ND, and St. Louis, MO. Its ban in Fargo was a partisan move by the North Dakota State Legislature, *not* the voters. The ban on Approval in Missouri (for which St Louis was grandfathered in) was by the voters, but it was slipped into the fine print of an RCV ban. The North Dakota ban was also framed as targeting RCV. That is, Approval has simply been in the crossfire of ([justifiable](../ditch-rcv/)) RCV rejections<d-footnote>Further on the RCV issue, Approval failed in Seattle because it was pitted directly against RCV. Seattle was the home turf of RCV.</d-footnote>.
-- STAR has been rejected three times by voters in Oregon. In 2024, a ballot measure for its implementation in [Eugene was voted down by about 67%](https://www.opb.org/article/2024/05/22/eugene-rejects-star-voting-rating-based-system/). It was also rejected in Oakridge in 2024 and Lane County in 2018.
+- Approval was voted in by overwhelming numbers — [63.5% in Fargo, ND](https://ballotpedia.org/Fargo,_North_Dakota,_Measure_1,_Approval_Voting_Initiative_(November_2018)), and [68.2% in St. Louis, MO](https://ballotpedia.org/St._Louis,_Missouri,_Proposition_D,_Approval_Voting_Initiative_(November_2020)). Its ban in Fargo was a partisan move by the [North Dakota State Legislature](https://www.inforum.com/news/north-dakota/lawmakers-pass-ban-on-approval-ranked-choice-voting-in-north-dakota), *not* the voters. The ban on Approval in Missouri (for which St Louis was grandfathered in) was by the voters, via [2024's Amendment 7](https://ballotpedia.org/Missouri_Amendment_7,_Require_Citizenship_to_Vote_and_Prohibit_Ranked-Choice_Voting_Amendment_(2024)), but it was slipped into the fine print of an RCV ban — the ballot language voters actually saw never once said "approval voting," instead banning it by describing the mechanism: "prohibit the ranking of candidates by limiting voters to a single vote per candidate or issue." The North Dakota ban was also framed as targeting RCV. That is, Approval has simply been in the crossfire of ([justifiable](../ditch-rcv/)) RCV rejections<d-footnote>Further on the RCV issue, Approval failed in Seattle because it was pitted directly against RCV: in [Seattle's 2022 ballot measure](https://www.geekwire.com/2022/seattle-voters-overwhelmingly-reject-tech-backed-approval-voting-system-early-election-results-show/), voters preferred RCV to Approval head-to-head by 75% to 25%, and only about 26% backed Approval outright. Seattle was the home turf of RCV.</d-footnote>.
+- STAR has been rejected three times by voters in Oregon. In 2024, a ballot measure for its implementation in [Eugene was voted down by about 67%](https://www.opb.org/article/2024/05/22/eugene-rejects-star-voting-rating-based-system/). It was also rejected in [Oakridge in 2024](https://www.klcc.org/politics-government/2024-11-07/oakridge-voters-reject-star-voting-proposal) (54% opposed) and [Lane County in 2018](https://ballotpedia.org/Lane_County,_Oregon,_Measure_20-290,_Score_Then_Automatic_Runoff_Voting_Method_(November_2018)) (52.4% opposed).
 
 I cannot help but wonder if the expressiveness, which makes STAR so appealing to its supporters and proponents, is exactly what makes it so unappealing to the silent majority of voters (at least, based on the evidence we have seen so far).
 
