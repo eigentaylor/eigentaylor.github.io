@@ -170,6 +170,21 @@ I will not pretend that these assumptions are not particularly optimistic for a 
 
 Any voter who fails to distinguish between the finalists due to fatigue or lack of information would have absolutely no recourse to influence the outcome. In *any* top-2 system, all voters are guaranteed an opportunity to have final say in who is elected in the runoff step.
 
+## Other Relevant Methodology
+
+I tried to keep the default settings of the original vse-sim as much as possible. I made an effort to change the code as little as possible, and included various sanity checks to see that the output was reasonable and matched with expectation (before adding my friction parameters).
+
+(TODO: Insert the strategy sweep plot in the santity check section)
+
+I also defined "joint scenarios" of various friction levels where I set the $t=\alpha=\ell$ parameters to the same values:
+
+- 1.0: Ideal
+- 0.85: Mild
+- 0.7: Moderate
+- 0.5: Heavy
+
+The way some parameters compound is multiplicative, so while 0.5 may not seem as heavy as, say, 0.3 or 0, it is actually *quite* substantial (especially with only 6 candidates).
+
 ## Findings
 
 Before we get into the code, I'd like to summarize some of the things I found.
@@ -194,27 +209,13 @@ The real driver in what makes a delayed runoff so dominant is when we improve th
 
 Perhaps the most sobering statistic is how solid Plurality Top-2 was in VSE compared to STAR under the sweeps and scenarios. Despite Plurality Top-2 having completely mediocre VSE in the ideal case, it stays robust compared to all other single-round systems. I would never advocate for Plurality Top-2, but this model seems to highlight that the potential corrective mechanism of a delayed runoff can salvage even the worst of the single-round systems, when ignorance decimates the accuracy of the primary election<d-footnote>As the friction increases, the more common bullet voting becomes. This leads to both Approval Top-2 and Plurality Top-2 functioning more and more similarly as friction increases. One further reason that VSE alone is insufficient to declare a system dominant. Approval Top-2 does indeed dominate the plurality variant. But the fact that the worst top-2 system does so much better than any single round system under friction has given me exceptional appreciation for the value of a winnowing primary process.</d-footnote>.
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-help-sweep" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-help-sweep" mode="images" %}
 
 ### STAR Runoff Betrayal
 
 We measure the difference between the actual automatic runoff versus a hypothetical "perfect" runoff (i.e. 0-5 SCORE voting with a delayed runoff compared to STAR's automatic runoff), where voters are perfectly informed and vote for the candidate they truly prefer. This is a measure of how much the automatic runoff hurts voters who are misinformed in the primary step. We find that even under mild friction, STAR's automatic runoff is significantly worse than a perfect runoff, and this gap grows as friction worsens.
 
-| Scenario | Betrayal rate | Voter corruption rate | VSE (STAR's actual runoff) | VSE (honest/delayed-perfect runoff) | VSE gap | VSE (AT2 clear-eyed runoff) |
-|---|---|---|---|---|---|---|
-| Ideal | 0.0% | 0.00% | 97.2% | 97.2% | +0.0 pts | 94.3% |
-| Mild friction | 40.9% | 46.82% | 71.7% | 88.5% | +16.8 pts | 84.5% |
-| Moderate friction | 39.6% | 56.27% | 34.9% | 62.8% | +27.9 pts | 69.6% |
-| Heavy friction | 48.6% | 60.19% | 5.4% | 60.3% | +54.9 pts | 61.6% |
-
-| epistemic_t | Betrayal rate | Voter corruption rate | VSE (STAR's actual runoff) | VSE (honest/delayed-perfect runoff) | VSE gap | VSE (AT2 clear-eyed runoff) |
-|---|---|---|---|---|---|---|
-| 0.00 | 44.2% | 57.61% | 6.8% | 56.4% | +49.6 pts | 60.8% |
-| 0.30 | 38.9% | 49.99% | 72.3% | 86.4% | +14.1 pts | 87.8% |
-| 0.50 | 37.2% | 44.52% | 83.8% | 91.8% | +8.0 pts | 91.9% |
-| 0.70 | 30.5% | 37.42% | 91.2% | 95.4% | +4.2 pts | 95.5% |
-| 0.85 | 23.5% | 30.17% | 94.1% | 97.0% | +2.8 pts | 97.0% |
-| 1.00 | 0.0% | 0.00% | 97.2% | 97.2% | +0.0 pts | 94.3% |
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="star-betrayal-tables" mode="tables" %}
 
 This is perhaps not too surprising given that we are modeling voters as not necessarily filling out the entire ballot. Of course a delayed runoff would improve the outcomes! But it's by *how much* that makes me really concerned about the automatic runoff in STAR. Rather than a "cost-saving" mechanism, it could instead "cost" outcomes.
 

@@ -13,6 +13,8 @@ require 'cgi'
 # deleted elsewhere in the notebook, whereas a position-based lookup would silently break.
 #
 # Usage: {% jupyter_cell_embed "assets/jupyter/notebook.ipynb" tag="some-cell-tag" %}
+#        {% jupyter_cell_embed "assets/jupyter/notebook.ipynb" tag="some-cell-tag" mode="images" %}
+#        {% jupyter_cell_embed "assets/jupyter/notebook.ipynb" tag="some-cell-tag" mode="tables" %}
 #
 # All cells sharing `tag` are visited in notebook order, replaying each cell's own outputs
 # in sequence: `text/markdown` outputs (headings, tables) are converted to HTML with the
@@ -22,6 +24,12 @@ require 'cgi'
 # moment a non-image output -- or the end of input -- is reached. A run of consecutive
 # images across cells sharing one tag (e.g. two different cells each producing one chart)
 # therefore becomes a single multi-image gallery.
+#
+# `mode` (optional, defaults to "all"): "images" suppresses the markdown headings/tables and
+# emits only the galleries (tables can still get very wide/tall for a blog layout -- this is
+# the escape hatch); "tables" suppresses the images and emits only the converted markdown.
+# Either way, output boundaries (and gallery groupings) still follow the cell's own original
+# structure -- a suppressed table still ends the preceding image run, it just isn't rendered.
 #
 # A missing notebook, a notebook that fails to parse, or a tag with zero matching cells all
 # raise (failing the build loudly) rather than silently rendering nothing -- a deleted or
@@ -61,7 +69,7 @@ module Jekyll
 
       def render(context)
         site = context.registers[:site]
-        notebook_rel_path, cell_tag = parse_markup(@markup)
+        notebook_rel_path, cell_tag, mode = parse_markup(@markup)
         notebook_abs_path = File.join(site.source, notebook_rel_path)
 
         notebook = load_notebook(notebook_abs_path)
@@ -85,11 +93,13 @@ module Jekyll
           (cell['outputs'] || []).each do |output|
             data = output['data'] || {}
             if data['image/png']
-              pending_images << { bytes: Base64.decode64(join_text(data['image/png'])), alt: last_heading }
+              unless mode == 'tables'
+                pending_images << { bytes: Base64.decode64(join_text(data['image/png'])), alt: last_heading }
+              end
             elsif data['text/markdown']
               flush.call
               md_text = join_text(data['text/markdown'])
-              html_parts << converter.convert(md_text)
+              html_parts << converter.convert(md_text) unless mode == 'images'
               heading = md_text[/^#+\s+(.+)$/, 1]
               last_heading = heading.strip if heading
             end
@@ -106,13 +116,18 @@ module Jekyll
         value.is_a?(Array) ? value.join : value.to_s
       end
 
+      VALID_MODES = %w[all images tables].freeze
+
       def parse_markup(markup)
         tokens = Shellwords.split(markup)
         path = nil
         cell_tag = nil
+        mode = 'all'
         tokens.each do |tok|
           if tok =~ /\Atag=(.+)\z/
             cell_tag = Regexp.last_match(1)
+          elsif tok =~ /\Amode=(.+)\z/
+            mode = Regexp.last_match(1)
           elsif path.nil?
             path = tok
           end
@@ -122,8 +137,11 @@ module Jekyll
           raise "jupyter_cell_embed: expected `jupyter_cell_embed \"path/to/notebook.ipynb\" " \
                 "tag=\"cell-tag\"`, got `#{markup}`"
         end
+        unless VALID_MODES.include?(mode)
+          raise "jupyter_cell_embed: mode=\"#{mode}\" is invalid, expected one of #{VALID_MODES.join(', ')}"
+        end
 
-        [path, cell_tag]
+        [path, cell_tag, mode]
       end
 
       def load_notebook(abs_path)
