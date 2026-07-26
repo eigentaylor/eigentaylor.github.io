@@ -182,6 +182,8 @@ Approval Top-2, on the other hand, clearly wins out in simulations over STAR and
 
 As long as voters at the very least *are* or *become aware* of both candidates in the runoff step, even if they are misinformed about their true utilities, Approval Top-2 still manages to outperform STAR by a mile. This gap widens further if voters are assumed to be perfectly informed in the runoff step.
 
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="vse-joint" %}
+
 ### How much does a delayed runoff actually help?
 
 I also looked at what happens to Approval Top-2 when we vary the parameter improvements of the runoff step. That is, looking at how the VSE as a function of how much we improve the reduced noise and awareness in the runoff step.
@@ -191,6 +193,8 @@ What we find is that when we fix awareness (either eliminate it entirely or make
 The real driver in what makes a delayed runoff so dominant is when we improve the awareness of the candidates in the runoff step. Even if voters are still highly misinformed about the direction between the two candidates, the improvement alone of making sure the voters who were not aware of one or both of the finalists in the primary actually have some idea of who they are is sufficient to give Approval Top-2 a significant advantage over STAR. This is the "you don't know what you don't know" problem. This might have been a serious issue for Eugene, had the primary been eliminated.
 
 Perhaps the most sobering statistic is how solid Plurality Top-2 was in VSE compared to STAR under the sweeps and scenarios. Despite Plurality Top-2 having completely mediocre VSE in the ideal case, it stays robust compared to all other single-round systems. I would never advocate for Plurality Top-2, but this model seems to highlight that the potential corrective mechanism of a delayed runoff can salvage even the worst of the single-round systems, when ignorance decimates the accuracy of the primary election<d-footnote>As the friction increases, the more common bullet voting becomes. This leads to both Approval Top-2 and Plurality Top-2 functioning more and more similarly as friction increases. One further reason that VSE alone is insufficient to declare a system dominant. Approval Top-2 does indeed dominate the plurality variant. But the fact that the worst top-2 system does so much better than any single round system under friction has given me exceptional appreciation for the value of a winnowing primary process.</d-footnote>.
+
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-help-sweep" %}
 
 ### STAR Runoff Betrayal
 
@@ -264,11 +268,15 @@ Even Plurality Top-2 did exceptionally well, by the runoff alone.
 
 It appears that if your desire is truly to elect the Condorcet winner no matter the cost, then a runoff method is the way to go if voters are not ideal.
 
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="condorcet-joint" %}
+
 ### SCORE vs STAR
 
 I also measured the difference between STAR voting and just plain 5-point scoring (SCORE, i.e. STAR's own ballots with the runoff step switched off) to isolate the runoff's own net effect from everything else STAR does. The difference is fairly negligible in aggregate, but STAR appears to gain a slight edge as friction decreases towards ideal conditions. With low friction, it's very hard to tell. If I had to pick a side, the general benefits of the runoff seem to outweigh the costs (even for just the strategic incentives).
 
 I had wondered if friction might damage outcomes significantly because voters would accidentally vote against their interest in the runoff step. In aggregate, this seemed to have a small effect, but not particularly significant. See the Findings section above for the sharper, per-election version of this same question.
+
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="score-vs-star" %}
 
 ## The Jupyter Notebook
 
@@ -276,6 +284,7 @@ I am sure this post is going to be particularly controversial, so the full simul
 
 I encourage anyone who is interested to run the notebook themselves and scrutinize my methodology!
 
+{% proof Click to open Jupyter Notebook %}
 {::nomarkdown}
 {% assign verification_jupyter_path = 'assets/jupyter/vse_simulation.ipynb' | relative_url %}
 {% capture verification_notebook_exists %}{% file_exists assets/jupyter/vse_simulation.ipynb %}{% endcapture %}
@@ -285,3 +294,4 @@ I encourage anyone who is interested to run the notebook themselves and scrutini
   <p>Sorry, the notebook you are looking for does not exist.</p>
 {% endif %}
 {:/nomarkdown}
+{% endproof %}
