@@ -197,7 +197,11 @@ Approval Top-2, on the other hand, clearly wins out in simulations over STAR and
 
 As long as voters at the very least *are* or *become aware* of both candidates in the runoff step, even if they are misinformed about their true utilities, Approval Top-2 still manages to outperform STAR by a mile. This gap widens further if voters are assumed to be perfectly informed in the runoff step.
 
+Perhaps the most sobering statistic is how solid Plurality Top-2 was in VSE compared to STAR under the sweeps and scenarios. Despite Plurality Top-2 having completely mediocre VSE in the ideal case, it stays robust compared to all other single-round systems. I would never advocate for Plurality Top-2, but this model seems to highlight that the potential corrective mechanism of a delayed runoff can salvage even the worst of the single-round systems, when ignorance decimates the accuracy of the primary election<d-footnote>As the friction increases, the more common bullet voting becomes. This leads to both Approval Top-2 and Plurality Top-2 functioning more and more similarly as friction increases. One further reason that VSE alone is insufficient to declare a system dominant. Approval Top-2 does indeed dominate the plurality variant. But the fact that the worst top-2 system does so much better than any single round system under friction has given me exceptional appreciation for the value of a winnowing primary process.</d-footnote>.
+
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="vse-joint" %}
+
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-help-sweep" mode="images" %}
 
 ### How much does a delayed runoff actually help?
 
@@ -207,9 +211,9 @@ What we find is that when we fix awareness (either eliminate it entirely or make
 
 The real driver in what makes a delayed runoff so dominant is when we improve the awareness of the candidates in the runoff step. Even if voters are still highly misinformed about the direction between the two candidates, the improvement alone of making sure the voters who were not aware of one or both of the finalists in the primary actually have some idea of who they are is sufficient to give Approval Top-2 a significant advantage over STAR. This is the "you don't know what you don't know" problem. This might have been a serious issue for Eugene, had the primary been eliminated.
 
-Perhaps the most sobering statistic is how solid Plurality Top-2 was in VSE compared to STAR under the sweeps and scenarios. Despite Plurality Top-2 having completely mediocre VSE in the ideal case, it stays robust compared to all other single-round systems. I would never advocate for Plurality Top-2, but this model seems to highlight that the potential corrective mechanism of a delayed runoff can salvage even the worst of the single-round systems, when ignorance decimates the accuracy of the primary election<d-footnote>As the friction increases, the more common bullet voting becomes. This leads to both Approval Top-2 and Plurality Top-2 functioning more and more similarly as friction increases. One further reason that VSE alone is insufficient to declare a system dominant. Approval Top-2 does indeed dominate the plurality variant. But the fact that the worst top-2 system does so much better than any single round system under friction has given me exceptional appreciation for the value of a winnowing primary process.</d-footnote>.
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-alpha-sweep" mode="images" %}
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-help-sweep" mode="images" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-t-sweep" mode="images" %}
 
 ### STAR Runoff Betrayal
 
@@ -217,7 +221,7 @@ We measure the difference between the actual automatic runoff versus a hypotheti
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="star-betrayal-tables" mode="tables" %}
 
-This is perhaps not too surprising given that we are modeling voters as not necessarily filling out the entire ballot. Of course a delayed runoff would improve the outcomes! But it's by *how much* that makes me really concerned about the automatic runoff in STAR. Rather than a "cost-saving" mechanism, it could instead "cost" outcomes.
+This is perhaps not too surprising given that we are modeling voters as not necessarily filling out the entire ballot. Of course a delayed runoff would improve the outcomes! But it's by *how much* that makes me really concerned about the automatic runoff in STAR. Rather than a "cost-saving" mechanism, it could instead "cost" outcomes, and give voters who have less time to research candidates less of a voice in the outcomes.
 
 The evidence for my hypothesis that a more coarse ballot is more robust to friction is mixed. Under high friction scenarios with an assumed perfectly informed corrective primary, Approval Top-2 has a slight edge over a theoretical SCORE primary followed by voters getting to vote for their true preference in a delayed runoff. But under mild friction, STAR has a slight edge over Approval. When we sweep epistemic noise exclusively, the performance is for all intents and purposes identical. I find insufficient evidence to conclude that there's a difference between the two systems under these conditions.
 
@@ -277,7 +281,7 @@ I also measured the difference between STAR voting and just plain 5-point scorin
 
 I had wondered if friction might damage outcomes significantly because voters would accidentally vote against their interest in the runoff step. In aggregate, this seemed to have a small effect, but not particularly significant. See the Findings section above for the sharper, per-election version of this same question.
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="score-vs-star" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="score-vs-star" mode="images" %}
 
 ## The Jupyter Notebook
 
