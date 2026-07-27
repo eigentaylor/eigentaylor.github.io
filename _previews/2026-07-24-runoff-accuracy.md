@@ -223,13 +223,15 @@ The real driver in what makes a delayed runoff so dominant is when we get voters
 
 ### STAR Runoff Betrayal
 
-We measure the difference between the actual automatic runoff versus a hypothetical "perfect" runoff (i.e. 0-5 SCORE voting with a delayed runoff compared to STAR's automatic runoff), where voters are perfectly informed and vote for the candidate they truly prefer. This is a measure of how much the automatic runoff hurts voters who are misinformed in the primary step. We find that even under mild friction, STAR's automatic runoff is significantly worse than a perfect runoff, and this gap grows as friction worsens.
+We measure the difference between the actual automatic runoff versus a hypothetical "perfect" clear-eyed runoff (i.e. 0-5 SCORE voting with a delayed runoff compared to STAR's automatic runoff), where voters are perfectly informed and vote for the candidate they truly prefer. This is a measure of how much the automatic runoff hurts voters who are misinformed in the primary step compared to a perfect clear-eyed runoff. We find that even under mild friction, STAR's automatic runoff is significantly worse than a perfect clear-eyed runoff, and this gap grows as friction worsens.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="star-betrayal-tables" mode="tables" %}
 
+This second table measures the VSE of the actual STAR runoff, the theoretic SCORE delayed runoff, and clear-eyed Approval Top-2 as we sweep just the epistemic noise. Once again, actual STAR is significantly worse than the other two, which are very close.
+
 This is perhaps not too surprising given that we are modeling voters as not necessarily filling out the entire ballot. Of course a delayed runoff would improve the outcomes! But it's by *how much* that makes me really concerned about the automatic runoff in STAR. Rather than a "cost-saving" mechanism, it could instead "cost" outcomes, and give voters who have less time to research candidates less of a voice in the outcomes.
 
-The evidence for my hypothesis that a more coarse ballot is more robust to friction is mixed. Under high friction scenarios with an assumed perfectly informed corrective primary, Approval Top-2 has a slight edge over a theoretical SCORE primary followed by voters getting to vote for their true preference in a delayed runoff. But under mild friction, STAR has a slight edge over Approval. When we sweep epistemic noise exclusively, the performance is for all intents and purposes identical. I find insufficient evidence to conclude that there's a difference between the two systems under these conditions.
+The evidence for my hypothesis that a more coarse ballot is more robust to friction is mixed. Under high friction scenarios with an assumed perfectly informed corrective primary, clear-eyed Approval Top-2 has a slight edge over a theoretical SCORE primary followed by a clear-eyed delayed runoff. But this gap does not seem large enough for me to declare it a decisive advantage. When we sweep epistemic noise exclusively, the performance is for all intents and purposes identical. I find insufficient evidence to conclude that there's a difference between the two systems under these conditions.
 
 At the very least, for this comparison between a theoretical SCORE Top-2 (that nobody is actually advocating for) with the St. Louis model, I would say that the SCORE ballot appears unjustified. The gulf between the *automatic* runoff of STAR and a delayed Approval runoff, however, is very, very large.
 
