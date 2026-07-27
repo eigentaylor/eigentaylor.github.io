@@ -21,6 +21,8 @@ authors:
       name: Equal Vote Coalition (Volunteer)
 toc:
   - name: Introduction
+    subsections:
+      - name: A Tale of Two Cities
   - name: The Friction Parameters
     subsections:
       - name: Epistemic Noise
@@ -65,17 +67,17 @@ My status as a volunteer for the Equal Vote Coalition does not mean I speak for 
   Election accuracy (VSE) by voting method. <a href="https://www.starvoting.org/faq">Source</a>.
 </div>
 
-I should make it clear that Ranked-Choice Voting has very poor VSE, which is consistent with its poor design and mechanism (which, funny enough, ends up achieving worse outcomes from its greater complexity compared to Condorcet methods<d-footnote>I find it especially humorous that RCV tends to consistently underperform Approval voting, which is exceptionally simpler.</d-footnote>). Although RCV is technically a serious contender in the reform space, it is not a serious consideration by organizations like the Equal Vote Coalition, Center for Election Science, and Better Choices for Democracy. [People who do the math don't support RCV](../ditch-rcv/), so this post is focused entirely on the STAR, Condorcet, and Approval systems. It is included in the early cells of the notebook to show consistency with the original VSE code, but not focused on here.
+I should make it clear that Ranked-Choice Voting has very poor VSE, which is consistent with its poor design and mechanism<d-footnote>"Despite the widespread claim that IRV eliminates the Spoiler Effect, Emily Dempsey (2018) demonstrates that in order to pass Later No Harm, a voting method must by definition fail to eliminate the Spoiler Effect and vote-splitting." (p.314 <d-cite key="wolk2023starVoting"></d-cite>)</d-footnote> (which, funny enough, ends up achieving worse outcomes from its greater complexity compared to Condorcet methods). Although RCV is technically a serious contender in the reform space, it is not a serious consideration by organizations like the Equal Vote Coalition, Center for Election Science, and Better Choices for Democracy. [People who do the math don't support RCV](../ditch-rcv/), so this post is focused entirely on the STAR, Condorcet, and Approval systems. It is included in the early cells of the notebook to show consistency with the original VSE code, but not focused on here.
 
-The Equal Vote Coalition pushes three systems, which all have high VSE: STAR, Condorcet<d-footnote>Technically, they champion their particular flavor of Condorcet, "Ranked Robin", but the differences are minor and not relevant to this discussion. In what follows, we will focus on the Schulze method, which is particularly robust and used in a number of organizations for their internal elections.</d-footnote>, and Approval. My numbers are slightly lower than those reported by Jamison Quinn<d-cite key="quinn2017vseSummary"></d-cite>, but his report was nearly 10 years ago, so I will report the approximate numbers I got by copying the code as it is in the electionscience Github repository:
+The Equal Vote Coalition supports three systems, which all have high VSE: STAR, Condorcet<d-footnote>Technically, they champion their particular flavor of Condorcet, "Ranked Robin", but the differences are minor and not relevant to this discussion. In what follows, we will focus on the Schulze method, which is particularly robust and used in a number of organizations for their internal elections.</d-footnote>, and Approval. My numbers are slightly lower than those reported by Jameson Quinn<d-cite key="quinn2017vseSummary"></d-cite>, but his report was nearly 10 years ago, so I will report the approximate numbers I got by copying the code as it is in the electionscience Github repository:
 
-- STAR voting (Score Then Automatic Runoff): Voters score candidates on a scale (usually 0-5), and the two highest-scoring candidates go to an automatic runoff where a candidate gets one point for every voter who scored them higher than the other candidate. This system has arguably best VSE range of the three (reported to be about 87%-97%).
+- STAR voting (Score Then Automatic Runoff): Voters score candidates on a scale (usually 0-5), and the two highest-scoring candidates go to an automatic runoff where a candidate gets one point for every voter who scored them higher than the other candidate. This system has arguably best VSE range of the three (the reported numbers are 91-98% but my code recovered approximately 87%-97%, close enough).
 - Condorcet methods: Voters rank candidates and the candidate who defeats all others is the winner (with some tiebreaker if no candidate is a Condorcet winner). This system is right alongside STAR in the maximum 98% VSE, though its lower bound is fairly low under strategic voting (84%), despite the fact that strategic voting is just [not very effective in Condorcet methods](../better-choices-strategy/). The fact is, pairwise dominance ([while not a prerequisite for being the utility maximizer](../why-condorcet/)) is objectively a strong predictor of high utility.
-- Approval voting: Voters can approve of as many candidates as they like, and the candidate with the most approvals wins. This is a system with surprisingly high VSE (84-95%, strengthened by strategic voting) for its refreshing simplicity. With a top-2 runoff, Approval improves the VSE to about 89-97%, which is extremely competitive with STAR and Condorcet.
+- Approval voting: Voters can approve of as many candidates as they like, and the candidate with the most approvals wins. This is a system with surprisingly high VSE (84-95%, strengthened by strategic voting) for its refreshing simplicity. With a top-2 runoff, Approval improves the VSE to about 89-97%, which is extremely competitive with STAR and Condorcet<d-footnote>My code recovered a VSE range that was very close or higher than that of STAR. I would not put too much stock into this as proof that Approval Top-2 is definitively has better VSE, most other simulations generally show an edge for STAR. It could be an artifact of noise or the seed.</d-footnote>.
 
-And unfortunately, the simple "aggregation competence" interpretation of VSE is not how it is often presented. In a recent TEDx talk, [Sara Wolk](https://youtu.be/xWQiy5VdwY0?si=ABEnMeAMKWSvMWjS&t=483) introduces a similar chart and says:
+In addition to measuring "aggregation competence," VSE can be used as advocacy evidence to demonstrate the robustness of a method to the public. In a recent TEDx talk, [Sara Wolk](https://youtu.be/xWQiy5VdwY0?si=ABEnMeAMKWSvMWjS&t=483) introduces a version of the above chart and says:
 
-> "Today, experts can use computer models to see how different voting methods would actually perform. And it's pretty much just like how engineers can test the plans for a new skyscraper before actually building it." (Timestamp 8:03)
+> "Today, experts can use computer models to see how different voting methods would actually perform. And it's pretty much just like how engineers can test the plans for a new skyscraper before actually building it." (Timestamp [7:10](https://youtu.be/xWQiy5VdwY0?si=9vzXt8aI6_beTKoi&t=430))
 
 <div class="pswp-gallery mt-3" id="vse-accuracy-tedx-screenshot">
   <a href="/assets/img/vse-accuracy-tedx-screenshot.png"
@@ -89,18 +91,28 @@ And unfortunately, the simple "aggregation competence" interpretation of VSE is 
   A similar chart presented in a <a href="https://youtu.be/xWQiy5VdwY0?si=ABEnMeAMKWSvMWjS&t=483">TEDx Mt. Hood talk on STAR Voting by Sara Wolk (2026)</a>, but only showing Choose One, Ranked Choice, Approval voting (no runoff), and STAR voting.
 </div>
 
-It is absolutely undeniable: single round Approval voting underperforms STAR voting.
+Particularly when Ranked-Choice Voting has stolen all of the oxygen of the reform space, using VSE in this way is a powerful tool to demonstrate that there are better alternatives to RCV. These simulations *do* show the shortcomings of RCV's blindness, due to its inability to see beyond the current active choice of a voter. The three systems supported by the Equal Vote Coalition all solve the issue of vote splitting by looking at each voter's *entire* ballot *immediately*, and that translates to strong VSE.
 
-But how robust is that edge? If we are to describe VSE simulations as "like how engineers can test the plans for a new skyscraper before actually building it," then I would hope that the engineers test the skyscraper in weather other than a perfectly sunny day. Perhaps we should see how the plans fare when there's a hurricane, or an earthquake, or a flood. If the skyscraper is only tested in perfect conditions, then that does not make me feel particularly safe if I have to live in it. Some questions that I would like to raise are:
+And when we look at the actual numbers, it generally supports their narrative that STAR does the overall best job at finding the highest utility candidate (in simulations)<d-footnote>Condorcet methods are also exceptionally strong performers in this regard, but there is a valid case that scoring requires less cognitive load and scales better than a ranked system.</d-footnote>, while Approval is a simple "most bang for your buck" alternative that they also "approve of".
 
-1. Do voters *actually* know their true utilities for all the candidates on the ballot? Might some voters *think* they prefer $B$ over $A$, but would actually be happier if $A$ won than $B$? If they score $B$ higher than $A$, perhaps because they've never *heard* of $A$, and the runoff is between $A$ and $B$, then this voter will accidentally vote *against* their interests in the runoff step.
+> [Approval is] not the best of the methods I tested, but it certainly is the best "bang for the buck"; a simple reform, with basically no downsides, which improves outcomes hugely. (Quinn, 2017<d-cite key="quinn2017vseSummary"></d-cite>)
+
+And it is absolutely undeniable: single-round Approval voting, while simple and strong like a reliable sedan, absolutely underperforms the fancy sports car of STAR voting in VSE.
+
+But how robust is that edge? If we are to describe VSE simulations as "like how engineers can test the plans for a new skyscraper before actually building it," then I would hope that the engineers test the skyscraper in weather other than a perfectly sunny day. Perhaps we should see how the plans fare when there's a hurricane, or an earthquake, or a flood. If the skyscraper is only tested in perfect conditions, then that does not make me feel particularly safe if I have to live in it.
+
+And though there has been a good effort to stress-test VSE under a variety of conditions and models<d-cite key="wolk2023starVoting"></d-cite>, the most unrealistic issue I take with VSE is in the assumptions of *voter information quality*. Some questions that I would like to raise are:
+
+1. Do voters *actually* know their true utilities for all the candidates on the ballot? Might some voters *think* they prefer $B$ over $A$, but would actually be happier if $A$ won than $B$? If they score $B$ higher than $A$, perhaps because of a convincing campaign ad, and the runoff is between $A$ and $B$, then this voter will accidentally vote *against* their interests in the automatic runoff step.
 2. What if voters have never heard of some of the candidates? If the utility maximizer is someone most voters are not aware of, then they are not likely to score them highly, hurting that candidate's chance of winning. Similarly, if voters are fatigued and don't have time to thoughtfully score all the candidates, might that damage the accuracy of the election? How well do different systems handle such friction?
 
-The common thread here is that a complex and expressive system like STAR is designed to take in more information from voters to deliver better outcomes than a more coarse system like Approval. But what if the data it collects is truncated noise rather than signal?
+The common thread here is that a complex, granular, and expressive system like STAR is designed to take in more information from voters to deliver better outcomes than a more coarse system like Approval. But what if the data it collects is truncated noise rather than signal?
 
 One particular concern I have with this is that the runoff is *automatic*. A voter who is misinformed when they cast their initial score ballot cannot change their mind later if they realize that they were wrong. You don't know what you don't know. And many voters *are* tired and busy, and don't have time to read the campaign websites of all [61 candidates on the ballot, as we saw in the 2026 California Gubernatorial primary](./ca-top-2/). Even with 6 candidates, the default in the VSE simulations, I worry about the ability of voters to accurately evaluate all candidates.
 
 My concern is that an automatic runoff has a "garbage in, garbage out" problem: if the data collected from voters is poor, then the runoff will be poor as well. In a delayed runoff, voters have a chance to familiarize themselves with the candidates in the narrowed field, and can make a more informed choice.
+
+### A Tale of Two Cities
 
 In 2024, a proposal in [Eugene, Oregon to eliminate primary elections for mayor, city council, and EWEB seats and replace them with STAR voting](https://ballotpedia.org/Eugene,_Oregon,_Measure_20-349,_STAR_Voting_for_Mayor_and_City_Council_Elections_Initiative_(May_2024)) was voted down by 64.49%. In 2020, [St. Louis, MO voters voted to adopt an all-candidate Approval voting primary election with a delayed top-2 runoff](https://ballotpedia.org/St._Louis,_Missouri,_Proposition_D,_Approval_Voting_Initiative_(November_2020)) by 68.15%. This system is still in place, and working excellently<d-cite key="sargent2025stlouis"></d-cite>. The comparison between these two proposals will be the focus of this post.
 
@@ -108,7 +120,7 @@ I assume that the pitch for a single-round STAR election over the proven Approva
 
 This led me to the following hypotheses:
 
-1. If the preferences and data that voters provide are noisy or incomplete, a more coarse system like Approval will actually be more robust than a more expressive system like STAR to that degradation in voter information. In other words, STAR's advantage over Approval is not robust to friction.<d-footnote>I am including this hypothesis as I formulated it before running the simulations. The data did not fully support it. The advantage <em>did</em> diminish, but the data did not show single-round Approval as being strictly more robust than STAR. The real difference maker was the delayed runoff.</d-footnote>
+1. If the preferences and data that voters provide are noisy or incomplete, a more coarse system like Approval will actually be more robust than a more expressive system like STAR to that degradation in voter information. In other words, STAR's advantage over Approval is not robust to friction.<d-footnote>I am including this hypothesis as I formulated it before running the simulations. The data did <em>not</em> fully support it. The advantage <em>did</em> diminish, but the data did not strongly show single-round Approval as being strictly more robust than STAR. The real difference maker was the delayed runoff where voters were made aware of the candidates.</d-footnote>
 2. A delayed runoff is more robust than an automatic runoff if the voters in the primary step are misinformed, unaware, or fatigued, and that ignorance is reduced in the runoff step.
 
 In this post, we evaluate the rejected single-round STAR system proposed in Eugene, Oregon to the currently in-place Approval Top-2 system in St. Louis, Missouri. My primary evidence is a Jupyter notebook that uses the original VSE simulation code with significant modifications to test these hypotheses. It was written with AI-assisted by Claude Code, but the code is included for full transparency and reproducibility. I look forward to someone who is a more skilled coder than I am to improve upon it, and perhaps extend the model<d-footnote>I have no doubt someone is going to find a bug in my code, or an assumption that is not particularly realistic. I welcome that, and hope that this post can be a jumping-off point for further research into the robustness of voting systems to realistic conditions.</d-footnote>.
@@ -186,11 +198,11 @@ Additionally, in the comparison, we used honest voting for all systems. This is 
 I also defined "joint scenarios" of various friction levels where I set the $t=\alpha=\ell$ parameters to the same values:
 
 - 1.0: Ideal
-- 0.85: Mild
-- 0.7: Moderate
-- 0.5: Heavy
+- 0.9: Mild
+- 0.8: Moderate
+- 0.7: Heavy
 
-The way some parameters compound is multiplicative, so while 0.5 may not seem as heavy as, say, 0.3 or 0, it is actually *quite* substantial (especially with only 6 candidates). I chose not to tune the parameter too much, and use the simplest settings possible to avoid overfitting the model to my own assumptions. I look forward to seeing how others might improve upon this model with even more realistic assumptions, and perhaps even real-world data.
+The way some parameters compound is multiplicative, so while 0.7 may not seem as heavy as, say, 0.5 or 0.3, it is actually *quite* substantial (especially with only 6 candidates). I chose not to tune the parameter too much, and use the simplest settings possible to avoid overfitting the model to my own assumptions. I look forward to seeing how others might improve upon this model with even more realistic assumptions, and perhaps even real-world data.
 
 ## Findings
 
@@ -244,9 +256,9 @@ Based on this, I would say that for something like a City Council trying to deci
 
 *Electing that city council*, however, is a different story. I do not find it plausible that voters are going to be able to give thoughtful and accurate scores to all candidates for a local election. A simpler system like Approval, with a delayed runoff, seems more likely to produce better outcomes if the data collected from voters is likely low quality. Under such conditions, the gain from even just single-round Approval to STAR appears to be negligible.
 
-Specifically, the proposal to eliminate primary elections and have a single round STAR election instead seems like the worst of both worlds. Instead, an all-candidate primary under Approval with a delayed runoff, as we see in St. Louis, seems to be the most robust system for electing candidates. Given that the standard is already to have two elections, a winnowing primary process and a general election, I see no *serious* downside to a second election (ex. cost, turnout, etc.).
+Specifically, the proposal to eliminate the primary process in favor of a single round STAR vote instead seems like the worst of both worlds for public political elections. If there is anything I have taken away from this project is that a delayed runoff is of **enormous benefit**. And given that the standard is already to have two elections, a winnowing primary process that feeds into a general election, I see no *serious* downside to a second election (ex. cost, turnout, etc.).
 
-[A narrowing process seems absolutely necessary](https://robla.blog/2026/01/17/should-approval-voting-have-a-primary/), and using the simple Approval system for that winnowing seems to be the most robust and politically viable option. It scales exceptionally well to crowded fields, compared to a ranking or scoring system, and eliminates the vote splitting we see in the Plurality Top-2 systems used in Washington and California.
+A narrowing process seems absolutely necessary, and using the simple Approval system for that winnowing seems to be the most robust and politically viable option. It scales exceptionally well to crowded fields, compared to a ranking or scoring system, and eliminates the vote splitting we see in the Plurality Top-2 systems used in Washington and California. If 61 candidates on the ballot is a possibility, then Approval is the only system that can handle that without completely overbloating the ballot and overwhelming voters.
 
 Independent of the results of these simulations is the fact that STAR is an objectively more complex system than Approval. And that seems exceptionally important for evaluation of political viability.
 
@@ -264,9 +276,9 @@ Eugene is a *very* liberal city in a fairly progressive blue state. If STAR is 0
 
 I have said before that as RCV is dying a slow an agonizing death, we likely have one chance to pivot before we burn through all the good will and willingness to try something new. I like our chances better if we all rally behind the system that has shown itself to be politically viable, and has a proven track record of success in St. Louis. I worry about flying too close to the sun trying to skip over Approval in favor of STAR. And I am deeply concerned with the potential effect of exhausting Oregonians with repeated STAR proposals to the point where they are unwilling to consider any other reform proposals in the future.
 
-The fact that my simulations show that STAR's more complex process becomes indistinguishable from single-round Approval under stress, and significantly worse than Approval Top-2 with a clear-eyed runoff election, makes me exceptionally concerned about STAR voting. Is a complex machine that cannot handle sand in its gears really a good idea for something as important as electing our leaders? I am not so sure.
+The fact that my simulations show that STAR's more complex process becomes indistinguishable from single-round Approval under stress, and significantly worse than Approval Top-2 even under the groggy assumption, makes me exceptionally concerned about STAR voting. Is a complex machine that cannot handle sand in its gears really a good idea for something as important as electing our leaders? I am not so sure.
 
-The evidence in favor of STAR thus far is primarily in simulations done *by STAR proponents themselves*. And though I find their methodology excellent and without obvious flaws or evidence of bias, the numbers so far have not swung me to becoming a STAR supporter<d-footnote>Is it a good system? Probably. But I see insufficient evidence that we should skip over the more simpler and nearly as affective Approval voting in favor of STAR. The simpler and tested solution seems better from where I'm standing.</d-footnote>.
+The evidence in favor of STAR thus far is primarily in simulations done *by STAR proponents themselves*. And though I find their methodology excellent and without obvious flaws or evidence of bias, the numbers so far have not swung me to becoming a STAR supporter. I do not believe it to be well suited for public elections.
 
 It is impossible to know for sure how actual real world conditions map onto the parameters I have defined in this simulation. Even mild friction could be pessimistic for a high profile election (especially if the field is not particularly crowded). However, I do believe that the narrowing of the gap between STAR and Approval, with Approval Top-2 surpassing it easily, under even mild friction is remarkable.
 
@@ -288,7 +300,7 @@ It appears that if your desire is truly to elect the Condorcet winner no matter 
 
 I also measured the difference between STAR voting and just plain 5-point scoring (SCORE, i.e. STAR's own ballots with the runoff step switched off) to isolate the runoff's own net effect from everything else STAR does. The difference is fairly negligible in aggregate, but STAR appears to gain a slight edge as friction decreases towards ideal conditions. With low friction, it's very hard to tell. If I had to pick a side, the general benefits of the runoff seem to outweigh the costs (even for just the strategic incentives).
 
-I had wondered if friction might damage outcomes significantly because voters would accidentally vote against their interest in the runoff step. In aggregate, this seemed to have a small effect, but not particularly significant. See the Findings section above for the sharper, per-election version of this same question.
+I had wondered if friction might damage outcomes significantly because voters would accidentally vote against their interest in the runoff step. In aggregate, this seemed to have a small effect, but not particularly significant.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="score-vs-star" mode="images" %}
 
