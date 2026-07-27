@@ -70,7 +70,7 @@ The Equal Vote Coalition pushes three systems, which all have high VSE: STAR, Co
 
 - STAR voting (Score Then Automatic Runoff): Voters score candidates on a scale (usually 0-5), and the two highest-scoring candidates go to an automatic runoff where a candidate gets one point for every voter who scored them higher than the other candidate. This system has arguably best VSE range of the three (reported to be about 87%-97%).
 - Condorcet methods: Voters rank candidates and the candidate who defeats all others is the winner (with some tiebreaker if no candidate is a Condorcet winner). This system is right alongside STAR in the maximum 98% VSE, though its lower bound is fairly low under strategic voting (84%), despite the fact that strategic voting is just [not very effective in Condorcet methods](../better-choices-strategy/). The fact is, pairwise dominance ([while not a prerequisite for being the utility maximizer](../why-condorcet/)) is objectively a strong predictor of high utility.
-- Approval voting: Voters can approve of as many candidates as they like, and the candidate with the most approvals wins. This is a system with surprisingly high VSE (84-95%, strengthened by strategic voting) for its refreshing simplicity. With a top-2 runoff, Approval improves the VSE to about 90-97%, which is competitive with STAR and Condorcet.
+- Approval voting: Voters can approve of as many candidates as they like, and the candidate with the most approvals wins. This is a system with surprisingly high VSE (84-95%, strengthened by strategic voting) for its refreshing simplicity. With a top-2 runoff, Approval improves the VSE to about 89-97%, which is extremely competitive with STAR and Condorcet.
 
 And unfortunately, the simple "aggregation competence" interpretation of VSE is not how it is often presented. In a recent TEDx talk, [Sara Wolk](https://youtu.be/xWQiy5VdwY0?si=ABEnMeAMKWSvMWjS&t=483) introduces a similar chart and says:
 
@@ -197,9 +197,9 @@ Before we get into the code, I'd like to summarize some of the things I found.
 
 ### The Approval-STAR Gap
 
-Under perfect conditions, STAR is objectively more accurate than Approval. However, the VSE gaps narrows under all friction scenarios. The systems calculate very close VSE. The gap is too small to strongly conclude that one system is actually stronger than the other (which I interpret as that greater complexity being entirely unjustified), but it appears certainly suggestive that STAR's advantage over Approval is not robust to friction.
+Under perfect conditions, STAR is objectively more accurate than Approval. However, the VSE gap narrows under all friction scenarios. The systems calculate very close VSE. The gap is too small to strongly conclude that one system is actually stronger than the other (which I interpret as that greater complexity being entirely unjustified), but it appears certainly suggestive that STAR's advantage over Approval is not robust to friction.
 
-Approval Top-2, on the other hand, clearly wins out in simulations over STAR and Schulze except for the "coma model" (which is competitive with STAR). It's not even close. Even under mild friction, Approval Top-2 is significantly more accurate than STAR so long as voter are "awake" to the runoff, and this grows as friction worsens. This is with and without removed noise in the runoff step.
+Approval Top-2, on the other hand, clearly wins out in simulations over STAR and Schulze except for the "coma model" (which is competitive with STAR). It's not even close. Even under mild friction, Approval Top-2 is significantly more accurate than STAR so long as voters are "awake" to the runoff, and this grows as friction worsens. This is with and without removed noise in the runoff step.
 
 As long as voters are at least "awake" by the runoff step--becoming aware of both candidates, even if they are misinformed about their true utilities--Approval Top-2 still manages to outperform STAR by a mile. This gap widens further under the clear-eyed assumption, where voters are perfectly informed, but I was surprised by how much of a difference just being aware of the candidates in the runoff step made.
 
