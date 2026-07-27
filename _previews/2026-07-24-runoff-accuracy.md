@@ -13,6 +13,7 @@ chart:
   plotly: true
 images:
   photoswipe: true
+jupyter_notebook_crawlable_text: false
 authors:  
   - name: Taylor Eigen Fisher
     url: ""

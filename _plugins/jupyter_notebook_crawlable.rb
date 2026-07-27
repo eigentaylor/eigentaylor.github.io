@@ -33,6 +33,13 @@ module Jekyll
         end
         notebook_html_path = "#{notebook_path}.html"
 
+        # Some notebooks are large enough that inlining their full HTML rendering makes
+        # page-fetch tools choke; `jupyter_notebook_crawlable_text: false` in front matter
+        # opts a post out while leaving the default (on) behavior everywhere else.
+        page = context.registers[:page]
+        crawlable_enabled = page.nil? || page["jupyter_notebook_crawlable_text"] != false
+        crawlable_html = crawlable_enabled ? crawlable_text_block(context.registers[:site], notebook_path) : ""
+
         <<~HTML
           <div
             class="jupyter-notebook"
@@ -46,7 +53,7 @@ module Jekyll
                 onload="this.parentElement.style.paddingBottom = (this.contentWindow.document.documentElement.scrollHeight + 10) + 'px'"></iframe>
             </div>
           </div>
-          #{crawlable_text_block(context.registers[:site], notebook_path)}
+          #{crawlable_html}
         HTML
       end
 
