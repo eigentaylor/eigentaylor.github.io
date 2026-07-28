@@ -77,7 +77,7 @@ The Equal Vote Coalition supports three systems, which all have high VSE: STAR, 
 
 - STAR voting (Score Then Automatic Runoff): Voters score candidates on a scale (usually 0-5), and the two highest-scoring candidates go to an automatic runoff where a candidate gets one point for every voter who scored them higher than the other candidate. This system has arguably best VSE range of the three (the reported numbers are 91-98% but my code recovered approximately 87%-97%, close enough).
 - Condorcet methods: Voters rank candidates and the candidate who defeats all others is the winner (with some tiebreaker if no candidate is a Condorcet winner). This system is right alongside STAR in the maximum 98% VSE, though its lower bound is fairly low under strategic voting (84%), despite the fact that strategic voting is just [not very effective in Condorcet methods](../better-choices-strategy/). The fact is, pairwise dominance ([while not a prerequisite for being the utility maximizer](../why-condorcet/)) is objectively a strong predictor of high utility.
-- Approval voting: Voters can approve of as many candidates as they like, and the candidate with the most approvals wins. This is a system with surprisingly high VSE (84-95%, strengthened by strategic voting) for its refreshing simplicity. With a top-2 runoff, Approval improves the VSE to about 89-97%, which is extremely competitive with STAR and Condorcet<d-footnote>My code recovered a VSE range that was very close or higher than that of STAR. I would not put too much stock into this as proof that Approval Top-2 is definitively has better VSE, most other simulations generally show an edge for STAR. It could be an artifact of noise or the seed.</d-footnote>.
+- Approval voting: Voters can approve of as many candidates as they like, and the candidate with the most approvals wins. This is a system with surprisingly high VSE (84-95%, strengthened by strategic voting) for its refreshing simplicity. With a top-2 runoff, Approval improves the VSE to about 89-97%, which is extremely competitive with STAR and Condorcet<d-footnote>My code sometimes recovered a VSE range that was very close or higher than that of STAR. I would not put too much stock into this as proof that Approval Top-2 definitively has better VSE, most other simulations generally show an edge for STAR. It could be an artifact of noise or the seed.</d-footnote>.
 
 In addition to measuring "aggregation competence," VSE can be used as advocacy evidence to demonstrate the robustness of a method to the public. In a recent TEDx talk, [Sara Wolk](https://youtu.be/xWQiy5VdwY0?si=ABEnMeAMKWSvMWjS&t=483) introduces a version of the above chart and says:
 
@@ -199,7 +199,7 @@ For example, if you gave finalist $A$ one star because they're terrible, but the
 
 ### The Groggy Model
 
-Under slightly more optimistic conditions, we can suppose that in the time between the primary and runoff, voters at least know who who will be on the ballot. In the months since the primary election, maybe they were bombarded by television ads and social media posts, or drove by a yard sign every day for work, and now they at least know who the two finalists are, though their preferences could still be noisy and in the wrong direction.
+Under slightly more optimistic conditions, we can suppose that in the time between the primary and runoff, voters at least know who will be on the ballot. In the months since the primary election, maybe they were bombarded by television ads and social media posts, or drove by a yard sign every day for work, and now they at least know who the two finalists are, though their preferences could still be noisy and in the wrong direction.
 
 We'll call this the "groggy" runoff assumption, and it's how we define the baseline delayed runoff systems to work (Approval Top-2 and Plurality Top-2).
 
@@ -226,6 +226,10 @@ Further, in response to the previously mentioned California Gubernatorial primar
 I tried to keep the default settings of the original vse-sim as much as possible. I made an effort to change the code as little as possible, and included various sanity checks to see that the output was reasonable and matched with expectation (before adding my friction parameters).
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="strategy-sweep-chart" %}<br>
+
+{% proof Expand to see VSE tables %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="vse-tables" %}
+{% endproof %}
 
 Additionally, in the comparison, we used honest voting for all systems. This is actually a disadvantage towards Approval and Plurality, since strategic voting is usually necessary to make the outcomes more accurate. And honest voting is where STAR and Condorcet have their absolute best outcomes. This makes what I found all the more troubling.
 
@@ -290,7 +294,7 @@ At the very least, for this comparison between a theoretical SCORE Top-2 (that n
 
 It is absolutely undeniable that, with perfectly informed voters who fill out their ballots completely and accurately, STAR is an objectively more accurate mechanism than Approval. That granularity is a genuine strength when the data is high quality. However, that granularity becomes a liability when the data you collect is noisy or incomplete. Low quality data acts like sand in the gears, making the system no better than a simpler system like single-round Approval.
 
-And based on my findings, I would say that for something like a City Council trying to decide between a few different options for a new park (where the voter assumptions are very likely accurate), STAR would be an excellent choice. Highly informed voters who will give full and thoughtful scores to all available options matches better with the assumptions that underly VSE, and it could be easily expected to produce higher quality outcomes than the council members simply approving of which options they like.
+And based on my findings, I would say that for something like a City Council trying to decide between a few different options for a new park (where the voter assumptions are very likely accurate), STAR would be an excellent choice. Highly informed voters who will give full and thoughtful scores to all available options matches better with the assumptions that underlie VSE, and it could be easily expected to produce higher quality outcomes than the council members simply approving of which options they like.
 
 *Electing that city council*, however, is a different story. I do not find it plausible that voters are going to be able to give thoughtful and accurate scores to all candidates for a local election. A simpler system like Approval, with a delayed runoff, seems more likely to produce better outcomes if the data collected from voters is likely low quality. Under such conditions, the gain from even just single-round Approval to STAR appears to be negligible.
 
@@ -310,7 +314,7 @@ Fundamentally, I have to ask: is scoring the options for Commissioner of the Wat
 
 Eugene is a *very* liberal city in a fairly progressive blue state. If STAR is 0-3 in *Oregon*, then I am really wondering about STAR's long-term potential to be the future of voting reform in the United States. When every *good* reform, like Approval and STAR, has the common enemy of [Ranked-Choice Voting](../ditch-rcv/), I worry about the potential waste of resources and energy that could be spent on a more politically viable reform like the St. Louis model of Approval Top-2.
 
-I have said before that as RCV is dying a slow an agonizing death, we likely have one chance to pivot before we burn through all the good will and willingness to try something new. I like our chances better if we all rally behind the system that has shown itself to be politically viable, and has a proven track record of success in St. Louis. I worry about flying too close to the sun trying to skip over Approval in favor of STAR. And I am deeply concerned with the potential effect of exhausting Oregonians with repeated STAR proposals to the point where they are unwilling to consider any other reform proposals in the future.
+I have said before that as RCV is dying a slow and agonizing death, we likely have one chance to pivot before we burn through all the good will and willingness to try something new. I like our chances better if we all rally behind the system that has shown itself to be politically viable, and has a proven track record of success in St. Louis. I worry about flying too close to the sun trying to skip over Approval in favor of STAR. And I am deeply concerned with the potential effect of exhausting Oregonians with repeated STAR proposals to the point where they are unwilling to consider any other reform proposals in the future.
 
 The evidence in favor of STAR thus far is primarily in simulations done *by STAR proponents themselves*. And though I find their methodology excellent and without obvious flaws or evidence of bias, the numbers so far have not swung me to becoming a STAR supporter. I do not believe it to be well suited for public elections.
 
