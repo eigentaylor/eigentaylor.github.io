@@ -77,11 +77,62 @@
       {% endif %}
 
       {% if page.live_update %}
-        <div id="live-update-banner" style="display: none; background: var(--global-bg-color); border: 1px solid var(--global-theme-color); border-radius: 8px; padding: 12px 20px; margin-bottom: 20px; text-align: center; font-size: 0.95rem; color: var(--global-text-color);">
-          🔄 <strong style="color: inherit;">This page has been updated.</strong>
-          <button type="button" id="live-update-refresh-btn" style="margin-left: 10px; padding: 4px 12px; border: 1px solid var(--global-theme-color); border-radius: 6px; background: var(--global-theme-color); color: var(--global-bg-color); cursor: pointer; font-size: 0.9rem;">
-            Refresh
-          </button>
+        <style>
+          /* Fixed, off to the side of the reading area rather than a top banner, so it
+             stays visible regardless of scroll position -- see distill.liquid plan notes
+             on why plain viewport-fixed positioning is used instead of distill's own
+             l-gutter grid columns. */
+          #live-update-banner {
+            display: none;
+            position: fixed;
+            z-index: 20;
+            top: 64px;
+            right: 12px;
+            max-width: 200px;
+            padding: 8px 12px;
+            border: 1px solid var(--global-theme-color);
+            border-radius: 10px;
+            background: color-mix(in srgb, var(--global-bg-color) 80%, transparent);
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+            color: var(--global-text-color);
+            font-size: 0.85rem;
+            text-align: center;
+            opacity: 0.6;
+            transition: opacity 0.2s ease;
+          }
+          #live-update-banner:hover,
+          #live-update-banner:focus-within {
+            opacity: 1;
+          }
+          #live-update-refresh-btn {
+            display: inline-block;
+            margin-top: 6px;
+            padding: 4px 12px;
+            border: 1px solid var(--global-theme-color);
+            border-radius: 6px;
+            background: var(--global-theme-color);
+            color: var(--global-bg-color);
+            cursor: pointer;
+            font-size: 0.85rem;
+          }
+          /* Below this, distill's own grid has no side-margin space at all, so the
+             top-right pill above is what mobile gets. At and above it, move to a
+             quieter mid-right position outside the article text column instead. */
+          @media (min-width: 1024px) {
+            #live-update-banner {
+              top: 50%;
+              right: 16px;
+              transform: translateY(-50%);
+              max-width: 180px;
+              padding: 14px 16px;
+              font-size: 0.9rem;
+            }
+          }
+        </style>
+        <div id="live-update-banner">
+          🔄 <strong style="color: inherit;">This page has been updated.</strong><br />
+          <button type="button" id="live-update-refresh-btn">Refresh</button>
         </div>
       {% endif %}
 
