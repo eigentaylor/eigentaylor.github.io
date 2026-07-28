@@ -7,7 +7,7 @@ importance: 2
 tags: voting
 category: polisci
 featured: false
-theorems: true
+theorems: false
 bibliography: voting.bib
 chart:
   plotly: true
@@ -189,29 +189,31 @@ $$P_{\text{genuine}} = P_{\text{aware}} \times P_{\text{not fatigued}}$$
 
 If the check fails, then the utility for that candidate on the input ballot is set to be just below that of their least liked known candidate. This simulates the voters to basically say "I don't know or remember them, so I'll leave them off my ballot".
 
-This simulates how Schulze (Condorcet) would interpret a truncated ballot: all unranked candidates are below all ranked ones, and treated as the voter being indifferent between them. For cardinal systems, this functionally gives unknown candidates a 0 score (unapproved for Approval).
+This is how Schulze (Condorcet) would interpret a truncated ballot: all unranked candidates are tied below all ranked ones, and treated as the voter being indifferent between them. For cardinal systems, this functionally gives unknown candidates a 0 score (unapproved for Approval).
 
 ## The Runoff Assumptions
 
-This model essentially turns voters from robots, patient enough to thoughtfully evaluate and vote for all candidates, into messy humans who are often misinformed, fatigued, or otherwise unable to know which candidates would actually make them happiest. We would like to know how much of a difference a lower noise delayed runoff, with just two finalists, can make in the overall accuracy of the election compared to a more granular system like STAR, taking in poor data to perform an automatic runoff.
+This model essentially turns voters from robots, patient enough to thoughtfully evaluate and vote for all candidates, into messy humans who are often misinformed, fatigued, or otherwise unable to know which candidates would actually make them happiest. We would like to know how much of a difference a delayed runoff, with reduced cognitive load from there being just two finalists, can make in the overall accuracy of the election compared to a more granular system like STAR being used for a single-round election, taking in that poor data to perform an automatic runoff.
 
 My hypothesis was that the runoff step can act as a corrective mechanism for misinformed voters in the primary step, whereas the more complex single-round mechanism suffers from the previously mentioned "garbage in, garbage out" issues.
 
-However, there are a few ways that we could model improved voter information in the runoff step. We assume that in the primary election (say, in June) voters are tired and didn't have time to research all candidates in the crowded field. They vote imperfectly based on their limited knowledge (ex. vibes, not reading the candidate's website). But just how much more informed are voters in the runoff (say, in November<d-footnote>In California, the primary is in June with the general election top-2 runoff about five months later in November. In St. Louis, the general is only one month after the Approval primary. Either way, that is a fair amount of time to find out who the general election candidates are.</d-footnote>)?
+However, there are a few ways that we could model improved voter information in the runoff step. We assume that in the primary election (say, in June) voters are tired and didn't have time to research all candidates in the crowded field. They vote imperfectly based on their limited knowledge (ex. vibes, not reading the candidate's website) and energy. But just how much more informed are voters in the runoff (say, in November<d-footnote>In California, the primary is in June with the general election top-2 runoff about five months later in November. In St. Louis, the general is only one month after the Approval primary. Either way, that is a fair amount of time to find out who the general election candidates are.</d-footnote>)?
 
 We first assume that fatigue is entirely removed in a delayed runoff. With only two options, the voter is assumed to have the bandwidth to read two names and make a decision based on the direction of their preferences. The voter votes for the candidate who has a strictly higher perceived utility than the other candidate. If they are equal, then the voter is assumed to be indifferent and votes for neither.
 
 ### The Coma Model
 
-Under the most pessimistic conditions, we could imagine that the voter has absolutely no time to update their beliefs. The voter essentially falls into a coma as soon as they submit their ballot, wakes up in November, and then casts a vote. We call this the "frozen" runoff assumption in the code, but we'll call it the "coma" assumption here, because I think that's kind of funny. In Approval Top-2's coma variant, voters still have the opportunity to vote for their preferred finalist (according to their potentially misinformed preferences) *unless they were unaware of both candidates*.
+Under the most pessimistic conditions, we could imagine that the voter has absolutely no time to update their beliefs. The voter essentially falls into a coma as soon as they submit their ballot, wakes up in November, and then casts a vote. We call this the "coma" runoff assumption, because I think that's kind of funny. In Approval Top-2's coma variant, voters still have the opportunity to vote for their preferred finalist (according to their potentially misinformed preferences) *unless they were unaware of both candidates*.
 
-The coma model is **not** how STAR functions (but it is close). The flawed understanding does indeed carry over to the runoff step, without a chance to be corrected. However, STAR is slightly worse here because if you gave both finalists an equal score, you have no chance to influence the outcome (unlike in Approval where you may have approved both, or disapproved both, despite holding a strict underlying preference).
+The coma model is **not** how STAR functions (but it is close). The flawed understanding does indeed carry over to the runoff step, without a chance to be corrected. However, STAR is slightly worse here because if you gave both finalists an equal score (ex. say there was a 3.1/5 candidate and a 2.9/5 candidate and you rounded both to a 3/5), you have no chance to influence that final outcome (unlike in Approval where you may have approved both, or disapproved both, despite holding a strict underlying preference. With a runoff, you still get to express your preference between the two finalists).
 
-For example, if you gave finalist $A$ one star because they're terrible, but the other finalist $B$ was at the bottom of your ballot so you forgot to give them their rightful three stars (perhaps needing to pick up your kid from daycare and left them blank), then you have no opportunity to correct that mistake, and your ballot will be interpreted as being for $A$ over $B$. Similarly, if you gave $A$ zero stars because they're the worst, but forgot to give $B$ any stars at all, your ballot would effectively be ignored in the runoff, even if you *did* have a preference between them.
+For example, if you gave finalist $A$ one star because they're terrible, but the other finalist $B$ was at the bottom of your ballot so you forgot to give them their rightful three stars (perhaps needing to pick up your kid from daycare and so you left them blank), then you have no opportunity to correct that mistake, and your ballot will be interpreted as being for $A$ over $B$.
 
 ### The Groggy Model
 
-Under slightly more optimistic conditions, we can suppose that in the time between the primary and runoff, voters at least know who will be on the ballot. In the months since the primary election, maybe they were bombarded by television ads and social media posts, or drove by a yard sign every day for work, and now they at least know who the two finalists are, though their preferences could still be noisy and in the wrong direction.
+In contrast to the coma model, the remaining two models will simulate voters to have some extent of "wakefulness". These are the "awake" models.
+
+Under slightly more optimistic conditions, we can suppose that in the time between the primary and runoff, voters at least know who will be on the ballot. In the months since the primary election, maybe they were bombarded by television ads and social media posts, drove by a yard sign every day for work, or were pelted with mailers on the exciting options for Water commissioner, and now they at least know who the two finalists are, though their preferences could still be noisy and in the wrong direction (because how many will actually *read* those mailers).
 
 We'll call this the "groggy" runoff assumption, and it's how we define the baseline delayed runoff systems to work (Approval Top-2 and Plurality Top-2).
 
@@ -227,11 +229,11 @@ It's likely that the reality of the situation is somewhere between the groggy an
 
 I will not deny that the awake assumptions are particularly optimistic for a delayed runoff. Indeed, I might even call it "cheating"! However, it turns out that the groggy assumption is more than enough to make Approval Top-2 significantly more robust than STAR.
 
-The proposal in Eugene *was* to eliminate the primary entirely, and have a one-shot expressive five-star score based election for seats as prestigious and of consequence as "Commissioner for Eugene Water and Electric Board, Wards 6 and 7" (no offense to the people who actually hold that office, I'm sure Eugene's EWEB is wonderful).
+The proposal in Eugene *was* to eliminate the primary entirely, and have a one-shot expressive five-star score based election for seats as prestigious and of consequence as "Commissioner for Eugene Water and Electric Board, Wards 6 and 7" (no offense to the person who actually holds that office, I'm sure Eugene's EWEB is wonderful).
 
-Any voter who fails to distinguish between the finalists due to fatigue or lack of information would have absolutely no recourse to influence the outcome. In *any* top-2 system, all voters are guaranteed an opportunity to have final say in who is elected in the runoff step in that November election.
+Any voter who fails to distinguish between the finalists due to fatigue or lack of information would have absolutely no recourse to influence the outcome. In *any* top-2 system, all voters are guaranteed an opportunity to have final say in who is elected in a cognitively simple two-candidate race in November.
 
-Further, in response to the previously mentioned California Gubernatorial primary (with 61 candidates), I did hear the suggestion of eliminating the primary in favor of a single-round STAR election (just as was proposed in Eugene). Given that STAR supporters do still seem to believe that STAR is capable of eliminating the need to have a primary election, I feel entirely justified in pushing that proposition to its extreme, and comparing it directly to the delayed runoff system that is already in place in St. Louis, Missouri. It is not wrong to compare apples and oranges if those are indeed the exact proposals that are competing for funding and implementation.
+Further, in response to the previously mentioned California Gubernatorial primary (with 61 candidates), I did hear the suggestion of eliminating the primary in favor of a single-round STAR election (just as was proposed in Eugene). If replacing that 61 candidate Choose-one primary with single round STAR is an idea that is even being *considered* by STAR proponents, I feel entirely justified in rigorously testing that directly against the tried and true delayed runoff system that is already in place in St. Louis, Missouri. It is not wrong to compare apples and oranges if those are indeed the exact proposals that are competing for funding and implementation.
 
 ## Other Relevant Methodology
 
@@ -354,7 +356,7 @@ I had wondered if friction might damage outcomes significantly because voters wo
 
 ## The Jupyter Notebook
 
-I am sure this post is going to be particularly controversial, so the full simulation is embedded below rather than just summarized. Before any of the findings above are computed, Sections 12-13 of the notebook sanity-check the simulation itself against externally published VSE values (from the original `vse-sim` project). It seems to be working correctly, though the floor of the ranges appears lower than the ranges generally reported by advocates.
+I am sure this post is going to be particularly controversial, so the full simulation is embedded below rather than just summarized. Before any of the findings above are computed, Sections 11-12 of the notebook sanity-check the simulation itself against externally published VSE values (from the original `vse-sim` project). It seems to be working correctly, though the floor of the ranges appears lower than the ranges generally reported by advocates.
 
 I encourage anyone who is interested to run the notebook themselves and scrutinize my methodology!
 
