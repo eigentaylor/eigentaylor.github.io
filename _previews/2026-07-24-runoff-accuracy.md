@@ -237,7 +237,7 @@ Further, in response to the previously mentioned California Gubernatorial primar
 
 ## Other Relevant Methodology
 
-I tried to keep the default settings of the original vse-sim as much as possible. I made an effort to change the code as little as possible, and included various sanity checks to see that the output was reasonable and matched with expectation (before adding my friction parameters).
+I tried to keep the default settings of the original vse-sim as much as possible. This includes simulating just six candidates, rather than 61. I made an effort to change the code as little as possible, and included various sanity checks to see that the output was reasonable and matched with expectation (before adding my friction parameters).
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="strategy-sweep-chart" %}<br>
 
