@@ -32,6 +32,12 @@
 
 <script defer src="{{ '/assets/js/proof-disclosure.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
 
+{% if page.live_update %}
+  <!-- Live-update banner: per-page build-id polling + state-preserving reload -->
+  <script defer src="{{ '/assets/js/reload-state.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
+  <script defer src="{{ '/assets/js/live-update-banner.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
+{% endif %}
+
 {% if site.plugins contains 'al_charts' %}
   <!-- Charts and Diagrams -->
   {% include plugins/al_charts_scripts.liquid %}

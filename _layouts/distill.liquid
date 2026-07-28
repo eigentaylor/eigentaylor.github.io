@@ -76,6 +76,15 @@
         </div>
       {% endif %}
 
+      {% if page.live_update %}
+        <div id="live-update-banner" style="display: none; background: var(--global-bg-color); border: 1px solid var(--global-theme-color); border-radius: 8px; padding: 12px 20px; margin-bottom: 20px; text-align: center; font-size: 0.95rem; color: var(--global-text-color);">
+          🔄 <strong style="color: inherit;">This page has been updated.</strong>
+          <button type="button" id="live-update-refresh-btn" style="margin-left: 10px; padding: 4px 12px; border: 1px solid var(--global-theme-color); border-radius: 6px; background: var(--global-theme-color); color: var(--global-bg-color); cursor: pointer; font-size: 0.9rem;">
+            Refresh
+          </button>
+        </div>
+      {% endif %}
+
       {%- assign final_content = page.content | content_without_jupyter_notebook_text -%}
       {%- if page.exclude_appendix_from_word_count %}{%- assign final_content = final_content | content_without_appendix -%}{%- endif -%}
       {%- if page.exclude_footnotes_from_word_count %}{%- assign final_content = final_content | content_without_footnotes -%}{%- endif -%}
