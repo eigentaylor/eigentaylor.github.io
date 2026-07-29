@@ -99,7 +99,11 @@ module Jekyll
             elsif data['text/markdown']
               flush.call
               md_text = join_text(data['text/markdown'])
-              html_parts << converter.convert(md_text) unless mode == 'images'
+              unless mode == 'images'
+                converted = converter.convert(md_text)
+                converted = "<div class=\"table-responsive\">#{converted}</div>" if converted.include?('<table')
+                html_parts << converted
+              end
               heading = md_text[/^#+\s+(.+)$/, 1]
               last_heading = heading.strip if heading
             end
