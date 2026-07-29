@@ -264,6 +264,8 @@ The code is included in [the Appendix](#the-jupyter-notebook), but we will summa
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="approval-star-gap-narrow" %}
 
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="approval-star-gap-scenarios" %}
+
 Under perfect conditions, STAR is objectively more accurate than single-round Approval. However, the VSE gap narrows under all friction scenarios. The systems calculate very close VSE. The gap is too small to strongly conclude that one system is actually stronger than the other (which I interpret as that greater complexity being entirely unjustified), but it appears certainly suggestive that STAR's advantage over Approval is not robust to friction.
 
 Approval Top-2, on the other hand, clearly wins out in simulations over STAR and Schulze except for the "coma model" (which is competitive but weaker than STAR). It's not even close. Even under mild friction, Approval Top-2 is significantly more accurate than STAR so long as voters are "awake" to the runoff, and this grows as friction worsens. This is with and without removed noise in the runoff step. Groggy voters are enough to outperform the automatic runoff.
