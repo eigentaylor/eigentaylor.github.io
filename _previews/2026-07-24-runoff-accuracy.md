@@ -268,7 +268,7 @@ The code is included in [the Appendix](#the-jupyter-notebook), but we will summa
 
 Under perfect conditions, STAR is objectively more accurate than single-round Approval and Approval Top-2 (under honest ballots). For single-round Approval specifically, however, the VSE gap narrows under all friction scenarios. A 95% confidence interval on the VSE gap between single-round Approval and STAR voting, using a paired test, consistently contains 0 for all friction scenarios. From this, I conclude that there is no evidence or justification that STAR is more effective than single round Approval in this simulation under any friction scenario. I find it unlikely that STAR, in the real world with real voters in public elections, would actually elect better candidates than Approval.
 
-Approval Top-2, on the other hand, clearly wins out in simulations over STAR and Schulze except for the "coma model" (which is competitive). It's not even close. Even under mild friction, Approval Top-2 is significantly more accurate than STAR so long as voters are "awake" to the runoff, and this grows as friction worsens. This is with and without removed noise in the runoff step. Misinsformed voters who at least are aware of the candidates are enough to outperform the automatic runoff.
+Approval Top-2, on the other hand, clearly wins out in simulations over STAR and Schulze except for the "coma model" (which is competitive). It's not even close. Even under mild friction, Approval Top-2 is significantly more accurate than STAR so long as voters are "awake" to the runoff, and this grows as friction worsens. This is with and without removed noise in the runoff step. Misinformed voters who at least are aware of the candidates are enough to outperform the automatic runoff.
 
 The coma model of Approval Top-2 had a harder time. For mild and moderate friction, a gap of 0 was in the 95% confidence interval, but for heavy friction, the gap was significantly positive.
 
@@ -280,17 +280,17 @@ Perhaps the most sobering statistic is how solid groggy Plurality Top-2 was in V
 
 ### How much does a delayed runoff actually help?
 
-I also looked at what happens to Approval Top-2 when we vary the parameter improvements of the runoff step. That is, looking at how the VSE as a function of how much we improve the reduced noise and how "awake" voters are in the runoff step.
+So far we have looked at fixed runoff awareness models (coma, groggy, clear-eyed). This gives a very binary change in how much the runoff helps. But we are interested to see what the "in-between" looks like.
 
-What we find is that when we fix awareness (either eliminate it entirely or make it exactly equal to that of the primary, as per the coma model) and vary how much we reduce the noise itself, the outcomes improve only slightly. This is consistent with the relatively small difference in our Approval Top-2 groggy variant vs the clear-eyed variant.
+We define a new parameter `p_learn`, which ranges from 0 to 1. This parameter is the probability that a voter can become aware of a candidate they were not aware of before (rolled against for one or both candidates the voter is unaware of). When a voter successfully rolls to learn of a candidate, we use their (potentially noisy) perceived utility.
 
-The real driver in what makes a delayed runoff so dominant is when we get voters more "awake" for the runoff step. Even if voters are still highly misinformed about the direction between the two candidates, the improvement alone of making sure the voters who were not aware of one or both of the finalists in the primary actually have some idea of who they are is sufficient to give Approval Top-2 a significant advantage over STAR. This is the "you don't know what you don't know" problem. This might have been a serious issue for Eugene, had the primary been eliminated.
+If a voter was unaware of exactly one candidate in the runoff, they have a chance to learn about the other and vote for them if they realize they think they have higher utiliyt. Otherwise they vote for the one they were already aware of. If a voter was unaware of both, and becomes aware of one or both of the runoff candidates, then they vote for whichever has higher utility (if they are still unaware of one, they vote for the one they are aware of).
 
-Sweeping essentially from the coma model to the groggy model, we see a turning point where the VSE of Approval Top-2 overtakes that of STAR, and the gap grows as voters become more aware of the candidates in the runoff step. This happens *with and without* adjustment of the noise in the runoff step.
+At 0, we effectively have the coma model when we maintain noise from the primary. We see that a coma runoff is essentially as good or better than STAR (depending on noise), but even for extremely small learning rates, the gap between STAR and Approval Top-2 grows significantly. As long as a small number of voters learn about at least one candidate (by osmosis) even if their opinions between them are wrong, the delayed runoff is significantly more accurate than STAR's automatic runoff.
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-alpha-sweep" mode="images" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-learn-sweep" mode="images" %}
 
-As we sweep the runoff noise $t$, and keep the awareness $\alpha$ fixed the performance does not change much. Awareness appears to be the entire driver of improved outcomes.
+As we sweep the runoff noise $t$, and keep the awareness fixed between the primary and runoff, the performance does not change much. Awareness appears to be the entire driver of improved outcomes.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-t-sweep" mode="images" %}
 
