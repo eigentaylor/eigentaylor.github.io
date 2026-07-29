@@ -241,6 +241,8 @@ I tried to keep the default settings of the original vse-sim as much as possible
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="strategy-sweep-chart" %}<br>
 
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="vse-range-baseline" %}
+
 {% proof Expand to see VSE tables %}
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="vse-tables" %}
 {% endproof %}
@@ -261,8 +263,6 @@ The way some parameters compound is multiplicative, so while 0.7 may not seem as
 The code is included in [the Appendix](#the-jupyter-notebook), but we will summarize the results here.
 
 ### The Approval-STAR Gap
-
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="approval-star-gap-narrow" %}
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="approval-star-gap-scenarios" %}
 
