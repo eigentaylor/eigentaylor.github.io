@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: 'Coarse Correction: Is STAR Actually More Accurate than Approval?'
-date: 2026-07-25
+date: 2026-07-28
 description: Why Approval with a delayed runoff might be far more robust than a more granular and expressive voting system like STAR when voters are misinformed and fatigued.
 importance: 2
 tags: voting
