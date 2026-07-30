@@ -71,7 +71,7 @@ My status as a volunteer for the Equal Vote Coalition does not mean I speak for 
   Election accuracy (VSE) by voting method. <a href="https://www.starvoting.org/faq">Source</a>.
 </div>
 
-I should make it clear that Ranked-Choice Voting has very poor VSE, which is consistent with its poor design and mechanism<d-footnote>Including the spoiler effect and vote splitting. RCV does not deliver on its promises, plain and simple. (See p.314 of <d-cite key="wolk2023starVoting"></d-cite>)</d-footnote> (which, funny enough, ends up achieving worse outcomes from its far greater logistical complexity and cost compared to Condorcet methods, which can be counted at the local precincts). Although RCV is technically a serious contender in the reform space, it is not a serious consideration by organizations like the Equal Vote Coalition, Center for Election Science, and Better Choices for Democracy. [People who do the math don't support RCV](../ditch-rcv/), so this post is focused more on STAR and Approval. It is included in the early cells of the notebook to show consistency with the original VSE code, but not focused on here.
+I should make it clear that Ranked-Choice Voting has very poor VSE, which is consistent with its poor design and mechanism<d-footnote>Including the spoiler effect and vote splitting. RCV does not deliver on its promises, plain and simple. (See p.314 of <d-cite key="wolk2023starVoting"></d-cite>)</d-footnote> (which, funnily enough, ends up achieving worse outcomes from its far greater logistical complexity and cost compared to Condorcet methods, which can be counted at the local precincts). Although RCV is technically a serious contender in the reform space, it is not a serious consideration by organizations like the Equal Vote Coalition, Center for Election Science, and Better Choices for Democracy. [People who do the math don't support RCV](../ditch-rcv/), so this post is focused more on STAR and Approval. It is included in the early cells of the notebook to show consistency with the original VSE code, but not focused on here.
 
 The Equal Vote Coalition supports three systems, which all have high VSE: STAR, Condorcet<d-footnote>Technically, they champion their particular flavor of Condorcet, "Ranked Robin", but the differences are minor and not relevant to this discussion. In what follows, we will focus on the Schulze method, which is particularly robust and used in a number of organizations for their internal elections.</d-footnote>, and Approval. My numbers are slightly lower than those reported by Jameson Quinn<d-cite key="quinn2017vseSummary"></d-cite>, but his report was nearly 10 years ago, so I will report the approximate numbers I got by copying the code as it is in the electionscience Github repository:
 
@@ -127,7 +127,7 @@ One particular concern I have with this is that the runoff is *automatic*. A vot
   </a>
 </div>
 <div class="caption mt-2">
-  The actual sample ballot for the 2026 gubernatorial primary, showing all 61 candidates for Governor and the "vote for only one" restriction. Thank you to <a href="https://electowiki.org/wiki/File:CAGovernorOpenPrimaryBallot2026.jpg">Rob Lanphier for the image</a>.
+  The actual sample ballot for the 2026 gubernatorial primary, showing all 61 candidates for Governor. Thank you to <a href="https://electowiki.org/wiki/File:CAGovernorOpenPrimaryBallot2026.jpg">Rob Lanphier for the image</a>.
 </div>
 
 My concern is that an automatic runoff has a "garbage in, garbage out" problem: if the data collected from voters is poor, then the automatic runoff has no way to correct for that. In a delayed runoff, voters have a chance to familiarize themselves with the candidates in the narrowed field, and can make a more informed choice.
@@ -272,7 +272,9 @@ Approval Top-2, on the other hand, clearly wins out in simulations over STAR and
 
 The coma model of Approval Top-2 had a harder time. For mild and moderate friction, a gap of 0 was in the 95% confidence interval, but for heavy friction, the gap was significantly positive.
 
-Perhaps the most sobering statistic is how solid groggy Plurality Top-2 was in VSE compared to STAR under the sweeps and scenarios (with the Clear-eyed variant being even further). Despite Plurality Top-2 having completely mediocre VSE in the ideal case, it stays robust compared to all other single-round systems. I would never advocate for Plurality Top-2, but this model seems to highlight that the potential corrective mechanism of a delayed runoff can somewhat salvage even the worst primary elections, when ignorance decimates the accuracy of the "more accurate" single-round system used.
+Perhaps the most sobering statistic is how solid groggy Plurality Top-2 was in VSE compared to STAR under the sweeps and scenarios (with the Clear-eyed variant being even further). Despite Plurality Top-2 having completely mediocre VSE in the ideal case, it stays robust compared to all other single-round systems<d-footnote>Technically, Plurality Top-2 is the exact system being used in California right now, including for that 61 candidate Gubernatorial race.</d-footnote>.
+
+I would never advocate for Plurality Top-2, but this model seems to highlight that the potential corrective mechanism of a delayed runoff can somewhat salvage even the worst primary elections, when ignorance decimates the accuracy of the "more accurate" single-round system used.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="vse-joint" %}
 
@@ -284,11 +286,11 @@ So far we have looked at fixed runoff awareness models (coma, groggy, clear-eyed
 
 We define a new parameter `p_learn`, which ranges from 0 to 1. This parameter is the probability that a voter can become aware of a candidate they were not aware of before (rolled against for one or both candidates the voter is unaware of). When a voter successfully rolls to learn of a candidate, we use their (potentially noisy) perceived utility.
 
-If a voter was unaware of exactly one candidate in the runoff, they have a chance to learn about the other and vote for them if they realize they think they have higher utiliyt. Otherwise they vote for the one they were already aware of. If a voter was unaware of both, and becomes aware of one or both of the runoff candidates, then they vote for whichever has higher utility (if they are still unaware of one, they vote for the one they are aware of).
+If a voter was unaware of exactly one candidate in the runoff, they have a chance to learn about the other and vote for them if they realize they think they have higher utility. Otherwise they vote for the one they were already aware of. If a voter was unaware of both, and becomes aware of one or both of the runoff candidates, then they vote for whichever has higher utility (if they are still unaware of one, they vote for the one they are aware of).
 
 At 0, we effectively have the coma model when we maintain noise from the primary. We see that a coma runoff is essentially as good or better than STAR (depending on noise), but even for extremely small learning rates, the gap between STAR and Approval Top-2 grows significantly. As long as a small number of voters learn about at least one candidate (by osmosis) even if their opinions between them are wrong, the delayed runoff is significantly more accurate than STAR's automatic runoff.
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-learn-sweep" mode="images" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-learn-sweep" mode="images" %}<br>
 
 As we sweep the runoff noise $t$, and keep the awareness fixed between the primary and runoff, the performance does not change much. Awareness appears to be the entire driver of improved outcomes.
 
@@ -342,7 +344,7 @@ If we suppose that expressiveness begets complexity which makes the system *less
 
 ### Condorcet Efficiency
 
-This is a little funnier. Under ideal conditions, Schulze has 100% Condorcet efficiency, as expected. However, under friction, the system designed specifically to elect the Condorcet winner becomes worse at electing the true Condorcet winner than STAR, Approval Top-2, *and* even base Approval (though the gap is very small except for Approval Top-2). It seems that Cardinal systems, at least in this model, are actually better at electing the Condorcet winner than a system designed specifically to do so.
+This is a little funnier. Under ideal conditions, Schulze has perfect 100% Condorcet efficiency, as expected. However, under friction, the system designed specifically to elect the Condorcet winner becomes worse at electing the true Condorcet winner than STAR, Approval Top-2, *and* even base Approval (though the gap is very small except for Approval Top-2). It seems that Cardinal systems, at least in this model, are actually better at electing the Condorcet winner than a system designed specifically to do so.
 
 Even Plurality Top-2 did exceptionally well, by the runoff alone.
 
