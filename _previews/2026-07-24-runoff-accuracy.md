@@ -354,11 +354,11 @@ It appears that if your desire is truly to elect the Condorcet winner no matter 
 
 ### SCORE vs STAR
 
-I also measured the difference between STAR voting and just plain 5-point scoring (SCORE, i.e. STAR's own ballots with the runoff step switched off) to isolate the runoff's own net effect from everything else STAR does. The difference is fairly negligible in aggregate, but STAR appears to gain a slight edge as friction decreases towards ideal conditions. With low friction, it's very hard to tell. If I had to pick a side, the general benefits of the runoff seem to outweigh the costs (even for just the strategic incentives).
-
-I had wondered if friction might damage outcomes significantly because voters would accidentally vote against their interest in the runoff step. In aggregate, this seemed to have a small effect, but not particularly significant.
+I also measured the difference between STAR voting and just plain 5-point scoring (SCORE, i.e. STAR's own ballots with the runoff step switched off) to isolate the runoff's own net effect from everything else STAR does. The difference is fairly negligible in aggregate.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="score-vs-star" mode="images" %}
+
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="score-vs-star-scenarios" %}
 
 ## The Jupyter Notebook
 
