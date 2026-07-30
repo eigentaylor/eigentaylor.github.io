@@ -83,7 +83,7 @@ The following is the VSE range of the three systems, including Approval Top-2 fr
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="evc-vse" %}
 
-In addition to measuring "aggregation competence," VSE can be used as advocacy evidence to demonstrate the robustness of a method to the public. In a recent TEDx talk, the Executive Director at the Equal Vote Coalition [Sara Wolk](https://youtu.be/xWQiy5VdwY0?si=ABEnMeAMKWSvMWjS&t=483) introduces a version of the above chart and says:
+In addition to measuring "aggregation competence," VSE can be used as advocacy evidence to demonstrate the robustness of a method to the public. In a recent TEDx talk, [Sara Wolk](https://youtu.be/xWQiy5VdwY0?si=ABEnMeAMKWSvMWjS&t=483), the Executive Director of the Equal Vote Coalition, introduces a version of the above chart and says:
 
 > "Today, experts can use computer models to see how different voting methods would actually perform. And it's pretty much just like how engineers can test the plans for a new skyscraper before actually building it." (Timestamp [7:10](https://youtu.be/xWQiy5VdwY0?si=9vzXt8aI6_beTKoi&t=430))
 
@@ -101,13 +101,19 @@ In addition to measuring "aggregation competence," VSE can be used as advocacy e
 
 Particularly when Ranked-Choice Voting has hogged all the attention and oxygen (at the cost of better reforms), using VSE in this way is a powerful tool to demonstrate that there are far better alternatives to RCV. These simulations *do* show the shortcomings of RCV's blindness, due to its inability to see beyond the current active choice of a voter. The three systems supported by the Equal Vote Coalition all solve the issue of vote splitting by looking at each voter's *entire* ballot *immediately*, and that translates to strong VSE.
 
-And when we look at the actual numbers, it generally supports their narrative that STAR does the overall best job at finding the highest utility candidate (in simulations)<d-footnote>Condorcet methods are also exceptionally strong performers in this regard, but there is a valid case that scoring requires less cognitive load and scales better than a ranked system.</d-footnote>, while Approval is a simple and effective alternative that they also "approve of" (basically if you can't have STAR)<d-footnote>On the <a href="https://bettervoting.com/">BetterVoting website</a> (a project of the Equal Vote Coalition), they list Approval as being "recommended for simplicity", and STAR as being "recommended for accuracy". With Condorcet being relegated as "recommended for ranking" (despite being exceptionally accurate). I do personally disagree with this framing, and I would rather use "recommended for scoring" for STAR.</d-footnote>.
+And when we look at the actual numbers, it generally supports their narrative that STAR does the overall best job at finding the highest utility candidate (in simulations)<d-footnote>Condorcet methods are also exceptionally strong performers in this regard, but there is a valid case that scoring requires less cognitive load and scales better than a ranked system with many candidates.</d-footnote>, while Approval is a simple and effective alternative that they also "approve of"<d-footnote>On the <a href="https://bettervoting.com/">BetterVoting website</a> (a project of the Equal Vote Coalition), they list Approval as being "recommended for simplicity", and STAR as being "recommended for accuracy". With Condorcet being relegated as "recommended for ranking" (despite being exceptionally accurate). I do personally disagree with this framing, and I would rather use "recommended for scoring" for STAR.</d-footnote>.
+
+In Quinn's 2017 summary, he has this to say:
 
 > [Approval is] not the best of the methods I tested, but it certainly is the best "bang for the buck"; a simple reform, with basically no downsides, which improves outcomes hugely. (Quinn, 2017<d-cite key="quinn2017vseSummary"></d-cite>)
 
 And it is absolutely undeniable: single-round Approval voting, while simple and strong like a reliable sedan, absolutely underperforms the fancy sports car of STAR voting in VSE, especially under the "honest" model of Approval voting used in the code (which functions like a SCORE system with two options).
 
-But how robust is that edge? If we are to describe VSE simulations as "like how engineers can test the plans for a new skyscraper before actually building it," then I would hope that the engineers test the skyscraper in weather other than a perfectly sunny day. Perhaps we should see how the plans fare when there's a hurricane, or an earthquake, or a flood. If the skyscraper is only tested in perfect conditions, then that does not make me feel particularly safe if I have to live on the eightieth floor.
+On the [Equal Vote page for Approval](https://www.equal.vote/approval), they call it a "stepping stone", and an "important arrow in the quiver", but even their "case for Approval" points back to STAR:
+
+> In many cases it may be quicker and easier to just switch directly from the traditional Choose-One voting method to something top of the line like STAR Voting, but we understand that there may be some cases where that's unrealistic.
+
+The wording "top of the line" paints a vivid picture, to be sure. But how robust is that edge? If we are to describe VSE simulations as "like how engineers can test the plans for a new skyscraper before actually building it," then I would hope that the engineers test the skyscraper in weather other than a perfect 72 degree sunny day. Perhaps we should see how the plans fare when there's a hurricane, or an earthquake, or a flood. If the skyscraper is only tested in perfect conditions, then that does not make me feel particularly safe if I have to live on the eightieth floor.
 
 And though there has been a good effort to stress-test VSE under a variety of conditions and models<d-cite key="wolk2023starVoting"></d-cite>, the most unrealistic issue I take with VSE is in the assumptions of *voter information quality*.
 
@@ -271,7 +277,7 @@ Under perfect conditions, STAR is objectively more accurate than single-round Ap
 
 Approval Top-2, on the other hand, clearly wins out in simulations over STAR and Schulze except for the "coma model" (which is competitive). It's not even close. Even under mild friction, Approval Top-2 is significantly more accurate than STAR so long as voters are "awake" to the runoff, and this grows as friction worsens. This is with and without removed noise in the runoff step. Misinformed voters who at least are aware of the candidates are enough to outperform the automatic runoff.
 
-The coma model of Approval Top-2 had a harder time. For mild and moderate friction, a gap of 0 was in the 95% confidence interval, but for heavy friction, the gap was significantly positive.
+The coma model was also quite strong. The only scenario where a gap of 0 was contained in the 95% confidence interval was under *moderate* friction (and it was extremely borderline). It seems relatively safe to say that under friction, even the coma model is likely an improvement over STAR. 
 
 Perhaps the most sobering statistic is how solid groggy Plurality Top-2 was in VSE compared to STAR under the sweeps and scenarios (with the Clear-eyed variant being even further). Despite Plurality Top-2 having completely mediocre VSE in the ideal case, it stays robust compared to all other single-round systems<d-footnote>Technically, Plurality Top-2 is the exact system being used in California right now, including for that 61 candidate Gubernatorial race.</d-footnote>.
 
