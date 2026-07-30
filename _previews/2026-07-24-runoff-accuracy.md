@@ -344,9 +344,7 @@ If we suppose that expressiveness begets complexity which makes the system *less
 
 ### Condorcet Efficiency
 
-This is a little funnier. Under ideal conditions, Schulze has perfect 100% Condorcet efficiency, as expected. However, under friction, the system designed specifically to elect the Condorcet winner becomes worse at electing the true Condorcet winner than STAR, Approval Top-2, *and* even base Approval (though the gap is very small except for Approval Top-2). It seems that Cardinal systems, at least in this model, are actually better at electing the Condorcet winner than a system designed specifically to do so.
-
-Even Plurality Top-2 did exceptionally well, by the runoff alone.
+This is a little funnier. Under ideal conditions, Schulze has perfect 100% Condorcet efficiency, as expected. However, under friction, the system designed specifically to elect the Condorcet winner becomes worse at electing the true Condorcet winner than STAR, Approval Top-2, *and* even base Approval (though the gap is very small except for Approval Top-2). It seems that Cardinal systems, at least in this model, are actually better at electing the Condorcet winner than a system designed specifically to do so. Even Plurality Top-2 did exceptionally well, by the runoff alone.
 
 It appears that if your desire is truly to elect the Condorcet winner no matter the cost, then a runoff method is the way to go if voters are not ideal.
 
