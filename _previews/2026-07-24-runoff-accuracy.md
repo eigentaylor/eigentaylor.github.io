@@ -83,7 +83,7 @@ The following is the VSE range of the three systems, including Approval Top-2 fr
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="evc-vse" %}
 
-In addition to measuring "aggregation competence," VSE can be used as advocacy evidence to demonstrate the robustness of a method to the public. In a recent TEDx talk, [Sara Wolk](https://youtu.be/xWQiy5VdwY0?si=ABEnMeAMKWSvMWjS&t=483) introduces a version of the above chart and says:
+In addition to measuring "aggregation competence," VSE can be used as advocacy evidence to demonstrate the robustness of a method to the public. In a recent TEDx talk, the Executive Director at the Equal Vote Coalition [Sara Wolk](https://youtu.be/xWQiy5VdwY0?si=ABEnMeAMKWSvMWjS&t=483) introduces a version of the above chart and says:
 
 > "Today, experts can use computer models to see how different voting methods would actually perform. And it's pretty much just like how engineers can test the plans for a new skyscraper before actually building it." (Timestamp [7:10](https://youtu.be/xWQiy5VdwY0?si=9vzXt8aI6_beTKoi&t=430))
 
@@ -105,7 +105,7 @@ And when we look at the actual numbers, it generally supports their narrative th
 
 > [Approval is] not the best of the methods I tested, but it certainly is the best "bang for the buck"; a simple reform, with basically no downsides, which improves outcomes hugely. (Quinn, 2017<d-cite key="quinn2017vseSummary"></d-cite>)
 
-And it is absolutely undeniable: single-round Approval voting, while simple and strong like a reliable sedan, absolutely underperforms the fancy sports car of STAR voting in VSE.
+And it is absolutely undeniable: single-round Approval voting, while simple and strong like a reliable sedan, absolutely underperforms the fancy sports car of STAR voting in VSE, especially under the "honest" model of Approval voting used in the code (which functions like a SCORE system with two options).
 
 But how robust is that edge? If we are to describe VSE simulations as "like how engineers can test the plans for a new skyscraper before actually building it," then I would hope that the engineers test the skyscraper in weather other than a perfectly sunny day. Perhaps we should see how the plans fare when there's a hurricane, or an earthquake, or a flood. If the skyscraper is only tested in perfect conditions, then that does not make me feel particularly safe if I have to live on the eightieth floor.
 
@@ -142,14 +142,11 @@ In 2024, a proposal in [Eugene, Oregon to eliminate primary elections for mayor,
 
 I assume that the pitch for a single-round STAR election over the proven Approval Top-2 system used in St. Louis was that STAR is more accurate than Approval. Surely, a system with better VSE is better than one with worse VSE, right? And if we can save money by eliminating primary elections, and just quickly elect the best candidate through an *automatic* runoff performed on an expressive and rich dataset, why not do that?
 
-This led me to the following hypotheses:
-
-1. If the preferences and data that voters provide are noisy or incomplete, a more coarse system like Approval will actually be more robust than a more expressive system like STAR to that degradation in voter information. In other words, STAR's advantage over Approval is not robust to friction.<d-footnote>I am including this hypothesis as I formulated it before running the simulations. The data did <em>not</em> fully support it. The advantage <em>did</em> diminish, but the data did not strongly show single-round Approval as being strictly more robust than STAR. The real difference maker was the delayed runoff.</d-footnote>
-2. A delayed runoff is more robust than an automatic runoff if the voters in the primary step are misinformed, unaware, or fatigued, and that ignorance is reduced in the runoff step.
+I hypothesized that under noisy and truncated data, that the edge that more granular systems like STAR and Condorcet have over more coarse systems would diminish, and that a delayed top-2 runoff is more effective at improving outcomes than an automatic runoff when there's a chance for voters to improve their information on the narrowed set of two candidates.
 
 In this post, we evaluate the rejected single-round STAR system proposed in Eugene, Oregon to the currently in-place Approval Top-2 system in St. Louis, Missouri. My primary evidence is a [Jupyter notebook](#the-jupyter-notebook) that uses the original VSE simulation code with significant modifications to test these hypotheses. It was written with AI-assistance by Claude Code, but the full notebook is included for full transparency and reproducibility. I look forward to someone who is a more skilled coder than I am to improve upon it, and perhaps extend the model<d-footnote>I have no doubt someone is going to find a bug in my code, or an assumption that is not particularly realistic. I welcome that, and hope that this post can be a jumping-off point for further research into the robustness of voting systems to imperfect voter knowledge.</d-footnote>.
 
-Spoiler alert: STAR's advantage over single-round Approval narrowed under even mild friction, and the delayed runoff made Approval Top-2 significantly more robust than STAR, even when the friction was only mildly reduced in the runoff step.
+Spoiler alert: Under even mild friction, the gap between single-round Approval and STAR is basically negligible. And the delayed runoff, even with only *minimally* improved information completely blew all single-round systems out of the water.
 
 ## The Friction Parameters
 
