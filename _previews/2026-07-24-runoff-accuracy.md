@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: 'Coarse Correction: Is STAR Actually More Accurate than Approval?'
-date: 2026-07-28
+date: 2026-07-30
 description: Why Approval with a delayed runoff might be far more robust than a more granular and expressive voting system like STAR when voters are misinformed and fatigued.
 importance: 2
 tags: voting
@@ -111,9 +111,9 @@ In Quinn's 2017 summary, he has this to say:
 
 And it is absolutely undeniable: single-round Approval voting, while simple and strong like a reliable sedan, absolutely underperforms the fancy sports car of STAR voting in VSE, especially under the "honest" model of Approval voting used in the code (which functions like a SCORE system with two options).
 
-On the [Equal Vote page for Approval](https://www.equal.vote/approval), they call it a "stepping stone", and an "important arrow in the quiver", but even their "case for Approval" points back to STAR:
+On the [Equal Vote page for Approval](https://www.equal.vote/approval), they make a fair case for Approval as something that "should be the default voting method". But they also call it a "stepping stone", say that "there's a good case to be made to upgrade further," and even though it's a "case for Approval", the text spends significant space pointing back to STAR:
 
-> In many cases it may be quicker and easier to just switch directly from the traditional Choose-One voting method to something top of the line like STAR Voting, but we understand that there may be some cases where that's unrealistic.
+> In many cases it may be quicker and easier to just switch directly from the traditional Choose-One voting method to something top of the line like STAR Voting, but we understand that there may be some cases where that's unrealistic. ([Source](https://www.equal.vote/approval), Accessed 7/30/2026)
 
 The wording "top of the line" paints a vivid picture, to be sure. But how robust is that edge? If we are to describe VSE simulations as "like how engineers can test the plans for a new skyscraper before actually building it," then I would hope that the engineers test the skyscraper in weather other than a perfect 72 degree sunny day. Perhaps we should see how the plans fare when there's a hurricane, or an earthquake, or a flood. If the skyscraper is only tested in perfect conditions, then that does not make me feel particularly safe if I have to live on the eightieth floor.
 
@@ -170,7 +170,7 @@ If $u_i(c)$ is the true utility of candidate $c$ for voter $i$, then we can defi
 
 $$u'_i(c) = t\cdot u_i(c) + \sqrt{1-t^2}\cdot \sigma_i \cdot \epsilon_{ic}$$
 
-Where $\epsilon_{ic} \sim N(0,1)$. Then $t$ is exactly the Pearson correlation coefficient between the true and perceived utilities, scaled by the voter's utility variance $\sigma_i$. If $t=1$, then the voter is perfectly informed on their exact utilities, and if $t=0$, then the voter's perceived utilities are pure noise. We use one global $t$ for all voters.
+Where $\epsilon_{ic} \sim N(0,1)$ and $\sigma_i$ is the standard deviation of voter $i$'s true utilities across the candidates, used to scale the injected noise to that voter's own utility range. Then $t$ is exactly the Pearson correlation coefficient between the true and perceived utilities. If $t=1$, then the voter is perfectly informed on their exact utilities, and if $t=0$, then the voter's perceived utilities are pure noise. We use one global $t$ for all voters.
 
 ### Unfamiliarity
 
@@ -232,7 +232,7 @@ The most optimistic assumption is that voters have had time to research the cand
 
 In this ideal case, we assume that the noise has entirely evaporated, leaving the voters with the exact correct *direction* between the candidates. We include "clear-eyed" alternates of each delayed runoff system which uses this assumption.
 
-It's likely that the reality of the situation is somewhere between the groggy and clear-eyed assumptions. We include an analysis that sweeps from the Coma model to the Clear-Eyed model, and shows how much of a difference it makes in the overall accuracy of the election.
+It's likely that the reality of the situation is somewhere between the coma and clear-eyed assumptions. We include an analysis that sweeps from the coma model to the clear-eyed model, and shows how much of a difference it makes in the overall accuracy of the election.
 
 ### Justification
 
