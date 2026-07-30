@@ -79,7 +79,7 @@ The Equal Vote Coalition supports three systems, which all have high VSE: STAR, 
 - STAR voting (Score Then Automatic Runoff): Voters score candidates on a scale (usually 0-5), and the two highest-scoring candidates go to an automatic runoff where a candidate gets one point for every voter who scored them higher than the other candidate. This system has arguably best VSE range of the three.
 - Approval voting: Voters can approve of as many candidates as they like, and the candidate with the most approvals wins. This is a system with surprisingly high VSE for its refreshing simplicity. With a top-2 runoff, Approval improves its VSE to be quite competitive with other more granular alternatives.
 
-The following is the VSE range of the three systems, including Approval Top-2 from my code.
+The following is the VSE range of the three systems, including Approval Top-2 from my code, as well as Choose-one plurality and RCV for reference.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="evc-vse" %}
 
