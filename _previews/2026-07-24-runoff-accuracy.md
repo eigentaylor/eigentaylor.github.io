@@ -44,6 +44,8 @@ toc:
   - name: Conclusion
   - name: Appendix
     subsections:
+      - name: The Plurality Bump
+      - name: The Ranked Implosion
       - name: Condorcet Efficiency
       - name: SCORE vs STAR
       - name: The Jupyter Notebook
@@ -73,13 +75,13 @@ Additionally, while I was originally strongly against pairing Approval voting wi
   Election accuracy (VSE) by voting method. <a href="https://www.starvoting.org/faq">Source</a>.
 </div>
 
-I should make it clear that Ranked-Choice Voting has very poor VSE, which is consistent with its poor design and mechanism<d-footnote>Including the spoiler effect, vote splitting, and center-squeezes. If your favorite can't win, your vote does not necessarily transfer, and this can lead to a compromise candidate getting eliminated early. RCV does not deliver on its promises, plain and simple. (See p.314 of <d-cite key="wolk2023starVoting"></d-cite>)</d-footnote> (which, funnily enough, ends up achieving worse outcomes from its far greater logistical complexity and cost compared to Condorcet methods, which can be counted at the local precincts). Although RCV is technically a serious contender in the reform space, it is not a serious consideration by organizations like the Equal Vote Coalition, Center for Election Science, and Better Choices for Democracy. [People who do the math don't support RCV](../ditch-rcv/), so this post is focused more on STAR and Approval. It is included in the early cells of the notebook to show consistency with the original VSE code, but not focused on here.
-
 The Equal Vote Coalition supports three systems, which all have high VSE: STAR, Condorcet<d-footnote>Technically, they champion their particular flavor of Condorcet, "Ranked Robin", but the differences are minor and not relevant to this discussion. In what follows, we will focus on the Schulze method, which is particularly robust and used in a number of organizations for their internal elections.</d-footnote>, and Approval. My numbers are slightly lower than those reported by Jameson Quinn<d-cite key="quinn2017vseSummary"></d-cite>, but his report was nearly 10 years ago, so I will report the approximate numbers I got by copying the code as it is in the electionscience Github repository:
 
 - Condorcet methods: Voters rank candidates and the candidate who defeats all others is the winner (with some tiebreaker if no candidate is a Condorcet winner). These usually get the highest VSE, but drop low due to strategy, despite the fact that strategic voting is just [not very effective in Condorcet methods](../better-choices-strategy/). The fact is, pairwise dominance ([while not a prerequisite for being the utility maximizer](../why-condorcet/)) is objectively a strong predictor of high utility.
 - STAR voting (Score Then Automatic Runoff): Voters score candidates on a scale (usually 0-5), and the two highest-scoring candidates go to an automatic runoff where a candidate gets one point for every voter who scored them higher than the other candidate. This system has arguably best VSE range of the three.
 - Approval voting: Voters can approve of as many candidates as they like, and the candidate with the most approvals wins. This is a system with surprisingly high VSE for its refreshing simplicity. With a top-2 runoff, Approval improves its VSE to be quite competitive with other more granular alternatives.
+
+Missing from this list of endorsed systems is Ranked-Choice voting (RCV). Although RCV is technically a serious contender in the reform space, it is not a serious consideration by organizations like the Equal Vote Coalition, Center for Election Science, and Better Choices for Democracy. [People who do the math don't support RCV](../ditch-rcv/). Consistent with its poor design and mechanism<d-footnote>Including the spoiler effect, vote splitting, and center-squeezes. If your favorite can't win, your vote does not necessarily transfer, and this can lead to a compromise candidate getting eliminated early. RCV does not deliver on its promises, plain and simple. (See p.314 of <d-cite key="wolk2023starVoting"></d-cite>)</d-footnote>, which leads to it being logistically impractical to an absurd extent, just to deliver mediocre outcomes.
 
 The following is the VSE range of the three systems, including Approval Top-2 from my code, as well as Choose-one plurality, Plurality Top-2, and RCV for reference.
 
@@ -269,7 +271,7 @@ The way some parameters compound is multiplicative, so while 0.7 may not seem as
 
 ## Findings
 
-The code is included in [the Appendix](#the-jupyter-notebook), but we will summarize the results here.
+The code is included in [the Appendix](#the-jupyter-notebook), but we will summarize the results here as it pertains to our primary focus. However, a number of other fascinating findings will be discussed in the Appendix.
 
 ### The Approval-STAR Gap
 
@@ -353,9 +355,35 @@ If we suppose that expressiveness begets complexity which makes the system *less
 
 ## Appendix
 
+### The Plurality Bump
+
+Earlier, I mentioned the surprising robustness of Plurality Top-2 under friction. Related to this was a general trend where mild friction seemed to make plurality methods *better*. Upon reflection of the model, I believe I know why: the fact that a plurality vote is just choosing a single candidate.
+
+Unlike every other voting system, choose-one voting is the only one where fatigue has a minimal effect on outcomes. In every other voting system, there's an attempt to extract *more* data from voters by allowing some sort of expression for other candidates. This makes plurality voting robust to fatigue and unawareness, which seems to *tighten* outcomes because voters are less likely to vote for a candidate who would actually be their favorite, but has no chance anyway. The prominence model seems to focus votes on a smaller number of candidates, which seems to sort of accidentally simulate the strategic voting which makes plurality more effective. The VSE of single-round plurality is never *good*, but mild friction improves the outcomes. Plurality Top-2 under mild friction is actually on par with some of the *good* systems under ideal conditions, and is in general indistinguishable from Approval Top-2 under all friction scenarios.
+
+This leads me to an uncomfortable conclusion that choose-one voting, for as flawed as its outcomes are, might actually be in some ways well-suited to our tired human brains. The mental shortcuts that we take might actually hone the outcomes of our terrible choose-one system to some extent. If nothing else, choose-one voting is simple to use and simple to count. And we forego that at our peril.
+
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="plurality-bump" %}
+
+### The Ranked Methods Implosion
+
+Perhaps the most shocking thing to me was the complete and utter collapse of the VSE of ranked methods like Schulze under friction. Going from the absolute best method to the absolute worst method was not in any of my hypotheses, however it's not exceptionally surprising in retrospect.
+
+Schulze already has a massive drop-off in VSE under strategic voting. When you design a system to calculate the Condorcet winner explicitly, then you do indeed get the highest possible VSE under completely ideal honest voting (because the Condorcet winner is usually that best candidate). But dishonest data just ends up electing someone else (who is almost surely *worse* than the Condorcet winner). I expected sand to cause STAR to seize up, but I should have realized that Condorcet was the far more intricate machine that would truly break under friction. It gets far worse for Schulze when voters are not even ranking candidates. It relies on all that nuanced preference data to do its thing, and otherwise it's just a mess.
+
+Ranked-Choice Voting (RCV) does not fare much better, and functions essentially identically to Schulze as friction increases, which might be the most embarrassing thing to come out of this post. As someone relatively sympathetic to Condorcet methods, it does not fill me with relish to say that Schulze's massive outcome advantage over RCV basically completely vanishes.
+
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="ranked-implosion" %}
+
 ### Condorcet Efficiency
 
-This is a little funnier. Under ideal conditions, Schulze has perfect 100% Condorcet efficiency, as expected. However, under friction, the system designed specifically to elect the Condorcet winner becomes worse at electing the true Condorcet winner than STAR, Approval Top-2, *and* even base Approval (though the gap is very small except for Approval Top-2). It seems that Cardinal systems, at least in this model, are actually better at electing the Condorcet winner than a system designed specifically to do so. Even Plurality Top-2 did exceptionally well, by the runoff alone.
+This is a little funnier. Under ideal conditions, Schulze has perfect 100% Condorcet efficiency, as expected. It's far beyond all other systems in doing this exact job:
+
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="ideal-honest-ce-table" %}
+
+Surprisingly, Approval Top-2 is the best non-Condorcet method at electing the Condorcet winner, ahead of even STAR under ideal conditions.
+
+However, under friction, the system designed specifically to elect the Condorcet winner becomes worse at electing the true Condorcet winner than STAR, Approval Top-2, base Approval, and even Plurality (though the gap is very small except for Approval Top-2). It seems that Cardinal systems, at least in this model, are actually better at electing the Condorcet winner than a system designed specifically to do so. Even Plurality Top-2 did exceptionally well, by the runoff alone.
 
 It appears that if your desire is truly to elect the Condorcet winner no matter the cost, then a runoff method is the way to go if voters are not ideal.
 
