@@ -303,11 +303,13 @@ We define a new parameter `p_learn`, which ranges from 0 to 1. This parameter is
 
 If a voter was unaware of exactly one candidate in the runoff, they have a chance to learn about the other and vote for them if they realize they think they have higher utility. Otherwise they vote for the one they were already aware of. If a voter was unaware of both, and becomes aware of one or both of the runoff candidates, then they vote for whichever has higher utility (if they are still unaware of one, they vote for the one they are aware of).
 
-At 0, we effectively have the coma model when we maintain noise from the primary. We see that a coma runoff is essentially as good or better than STAR (depending on noise), but even for extremely small learning rates, the gap between STAR and Approval Top-2 grows significantly. As long as a small number of voters have a chance to learn about candidates (by osmosis) even if their opinions between them are wrong, the delayed runoff is significantly more accurate than STAR's automatic runoff.
+At 0, we have the coma model when we maintain noise from the primary. We see that a coma runoff is essentially as good or better than STAR (depending on the friction level), but even for extremely small learning rates, the gap between STAR and Approval Top-2 grows significantly. As long as a small number of voters have a chance to learn about candidates (by osmosis) even if their opinions between them are wrong, the delayed runoff is significantly more accurate than STAR's automatic runoff.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-learn-sweep" mode="images" %}<br>
 
-As we sweep the runoff noise $t$, and keep the awareness fixed between the primary and runoff, the performance does not change much. Awareness appears to be the entire driver of improved outcomes.
+As we sweep the runoff noise $t$, and keep the awareness fixed between the primary and runoff, the performance does not change much for the values of $t$ used for the scenarios, and the dropoff in quality seems to be primarily for $t < 0.4$. Further investigation on scenarios where the $t$ values are lower would be required to say more. So this analysis indicates that what we are measuring across the scenarios used in this post is a case where voters are unaware and fatigued, but are generally good at having the correct direction between the two finalists.
+
+This could be more realistic than lowering the $t$ values further, but I won't make conclusions on that without running the data. Under the values tested, it seems that the main driver for the runoff dominance is the elimination of fatigue and reduction in the unawareness of the two finalists.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-t-sweep" mode="images" %}
 
@@ -321,7 +323,7 @@ This is perhaps not too surprising given that we are modeling voters as not nece
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="scoret2-vs-at2" %}
 
-The evidence for my hypothesis that a more coarse ballot is more robust to friction seems to be somewhat supported, but not strongly. There seems to be something there, when comparing clear-eyed Approval Top-2 to a theoretical clear-eyed SCORE Top-2 delayed runoff. But the gap is not so large that I will conclusively say my hypothesis is confirmed.
+The evidence for my hypothesis that a more coarse ballot is more robust to friction seems to be supported, but not strongly. There appears to be something there, when comparing clear-eyed Approval Top-2 to a theoretical clear-eyed SCORE Top-2 delayed runoff: under ideal conditions SCORE appears significantly better, and under friction Approval is the same and maybe significantly better (0 was not in the confidence interval for moderate friction, but was for mild and heavy). But the gap is not so large that I will conclusively say that a coarse ballot is objectively more effective than a granular one under friction.
 
 At the very least, for this comparison between a theoretical SCORE Top-2 (that nobody is actually advocating for) with the St. Louis model, I would say that the SCORE ballot appears completely unjustified. That granularity, does not seem to help outcomes, and potentially makes it *worse*. The gulf between the *automatic* runoff of STAR and a delayed Approval runoff, however, is very, very large.
 
