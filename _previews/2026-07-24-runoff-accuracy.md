@@ -317,9 +317,11 @@ This second table measures the VSE of the actual STAR runoff, the theoretic SCOR
 
 This is perhaps not too surprising given that we are modeling voters as not necessarily filling out the entire ballot. Of course a delayed runoff would improve the outcomes! But it's by *how much* that makes me really concerned about the automatic runoff in STAR. Rather than a "cost-saving" mechanism, it could instead "cost" outcomes, and give voters who have less time to research candidates less of a voice in the outcomes.
 
-The evidence for my hypothesis that a more coarse ballot is more robust to friction is mixed. Under high friction scenarios with an assumed perfectly informed corrective primary, clear-eyed Approval Top-2 has a slight edge over a theoretical SCORE primary followed by a clear-eyed delayed runoff. But this gap does not seem large enough for me to declare it a decisive advantage. When we sweep epistemic noise exclusively, the performance is for all intents and purposes identical. I find insufficient evidence to conclude that there's likely to be a difference between the two systems under the friction levels I find realistic.
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="scoret2-vs-at2" %}
 
-At the very least, for this comparison between a theoretical SCORE Top-2 (that nobody is actually advocating for) with the St. Louis model, I would say that the SCORE ballot appears unjustified. The gulf between the *automatic* runoff of STAR and a delayed Approval runoff, however, is very, very large.
+The evidence for my hypothesis that a more coarse ballot is more robust to friction is mixed. There seems to be something there, when comparing clear-eyed Approval Top-2 to a theoretical clear-eyed SCORE Top-2 delayed runoff. But the gap is not so large that I will conclusively say my hypothesis is confirmed.
+
+At the very least, for this comparison between a theoretical SCORE Top-2 (that nobody is actually advocating for) with the St. Louis model, I would say that the SCORE ballot appears completely unjustified. The gulf between the *automatic* runoff of STAR and a delayed Approval runoff, however, is very, very large.
 
 ## Conclusion
 
