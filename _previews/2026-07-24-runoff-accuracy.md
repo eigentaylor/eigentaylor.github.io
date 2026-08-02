@@ -1,9 +1,9 @@
 ---
 layout: distill
 title: 'Coarse Correction: Is STAR Actually More Accurate than Approval?'
-date: 2026-07-30
+date: 2026-08-01
 description: Why Approval with a delayed runoff might be far more robust than a more granular and expressive voting system like STAR when voters are misinformed and fatigued.
-importance: 2
+importance: 1
 tags: voting
 category: polisci
 featured: false
@@ -362,7 +362,7 @@ Eugene is a liberal city in a fairly progressive blue state. If STAR is 0-3 in *
 
 I have said before that as RCV is dying a slow and agonizing death, we likely have one chance to pivot before we burn through all the good will and willingness to try something new. I like our chances better if we all rally behind the system that has shown itself to be politically viable, and has a proven track record of success in St. Louis. I worry about flying too close to the sun trying to skip over Approval in favor of STAR. And I am deeply concerned with the potential effect of exhausting Oregonians with repeated STAR proposals to the point where they are unwilling to consider any other reform proposals in the future.
 
-The evidence in favor of STAR thus far is primarily in simulations done *by STAR proponents themselves*. And though I find their methodology excellent and without obvious flaws or a hint of bias<d-footnote>In the paper by Wolk, Quinn, and Ogren, they mention that Quinn designed VSE to find support for systems like Bucklin, but instead found that STAR had superior performance. They are also very up-front about their potential conflicts of interest regarding the fact that Wolk is the executive director for an organization advocating for the methods discussed in the paper. It is entirely above board.</d-footnote>, the numbers so far have not swung me to becoming a STAR supporter. I do not find sufficient evidence that it is better suited for public elections than the St. Louis model of Approval Top-2.
+The evidence in favor of STAR thus far is primarily in simulations done *by STAR proponents themselves*. And though I find their methodology excellent and without obvious flaws or a hint of bias<d-footnote>In the paper by Wolk, Quinn, and Ogren, they mention that Quinn originally expected the model to find support for systems like Bucklin and Majority Judgment, but instead found that STAR had superior performance. They are also very up-front about their potential conflicts of interest regarding the fact that Wolk is the executive director for an organization advocating for the methods discussed in the paper. It is entirely above board, rigorous work by people I have intense respect for.</d-footnote>, the numbers so far have not swung me to becoming a STAR supporter. I do not find sufficient evidence that it is better suited for public elections than the St. Louis model of Approval Top-2.
 
 If we suppose that expressiveness begets complexity which makes the system *less* politically viable, and *also* makes it less robust to real-world conditions, then Approval Top-2 seems to dominate STAR in every way that matters. However, that is just my opinion.
 
@@ -372,7 +372,7 @@ If we suppose that expressiveness begets complexity which makes the system *less
 
 Earlier, I mentioned the surprising robustness of Plurality Top-2 under friction. Related to this was a general trend where mild friction seemed to make plurality methods *better*. Upon reflection of the model, I believe I know why: the fact that a plurality vote is just choosing a single candidate.
 
-Unlike every other voting system, choose-one voting is the only one where fatigue has a minimal effect on outcomes. In every other voting system, there's an attempt to extract *more* data from voters by allowing some sort of expression for other candidates. This makes plurality voting robust to fatigue and unawareness, which seems to *tighten* outcomes because voters are less likely to vote for a candidate who would actually be their favorite, but has no chance anyway. The prominence model seems to focus votes on a smaller number of candidates, which appears to sort of accidentally simulate the strategic voting which makes plurality more effective. The VSE of single-round plurality is never *good*, but mild friction improves the outcomes. Plurality Top-2 under mild friction is actually on par with some of the *good* systems under ideal conditions, and is in general indistinguishable from Approval Top-2 under all friction scenarios.
+Unlike every other voting system, choose-one voting is the only one where fatigue has a minimal effect on outcomes. In every other voting system, there's an attempt to extract *more* data from voters by allowing some sort of expression for other candidates. This makes plurality voting robust to fatigue and unawareness, which seems to *tighten* outcomes because voters are less likely to vote for a candidate who would actually be their favorite, but has no chance anyway. The prominence model seems to focus votes on a smaller number of candidates, which appears to sort of accidentally simulate the strategic voting which makes plurality more effective. The VSE of single-round plurality is never *good*, but mild friction improves the outcomes. Plurality Top-2 under mild friction is actually on par with some of the *good* systems under ideal conditions.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="plurality-bump" %}
 
@@ -389,6 +389,16 @@ Despite the plurality bump, Approval still outperforms plurality voting consiste
 The Top-2 variants were less clear cut. Approval Top-2 outperforms Plurality Top-2 under mild friction, but they are not significantly different under moderate or heavy friction.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-pt2-ci" %}
+
+I also did an analysis of the difference between Approval Top-2 and Plurality Top-2 when we vary the number of candidates. The idea being that for 6 candidates, PT2 and AT2 maybe have similarish performance, but vote splitting would become more of a problem for PT2 as the number of candidates increases. Under ideal conditions, AT2 stays fairly consistent, while PT2 declines rather quickly.
+
+Under friction, however, the difference is less clear cut, but every significant difference is in favor of AT2. This bolsters the evidence of the claim that Approval scales better to crowded fields than Plurality.
+
+{% proof Expand to see the candidate sweep analysis %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-pt2-candidate-sweep" %}
+
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-pt2-candidate-ci" %}
+{% endproof %}
 
 ### The Ranked Methods Implosion
 
