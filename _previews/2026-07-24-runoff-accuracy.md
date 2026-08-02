@@ -370,7 +370,7 @@ In a 1998 paper by Regenwetter and Grofman, they analyzed the outcomes of real A
 
 > "We find no evidence here that approval voting should be replaced by a more elaborate voting scheme." (p. 532<d-cite key="regenwetterGrofman1998approvalBordaCondorcet"></d-cite>)
 
-Perhaps we've been attempting to overcomplicate our elections chasing perfection. When we step beyond the idealized assumptions of perfect voters, we find that the "top of the line" systems like STAR and Condorcet perform far worse than the simpler system being used *right now* in St. Louis. Approval Top-2 may not be a compromise at all, but actually superior and more accurate than the more complex systems that it has been overlooked in favor of. We need not fly high like Icarus, when the solution might just be in a city in Missouri.
+Perhaps we've been attempting to overcomplicate our elections chasing perfection. When we step beyond the idealized assumptions of perfect voters, we find that the "top of the line" systems like STAR and Condorcet perform far worse than the simpler system being used *right now* in St. Louis. Approval Top-2 may not be a compromise at all, but actually superior and more accurate than the more complex STAR that it has been overlooked in favor of. And when voters have actually been asked to choose that system for themselves, they've said no every time. We need not fly high like Icarus, when the solution might just be in a city in Missouri.
 
 ## Appendix
 
