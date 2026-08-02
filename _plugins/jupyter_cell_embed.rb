@@ -26,10 +26,12 @@ require 'cgi'
 # therefore becomes a single multi-image gallery.
 #
 # `mode` (optional, defaults to "all"): "images" suppresses the markdown headings/tables and
-# emits only the galleries (tables can still get very wide/tall for a blog layout -- this is
-# the escape hatch); "tables" suppresses the images and emits only the converted markdown.
-# Either way, output boundaries (and gallery groupings) still follow the cell's own original
-# structure -- a suppressed table still ends the preceding image run, it just isn't rendered.
+# emits only the galleries -- since the tables/headings that would otherwise mark a boundary
+# are hidden, every image for the tag merges into ONE swipeable gallery instead of one per
+# hidden boundary. "tables" suppresses the images and emits only the converted markdown
+# (tables can still get very wide/tall for a blog layout -- this is the escape hatch for
+# that). In the default "all" mode, boundaries follow the cell's own original structure: a
+# table still ends the preceding image run, so each heading/table gets its own gallery.
 #
 # A missing notebook, a notebook that fails to parse, or a tag with zero matching cells all
 # raise (failing the build loudly) rather than silently rendering nothing -- a deleted or
@@ -97,7 +99,10 @@ module Jekyll
                 pending_images << { bytes: Base64.decode64(join_text(data['image/png'])), alt: last_heading }
               end
             elsif data['text/markdown']
-              flush.call
+              # In images-only mode, a table/heading boundary is invisible to the reader (it
+              # isn't rendered), so it shouldn't split the gallery either -- every image for
+              # this tag merges into one swipeable gallery instead of one per hidden boundary.
+              flush.call unless mode == 'images'
               md_text = join_text(data['text/markdown'])
               unless mode == 'images'
                 converted = converter.convert(md_text)
