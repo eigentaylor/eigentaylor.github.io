@@ -90,7 +90,7 @@ The following is the VSE range of the major reforms that are currently being con
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="evc-vse" %}
 
-In addition to measuring "aggregation competence," VSE can be used as advocacy evidence to demonstrate the robustness of a method to the public. In a recent TEDx talk, [Sara Wolk](https://youtu.be/xWQiy5VdwY0?si=ABEnMeAMKWSvMWjS&t=483), the Executive Director of the Equal Vote Coalition, introduces a version of the above chart and says:
+In addition to measuring "aggregation competence," VSE can be used as advocacy evidence to demonstrate the robustness of a method to the public. In a recent [TEDx talk](https://youtu.be/xWQiy5VdwY0?si=ABEnMeAMKWSvMWjS), Sara Wolk, the Executive Director of the Equal Vote Coalition, introduces a version of the above chart and says:
 
 > "Today, experts can use computer models to see how different voting methods would actually perform. And it's pretty much just like how engineers can test the plans for a new skyscraper before actually building it." (Timestamp [7:10](https://youtu.be/xWQiy5VdwY0?si=9vzXt8aI6_beTKoi&t=430))
 
@@ -352,7 +352,7 @@ In a time when it's not even clear that the simplest voting system, Approval, is
 
 Though the sample size for how Approval and STAR fare at the ballot box is small, the results are concerning:
 
-STAR has been rejected three times by voters in Oregon. There is the Eugene situation that has framed this discussion, of course. But it was also rejected in [Lane County in 2018](https://ballotpedia.org/Lane_County,_Oregon,_Measure_20-290,_Score_Then_Automatic_Runoff_Voting_Method_(November_2018)) (52.4% opposed) and [Oakridge in 2024](https://ballotpedia.org/Oakridge,_Oregon,_Measure_20-364,_STAR_Voting_for_Three_Election_Cycles_Amendment_(November_2024)) (53.56% opposed, and this was a reversible low-stakes three election pilot test).
+STAR has been rejected three times by voters in Oregon. There is the Eugene situation that has framed this discussion, of course. But it was also rejected in [Lane County in 2018](https://ballotpedia.org/Lane_County,_Oregon,_Measure_20-290,_Score_Then_Automatic_Runoff_Voting_Method_(November_2018)) (52.4% opposed, also would have eliminated primaries) and [Oakridge in 2024](https://ballotpedia.org/Oakridge,_Oregon,_Measure_20-364,_STAR_Voting_for_Three_Election_Cycles_Amendment_(November_2024)) (53.56% opposed, and this was a reversible low-stakes three election pilot test).
 
 Fundamentally, I have to ask: is scoring the options for Commissioner of the Water and Electric Board the way you rate a restaurant on Yelp actually something the average voter is clamoring to do? Perhaps this prospect is appealing to political junkies<d-footnote>No offense to you, dear reader, but if you are reading <em>this blog post</em> you may not be representative of the average voter. Thank you for reading this far, by the way!</d-footnote>, but I am skeptical that the number of voters who find this more expressive ballot enticing is particularly large, or outweighs the numbers who would vote "no" to it at the ballot box simply due to its complex nature.
 
@@ -390,7 +390,7 @@ This leads me to an uncomfortable conclusion that choose-one voting, for as flaw
 
 Despite the plurality bump, Approval still outperforms plurality voting consistently.
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="plurality-vs-approval" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="plurality-vs-approval" %}<br>
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="plurality-approval-ci" %}
 
@@ -414,7 +414,7 @@ Perhaps the most shocking thing to me was the complete and utter collapse of the
 
 Schulze already has a massive drop-off in VSE under strategic voting. When you design a system to calculate the Condorcet winner explicitly, then you do indeed get the highest possible VSE under completely ideal honest voting (because the Condorcet winner is almost always that best candidate). But dishonest data just ends up electing someone else (who is almost surely *worse* than the Condorcet winner).
 
-I expected sand to cause STAR to break, but I should have realized that Condorcet was the far more intricate machine that would truly seize up under friction. It gets far worse for Schulze when voters are not even ranking candidates. It relies on all that nuanced preference data to do its thing, and otherwise it's just a mess.
+I expected friction to cause STAR to break, but I should have realized that Condorcet was the far more intricate machine that would truly seize up when sand got in its gears. It gets far worse for Schulze when voters are not even ranking candidates. It relies on all that nuanced preference data to do its thing, and otherwise it's just a mess.
 
 Ranked-Choice Voting (RCV) does not fare much better, and which of the two is better depends on the friction level, which might be the most embarrassing thing to come out of this post. As someone relatively sympathetic to Condorcet methods, it does not fill me with relish to say that Schulze's massive outcome advantage over RCV basically completely vanishes or reverses. RCV is already very bad across the board, in essentially every respect (including beyond raw outcomes, like practicality), but even this is appalling.
 
