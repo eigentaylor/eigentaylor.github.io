@@ -366,6 +366,12 @@ The evidence in favor of STAR thus far is primarily in simulations done *by STAR
 
 If we suppose that expressiveness begets complexity which makes the system *less* politically viable, and *also* makes it less robust to real-world conditions, then Approval Top-2 seems to dominate STAR in every way that matters. However, that is just my opinion.
 
+In a 1998 paper by Regenwetter and Grofman, they analyzed the outcomes of real Approval elections to see if they might match the theoretical outcomes under methods like Borda or Condorcet from reconstructed preferences. They reach the same conclusion I do, by a very different route:
+
+> "We find no evidence here that approval voting should be replaced by a more elaborate voting scheme." (p. 532<d-cite key="regenwetterGrofman1998approvalBordaCondorcet"></d-cite>)
+
+Perhaps we've been attempting to overcomplicate our elections chasing perfection. When we step beyond the idealized assumptions of perfect voters, we find that the "top of the line" systems like STAR and Condorcet perform far worse than the simpler system being used *right now* in St. Louis. Approval Top-2 may not be a compromise at all, but actually superior and more accurate than the more complex systems that it has been overlooked in favor of. We need not fly high like Icarus, when the solution might just be in a city in Missouri.
+
 ## Appendix
 
 ### The Plurality Bump
