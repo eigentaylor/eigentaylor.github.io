@@ -35,7 +35,7 @@ Now you may be thinking: "What is this sorcery, magic man?" And I'll tell you ex
 **Euler's Formula**
 =
 
-If you don't know what it is, this is an [explanation](../eulersformula/){:target="_blank"} of it. But the formula is
+If you don't know what it is, this is an [explanation](../eulersformula/) of it. But the formula is
 
 $$\begin{equation}
 e^{ix}=\cos(x)+i\sin(x)

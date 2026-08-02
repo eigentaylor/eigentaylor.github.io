@@ -205,7 +205,7 @@ So we can say that our solution is
 
 $$y=a_0+a_1x+(a_0+2a_1)x^2=a_0(1+x^2)+a_1(x+2x^2)$$
 
-We can let $$a_0$$ and $$a_1$$ be our arbitrary constants, and it gives us the [normalized solutions](../normalized/){:target="_blank"}!
+We can let $$a_0$$ and $$a_1$$ be our arbitrary constants, and it gives us the [normalized solutions](../normalized/)!
 
 $$y=c_1(1+x^2)+c_2(x+2x^2)$$
 

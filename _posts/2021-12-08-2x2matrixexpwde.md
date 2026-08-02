@@ -88,7 +88,7 @@ e^{\lambda It}=e^{\lambda t}I
 
 # Proofs
 
-I would not say it's required reading, but to prove these formulas, we are going to primarily use [this post](../matrixexpwde){:target="_blank"}. The method outlined in that post utilizes the [normalized solutions](../normalized){:target="_blank"} of the linear differential equation obtained from the characteristic polynomial. This is ideal for $$2\times2$$ matrices, because second order equations have very easy normalized solutions relative to anything of higher order. Since these normalized solutions are easy to remember, it makes these exponential formulas easy to remember too (if you know them).
+I would not say it's required reading, but to prove these formulas, we are going to primarily use [this post](../matrixexpwde). The method outlined in that post utilizes the [normalized solutions](../normalized) of the linear differential equation obtained from the characteristic polynomial. This is ideal for $$2\times2$$ matrices, because second order equations have very easy normalized solutions relative to anything of higher order. Since these normalized solutions are easy to remember, it makes these exponential formulas easy to remember too (if you know them).
 
 ## Intro
 
@@ -106,7 +106,7 @@ $$Y_1''+Y_1=0,\,Y_1(0)=1,Y_1'(0)=0$$
 
 $$Y_2''+Y_2=0,\,Y_2(0)=0,Y_2'(0)=1$$
 
-My post on [normalized solutions](../normalized){:target="_blank"} covers ways to get them, but I'll just give them to you in the following section. Observe, though, that the initial conditions form the identity matrix :eyes:
+My post on [normalized solutions](../normalized) covers ways to get them, but I'll just give them to you in the following section. Observe, though, that the initial conditions form the identity matrix :eyes:
 
 The way we can use these normalized solutions to get our matrix exponential is done by considering $$e^{At}$$ to be the solution $$\Phi(t)$$ to the initial value problem
 
@@ -126,7 +126,7 @@ $$\begin{equation} \label{normform}
 e^{At}=Y_1(t)I+Y_2(t)A
 \end{equation}$$
 
-Again, you may read [the other post](../matrixexpwde){:target="_blank"} if you want to see a more rigorous proof of this.
+Again, you may read [the other post](../matrixexpwde) if you want to see a more rigorous proof of this.
 
 ## Distinct Eigenvalues
 
@@ -235,7 +235,7 @@ $$e^{\lambda It}=e^{\lambda t}I$$
 
 # Applications
 
-For ways to apply matrix exponentials to solve $$2\times2$$ systems of differential equations, check out [this post](../firstordersystemsquick){:target="_blank"} on solving them like a baller.
+For ways to apply matrix exponentials to solve $$2\times2$$ systems of differential equations, check out [this post](../firstordersystemsquick) on solving them like a baller.
 
 Closing Remarks
 -

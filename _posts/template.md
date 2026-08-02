@@ -26,8 +26,8 @@ $$
 \end{equation}
 $$
 
-[hyperlink](../eigentricks/){:target="_blank"}
+[hyperlink](../eigentricks/)
 
 [Section c2](#c2)
 
-[hyperlink](https://youtu.be/M5CeQG1YfEQ?si=2J5M9Tdyq01GVAsc){:target="_blank"}
+[hyperlink](https://youtu.be/M5CeQG1YfEQ?si=2J5M9Tdyq01GVAsc)

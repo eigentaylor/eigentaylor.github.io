@@ -8,7 +8,7 @@ nav_order: 5
 calendar: true
 ---
 
-[my linear algebra mini-textbook solution document](/assets/pdf/linalgsolutions.pdf){:target="_blank"}
+[my linear algebra mini-textbook solution document](/assets/pdf/linalgsolutions.pdf)
 
 Classes I was/am a TA for.
 

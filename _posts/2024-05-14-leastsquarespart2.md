@@ -16,7 +16,7 @@ toc:
   - name: The smallest closest solution
 ---
 
-This is a short sequel to my previous post on [least squares](../leastsquares/){:target="_blank"}.
+This is a short sequel to my previous post on [least squares](../leastsquares/).
 
 These are the questions I left at the end of that post (in the more general complex form).
 
@@ -109,4 +109,4 @@ I think it's a good exercise to try and show that $$VS^{-1}U^*b$$ is in fact the
 - $$VV^*$$ is a projector onto the column space of $$A^*$$, which is orthogonal to $$\ker(A)$$
 - If $$b=w+w_\perp$$, then what is $$w$$ in terms of $$b$$ and $$U$$?
 
-[hyperlink](https://youtu.be/M5CeQG1YfEQ?si=2J5M9Tdyq01GVAsc){:target="_blank"}
+[hyperlink](https://youtu.be/M5CeQG1YfEQ?si=2J5M9Tdyq01GVAsc)

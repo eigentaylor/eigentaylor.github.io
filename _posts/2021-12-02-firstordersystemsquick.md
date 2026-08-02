@@ -30,7 +30,7 @@ toc:
   - name: Off by a scalar matrix example
 ---
 
-I recommend reading/skimming [this post](../eigentricks/){:target="_blank"} first on ways to very quickly identify the characteristic polynomial, eigenvalues, and eigenvectors.
+I recommend reading/skimming [this post](../eigentricks/) first on ways to very quickly identify the characteristic polynomial, eigenvalues, and eigenvectors.
 
 We are going to be discussing how to solve systems of differential equations with constant coefficients like a bodacious baller.
 
@@ -50,7 +50,7 @@ $$\begin{equation}
 \bf{x}'=\begin{pmatrix}a&b\\c&d\end{pmatrix}x
 \end{equation}$$
 
-The first step for *any* of these problems is to find the eigenvalues. Without them, there's almost nothing we can do. As mentioned before, I have [a post](../eigentricks/){:target="_blank"} on ways to greatly speed up this process. Regardless, to find the eigenvalues we start by calculating the trace and the determinant.
+The first step for *any* of these problems is to find the eigenvalues. Without them, there's almost nothing we can do. As mentioned before, I have [a post](../eigentricks/) on ways to greatly speed up this process. Regardless, to find the eigenvalues we start by calculating the trace and the determinant.
 
 Reminder that the trace is the sum of the diagonal entries $$\operatorname{tr}(A)=a+d$$ and the determinant of a $$2\times2$$ matrix is $$\det(A)=ad-bc$$. We will also use the fact that the trace is the sum of the eigenvalues, and the determinant is the product.
 
@@ -89,7 +89,7 @@ Now there are many different potential subcases of the three main cases of eigen
 
 **Check if your matrix satisfies any of the following cases before you get down and dirty with eigenvectors:**
 
-I will copy the most useful formulas from my post about $$2\times2$$ [matrix exponential formulas](../2x2ezmatrixexp/){:target="_blank"}:
+I will copy the most useful formulas from my post about $$2\times2$$ [matrix exponential formulas](../2x2ezmatrixexp/):
 
 - If $$A$$ has a real determinant, $$\operatorname{tr}(A)=0$$, and $$\det(A)<0$$, then an eigenvalue of $$A$$ is $$\lambda=\sqrt{-\det(A)}$$, and
 
@@ -132,7 +132,7 @@ The columns of these matrices will give you a fundamental set of solutions. So i
 
 ## Distinct Eigenvalues Formulas
 
-If $$A$$ has distinct eigenvalues, then a matrix exponential will not be the fastest way to calculate the general solution. It is faster to just find the eigenvectors using the ["Eigenvector Columns Theorem"](https://eigentaylor.github.io/math/eigentricks/#the-eigenvector-columns-theorem){:target="_blank"} discussed in the [other post](../eigentricks/){:target="_blank"}.
+If $$A$$ has distinct eigenvalues, then a matrix exponential will not be the fastest way to calculate the general solution. It is faster to just find the eigenvectors using the ["Eigenvector Columns Theorem"](https://eigentaylor.github.io/math/eigentricks/#the-eigenvector-columns-theorem) discussed in the [other post](../eigentricks/).
 
 That said, while the ECT is the fastest way for any general solution, if you want the general solution for a general initial value problem, like $$(x_0,y_0)$$, then \eqref{distinct} is actually worth the time, as it is not *too* difficult to calculate.
 
@@ -165,7 +165,7 @@ Examples of using all of these formulas can be found in a section [below](
 
 # 3x3s
 
-With $$3\times3$$s, I recommend using some of the tricks in my [eigen-tricks post](../eigentricks/){:target="_blank"}. The first trick is also using the trace being the sum of the eigenvalues, and the determinant being the product, as this works for any sized square matrix.
+With $$3\times3$$s, I recommend using some of the tricks in my [eigen-tricks post](../eigentricks/). The first trick is also using the trace being the sum of the eigenvalues, and the determinant being the product, as this works for any sized square matrix.
 
 If the matrix has nice entries and you can find a combination of 3 nice eigenvalues which satisfy the trace and determinant, it is almost surely the case that that combination will be correct. You can always calculate $$A-\lambda I$$ for any of them, and if the result is singular then you know you are correct.
 

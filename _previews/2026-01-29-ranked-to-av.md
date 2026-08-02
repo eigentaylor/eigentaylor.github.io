@@ -28,9 +28,9 @@ toc:
 
 > Approval voting (AV) is a voting method where each voter can "approve" of as many candidates as they like, and the candidate with the most approvals wins.
 
-I have previously discussed the mathematical properties of AV, how a voter might be able to frame their vote as [sincere and strategyproof](../av-stratproof){:target="_blank"}, given a [practical case](../practicalapproval){:target="_blank"} for its use in US elections, and also recently proven that [AV is the only internally consistent cardinal method](../consistentcardinal){:target="_blank"}.
+I have previously discussed the mathematical properties of AV, how a voter might be able to frame their vote as [sincere and strategyproof](../av-stratproof), given a [practical case](../practicalapproval) for its use in US elections, and also recently proven that [AV is the only internally consistent cardinal method](../consistentcardinal).
 
-In this post, I want to explore a particular and very fun exercise in deducing possible AV outcomes from ranked ballots. This is based on Chapter 2 of [Steven Brams' 2008 text *Mathematics and Democracy*](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy){:target="_blank"}.
+In this post, I want to explore a particular and very fun exercise in deducing possible AV outcomes from ranked ballots. This is based on Chapter 2 of [Steven Brams' 2008 text *Mathematics and Democracy*](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy).
 
 ## The Indeterminacy of Approval Voting
 
@@ -44,11 +44,11 @@ If a voter ranks candidates A > B > C, the ranked ballot can capture the *ordina
 
 Approval voting is often criticized for its lack of granularity in its ballot and ability to express preferences, but this is a values judgment. Voter 2 may strongly value that they can express that they find both A and B acceptable, and vote for them both equally *against* their least-preferred candidate C. They might fear that if they submit an honest ranked ballot, the system might elect C, which they find unacceptable, just because they ranked A first and B second.
 
-If this sounds absurd, it has happened. In [Alaska's 2022 special election for US House](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"}, voters who expressed an honest preference for Sarah Palin (R)-first and Nick Begich III (R)-second *did* in fact elect Mary Peltola (D) because of that sincerity. If 2,893 of voters who ranked Palin first and Begich second had simply switched the order of their first two rankings, the weaker candidate Palin would have been eliminated instead of the only Republican who could have beaten Peltola in the final round, Begich. Begich would have won because 52.5% of ballots expressing a preference between Begich and Peltola preferred Begich.
+If this sounds absurd, it has happened. In [Alaska's 2022 special election for US House](https://ranked.vote/report/us/ak/2022/08/cd), voters who expressed an honest preference for Sarah Palin (R)-first and Nick Begich III (R)-second *did* in fact elect Mary Peltola (D) because of that sincerity. If 2,893 of voters who ranked Palin first and Begich second had simply switched the order of their first two rankings, the weaker candidate Palin would have been eliminated instead of the only Republican who could have beaten Peltola in the final round, Begich. Begich would have won because 52.5% of ballots expressing a preference between Begich and Peltola preferred Begich.
 
-The issue is that a system like IRV (instant-runoff voting, AKA "ranked-choice voting") does not solve the [vote-splitting problem](https://substack.com/@whelmedcitizen/p-182659376){:target="_blank"} since it does not properly consider the full rankings of voters. Who is eliminated first or second can entirely decide the winner, electing a candidate that a majority of voters would find someone else more preferable to.
+The issue is that a system like IRV (instant-runoff voting, AKA "ranked-choice voting") does not solve the [vote-splitting problem](https://substack.com/@whelmedcitizen/p-182659376) since it does not properly consider the full rankings of voters. Who is eliminated first or second can entirely decide the winner, electing a candidate that a majority of voters would find someone else more preferable to.
 
-Only a ranked Condorcet method can truly solve this vote-splitting problem, *generally* [at the cost of realistic practicality](../practicalapproval){:target="_blank"} (in the case of the particularly complicated methods, at least). But Approval voting also solves this problem because it counts all voters equally and simultaneously, rather than sequentially or conditionally, and does so while being eminently practical.
+Only a ranked Condorcet method can truly solve this vote-splitting problem, *generally* [at the cost of realistic practicality](../practicalapproval) (in the case of the particularly complicated methods, at least). But Approval voting also solves this problem because it counts all voters equally and simultaneously, rather than sequentially or conditionally, and does so while being eminently practical.
 
 However, the cost of this practicality and simplicity is that AV does lose the granularity *within* the "approve" and "disapprove" buckets. And while this makes it very difficult to map an approval ballot into a ranked ballot, it also introduces a certain indeterminacy when considering how a ranked ballot might map into an approval ballot. Let's consider an example:
 
@@ -149,7 +149,7 @@ By calculating the RAVUBs for all the candidates, we should not rank the candida
 
 Let's take a look at two  real-world elections that used ranked ballots, and analyze them using the RAVUB. We won't go into excessive detail here, but I will link to the CSV files containing the ballot data I extracted for each election. Anyone can verify my results and tell me if I made any catastrophic errors in my calculations or in extracting the data. Feel free to reach out to me through Discord (eigentaylor) if you believe my data is miscounted. But take my results with a grain of salt.
 
-You can view an interactive visualization of the RAVUB results for both elections [here](https://eigentaylor.github.io/AVCSP/){:target="_blank"}.
+You can view an interactive visualization of the RAVUB results for both elections [here](https://eigentaylor.github.io/AVCSP/).
 
 ## Alaska 2022 Special Election for US House
 
@@ -197,8 +197,8 @@ Keep in mind that this is an **upper bound** on Begich's performance under Appro
 
 ## References
 
-Brams, S. J. (2008). *Mathematics and Democracy: Designing Better Voting and Fair-Division Procedures*. Princeton University Press. [https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy){:target="_blank"}
+Brams, S. J. (2008). *Mathematics and Democracy: Designing Better Voting and Fair-Division Procedures*. Princeton University Press. [https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy)
 
-Mahlendorf, A. (2026). Fear of Vote Splitting. Substack. [https://substack.com/@whelmedcitizen/p-182659376](https://substack.com/@whelmedcitizen/p-182659376){:target="_blank"}
+Mahlendorf, A. (2026). Fear of Vote Splitting. Substack. [https://substack.com/@whelmedcitizen/p-182659376](https://substack.com/@whelmedcitizen/p-182659376)
 
-Ranked.Vote. (2022). *Alaska At-large Congressional District*. [https://ranked.vote/report/us/ak/2022/08/cd](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"}
+Ranked.Vote. (2022). *Alaska At-large Congressional District*. [https://ranked.vote/report/us/ak/2022/08/cd](https://ranked.vote/report/us/ak/2022/08/cd)

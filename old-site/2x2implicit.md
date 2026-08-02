@@ -50,7 +50,7 @@ e^{\lambda_1t}\frac{v\cdot(x_0,y_0)}{|v|^2}\begin{bmatrix}v_1\\v_2\end{bmatrix}+
 e^{\lambda_2t}\frac{w\cdot(x_0,y_0)}{|w|^2}\begin{bmatrix}w_1\\w_2\end{bmatrix}
 \end{equation}$$
 
-See [here](../symmetric-exp/){:target="_blank"} for more information.
+See [here](../symmetric-exp/) for more information.
 
 ### Complex Eigenvalues with a Nonzero Real Part
 

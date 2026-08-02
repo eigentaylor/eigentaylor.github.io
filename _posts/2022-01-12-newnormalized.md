@@ -63,7 +63,7 @@ There are also some interesting consequences and relationships between the norma
 
 ## Wait, what are normalized solutions?
 
-I made a [post](/math/normalized){:target="_blank"} about them before, but here is a short explanation.
+I made a [post](/math/normalized) about them before, but here is a short explanation.
 
 Normalized solutions make solving initial value problems easy. They are the solutions $$Y_1,\ldots,Y_n$$ such that the solution to the initial value problem with initial conditions $$y(t_0)=y_0,\ldots,y^{(n-1)}(t_0)=y^{(n-1)}_0$$ is simply
 

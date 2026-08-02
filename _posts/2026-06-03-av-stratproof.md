@@ -40,7 +40,7 @@ toc:
 
 This is a redo of my second post on Approval voting from November 2025. I was early in my journey learning about Approval voting, and I think I can explain this concept more clearly and concisely now. This post is primarily based on the seminal 1978 paper by Brams and Fishburn<d-cite key="bramsFishburn1978approval"></d-cite>.
 
-Approval voting lets voters approve (vote for) as many candidates as they like. It's like the standard choose-one plurality system, except it removes the arbitrary restriction of voting for only one candidate. Surprisingly, despite being such a simple change, the system is [on par with the best of the most popular proposed systems](../approval-only/){:target="_blank"}.
+Approval voting lets voters approve (vote for) as many candidates as they like. It's like the standard choose-one plurality system, except it removes the arbitrary restriction of voting for only one candidate. Surprisingly, despite being such a simple change, the system is [on par with the best of the most popular proposed systems](../approval-only/).
 
 The question we are trying to answer in this post is a simple one:
 
@@ -62,7 +62,7 @@ Brams and Fishburn<d-cite key="bramsFishburn1978approval"></d-cite> give a somew
 
 For example, you cannot approve of your first and third choices without approving your second choice on a sincere ballot, because that would imply a "hole" in your ballot.
 
-I know some people, particularly [Condorcetists](../condorcet-approval/){:target="_blank"}, who dislike this definition of "sincere" because it allows a voter multiple sincere strategies. The objection gets the relationship backwards. Sincerity is defined based on how *ordinal* preferences--which [cannot capture acceptability](../why-condorcet/){:target="_blank"}--can "honestly" be projected onto an Approval ballot.
+I know some people, particularly [Condorcetists](../condorcet-approval/), who dislike this definition of "sincere" because it allows a voter multiple sincere strategies. The objection gets the relationship backwards. Sincerity is defined based on how *ordinal* preferences--which [cannot capture acceptability](../why-condorcet/)--can "honestly" be projected onto an Approval ballot.
 
 One positive aspect of this definition is that two voters who rank $A>B>C$ can vote exclusively for $A$ or for both $A$ and $B$ to show a meaningful difference in how they feel about $B$ relative to $A$. Is $B$ an acceptable backup for $A$, which you are happy to approve of, or is $B$ a lesser evil that you only approve of if you have to? Both of these are sincere strategies, and Approval allows them both to be expressed without forcing the voters to share only the ordinal information which cannot capture that distinction. This is a feature, not a bug, in my view.
 
@@ -144,7 +144,7 @@ We haven't escaped strategy entirely: it's still prudent to consider the viabili
 
 Even so, this is usually preferable to the kind of "active betrayal" that can occur in other systems. Laslier's leader rule is one such approach to drawing an informed acceptability line<d-cite key="laslier2009leaderRule"></d-cite>. To explain it extremely briefly, a voter identifies the expected winner (the "leader", based on polling or other information) and approves of all candidates they prefer to the leader. If the voter prefers the leader to the expected runner-up, they also approve of the leader, but no other candidates they prefer strictly less than the leader. I will discuss this strategy in more detail in a future post.
 
-However, if you feel you can only approve a small set of candidates in good conscience, Approval lets you express that honestly without penalty. And unlike some more complex systems, Approval [won't betray you for that choice (see the appendix)](#ballot-level-strategyproofness){:target="_blank"}: your ballot can only help elect someone you voted for.
+However, if you feel you can only approve a small set of candidates in good conscience, Approval lets you express that honestly without penalty. And unlike some more complex systems, Approval [won't betray you for that choice (see the appendix)](#ballot-level-strategyproofness): your ballot can only help elect someone you voted for.
 
 This is, however, a point in favor of Approval with a top two runoff. Even if a voter fails to distinguish between the frontrunners, the runoff gives them another chance to influence the result. And although Approval with a runoff is more strategic and less sincere in theory with perfect knowledge<d-cite key="fishburnBrams1981runoff"></d-cite>, it can also make voters feel safer being more generous with their approvals, since they still have the runoff if they accidentally waste their vote.
 
@@ -154,13 +154,13 @@ The truth is that, although we *could* ask voters to rank candidates, many peopl
 
 "Vote blue no matter who" is an example of a dichotomous preference. A voter who would approve every candidate with an "R" next to their name and disapprove everyone else is effectively operating in the dichotomous domain. This applies to single-issue voters as well.
 
-Many voters can readily categorize candidates into "acceptable" and "unacceptable" buckets without much thought, based on the criteria that matter to them. I have also [argued that compromise](../why-condorcet/){:target="_blank"} and consent are inherently binary concepts. "Acceptable" and "unacceptable" is precisely what Approval voting captures, which makes it a natural fit for these voters and these goals.
+Many voters can readily categorize candidates into "acceptable" and "unacceptable" buckets without much thought, based on the criteria that matter to them. I have also [argued that compromise](../why-condorcet/) and consent are inherently binary concepts. "Acceptable" and "unacceptable" is precisely what Approval voting captures, which makes it a natural fit for these voters and these goals.
 
 ## Conclusion
 
-As I explored in [this post](../why-condorcet/){:target="_blank"}, I think compromise and consent are essentially impossible to express with a ranked ballot. That is simply not what ranked ballots are *able* to capture. Two voters can give the same preference *order* yet disagree on who they'd find genuinely acceptable. "Second choice" does not imply "acceptable backup"--it could mean "lesser evil" (or vice versa). Scores are similarly ambiguous: is a 3/5 "acceptable" or not?
+As I explored in [this post](../why-condorcet/), I think compromise and consent are essentially impossible to express with a ranked ballot. That is simply not what ranked ballots are *able* to capture. Two voters can give the same preference *order* yet disagree on who they'd find genuinely acceptable. "Second choice" does not imply "acceptable backup"--it could mean "lesser evil" (or vice versa). Scores are similarly ambiguous: is a 3/5 "acceptable" or not?
 
-Acceptability isn't naturally categorized by ordinal rankings or utility scores. Approval voting is, to me, the natural language of compromise: each voter signals who they find acceptable, and the candidate with the largest base of acceptability earns the right to be called the consensus choice. Approval isn't perfect at capturing compromise--no practical system is--but it asks the right question. And I think that is something that we, in this polarized time, should [seriously consider](../approval-only){:target="_blank"}.
+Acceptability isn't naturally categorized by ordinal rankings or utility scores. Approval voting is, to me, the natural language of compromise: each voter signals who they find acceptable, and the candidate with the largest base of acceptability earns the right to be called the consensus choice. Approval isn't perfect at capturing compromise--no practical system is--but it asks the right question. And I think that is something that we, in this polarized time, should [seriously consider](../approval-only).
 
 This is not to understate the strategic question of where to draw the line of acceptability--it's a real consideration. But in practice the strategic worry around Approval is often overstated.
 
@@ -179,17 +179,17 @@ There is a small bonus that follows from strategyproofness on dichotomous prefer
 
 This means your ballot is already doing maximal work for the candidates you approved against those you did not. It's a nontrivial guarantee that few other systems can claim.
 
-Take [ranked choice voting](../ditch-rcv/){:target="_blank"}, for example, in the infamous 2022 Alaska race. [Over 33,000 voters](https://ranked.vote/report/us/ak/2022/08/cd) ranked Republican Sarah Palin first with fellow Republican Nick Begich second, implying they preferred Begich to Democrat Mary Peltola<d-cite key="rankedVote2022alaskaCd"></d-cite>, but Peltola won.
+Take [ranked choice voting](../ditch-rcv/), for example, in the infamous 2022 Alaska race. [Over 33,000 voters](https://ranked.vote/report/us/ak/2022/08/cd) ranked Republican Sarah Palin first with fellow Republican Nick Begich second, implying they preferred Begich to Democrat Mary Peltola<d-cite key="rankedVote2022alaskaCd"></d-cite>, but Peltola won.
 
 If fewer than 3,000 of those voters had instead insincerely ranked Begich first (burying Palin second), they could have elected Begich instead of Peltola. They were already signaling "Begich over Peltola," but the ranked system required them to misrepresent their ordinal preferences to make their ballots decisive. That is a failure of the voting rule to respect explicitly stated preferences. Similar events occurred in [Burlington, Vermont in 2009](https://ranked.vote/report/us/vt/btv/2009/03/mayor).
 
-Under Approval, such voters could simply approve both Palin and Begich and get Begich instead of Peltola without misrepresenting their preferences. There is no need to exaggerate or hide preferences to get the system to respect them (e.g., your feelings about Palin shouldn't prevent Begich from winning over *Peltola* if he's preferred). If this reminds you of [IIA](../iia/){:target="_blank"}, that's no accident.
+Under Approval, such voters could simply approve both Palin and Begich and get Begich instead of Peltola without misrepresenting their preferences. There is no need to exaggerate or hide preferences to get the system to respect them (e.g., your feelings about Palin shouldn't prevent Begich from winning over *Peltola* if he's preferred). If this reminds you of [IIA](../iia/), that's no accident.
 
 If a sufficient number of voters find Begich acceptable, he wins. Given that both hardcore Palin supporters and Democrats found Begich more acceptable than their alternatives, it's plausible Begich would have won under Approval.
 
 In RCV, Begich arguably already had the numbers to beat Peltola, but the ballot mechanics prevented that preference from being expressed without strategic distortion. Approval voting avoids that problem: if Begich has the numbers to win, a vote for him won't backfire and cause him to lose. Simplicity here is an advantage.
 
-Condorcet methods can fail this way--where insincerity is required to get the most preferred outcome (see [this post](../iia/){:target="_blank"}), and [this post](../approval-only/){:target="_blank"} shows a case in STAR where participation backfires. Approval's strict monotonicity prevents these pathologies.
+Condorcet methods can fail this way--where insincerity is required to get the most preferred outcome (see [this post](../iia/)), and [this post](../approval-only/) shows a case in STAR where participation backfires. Approval's strict monotonicity prevents these pathologies.
 
 However, you might still get a *better* outcome in Approval by extending or reducing your approval threshold, as in Example \ref{strategy-not-proof}. This is a **passive inefficiency** rather than the **active betrayal** seen in some ranked systems. So Approval is not perfectly strategyproof, but it does offer a valuable guarantee.
 

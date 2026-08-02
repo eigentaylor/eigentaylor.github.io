@@ -48,7 +48,7 @@ Merry April Foolsmas, everyone! I have seen the light of the math, and I am now 
 
 Fellow Condorcetists, I come bearing a gift: I have permanently solved the Condorcet paradox. There is in fact a *perfect* voting system! It is called *Approval voting*, and it *is* indeed a Condorcet method.
 
-[For an actually serious argument on the fact that Approval is a practical Condorcet approximation, see this post.](../practicalapproval){:target="_blank"} However, the math I am about to present is *dead serious*, even if *I* am not.
+[For an actually serious argument on the fact that Approval is a practical Condorcet approximation, see this post.](../practicalapproval) However, the math I am about to present is *dead serious*, even if *I* am not.
 
 ## Condorcet and His Paradox
 
@@ -94,7 +94,7 @@ The use of rankings to infer one-on-one preferences is an approximation. Every C
 
 > **Definition:** A voting system satisfies the *Condorcet criterion* if whenever there is a candidate who would defeat every other candidate in a head-to-head matchup **based on the ballot data of voters who expressed a preference between the two candidates**, then that candidate must win.
 
-If you do not elect such a candidate in a ranked system, then **what are you even** ***doing***? [Why ask for rankings if you aren't even going to use or respect them?](../ditch-rcv){:target="_blank"} If you do not elect such a candidate, then you have elected someone else who has to serve their constituents knowing that a majority of voters wanted someone else more. That creates a [legitimacy problem](../consistentcardinal){:target="_blank"}.
+If you do not elect such a candidate in a ranked system, then **what are you even** ***doing***? [Why ask for rankings if you aren't even going to use or respect them?](../ditch-rcv) If you do not elect such a candidate, then you have elected someone else who has to serve their constituents knowing that a majority of voters wanted someone else more. That creates a [legitimacy problem](../consistentcardinal).
 
 We also cannot guarantee that even if we elect the Condorcet winner induced by the ballots, that candidate would truly defeat every other candidate in a head-to-head matchup, because we are not directly asking all of those head-to-head questions, especially when ties or ballot truncation are allowed.<d-footnote>A commonly cited example of a Condorcet failure is Alaska's 2022 House special election. But due to ballot truncation, it's not even 100% guaranteed that Nick Begich was actually the Condorcet winner.</d-footnote>
 
@@ -226,11 +226,11 @@ From another perspective, however, this is a blowout. Alice was approved by *80%
 
 Running the election under $C_\infty$, perhaps Clark, knowing he has no chance, told his supporters to rank him first and everyone else last, in a misguided attempt to game the election. Out of voters who expressed a preference between Alice and Bob, still more preferred Alice over Bob (45 (56.25%) to 35 (43.75%)). Therefore, Alice would still be elected. And, based on the ballots, you still wouldn't be able to prove that Alice was not the Condorcet winner either, just like in Approval. The difference? Alice has a weaker mandate. Expression has weakened the legitimacy without changing the outcome.
 
-The [1985 Institute of Management Sciences (TIMS) election](https://www.jstor.org/stable/2632078) <d-cite key="fishburnLittle1988approvalExperiment"></d-cite> is a good example that shows a narrow (and ambiguous) Condorcet winner can be defeated by a candidate who is more broadly acceptable to the electorate. See [this post](../practicalapproval){:target="_blank"} where I discuss it in more detail.<d-footnote>The Approval winner won by over a hundred approvals. The Condorcet winner was inferred to be strictly preferred over the Approval winner by a single vote (of those who expressed some type of preference), while 27 voters abstained. That's not exactly a strong legitimate claim. Approval broke that ambiguity and would have given a mandate, even though ordinal preferences were in a deadlock.</d-footnote>
+The [1985 Institute of Management Sciences (TIMS) election](https://www.jstor.org/stable/2632078) <d-cite key="fishburnLittle1988approvalExperiment"></d-cite> is a good example that shows a narrow (and ambiguous) Condorcet winner can be defeated by a candidate who is more broadly acceptable to the electorate. See [this post](../practicalapproval) where I discuss it in more detail.<d-footnote>The Approval winner won by over a hundred approvals. The Condorcet winner was inferred to be strictly preferred over the Approval winner by a single vote (of those who expressed some type of preference), while 27 voters abstained. That's not exactly a strong legitimate claim. Approval broke that ambiguity and would have given a mandate, even though ordinal preferences were in a deadlock.</d-footnote>
 
 ### A Remark on Legitimacy
 
-However, unlike any ranked method, [or scoring method with three or more options](../consistentcardinal){:target="_blank"}, Approval never admits a case where another candidate has a legitimate claim to victory over the actual elected candidate, who is a Condorcet winner based on the ballot data.
+However, unlike any ranked method, [or scoring method with three or more options](../consistentcardinal), Approval never admits a case where another candidate has a legitimate claim to victory over the actual elected candidate, who is a Condorcet winner based on the ballot data.
 
 Simply, any candidate loses an Approval voting election if and only if it was a "skill issue". To be blunt, losing an Approval election is entirely the candidate's fault for not earning enough approvals from the voters. While the case could be made that this is true in plurality voting as well, it cannot be done quite as cleanly.
 
@@ -268,7 +268,7 @@ The surprising thing is that Approval has been shown to have [essentially the sa
 
 And even *if* Approval voting occasionally elects a candidate who is not the Condorcet winner, we would literally never even know! You would never be able to *prove* it. The only thing we would see is the candidate who earned approvals from the most voters, and all the others who couldn't manage to convince as many voters.
 
-See this post on [Laslier's Leader rule](../leader-rule){:target="_blank"} <d-cite key="laslier2009leaderRule"></d-cite> where I discuss equilibrium guarantees<d-footnote>including that Approval elects the Condorcet winner at any strong-nash equilibrium, while no Condorcet method can guarantee election of a Condorcet winner at any nash equilibrium.</d-footnote>.
+See this post on [Laslier's Leader rule](../leader-rule) <d-cite key="laslier2009leaderRule"></d-cite> where I discuss equilibrium guarantees<d-footnote>including that Approval elects the Condorcet winner at any strong-nash equilibrium, while no Condorcet method can guarantee election of a Condorcet winner at any nash equilibrium.</d-footnote>.
 
 ### Domain Restriction
 

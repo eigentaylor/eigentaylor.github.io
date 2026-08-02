@@ -8,7 +8,7 @@ categories: differential-equations
 categories: systems-of-differential-equations
 ---
 
-This was mentioned in my [post about constructing these kind of problems](../secondordersystems){:target="_blank"}, but the good news about these kind of problems is that is that when discussing $$n\times n$$ second order systems such as
+This was mentioned in my [post about constructing these kind of problems](../secondordersystems), but the good news about these kind of problems is that is that when discussing $$n\times n$$ second order systems such as
 
 $$\begin{equation} \label{sys}
 x''+Px'+Qx=0
@@ -72,7 +72,7 @@ $$\begin{equation} \label{charpolydet}
 
 We will denote $$p(s)=\det(Is^2+Ps+Q)$$. Fun fact, this $$p(s)$$ is the same characteristic polynomial of the matrix in \eqref{reduction}. This should be no surprise since the problems are equivalent .
 
-This will be a polynomial of degree $$2n$$. So these problems become quite difficult quite quickly. Even just a $$2\times 2$$ system requires solving a quartic polynomial, making it technically the largest system for which we can guarantee being able to find an exact solution. Once we get a $$3\times 3$$, we no longer have a formula to solve the degree $$6$$ polynomial. That said, the quartic formula is ridiculously unwieldy enough to make the case that unless you have some [savvy techniques to guarantee these problems will have have nice solutions](../secondordersystems){:target="_blank"}, they are effectively unsolvable in the general case.
+This will be a polynomial of degree $$2n$$. So these problems become quite difficult quite quickly. Even just a $$2\times 2$$ system requires solving a quartic polynomial, making it technically the largest system for which we can guarantee being able to find an exact solution. Once we get a $$3\times 3$$, we no longer have a formula to solve the degree $$6$$ polynomial. That said, the quartic formula is ridiculously unwieldy enough to make the case that unless you have some [savvy techniques to guarantee these problems will have have nice solutions](../secondordersystems), they are effectively unsolvable in the general case.
 
 Since these roots are the eigenvalues of the matrix in \eqref{reduction}, we will call them as such. Considering their algebraic and geometric multiplicity is also still indeed useful.
 

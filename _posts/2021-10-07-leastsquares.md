@@ -121,7 +121,7 @@ c_0=\frac{\begin{vmatrix}\mathbf{1}\cdot\mathbf{y}&\mathbf{1}\cdot\mathbf{x}\\\m
 c_1=\frac{\begin{vmatrix}n&\mathbf{1}\cdot\mathbf{y}\\\mathbf{1}\cdot\mathbf{x}&\mathbf{x}\cdot\mathbf{y}\end{vmatrix}}{\begin{vmatrix}n&\mathbf{1}\cdot\mathbf{x}\\\mathbf{1}\cdot\mathbf{x}&|\mathbf{x}|^2\end{vmatrix}}
 $$
 
-And you could always use my [determinant polynomial](../functioninterp/){:target="_blank"} to get the equation for the line of best fit as
+And you could always use my [determinant polynomial](../functioninterp/) to get the equation for the line of best fit as
 
 $$
 y=\frac{\begin{vmatrix}1&x&0\\n&\mathbf{1}\cdot\mathbf{x}&\mathbf{1}\cdot\mathbf{y}\\\mathbf{1}\cdot\mathbf{x}&|\mathbf{x}|^2&\mathbf{x}\cdot\mathbf{y}\end{vmatrix}}

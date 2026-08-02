@@ -23,7 +23,7 @@ authors:
       name: None
 ---
 
-I made a post recently about why I do not believe [that the Condorcet winner is necessarily the true compromise choice](../why-condorcet/){:target="_blank"}. The Condorcet winner is the candidate who would defeat all others in a head-to-head matchup, based on preference rankings. To summarize it in one sentence: ordinal preference says nothing about "acceptability".
+I made a post recently about why I do not believe [that the Condorcet winner is necessarily the true compromise choice](../why-condorcet/). The Condorcet winner is the candidate who would defeat all others in a head-to-head matchup, based on preference rankings. To summarize it in one sentence: ordinal preference says nothing about "acceptability".
 
 Consent, acceptability, consensus, compromise--I believe these are all independent of ordinal preference. If I tell you that I prefer candidate A over candidate B over candidate C, you have no idea how I truly feel about any candidate. Is candidate B a wonderful backup choice or a lesser evil?
 
@@ -51,7 +51,7 @@ I call this threshold a "line of acceptability". It represents the point at whic
 
 My problem with the idea that "there is no such thing as acceptability; only utility" is that I do not believe there is a single canonical $\tau$. Even if I gave you my *exact* utilities for every single candidate, that's still insufficient to know my line of acceptability--the threshold $\tau$ that determines which candidates I consider "acceptable" enough to consent to give my support to through my ballot.
 
-[Laslier's leader rule](../leader-rule/){:target="_blank"} <d-cite key="laslier2009leaderRule"></d-cite> proves the best response to a particular probability model is to define your threshold $\tau$ to be equal to the utility of the expected winner, or right above it.
+[Laslier's leader rule](../leader-rule/) <d-cite key="laslier2009leaderRule"></d-cite> proves the best response to a particular probability model is to define your threshold $\tau$ to be equal to the utility of the expected winner, or right above it.
 
 - If you prefer the leader $L$ to the challenger, your approval ballot is $$\{X:u(X)\geq u(L)\}$$
 - If you prefer the challenger to the leader $L$, your approval ballot is $$\{X:u(X)>u(L)\}$$<d-footnote>This is the actual formulation of the leader rule in Laslier's paper, which I did not use in my post on the leader rule. But Laslier does indeed propose setting the infimum of your utility threshold to precisely the utility of the expected winner.</d-footnote>
@@ -68,7 +68,7 @@ I like to think of a ballot as a projection of a voter's nuanced and complex hum
 
 Approval ballots, on the other hand, limit the expression of voter preferences to a binary choice and capture a binary notion of acceptability, which is information that neither rankings nor scores fully convey.
 
-The binary land of 0 or 1 is called the "dichotomous domain", on which [Approval is strategyproof](../av-stratproof/){:target="_blank"} <d-cite key="bramsFishburn1978approval"></d-cite>. To put it simply, Approval voting takes what you tell it at face value and treats that simple signal with full fidelity. I do believe that in *some* ways this makes Approval a more "honest", or at least straightforward, system for the layperson.
+The binary land of 0 or 1 is called the "dichotomous domain", on which [Approval is strategyproof](../av-stratproof/) <d-cite key="bramsFishburn1978approval"></d-cite>. To put it simply, Approval voting takes what you tell it at face value and treats that simple signal with full fidelity. I do believe that in *some* ways this makes Approval a more "honest", or at least straightforward, system for the layperson.
 
 The kicker? Despite this coarser, seemingly less expressive ballot, the outcomes under Approval are often as good as, or even better than, those under more expressive systems<d-cite key="quinn2017vseSummary"></d-cite>. See [this model, which is a work in progress](https://eigentaylor.github.io/satisficing-voter-sim/), where the slight edge that systems like STAR have over Approval begins to disappear when voters are misinformed by epistemic noise and easily fatigued by the ballot.
 

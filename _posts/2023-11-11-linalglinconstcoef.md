@@ -31,7 +31,7 @@ toc:
   - name: Complex Stuff
 ---
 
-Last year, I made a post about [this same topic](../linconstcoef/){:target="_blank"}, but since then, I have developed a new way of understanding this topic through the lens of linear algebra which makes many of the seemingly arbitrary choices seem almost stupidly obvious. One time, I was discussing differential equations with a friend of mine at a bar who was taking a class in it at the time. He asked me, "why do we know that the solutions to these equations *have* to be exponentials?" My explanation was not great, but years later I presented the following explanation to him at a different bar which I think was much better. In his words, it was "mindblowing". I'm hoping you will feel similarly. **It does, however, require linear algebra.**
+Last year, I made a post about [this same topic](../linconstcoef/), but since then, I have developed a new way of understanding this topic through the lens of linear algebra which makes many of the seemingly arbitrary choices seem almost stupidly obvious. One time, I was discussing differential equations with a friend of mine at a bar who was taking a class in it at the time. He asked me, "why do we know that the solutions to these equations *have* to be exponentials?" My explanation was not great, but years later I presented the following explanation to him at a different bar which I think was much better. In his words, it was "mindblowing". I'm hoping you will feel similarly. **It does, however, require linear algebra.**
 
 We will address the following questions in the context of constant coefficient linear ordinary differential equations:
 
@@ -41,7 +41,7 @@ $$a_ny^{(n)}+\ldots+a_1y'+a_0y=0$$
 2. Why do we multiply by $$t$$ when we have a repeated root of the characteristic polynomial?
 3. Why does an $$n$$th order equation have exactly $$n$$ linearly independent homogeneous solutions?
 
-And as a bonus, I'm going to explain why the [**exponential response formula**](../alphamethod/){:target="_blank"} is actually absurdly trivial!
+And as a bonus, I'm going to explain why the [**exponential response formula**](../alphamethod/) is actually absurdly trivial!
 
 # Linear Algebra Recap
 
@@ -272,7 +272,7 @@ To summarize,
 e^{-\lambda t}(D-\lambda)=De^{-\lambda t}
 \end{equation}
 
-If you look at what we did closely, you'll notice this is basically just an [integrating factor](../integratingfactor/){:target="_blank"}.
+If you look at what we did closely, you'll notice this is basically just an [integrating factor](../integratingfactor/).
 
 The takeaway from this is: **we can leverage the exponential shift to look at the kernel of just $$D$$, which is equivalent to integration**.
 
@@ -384,7 +384,7 @@ where $$q(t)$$ is some polynomial, then you can multiply by $$e^{-\alpha t}$$ to
 
 $$p(D+\alpha)e^{-\alpha t}y=q(t)$$
 
-In general, it's slightly easier to solve this equation since your "guess" for a particular solution is just also a polynomial, removing the need to do product rules. Also, you can use [synthetic division](../synthetictaylor/){:target="_blank"} to more easily calculate the coefficients of $$p(D+\alpha)$$ without having to expand out the expressions and collect like terms. This is arguably a waste of time, and doesn't cut down the computation time *too* much overall. I like to do it though.
+In general, it's slightly easier to solve this equation since your "guess" for a particular solution is just also a polynomial, removing the need to do product rules. Also, you can use [synthetic division](../synthetictaylor/) to more easily calculate the coefficients of $$p(D+\alpha)$$ without having to expand out the expressions and collect like terms. This is arguably a waste of time, and doesn't cut down the computation time *too* much overall. I like to do it though.
 
 ## Complex Stuff
 
@@ -400,7 +400,7 @@ So the real part of $$p(D)F(x)$$ is $$p(D)$$ applied to the real part of $$F(x)$
 
 Hence, if $$p(D)F(x)=0$$, then both the real and imaginary parts must be zero, so $$p(D)u(x)=p(D)v(x)=0$$. That is, the real and imaginary parts of any complex element of the kernel are also individually in the kernel.
 
-It follows from [Euler's Formula](../eulersformula/){:target="_blank"} that if $$\alpha=a+bi$$ is a root of $$p(x)$$, then
+It follows from [Euler's Formula](../eulersformula/) that if $$\alpha=a+bi$$ is a root of $$p(x)$$, then
 
 $$e^{(a+bi)t}=e^{at}\left(\cos(bt)+i\sin(bt)\right)$$
 
@@ -447,4 +447,4 @@ But this is coming from someone who thinks a lot about these subjects, so perhap
 
 Also, this is a heavily condensed version of a chapter from a Linear Algebra + Differential Equations textbook I'm working on in my spare time (for which I have almost none now that I am in a PhD program). I hope you liked it, and maybe you'll want to check out the textbook when it's done (ETA: probably never). Alright, thanks for reading.
 
-[hyperlink](https://youtu.be/Tptx8boeGhE?si=1G60x2ZMJgUPC8Gr){:target="_blank"}
+[hyperlink](https://youtu.be/Tptx8boeGhE?si=1G60x2ZMJgUPC8Gr)

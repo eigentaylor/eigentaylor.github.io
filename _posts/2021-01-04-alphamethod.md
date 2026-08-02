@@ -74,7 +74,7 @@ Or, alternatively, if $$p^{(m)}(\alpha )=re^{i\theta}$$, then the particular sol
         y_p=\frac{t^me^{\alpha t}}{r}\left(B\cos(\beta t-\theta)+C\sin(\beta t-\theta)\right)
 \end{equation}
 
-For a more formal and thorough examination of this problem and method, take a look at [this](https://www.overleaf.com/read/xtxskmmnjphy){:target="_blank"}.
+For a more formal and thorough examination of this problem and method, take a look at [this](https://www.overleaf.com/read/xtxskmmnjphy).
 
 If you're just here for the formulas and you don't care about the derivation or seeing examples, then this is all you need. The rest of this post is derivations and examples.
 
@@ -446,4 +446,4 @@ $$\begin{equation*}
     y_p=te^{-t}(\cos(t)+\sin(t))
 \end{equation*}$$
 
-And that's it. Once you get experienced with this method, the steps go very quickly (especially if you use [synthetic division](../synthetictaylor){:target="_blank"} :eyes:). Yeah, I agree this is the best method.
+And that's it. Once you get experienced with this method, the steps go very quickly (especially if you use [synthetic division](../synthetictaylor) :eyes:). Yeah, I agree this is the best method.

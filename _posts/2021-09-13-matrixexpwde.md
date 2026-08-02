@@ -13,17 +13,17 @@ Yet another impractical way to calculate matrix exponentials found by yours trul
 1. Finding the characteristic/minimal polynomial (and its roots)
 2. Calculating powers of the matrix
 3. Finding solutions to a linear constant coefficient differential equation for which you know the roots of the characteristic polynomial
-4. Finding the [normalized solutions](../normalized/){:target="_blank"} of said differential equation
+4. Finding the [normalized solutions](../normalized/) of said differential equation
 
 You may wonder why you would ever use this method when finding the eigenvectors requires fewer steps. However, it does somewhat simplify the cases of defective and complex eigenvalues, and changes the computation into one that is more familiar and approachable. In short: more easier steps.
 
-EDIT 12/8/21: This is actually very convinient for $$2\times2$$ matrices. [For more details.](../2x2ezmatrixexp/){:target="_blank"}
+EDIT 12/8/21: This is actually very convinient for $$2\times2$$ matrices. [For more details.](../2x2ezmatrixexp/)
 
 ---
 
 Suppose $$A$$ is an $$n\times n$$ matrix and $$p(t)=\det(tI-A)$$ is its minimal polynomial.
 
-Next given that $$Y_1(t),\ldots,Y_n(t)$$ are the solutions to the linear constant coefficient differential equation $$p(D)y=0$$ such that the Wronskian $$W[Y_1,\ldots,Y_n] (t)$$ evaluated at $$t=0$$ is the identity matrix, where $$D$$ is the differential operator such that $$Dy=y'$$. That is to say $$Y_1(t),\ldots,Y_n(t)$$ are the [normalized solutions](../normalized/){:target="_blank"} of $$p(D)y=0$$.
+Next given that $$Y_1(t),\ldots,Y_n(t)$$ are the solutions to the linear constant coefficient differential equation $$p(D)y=0$$ such that the Wronskian $$W[Y_1,\ldots,Y_n] (t)$$ evaluated at $$t=0$$ is the identity matrix, where $$D$$ is the differential operator such that $$Dy=y'$$. That is to say $$Y_1(t),\ldots,Y_n(t)$$ are the [normalized solutions](../normalized/) of $$p(D)y=0$$.
 
 It follows then that
 

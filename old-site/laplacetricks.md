@@ -78,7 +78,7 @@ e^{bit}&=\cos(bt)+i\sin(bt)\\ \label{lin}
 \laplace{\delta(t-c)}&=e^{-cs} \\
 \end{align}$$
 
-Notice that I only have two explicit Laplace Transforms on here, \eqref{poly} and \eqref{dirac}, with the rest being rules of how common things *affect* Laplace Transforms (and also the illustrious [Euler's Formula](../eulersformula/){:target="_blank"}).
+Notice that I only have two explicit Laplace Transforms on here, \eqref{poly} and \eqref{dirac}, with the rest being rules of how common things *affect* Laplace Transforms (and also the illustrious [Euler's Formula](../eulersformula/)).
 
 I'll go over some tips for how I remember the other important Laplace Transforms using these rules.
 
@@ -143,7 +143,7 @@ $$\begin{equation}
 
 ### Exponentials
 
-These are arguably the most important. Fortunately, they are also the Laplace Transforms which are easiest to evaluate, assuming you know how to use [Euler's Formula](../eulersformula/){:target="_blank"} to [skip integration by parts](../eulersformulabyparts/){:target="_blank"}.
+These are arguably the most important. Fortunately, they are also the Laplace Transforms which are easiest to evaluate, assuming you know how to use [Euler's Formula](../eulersformula/) to [skip integration by parts](../eulersformulabyparts/).
 
 We will make heavy use of the incredible '**Exponential Shift**' rule, \eqref{exp}. To get the basic exponential, we use \eqref{exp} with the Laplace Transform of $$1$$, \eqref{1}.
 
@@ -157,7 +157,7 @@ $$\begin{equation*}
 \laplace{e^{bit}}=\frac{s+ib}{s^2+b^2}
 \end{equation*}$$
 
-You may be unimpressed, but we actually have both the transforms for $$\sin(bt)$$ and $$\cos(bt)$$. We just whip it out (it being [Euler's Formula](../eulersformula/){:target="_blank"} \eqref{cis}) and use \eqref{lin},
+You may be unimpressed, but we actually have both the transforms for $$\sin(bt)$$ and $$\cos(bt)$$. We just whip it out (it being [Euler's Formula](../eulersformula/) \eqref{cis}) and use \eqref{lin},
 
 $$\begin{gather*}
 \laplace{e^{bit}}=\laplace{\cos(bt)+i\sin(bt)}\\

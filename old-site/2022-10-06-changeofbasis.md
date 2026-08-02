@@ -43,9 +43,9 @@ toc:
 
 Before you subject yourself to this post, I recommend watching the following two linear algebra videos from 3blue1brown's "Essence of linear algebra" series. Grant Sanderson is the best when it comes to math explanations, and I think it's entirely possible that watching these two videos will answer pretty much every question you may have.
 
-- [Linear transformations and matrices](https://youtu.be/kYB8IZa5AuE){:target="_blank"}
-- [Change of basis](https://youtu.be/P2LTAUO1TdA){:target="_blank"}
-- I'd also recommend reading my post on [*column perspective*](../columnperspective/){:target="_blank"}. Understanding column perspective is going to make a lot of this much easier, but it's not required.
+- [Linear transformations and matrices](https://youtu.be/kYB8IZa5AuE)
+- [Change of basis](https://youtu.be/P2LTAUO1TdA)
+- I'd also recommend reading my post on [*column perspective*](../columnperspective/). Understanding column perspective is going to make a lot of this much easier, but it's not required.
 
 ### Preface
 
@@ -195,7 +195,7 @@ $$\begin{pmatrix}1\\1\end{pmatrix}=
 3\begin{pmatrix}1\\-1\end{pmatrix}
 +2\begin{pmatrix}-1\\2\end{pmatrix}$$
 
-The question becomes, then, "how could we find the numbers $$3$$ and $$2$$? Don't worry, we will answer that [in time](#computing-coordinate-vectors){:target="_blank"}.
+The question becomes, then, "how could we find the numbers $$3$$ and $$2$$? Don't worry, we will answer that [in time](#computing-coordinate-vectors).
 
 One observation to make is that for all $$v\in F^n$$, $$v=[v]_\varepsilon$$. To show an example in $$F^2$$, where $$\varepsilon=\left\{\begin{pmatrix}1\\0\end{pmatrix},\begin{pmatrix}0\\1\end{pmatrix}\right\}$$.
 
@@ -220,7 +220,7 @@ We will see in the next section that finding the matrix $$P_{\varepsilon\gets\be
 
 ### Coordinate vectors with matrices
 
-Now, if you're comfortable with [*column perspective*](../columnperspective/){:target="_blank"}, you may have seen \eqref{coordinate} and thought, "that looks like matrix multiplication!" If so, yes, it is! If you have no idea what I'm talking about, basically
+Now, if you're comfortable with [*column perspective*](../columnperspective/), you may have seen \eqref{coordinate} and thought, "that looks like matrix multiplication!" If so, yes, it is! If you have no idea what I'm talking about, basically
 
 $$
 c_1v_1+\ldots+c_nv_n=
@@ -430,7 +430,7 @@ It's similar to finding the inverse of a matrix, but instead we have a non-ident
 If you want to know why this works, there are two explanations. If you don't, then idk the post is over you can leave now.
 
 1. You can get to this by solving $$n$$ systems of equations at once: trying to find the coordinate vectors of the vectors in $$\beta$$ with respect to the vectors in $$\alpha$$
-2. Using [*column perspective*](../columnperspective/){:target="_blank"}, you can see that if you multiply the matrix by
+2. Using [*column perspective*](../columnperspective/), you can see that if you multiply the matrix by
 $$(P_{\varepsilon\gets\alpha})^{-1}$$, you get
 $$(P_{\varepsilon\gets\beta})^{-1}\big[\begin{array}{c|c}
   P_{\varepsilon\gets\beta}&P_{\varepsilon\gets\alpha}
@@ -455,4 +455,4 @@ $$(P_{\varepsilon\gets\beta})^{-1}\big[\begin{array}{c|c}
 
 (so that's why that works if you were wondering)
 
-[hyperlink](https://youtu.be/GxPSApAHakg){:target="_blank"}
+[hyperlink](https://youtu.be/GxPSApAHakg)

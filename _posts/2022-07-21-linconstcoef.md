@@ -195,7 +195,7 @@ c_1y_1'(t_0)&+&c_2y_2'(t_0)&=&y'_0\\
 \end{array}
 $$
 
-[If you would like to see a derivation that does not use linear algebra, please see here.](http://mathb.in/72311){:target="_blank"} Otherwise, we're just going to shift the burden of proof to linear algebra.
+[If you would like to see a derivation that does not use linear algebra, please see here.](http://mathb.in/72311) Otherwise, we're just going to shift the burden of proof to linear algebra.
 
 ### Thank you, linear algebra
 
@@ -323,7 +323,7 @@ What about our example? What are the real and imaginary parts of $$e^{(-2+3i)t}$
 
 ### Eulers formula
 
-If you are unfamiliar with what it means to raise $$e$$ to a complex number, you can read [this](../eulersformula/){:target="_blank"} (and ignore the circular logic that comes from that post mentioning linear constant coefficient differential equations). But the basic summary which you can take as fact is that
+If you are unfamiliar with what it means to raise $$e$$ to a complex number, you can read [this](../eulersformula/) (and ignore the circular logic that comes from that post mentioning linear constant coefficient differential equations). But the basic summary which you can take as fact is that
 
 $$
 \begin{equation}

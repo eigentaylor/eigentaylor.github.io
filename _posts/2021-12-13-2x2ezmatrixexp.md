@@ -283,7 +283,7 @@ And, in fact, yes. This will be true for any $$2\times2$$ matrix. More generally
 
 $$e^{At}=x_1(t)I+\ldots+x_n(t)A^{n-1}$$
 
-See [this post](../matrixexpwde){:target="_blank"} to learn more about that... But I'm going to present *another* kind of similar and totally equivalent method here.
+See [this post](../matrixexpwde) to learn more about that... But I'm going to present *another* kind of similar and totally equivalent method here.
 
 Now, there are a few ways you can go about this. One way is to get a first order initial value problem for which $$e^{At}$$ is the solution.
 
@@ -364,7 +364,7 @@ Then you could solve it like a normal initial value problem. If you want, I gues
 
 # Applications
 
-For ways to apply matrix exponentials to solve $$2\times2$$ systems of differential equations, check out [this post](../firstordersystemsquick){:target="_blank"} on solving them like a baller.
+For ways to apply matrix exponentials to solve $$2\times2$$ systems of differential equations, check out [this post](../firstordersystemsquick) on solving them like a baller.
 
 It's also possible to find very similar formulas for $$A^n$$ using these methods. The formulas for the $$2\times2$$ cases are *extremely* similar to the formulas derived here.
 
@@ -382,7 +382,7 @@ $$\textbf{x}(n+1)=A\textbf{x}(n)$$
 
 And while $$e^{At}\textbf{x}(0)$$ is the solution to $$\textbf{x}'=A\textbf{x}$$, the solution to the equation above is $$A^n\textbf{x}(0)$$
 
-I may choose to write a post about these in the future... EDIT: [I totally did. I couldn't wait.](../discretesystems){:target="_blank"}
+I may choose to write a post about these in the future... EDIT: [I totally did. I couldn't wait.](../discretesystems)
 
 ## Closing Remarks
 

@@ -377,4 +377,4 @@ A(A^*A)^{-1} A^* \\
 
 
 
-[hyperlink](https://youtu.be/T2kOj-GFN8k?si=So_pJbTwG_n3-BWH){:target="_blank"}
+[hyperlink](https://youtu.be/T2kOj-GFN8k?si=So_pJbTwG_n3-BWH)

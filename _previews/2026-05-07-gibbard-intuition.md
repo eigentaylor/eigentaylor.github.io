@@ -23,19 +23,19 @@ toc:
 
 ## Introduction
 
-I made a post a few months ago about a proof of the [Gibbard-Satterthwaite theorem](../gibbard-satt){:target="_blank"}, which shows that deterministic ranked voting systems, where voters cannot express indifference, are manipulable. However, [Gibbard's original 1973 paper](https://www.jstor.org/stable/1914083) actually proves something *much* more general.
+I made a post a few months ago about a proof of the [Gibbard-Satterthwaite theorem](../gibbard-satt), which shows that deterministic ranked voting systems, where voters cannot express indifference, are manipulable. However, [Gibbard's original 1973 paper](https://www.jstor.org/stable/1914083) actually proves something *much* more general.
 
 I will say, I highly recommend giving the paper a read yourself. The first half of the paper is a very intuitive and accessible breakdown of the intuition behind the proof, and the second half is the formal proof itself. The paper is only 15 pages long, and I had a great time reading it.
 
 I think the fact that people are content to prove just the corollary, the Gibbard-Satterthwaite theorem, rather than the more general result, is a real shame. Especially when systems like STAR and Approval voting, which do not fit neatly into the Gibbard-Satterthwaite framework, are becoming more popular.
 
-It's no secret that I am a [huge fan of Approval voting](../approval-only){:target="_blank"}, and I love to mention that (under certain strict conditions) [Approval voting is strategyproof](https://doi.org/10.2307/1955105). But the *way* that Gibbard proves that more general systems are manipulable is absolutely fascinating, and I'd like to give my attempt to break down the precise mechanism that Gibbard uses.
+It's no secret that I am a [huge fan of Approval voting](../approval-only), and I love to mention that (under certain strict conditions) [Approval voting is strategyproof](https://doi.org/10.2307/1955105). But the *way* that Gibbard proves that more general systems are manipulable is absolutely fascinating, and I'd like to give my attempt to break down the precise mechanism that Gibbard uses.
 
 This won't be a formal proof, as my post on the Gibbard-Satterthwaite theorem did, and I might write a post in the future that goes deeper into the formal proof. But I think it's a bit more enlightening to just talk through the intuition of the definitions and steps of the proof, rather than the exact details. I think the *way* that Gibbard proves his theorem is perhaps more interesting than the proof itself!
 
 ## The Starting Point
 
-In an age of quality production videos and resources explaining how [Arrow's theorem](../arrows){:target="_blank"} makes [democracy "mathematically impossible:"](https://www.youtube.com/watch?v=qf7ws2DF-zk), and breaking down strategy in voting systems in a [fun and intuitive way](https://youtu.be/rbVoEjS6Q1Q?si=BqaGjgs62WumgMA7), it's easy to forget that *axiomatic* social choice theory is a relatively young field. That is, in the sense that many of these theorems were proved in the 50's and 70's, despite democracy being thousands of years old, and many voting systems that are still talked about frequently being invented in the 1700's.
+In an age of quality production videos and resources explaining how [Arrow's theorem](../arrows) makes [democracy "mathematically impossible:"](https://www.youtube.com/watch?v=qf7ws2DF-zk), and breaking down strategy in voting systems in a [fun and intuitive way](https://youtu.be/rbVoEjS6Q1Q?si=BqaGjgs62WumgMA7), it's easy to forget that *axiomatic* social choice theory is a relatively young field. That is, in the sense that many of these theorems were proved in the 50's and 70's, despite democracy being thousands of years old, and many voting systems that are still talked about frequently being invented in the 1700's.
 
 Many of the things we take for granted now, such as the *obvious* general susceptibility of voting systems to strategy were mere conjectures before Gibbard proved his theorem. People could come up with examples of scenarios where voters could manipulate the result of voting systems, and there was a *sense* that this was just a fact of the nature of voting, but nobody had proved it formally.
 
@@ -63,7 +63,7 @@ In the Borda count, we can say that the last ranked candidate gets 0 points, the
 
 Voter 3 thus has an incentive to vote strategically, by burying $a$ to the bottom of their ballot, they starve $a$ of points enough to make their favorite, $d$, the winner instead of $a$.
 
-This exemplifies the way that I think of manipulability in a voting system. Voter 3 had a sincere preference order that said "$d$ is my favorite! I prefer $d$ over $a$," but they had to lie about how they felt about $a$ relative to $b$ and $c$ in order for that preference to actually be "respected". Which, when articulated that way, might remind you of [the Independent of Irrelevant Alternatives (IIA) criterion](../iia){:target="_blank"}, which is a key part of Arrow's theorem. And that is no coincidence! A major step of the proof is to show, loosely, that from strategyproofness we must have IIA.
+This exemplifies the way that I think of manipulability in a voting system. Voter 3 had a sincere preference order that said "$d$ is my favorite! I prefer $d$ over $a$," but they had to lie about how they felt about $a$ relative to $b$ and $c$ in order for that preference to actually be "respected". Which, when articulated that way, might remind you of [the Independent of Irrelevant Alternatives (IIA) criterion](../iia), which is a key part of Arrow's theorem. And that is no coincidence! A major step of the proof is to show, loosely, that from strategyproofness we must have IIA.
 
 This was also something conjectured before Gibbard's paper by Vickrey in 1960. Gibbard proved this conjecture correct by using Arrow's theorem to prove his own theorem.
 
@@ -127,7 +127,7 @@ This happened in our Borda example, where Voter 3 had a preference of $d > a > b
 
 $$d \succ_{P_3} a$$
 
-As I explained it before, the voter was *already* saying "I prefer $d$ to $a$," but they had to change their strategy in order to change the winner from $a$ to $d$. This is the essence of manipulability. See [this post](../iia){:target="_blank"} for more examples of this in existing voting systems like RCV and Condorcet.
+As I explained it before, the voter was *already* saying "I prefer $d$ to $a$," but they had to change their strategy in order to change the winner from $a$ to $d$. This is the essence of manipulability. See [this post](../iia) for more examples of this in existing voting systems like RCV and Condorcet.
 
 Compared to preference lists $P_i$, strategies are far more abstract. Gibbard defines "strategyproofness" for a game form as "straightforwardness" as follows:
 
@@ -173,7 +173,7 @@ Okay, so we assume we have some straightforward game, $g$. We have that each pla
 
 > **Definition:** A game form $g$ is dictatorial if there is some player $k$ such that for each outcome $x \in X$, that player has some strategy $s(x)$ such that if they play that strategy, then $g(s)=x$ whenever $s_k = s(x)$. That is, player $k$ is a dictator if they make any candidate in $X$ win by playing some strategy, no matter what everyone else does.
 
-The basic structure of the proof is to use [Arrow's theorem](../arrows){:target="_blank"}:
+The basic structure of the proof is to use [Arrow's theorem](../arrows):
 
 > **Theorem:** (Arrow's Impossibility Theorem) A social welfare function (a function on a preference profiles that outputs a societal preference), defined on a set of finite voters, cannot satisfy all of the following criteria simultaneously:
 >
@@ -305,7 +305,7 @@ In practice, it's basically impossible to figure out what the best response stra
 
 But the Approval exception* is still interesting. If your preferences are dichotomous, then you do, in fact, have a best response. That is, if the preference you are choosing to apply, $P_i$, is dichotomous--for example, if you decide some subset of candidate are all "acceptable" and you only care that any one of them wins the election--then you can safely vote for all of them without worrying that you're failing to use some better strategy. In other words, $\sigma(P_i)$ is perfectly well defined if $P_i$ is dichotomous.
 
-Voting systems like [STAR voting and Condorcet methods](../approval-only/){:target="_blank"} like to tout that they have strong honesty incentives, which is somewhat true. But they do, in fact, have potential for completely sincere and honest strategies to fully and completely backfire on you. Approval voting, relatively speaking, is one of the safest systems to vote in.
+Voting systems like [STAR voting and Condorcet methods](../approval-only/) like to tout that they have strong honesty incentives, which is somewhat true. But they do, in fact, have potential for completely sincere and honest strategies to fully and completely backfire on you. Approval voting, relatively speaking, is one of the safest systems to vote in.
 
 ## References
 

@@ -8,7 +8,7 @@ categories: works-in-progress
 toc: true
 ---
 
-Most of the results here are based on [this paper](https://ericthewry.github.io/pdfs/imies.pdf){:target="_blank"} by Christopher Towse and Eric Campbell. It's a fun read if you, like me, find constructing nice looking problems with nice looking solutions interesting.
+Most of the results here are based on [this paper](https://ericthewry.github.io/pdfs/imies.pdf) by Christopher Towse and Eric Campbell. It's a fun read if you, like me, find constructing nice looking problems with nice looking solutions interesting.
 $$\newcommand{\Re}{\operatorname{Re}}$$
 $$\newcommand{\Im}{\operatorname{Im}}$$
 

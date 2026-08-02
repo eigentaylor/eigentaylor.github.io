@@ -219,7 +219,7 @@ We found the following column dependencies:
 
 (col2=2col1 $$\implies$$ 2col1-col2=0) and (col4=col3-col1 $$\implies$$ col1-col3+col4=0)
 
-This actually gives us a basis for the null space, using [column perspective](../columnperspective/){:target="_blank"}.
+This actually gives us a basis for the null space, using [column perspective](../columnperspective/).
 
 If we take $$2$$ of column one, and $$-1$$ of column two, we get zero. So
 $$(2,-1,0,0,0)$$

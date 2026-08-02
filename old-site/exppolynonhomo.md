@@ -80,7 +80,7 @@ In contrast, to evaluate the formula you would simply
 3. Evaluate 3 binomial coefficients (only one of which is not just $$1$$)
 4. Evaluate a $$3\times 3$$ determinant (with a lot of zeros)
 
-Note that if $$m=0$$, however, then this does just reduce down to [the Alpha Method](../alphamethod/){:target="_blank"}, which is far more straightforward and *does* always save time.
+Note that if $$m=0$$, however, then this does just reduce down to [the Alpha Method](../alphamethod/), which is far more straightforward and *does* always save time.
 
 And finally, you can use this for forcing functions like $$(b_0+\ldots+b_mt^m)e^{at}\sin(bt)$$ and $$(b_0+\ldots+b_mt^m)e^{at}\cos(bt)$$. All you need to do is **use** $$\alpha=a+bi$$, and then **take the real part if it was originally cosine** and the **imaginary part if it was sin**.
 
@@ -117,7 +117,7 @@ p^{(s)}(\alpha)&p^{(s+1)}(\alpha)\\
 \end{vmatrix}
 $$
 
-A quick remark: The fastest way to evaluate polynomials is actually *Synthetic Division*. In fact, it would be the fastest way to evaluate multiple derivatives at the same point (by repeatedly doing synthetic division). I hope to someday make a post on that method in the future. (EDIT: [I did](../synthetictaylor/){:target="_blank"})
+A quick remark: The fastest way to evaluate polynomials is actually *Synthetic Division*. In fact, it would be the fastest way to evaluate multiple derivatives at the same point (by repeatedly doing synthetic division). I hope to someday make a post on that method in the future. (EDIT: [I did](../synthetictaylor/))
 
 Regardless, one can calculate that $$p(1)=0$$. This actually tells us a homogeneous solution is $$y_1=e^t$$. So now if we go back to solving the homogeneous equation it's only a 6th degree polynomial.
 
@@ -157,7 +157,7 @@ And this is indeed the correct answer!
 
 ### What is this sorcery, magic man?
 
-The mechanics behind this formula involve the technique of [Function Interpolation](../functioninterp/){:target="_blank"}, that I've previously written about, and the exponential shift identity's interaction with Taylor series.
+The mechanics behind this formula involve the technique of [Function Interpolation](../functioninterp/), that I've previously written about, and the exponential shift identity's interaction with Taylor series.
 
 The exponential shift identity is as follows
 
@@ -257,7 +257,7 @@ b_0\\b_1\\b_2\\\vdots\\b_m
 \end{bmatrix}
 \end{equation}$$
 
-So here is where the [determinant polynomial](../functioninterp/){:target="_blank"} comes in. We have a system of equations corresponding to the coefficients of a linear function (a polynomial). To save a lot of space, we will write the above equation as
+So here is where the [determinant polynomial](../functioninterp/) comes in. We have a system of equations corresponding to the coefficients of a linear function (a polynomial). To save a lot of space, we will write the above equation as
 
 $$\begin{equation}
 F\vec{c}=\vec{b}

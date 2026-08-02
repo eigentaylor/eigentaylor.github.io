@@ -33,7 +33,7 @@ The downside of this technique is that it suffers some of the same problems that
 
 # The Determinant Polynomial
 
-So let us start where I did when I found this: [Polynomial Interpolation](../polyinterp/){:target="_blank"}.
+So let us start where I did when I found this: [Polynomial Interpolation](../polyinterp/).
 
 For the purposes of simplicity, we will assume that the constraints we require on our polynomial $$p(x)$$ will simply be that they pass through a set of points (with distinct $$x$$ values) $$\{(x_1,y_1),\ldots,(x_n,y_n)\}$$ (equivalent to requiring that $$p(x_1)=y_1,\ldots,p(x_n)=y_n$$).
 
@@ -709,6 +709,6 @@ g(x)=\frac{2e^{x-1}-8e^x+2e^{4-x}-8e^{3-x}+7-e-e^2+7e^3}{(e-1)^2(1+e)}
 \end{equation}
 $$
 
-Absolutely horrendous. BUT, it works. As you can see in this [desmos graph](https://www.desmos.com/calculator/clsuujrtpq){:target="_blank"}, it passes through the points.
+Absolutely horrendous. BUT, it works. As you can see in this [desmos graph](https://www.desmos.com/calculator/clsuujrtpq), it passes through the points.
 
 Is this better than solving the system manually and finding the coefficients? I dunno; probably not. But at least the answer is in one nice package, and you can write it without needing to solve anything. Then you can put it into a calculator to expand it for you.

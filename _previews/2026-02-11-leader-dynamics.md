@@ -56,7 +56,7 @@ For a voter who prefers candidates A > B > C, there are three possible sincere b
 
 A common criticism of approval voting is that even a sincere voter may have to be strategic and decide where to draw their line of approval. While an approval for A and B may be sincere, and does not narrow the margin between A and B, it could lead to a situation where the voter could have instead approved only A, and had A win instead of B. The claim is that this would lead to regret for the voter, and thus the voter may feel compelled to approve of only their most preferred candidate, reducing approval voting to plurality voting in practice.
 
-This fear has not materialized in practice, as voters consistently approved of multiple candidates in real elections in Fargo and St. Louis. However, the myth of the "regretful approval voter" has persisted. Jean-François Laslier, in his 2009 paper "[The Leader Rule: A Model of Strategic Approval Voting in a Large Electorate.](https://journals.sagepub.com/doi/10.1177/0951629808097286){:target="_blank"}", presents a strategy for approval voting that helps optimally draw the line for a sincere strategy to minimize regret, based on who the perceived frontrunners are. Laslier's model is primarily focused on "trembling ballots" in large electorates, but we consider it here for its broader implications. Paradoxically, this strategy can actually lead to significantly more majoritarian outcomes, as we will explore in this post.
+This fear has not materialized in practice, as voters consistently approved of multiple candidates in real elections in Fargo and St. Louis. However, the myth of the "regretful approval voter" has persisted. Jean-François Laslier, in his 2009 paper "[The Leader Rule: A Model of Strategic Approval Voting in a Large Electorate.](https://journals.sagepub.com/doi/10.1177/0951629808097286)", presents a strategy for approval voting that helps optimally draw the line for a sincere strategy to minimize regret, based on who the perceived frontrunners are. Laslier's model is primarily focused on "trembling ballots" in large electorates, but we consider it here for its broader implications. Paradoxically, this strategy can actually lead to significantly more majoritarian outcomes, as we will explore in this post.
 
 > **Definition:** **(The Leader Rule)** Call the candidate perceived most likely to win the "leader", and the second most likely candidate to win the "challenger". The leader rule strategy is as follows:
 >
@@ -206,7 +206,7 @@ Intuitively, we look for either 'leader > challenger' or 'candidate > leader' in
 
 > **Proposition:** Any CPRO of pairwise match-ups can be realized.
 
-We give a proof by construction, using [McGarvey's theorem](https://www.jstor.org/stable/1907926){:target="_blank"}. Let $m$ be the total number of candidates, $\ell=m(m-1)$ the total number of pairwise match-ups, and list the first half of the match-ups $i=0,1,\ldots,\ell/2-1$ match-up as $X_i > Y_i$.
+We give a proof by construction, using [McGarvey's theorem](https://www.jstor.org/stable/1907926). Let $m$ be the total number of candidates, $\ell=m(m-1)$ the total number of pairwise match-ups, and list the first half of the match-ups $i=0,1,\ldots,\ell/2-1$ match-up as $X_i > Y_i$.
 
 To ensure that $X_i > Y_i$ is the $i+1$th strongest match-up, we add $\frac{\ell}2-i$ voters of the following two types:
 
@@ -328,7 +328,7 @@ We shall analyze three elections using ranked.vote pairwise data, to see what th
 
 ### Alaska House Special Election 2022
 
-[ranked.vote page for this election](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"}.
+[ranked.vote page for this election](https://ranked.vote/report/us/ak/2022/08/cd).
 
 Alaska's 2022 House Special Election was a controversial election where the IRV winner, Mary Peltola (D), was not the Condorcet winner, while the true Condorcet winner, Nick Begich III (R), was eliminated in the first round. The third candidate, Sarah Palin (R), was the Condorcet loser. The election was widely seen as a failure of IRV, and led to a backlash against IRV in Alaska, with the state failing to repeal it by only about 700 voters out of over 320,000 votes cast in the 2024 ballot measure. Another repeal effort is currently underway in 2026.
 
@@ -385,7 +385,7 @@ Both cases are strongly majoritarian outcomes which would have likely resulted i
 
 ### NYC Democratic Mayoral Primary 2025
 
-[ranked.vote page for this election](https://ranked.vote/report/us/ny/nyc/2025/07/mayor){:target="_blank"}.
+[ranked.vote page for this election](https://ranked.vote/report/us/ny/nyc/2025/07/mayor).
 
 The 2025 NYC Democratic Mayoral Primary was a very crowded field, with over 10 candidates. Before the election, it was widely perceived that Andrew Cuomo was the frontrunner, with Zohran Mamdani as the main challenger. It was expected that Cuomo would win the first round under IRV, but that Mamdani might get enough transfers to win in the final round.
 
@@ -423,7 +423,7 @@ We see the red equilibrium node with Mamdani as the leader and Cuomo as the chal
 
 ### Minneapolis City Council Ward 2 2021
 
-[ranked.vote page for this election](https://ranked.vote/report/us/mn/2021/11/ward-2){:target="_blank"}.
+[ranked.vote page for this election](https://ranked.vote/report/us/mn/2021/11/ward-2).
 
 This was a very notable election because it actually had a Condorcet cycle. The cycle was between Cam Gordon, Robin Wonsley, and Yusra Arab. The actual winner was Robin Wonsley, who defeated Yusra Arab in the final round of IRV. However, Cam Gordon beat Robin Wonsley head-to-head, and Yusra Arab beat Cam Gordon head-to-head, creating a Condorcet cycle.
 
@@ -619,12 +619,12 @@ The cycle, in particular, is between the nodes:
 
 A very big thank you to Rob LeGrand for his contributions, the counterexample that inspired Theorem \ref{thm:non_convergence}, and for telling me about this strategy.
 
-Laslier, J. F. (2009). The Leader Rule: A Model of Strategic Approval Voting in a Large Electorate. *Journal of Theoretical Politics*, 21(1), 113-136. [https://journals.sagepub.com/doi/10.1177/0951629808097286](https://journals.sagepub.com/doi/10.1177/0951629808097286){:target="_blank"}
+Laslier, J. F. (2009). The Leader Rule: A Model of Strategic Approval Voting in a Large Electorate. *Journal of Theoretical Politics*, 21(1), 113-136. [https://journals.sagepub.com/doi/10.1177/0951629808097286](https://journals.sagepub.com/doi/10.1177/0951629808097286)
 
-McGarvey, D. C. (1953). A Theorem on the Construction of Voting Paradoxes. Econometrica, 21(4), 608–610. [https://doi.org/10.2307/1907926](https://doi.org/10.2307/1907926){:target="_blank"}
+McGarvey, D. C. (1953). A Theorem on the Construction of Voting Paradoxes. Econometrica, 21(4), 608–610. [https://doi.org/10.2307/1907926](https://doi.org/10.2307/1907926)
 
-[ranked.vote](https://ranked.vote){:target="_blank"} Election Reports:
+[ranked.vote](https://ranked.vote) Election Reports:
 
-- Alaska House Special Election 2022: [https://ranked.vote/report/us/ak/2022/08/cd](https://ranked.vote/report/us/ak/2022/08/cd){:target="_blank"}
-- NYC Democratic Mayoral Primary 2025: [https://ranked.vote/report/us/ny/nyc/2025/07/mayor](https://ranked.vote/report/us/ny/nyc/2025/07/mayor){:target="_blank"}
-- Minneapolis City Council Ward 2 2021: [https://ranked.vote/report/us/mn/2021/11/ward-2](https://ranked.vote/report/us/mn/2021/11/ward-2){:target="_blank"}
+- Alaska House Special Election 2022: [https://ranked.vote/report/us/ak/2022/08/cd](https://ranked.vote/report/us/ak/2022/08/cd)
+- NYC Democratic Mayoral Primary 2025: [https://ranked.vote/report/us/ny/nyc/2025/07/mayor](https://ranked.vote/report/us/ny/nyc/2025/07/mayor)
+- Minneapolis City Council Ward 2 2021: [https://ranked.vote/report/us/mn/2021/11/ward-2](https://ranked.vote/report/us/mn/2021/11/ward-2)

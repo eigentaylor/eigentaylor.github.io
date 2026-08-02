@@ -109,7 +109,7 @@ c_0=\frac{\begin{vmatrix}\vec{1}\cdot\vec{y}&\vec{1}\cdot\vec{x}\\\vec{x}\cdot\v
 c_1=\frac{\begin{vmatrix}n&\vec{1}\cdot\vec{y}\\\vec{1}\cdot\vec{x}&\vec{x}\cdot\vec{y}\end{vmatrix}}{\begin{vmatrix}n&\vec{1}\cdot\vec{x}\\\vec{1}\cdot\vec{x}&|\vec{x}|^2\end{vmatrix}}
 \end{equation}$$
 
-And you could always use my [determinant polynomial](../functioninterp/){:target="_blank"} to get the equation for the line of best fit as
+And you could always use my [determinant polynomial](../functioninterp/) to get the equation for the line of best fit as
 
 $$\begin{equation}
 y=\frac{\begin{vmatrix}1&x&0\\n&\vec{1}\cdot\vec{x}&\vec{1}\cdot\vec{y}\\\vec{1}\cdot\vec{x}&|\vec{x}|^2&\vec{x}\cdot\vec{y}\end{vmatrix}}

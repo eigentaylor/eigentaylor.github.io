@@ -417,7 +417,7 @@ Strategyproofness therefore implies a strong lack of responsiveness to ranked ba
 
 ### The Approval Voting Exception
 
-We conclude the post with an informal discussion of Approval voting. I have discussed [the nuances of "strategyproofness" in Approval voting](../av-stratproof){:target="_blank"} in a previous post, but I think it warrants a discussion here as well, since it is an interesting exception to the Gibbard-Satterthwaite theorem.
+We conclude the post with an informal discussion of Approval voting. I have discussed [the nuances of "strategyproofness" in Approval voting](../av-stratproof) in a previous post, but I think it warrants a discussion here as well, since it is an interesting exception to the Gibbard-Satterthwaite theorem.
 
 Gibbard-Satterthwaite only applies to ranked voting systems. But there are other types of voting systems, such as approval voting, where voters can give independent votes to candidates. Although Gibbard's more general theorem still applies to Approval voting, Approval in particular has been proven to be strategyproof under a strict assumption about voter preferences <d-cite key="bramsFishburn1978approval"></d-cite>, which is that voters have "dichotomous preferences": they have a set of candidates they approve of and a set they disapprove of, and are indifferent between all candidates within each group.
 
@@ -430,7 +430,7 @@ The intuition for the proof of this is relatively straightforward. If a voter ha
 
 Therefore, there is only one optimal strategy under the dichotomous assumption, which is to approve of all acceptable candidates and disapprove of all unacceptable candidates, which is a sincere strategy. Thus, approval voting is strategyproof under the dichotomous preferences assumption.
 
-This can be extended slightly further, however. If you [decide that, as a voter, your only goal is to elect **any** candidate you deem "acceptable", and no other candidates, then approval voting is strategyproof even if you have more than two levels of preference](../av-stratproof){:target="_blank"}. You essentially adopt dichotomous preferences by treating all candidates you deem "acceptable" as equally good and all candidates you deem "unacceptable" as equally bad. This is an obviously very strong assumption about voter preferences, but it is a framing that any voter can choose to adopt.
+This can be extended slightly further, however. If you [decide that, as a voter, your only goal is to elect **any** candidate you deem "acceptable", and no other candidates, then approval voting is strategyproof even if you have more than two levels of preference](../av-stratproof). You essentially adopt dichotomous preferences by treating all candidates you deem "acceptable" as equally good and all candidates you deem "unacceptable" as equally bad. This is an obviously very strong assumption about voter preferences, but it is a framing that any voter can choose to adopt.
 
 Calling Approval strategyproof in practice is a bit of a stretch. However, I find it endlessly fascinating that there is indeed a non-dictatorial voting system that is strategyproof, albeit under a very strong assumption about voter preferences.
 

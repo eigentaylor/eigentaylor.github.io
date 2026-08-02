@@ -24,4 +24,4 @@ h
 \end{equation}
 $$
 
-[hyperlink](/blog/eigentricks/){:target="_blank"}
+[hyperlink](/blog/eigentricks/)

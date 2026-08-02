@@ -30,7 +30,7 @@ Take the example IVP of
 
 $$y''+y=0,\quad y\left(0\right)=4,\;y'\left(0\right)=13$$
 
-This is very easy, because the standard homogeneous solutions are already [normalized](../normalized/){:target="_blank"}. The solution is simply
+This is very easy, because the standard homogeneous solutions are already [normalized](../normalized/). The solution is simply
 
 $$y=4\cos(t)+13\sin(t)$$
 

@@ -101,7 +101,7 @@ $$\textbf{x}(n)=A^n\textbf{x}(0)$$
 
 Now, this is the coolest part, in my opinion.
 
-There are formulas for $$A^n$$ which look nearly *identical* to the formulas for [Matrix Exponentials](../2x2ezmatrixexp/){:target="_blank"} that I found. I will compare them here, but first! I would like to let you in on how I found them. I used the method described in [that matrix exponential post](../2x2ezmatrixexp/#another-approach). Basically, if the characteristic polynomial is $$s^2=p_0+p_1s$$, solve
+There are formulas for $$A^n$$ which look nearly *identical* to the formulas for [Matrix Exponentials](../2x2ezmatrixexp/) that I found. I will compare them here, but first! I would like to let you in on how I found them. I used the method described in [that matrix exponential post](../2x2ezmatrixexp/#another-approach). Basically, if the characteristic polynomial is $$s^2=p_0+p_1s$$, solve
 
 $$
 \begin{pmatrix}
@@ -121,7 +121,7 @@ $$
 
 Then $$A^n=x(n)I+y(n)A$$ (for 2x2s!). This does generalize, and I will at some point make a post about that.
 
-Theoretically, I'm fairly certain you can achieve the same results by solving for the [normalized solutions](/math/normalized){:target="_blank"} of the linear difference equation
+Theoretically, I'm fairly certain you can achieve the same results by solving for the [normalized solutions](/math/normalized) of the linear difference equation
 
 $$a_{n+2}-p_1a_{n+1}-p_0a_n=0$$
 
