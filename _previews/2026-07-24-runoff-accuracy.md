@@ -432,7 +432,7 @@ It appears that if your desire is truly to elect the Condorcet winner no matter 
 
 ### SCORE vs STAR
 
-I also measured the difference between STAR voting and just plain 5-point scoring (SCORE, i.e. STAR's own ballots with the runoff step switched off) to isolate the runoff's own net effect from everything else STAR does. The difference is fairly negligible in aggregate. Overall, STAR seems to be better.
+I also measured the difference between STAR voting and just plain 5-point scoring (SCORE, i.e. STAR's own ballots with the runoff step switched off) to isolate the runoff's own net effect from everything else STAR does. Overall, STAR seems to be better under these friction scenarios.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="score-vs-star" mode="images" %}
 
