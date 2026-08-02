@@ -41,7 +41,7 @@ toc:
 
 ### Recommended viewing
 
-Before you subject yourself to this post, I recommend watching the following two linear algebra videos from 3blue1brown's "Essence of linear algebra" series. Grant Sanderson is the superior Grant when it comes to math explanations, and I think it's entirely possible that watching these two videos will answer pretty much every question you may have.
+Before you subject yourself to this post, I recommend watching the following two linear algebra videos from 3blue1brown's "Essence of linear algebra" series. Grant Sanderson is the best when it comes to math explanations, and I think it's entirely possible that watching these two videos will answer pretty much every question you may have.
 
 - [Linear transformations and matrices](https://youtu.be/kYB8IZa5AuE){:target="_blank"}
 - [Change of basis](https://youtu.be/P2LTAUO1TdA){:target="_blank"}
