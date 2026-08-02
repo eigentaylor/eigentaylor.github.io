@@ -47,6 +47,7 @@ toc:
   - name: Appendix
     subsections:
       - name: The Plurality Bump
+      - name: Approval vs Plurality
       - name: The Ranked Methods Implosion
       - name: Condorcet Efficiency
       - name: SCORE vs STAR
@@ -377,7 +378,17 @@ Unlike every other voting system, choose-one voting is the only one where fatigu
 
 This leads me to an uncomfortable conclusion that choose-one voting, for as flawed as its outcomes are, might actually be in some ways well-suited to our tired human brains. The mental shortcuts that we take might actually hone the outcomes of our terrible choose-one system to some extent. If nothing else, choose-one voting is simple to use and simple to count. Approval maintains that same simplicity, while improving a number of other aspects like candidate incentives.
 
+### Approval vs Plurality
+
+Despite the plurality bump, Approval still outperforms plurality voting consistently.
+
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="plurality-vs-approval" %}
+
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="plurality-approval-ci" %}
+
+The Top-2 variants were less clear cut. Approval Top-2 outperforms Plurality Top-2 under mild friction, but they are not significantly different under moderate or heavy friction.
+
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-pt2-ci" %}
 
 ### The Ranked Methods Implosion
 
@@ -387,11 +398,13 @@ Schulze already has a massive drop-off in VSE under strategic voting. When you d
 
 I expected sand to cause STAR to break, but I should have realized that Condorcet was the far more intricate machine that would truly seize up under friction. It gets far worse for Schulze when voters are not even ranking candidates. It relies on all that nuanced preference data to do its thing, and otherwise it's just a mess.
 
-Ranked-Choice Voting (RCV) does not fare much better, and functions essentially identically to Schulze as friction increases, which might be the most embarrassing thing to come out of this post. As someone relatively sympathetic to Condorcet methods, it does not fill me with relish to say that Schulze's massive outcome advantage over RCV basically completely vanishes. RCV is already very bad across the board, in essentially every respect (including beyond raw outcomes, like practicality), but even this is appalling.
+Ranked-Choice Voting (RCV) does not fare much better, and which of the two is better depends on the friction level, which might be the most embarrassing thing to come out of this post. As someone relatively sympathetic to Condorcet methods, it does not fill me with relish to say that Schulze's massive outcome advantage over RCV basically completely vanishes or reverses. RCV is already very bad across the board, in essentially every respect (including beyond raw outcomes, like practicality), but even this is appalling.
 
 I would not at all consider myself a cardinalist, but this has given me new appreciation to how sensitive ranked data can be to noise (the "garbage in, garbage out" problem seems to be far worse than STAR). The fact that cardinal voting deals with candidates *independently* (with the exception of STAR's automatic runoff) seems to cushion the blow of widespread noise and truncation. I may investigate the [Better Choices](../better-choice/) model of a delayed top-3 Condorcet runoff in a follow up, to see if reducing Condorcet to three candidates, following a choose-one or Approval all-candidate primary, would be more robust than just doing Schulze on all 6 candidates in a single round<d-footnote>This was originally intended to be in this post before I narrowed the scope. My initial findings seemed to indicate the answer is likely yes: Condorcet on a narrowed field of three candidates has the potential to outperform any top-2 system.</d-footnote>.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="ranked-implosion" %}
+
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="rcv-schulze-ci" %}
 
 ### Condorcet Efficiency
 
