@@ -442,9 +442,13 @@ Surprisingly, Approval Top-2 is the best non-Condorcet method at electing the Co
 
 However, under friction, the system designed specifically to elect the Condorcet winner becomes worse at electing the true Condorcet winner than basically every other method. It seems that cardinal and runoff systems, at least in this model, are actually better at electing the Condorcet winner than a system designed specifically to do that exact task.
 
-The gap is too small, apart from the runoff methods, for me to make a strong claim about it, but it is a very interesting result.
-
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="condorcet-joint" %}<br>
+
+With only a few exceptions under mild friction, there is sufficient evidence to conclude that Schulze is worse at electing the Condorcet winner than basically all other methods (except RCV) under all levels of friction.
+
+{% proof Expand to see the Condorcet efficiency significance tables %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="ce-ci-table" %}
+{% endproof %}
 
 It appears that if your desire is truly to elect the Condorcet winner no matter the cost, then a runoff method is the way to go if voters are not ideal.
 
