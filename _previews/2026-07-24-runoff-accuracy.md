@@ -408,7 +408,7 @@ The Top-2 variants were less clear cut. Approval Top-2 outperforms Plurality Top
 
 I also did an analysis of the difference between Approval Top-2 and Plurality Top-2 when we vary the number of candidates. The idea being that for 6 candidates, PT2 and AT2 maybe have similarish performance, but vote splitting would become more of a problem for PT2 as the number of candidates increases. Under ideal conditions, AT2 stays fairly consistent, while PT2 declines rather quickly.
 
-Under friction, however, the difference is less clear cut, but every significant difference is in favor of AT2. This bolsters the evidence of the claim that Approval scales better to crowded fields than Plurality.
+Under friction, however, the difference is less clear cut. There does not seem to be a persistent difference between the two systems.
 
 {% proof Expand to see the candidate sweep analysis %}
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-pt2-candidate-sweep" %}
