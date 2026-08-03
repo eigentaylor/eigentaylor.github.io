@@ -265,7 +265,7 @@ I tried to keep the default settings of the original vse-sim as much as possible
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="vse-tables" %}
 {% endproof %}
 
-Additionally, in the comparison, we used honest voting for all systems.
+Additionally, in the comparison, we used honest voting for all systems. This was the simplest choice, and is actually a potential disadvantage towards Approval and Plurality, since strategic voting is usually what makes the outcomes of these systems more accurate. STAR and especially Condorcet generally have their most optimal VSE under honest voting, so this is a conservative choice that likely favors STAR and Condorcet in the comparison.
 
 I also defined "joint scenarios" of various friction levels where I set the $t=\alpha=\ell$ parameters to the same values:
 
