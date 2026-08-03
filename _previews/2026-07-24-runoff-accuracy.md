@@ -147,13 +147,13 @@ One particular concern I have with this is that the runoff is *automatic*. A vot
   The actual sample ballot for the 2026 gubernatorial primary, showing all 61 candidates for Governor. Thank you to <a href="https://electowiki.org/wiki/File:CAGovernorOpenPrimaryBallot2026.jpg">Rob Lanphier for the image</a>.
 </div>
 
-My concern is that an automatic runoff has a "garbage in, garbage out" problem: if the data collected from voters is poor, then the automatic runoff has no way to correct for that<d-footnote>This is a different pathology than the core problem with RCV. In RCV, even a perfectly filled out ballot can be weaponized against the voter due to the chaotic elimination order. The issue I am raising with STAR is based on inaccurately filled out ballots, which affects systems like Schulze and RCV just as much.</d-footnote>. In a delayed runoff, voters have a chance to familiarize themselves with the candidates in the narrowed field, and can make a more informed choice.
+My concern is that an automatic runoff has a "garbage in, garbage out" problem: if the data collected from voters is poor, then the automatic runoff has no way to correct for that<d-footnote>This is a different pathology than the core problem with RCV. In RCV, even a perfectly filled out ballot can be weaponized against the voter due to the chaotic elimination order. The issue I am raising with STAR is based on inaccurately filled out ballots, which affects systems like Schulze and RCV just as much, if not more.</d-footnote>. In a delayed runoff, voters have a chance to familiarize themselves with the candidates in the narrowed field, and can make a more informed choice.
 
 ### A Tale of Two Cities
 
 In 2024, a proposal in [Eugene, Oregon to eliminate primary elections for mayor, city council, and EWEB seats and replace them with STAR voting](https://ballotpedia.org/Eugene,_Oregon,_Measure_20-349,_STAR_Voting_for_Mayor_and_City_Council_Elections_Initiative_(May_2024)) was voted down by 64.49%. In 2020, [St. Louis, MO voters voted to adopt an all-candidate Approval voting primary election with a delayed top-2 runoff](https://ballotpedia.org/St._Louis,_Missouri,_Proposition_D,_Approval_Voting_Initiative_(November_2020)) by 68.15%. This system is still in place, and working excellently<d-cite key="sargent2025stlouis"></d-cite>. The comparison between these two proposals will be the focus of this post.
 
-[The pitch](https://www.starvoting.org/eugene_faq) for a single-round STAR election over the existing Approval Top-2 system used in St. Louis was that STAR is more accurate than Approval. Surely, a system with better VSE is better than one with worse VSE, right? And if we can save money by eliminating low turnout<d-footnote>There was also a fair point that the primary elections generally have lower turnout which is disproportionately white, and that a single election might improve equity. The St. Louis proposition, however, was explicitly framed as <a href="https://www.stlamerican.com/election/prop-d-expected-to-protect-the-collective-power-of-black-voters/">protecting black voters from vote splitting with that primary election</a>. So there are real equity arguments on both sides, and "does X system help/hurt Y demographic" is an exceptionally complicated question that we won't focus on.</d-footnote> primary elections, and just quickly elect the best candidate through an *automatic* runoff performed on an expressive and rich dataset collected in the high turnout November election, why not do that?
+[The pitch](https://www.starvoting.org/eugene_faq) for a single-round STAR election was to save money by eliminating low turnout<d-footnote>There was also a fair point that the primary elections generally have lower turnout which is disproportionately white, and that a single election might improve equity. The St. Louis proposition, however, was explicitly framed as <a href="https://www.stlamerican.com/election/prop-d-expected-to-protect-the-collective-power-of-black-voters/">protecting black voters from vote splitting with that primary election</a>. So there are real equity arguments on both sides, and "does X system help/hurt Y demographic" is an exceptionally complicated question that we won't focus on.</d-footnote> primary elections, and just quickly elect the best candidate through an *automatic* runoff performed on an expressive and rich dataset collected in the high turnout November election. And I assume they chose STAR over the existing Approval Top-2 system used in St. Louis because they see it as more accurate than Approval. Surely, a system with better VSE is better than one with worse VSE, right?
 
 > "STAR Voting is highly accurate with any number of candidates in the race, so there’s no need for an expensive primary for nonpartisan elections in most cases." ([Source](https://www.starvoting.org/eugene_faq))
 
@@ -193,7 +193,7 @@ At $\alpha=1$, all voters are aware of all candidates, while at lower values, fe
 
 Even if a voter is vaguely aware of a candidate, if that candidate is number 40 on a list of 61, we cannot assume that voter will necessarily take the time to scan the whole list to find them. Perhaps if that candidate was first on the list, they would easily give them a solid 3 stars, but if that candidate is far lower down, the voter might forget about them and stop looking after evaluating the first few candidates.
 
-While prominence is global to the election, fatigue is local to the voter. We draw a random fatigue ranking for each voter, as a stand-in for ballot-order rotation. As voters go down the ballot, they are more likely to be fatigued and simply skip a name. Maybe they need to pick up their kids from soccer practice, or they came from a long day at work, or they just don't care enough about who their water commissioner is to fully evaluate every name they would recognize if they had read each name closely. For the "fatigue" parameter $\ell$, the probability that a voter is not fatigued enough to vote for candidate $c$ is given by:
+While prominence is global to the election, fatigue is local to the voter. We draw a random fatigue ranking for each voter, as a stand-in for ballot-order rotation. As voters go down the ballot, they are more likely to be fatigued and simply skip a name. Maybe they need to pick up their kids from soccer practice, or their eyes are glazing over from tiredness, or they just came from a nine hour nursing shift, or they just don't care enough about who their water commissioner is to fully evaluate every person they would recognize if they had read each name closely. For the "fatigue" parameter $\ell$, the probability that a voter is not fatigued enough to vote for candidate $c$ is given by:
 
 $$P_{\text{not fatigued}}(voter, c) = \ell^{\text{fatigue_position}(voter, c)}$$
 
@@ -206,6 +206,8 @@ $$P_{\text{genuine}} = P_{\text{aware}} \times P_{\text{not fatigued}}$$
 If the check fails, then the utility for that candidate on the input ballot is set to be just below that of their least liked known candidate. This simulates the voters to basically say "I don't know or remember them, so I'll leave them off my ballot".
 
 This is how Schulze (Condorcet) would interpret a truncated ballot: all unranked candidates are tied below all ranked ones, and treated as the voter being indifferent between them. For cardinal systems, this functionally gives unknown candidates a 0 score (unapproved for Approval).
+
+We ensure that the voter is always aware of and votes for the candidate with the highest $P_{\text{genuine}}$ probability.
 
 ## The Runoff Assumptions
 
@@ -239,11 +241,11 @@ The most optimistic assumption is that voters have had time to research the cand
 
 In this ideal case, we assume that the noise and unawareness has entirely evaporated, leaving the voters with the exact correct *direction* between the candidates, regardless of their previous ignorance in the primary election. We include "clear-eyed" alternates of each delayed runoff system which uses this assumption.
 
-It's likely that the reality of the situation is somewhere between the coma and clear-eyed assumptions. We include an analysis that sweeps from the coma model to the clear-eyed model, and shows how much of a difference it makes in the overall accuracy of the election.
+It's likely that the reality of the situation is somewhere between these assumptions. We include an analysis that sweeps from the coma model to the clear-eyed model, and shows how much of a difference it makes in the overall accuracy of the election.
 
 ### Justification
 
-I will not deny that the awake assumptions are particularly optimistic for a delayed runoff. Indeed, I might even call it "cheating"! However, it turns out that the groggy assumption is more than enough to make Approval Top-2 significantly more robust than STAR.
+I will not deny that the wakeful assumptions are particularly optimistic for a delayed runoff. Indeed, I might even call it "cheating"! However, it turns out that the groggy assumption is more than enough to make Approval Top-2 significantly more robust than STAR.
 
 The proposal in Eugene *was* to eliminate the primary entirely, and have a one-shot expressive five-star score based election for seats as prestigious and of consequence as "Commissioner for Eugene Water and Electric Board, Wards 6 and 7" (no offense to the person who actually holds that office, I'm sure Eugene's EWEB is wonderful).
 
@@ -263,7 +265,7 @@ I tried to keep the default settings of the original vse-sim as much as possible
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="vse-tables" %}
 {% endproof %}
 
-Additionally, in the comparison, we used honest voting for all systems. This is actually a disadvantage towards Approval and Plurality, since strategic voting is usually what makes the outcomes of these systems more accurate. And honest voting is where STAR and Condorcet have their absolute best outcomes. This makes what I found all the more troubling.
+Additionally, in the comparison, we used honest voting for all systems.
 
 I also defined "joint scenarios" of various friction levels where I set the $t=\alpha=\ell$ parameters to the same values:
 
@@ -272,7 +274,13 @@ I also defined "joint scenarios" of various friction levels where I set the $t=\
 - 0.8: Moderate
 - 0.7: Heavy
 
-The way some parameters compound is multiplicative, so while 0.7 may not seem as heavy as, say, 0.5 or 0.3, it is actually *quite* substantial (especially with only 6 candidates). I chose not to tune the parameter too much, and use the simplest settings possible to avoid overfitting the model. I look forward to seeing how others might improve upon this model with even more realistic assumptions, use different parameter combinations, and perhaps even real-world data.
+The way some parameters compound is multiplicative, so while 0.7 may not seem as heavy as, say, 0.5 or 0.3, it is actually *quite* substantial (especially with only 6 candidates).
+
+{% proof Expand to see the friction probability table %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="friction-table" %}
+{% endproof %}
+
+I chose not to tune the parameter too much, and use the simplest settings possible to avoid overfitting the model. I look forward to seeing how others might improve upon this model with even more realistic assumptions, use different parameter combinations, and perhaps even incorporate real-world data.
 
 ## Findings
 
@@ -282,7 +290,7 @@ The code is included in [the Appendix](#the-jupyter-notebook), but we will summa
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="approval-star-gap-scenarios" %}
 
-Under perfect conditions, STAR is objectively more accurate than single-round Approval and Approval Top-2 (under honest ballots). For single-round Approval specifically, however, the VSE gap narrows under all friction scenarios. A 95% confidence interval on the VSE gap between single-round Approval and STAR voting, using a paired test, consistently contains 0 for all friction scenarios. From this, I conclude that there is no evidence or justification that STAR is more effective than single round Approval in this simulation under any friction scenario.
+Under perfect conditions, STAR is objectively more accurate than single-round Approval and Approval Top-2 (under honest ballots). For single-round Approval specifically, however, the VSE gap narrows under all friction scenarios. A 95% confidence interval on the VSE gap between single-round Approval and STAR voting, using a paired test, consistently contains 0 for all friction scenarios. From this, I conclude that there is no evidence or justification that STAR is more effective than single-round Approval in this simulation under any friction scenario.
 
 Approval Top-2, on the other hand, clearly wins out in simulations over STAR and Schulze except for the "coma model" (for which its edge over STAR is less clear cut). It's not even close. Even under mild friction, Approval Top-2 is significantly more accurate than STAR so long as voters are "awake" to the runoff, and this grows as friction worsens. This is with and without removed noise in the runoff step. Misinformed voters who at least are aware of the candidates are enough to outperform the automatic runoff.
 
@@ -326,7 +334,7 @@ This is perhaps not too surprising given that we are modeling voters as not nece
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="scoret2-vs-at2" %}
 
-The evidence for my hypothesis that a more coarse ballot is more robust to friction seems to be unsupported. There appears to be no (robust and persistent) significant gap, when comparing clear-eyed Approval Top-2 to a theoretical clear-eyed SCORE Top-2 delayed runoff: under ideal conditions SCORE appears significantly better, and under friction Approval is basically the same.
+The evidence for my hypothesis that a more coarse ballot is more robust to friction seems to be mixed. There appears to be no (robust and persistent) significant gap, when comparing clear-eyed Approval Top-2 to a theoretical clear-eyed SCORE Top-2 delayed runoff: under ideal conditions SCORE appears significantly better, and under friction Approval is basically the same. Some runs show a significant difference where Approval is better in the 95% confidence interval, but it's so borderline that I'm not willing to make a strong claim about it.
 
 At the very least, for this comparison between a theoretical SCORE Top-2 (that nobody is actually advocating for) with the St. Louis model, I would say that the SCORE ballot appears completely unjustified. That granularity, does not seem to help outcomes under friction. The real difference, if not outcomes, is then how much more intimidating and easy to spoil the ballot is, and how politically viable proposing that change becomes. Approval is essentially the hardest ballot type to spoil, so I would conclude a SCORE ballot is strictly worse in this context.
 
@@ -340,7 +348,7 @@ And based on my findings, I would say that for something like a City Council try
 
 *Publicly electing that city council*, however, is a different story. I do not find it plausible that voters are going to be able to give thoughtful and accurate scores to all candidates for a local election. A simpler system like Approval, with a delayed runoff, seems more likely to produce better outcomes if the data collected from voters is likely low quality. Under such conditions, the gain from even just single-round Approval to STAR appears to be negligible.
 
-Specifically, the proposal to eliminate the primary process in favor of a single round STAR vote instead seems like the worst of both worlds for public political elections. If there is anything I have taken away from this project, it's that a delayed runoff is of **enormous benefit**. And given that the standard is already to have two elections, a winnowing primary process that feeds into a general election, the evidence that what we gain from eliminating the primary election would outweigh what we lose does not appear strong to me. I would, for example, vehemently oppose any proposition to replace the current California Top-2 system with any single-round method.
+Specifically, the proposal to eliminate the primary process in favor of a single-round STAR vote instead seems like the worst of both worlds for public political elections. If there is anything I have taken away from this project, it's that a delayed runoff is of **enormous benefit**. And given that the standard is already to have two elections, a winnowing primary process that feeds into a general election, the evidence that what we gain from eliminating the primary election would outweigh what we lose does not appear strong to me. I would, for example, vehemently oppose any proposition to replace the current California Plurality Top-2 system with any single-round method. [As bad as the current system is](../ca-top-2/), the narrowing process is a necessary evil, and the evidence that a single-round system would be better is not compelling to me.
 
 A narrowing process seems absolutely necessary, and using the simple Approval system for that winnowing seems to be the most robust and politically viable option. It scales exceptionally well to crowded fields, compared to a ranking or scoring system, and eliminates the vote splitting we see in the Plurality Top-2 systems used in Washington and California. If 61 candidates on the ballot is a possibility, then Approval is the only system that can handle that without completely overbloating the ballot and overwhelming voters.
 
@@ -372,7 +380,7 @@ In a 1998 paper by Regenwetter and Grofman, they analyzed the outcomes of real A
 
 > "We find no evidence here that approval voting should be replaced by a more elaborate voting scheme." (p. 532<d-cite key="regenwetterGrofman1998approvalBordaCondorcet"></d-cite>)
 
-Perhaps we've been attempting to overcomplicate our elections chasing perfection. When we step beyond the idealized assumptions of perfect voters, we find that the "top of the line" systems like STAR and Condorcet perform far worse than the simpler system being used *right now* in St. Louis. Approval Top-2 may not be a compromise at all, but actually superior and more accurate than the more complex STAR that it has been overlooked in favor of. And when voters have actually been asked to choose that system for themselves, they've said no every time. We need not fly high like Icarus, when the solution might just be in a city in Missouri.
+Perhaps we've been attempting to overcomplicate our elections chasing perfection. When we step beyond the idealized assumptions of perfect voters, we find that the "top of the line" systems like STAR and Condorcet perform far worse than the simpler system being used *right now* in St. Louis. Approval Top-2 may not be a compromise at all, but actually superior and more accurate than the more complex STAR that it has been overlooked in favor of. And when voters have actually been asked to choose STAR for themselves, they've said no every time. We need not fly high like Icarus, when the solution might just be in a city in Missouri.
 
 ## Appendix
 
@@ -432,9 +440,11 @@ This is a little funnier. Under ideal conditions, Schulze has perfect 100% Condo
 
 Surprisingly, Approval Top-2 is the best non-Condorcet method at electing the Condorcet winner, ahead of even STAR under ideal conditions.
 
-However, under friction, the system designed specifically to elect the Condorcet winner becomes worse at electing the true Condorcet winner than STAR, Approval Top-2, base Approval, and even Plurality (though the gap is very small except for Top-2 methods). It seems that cardinal and runoff systems, at least in this model, are actually better at electing the Condorcet winner than a system designed specifically to do that exact task.
+However, under friction, the system designed specifically to elect the Condorcet winner becomes worse at electing the true Condorcet winner than basically every other method. It seems that cardinal and runoff systems, at least in this model, are actually better at electing the Condorcet winner than a system designed specifically to do that exact task.
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="condorcet-joint" %}
+The gap is too small, apart from the runoff methods, for me to make a strong claim about it, but it is a very interesting result.
+
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="condorcet-joint" %}<br>
 
 It appears that if your desire is truly to elect the Condorcet winner no matter the cost, then a runoff method is the way to go if voters are not ideal.
 
