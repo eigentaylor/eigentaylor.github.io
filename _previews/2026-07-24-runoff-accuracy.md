@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: 'Coarse Correction: Is STAR Actually More Accurate than Approval?'
-date: 2026-08-01
+date: 2026-08-02
 description: Why Approval with a delayed runoff might be far more accurate than STAR voting when voters are misinformed and fatigued.
 importance: 1
 tags: voting
@@ -114,7 +114,7 @@ In Quinn's 2017 summary, he has this to say:
 
 > [Approval is] not the best of the methods I tested, but it certainly is the best "bang for the buck"; a simple reform, with basically no downsides, which improves outcomes hugely. (Quinn, 2017<d-cite key="quinn2017vseSummary"></d-cite>)
 
-And it is absolutely undeniable: single-round Approval voting, while simple and strong like a reliable sedan (I drive a Prius, myself), absolutely underperforms the fancy Ferrari that is STAR, and the finely-tuned Formula 1 race car of Schulze, in VSE. If you want to win the Monaco Grand Prix, you don't drive the sedan you got from your uncle.
+And it is absolutely undeniable: single-round Approval voting, while simple and strong like a reliable sedan, absolutely underperforms the fancy Ferrari that is STAR, and the finely-tuned Formula 1 race car of Schulze, in VSE. If you want to win the Monaco Grand Prix, you don't drive the sedan you got from your uncle.
 
 On the [Equal Vote page for Approval](https://www.equal.vote/approval), they make a fair case for Approval as something that "should be the default voting method". But they also call it a "stepping stone", say that "there's a good case to be made to upgrade further," and even though it's a "case for Approval", the text spends significant space pointing back to STAR:
 
