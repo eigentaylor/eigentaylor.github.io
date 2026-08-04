@@ -3,6 +3,7 @@ require 'base64'
 require 'fileutils'
 require 'shellwords'
 require 'cgi'
+require 'digest'
 
 # Extracts specific Jupyter notebook cell outputs (chart images and markdown tables) at
 # Jekyll build time, so a post always reflects the notebook's last-saved run instead of a
@@ -185,7 +186,12 @@ module Jekyll
 
         anchors = images.each_with_index.map do |image, i|
           width, height = png_dimensions(image[:bytes])
-          filename = "#{cell_tag}-#{gallery_index}-#{i + 1}.png"
+          # The filename is content-addressed (hash of the PNG's own bytes) rather than just
+          # `<tag>-<n>.png`, so the URL itself changes the moment a rerun changes the chart --
+          # otherwise browsers happily keep serving a cached copy from the old URL even after
+          # the notebook, the plugin, and _site are all already showing the new one.
+          digest = Digest::SHA256.hexdigest(image[:bytes])[0, 10]
+          filename = "#{cell_tag}-#{gallery_index}-#{i + 1}-#{digest}.png"
           site.static_files << NotebookCellImageFile.new(site, site.source, dir, filename, image[:bytes])
           url = "#{baseurl}/#{dir}/#{filename}"
           alt = CGI.escapeHTML(image[:alt] || "Chart generated from notebook cell tagged '#{cell_tag}'")
