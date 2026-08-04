@@ -312,7 +312,7 @@ So far we have looked at fixed runoff awareness models (coma, groggy, clear-eyed
 
 We define a new parameter `p_learn`, which ranges from 0 to 1. This parameter is the probability that a voter can become aware of a candidate they were not aware of before (rolled against for one or both candidates the voter is unaware of). When a voter successfully rolls to learn of a candidate, we use their (potentially noisy) perceived utility.
 
-When a voter learns about a candidate, they vote their real (potentially noisy) preference; otherwise, they fall back on their prior information, exactly as under the coma model. Under `p_learn=0`, the coma model, STAR is significantly better than Approval Top-2. Eyeballing the graph, the crossing point seems to be approximately at $p_{learn}=0.2$, where Approval Top-2 overtakes STAR in VSE (at this point, the gap is insignificant). By $p_{learn}=0.4$, Approval Top-2 is significantly better than STAR, and the gap continues to grow as `p_learn` increases.
+When a voter learns about a candidate, they vote their real (potentially noisy) preference; otherwise, they fall back on their prior information, exactly as under the coma model. Under `p_learn=0`, the coma model, STAR is significantly better than Approval Top-2. Eyeballing the graph, the crossing point seems to be approximately at $p_{learn}=0.2$, where Approval Top-2 overtakes STAR in VSE (at this point, the gap is insignificant). By $p_{learn}=0.3$, Approval Top-2 appears significantly better than STAR, and the gap continues to grow as `p_learn` increases.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-learn-sweep" mode="images" %}<br>
 
