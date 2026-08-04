@@ -207,7 +207,7 @@ If the check fails, then the utility for that candidate on the input ballot is s
 
 This is how Schulze (Condorcet) would interpret a truncated ballot: all unranked candidates are tied below all ranked ones, and treated as the voter being indifferent between them. For cardinal systems, this functionally gives unknown candidates a 0 score (unapproved for Approval). In RCV, a voter's ballot cannot transfer to a candidate they did not vote for.
 
-We ensure that the voter is always aware of the candidate with the highest $P_{\text{genuine}}$ probability, and always evaluates them.
+Originally, I ensured that the voter is always aware of the candidate with the highest $P_{\text{genuine}}$ probability, and always evaluates them. However, I decided a more realistic model is that a voter will always ensure that they evaluate their favorite *known* candidate. That is, of the candidates that voter is aware of, they always give that candidate a full evaluation (an approval, 5 stars, a first ranking, or a plurality vote). Changing to this assumption also improved the accuracy of a number of systems including STAR voting. 
 
 ## The Runoff Assumptions
 
@@ -290,9 +290,9 @@ The code is included in [the Appendix](#the-jupyter-notebook), but we will summa
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="approval-star-gap-scenarios" %}
 
-Under perfect conditions, STAR is objectively more accurate than single-round Approval and Approval Top-2 (under honest ballots). For single-round Approval specifically, however, the VSE gap narrows under all friction scenarios. A 95% confidence interval on the VSE gap between single-round Approval and STAR voting, using a paired test, consistently contains 0 for all friction scenarios. From this, I conclude that there is no evidence or justification that STAR is more effective than single-round Approval in this simulation under any friction scenario.
+Under perfect conditions, STAR is objectively more accurate than single-round Approval and Approval Top-2 (under honest ballots). For single-round Approval specifically, however, the VSE gap narrows under all friction scenarios. A 95% confidence interval on the VSE gap between single-round Approval and STAR voting, using a paired test, consistently contains 0 for all friction scenarios except heavy friction.
 
-Approval Top-2, on the other hand, clearly wins out in simulations over STAR and Schulze except for the "coma model" (for which its edge over STAR is less clear-cut). It's not even close. Even under mild friction, Approval Top-2 is significantly more accurate than STAR so long as voters are "awake" to the runoff, and this grows as friction worsens. This is with and without removed noise in the runoff step. Misinformed voters who at least are aware of the candidates are enough to outperform the automatic runoff.
+Approval Top-2, on the other hand, clearly wins out in simulations over STAR and Schulze except for the "coma model", which was significantly worse. Even under mild friction, Approval Top-2 is significantly more accurate than STAR so long as voters are "awake" to the runoff, and this grows as friction worsens. It's not even close. This is with and without removed noise in the runoff step. Misinformed voters who at least are aware of the candidates are enough to outperform the automatic runoff.
 
 {% proof Expand to see significance tables %}
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="star-vse-gap-significant" %}
@@ -312,9 +312,11 @@ So far we have looked at fixed runoff awareness models (coma, groggy, clear-eyed
 
 We define a new parameter `p_learn`, which ranges from 0 to 1. This parameter is the probability that a voter can become aware of a candidate they were not aware of before (rolled against for one or both candidates the voter is unaware of). When a voter successfully rolls to learn of a candidate, we use their (potentially noisy) perceived utility.
 
-When a voter learns about a candidate, they vote their real (potentially noisy) preference; otherwise, they fall back on their prior information, exactly as under the coma model. That baseline alone (`p_learn=0`) already makes Approval Top-2 as good as or better than STAR, depending on friction. Even a tiny learning rate beyond that opens a significant and lasting gap in Approval Top-2's favor. A small chance of picking up secondhand, imperfect information is enough to beat STAR's automatic runoff outright.
+When a voter learns about a candidate, they vote their real (potentially noisy) preference; otherwise, they fall back on their prior information, exactly as under the coma model. Under `p_learn=0`, the coma model, STAR is significantly better than Approval Top-2. Eyeballing the graph, the crossing point seems to be approximately at $p_{learn}=0.2$, where Approval Top-2 overtakes STAR in VSE (at this point, the gap is insignificant). By $p_{learn}=0.4$, Approval Top-2 is significantly better than STAR, and the gap continues to grow as `p_learn` increases.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-learn-sweep" mode="images" %}<br>
+
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="p-learn-ci-table" %}
 
 As we sweep the runoff noise $t$, and keep the awareness fixed between the primary and runoff, the performance does not change much for the values of $t$ used for the scenarios, and the dropoff in quality seems to be primarily for $t < 0.4$. Further investigation on scenarios where the $t$ values are lower would be required to say more. So this analysis indicates that what we are measuring across the scenarios used in this post is a case where voters are unaware and fatigued, but are generally good at having the correct direction between the two finalists.
 
@@ -394,7 +396,7 @@ This leads me to an uncomfortable conclusion that choose-one voting, for as flaw
 
 ### Approval vs Plurality
 
-Despite the plurality bump, Approval still outperforms plurality voting consistently.
+Despite the plurality bump, Approval still outperforms plurality voting at mild and moderate friction. The heavy friction gap is insignificant.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="plurality-vs-approval" %}<br>
 
@@ -404,9 +406,10 @@ The Top-2 variants were less clear-cut. Approval Top-2 outperforms Plurality Top
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-pt2-ci" %}
 
-I also did an analysis of the difference between Approval Top-2 and Plurality Top-2 when we vary the number of candidates. The idea is that for 6 candidates, the two may have similar performance, but vote splitting would become more of a problem for choose-one as the number of candidates increases. Under ideal conditions, AT2 stays fairly consistent, while PT2 declines rather quickly.
+I also did an analysis of the difference between Approval Top-2 and Plurality Top-2 when we vary the number of candidates. The idea is that for 6 candidates, the two may have similar performance, but vote splitting would become more of a problem for choose-one as the number of candidates increases. Under ideal conditions, AT2 stays fairly consistent, while PT2 declines rather quickly. This maintains in mild friction, but the gap is not as large.
 
-Under friction, however, the difference is less clear-cut. There does not seem to be a persistent difference between the two systems.
+Under moderate and heavy friction, however, the difference is less clear-cut. There does not seem to be a persistent difference between the two systems.
+
 
 {% proof Expand to see the candidate sweep analysis %}
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-pt2-candidate-sweep" %}
@@ -422,7 +425,7 @@ Schulze already has a massive drop-off in VSE under strategic voting. When you d
 
 I expected friction to cause STAR to break, but I should have realized that Condorcet was the far more intricate machine that would truly seize up when sand got in its gears. It gets far worse for Schulze when voters are not even ranking candidates. It relies on all that nuanced preference data to do its thing, and otherwise it's just a mess. This is the Formula 1 race car spinning out when the track gets wet. You use a race car on a pristine track, but you don't drive it to Wendy's in the rain.
 
-Ranked-Choice Voting (RCV) does not fare much better, and which of the two is better depends on the friction level, which might be the most embarrassing thing to come out of this post. As someone relatively sympathetic to Condorcet methods, it does not fill me with relish to say that Schulze's massive outcome advantage over RCV basically completely vanishes or reverses. RCV is already very bad across the board, in essentially every respect (like practicality and logistical complexity), but even this is appalling.
+Ranked-Choice Voting (RCV) does not fare much better, and their gap is not significant at any friction level, which might be the most embarrassing thing to come out of this post. As someone relatively sympathetic to Condorcet methods, it does not fill me with relish to say that Schulze's massive outcome advantage over RCV basically completely vanishes. RCV is already very bad across the board, in essentially every respect (like practicality and logistical complexity), but even this is appalling.
 
 I would not consider myself a cardinalist, but this has given me new appreciation for how sensitive ranked data can be to noise (the "garbage in, garbage out" problem seems to be far worse for ranked methods than STAR voting). The fact that cardinal voting deals with candidates *independently* (with the exception of STAR's automatic runoff) seems to cushion the blow of widespread noise and truncation. I may investigate the [Better Choices](../better-choices/) model of a delayed top-3 Condorcet runoff in a follow-up, to see if reducing Condorcet to three candidates, following a choose-one or Approval all-candidate primary, would be more robust than just doing Schulze on all 6 candidates in a single round.
 
