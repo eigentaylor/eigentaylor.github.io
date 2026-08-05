@@ -292,7 +292,7 @@ The code is included in [the Appendix](#the-jupyter-notebook), but we will summa
 
 Under perfect conditions, STAR is objectively more accurate than single-round Approval and Approval Top-2 (under honest ballots). For single-round Approval specifically, however, the VSE gap narrows under all friction scenarios. A 95% confidence interval on the VSE gap between single-round Approval and STAR voting, using a paired test, consistently contains 0 for all friction scenarios except heavy friction.
 
-Approval Top-2, on the other hand, clearly wins out in simulations over STAR and Schulze except for the "coma model", which was significantly worse. But even under mild friction, Approval Top-2 is significantly more accurate than STAR so long as voters are "awake" to the runoff, and this grows as friction worsens. It's not even close. This is with and without removed noise in the runoff step. Misinformed voters who at least are aware of the candidates are enough to outperform the automatic runoff.
+Approval Top-2, on the other hand, clearly wins out in simulations over STAR and Schulze except for the "coma model", under which Approval Top-2 performed significantly worse than STAR. But even under mild friction, Approval Top-2 is significantly more accurate than STAR so long as voters are "awake" to the runoff, and this grows as friction worsens. It's not even close. This is with and without removed noise in the runoff step. Misinformed voters who at least are aware of the candidates are enough to outperform the automatic runoff.
 
 {% proof Expand to see significance tables %}
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="star-vse-gap-significant" %}
