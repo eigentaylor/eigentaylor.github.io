@@ -56,7 +56,7 @@ toc:
 
 ## Introduction
 
-Voter Satisfaction Efficiency (VSE)<d-cite key="quinn2017vseSummary"></d-cite> is an incredible metric used for evaluating the performance of voting systems, primarily championed by the Equal Vote Coalition. It gives a numeric percentage to the "accuracy" of a voting system, with 0% being just a system that randomly chooses a winner, and 100% being a system that always elects the "best" (highest utility) candidate<d-footnote>VSE isn't the frequency of electing the single-best candidate. Rather, it's a linear rescaling of average voter utility normalized to the scale between random (average of all candidate utilities) and best. A VSE of 50% would, for example, mean that the candidate it tends to elect provides utility halfway between the average and the best, potentially without ever picking the single best candidate. So if the average provided utility of all candidates was 100, and the utility maximizer provided 110, then a VSE of 50% means we would expect the candidate that system elects to provide 105 utility.</d-footnote>.
+Voter Satisfaction Efficiency (VSE)<d-cite key="quinn2017vseSummary"></d-cite> is an incredible metric used for evaluating the performance of voting systems, primarily championed by the Equal Vote Coalition. It gives a numeric percentage to the "accuracy" of a voting system, with 0% being just a system that randomly chooses a winner, and 100% being a system that always elects the "best" (highest utility) candidate<d-footnote>VSE isn't the frequency of electing the single-best candidate. Rather, it's a linear rescaling of average voter utility normalized to the scale between random (average of all candidate utilities) and best. A VSE of 50% would, for example, mean that the candidate it tends to elect provides utility halfway between the average and the best, potentially without ever picking the single best candidate. An illustrative, if slightly oversimplified, example would be that if the average provided utility of all candidates was 100, and the utility maximizer provided 110, then a VSE of 50% means we would expect the candidate that system elects to provide 105 utility.</d-footnote>.
 
 I interpret VSE as just a simple measure of "aggregation competence": how well a voting system can aggregate the preferences that are fed into it. If a system is *good*, then it almost surely has solid VSE. Choose-one voting, for example, has awful VSE (about 60%) when voters are simulated to just vote honestly. This is because the system is so blind that it cannot look beyond the top choice of each voter, and thus consensus candidates are often buried by vote-splitting. With strategic voting, it can rise to about 80%.
 
@@ -288,14 +288,14 @@ The code is included in [the Appendix](#the-jupyter-notebook), but we will summa
 
 ### The Approval-STAR Gap
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="approval-star-gap-scenarios" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="star-vse-gap-significant" %}
 
 Under perfect conditions, STAR is objectively more accurate than single-round Approval and Approval Top-2 (under honest ballots). For single-round Approval specifically, however, the VSE gap narrows under all friction scenarios. A 95% confidence interval on the VSE gap between single-round Approval and STAR voting, using a paired test, consistently contains 0 for all friction scenarios except heavy friction.
 
 Approval Top-2, on the other hand, clearly wins out in simulations over STAR and Schulze except for the "coma model", under which Approval Top-2 performed significantly worse than STAR. But even under mild friction, Approval Top-2 is significantly more accurate than STAR so long as voters are "awake" to the runoff, and this grows as friction worsens. It's not even close. This is with and without removed noise in the runoff step. Misinformed voters who at least are aware of the candidates are enough to outperform the automatic runoff.
 
 {% proof Expand to see significance tables %}
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="star-vse-gap-significant" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="approval-star-gap-scenarios" %}
 {% endproof %}
 
 Perhaps the most sobering statistic is how solid groggy Plurality Top-2 was in VSE compared to STAR under the sweeps and scenarios (with the Clear-Eyed variant being even further ahead). Despite Plurality Top-2 having completely mediocre ~80% VSE in the ideal case, it stays robust compared to all other single-round systems<d-footnote>Technically, Plurality Top-2 is the exact system being used in California right now, including for that 61 candidate Gubernatorial race.</d-footnote>.
