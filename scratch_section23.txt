@@ -1,0 +1,661 @@
+=============== 116 markdown ===============
+## 23. Per-election "runoff betrayal" diagnostic
+
+**This measures something different from Section 22, not the same thing on a different scale.**
+Section 22 asks whether STAR's runoff changes the winner away from Score5's raw top-score pick at
+all -- it rarely does, so that aggregate gap is a wash. This section asks a broader question:
+independent of whether the runoff visibly changes anything, does the pairwise decision it actually
+makes for this specific pair of finalists agree with what the SAME voters' honest, uncorrupted
+preferences would have decided? That also catches cases where the runoff keeps Score5's raw pick,
+but that shared pick is itself wrong relative to honest preferences -- and it turns out to be
+violated far more often than the runoff visibly flips anything, as the flip-rate section below
+shows.
+
+`voter_corruption_rate` is the more granular signal: among individual voters with a genuine
+(nonzero) honest preference between the two finalists, how often does their ACTUAL (noisy/
+friction-affected) ballot disagree in sign with it. `betrayal_rate` aggregates this to the level of
+the runoff DECISION itself: among elections where both the actual and honest signals are decisive,
+how often does STAR's automatic runoff produce the OPPOSITE outcome from what a perfectly-informed,
+delayed runoff would have produced for that same pair.
+
+The table reports three VSE numbers on the same 0-100(ish) scale as everywhere else in this
+notebook: **VSE (STAR's actual runoff)** is STAR's already-known aggregate VSE at that scenario;
+**VSE (honest/delayed-perfect runoff)** is the counterfactual if this specific runoff pair had
+always used honest preferences instead; and **VSE (AT2 Clear-Eyed runoff)** is "Approval Top 2
+(Clear-Eyed)"'s own aggregate VSE at the same scenario -- a real method combining a coarser
+Approval primary with a perfect delayed runoff, for direct comparison.
+
+`runoff_betrayal_stats` compares the pairwise upset sign from actual (noisy/friction-affected)
+ballots against the SAME sign computed from HONEST ballots on the TRUE electorate -- both cast the
+same way (same `honBallot` floor-to-`0..topRank` discretization), rather than against raw
+continuous utilities, so a small honest margin that floors to a tie doesn't get counted as noise's
+fault.
+
+=============== 117 markdown ===============
+### Does the runoff help or hurt, relative to no runoff at all?
+
+Before digging into STAR's own automatic-runoff betrayal rate below, a more basic question: for
+Approval Top 2 and Plurality Top 2, does adding a delayed runoff on top of the base (non-runoff)
+method actually help, across each of the three runoff-information assumptions? Reads directly off
+the main joint-scenario run (Section 16) -- `Approval Top 2 (Coma/Groggy/Clear-Eyed)` and
+`Plurality Top 2 (Groggy/Clear-Eyed)` are each paired against their own family's base method
+(`Approval`/`Plurality`), same paired-CI/significance convention as every other gap table in this
+notebook.
+
+=============== 118 code ===============
+def display_paired_gap_matrix(labels, baseline_label, title=None, sort_desc=True):
+    """Same layout as Section 19's CE-gap-vs-Schulze tables: one table per _joint_scenarios_to_run
+    scenario, every label in `labels` as a row (sorted by gap) vs the SAME baseline_label. Reads
+    joint_results/paired_diff_by_scenario (already computed by the main joint-scenario run) -- no
+    new simulation. Every (label, baseline_label) pair must already be in _paired_diff_pairs
+    (cell defining it, Section 16) with the main run re-executed since."""
+    title = title or f"{baseline_label} vs {', '.join(labels)}"
+    missing = [
+        (name, label) for name in _joint_scenarios_to_run for label in labels
+        if (label, baseline_label) not in paired_diff_by_scenario.get(name, {})
+    ]
+    if missing:
+        raise KeyError(
+            f"missing pairs in paired_diff_by_scenario: {missing} -- add (label, {baseline_label!r}) "
+            "to _paired_diff_pairs and re-run the main joint-scenario cell first."
+        )
+    lines = [f"### {title}", ""]
+    for name in _joint_scenarios_to_run:
+        baseline_vse = joint_results[name][(baseline_label, "honBallot")][0] * 100
+        sorted_labels = sorted(
+            labels, reverse=sort_desc,
+            key=lambda l: paired_diff_by_scenario[name][(l, baseline_label)][0],
+        )
+        lines += [
+            f"#### {name}", "",
+            f"| Method | {baseline_label} VSE (%) | Method VSE (%) | Gap (pp) | 95% CI | Significant? |",
+            "|---|---|---|---|---|---|",
+        ]
+        for label in sorted_labels:
+            label_vse = joint_results[name][(label, "honBallot")][0] * 100
+            gap, ci = paired_diff_by_scenario[name][(label, baseline_label)]
+            gap *= 100
+            ci *= 100
+            sig = "Yes" if gap - ci > 0 or gap + ci < 0 else ""
+            if sig == "Yes":
+                sig += f" ({label} better)" if gap > 0 else f" ({baseline_label} better)"
+            lines.append(f"| {label} | {baseline_vse:.1f} | {label_vse:.1f} | {gap:+.1f} | [{gap-ci:+.1f}, {gap+ci:+.1f}] | {sig or 'No (CI contains 0)'} |")
+        lines.append("")
+    display(Markdown("\n".join(lines)))
+--OUTPUT--
+
+
+=============== 119 code ===============
+display_paired_gap_matrix(
+    ["Approval Top 2 (Coma)", "Approval Top 2", "Approval Top 2 (Clear-Eyed)"], "Approval",
+    title="Does the runoff help or hurt Approval?",
+)
+display_paired_gap_matrix(
+    ["Plurality Top 2", "Plurality Top 2 (Clear-Eyed)"], "Plurality",
+    title="Does the runoff help or hurt Plurality?",
+)
+--OUTPUT--
+### Does the runoff help or hurt Approval?
+
+#### Mild friction
+
+| Method | Approval VSE (%) | Method VSE (%) | Gap (pp) | 95% CI | Significant? |
+|---|---|---|---|---|---|
+| Approval Top 2 (Clear-Eyed) | 82.7 | 92.7 | +10.1 | [+9.2, +10.9] | Yes (Approval Top 2 (Clear-Eyed) better) |
+| Approval Top 2 | 82.7 | 92.1 | +9.4 | [+8.5, +10.3] | Yes (Approval Top 2 better) |
+| Approval Top 2 (Coma) | 82.7 | 81.4 | -1.3 | [-2.2, -0.5] | Yes (Approval better) |
+
+#### Moderate friction
+
+| Method | Approval VSE (%) | Method VSE (%) | Gap (pp) | 95% CI | Significant? |
+|---|---|---|---|---|---|
+| Approval Top 2 (Clear-Eyed) | 65.1 | 84.7 | +19.6 | [+18.2, +21.1] | Yes (Approval Top 2 (Clear-Eyed) better) |
+| Approval Top 2 | 65.1 | 83.3 | +18.3 | [+16.8, +19.7] | Yes (Approval Top 2 better) |
+| Approval Top 2 (Coma) | 65.1 | 57.5 | -7.6 | [-9.0, -6.2] | Yes (Approval better) |
+
+#### Heavy friction
+
+| Method | Approval VSE (%) | Method VSE (%) | Gap (pp) | 95% CI | Significant? |
+|---|---|---|---|---|---|
+| Approval Top 2 (Clear-Eyed) | 42.8 | 74.7 | +31.9 | [+29.9, +33.9] | Yes (Approval Top 2 (Clear-Eyed) better) |
+| Approval Top 2 | 42.8 | 72.5 | +29.7 | [+27.6, +31.8] | Yes (Approval Top 2 better) |
+| Approval Top 2 (Coma) | 42.8 | 30.9 | -12.0 | [-13.8, -10.1] | Yes (Approval better) |
+
+### Does the runoff help or hurt Plurality?
+
+#### Mild friction
+
+| Method | Plurality VSE (%) | Method VSE (%) | Gap (pp) | 95% CI | Significant? |
+|---|---|---|---|---|---|
+| Plurality Top 2 (Clear-Eyed) | 68.5 | 88.5 | +20.0 | [+18.1, +21.9] | Yes (Plurality Top 2 (Clear-Eyed) better) |
+| Plurality Top 2 | 68.5 | 88.1 | +19.5 | [+17.6, +21.4] | Yes (Plurality Top 2 better) |
+
+#### Moderate friction
+
+| Method | Plurality VSE (%) | Method VSE (%) | Gap (pp) | 95% CI | Significant? |
+|---|---|---|---|---|---|
+| Plurality Top 2 (Clear-Eyed) | 61.0 | 82.6 | +21.6 | [+19.8, +23.4] | Yes (Plurality Top 2 (Clear-Eyed) better) |
+| Plurality Top 2 | 61.0 | 81.2 | +20.3 | [+18.5, +22.0] | Yes (Plurality Top 2 better) |
+
+#### Heavy friction
+
+| Method | Plurality VSE (%) | Method VSE (%) | Gap (pp) | 95% CI | Significant? |
+|---|---|---|---|---|---|
+| Plurality Top 2 (Clear-Eyed) | 41.0 | 73.7 | +32.7 | [+30.6, +34.9] | Yes (Plurality Top 2 (Clear-Eyed) better) |
+| Plurality Top 2 | 41.0 | 71.9 | +30.9 | [+28.7, +33.1] | Yes (Plurality Top 2 better) |
+
+
+=============== 120 markdown ===============
+### Sanity check, then: why does Coma underperform?
+
+The table above shows Coma AT2 scoring *below* plain Approval -- before trusting an explanation
+for that, a sanity check: Coma, Groggy (the default `Approval Top 2`), and Clear-Eyed all collapse
+to the exact same code path at zero friction (`epistemic_t=awareness_alpha=fatigue_l=1.0` --
+`_perceived_voters` equals true utilities and `aware_sets` covers everyone regardless of which
+runoff mode is active). Their VSE at Ideal must therefore be bit-for-bit identical; a mismatch
+would mean a real implementation bug, not a friction effect.
+
+=============== 121 code ===============
+_coma_ideal = results[("Approval Top 2 (Coma)", "honBallot")]
+_groggy_ideal = results[("Approval Top 2", "honBallot")]
+_ce_ideal = results[("Approval Top 2 (Clear-Eyed)", "honBallot")]
+_sanity_ok = _coma_ideal == _groggy_ideal == _ce_ideal
+display(Markdown(
+    f"**Sanity check -- Coma/Groggy/Clear-Eyed AT2 at Ideal (should be identical):** "
+    f"Coma={_coma_ideal[0]*100:.4f}%, Groggy={_groggy_ideal[0]*100:.4f}%, "
+    f"Clear-Eyed={_ce_ideal[0]*100:.4f}% -- "
+    + ("**MATCH** (no implementation bug at this boundary)." if _sanity_ok
+       else "**MISMATCH -- this is a real bug, investigate before trusting the decomposition below.**")
+))
+assert _sanity_ok, "Coma/Groggy/Clear-Eyed AT2 must be identical at Ideal (same code path) -- mismatch means a bug, not friction."
+--OUTPUT--
+**Sanity check -- Coma/Groggy/Clear-Eyed AT2 at Ideal (should be identical):** Coma=95.9831%, Groggy=95.9831%, Clear-Eyed=95.9831% -- **MATCH** (no implementation bug at this boundary).
+
+=============== 122 code ===============
+def at2_coma_corruption_stats(niter, epistemic_t=1.0, awareness_alpha=1.0, fatigue_l=1.0, electorates=None):
+    """For niter elections: identify Approval Top 2's own primary top-2 (via Approval's own
+    Score(1, True) scoring, on the ACTUAL noisy/friction-affected ballots -- the same primary
+    every real ApprovalTop2 instance uses), then classify every voter with a genuine (nonzero)
+    TRUE preference between the two finalists into how their Coma-runoff vote relates to that
+    true preference.
+
+    coma_pref -- what Top2Base's runoff_coma path actually does with this voter for this pair:
+    if aware of both finalists, their vote is their raw (noisy) perceived preference; if aware of
+    only one, that floors the other to worst so they always favor the known one regardless of true
+    preference; if aware of neither, they abstain (contributes 0), matching runoff_coma's own
+    documented behavior exactly.
+
+    groggy_pref -- the counterfactual "if this voter had full awareness instead" vote, using the
+    SAME noisy perceived values (no change to epistemic_t) -- isolates whether awareness alone
+    would have fixed a wrong/abstained vote, or whether the noise itself is also wrong regardless
+    of awareness (the "even if Groggy" case).
+
+    Returns counts (fractions of n_decisive_voters, same denominator convention as
+    runoff_betrayal_stats' voter_corruption_rate) for five buckets:
+      aligned                     -- Coma vote matches true preference
+      wrong_awareness_fixable     -- Coma vote is WRONG, but Groggy (full awareness) would be right
+      wrong_noise_unfixable       -- Coma vote is WRONG, and Groggy would ALSO be wrong (noise itself)
+      abstained_awareness_fixable -- Coma abstains, but Groggy would be right
+      abstained_noise_unfixable   -- Coma abstains, and Groggy would ALSO be wrong
+    plus two rollups: awareness_attributable (the two *_awareness_fixable buckets -- fixed by
+    awareness alone) and noise_unfixable (the two *_noise_unfixable buckets -- noise itself is
+    wrong regardless of awareness).
+
+    ALSO returns an election-level (not per-voter) paired comparison: per election, does the
+    AGGREGATE upset sign (sum of every voter's pref across all NVOT voters -- this is exactly
+    what Top2Base.results() computes to decide whether the runoff flips the winner) under Coma
+    match the TRUE aggregate sign, and does it under Groggy (full awareness, same noise)? This is
+    the metric that actually drives VSE (an election's WINNER, not per-voter accuracy) -- per-voter
+    corruption doesn't translate linearly into election-level correctness, since the runoff decision
+    is a majority/sign function of ~NVOT voters at once, not an average. Returns (as fractions of
+    n_decisive_elections, elections where the true aggregate sign is nonzero):
+      coma_accuracy_rate / groggy_accuracy_rate -- P(aggregate sign matches true sign) for each
+      both_correct_rate / both_wrong_rate       -- both methods agree with truth / both wrong
+      coma_only_correct_rate                    -- Coma right, Groggy wrong (should be rare)
+      groggy_only_correct_rate                  -- Groggy right, Coma wrong -- the awareness fix
+                                                    paying off at the election level
+    """
+    sweep_start_time = time.time()
+    score_obj = Score(1, True)
+    counts = defaultdict(int)
+    n_decisive_voters = 0
+    election_counts = defaultdict(int)
+    n_decisive_elections = 0
+    for i in range(niter):
+        true_electorate = electorates[i] if electorates is not None else MODEL(NVOT, NCAND)
+        perceived_electorate = make_perceived_electorate(true_electorate, epistemic_t)
+        ballot_electorate, genuine_sets, aware_sets = apply_participation_friction(
+            perceived_electorate, true_electorate, awareness_alpha, fatigue_l
+        )
+        ballots = [score_obj.honBallot(score_obj, voter, None) for voter in ballot_electorate]
+        approval_scores = list(map(score_obj.candScore, zip(*ballots, strict=False)))
+        runnerUp, top = sorted(range(len(approval_scores)), key=lambda i: approval_scores[i])[-2:]
+
+        true_upset = coma_upset = groggy_upset = 0
+        for v in range(NVOT):
+            true_pref = _sign4(true_electorate[v][runnerUp] - true_electorate[v][top])
+            groggy_pref = _sign4(perceived_electorate[v][runnerUp] - perceived_electorate[v][top])
+            aware = aware_sets[v] if aware_sets is not None else {top, runnerUp}
+            if top in aware and runnerUp in aware:
+                coma_pref = groggy_pref
+            elif top in aware:
+                coma_pref = -1  # runnerUp floored to worst -- always loses this pair
+            elif runnerUp in aware:
+                coma_pref = 1
+            else:
+                coma_pref = 0  # abstains -- Top2Base's own documented behavior
+            true_upset += true_pref
+            coma_upset += coma_pref
+            groggy_upset += groggy_pref
+
+            if true_pref == 0:
+                continue  # no genuine preference -- excluded from the per-voter denominator, same
+                          # convention runoff_betrayal_stats' voter_corruption_rate already uses
+            awareness_would_fix_it = (groggy_pref == true_pref)
+            if coma_pref == true_pref:
+                bucket = "aligned"
+            elif coma_pref == 0:
+                bucket = "abstained_awareness_fixable" if awareness_would_fix_it else "abstained_noise_unfixable"
+            else:
+                bucket = "wrong_awareness_fixable" if awareness_would_fix_it else "wrong_noise_unfixable"
+            counts[bucket] += 1
+            n_decisive_voters += 1
+
+        if true_upset != 0:  # a genuine TRUE aggregate preference exists between these two finalists
+            n_decisive_elections += 1
+            true_sign = _sign4(true_upset)
+            coma_correct = _sign4(coma_upset) == true_sign
+            groggy_correct = _sign4(groggy_upset) == true_sign
+            if coma_correct and groggy_correct:
+                election_counts["both_correct"] += 1
+            elif coma_correct:
+                election_counts["coma_only_correct"] += 1
+            elif groggy_correct:
+                election_counts["groggy_only_correct"] += 1
+            else:
+                election_counts["both_wrong"] += 1
+        if (i + 1) % 100 == 0:
+            print(f"{i + 1}/{niter} elections done in {time.time() - sweep_start_time:.1f}s")
+
+    rates = {k: (v / n_decisive_voters if n_decisive_voters else float("nan")) for k, v in counts.items()}
+    for key in ["aligned", "wrong_awareness_fixable", "wrong_noise_unfixable",
+                "abstained_awareness_fixable", "abstained_noise_unfixable"]:
+        rates.setdefault(key, 0.0)
+    rates["awareness_attributable"] = rates["wrong_awareness_fixable"] + rates["abstained_awareness_fixable"]
+    rates["noise_unfixable"] = rates["wrong_noise_unfixable"] + rates["abstained_noise_unfixable"]
+    rates["n_decisive_voters"] = n_decisive_voters
+
+    election_rates = {k: (v / n_decisive_elections if n_decisive_elections else float("nan"))
+                       for k, v in election_counts.items()}
+    for key in ["both_correct", "coma_only_correct", "groggy_only_correct", "both_wrong"]:
+        election_rates.setdefault(key, 0.0)
+    rates["coma_accuracy_rate"] = election_rates["both_correct"] + election_rates["coma_only_correct"]
+    rates["groggy_accuracy_rate"] = election_rates["both_correct"] + election_rates["groggy_only_correct"]
+    rates["both_correct_rate"] = election_rates["both_correct"]
+    rates["coma_only_correct_rate"] = election_rates["coma_only_correct"]
+    rates["groggy_only_correct_rate"] = election_rates["groggy_only_correct"]
+    rates["both_wrong_rate"] = election_rates["both_wrong"]
+    rates["n_decisive_elections"] = n_decisive_elections
+    return rates
+--OUTPUT--
+
+
+=============== 123 code ===============
+# Adjust AT2_COMA_NITER for this cell in Section 5 (Parameters).
+at2_coma_stats_by_scenario = {
+    name: at2_coma_corruption_stats(AT2_COMA_NITER, **params)
+    for name, params in JOINT_SCENARIOS.items()
+}
+--OUTPUT--
+100/600 elections done in 4.5s
+200/600 elections done in 8.9s
+300/600 elections done in 13.2s
+400/600 elections done in 18.9s
+500/600 elections done in 23.8s
+600/600 elections done in 29.3s
+100/600 elections done in 4.9s
+200/600 elections done in 12.9s
+300/600 elections done in 18.3s
+400/600 elections done in 24.1s
+500/600 elections done in 28.9s
+600/600 elections done in 44.0s
+100/600 elections done in 13.6s
+200/600 elections done in 20.7s
+300/600 elections done in 27.3s
+400/600 elections done in 33.8s
+500/600 elections done in 40.9s
+600/600 elections done in 47.8s
+100/600 elections done in 6.6s
+200/600 elections done in 13.2s
+300/600 elections done in 19.4s
+400/600 elections done in 25.6s
+500/600 elections done in 31.8s
+600/600 elections done in 38.3s
+
+
+=============== 124 code ===============
+_coma_lines = [
+    "#### Coma AT2: why voters end up voting against their own pairwise interest",
+    "",
+    "| Scenario | Aligned | Awareness-attributable | Noise-unfixable (even if Groggy) |",
+    "|---|---|---|---|",
+]
+for name, stats in at2_coma_stats_by_scenario.items():
+    _coma_lines.append(
+        f"| {name} | {stats['aligned'] * 100:.1f}% | {stats['awareness_attributable'] * 100:.1f}% | "
+        f"{stats['noise_unfixable'] * 100:.1f}% |"
+    )
+display(Markdown("\n".join(_coma_lines)))
+
+_coma_detail_lines = [
+    "#### Coma AT2: detailed breakdown",
+    "",
+    "| Scenario | Wrong (awareness-fixable) | Wrong (noise-unfixable) | Abstained (awareness-fixable) | Abstained (noise-unfixable) |",
+    "|---|---|---|---|---|",
+]
+for name, stats in at2_coma_stats_by_scenario.items():
+    _coma_detail_lines.append(
+        f"| {name} | {stats['wrong_awareness_fixable'] * 100:.1f}% | {stats['wrong_noise_unfixable'] * 100:.1f}% | "
+        f"{stats['abstained_awareness_fixable'] * 100:.1f}% | {stats['abstained_noise_unfixable'] * 100:.1f}% |"
+    )
+display(Markdown("\n".join(_coma_detail_lines)))
+--OUTPUT--
+#### Coma AT2: why voters end up voting against their own pairwise interest
+
+| Scenario | Aligned | Awareness-attributable | Noise-unfixable (even if Groggy) |
+|---|---|---|---|
+| Ideal | 100.0% | 0.0% | 0.0% |
+| Mild friction | 72.6% | 11.0% | 16.4% |
+| Moderate friction | 66.8% | 14.3% | 18.8% |
+| Heavy friction | 63.3% | 16.0% | 20.7% |
+#### Coma AT2: detailed breakdown
+
+| Scenario | Wrong (awareness-fixable) | Wrong (noise-unfixable) | Abstained (awareness-fixable) | Abstained (noise-unfixable) |
+|---|---|---|---|---|
+| Ideal | 0.0% | 0.0% | 0.0% | 0.0% |
+| Mild friction | 9.9% | 16.2% | 1.0% | 0.3% |
+| Moderate friction | 13.1% | 18.4% | 1.3% | 0.4% |
+| Heavy friction | 15.2% | 20.3% | 0.8% | 0.4% |
+
+=============== 125 code ===============
+_election_lines = [
+    "#### Coma vs Groggy: election-level aggregate-sign accuracy (does the runoff decision match the true preference?)",
+    "",
+    "| Scenario | Coma correct | Groggy correct | Both correct | Coma-only correct | Groggy-only correct | Both wrong |",
+    "|---|---|---|---|---|---|---|",
+]
+for name, stats in at2_coma_stats_by_scenario.items():
+    _election_lines.append(
+        f"| {name} | {stats['coma_accuracy_rate'] * 100:.1f}% | {stats['groggy_accuracy_rate'] * 100:.1f}% | "
+        f"{stats['both_correct_rate'] * 100:.1f}% | {stats['coma_only_correct_rate'] * 100:.1f}% | "
+        f"{stats['groggy_only_correct_rate'] * 100:.1f}% | {stats['both_wrong_rate'] * 100:.1f}% |"
+    )
+display(Markdown("\n".join(_election_lines)))
+display(Markdown(
+    "This is the metric that actually drives the VSE gap -- an election's outcome depends on the "
+    "AGGREGATE runoff decision, not per-voter accuracy. \"Groggy-only correct\" is the direct "
+    "empirical signature of the amplification: elections where fixing awareness alone flips the "
+    "runoff's aggregate decision from wrong to right, even though the underlying per-voter fix "
+    "(the `awareness_attributable` rate above) is comparatively modest."
+))
+--OUTPUT--
+#### Coma vs Groggy: election-level aggregate-sign accuracy (does the runoff decision match the true preference?)
+
+| Scenario | Coma correct | Groggy correct | Both correct | Coma-only correct | Groggy-only correct | Both wrong |
+|---|---|---|---|---|---|---|
+| Ideal | 100.0% | 100.0% | 100.0% | 0.0% | 0.0% | 0.0% |
+| Mild friction | 60.7% | 85.3% | 53.3% | 7.3% | 32.0% | 7.3% |
+| Moderate friction | 54.0% | 86.2% | 47.0% | 7.0% | 39.2% | 6.8% |
+| Heavy friction | 46.3% | 85.5% | 38.3% | 8.0% | 47.2% | 6.5% |
+This is the metric that actually drives the VSE gap -- an election's outcome depends on the AGGREGATE runoff decision, not per-voter accuracy. "Groggy-only correct" is the direct empirical signature of the amplification: elections where fixing awareness alone flips the runoff's aggregate decision from wrong to right, even though the underlying per-voter fix (the `awareness_attributable` rate above) is comparatively modest.
+
+=============== 126 code ===============
+def runoff_betrayal_stats(topRank, niter, epistemic_t=1.0, awareness_alpha=1.0, fatigue_l=1.0,
+                           electorates=None, compare_method=None):
+    """For niter STAR elections: recompute the primary top-2 as Srv0to.results() does using the
+    ACTUAL cast (noisy/friction-affected) ballots, then compare the resulting pairwise upset sign
+    against the upset sign from HONEST ballots cast the same way (same honBallot floor-to-
+    0..topRank discretization) but on the TRUE, uncorrupted electorate -- NOT against the raw
+    continuous true utilities directly. That distinction matters: honBallot's floor() alone
+    (Section 1) is lossy even at epistemic_t=awareness_alpha=fatigue_l=1.0 -- small honest margins
+    between two candidates can floor to a tie while larger ones survive, which can flip the
+    AGGREGATE pairwise sign on close pairs purely from a coarse 0..5 ballot scale, with no noise
+    involved at all. Comparing against honest ballots in the SAME discretized format cancels that
+    confound out, isolating exactly the marginal effect of epistemic_t/awareness_alpha/fatigue_l --
+    matching the "if honest scores were given" framing this diagnostic is meant to test.
+
+    A "betrayal" is a sign disagreement (both nonzero) between the noisy and honest upsets: the
+    runoff would have gone the other way if these SAME voters had cast honest ballots instead.
+    voter_corruption_rate is the more granular input signal: among voters with a genuine (nonzero)
+    honest-ballot preference for the pair, the fraction whose ACTUAL ballot disagrees in sign.
+
+    The VSE cost is reported on TWO denominator scopes, deliberately NOT as a mean of per-election
+    normalized_vse differences -- that mean-of-ratios estimator is dominated by rare elections
+    where an individual election's own (best - rand) is small, since dividing by a near-zero
+    denominator blows up that one election's ratio arbitrarily (VSE is not bounded to [0, 100];
+    see the normalized_vse formula in Section 1). Instead, both are ratios of means, computed the
+    same way VSE is computed for a real method everywhere else in this notebook:
+      - decisive_vse_cost: denominator spans only the DECISIVE elections (both noisy_upset and
+        honest_upset nonzero). Answers "when this specific runoff pair had a real answer, how
+        costly was getting it wrong, on average, conditional on that happening."
+      - population_vse_cost: denominator spans ALL niter elections -- exactly the same
+        denominator convention Section 22 (and every other VSE gap in this notebook) uses. This
+        is the number the headline table turns into two concrete endpoints: STAR's own actual VSE
+        at this scenario (reused from Sections 13/16, not recomputed) and that same VSE plus
+        population_vse_cost, i.e. the honest/delayed-perfect counterfactual.
+
+    compare_method: optional (label, method) pair. When given, ALSO runs `method` via its own
+    resultsTable on the IDENTICAL per-election electorate/friction draw used above for the STAR/
+    theoretical-honest computation -- so its VSE is directly paired with this diagnostic's own
+    honest/delayed-perfect SCORE Top-2 VSE, computed on the SAME elections (not a separately-drawn
+    pool, unlike today's at2_vse_lookup in the table below). Adds "compare_label", "theoretical_vse"
+    (mean, ci), "compare_vse" (mean, ci), and "gap" (mean, ci) -- the per-election paired
+    (theoretical - compare) VSE difference, using the same mean-of-per-election-differences
+    convention run_vse_simulation's paired_diff_baseline uses everywhere else in this notebook
+    (NOT population_vse_cost's ratio-of-sums above, which stays unchanged for the existing
+    decisive-only diagnostic -- a valid *paired* CI needs a per-election difference, computed for
+    every election including non-decisive ones, where theoretical and actual necessarily agree).
+    """
+    sweep_start_time = time.time()
+    print(f"Betrayal stats on params epistemic_t={epistemic_t}, awareness_alpha={awareness_alpha}, fatigue_l={fatigue_l}...")
+    score0to = Score(topRank, True)
+    n_betrayals = n_decisive = n_voter_corrupt = n_voter_decisive = 0
+    sum_util_honest = sum_util_actual = sum_best_decisive = sum_rand_decisive = 0.0
+    sum_best_all = sum_rand_all = 0.0
+    compare_label, compare_obj = compare_method if compare_method else (None, None)
+    compare_summary = defaultdict(lambda: [0, 0.0, 0.0])
+    for i in range(niter):
+        true_electorate = electorates[i] if electorates is not None else MODEL(NVOT, NCAND)
+        perceived = make_perceived_electorate(true_electorate, epistemic_t)
+        ballot_electorate, _, _ = apply_participation_friction(perceived, true_electorate, awareness_alpha, fatigue_l)  # Score-only helper, never feeds Irv
+        ballots = [score0to.honBallot(score0to, voter, None) for voter in ballot_electorate]
+        honest_ballots = [score0to.honBallot(score0to, voter, None) for voter in true_electorate]
+        baseResults = list(map(score0to.candScore, zip(*ballots, strict=False)))
+        (runnerUp, top) = sorted(range(len(baseResults)), key=lambda i: baseResults[i])[-2:]
+
+        noisy_upset = sum(_sign4(b[runnerUp] - b[top]) for b in ballots)
+        honest_upset = sum(_sign4(hb[runnerUp] - hb[top]) for hb in honest_ballots)
+
+        utils = true_electorate.socUtils
+        best, rand = max(utils), mean(utils)
+        sum_best_all += best
+        sum_rand_all += rand
+
+        if noisy_upset != 0 and honest_upset != 0:
+            n_decisive += 1
+            actual_winner = runnerUp if noisy_upset > 0 else top
+            honest_winner = runnerUp if honest_upset > 0 else top
+            sum_util_honest += utils[honest_winner]
+            sum_util_actual += utils[actual_winner]
+            sum_best_decisive += best
+            sum_rand_decisive += rand
+            if _sign4(noisy_upset) != _sign4(honest_upset):
+                n_betrayals += 1
+
+        for b, hb in zip(ballots, honest_ballots):
+            honest_sign = _sign4(hb[runnerUp] - hb[top])
+            if honest_sign != 0:
+                n_voter_decisive += 1
+                if _sign4(b[runnerUp] - b[top]) != honest_sign:
+                    n_voter_corrupt += 1
+
+        if compare_obj is not None:
+            honest_winner_all = runnerUp if honest_upset > 0 else top  # same >0 tiebreak as above, for EVERY election
+            theoretical_vse = normalized_vse(utils[honest_winner_all], best, rand)
+            compare_row = next(
+                row for row in compare_obj.resultsTable(
+                    i, str(MODEL), NCAND, ballot_electorate, [],
+                    media=MEDIA, scoring_voters=true_electorate, perceived_voters=perceived,
+                    honest_only=True,
+                )
+                if row["chooser"] == "honBallot"
+            )
+            compare_vse = compare_row["vse"]
+            for key, val in (("theoretical", theoretical_vse), ("compare", compare_vse),
+                             ("gap", theoretical_vse - compare_vse)):
+                acc = compare_summary[key]
+                acc[0] += 1; acc[1] += val; acc[2] += val ** 2
+        if (i + 1) % 100 == 0:
+            print(f"{i + 1}/{niter} elections done in {time.time() - sweep_start_time:.1f}s")
+    decisive_denom = sum_best_decisive - sum_rand_decisive
+    population_denom = sum_best_all - sum_rand_all
+    decisive_vse_cost = ((sum_util_honest - sum_util_actual) / decisive_denom) if not isclose(decisive_denom, 0) else float("nan")
+    population_vse_cost = ((sum_util_honest - sum_util_actual) / population_denom) if not isclose(population_denom, 0) else float("nan")
+
+    result = dict(
+        betrayal_rate=(n_betrayals / n_decisive if n_decisive else float("nan")),
+        n_decisive=n_decisive, n_betrayals=n_betrayals,
+        voter_corruption_rate=(n_voter_corrupt / n_voter_decisive if n_voter_decisive else float("nan")),
+        decisive_vse_cost=decisive_vse_cost, population_vse_cost=population_vse_cost,
+    )
+    if compare_obj is not None:
+        reduced = reduce_to_mean_ci(dict(compare_summary))
+        result.update(compare_label=compare_label, theoretical_vse=reduced["theoretical"],
+                      compare_vse=reduced["compare"], gap=reduced["gap"])
+    return result
+--OUTPUT--
+
+
+=============== 127 code ===============
+# Adjust BETRAYAL_NITER for this cell in Section 5 (Parameters).
+_AT2_CLEAR_EYED = ("Approval Top 2 (Clear-Eyed)", METHODS_LOOKUP["Approval Top 2 (Clear-Eyed)"])
+betrayal_by_scenario = {
+    name: runoff_betrayal_stats(STAR_TOP_RANK, BETRAYAL_NITER, compare_method=_AT2_CLEAR_EYED, **params)
+    for name, params in JOINT_SCENARIOS.items()
+}
+--OUTPUT--
+Betrayal stats on params epistemic_t=1.0, awareness_alpha=1.0, fatigue_l=1.0...
+100/600 elections done in 4.9s
+200/600 elections done in 9.7s
+300/600 elections done in 14.4s
+400/600 elections done in 19.6s
+500/600 elections done in 24.3s
+600/600 elections done in 29.1s
+Betrayal stats on params epistemic_t=0.9, awareness_alpha=0.9, fatigue_l=0.9...
+100/600 elections done in 7.0s
+200/600 elections done in 13.2s
+300/600 elections done in 19.8s
+400/600 elections done in 26.3s
+500/600 elections done in 32.9s
+600/600 elections done in 39.7s
+Betrayal stats on params epistemic_t=0.8, awareness_alpha=0.8, fatigue_l=0.8...
+100/600 elections done in 6.1s
+200/600 elections done in 12.8s
+300/600 elections done in 18.8s
+400/600 elections done in 25.1s
+500/600 elections done in 32.2s
+600/600 elections done in 38.1s
+Betrayal stats on params epistemic_t=0.7, awareness_alpha=0.7, fatigue_l=0.7...
+100/600 elections done in 6.1s
+200/600 elections done in 15.0s
+300/600 elections done in 22.8s
+400/600 elections done in 29.8s
+500/600 elections done in 37.1s
+600/600 elections done in 45.3s
+
+
+=============== 128 code ===============
+_epistemic_only_values = [0.0, 0.3, 0.5, 0.7, 0.85, 1.0]
+betrayal_by_epistemic_t = {
+    t: runoff_betrayal_stats(STAR_TOP_RANK, BETRAYAL_T_NITER, epistemic_t=t)
+    for t in _epistemic_only_values
+}
+--OUTPUT--
+Betrayal stats on params epistemic_t=0.0, awareness_alpha=1.0, fatigue_l=1.0...
+100/300 elections done in 6.7s
+200/300 elections done in 12.8s
+300/300 elections done in 19.3s
+Betrayal stats on params epistemic_t=0.3, awareness_alpha=1.0, fatigue_l=1.0...
+100/300 elections done in 6.2s
+200/300 elections done in 11.8s
+300/300 elections done in 18.0s
+Betrayal stats on params epistemic_t=0.5, awareness_alpha=1.0, fatigue_l=1.0...
+100/300 elections done in 6.0s
+200/300 elections done in 11.9s
+300/300 elections done in 17.8s
+Betrayal stats on params epistemic_t=0.7, awareness_alpha=1.0, fatigue_l=1.0...
+100/300 elections done in 7.7s
+200/300 elections done in 13.4s
+300/300 elections done in 19.5s
+Betrayal stats on params epistemic_t=0.85, awareness_alpha=1.0, fatigue_l=1.0...
+100/300 elections done in 5.8s
+200/300 elections done in 11.5s
+300/300 elections done in 17.0s
+Betrayal stats on params epistemic_t=1.0, awareness_alpha=1.0, fatigue_l=1.0...
+100/300 elections done in 4.6s
+200/300 elections done in 8.9s
+300/300 elections done in 13.3s
+
+
+=============== 129 code ===============
+def _betrayal_table(stats_by_key, key_header, niter, star_vse_lookup, at2_vse_lookup, key_fmt=str):
+    """star_vse_lookup(key) -> STAR's own already-computed honest-ballot VSE (a 0..1 fraction) at
+    this scenario/epistemic_t value, pulled from Sections 13/16 data -- not recomputed here. The
+    "honest/delayed-perfect runoff" column is derived as actual + population_vse_cost, so the two
+    VSE columns are guaranteed to differ by exactly the "VSE gap" column.
+
+    at2_vse_lookup(key) -> "Approval Top 2 (Clear-Eyed)"'s already-computed honest-ballot
+    VSE (a 0..1 fraction) at the SAME scenario/epistemic_t value, also pulled from Sections 13/16
+    data (COMPARE_LABELS/METHODS_NO_COMA already include it -- no new simulation). Placed next
+    to STAR's own two VSE columns so a coarse (Approval) vs. fine-grained (0..5 Score) noisy
+    primary ballot can be compared directly once BOTH have a perfect delayed runoff available to
+    correct their pick -- STAR's "honest/delayed-perfect" column IS exactly that comparison for
+    the Score primary, restricted to the decisive runoff pairs."""
+    header = [key_header, "Betrayal rate", "Voter corruption rate",
+              "VSE (STAR's actual runoff)", "VSE (honest/delayed-perfect runoff)",
+              "VSE (AT2 Clear-Eyed runoff)"]
+    lines = ["| " + " | ".join(header) + " |", "|" + "---|" * len(header)]
+    for key, stats in stats_by_key.items():
+        n_dec = stats["n_decisive"]
+        actual_vse = star_vse_lookup(key) * 100
+        gap = stats["population_vse_cost"] * 100 if n_dec else 0.0
+        honest_vse = actual_vse + gap
+        at2_vse = at2_vse_lookup(key) * 100
+        at2_star_gap = at2_vse - actual_vse
+        lines.append("| " + " | ".join([
+            key_fmt(key),
+            f"{stats['betrayal_rate'] * 100:.1f}%" if n_dec else "n/a",
+            f"{stats['voter_corruption_rate'] * 100:.2f}%",
+            f"{actual_vse:.1f}%",
+            f"{honest_vse:.1f}% ({gap:+.1f} pts over actual)" if n_dec else "n/a",
+            #f"{gap:+.1f} pts" if n_dec else "n/a",
+            f"{at2_vse:.1f}% ({at2_star_gap:+.1f} pts over STAR)" if n_dec else "n/a",
+        ]) + " |")
+    display(Markdown("\n".join(lines)))
+--OUTPUT--
+
+
+=============== 130 code ===============
+display(Markdown("#### Runoff betrayal rate by joint-friction scenario"))
+_betrayal_table(betrayal_by_scenario, "Scenario", BETRAYAL_NITER,
+                 star_vse_lookup=lambda name: joint_results[name][("STAR", "honBallot")][0],
+                 at2_vse_lookup=lambda name: betrayal_by_scenario[name]["compare_vse"][0])
+--OUTPUT--
+#### Runoff betrayal rate by joint-friction scenario
+| Scenario | Betrayal rate | Voter corruption rate | VSE (STAR's actual runoff) | VSE (honest/delayed-perfect runoff) | VSE (AT2 Clear-Eyed runoff) |
+|---|---|---|---|---|---|
+| Ideal | 0.0% | 0.00% | 97.6% | 97.6% (+0.0 pts over actual) | 95.0% (-2.6 pts over STAR) |
+| Mild friction | 34.0% | 35.84% | 84.0% | 91.3% (+7.3 pts over actual) | 92.4% (+8.4 pts over STAR) |
+| Moderate friction | 41.3% | 45.30% | 65.4% | 85.0% (+19.5 pts over actual) | 86.3% (+20.9 pts over STAR) |
+| Heavy friction | 43.6% | 48.72% | 42.6% | 68.5% (+25.9 pts over actual) | 74.4% (+31.8 pts over STAR) |
+

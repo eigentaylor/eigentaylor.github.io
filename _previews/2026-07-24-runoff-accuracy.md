@@ -228,6 +228,8 @@ The coma model is **not** how STAR functions (but it is close). The flawed under
 
 For example, suppose that you walk into the voting booth. You give your no-chance favorite 5 stars, the corrupt incumbent 1 star, and an awful challenger 0 stars. But a 3-star mediocre candidate that you tolerate is at the bottom of your ballot. They aren't on your mind, and so you give them no stars because you're exhausted after a long day of work. If the runoff is between the corrupt incumbent and the mediocre candidate, then you just accidentally vote for the incumbent because you gave them a higher score (1 star) than the mediocre candidate (no stars). In a delayed runoff, you always get a chance to correct that mistake, even in the coma model. But in STAR, you may have just accidentally contributed to the reelection of a 1-star candidate you hate.
 
+However, this doesn't mean that a coma runoff will necessarily be better than STAR's automatic runoff in the simulation itself. While the coma model fixes fatigue, it does not fix awareness. In my simulation, a voter who is aware of only one finalist will always vote for that one, even if they actively dislike them. This means they potentially vote for the devil they know. It would be interesting to test a model where voters only vote for the candidate they are aware of under certain conditions (ex. only if they are above the mean utility of the ones they know), but I did not implement that in this simulation. The coma model is a pessimistic assumption, and I wanted to see how well the delayed runoff could perform even under such conditions.
+
 ### The Groggy Model
 
 In contrast to the coma model, the remaining two models will simulate voters to have some extent of "wakefulness".
@@ -309,7 +311,17 @@ I would never advocate for Plurality Top-2<d-footnote>As previously mentioned, t
 
 ### How much does a delayed runoff actually help?
 
-So far we have looked at fixed runoff awareness models (coma, groggy, clear-eyed). This gives a very binary change in how much the runoff helps. But we are interested to see what the "in-between" looks like.
+First, I think we should highlight that the coma model actually ends up doing *significantly* worse than just single-round Approval. This is important because it shows that the runoff itself is not inherently a cheat to improve outcomes. Approval Top-2 is a strict improvement in the ideal case, but that's not a guarantee when voters lack awareness of candidates, and the runoff step gives them no way to correct that.
+
+I believe the primary driver of the outcomes becoming so much worse in the coma model is the fact that we simulate that a voter always votes for the candidate they know, if they don't know the other. This can lead to voters casting votes for "the devil they know", because that candidate has better name recognition than a candidate they would actually prefer. Whereas, under single-round Approval, they would just never vote for that candidate they don't actually like. The groggy model, on the other hand, performs far beyond STAR.
+
+{% proof Expand to see the single-round vs runoff variants %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-vs-baseline" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="coma-diagnostic" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="coma-vs-groggy" %}
+{% endproof %}
+
+So far we have looked at fixed runoff awareness models (coma, groggy, clear-eyed). This gives a very binary change in how much the runoff helps. But we are interested to see what the "in-between" looks like. Particularly, at what level of improved awareness does the delayed runoff start to outperform STAR?
 
 We define a new parameter `p_learn`, which ranges from 0 to 1. This parameter is the probability that a voter can become aware of a candidate they were not aware of before (rolled against for one or both candidates the voter is unaware of). When a voter successfully rolls to learn of a candidate, we use their (potentially noisy) perceived utility.
 
