@@ -51,6 +51,7 @@ toc:
       - name: The Ranked Methods Implosion
       - name: Condorcet Efficiency
       - name: SCORE vs STAR
+      - name: Robustness Rankings
       - name: The Jupyter Notebook
 ---
 
@@ -290,7 +291,7 @@ The code is included in [the Appendix](#the-jupyter-notebook), but we will summa
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="star-vse-gap-significant" %}
 
-Under perfect conditions, STAR is objectively more accurate than single-round Approval and Approval Top-2 (under honest ballots). For single-round Approval specifically, however, the VSE gap narrows under all friction scenarios. A 95% confidence interval on the VSE gap between single-round Approval and STAR voting, using a paired test, consistently contains 0 for all friction scenarios except mild friction.
+Under perfect conditions, STAR is objectively more accurate than single-round Approval and Approval Top-2 (under honest ballots). For single-round Approval specifically, however, the VSE gap of about 9 points narrows under all friction scenarios. The gap is generally under about 1.5 points, and occasionally reaches significance at one friction level or another, but it's not particularly robust or consistent.
 
 Approval Top-2, on the other hand, clearly wins out in simulations over STAR and Schulze except for the "coma model", under which Approval Top-2 performed significantly worse than STAR. But even under mild friction, Approval Top-2 is significantly more accurate than STAR so long as voters are "awake" to the runoff, and this grows as friction worsens. It's not even close. This is with and without removed noise in the runoff step. Misinformed voters who at least are aware of the candidates are enough to outperform the automatic runoff.
 
@@ -312,11 +313,11 @@ So far we have looked at fixed runoff awareness models (coma, groggy, clear-eyed
 
 We define a new parameter `p_learn`, which ranges from 0 to 1. This parameter is the probability that a voter can become aware of a candidate they were not aware of before (rolled against for one or both candidates the voter is unaware of). When a voter successfully rolls to learn of a candidate, we use their (potentially noisy) perceived utility.
 
-When a voter learns about a candidate, they vote their real (potentially noisy) preference; otherwise, they fall back on their prior information, exactly as under the coma model. Under `p_learn=0`, the coma model, STAR is significantly better than Approval Top-2. Eyeballing the graph, the crossing point seems to be approximately at $p_{learn}=0.2$, where Approval Top-2 overtakes STAR in VSE (at this point, the gap is insignificant under all friction scenarios).
+When a voter learns about a candidate, they vote their real (potentially noisy) preference; otherwise, they fall back on their prior information, exactly as under the coma model. Under `p_learn=0`, the coma model, STAR is significantly better than Approval Top-2. Eyeballing the graph, the crossing point seems to be approximately at $p_{learn}=0.2$, where Approval Top-2 overtakes STAR in VSE.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-learn-sweep" mode="images" %}<br>
 
-The values where the gap is significant depends on the level of friction. However, it seems that you really just need about a one in three chance to learn about a candidate for the delayed runoff to have a significant advantage.
+The values where the gap is significant depends on the level of friction. However, it seems that you really just need at most about a one in three chance to learn about a candidate for the delayed runoff to have a significant advantage.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="p-learn-ci-table" %}
 
@@ -336,7 +337,7 @@ This is perhaps not too surprising given that we are modeling voters as not nece
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="scoret2-vs-at2" %}
 
-The evidence for my hypothesis that a more coarse ballot is more robust to friction seems to be mixed. There appears to be no (robust and persistent) significant gap, when comparing clear-eyed Approval Top-2 to a theoretical clear-eyed SCORE Top-2 delayed runoff: under ideal conditions SCORE appears significantly better, and under friction Approval is basically the same. Some runs under mild friction showed a significant difference where Approval is better in the 95% confidence interval, but it's so borderline that I'm not willing to make a strong claim about it.
+The evidence for my hypothesis that a more coarse ballot is more robust to friction seems unsupported. There appears to be no (robust and persistent) significant gap, when comparing clear-eyed Approval Top-2 to a theoretical clear-eyed SCORE Top-2 delayed runoff: under ideal conditions SCORE appears significantly better, but under friction it is no more accurate than Approval Top-2.
 
 At the very least, for this comparison of a theoretical SCORE Top-2 (that nobody is actually advocating for) with the St. Louis model, I would say that the SCORE ballot appears completely unjustified. That granularity does not seem to help outcomes under friction. The real difference, if not outcomes, is then how much more intimidating and easy to spoil the ballot is, and how politically viable proposing that change becomes. Approval is essentially the hardest ballot type to spoil, so I would conclude a SCORE ballot is strictly worse in this context.
 
@@ -398,19 +399,17 @@ This leads me to an uncomfortable conclusion that choose-one voting, for as flaw
 
 ### Approval vs Plurality
 
-Despite the plurality bump, Approval still outperforms plurality voting at mild and moderate friction. The heavy friction gap is insignificant.
+Despite the plurality bump, Approval still outperforms plurality voting at all friction scenarios.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="plurality-vs-approval" %}<br>
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="plurality-approval-ci" %}
 
-The Top-2 variants were less clear-cut. Approval Top-2 outperforms Plurality Top-2 under mild friction, but they are not significantly different under moderate or heavy friction.
+The Top-2 variants were less clear-cut. Approval Top-2 outperforms Plurality Top-2 under mild and moderate friction, in both the Groggy and Clear-Eyed variants. Under heavy friction, however, it's very borderline or insignificant. There appears to still be an edge, but it's not robust enough to make a strong claim.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-pt2-ci" %}
 
-I also did an analysis of the difference between Approval Top-2 and Plurality Top-2 when we vary the number of candidates. The idea is that for 6 candidates, the two may have similar performance, but vote splitting would become more of a problem for choose-one as the number of candidates increases. Under ideal conditions, AT2 stays fairly consistent, while PT2 declines rather quickly. This maintains in mild friction, but the gap is not as large.
-
-Under moderate and heavy friction, however, the difference is less clear-cut. There does not seem to be a persistent difference between the two systems.
+I also did an analysis of the difference between Approval Top-2 and Plurality Top-2 when we vary the number of candidates. The idea is that for 6 candidates, the two may have similar performance, but vote splitting would become more of a problem for choose-one as the number of candidates increases. Under ideal conditions, AT2 stays fairly consistent, while PT2 declines rather quickly. This generally maintains in mild friction, but the gap is not as large. Under moderate and heavy friction, however, the difference is less clear-cut. There does not seem to be a persistent difference between the two systems.
 
 {% proof Expand to see the candidate sweep analysis %}
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-pt2-candidate-sweep" %}
@@ -426,7 +425,7 @@ Schulze already has a massive drop-off in VSE under strategic voting. When you d
 
 I expected friction to cause STAR to break, but I should have realized that Condorcet was the far more intricate machine that would truly seize up when sand got in its gears. It gets far worse for Schulze when voters are not even ranking candidates. It relies on all that nuanced preference data to do its thing, and otherwise it's just a mess. This is the Formula 1 race car spinning out when the track gets wet. You use a race car on a pristine track, but you don't drive it to Wendy's in the rain.
 
-Ranked-Choice Voting (RCV) does not fare much better, and their gap is not significant at any friction level, which might be the most embarrassing thing to come out of this post. As someone relatively sympathetic to Condorcet methods, it does not fill me with relish to say that Schulze's massive outcome advantage over RCV basically completely vanishes. RCV is already very bad across the board, in essentially every respect (like practicality and logistical complexity), but even this is appalling.
+Ranked-Choice Voting (RCV) does not fare much better. The gap between it and Schulze is small and inconsistent in direction. They are overall the most negatively impacted by friction of all methods tested, becoming abysmal under heavy friction. As someone relatively sympathetic to Condorcet methods, it does not fill me with relish to say that Schulze's massive outcome advantage over RCV basically completely vanishes. Further, RCV is already very bad across the board, in essentially every respect (like practicality and logistical complexity), but even this is appalling. This is yet another way in which RCV is a poor choice for public elections, and I would not recommend it to anyone.
 
 I would not consider myself a cardinalist, but this has given me new appreciation for how sensitive ranked data can be to noise (the "garbage in, garbage out" problem seems to be far worse for ranked methods than STAR voting). The fact that cardinal voting deals with candidates *independently* (with the exception of STAR's automatic runoff) seems to cushion the blow of widespread noise and truncation.
 
@@ -448,7 +447,7 @@ However, under friction, the system designed specifically to elect the Condorcet
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="condorcet-joint" %}<br>
 
-With only a few exceptions under mild friction, there is sufficient evidence to conclude that Schulze is worse at electing the Condorcet winner than basically all other methods (except RCV) under all levels of friction.
+With only a few exceptions, there is sufficient evidence to conclude that Schulze is worse at electing the Condorcet winner than basically all other methods (except RCV) under all levels of friction.
 
 {% proof Expand to see the Condorcet efficiency significance tables %}
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="ce-ci-table" %}
@@ -463,6 +462,25 @@ I also measured the difference between STAR voting and just plain 5-point scorin
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="score-vs-star" mode="images" %}
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="score-vs-star-scenarios" %}
+
+### Robustness Rankings
+
+Just for fun, I decided to implement a few measures of robustness to evaluate the systems across several different dimensions.
+
+1. Mean VSE
+2. Worst-case VSE (by lower bound of the 95% confidence interval)
+3. Avg. regret vs the best at that point
+4. Avg. rank across the axis
+
+Under ideal conditions, we measure robustness over strategy (ex. across the calculated VSE range). We also measure robustness across the friction scenarios (with and without ideal included).
+
+Under ideal conditions, Approval Top-2 actually tops the ranks overall, with STAR in second place. This surprised me, but it makes sense. AT2 has a tighter and higher range, even if its honest VSE is a little lower.
+
+When we looked at the robustness across friction scenarios, Approval Top-2 (Groggy and Clear-Eyed) is consistently the most robust. The flavors of Plurality Top-2 generally take up second place collectively.
+
+{% proof Expand to see the robustness rankings tables %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="robustness-rankings" %}
+{% endproof %}
 
 ### The Jupyter Notebook
 
