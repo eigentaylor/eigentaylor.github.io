@@ -172,13 +172,13 @@ We define three parameters that we can adjust to simulate friction for voters:
 
 Voters don't always know what they want. Whether that be a manipulative ad, an excellent social media presence, or a campaign blunder, sometimes a voter's feelings of a candidate don't match how they would actually feel if that candidate won. There is often an [unfortunate spike in "how to change my vote" web searches](https://appdevelopermagazine.com/change-my-vote-searches-soaring-up-during-2024-us-election/) shortly after an election, which means that we should not always assume that a voter's *perceived* utility of a candidate is the same as their *true* utility.
 
-We simulate this by adding noise to the voter's perceived utility of each candidate, reflecting the fact that voters are often misinformed or otherwise unable to accurately evaluate the candidates. We adjust this with the $t$ parameter, which is the correlation between the voter's true utility and their perceived utility.
+We simulate this by adding noise to the voter's perceived utility of each candidate, reflecting the fact that voters are often misinformed or otherwise unable to accurately evaluate the candidates. We adjust this with the $\rho$ parameter, which is the correlation between the voter's true utility and their perceived utility.
 
 If $u_i(c)$ is the true utility of candidate $c$ for voter $i$, then we can define a voter's perceived utility as:
 
-$$u'_i(c) = t\cdot u_i(c) + \sqrt{1-t^2}\cdot \sigma_i \cdot \epsilon_{ic}$$
+$$u'_i(c) = \rho\cdot u_i(c) + \sqrt{1-\rho^2}\cdot \sigma_i \cdot \epsilon_{ic}$$
 
-Where $\epsilon_{ic} \sim N(0,1)$ and $\sigma_i$ is the standard deviation of voter $i$'s true utilities across the candidates, used to scale the injected noise to that voter's own utility range<d-footnote>$t$ is exactly the Pearson correlation coefficient between the true and perceived utilities.</d-footnote>. If $t=1$, then the voter is perfectly informed on their exact utilities, and if $t=0$, then the voter's perceived utilities are pure noise. We use one global $t$ for all voters.
+Where $\epsilon_{ic} \sim N(0,1)$ and $\sigma_i$ is the standard deviation of voter $i$'s true utilities across the candidates, used to scale the injected noise to that voter's own utility range<d-footnote>$\rho$ is exactly the Pearson correlation coefficient between the true and perceived utilities.</d-footnote>. If $\rho=1$, then the voter is perfectly informed on their exact utilities, and if $\rho=0$, then the voter's perceived utilities are pure noise. We use one global $\rho$ for all voters.
 
 ### Unfamiliarity
 
@@ -194,9 +194,9 @@ At $\alpha=1$, all voters are aware of all candidates, while at lower values, fe
 
 Even if a voter is vaguely aware of a candidate, if that candidate is number 40 on a list of 61, we cannot assume that voter will necessarily take the time to scan the whole list to find them. Perhaps if that candidate is first on the list, they would easily give them a solid 3 stars, but if that candidate is far lower down, the voter might forget about them and stop looking after evaluating the first few candidates.
 
-While prominence is global to the election, fatigue is local to the voter. We draw a random fatigue ranking for each voter, as a stand-in for ballot-order rotation. As voters go down the ballot, they are more likely to be fatigued and simply skip a name. Maybe they need to pick up their kids from soccer practice, or their eyes are glazing over from tiredness, or they just came from a nine-hour nursing shift, or they just don't care enough about who their water commissioner is to fully evaluate every person they would recognize if they had read each name closely. For the "fatigue" parameter $\ell$, the probability that a voter is not fatigued enough to vote for candidate $c$ is given by:
+While prominence is global to the election, fatigue is local to the voter. We draw a random fatigue ranking for each voter, as a stand-in for ballot-order rotation. As voters go down the ballot, they are more likely to be fatigued and simply skip a name. Maybe they need to pick up their kids from soccer practice, or their eyes are glazing over from tiredness, or they just came from a nine-hour nursing shift, or they just don't care enough about who their water commissioner is to fully evaluate every person they would recognize if they had read each name closely. For the "fatigue" parameter $\beta$, the probability that a voter is not fatigued enough to vote for candidate $c$ is given by:
 
-$$P_{\text{not fatigued}}(voter, c) = \ell^{\text{fatigue_position}(voter, c)}$$
+$$P_{\text{not fatigued}}(voter, c) = \beta^{\text{fatigue_position}(voter, c)}$$
 
 ### How These Combine
 
@@ -270,7 +270,7 @@ I tried to keep the default settings of the original vse-sim as much as possible
 
 Additionally, in the comparison, we used honest voting for all systems. This was the simplest choice, and is actually a potential disadvantage towards Approval and Plurality, since strategic voting is usually what makes the outcomes of these systems more accurate. STAR and especially Condorcet generally have their best VSE under honest voting, so this is a conservative choice that likely favors STAR and Condorcet in the comparison.
 
-I also defined "joint scenarios" of various friction levels where I set the $t=\alpha=\ell$ parameters to the same values:
+I also defined "joint scenarios" of various friction levels where I set the $\rho=\alpha=\beta$ parameters to the same values:
 
 - 1.0: Ideal (Current VSE simulations)
 - 0.9: Mild
@@ -323,9 +323,9 @@ I believe the primary driver of the outcomes becoming so much worse in the coma 
 
 So far we have looked at fixed runoff awareness models (coma, groggy, clear-eyed). This gives a very binary change in how much the runoff helps. But we are interested to see what the "in-between" looks like. Particularly, at what level of improved awareness does the delayed runoff start to outperform STAR?
 
-We define a new parameter `p_learn`, which ranges from 0 to 1. This parameter is the probability that a voter can become aware of a candidate they were not aware of before (rolled against for one or both candidates the voter is unaware of). When a voter successfully rolls to learn of a candidate, we use their (potentially noisy) perceived utility.
+We define a new parameter `kappa`, which ranges from 0 to 1. This parameter is the probability that a voter can become aware of a candidate they were not aware of before (rolled against for one or both candidates the voter is unaware of). When a voter successfully rolls to learn of a candidate, we use their (potentially noisy) perceived utility.
 
-When a voter learns about a candidate, they vote their real (potentially noisy) preference; otherwise, they fall back on their prior information, exactly as under the coma model. Under `p_learn=0`, the coma model, STAR is significantly better than Approval Top-2. Eyeballing the graph, the crossing point seems to be approximately at $p_{learn}=0.2$, where Approval Top-2 overtakes STAR in VSE.
+When a voter learns about a candidate, they vote their real (potentially noisy) preference; otherwise, they fall back on their prior information, exactly as under the coma model. Under `kappa=0`, the coma model, STAR is significantly better than Approval Top-2. Eyeballing the graph, the crossing point seems to be approximately at $\kappa=0.2$, where Approval Top-2 overtakes STAR in VSE.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-learn-sweep" mode="images" %}<br>
 
@@ -333,9 +333,9 @@ The values where the gap is significant depends on the level of friction. Howeve
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="p-learn-ci-table" %}
 
-As we sweep the runoff noise $t$, and keep the awareness fixed between the primary and runoff, the performance does not change much for the values of $t$ used for the scenarios, and the dropoff in quality seems to be primarily for $t < 0.4$. Further investigation on scenarios where the $t$ values are lower would be required to say more. So this analysis indicates that what we are measuring across the scenarios used in this post is a case where voters are unaware and fatigued, but are generally good at having the correct direction between the two finalists (or the noise generally smooths out across the voters and has a minimal effect on the outcome compared to simply eliminating unawareness).
+As we sweep the runoff noise $\rho$, and keep the awareness fixed between the primary and runoff, the performance does not change much for the values of $\rho$ used for the scenarios, and the dropoff in quality seems to be primarily for $\rho < 0.4$. Further investigation on scenarios where the $\rho$ values are lower would be required to say more. So this analysis indicates that what we are measuring across the scenarios used in this post is a case where voters are unaware and fatigued, but are generally good at having the correct direction between the two finalists (or the noise generally smooths out across the voters and has a minimal effect on the outcome compared to simply eliminating unawareness).
 
-This could be more realistic than lowering the $t$ values further, but I won't make conclusions on that without running the data. Under the values tested, it seems that the main driver for the runoff dominance is the elimination of fatigue and reduction in the unawareness of the two finalists.
+This could be more realistic than lowering the $\rho$ values further, but I won't make conclusions on that without running the data. Under the values tested, it seems that the main driver for the runoff dominance is the elimination of fatigue and reduction in the unawareness of the two finalists.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-t-sweep" mode="images" %}
 
