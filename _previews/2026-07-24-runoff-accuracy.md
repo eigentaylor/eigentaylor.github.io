@@ -311,7 +311,7 @@ I would never advocate for Plurality Top-2<d-footnote>As previously mentioned, t
 
 ### How much does a delayed runoff actually help?
 
-First, I think we should highlight that the coma model actually ends up doing *significantly* worse than just single-round Approval. This is important because it shows that the runoff itself is not inherently a cheat to improve outcomes. Approval Top-2 is a strict improvement in the ideal case, but that's not a guarantee when voters lack awareness of candidates, and the runoff step gives them no way to correct that. 
+First, I think we should highlight that the coma model actually ends up doing *significantly* worse than just single-round Approval. This is important because it shows that the runoff itself is not inherently a cheat to improve outcomes. Approval Top-2 is a strict improvement in the ideal case, but that's not a guarantee when voters lack awareness of candidates, and the runoff step gives them no way to correct that.
 
 I believe the primary driver of the outcomes becoming so much worse in the coma model is the fact that we simulate that a voter always votes for the candidate they know, if they don't know the other. This can lead to voters casting votes for "the devil they know", because that candidate has better name recognition than a candidate they would actually prefer. Whereas, under single-round Approval, they would just never vote for that candidate they don't actually like. The groggy model, on the other hand, performs far beyond STAR.
 
