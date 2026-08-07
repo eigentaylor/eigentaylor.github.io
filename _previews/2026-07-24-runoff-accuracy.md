@@ -52,6 +52,8 @@ toc:
       - name: Condorcet Efficiency
       - name: SCORE vs STAR
       - name: Robustness Rankings
+      - name: The Shape of the Data
+      - name: A Stricter Confidence Interval
       - name: Further Research
       - name: Jameson Quinn
       - name: The Jupyter Notebook
@@ -162,7 +164,7 @@ In 2024, [a proposal in Eugene, Oregon to eliminate primary elections for mayor,
 
 I hypothesized that under noisy and truncated data, the edge that more granular systems like STAR and Condorcet have over more coarse systems would diminish, and that a delayed top-2 runoff is more effective at improving outcomes than an automatic runoff when there's a chance for voters to improve their information on the narrowed set of two candidates.
 
-In this post, we evaluate the rejected single-round STAR system proposed in Eugene, Oregon against the currently in-place Approval Top-2 system in St. Louis, Missouri. My primary evidence is a [Jupyter notebook](#the-jupyter-notebook) that uses the original VSE simulation code with significant modifications to test these hypotheses. It was written with AI-assistance by Claude Code, but the full notebook is included for full transparency and reproducibility. I look forward to someone who is a more skilled coder than I am to improve upon it, and perhaps extend the model<d-footnote>I have no doubt someone is going to find a bug in my code, or an assumption that is not particularly realistic. I welcome that, and hope that this post can be a jumping-off point for further research into the robustness of voting systems to imperfect voter knowledge.</d-footnote>.
+In this post, we evaluate the rejected single-round STAR system proposed in Eugene, Oregon against the currently in-place Approval Top-2 system in St. Louis, Missouri. My primary evidence is a [Jupyter notebook](#the-jupyter-notebook) that uses the original VSE simulation code with significant modifications to test these hypotheses. It was written with AI-assistance by Claude Code, but the full notebook is available for full transparency and reproducibility. I look forward to someone who is a more skilled coder than I am to improve upon it, and perhaps extend the model<d-footnote>I have no doubt someone is going to find a bug in my code, or an assumption that is not particularly realistic. I welcome that, and hope that this post can be a jumping-off point for further research into the robustness of voting systems to imperfect voter knowledge.</d-footnote>.
 
 Spoiler alert: Under even mild friction, the gap between single-round Approval and STAR is basically negligible. And the delayed runoff, even with only *modestly* improved information, completely blew all single-round systems out of the water.
 
@@ -498,6 +500,47 @@ When we looked at the robustness across friction scenarios, Approval Top-2 (Grog
 
 {% proof Expand to see the robustness rankings tables %}
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="robustness-rankings" %}
+{% endproof %}
+
+### The Shape of the Data
+
+This is also fun. VSE is reported as a point value, but it is actually an average of a distribution of outcomes of the form
+
+$$\frac{u(winner)-u(avg)}{u(best)-u(avg)}$$
+
+for each election, where $u(winner)$ is the utility of the winner in that election, $u(avg)$ is the average utility of all candidates in the election, and $u(best)$ is the utility of the utility maximizer in that election. This is 1.0 if the winner is the utility maximizer, 0 if the winner has exactly average utility, and negative if the winner has below average utility. The VSE is the mean of this distribution, but the distribution itself is interesting to look at.
+
+We look at the distribution of outcomes for each system under different levels of friction. We narrow our focus to six systems under the joint scenarios: STAR, Approval, Approval Top-2, Plurality, Plurality Top-2, and Schulze.
+
+Under ideal conditions, the high VSE systems like STAR and Condorcet are tightly clustered around 100% with a very small leftward tail. Lower VSE systems have more values near but not at 100%, and that clumpy tail gets fatter and fatter as the VSE drops when friction increases.
+
+The most important thing to note is that the mode is 100% for all plots. Despite the friction, most of these systems agree on the best outcome most of the time (including terrible systems like plurality in ideal conditions). What the "low" VSE values we have shown in this post really say, is that under friction, the commonality of these best outcomes decreases.
+
+Horrifically, exactly one of the six examined systems has negative values more common than 100% VSE when looking at the joint scenarios: Schulze under heavy friction. That is, Schulze elects someone worse than randomly choosing a candidate more often than it elects the best candidate.
+
+{% proof Expand to see the histograms %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="histogram-data" %}
+{% endproof %}
+
+### A Stricter Confidence Interval
+
+To evaluate the robustness of the results, I checked the results that were marked as significant under a 95% confidence interval, and re-evaluated them under a 99% confidence interval. Absence of evidence is not evidence of absence, so this does not mean that a difference or edge does not actually exist, it just shows which results are more robust and persistent.
+
+The very borderline edge that STAR holds over single-round Approval under friction is not robust under a 99% confidence interval. If STAR genuinely is better than Approval under friction, it does not appear to be by very much. Similarly, the apparent edge of RCV over Schulze under moderate friction becomes non-significant under a 99% confidence interval. The $\kappa$ threshold under moderate friction also becomes more murky, and the required learning rate for significance goes from $\kappa=0.3$ to $\kappa=\frac{1}{3}$. These are all quite borderline, however.
+
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="not-sig-at-99" %}
+
+The things that did appear to be more robust are interesting:
+
+- Groggy Approval Top-2 and Plurality Top-2 are still significantly better than STAR under friction.
+- Single-round Approval's edge over Plurality, holds under a 99% confidence interval.
+- Approval Top-2 still beats Plurality Top-2 under mild friction (groggy and clear-eyed), but not under moderate or heavy friction.
+- Schulze's poor Condorcet efficiency under friction is still significant under a 99% confidence interval. The systems that appeared better, keep their edge.
+- The $\kappa$ thresholds for significance under mild and Heavy friction are still robust under a 99% confidence interval.
+- For the most part, the robustness of Approval Top-2 over Plurality Top-2 as we sweep the number of candidates is still significant except for one exception.
+
+{% proof Expand to see the results that hold under a 99% confidence interval %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="still-sig-at-99" %}
 {% endproof %}
 
 ### Further Research
