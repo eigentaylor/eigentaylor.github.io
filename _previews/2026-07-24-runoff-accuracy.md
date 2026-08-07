@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: 'Coarse Correction: Is STAR Actually More Accurate than Approval?'
-date: 2026-08-02
+date: 2026-08-06
 description: Why Approval with a delayed runoff might be far more accurate than STAR voting when voters are misinformed and fatigued.
 importance: 1
 tags: voting
@@ -351,7 +351,7 @@ This is perhaps not too surprising given that we are modeling voters as not nece
 
 The evidence for my hypothesis that a more coarse ballot is more robust to friction seems unsupported. There appears to be no (robust and persistent) significant gap, when comparing clear-eyed Approval Top-2 to a theoretical clear-eyed SCORE Top-2 delayed runoff: under ideal conditions SCORE appears significantly better, but under friction it is no more accurate than Approval Top-2.
 
-At the very least, for this comparison of a theoretical SCORE Top-2 (that nobody is actually advocating for) with the St. Louis model, I would say that the SCORE ballot appears completely unjustified. That granularity does not seem to help outcomes under friction. The real difference, if not outcomes, is then how much more intimidating and easy to spoil the ballot is, and how politically viable proposing that change becomes. Approval is essentially the hardest ballot type to spoil, so I would conclude a SCORE ballot is strictly worse in this context.
+At the very least, for this comparison of a theoretical SCORE Top-2 (that nobody is actually advocating for) with the St. Louis model, I would say that the SCORE ballot appears completely unjustified. That granularity does not seem to help outcomes under friction. The real difference, if not outcomes, is then how much more intimidating and easy to spoil the ballot is, and how politically viable proposing that change becomes. Approval is essentially the hardest ballot type to unintentionally spoil (there is no such thing as an overvote), so I would conclude a SCORE ballot is strictly worse in this context.
 
 The gulf between the *automatic* runoff of STAR and a delayed Approval runoff, however, is very, very large. There is no ambiguity there.
 
