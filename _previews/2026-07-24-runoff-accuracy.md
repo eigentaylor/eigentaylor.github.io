@@ -417,7 +417,7 @@ Despite the plurality bump, Approval still outperforms plurality voting at all f
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="plurality-approval-ci" %}
 
-The Top-2 variants were less clear-cut. Approval Top-2 outperforms Plurality Top-2 under mild and moderate friction, in both the Groggy and Clear-Eyed variants. Under heavy friction, however, it's very borderline or insignificant. There appears to still be an edge, but it's not robust enough to make a strong claim.
+The Top-2 variants were less clear-cut. Approval Top-2 clearly outperforms Plurality Top-2 under mild friction. However, this edge does not remain robust or consistent under higher friction scenarios.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-pt2-ci" %}
 
