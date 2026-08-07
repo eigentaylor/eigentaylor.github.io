@@ -52,6 +52,8 @@ toc:
       - name: Condorcet Efficiency
       - name: SCORE vs STAR
       - name: Robustness Rankings
+      - name: Further Research
+      - name: Jameson Quinn
       - name: The Jupyter Notebook
 ---
 
@@ -381,7 +383,11 @@ Fundamentally, I have to ask: is scoring the options for Commissioner of the Eug
 
 This remains to be seen, and luck could simply have been against STAR in the three Oregon elections<d-footnote>Particularly the close ones. Though I have no earthly idea if Eugene would have accepted STAR if it had been integrated into the existing primary process somehow.</d-footnote>, but I am not optimistic. It seems concerning to me that the thing that gets supporters so excited and passionate about STAR *might be the very thing that hurts it at the ballot box*.
 
-When a more granular ballot and system fails to justify itself in producing significantly better outcomes, you essentially just create more ways to disenfranchise people who don't have the time to treat politics like a hobby<d-footnote>Unlike the question of equity in primary election turnout, for which there is a strong case to be made on both sides, research on ballot-marking errors<d-cite key="neelyMcDaniel2015overvoting"></d-cite> is a more directly measurable effect that generally supports this when looking at RCV in San Francisco: Spoiled ballot rates were disproportionately higher for Black, Latino, elderly, and foreign born residents. "[The] evidence suggests it is not IRV per se but rather ballot complexity more generally that leads to such discrepancies in whose votes get counted." STAR is a significant improvement in how difficult it is to spoil a ballot over RCV, but when you suggest anything more complex than choose-one or Approval, I think we have to be incredibly mindful of what the cost of complexity could be, and if the theoretical benefits of granularity and complexity justify them. I think it is safe to say, however, that Approval is easily the hardest ballot type to spoil, which is a benefit to consider.</d-footnote>.
+Unlike the question of equity in primary election turnout, for which there is a strong case to be made on both sides, research on ballot-marking errors<d-cite key="neelyMcDaniel2015overvoting"></d-cite> is a more directly measurable effect that generally supports this when looking at RCV in San Francisco: Spoiled ballot rates were disproportionately higher for Black, Latino, elderly, and foreign born residents.
+
+> "[The] evidence suggests it is not IRV per se but rather ballot complexity more generally that leads to such discrepancies in whose votes get counted."<d-cite key="neelyMcDaniel2015overvoting"></d-cite>
+
+STAR is a significant improvement in how difficult it is to spoil a ballot over RCV, but when you suggest anything more complex than choose-one or Approval, I think we have to be incredibly mindful of what the cost of complexity could be, and if the theoretical benefits of granularity and complexity justify them. I think it is safe to say, however, that Approval is easily the hardest ballot type to spoil, which is a benefit to consider. When a more granular ballot and system fails to justify itself in producing significantly better outcomes, you essentially just create more ways to disenfranchise people who don't have the time to treat politics like a hobby.
 
 Eugene is a liberal city in a fairly progressive blue state. If STAR is 0-3 in *Oregon*, then I am really wondering about STAR's long-term potential to be the future of voting reform in the United States. When every *good* reform, like Approval and STAR, has the common enemy of [Ranked-Choice Voting](../ditch-rcv/), I worry about the potential waste of resources and energy that could be spent on a more politically viable reform like the St. Louis model of Approval Top-2.
 
@@ -441,7 +447,7 @@ Ranked-Choice Voting (RCV) does not fare much better. The gap between it and Sch
 
 I would not consider myself a cardinalist, but this has given me new appreciation for how sensitive ranked data can be to noise (the "garbage in, garbage out" problem seems to be far worse for ranked methods than STAR voting). The fact that cardinal voting deals with candidates *independently* (with the exception of STAR's automatic runoff) seems to cushion the blow of widespread noise and truncation.
 
-I may investigate the [Better Choices](../better-choices/) model of a delayed top-3 Condorcet runoff in a follow-up, to see if reducing Condorcet to three candidates, following a choose-one or Approval all-candidate primary, would be more robust than just doing Schulze on all 6 candidates in a single round<d-footnote>At the suggestion of Hayden Sasswood, I did a cursory test of Schulze with tied rankings for candidates with very close utilities. This seemed to cushion the major VSE drop that Schulze experiences due to friction, like flipped rankings from noise. That is, the true preference might be $A$ over $B$, but noise might flip it to $B$ over $A$. If the utilities are close, then ranking $A$ and $B$ equally does not cast a vote in the wrong direction, even if it doesn't cast a vote in the right direction. This was not tested rigorously, and requires further investigation. However, it seems to potentially put Schulze on par with STAR under friction, rather than significantly worse than both STAR and plurality.</d-footnote>.
+I may investigate the [Better Choices](../better-choices/) model of a delayed top-3 Condorcet runoff in a follow-up, to see if reducing Condorcet to three candidates, following a choose-one or Approval all-candidate primary, would be more robust than just doing Schulze on all 6 candidates in a single round<d-footnote>At the suggestion of Sass, I did a cursory test of Schulze with tied rankings for candidates with very close utilities. This seemed to cushion the major VSE drop that Schulze experiences due to friction, like flipped rankings from noise. That is, the true preference might be $A$ over $B$, but noise might flip it to $B$ over $A$. If the utilities are close, then ranking $A$ and $B$ equally does not cast a vote in the wrong direction, even if it doesn't cast a vote in the right direction. This was not tested rigorously, and requires further investigation. However, it seems to potentially put Schulze on par with STAR under friction, rather than significantly worse than both STAR and plurality.</d-footnote>.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="ranked-implosion" %}<br>
 
@@ -494,20 +500,20 @@ When we looked at the robustness across friction scenarios, Approval Top-2 (Grog
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="robustness-rankings" %}
 {% endproof %}
 
+### Further Research
+
+Things that I would like to examine next:
+
+1. How much better does Schulze/Condorcet do when voters rank equally candidates that have similar utilities
+2. How robust is a larger runoff system like Approval Top-3 Condorcet, or Plurality Top-4 RCV (the Alaska system)?
+3. What happens to STAR's VSE when we use a "hard zero": candidates who are left blank are treated as between 1 and 0 stars. That is, in the runoff step, a voter's ballot would contribute a vote to a candidate left blank over a candidate who they gave a 0.
+
+### Jameson Quinn
+
+This post obviously would not exist without the incredible work of Jameson Quinn, who died in March 2025. Dr. Quinn was a Harvard-trained statistician who contributed so much to the movement to improve our democracy with better voting systems, including his amazing VSE methodology. I never met him, but I certainly owe him a debt of gratitude. I hope that this modification to his model does his amazing work justice. Please consider donating to the [Jameson Quinn Memorial Fund](https://www.equal.vote/jameson_quinn).
+
 ### The Jupyter Notebook
 
-I am sure this post is going to be particularly controversial, so the full simulation is embedded below rather than just summarized. You can also [download it here](https://github.com/eigentaylor/eigentaylor.github.io/blob/main/assets/jupyter/vse_simulation.ipynb).
+I am sure this post is going to be particularly controversial, so the full simulation can be [downloaded here](https://github.com/eigentaylor/eigentaylor.github.io/blob/main/assets/jupyter/vse_simulation.ipynb). It became too big to embed in the post, but the tables and charts are embedded directly from the notebook.
 
 I encourage anyone who is interested to run the notebook themselves and scrutinize my methodology!
-
-{% proof Click to open Jupyter Notebook %}
-{::nomarkdown}
-{% assign verification_jupyter_path = 'assets/jupyter/vse_simulation.ipynb' | relative_url %}
-{% capture verification_notebook_exists %}{% file_exists assets/jupyter/vse_simulation.ipynb %}{% endcapture %}
-{% if verification_notebook_exists == 'true' %}
-  {% jupyter_notebook verification_jupyter_path %}
-{% else %}
-  <p>Sorry, the notebook you are looking for does not exist.</p>
-{% endif %}
-{:/nomarkdown}
-{% endproof %}
