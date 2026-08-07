@@ -510,7 +510,7 @@ Things that I would like to examine next:
 
 ### Jameson Quinn
 
-This post obviously would not exist without the incredible work of Jameson Quinn, who died in March 2025. Dr. Quinn was a Harvard-trained statistician who contributed so much to the movement to improve our democracy with better voting systems, including his amazing VSE methodology. I never met him, but I certainly owe him a debt of gratitude. I hope that this modification to his model does his amazing work justice. Please consider donating to the [Jameson Quinn Memorial Fund](https://www.equal.vote/jameson_quinn).
+This post obviously would not exist without the incredible work of Jameson Quinn, who died in March 2025. Dr. Quinn was a Harvard-trained statistician who contributed so much to the movement to improve our democracy with better voting systems, including his groundbreaking VSE methodology. I never met him, but I certainly owe him a debt of gratitude. I hope that this modification to his model does his amazing work justice. Please consider donating to the [Jameson Quinn Memorial Fund](https://www.equal.vote/jameson_quinn).
 
 ### The Jupyter Notebook
 
