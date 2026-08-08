@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: 'Coarse Correction: Is STAR Actually More Accurate than Approval?'
-date: 2026-08-06
+date: 2026-08-07
 description: Why Approval with a delayed runoff might be far more accurate than STAR voting when voters are misinformed and fatigued.
 importance: 1
 tags: voting
@@ -411,7 +411,7 @@ Perhaps we've been attempting to overcomplicate our elections chasing perfection
 
 Earlier, I mentioned the surprising robustness of Plurality Top-2 under friction. Related to this was a general trend where mild friction seemed to make plurality methods *better*. Upon reflection on the model, I believe I know why: the fact that a plurality vote is just choosing a single candidate.
 
-Unlike every other voting system, choose-one voting is the only one where fatigue has a minimal effect on outcomes. In every other voting system, there's an attempt to extract *more* data from voters by allowing some sort of expression for other candidates. This makes plurality voting robust to fatigue and unawareness, which seems to *tighten* outcomes because voters are less likely to vote for a candidate who has no chance. The prominence model focuses votes on a smaller number of candidates, which appears to sort of accidentally simulate the strategic voting which makes plurality more effective. The VSE of single-round plurality is never *good*, but mild friction improves the outcomes. Plurality Top-2 under mild friction is actually on par with some of the *good* systems under ideal conditions.
+Unlike every other voting system, choose-one voting is the only one where fatigue has a minimal effect on outcomes. In every other voting system, there's an attempt to extract *more* data from voters by allowing some sort of expression for other candidates. This makes plurality voting robust to fatigue and unawareness, which seems to *tighten* outcomes because voters are less likely to vote for a candidate who has no chance. The prominence model focuses votes on a smaller number of candidates, which appears to sort of accidentally simulate the strategic voting which makes plurality more effective. The VSE of single-round plurality is never *good*, but light friction improves the outcomes. Plurality Top-2 under mild friction is actually on par with some of the *good* systems under ideal conditions.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="plurality-bump" %}<br>
 
@@ -419,7 +419,7 @@ This leads me to an uncomfortable conclusion that choose-one voting, for as flaw
 
 ### Approval vs Plurality
 
-Despite the plurality bump, Approval still outperforms plurality voting at all friction scenarios.
+Despite the plurality bump, Approval still generally outperforms plurality voting under friction.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="plurality-vs-approval" %}<br>
 
@@ -429,7 +429,9 @@ The Top-2 variants were less clear-cut. Approval Top-2 clearly outperforms Plura
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-pt2-ci" %}
 
-I also did an analysis of the difference between Approval Top-2 and Plurality Top-2 when we vary the number of candidates. The idea is that for 6 candidates, the two may have similar performance, but vote splitting would become more of a problem for choose-one as the number of candidates increases. Under ideal conditions, AT2 stays fairly consistent, while PT2 declines rather quickly. This generally maintains in mild friction, but the gap is not as large. Under moderate and heavy friction, however, the difference is less clear-cut. There does not seem to be a persistent difference between the two systems.
+I also did an analysis of the difference between Approval Top-2 and Plurality Top-2 when we vary the number of candidates. The idea is that for 6 candidates, the two may have similar performance, but vote splitting would become more of a problem for choose-one as the number of candidates increases. Under ideal conditions, AT2 stays fairly consistent, while PT2 declines rather quickly, and Approval Top-2 is substantially better than Plurality Top-2.
+
+This edge declines under friction and is not robust. However, it seems that there is no evidence that Plurality Top-2 is better than Approval Top-2 under any scenario.
 
 {% proof Expand to see the candidate sweep analysis %}
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-pt2-candidate-sweep" %}
@@ -449,7 +451,7 @@ Ranked-Choice Voting (RCV) does not fare much better. The gap between it and Sch
 
 I would not consider myself a cardinalist, but this has given me new appreciation for how sensitive ranked data can be to noise (the "garbage in, garbage out" problem seems to be far worse for ranked methods than STAR voting). The fact that cardinal voting deals with candidates *independently* (with the exception of STAR's automatic runoff) seems to cushion the blow of widespread noise and truncation.
 
-I may investigate the [Better Choices](../better-choices/) model of a delayed top-3 Condorcet runoff in a follow-up, to see if reducing Condorcet to three candidates, following a choose-one or Approval all-candidate primary, would be more robust than just doing Schulze on all 6 candidates in a single round<d-footnote>At the suggestion of Sass, I did a cursory test of Schulze with tied rankings for candidates with very close utilities. This seemed to cushion the major VSE drop that Schulze experiences due to friction, like flipped rankings from noise. That is, the true preference might be $A$ over $B$, but noise might flip it to $B$ over $A$. If the utilities are close, then ranking $A$ and $B$ equally does not cast a vote in the wrong direction, even if it doesn't cast a vote in the right direction. This was not tested rigorously, and requires further investigation. However, it seems to potentially put Schulze on par with STAR under friction, rather than significantly worse than both STAR and plurality.</d-footnote>.
+I may investigate the [Better Choices](../better-choices/) model of a delayed top-3 Condorcet runoff in a follow-up, to see if reducing Condorcet to three candidates, following a choose-one or Approval all-candidate primary, would be more robust than just doing Schulze on all 6 candidates in a single round<d-footnote>At the suggestion of Sass, I did a cursory test of Schulze with tied rankings for candidates with very close utilities. This seemed to cushion the major VSE drop that Schulze experiences due to friction, like flipped rankings from noise. That is, the true preference of a voter could be $A$ over $B$, but noise might flip it to $B$ over $A$. If the utilities are close, then ranking $A$ and $B$ equally does not cast a vote in the wrong direction, even if it doesn't cast a vote in the right direction. This was not tested rigorously, and requires further investigation. However, it seems to potentially put Schulze on par with STAR under friction, rather than significantly worse than both STAR and plurality.</d-footnote>.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="ranked-implosion" %}<br>
 
@@ -473,7 +475,7 @@ With only a few exceptions, there is sufficient evidence to conclude that Schulz
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="ce-ci-table" %}
 {% endproof %}
 
-It appears that if your desire is truly to elect the Condorcet winner no matter the cost, then a runoff method is the way to go if voters are not ideal.
+It appears that if your desire is truly to elect the Condorcet winner no matter the cost, then a runoff method is the way to go if voters are not ideal. In fact, it seems your *last* choice should be a Condorcet method like Schulze.
 
 ### SCORE vs STAR
 
@@ -504,19 +506,19 @@ When we looked at the robustness across friction scenarios, Approval Top-2 (Grog
 
 ### The Shape of the Data
 
-This is also fun. VSE is reported as a point value, but it is actually an average of a distribution of outcomes of the form
+This is also fun. VSE is generally reported as a point value, but it is actually an average of a distribution of outcomes of the form
 
-$$\frac{u(winner)-u(avg)}{u(best)-u(avg)}$$
+$$VSE(election)=\frac{u(winner)-avg(u)}{max(u)-avg(u)}$$
 
-for each election, where $u(winner)$ is the utility of the winner in that election, $u(avg)$ is the average utility of all candidates in the election, and $u(best)$ is the utility of the utility maximizer in that election. This is 1.0 if the winner is the utility maximizer, 0 if the winner has exactly average utility, and negative if the winner has below average utility. The VSE is the mean of this distribution, but the distribution itself is interesting to look at.
+for each election, where $u(winner)$ is the utility of the winner in that election, $avg(u)$ is the average utility of all candidates in the election, and $max(u)$ is the utility of the utility maximizer in that election. This is 1.0 if the winner is the utility maximizer, 0 if the winner has exactly average utility, and negative if the winner has below average utility. The VSE is the mean of this distribution, but the distribution itself is interesting to look at.
 
 We look at the distribution of outcomes for each system under different levels of friction. We narrow our focus to six systems under the joint scenarios: STAR, Approval, Approval Top-2, Plurality, Plurality Top-2, and Schulze.
 
-Under ideal conditions, the high VSE systems like STAR and Condorcet are tightly clustered around 100% with a very small leftward tail. Lower VSE systems have more values near but not at 100%, and that clumpy tail gets fatter and fatter as the VSE drops when friction increases.
+Under ideal conditions, the high VSE systems like STAR and Condorcet are tightly clustered around 100% with a very thin leftward tail. Lower VSE systems have more values near but not at 100%, and that clumpy tail gets fatter and fatter as the VSE drops when friction increases.
 
-The most important thing to note is that the mode is 100% for all plots. Despite the friction, most of these systems agree on the best outcome most of the time (including terrible systems like plurality in ideal conditions). What the "low" VSE values we have shown in this post really say, is that under friction, the commonality of these best outcomes decreases.
+The most important thing to note is that the mode is 100% for all plots. Despite the friction, the most common outcome is the best candidate winning (terrible systems or not). What the "low" VSE values we have shown in this post really say is that, under friction, the commonality of these best outcomes decreases. The leftward tail of the distribution gets fatter.
 
-Horrifically, exactly one of the six examined systems has negative values more common than 100% VSE when looking at the joint scenarios: Schulze under heavy friction. That is, Schulze elects someone worse than randomly choosing a candidate more often than it elects the best candidate.
+Horrifically, exactly one of the six examined systems has negative values more common than the election of the utility maximizer when looking at the joint scenarios: Schulze under heavy friction. That is, Schulze elects someone worse than randomly choosing a candidate more often than it elects the best candidate.
 
 {% proof Expand to see the histograms %}
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="histogram-data" %}
@@ -524,20 +526,9 @@ Horrifically, exactly one of the six examined systems has negative values more c
 
 ### A Stricter Confidence Interval
 
-To evaluate the robustness of the results, I checked the results that were marked as significant under a 95% confidence interval, and re-evaluated them under a 99% confidence interval. Absence of evidence is not evidence of absence, so this does not mean that a difference or edge does not actually exist, it just shows which results are more robust and persistent.
-
-The very borderline edge that STAR holds over single-round Approval under friction is not robust under a 99% confidence interval. If STAR genuinely is better than Approval under friction, it does not appear to be by very much. Similarly, the apparent edge of RCV over Schulze under moderate friction becomes non-significant under a 99% confidence interval. The $\kappa$ threshold under moderate friction also becomes more murky, and the required learning rate for significance goes from $\kappa=0.3$ to $\kappa=\frac{1}{3}$. These are all quite borderline, however.
+To evaluate the robustness of the results, I checked the results that were marked as significant under a 95% confidence interval, and re-evaluated them under a 99% confidence interval. Absence of evidence is not evidence of absence, so this does not mean that a difference or edge does not actually exist, it just shows which results are more robust and persistent. The number of simulated elections is high, so the following list of results that are no longer significant at 99% confidence is short, and the new CIs are generally very borderline.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="not-sig-at-99" %}
-
-The things that did appear to be more robust are interesting:
-
-- Groggy Approval Top-2 and Plurality Top-2 are still significantly better than STAR under friction.
-- Single-round Approval's edge over Plurality, holds under a 99% confidence interval.
-- Approval Top-2 still beats Plurality Top-2 under mild friction (groggy and clear-eyed), but not under moderate or heavy friction.
-- Schulze's poor Condorcet efficiency under friction is still significant under a 99% confidence interval. The systems that appeared better, keep their edge.
-- The $\kappa$ thresholds for significance under mild and Heavy friction are still robust under a 99% confidence interval.
-- For the most part, the robustness of Approval Top-2 over Plurality Top-2 as we sweep the number of candidates is still significant except for one exception.
 
 {% proof Expand to see the results that hold under a 99% confidence interval %}
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="still-sig-at-99" %}
