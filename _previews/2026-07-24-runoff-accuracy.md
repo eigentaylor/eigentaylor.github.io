@@ -1,7 +1,7 @@
 ---
 layout: distill
-title: 'Coarse Correction: Is STAR Actually More Accurate than Approval?'
-date: 2026-08-07
+title: 'Coarse Correction Part 1: Is STAR Actually More Accurate than Approval?'
+date: 2026-08-08
 description: Why Approval with a delayed runoff might be far more accurate than STAR voting when voters are misinformed and fatigued.
 importance: 1
 tags: voting
@@ -23,6 +23,7 @@ toc:
   - name: Introduction
     subsections:
       - name: A Tale of Two Cities
+      - name: Voter Satisfaction Efficiency
   - name: The Friction Parameters
     subsections:
       - name: Epistemic Noise
@@ -48,18 +49,29 @@ toc:
     subsections:
       - name: The Plurality Bump
       - name: Approval vs Plurality
-      - name: The Ranked Methods Implosion
-      - name: Condorcet Efficiency
       - name: SCORE vs STAR
-      - name: Robustness Rankings
-      - name: The Shape of the Data
       - name: A Stricter Confidence Interval
-      - name: Further Research
       - name: Jameson Quinn
       - name: The Jupyter Notebook
 ---
 
 ## Introduction
+
+Welcome to the beginning of my most ambitious project yet: Coarse Correction, a multi-part series on the robustness of voting systems to imperfect voters.
+
+### A Tale of Two Cities
+
+In 2020, [St. Louis, MO voters voted to adopt an all-candidate Approval voting primary election with a delayed top-2 runoff](https://ballotpedia.org/St._Louis,_Missouri,_Proposition_D,_Approval_Voting_Initiative_(November_2020)) by 68.15%. This system is still in place, and working excellently<d-cite key="sargent2025stlouis"></d-cite>. A few years later, in 2024, [a proposal in Eugene, Oregon to eliminate primary elections for mayor, city council, and EWEB seats and replace them with "STAR voting"](https://ballotpedia.org/Eugene,_Oregon,_Measure_20-349,_STAR_Voting_for_Mayor_and_City_Council_Elections_Initiative_(May_2024)) was voted down by 64.49%. The comparison between these two proposals will be the focus of this post.
+
+[The pitch](https://www.starvoting.org/eugene_faq) for a single-round STAR election was to save money by eliminating low-turnout primary elections<d-footnote>There was also a fair point that the primary elections generally have lower turnout which is disproportionately white, and that a single election might improve equity. The St. Louis proposition, however, was explicitly framed as <a href="https://www.stlamerican.com/election/prop-d-expected-to-protect-the-collective-power-of-black-voters/">protecting black voters from vote splitting with that primary election</a>. So there are real equity arguments on both sides, and "does X system help/hurt Y demographic" is an exceptionally complicated question that we won't focus on here.</d-footnote>, and just quickly elect the best candidate through an *automatic* runoff performed on an expressive and rich dataset of 0-5 scores collected in the high-turnout November election. And I assume they chose STAR over the existing Approval Top-2 system used in St. Louis because they see it as more accurate than Approval.
+
+> "STAR Voting is highly accurate with any number of candidates in the race, so there’s no need for an expensive primary for nonpartisan elections in most cases." ([Source](https://www.starvoting.org/eugene_faq))
+
+The overwhelming defeat of STAR in Eugene was a shock to many, and a devastating blow to the STAR voting movement. But 2024 was a particularly bad year for expressive voting systems in general. [Ranked Choice Voting (RCV)](../ditch-rcv/) also faced [a sound rejection at the ballot box in a number of states, including Oregon](https://ballotpedia.org/Results_for_ranked-choice_voting_(RCV)_and_electoral_system_ballot_measures,_2024). Was STAR the victim of a bad year for reform, or was this a wake-up call that STAR, and its "accuracy", is not as appealing to voters as its proponents claim?
+
+But just how *do* you measure accuracy of a voting system?
+
+### Voter Satisfaction Efficiency
 
 Voter Satisfaction Efficiency (VSE)<d-cite key="quinn2017vseSummary"></d-cite> is an incredible metric used for evaluating the performance of voting systems, primarily championed by the Equal Vote Coalition. It gives a numeric percentage to the "accuracy" of a voting system, with 0% being just a system that randomly chooses a winner, and 100% being a system that always elects the "best" (highest utility) candidate<d-footnote>VSE isn't the frequency of electing the single-best candidate. Rather, it's a linear rescaling of average voter utility normalized to the scale between random (average of all candidate utilities) and best. A VSE of 50% would, for example, mean that the candidate it tends to elect provides utility halfway between the average and the best, potentially without ever picking the single best candidate. An illustrative, if slightly oversimplified, example would be that if the average provided utility of all candidates was 100, and the utility maximizer provided 110, then a VSE of 50% means we would expect the candidate that system elects to provide 105 utility.</d-footnote>.
 
@@ -83,7 +95,7 @@ Additionally, while I was originally strongly against pairing Approval voting wi
   Election accuracy (VSE) by voting method. <a href="https://www.starvoting.org/faq">Source</a>.
 </div>
 
-The Equal Vote Coalition supports three systems, which all have high VSE: STAR, Condorcet<d-footnote>Technically, they champion their particular flavor of Condorcet, "Ranked Robin", but the differences are minor and not relevant to this discussion. In what follows, we will focus on the Schulze method, which is a particularly robust Condorcet method used in a number of <a href="https://en.wikipedia.org/wiki/Schulze_method#Usage">organizations, societies, and even some local governments in Europe</a>.</d-footnote>, and Approval. My numbers are slightly lower than those reported by Jameson Quinn<d-cite key="quinn2017vseSummary"></d-cite>, but his report was nearly 10 years ago, so I will report the numbers I got by adapting the code as it is in the electionscience Github repository:
+The Equal Vote Coalition supports three systems, which all have high VSE: the aforementioned STAR system that lost in Eugene, Condorcet methods<d-footnote>Technically, they push their particular flavor of Condorcet, "Ranked Robin", but the differences are minor and not relevant to this discussion. In what follows, we will focus on the Schulze method, which is a particularly robust Condorcet method used in a number of <a href="https://en.wikipedia.org/wiki/Schulze_method#Usage">organizations, societies, and even some local governments in Europe</a>.</d-footnote>, and Approval voting which is currently being used in St. Louis:
 
 - Condorcet methods: Voters rank candidates and the candidate who defeats all others is the winner (with some tiebreaker in the rare case where one does not exist). We call the candidate who defeats all others the Condorcet winner. These usually get the highest VSE, but drop low due to strategy, despite the fact that strategic voting is just [not very effective in Condorcet methods](../better-choices-strategy/). The fact is, pairwise dominance ([while not a prerequisite for being the utility maximizer](../why-condorcet/)) is objectively a strong predictor of high utility.
 - STAR voting (Score Then Automatic Runoff): Voters score candidates on a scale (usually 0-5), and the two highest-scoring candidates go to an automatic runoff where a candidate gets one vote for every voter who scored them higher than the other candidate. This system has arguably the best VSE range of the three.
@@ -153,14 +165,6 @@ One particular concern I have with this is that the runoff is *automatic*. A vot
 </div>
 
 My concern is that an automatic runoff has a "garbage in, garbage out" problem: if the data collected from voters is poor, then the automatic runoff has no way to correct for that<d-footnote>This is a different pathology than the core problem with RCV. In RCV, even a perfectly filled out ballot can be weaponized against the voter due to the chaotic elimination order. The issue I am raising with STAR is based on inaccurately filled out ballots, which affects systems like Schulze and RCV just as much, if not more.</d-footnote>. In a delayed runoff, voters have a chance to familiarize themselves with the candidates in the narrowed field, and can make a more informed choice.
-
-### A Tale of Two Cities
-
-In 2024, [a proposal in Eugene, Oregon to eliminate primary elections for mayor, city council, and EWEB seats and replace them with STAR voting](https://ballotpedia.org/Eugene,_Oregon,_Measure_20-349,_STAR_Voting_for_Mayor_and_City_Council_Elections_Initiative_(May_2024)) was voted down by 64.49%. In 2020, [St. Louis, MO voters voted to adopt an all-candidate Approval voting primary election with a delayed top-2 runoff](https://ballotpedia.org/St._Louis,_Missouri,_Proposition_D,_Approval_Voting_Initiative_(November_2020)) by 68.15%. This system is still in place, and working excellently<d-cite key="sargent2025stlouis"></d-cite>. The comparison between these two proposals will be the focus of this post.
-
-[The pitch](https://www.starvoting.org/eugene_faq) for a single-round STAR election was to save money by eliminating low-turnout primary elections<d-footnote>There was also a fair point that the primary elections generally have lower turnout which is disproportionately white, and that a single election might improve equity. The St. Louis proposition, however, was explicitly framed as <a href="https://www.stlamerican.com/election/prop-d-expected-to-protect-the-collective-power-of-black-voters/">protecting black voters from vote splitting with that primary election</a>. So there are real equity arguments on both sides, and "does X system help/hurt Y demographic" is an exceptionally complicated question that we won't focus on here.</d-footnote>, and just quickly elect the best candidate through an *automatic* runoff performed on an expressive and rich dataset collected in the high-turnout November election. And I assume they chose STAR over the existing Approval Top-2 system used in St. Louis because they see it as more accurate than Approval. Surely, a system with higher VSE is better than one with lower VSE, right?
-
-> "STAR Voting is highly accurate with any number of candidates in the race, so there’s no need for an expensive primary for nonpartisan elections in most cases." ([Source](https://www.starvoting.org/eugene_faq))
 
 I hypothesized that under noisy and truncated data, the edge that more granular systems like STAR and Condorcet have over more coarse systems would diminish, and that a delayed top-2 runoff is more effective at improving outcomes than an automatic runoff when there's a chance for voters to improve their information on the narrowed set of two candidates.
 
@@ -439,44 +443,6 @@ This edge declines under friction and loses robustness. However, it seems that t
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-pt2-candidate-ci" %}
 {% endproof %}
 
-### The Ranked Methods Implosion
-
-Perhaps the most shocking thing to me was the complete and utter collapse of the VSE of ranked methods like Schulze under friction. Going from the absolute best method to basically the worst method was not in any of my hypotheses; however, it's not exceptionally surprising in retrospect.
-
-Schulze already has a massive drop-off in VSE under strategic voting. When you design a system to calculate the Condorcet winner explicitly, then you do indeed get the highest possible VSE under completely ideal honest voting (because the Condorcet winner is almost always that best candidate). But dishonest data just ends up electing someone else (who is almost surely *worse* than the Condorcet winner).
-
-I expected friction to cause STAR to break, but I should have realized that Condorcet was the far more intricate machine that would truly seize up when sand got in its gears. It gets far worse for Schulze when voters are not even ranking candidates. It relies on all that nuanced preference data to do its thing, and otherwise it's just a mess. This is the Formula 1 race car spinning out when the track gets wet. You use a race car on a pristine track, but you don't drive it to Wendy's in the rain.
-
-Ranked-Choice Voting (RCV) does not fare much better. The gap between it and Schulze is small and inconsistent in direction. They are overall the most negatively impacted by friction of all methods tested, becoming abysmal under heavy friction. As someone relatively sympathetic to Condorcet methods, it does not fill me with relish to say that Schulze's massive outcome advantage over RCV basically completely vanishes. Further, RCV is already very bad across the board, in essentially every respect (like practicality and logistical complexity), but even this is appalling. This is yet another way in which RCV is a poor choice for public elections, and I would not recommend it to anyone.
-
-I would not consider myself a cardinalist, but this has given me new appreciation for how sensitive ranked data can be to noise (the "garbage in, garbage out" problem seems to be far worse for ranked methods than STAR voting). The fact that cardinal voting deals with candidates *independently* (with the exception of STAR's automatic runoff) seems to cushion the blow of widespread noise and truncation.
-
-I may investigate the [Better Choices](../better-choices/) model of a delayed top-3 Condorcet runoff in a follow-up, to see if reducing Condorcet to three candidates, following a choose-one or Approval all-candidate primary, would be more robust than just doing Schulze on all 6 candidates in a single round<d-footnote>At the suggestion of Sass, I did a cursory test of Schulze with tied rankings for candidates with very close utilities. This seemed to cushion the major VSE drop that Schulze experiences due to friction, like flipped rankings from noise. That is, the true preference of a voter could be $A$ over $B$, but noise might flip it to $B$ over $A$. If the utilities are close, then ranking $A$ and $B$ equally does not cast a vote in the wrong direction, even if it doesn't cast a vote in the right direction. This was not tested rigorously, and requires further investigation. However, it seems to potentially put Schulze on par with STAR under friction, rather than significantly worse than both STAR and plurality.</d-footnote>.
-
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="ranked-implosion" %}<br>
-
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="rcv-schulze-ci" %}
-
-### Condorcet Efficiency
-
-This is a little funnier. Under ideal conditions, Schulze has perfect 100% Condorcet efficiency, as expected. It's far beyond all other systems in doing this exact job:
-
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="ideal-honest-ce-table" %}
-
-Surprisingly, Approval Top-2 is the best non-Condorcet method at electing the Condorcet winner, ahead of even STAR under ideal conditions.
-
-However, under friction, the system designed specifically to elect the Condorcet winner becomes worse at electing the true Condorcet winner than basically every other method. It seems that cardinal and runoff systems, at least in this model, are actually better at electing the Condorcet winner than a system designed specifically to do that exact task.
-
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="condorcet-joint" %}<br>
-
-With only a few exceptions, there is sufficient evidence to conclude that Schulze is worse at electing the Condorcet winner than basically all other methods (except RCV) under all levels of friction.
-
-{% proof Expand to see the Condorcet efficiency significance tables %}
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="ce-ci-table" %}
-{% endproof %}
-
-It appears that if your desire is truly to elect the Condorcet winner no matter the cost, then a runoff method is the way to go if voters are not ideal. In fact, it seems your *last* choice should be a Condorcet method like Schulze.
-
 ### SCORE vs STAR
 
 I also measured the difference between STAR voting and just plain 5-point scoring (SCORE, i.e. STAR's own ballots with the runoff step switched off) to isolate the runoff's own net effect from everything else STAR does. Overall, STAR seems to be better under these friction scenarios.
@@ -485,62 +451,15 @@ I also measured the difference between STAR voting and just plain 5-point scorin
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="score-vs-star-scenarios" %}
 
-### Robustness Rankings
-
-Just for fun, I decided to implement a few measures of robustness to evaluate the systems across several different dimensions.
-
-1. Mean VSE
-2. Worst-case VSE (by lower bound of the 95% confidence interval)
-3. Avg. regret vs the best at that point
-4. Avg. rank across the axis
-
-Under ideal conditions, we measure robustness over strategy (ex. across the calculated VSE range). We also measure robustness across the friction scenarios (with and without ideal included).
-
-Under ideal conditions, Approval Top-2 actually tops the ranks overall, with STAR in second place. This surprised me, but it makes sense. AT2 has a tighter and higher range, even if its honest VSE is a little lower.
-
-When we looked at the robustness across friction scenarios, Approval Top-2 (Groggy and Clear-Eyed) is consistently the most robust. The flavors of Plurality Top-2 generally take up second place collectively.
-
-{% proof Expand to see the robustness rankings tables %}
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="robustness-rankings" %}
-{% endproof %}
-
-### The Shape of the Data
-
-This is also fun. VSE is generally reported as a point value, but it is actually an average of a distribution of outcomes of the form
-
-$$\operatorname{VSE}(election)=\frac{u(winner)-\operatorname{avg}(u)}{\operatorname{max}(u)-\operatorname{avg}(u)}$$
-
-for each election, where $u(winner)$ is the utility of the winner in that election, $\operatorname{avg}(u)$ is the average utility of all candidates in the election, and $\operatorname{max}(u)$ is the utility of the utility maximizer in that election. This is 1.0 if the winner is the utility maximizer, 0 if the winner has exactly average utility, and negative if the winner has below average utility. The VSE is the mean of this distribution, but the distribution itself is interesting to look at.
-
-We look at the distribution of outcomes for each system under different levels of friction. We narrow our focus to six systems under the joint scenarios: STAR, Approval, Approval Top-2, Plurality, Plurality Top-2, and Schulze.
-
-Under ideal conditions, the high VSE systems like STAR and Condorcet are tightly clustered around 100% with a very thin leftward tail. Lower VSE systems have more values near but not at 100%, and that clumpy tail gets fatter and fatter as the VSE drops when friction increases.
-
-The most important thing to note is that the mode is 100% for all plots. Despite the friction, the most common outcome is the best candidate winning (terrible systems or not). What the "low" VSE values we have shown in this post really say is that, under friction, the commonality of these best outcomes decreases. The leftward tail of the distribution gets fatter.
-
-Horrifically, exactly one of the six examined systems has negative values more common than the election of the utility maximizer when looking at the joint scenarios: Schulze under heavy friction. That is, Schulze elects someone worse than randomly choosing a candidate more often than it elects the best candidate.
-
-{% proof Expand to see the histograms %}
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="histogram-data" %}
-{% endproof %}
-
 ### A Stricter Confidence Interval
 
 To evaluate the robustness of the results, I checked the results that were marked as significant under a 95% confidence interval, and re-evaluated them under a 99% confidence interval. Absence of evidence is not evidence of absence, so this does not mean that a difference or edge does not actually exist, it just shows which results are more robust and persistent. The number of simulated elections is high, so the following list of results that are no longer significant at 99% confidence is short, and the new CIs are generally very borderline.
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="not-sig-at-99" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="not-sig-at-99-part1" %}
 
 {% proof Expand to see the results that hold under a 99% confidence interval %}
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="still-sig-at-99" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="still-sig-at-99-part1" %}
 {% endproof %}
-
-### Further Research
-
-The following is a list of things that might be good to look at next, as logical extensions of this work:
-
-1. How much better does Schulze/Condorcet do when voters rank equally candidates that have similar utilities
-2. How robust is a larger runoff system like Approval Top-3 Condorcet, or Plurality Top-4 RCV (the Alaska system)? How do Approval Top-2 and Plurality Top-3 Condorcet compare? How does the learning rate affect the outcomes of these larger runoff systems?
-3. What happens to STAR's VSE when we use a "hard zero": where, in the runoff step, a voter's ballot would contribute a vote to a candidate left blank over a candidate who they gave an actual 0.
 
 ### Jameson Quinn
 
