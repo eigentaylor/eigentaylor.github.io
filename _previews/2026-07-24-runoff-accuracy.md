@@ -411,7 +411,7 @@ Perhaps we've been attempting to overcomplicate our elections chasing perfection
 
 Earlier, I mentioned the surprising robustness of Plurality Top-2 under friction. Related to this was a general trend where mild friction seemed to make plurality methods *better*. Upon reflection on the model, I believe I know why: the fact that a plurality vote is just choosing a single candidate.
 
-Unlike every other voting system, choose-one voting is the only one where fatigue has a minimal effect on outcomes. In every other voting system, there's an attempt to extract *more* data from voters by allowing some sort of expression for other candidates. This makes plurality voting robust to fatigue and unawareness, which seems to *tighten* outcomes because voters are less likely to vote for a candidate who has no chance. The prominence model focuses votes on a smaller number of candidates, which appears to sort of accidentally simulate the strategic voting which makes plurality more effective. The VSE of single-round plurality is never *good*, but light friction improves the outcomes. Plurality Top-2 under mild friction is actually on par with some of the *good* systems under ideal conditions.
+Unlike every other voting system, choose-one voting is the only one where fatigue has a minimal effect on outcomes. In every other voting system, there's an attempt to extract *more* data from voters by allowing some sort of expression for other candidates. This makes plurality voting robust to fatigue and unawareness, which seems to *tighten* outcomes because voters are less likely to vote for a candidate who has no chance. The prominence model focuses votes on a smaller number of candidates, which appears to sort of accidentally simulate the strategic voting which makes plurality more effective. The VSE of single-round plurality is never *good*, but mild friction decently improves the outcomes. Plurality Top-2 under mild friction is actually on par with some of the *good* systems under ideal conditions.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="plurality-bump" %}<br>
 
@@ -419,7 +419,7 @@ This leads me to an uncomfortable conclusion that choose-one voting, for as flaw
 
 ### Approval vs Plurality
 
-Despite the plurality bump, Approval still generally outperforms plurality voting under friction.
+Despite the plurality bump, Approval still strongly outperforms plurality voting under friction.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="plurality-vs-approval" %}<br>
 
@@ -431,7 +431,7 @@ The Top-2 variants were less clear-cut. Approval Top-2 clearly outperforms Plura
 
 I also did an analysis of the difference between Approval Top-2 and Plurality Top-2 when we vary the number of candidates. The idea is that for 6 candidates, the two may have similar performance, but vote splitting would become more of a problem for choose-one as the number of candidates increases. Under ideal conditions, AT2 stays fairly consistent, while PT2 declines rather quickly, and Approval Top-2 is substantially better than Plurality Top-2.
 
-This edge declines under friction and is not robust. However, it seems that there is no evidence that Plurality Top-2 is better than Approval Top-2 under any scenario.
+This edge declines under friction and loses robustness. However, it seems that there is no evidence that Plurality Top-2 is better than Approval Top-2 under any scenario.
 
 {% proof Expand to see the candidate sweep analysis %}
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-pt2-candidate-sweep" %}
