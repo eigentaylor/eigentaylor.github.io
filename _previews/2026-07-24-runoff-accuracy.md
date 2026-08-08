@@ -508,9 +508,9 @@ When we looked at the robustness across friction scenarios, Approval Top-2 (Grog
 
 This is also fun. VSE is generally reported as a point value, but it is actually an average of a distribution of outcomes of the form
 
-$$VSE(election)=\frac{u(winner)-avg(u)}{max(u)-avg(u)}$$
+$$\operatorname{VSE}(election)=\frac{u(winner)-\operatorname{avg}(u)}{\operatorname{max}(u)-\operatorname{avg}(u)}$$
 
-for each election, where $u(winner)$ is the utility of the winner in that election, $avg(u)$ is the average utility of all candidates in the election, and $max(u)$ is the utility of the utility maximizer in that election. This is 1.0 if the winner is the utility maximizer, 0 if the winner has exactly average utility, and negative if the winner has below average utility. The VSE is the mean of this distribution, but the distribution itself is interesting to look at.
+for each election, where $u(winner)$ is the utility of the winner in that election, $\operatorname{avg}(u)$ is the average utility of all candidates in the election, and $\operatorname{max}(u)$ is the utility of the utility maximizer in that election. This is 1.0 if the winner is the utility maximizer, 0 if the winner has exactly average utility, and negative if the winner has below average utility. The VSE is the mean of this distribution, but the distribution itself is interesting to look at.
 
 We look at the distribution of outcomes for each system under different levels of friction. We narrow our focus to six systems under the joint scenarios: STAR, Approval, Approval Top-2, Plurality, Plurality Top-2, and Schulze.
 
@@ -536,11 +536,11 @@ To evaluate the robustness of the results, I checked the results that were marke
 
 ### Further Research
 
-Things that I would like to examine next:
+The following is a list of things that might be good to look at next, as logical extensions of this work:
 
 1. How much better does Schulze/Condorcet do when voters rank equally candidates that have similar utilities
-2. How robust is a larger runoff system like Approval Top-3 Condorcet, or Plurality Top-4 RCV (the Alaska system)?
-3. What happens to STAR's VSE when we use a "hard zero": candidates who are left blank are treated as between 1 and 0 stars. That is, in the runoff step, a voter's ballot would contribute a vote to a candidate left blank over a candidate who they gave a 0.
+2. How robust is a larger runoff system like Approval Top-3 Condorcet, or Plurality Top-4 RCV (the Alaska system)? How do Approval Top-2 and Plurality Top-3 Condorcet compare? How does the learning rate affect the outcomes of these larger runoff systems?
+3. What happens to STAR's VSE when we use a "hard zero": where, in the runoff step, a voter's ballot would contribute a vote to a candidate left blank over a candidate who they gave an actual 0.
 
 ### Jameson Quinn
 
