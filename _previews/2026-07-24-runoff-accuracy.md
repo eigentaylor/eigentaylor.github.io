@@ -141,7 +141,7 @@ One particular concern I have with this is that the system is done all at once. 
   The actual sample ballot for the 2026 gubernatorial primary, showing all 61 candidates for Governor. Thank you to <a href="https://electowiki.org/wiki/File:CAGovernorOpenPrimaryBallot2026.jpg">Rob Lanphier for the image</a>.
 </div>
 
-It seems to me that any single-round system has a "garbage in, garbage out" problem: if the data collected from voters is poor, then the automatic runoff has no way to correct for that. I hypothesized that under noisy and truncated data, the edge that more granular systems like STAR and Condorcet have over more coarse systems would diminish, and that a delayed top-2 runoff is more effective at improving outcomes than an automatic runoff when there's a chance for voters to improve their information on the narrowed set of two candidates.
+It seems to me that any single-round system has a "garbage in, garbage out" problem: if the data STAR collects from voters is poor, then the automatic runoff has no way to correct for that. I hypothesized that under noisy and truncated data, the edge that more granular systems like STAR and Condorcet have over more coarse systems would diminish, and that a delayed top-2 runoff is more effective at improving outcomes than an automatic runoff when there's a chance for voters to improve their information on the narrowed set of two candidates.
 
 In this post, we evaluate the rejected single-round STAR system proposed in Eugene, Oregon against the currently in-place Approval Top-2 system in St. Louis, Missouri. My primary evidence is a [Jupyter notebook](#the-jupyter-notebook) that uses the original VSE simulation code with significant modifications to test these hypotheses. It was written with AI-assistance by Claude Code, but the full notebook is available for transparency and reproducibility. I look forward to someone who is a more skilled coder than I am to improve upon it, and perhaps extend the model<d-footnote>I have no doubt someone is going to find a bug in my code, or an assumption that is not particularly realistic. I welcome that, and hope that this post can be a jumping-off point for further research into the robustness of voting systems to imperfect voter knowledge.</d-footnote>.
 
@@ -224,10 +224,6 @@ However, there are a few ways that we could model improved voter information in 
 We first assume that fatigue is entirely removed in a delayed runoff. With only two options, the voter is assumed to have the bandwidth to read two names and make a decision based on the direction of their preferences. The voter votes for the candidate who has a strictly higher perceived utility than the other candidate. If they are equal, then the voter is assumed to be indifferent and votes for neither (ex. if they are unaware of both).
 
 ### The Coma Model
-
-<div class="mt-3 d-flex justify-content-center">
-  <img src="https://media1.tenor.com/m/HbePZMcpYo8AAAAd/monkey.gif" class="img-fluid rounded z-depth-1" alt="A monkey wearing an oxygen mask, close up." style="width: 50%; height: auto;" />
-</div>
 
 Under the most pessimistic conditions, we could imagine that the voter has absolutely no time to update their beliefs. The voter essentially falls into a coma as soon as they submit their ballot, wakes up on election day in November, and then casts their runoff vote. We call this the "coma" runoff assumption, because I think that's kind of funny (and accurate). In Approval Top-2's coma variant, voters still have the opportunity to vote for their preferred finalist (according to their potentially misinformed preferences) *unless they were unaware of both candidates*.
 
@@ -321,7 +317,7 @@ I would never advocate for Plurality Top-2<d-footnote>As previously mentioned, t
 
 First, I think we should highlight that the coma model actually ends up doing *significantly* worse than just single-round Approval and STAR. This is important because it shows that the runoff itself is not inherently a cheat to improve outcomes. Approval Top-2 is a strict improvement in the ideal case, but that's not a guarantee when voters lack awareness of candidates, and the runoff step gives them no way to correct that.
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="coma-vs-approval" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="coma-vs-approval" %}<br>
 
 I believe the primary driver of the outcomes becoming so much worse in the coma model is the fact that we simulate that a voter always votes for the candidate they know, if they don't know the other. This can lead to voters casting votes for someone they hate because that candidate has better name recognition than a candidate they would actually prefer. Whereas, under single-round Approval, they would just never approve that candidate. The groggy model, on the other hand, performs far beyond STAR.
 
@@ -351,7 +347,7 @@ This could be more realistic than lowering the $\rho$ values further, but I won'
 
 ### STAR Runoff Betrayal
 
-I know a few "SCORE is better than STAR" fanatics, and so I did compare STAR with plain SCORE under friction. It wasn't that interesting. They were basically identical, but STAR generally had the edge.
+I know a few "SCORE is better than STAR" fanatics, and so I did compare STAR with plain SCORE under friction. They were basically identical, but STAR generally had the edge.
 
 {% proof Expand to see the STAR vs SCORE tables %}
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="score-vs-star" mode="images" %}
