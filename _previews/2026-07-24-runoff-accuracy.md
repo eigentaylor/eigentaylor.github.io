@@ -127,7 +127,7 @@ And though there has been a good effort to stress-test VSE under a variety of co
 
 The common thread here is that a complex, granular, and expressive system like STAR is designed to take in more information from voters to deliver better outcomes than a more coarse system like Approval. But what if the data it collects is truncated noise rather than signal?
 
-One particular concern I have with this is that the runoff is *automatic*. A voter who is misinformed when they cast their initial score ballot cannot change their mind later if they realize that they were wrong. You don't know what you don't know. And many voters *are* tired and busy, and don't have time to read the campaign websites of all [61 candidates on the ballot, as we saw in the 2026 California Gubernatorial primary](../ca-top-2/). Even with 6 candidates, the default in the VSE simulations, I worry about the ability of voters to accurately evaluate all candidates.
+One particular concern I have with this is that the system is done all at once. A voter who is misinformed when they cast their initial score ballot cannot change their mind later if they realize that they were wrong. You don't know what you don't know. And many voters *are* tired and busy, and don't have time to read the campaign websites of all [61 candidates on the ballot, as we saw in the 2026 California Gubernatorial primary](../ca-top-2/). Even with 6 candidates, the default in the VSE simulations, I worry about the ability of voters to accurately evaluate all candidates.
 
 <div class="pswp-gallery mt-3" id="ca-gov-2026-full-ballot">
   <a href="/assets/img/CAGovernorOpenPrimaryBallot2026.jpg"
@@ -141,7 +141,7 @@ One particular concern I have with this is that the runoff is *automatic*. A vot
   The actual sample ballot for the 2026 gubernatorial primary, showing all 61 candidates for Governor. Thank you to <a href="https://electowiki.org/wiki/File:CAGovernorOpenPrimaryBallot2026.jpg">Rob Lanphier for the image</a>.
 </div>
 
-It seems to me that an automatic runoff has a "garbage in, garbage out" problem: if the data collected from voters is poor, then the automatic runoff has no way to correct for that. I hypothesized that under noisy and truncated data, the edge that more granular systems like STAR and Condorcet have over more coarse systems would diminish, and that a delayed top-2 runoff is more effective at improving outcomes than an automatic runoff when there's a chance for voters to improve their information on the narrowed set of two candidates.
+It seems to me that any single-round system has a "garbage in, garbage out" problem: if the data collected from voters is poor, then the automatic runoff has no way to correct for that. I hypothesized that under noisy and truncated data, the edge that more granular systems like STAR and Condorcet have over more coarse systems would diminish, and that a delayed top-2 runoff is more effective at improving outcomes than an automatic runoff when there's a chance for voters to improve their information on the narrowed set of two candidates.
 
 In this post, we evaluate the rejected single-round STAR system proposed in Eugene, Oregon against the currently in-place Approval Top-2 system in St. Louis, Missouri. My primary evidence is a [Jupyter notebook](#the-jupyter-notebook) that uses the original VSE simulation code with significant modifications to test these hypotheses. It was written with AI-assistance by Claude Code, but the full notebook is available for transparency and reproducibility. I look forward to someone who is a more skilled coder than I am to improve upon it, and perhaps extend the model<d-footnote>I have no doubt someone is going to find a bug in my code, or an assumption that is not particularly realistic. I welcome that, and hope that this post can be a jumping-off point for further research into the robustness of voting systems to imperfect voter knowledge.</d-footnote>.
 
@@ -191,8 +191,8 @@ At $\alpha=1$, all voters are aware of all candidates, while at lower values, fe
 
 ### Fatigue
 
-<div class="mt-3">
-  <img src="https://media1.tenor.com/m/iJFDFJ3rIcsAAAAd/midnightgif300.gif" class="img-fluid rounded z-depth-1" alt="Close-up reaction gif of a tired, unimpressed expression." />
+<div class="mt-3 d-flex justify-content-center">
+  <img src="https://media1.tenor.com/m/s-OkcMKD9VQAAAAC/tired-office.gif" class="img-fluid rounded z-depth-1" alt="Jim from the office falling asleep" />
 </div>
 
 Even if a voter is vaguely aware of a candidate, if that candidate is number 40 on a list of 61, we cannot assume that voter will necessarily take the time to scan the whole list to find them. Perhaps if Leslie Knope is first on the list, they would easily give her a solid 3 stars, but if she is far lower down, the voter might forget about them and stop looking after evaluating the first few candidates.
@@ -225,8 +225,8 @@ We first assume that fatigue is entirely removed in a delayed runoff. With only 
 
 ### The Coma Model
 
-<div class="mt-3">
-  <img src="https://media1.tenor.com/m/HbePZMcpYo8AAAAd/monkey.gif" class="img-fluid rounded z-depth-1" alt="A monkey wearing an oxygen mask, close up." />
+<div class="mt-3 d-flex justify-content-center">
+  <img src="https://media1.tenor.com/m/HbePZMcpYo8AAAAd/monkey.gif" class="img-fluid rounded z-depth-1" alt="A monkey wearing an oxygen mask, close up." style="width: 50%; height: auto;" />
 </div>
 
 Under the most pessimistic conditions, we could imagine that the voter has absolutely no time to update their beliefs. The voter essentially falls into a coma as soon as they submit their ballot, wakes up on election day in November, and then casts their runoff vote. We call this the "coma" runoff assumption, because I think that's kind of funny (and accurate). In Approval Top-2's coma variant, voters still have the opportunity to vote for their preferred finalist (according to their potentially misinformed preferences) *unless they were unaware of both candidates*.
@@ -424,7 +424,7 @@ In a 1998 paper by Regenwetter and Grofman, they analyzed the outcomes of real A
 
 > "We find no evidence here that approval voting should be replaced by a more elaborate voting scheme." (p. 532<d-cite key="regenwetterGrofman1998approvalBordaCondorcet"></d-cite>)
 
-Perhaps we've been attempting to overcomplicate our elections chasing perfection. When we step beyond the idealized assumptions of perfect voters, we find that the "top of the line" systems like STAR and Condorcet perform far worse than the simpler system being used *right now* in St. Louis. Approval Top-2 may not be a compromise at all, but actually superior and more accurate than the more complex STAR that it has been overlooked in favor of. And when voters have actually been asked to choose STAR for themselves, they've said no every time. We need not fly high and melt our wings like Icarus, when the most robust solution might just be quietly working in Missouri as we speak.
+Perhaps we've been attempting to overcomplicate our elections chasing perfection. When we step beyond the idealized assumptions of perfect voters, we find that the "top of the line" systems like STAR perform far worse than the simpler system being used *right now* in St. Louis. Approval Top-2 may not be a compromise at all, but actually superior and more accurate than the more complex STAR that it has been overlooked in favor of. And when voters have actually been asked to choose STAR for themselves, they've said no every time. We need not fly high and melt our wings like Icarus, when the most robust solution might just be quietly working in Missouri as we speak.
 
 ## Appendix
 
@@ -452,7 +452,7 @@ The Top-2 variants were less clear-cut. Approval Top-2 clearly outperforms Plura
 
 I also did an analysis of the difference between Approval Top-2 and Plurality Top-2 when we vary the number of candidates. The idea is that for 6 candidates, the two may have similar performance, but vote splitting would become more of a problem for choose-one as the number of candidates increases. Under ideal conditions, AT2 stays fairly consistent, while PT2 declines rather quickly, and Approval Top-2 is substantially better than Plurality Top-2.
 
-This edge declines under friction and loses robustness. However, it seems that there is no evidence that Plurality Top-2 is better than Approval Top-2 under any scenario.
+This edge declines under friction and loses robustness. However, it seems that there is no evidence that Plurality Top-2 is better than Approval Top-2 under any scenario. The idea that Approval is a Pareto improvement over plurality seems reasonably supported: any flavor of Approval seems to be as good or better than that same flavor of Plurality.
 
 {% proof Expand to see the candidate sweep analysis %}
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-pt2-candidate-sweep" %}
