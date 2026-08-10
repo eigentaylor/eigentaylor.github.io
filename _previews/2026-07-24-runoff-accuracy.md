@@ -221,7 +221,7 @@ My hypothesis was that the runoff step can act as a corrective mechanism for mis
 
 However, there are a few ways that we could model improved voter information in the runoff step. We assume that in the primary election (say, in June) voters are tired and didn't have time to research all candidates in the crowded field. They vote imperfectly based on their limited knowledge (ex. vibes, not reading the candidate's website) and energy. But just how much more informed are voters in the runoff (say, in November<d-footnote>In California, the primary is in June with the general election top-2 runoff about five months later in November. In St. Louis, the general is only one month after the Approval primary.</d-footnote>)?
 
-We first assume that fatigue is entirely removed in a delayed runoff. With only two options, the voter is assumed to have the bandwidth to read two names and make a decision based on the direction of their preferences. The voter votes for the candidate who has a strictly higher perceived utility than the other candidate. If they are equal, then the voter is assumed to be indifferent and votes for neither (ex. if they are unaware of both).
+We first assume that fatigue is entirely removed in all delayed runoffs. With only two options, the voter is assumed to have the bandwidth to read two names and make a decision based on the direction of their preferences. The voter votes for the candidate who has a strictly higher perceived utility than the other candidate. If they are equal, then the voter is assumed to be indifferent and votes for neither (ex. if they are unaware of both).
 
 ### The Coma Model
 
@@ -234,7 +234,7 @@ An automatic runoff is very different from the coma model, and it's not necessar
 - In STAR, a voter might give a corrupt incumbent 1 star, but be too fatigued to give a boring candidate their rightful 3 stars. Then in the runoff, this voter's ballot will be cast for the 1-star candidate over the interpreted 0 stars.
 - In coma Approval Top-2, a voter might instead be unaware of that candidate entirely, and vote for the corrupt incumbent they know (even though they didn't approve them in the primary).
 
-Which turned out to be better was genuinely shocking.
+Which turned out to be better was genuinely shocking to me.
 
 ### The Groggy Model
 
@@ -381,6 +381,10 @@ The evidence for my hypothesis that a more coarse ballot is more robust to frict
 At the very least, for this comparison of a theoretical SCORE Top-2 (that nobody is actually advocating for) with the St. Louis model, I would say that the SCORE ballot appears completely unjustified. That granularity does not seem to help outcomes under friction. The real difference, if not outcomes, is then how much more intimidating and easier to spoil the ballot is, and how politically viable proposing that change becomes. Approval is essentially the hardest ballot type to unintentionally spoil (there is no such thing as an overvote), so I would conclude a SCORE ballot is strictly worse in this context.
 
 The gulf between the *automatic* runoff of STAR and a delayed Approval runoff, however, is very, very large. There is no ambiguity there.
+
+<div class="mt-3 d-flex justify-content-center">
+  <img src="/assets/img/star_from_friction.jpg" class="img-fluid rounded z-depth-1" alt="Parks and Rec meme of Ron Swanson and Ben Wyatt: STAR Voting has really bad VSE — it rubbed off, from friction" />
+</div>
 
 ## Conclusion
 
