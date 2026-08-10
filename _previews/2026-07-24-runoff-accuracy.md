@@ -191,11 +191,16 @@ At $\alpha=1$, all voters are aware of all candidates, while at lower values, fe
 
 ### Fatigue
 
-<div class="mt-3 d-flex justify-content-center">
-  <img src="https://media1.tenor.com/m/s-OkcMKD9VQAAAAC/tired-office.gif" class="img-fluid rounded z-depth-1" alt="Jim from The Office falling asleep" />
+<div class="pswp-gallery mt-3 d-flex justify-content-center" id="fatigue-tired-office-gif">
+  <a href="https://media1.tenor.com/m/s-OkcMKD9VQAAAAC/tired-office.gif"
+     data-pswp-width="498"
+     data-pswp-height="284"
+     target="_blank">
+    <img src="https://media1.tenor.com/m/s-OkcMKD9VQAAAAC/tired-office.gif" class="img-fluid rounded z-depth-1" alt="Jim from The Office falling asleep" />
+  </a>
 </div>
 
-Even if a voter is vaguely aware of a candidate, if that candidate is number 40 on a list of 61, we cannot assume that voter will necessarily take the time to scan the whole list to find them. Perhaps if Leslie Knope is first on the list, they would easily give her a solid 3 stars, but if she is far lower down, the voter might forget about them and stop looking after evaluating the first few candidates.
+Even if a voter is vaguely aware of a candidate, if that candidate is number 40 on a list of 61, we cannot assume that voter will necessarily take the time to scan the whole list to find them. Perhaps if Leslie Knope is first on the list, they would easily give her a solid 3 stars, but if she is far lower down, the voter might forget about her and stop looking after evaluating the first few candidates.
 
 While prominence is global to the election, fatigue is local to the voter. We draw a random fatigue ranking for each voter, as a stand-in for ballot-order rotation. As voters go down the ballot, they are more likely to be fatigued and simply skip a name. Maybe they need to pick up their kids from soccer practice, or their eyes are glazing over from tiredness, or they just came from a nine-hour nursing shift, or they just don't care enough about who their water commissioner is to fully evaluate every person they would recognize if they had read each name closely. For the "fatigue" parameter $\beta$, the probability that a voter is not fatigued enough to vote for candidate $c$ is given by:
 
@@ -382,8 +387,13 @@ At the very least, for this comparison of a theoretical SCORE Top-2 (that nobody
 
 The gulf between the *automatic* runoff of STAR and a delayed Approval runoff, however, is very, very large. There is no ambiguity there.
 
-<div class="mt-3 d-flex justify-content-center">
-  <img src="/assets/img/star_from_friction.jpg" class="img-fluid rounded z-depth-1" alt="Parks and Rec meme of Ron Swanson and Ben Wyatt: STAR Voting has really bad VSE — it rubbed off, from friction" />
+<div class="pswp-gallery mt-3 d-flex justify-content-center" id="star-from-friction-meme">
+  <a href="/assets/img/star_from_friction.jpg"
+     data-pswp-width="889"
+     data-pswp-height="500"
+     target="_blank">
+    <img src="/assets/img/star_from_friction.jpg" class="img-fluid rounded z-depth-1" alt="Parks and Rec meme of Ron Swanson and Ben Wyatt: STAR Voting has really bad VSE — it rubbed off, from friction" />
+  </a>
 </div>
 
 ## Conclusion
