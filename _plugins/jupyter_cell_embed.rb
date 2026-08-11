@@ -37,6 +37,24 @@ require 'digest'
 # A missing notebook, a notebook that fails to parse, or a tag with zero matching cells all
 # raise (failing the build loudly) rather than silently rendering nothing -- a deleted or
 # renamed tag should be caught at build time, not discovered by a missing chart in prod.
+# A tag that *does* match a cell but whose matched cell(s) have no output yet (edited params,
+# not re-run -- the notebook takes ~1hr to run, so this is a normal mid-edit state, not an
+# error) renders a visible "pending" placeholder instead, so the post stays buildable while
+# a run is pending.
+#
+# Two `--incremental`/`jekyll serve --watch` correctness fixes live here too, found while
+# investigating charts silently disappearing between edits:
+#   1. This tag reads the notebook file directly via `File.read`, so Jekyll has no built-in way
+#      to know a post depends on it. `site.regenerator.add_dependency` registers that
+#      relationship explicitly, so editing/re-running the notebook alone (without also
+#      touching the post's own .md) correctly triggers a re-render of every post embedding it.
+#   2. The generated PNGs only exist in `site.static_files` for regeneration cycles where this
+#      tag actually executes (i.e. the owning post gets re-rendered). On any *other* file's
+#      incremental rebuild, Jekyll's cleaner deletes destination files that aren't part of that
+#      cycle's in-memory file list -- which silently wipes out a post's previously-generated
+#      charts the moment some unrelated file changes elsewhere in the repo. Registering the
+#      notebook's image directory in `site.keep_files` (Jekyll's own escape hatch for
+#      generated-but-not-source-tracked output) opts it out of that sweep entirely.
 module Jekyll
   # Writes decoded PNG bytes straight into the destination directory at build time. These
   # images exist only as base64 blobs inside the notebook's own stored outputs -- nothing is
@@ -74,6 +92,8 @@ module Jekyll
         site = context.registers[:site]
         notebook_rel_path, cell_tag, mode = parse_markup(@markup)
         notebook_abs_path = File.join(site.source, notebook_rel_path)
+
+        register_notebook_dependency(site, context, notebook_abs_path)
 
         notebook = load_notebook(notebook_abs_path)
         cells = matching_cells(notebook, cell_tag)
@@ -117,10 +137,30 @@ module Jekyll
         end
         flush.call
 
+        # Cell(s) matched the tag, but none of them currently carry the kind of output `mode`
+        # asked for -- most commonly because the notebook was edited (params changed) and
+        # hasn't been re-run yet. That's a normal, expected mid-edit state given the ~1hr run
+        # time, not a build error, so show it rather than silently leaving a gap in the post.
+        html_parts << pending_placeholder(cell_tag, mode) if html_parts.empty?
+
         html_parts.join("\n")
       end
 
       private
+
+      def register_notebook_dependency(site, context, notebook_abs_path)
+        page_path = site.in_source_dir(context.registers[:page]["path"])
+        site.regenerator.add_dependency(page_path, notebook_abs_path)
+      end
+
+      def pending_placeholder(cell_tag, mode)
+        kind = mode == 'tables' ? 'table' : 'chart'
+        <<~HTML
+          <div class="jupyter-cell-embed-pending" style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 12px 20px; margin: 1em 0; font-size: 0.95rem; color: #664d03;">
+            ⏳ <strong>#{CGI.escapeHTML(kind.capitalize)} pending</strong> &mdash; cell(s) tagged <code>#{CGI.escapeHTML(cell_tag)}</code> have no saved output yet. Re-run and save the notebook to fill this in.
+          </div>
+        HTML
+      end
 
       def join_text(value)
         value.is_a?(Array) ? value.join : value.to_s
@@ -183,6 +223,11 @@ module Jekyll
         baseurl = site.config['baseurl'].to_s
         dir = "assets/img/notebook-cells/#{notebook_basename}"
         gallery_id = "nb-cell-#{cell_tag}-#{gallery_index}"
+
+        # Without this, any *other* file's incremental rebuild would sweep these PNGs away
+        # the moment this particular post isn't the one being re-rendered that cycle -- see
+        # the file-level comment above.
+        site.keep_files << dir unless site.keep_files.include?(dir)
 
         anchors = images.each_with_index.map do |image, i|
           width, height = png_dimensions(image[:bytes])
