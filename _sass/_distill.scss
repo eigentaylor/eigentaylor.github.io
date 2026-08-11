@@ -259,11 +259,15 @@ d-article {
     justify-self: end;
     position: sticky;
     top: 80px;
-    max-height: calc(100vh - 100px);
+    // Bottom offset leaves room for the fixed-bottom footer (~35-50px depending on
+    // text wrap) plus a gap, so long TOCs scroll fully into view instead of ending
+    // up hidden behind it.
+    max-height: calc(100vh - 80px - 64px);
     overflow-y: auto;
     margin-top: 0em;
     padding-left: 2em;
     padding-right: 3em;
+    padding-bottom: 1.5em;
     border-right: 1px solid var(--global-divider-color);
     width: calc(max(70%, 300px));
     margin-right: 0px;
