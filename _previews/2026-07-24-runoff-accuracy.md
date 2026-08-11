@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: 'Coarse Correction Part 1: Is STAR Actually More Accurate than Approval?'
-date: 2026-08-09
+date: 2026-08-10
 description: Why Approval with a delayed runoff might be far more accurate than STAR voting when voters are misinformed and fatigued.
 importance: 1
 tags: voting
@@ -180,7 +180,7 @@ When a voter looks at the list of candidates, it is almost never the case that t
   <iframe src="https://www.youtube.com/embed/XCvC8pUI4ZA" class="rounded z-depth-1" style="width: 100%; aspect-ratio: 16 / 9; height: auto; display: block;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen title="Bobby Newport from Parks and Rec has the name recognition, but not the qualifications"></iframe>
 </div>
 <div class="caption mt-2">
-  Bobby Newport from Parks and Rec has the name recognition and charisma, but not the qualifications. Even so, people won't vote for Leslie Knope if they don't know who she is.
+  Bobby Newport from Parks and Rec is Leslie Knope's opponent for city council. He has the name recognition and charisma, but not the qualifications. Even so, people won't vote for Leslie Knope if they don't know who she is.
 </div>
 
 We draw an awareness/prominence ranking for each election, simulating that everyone knows the frontrunner, but as you go down the ranking, the number of voters who are aware of each candidate decreases. For the selected $\alpha$ "awareness" parameter, the probability that a voter is aware of candidate $c$ is given by:
@@ -220,7 +220,7 @@ In the simulation, we assume that a voter always votes for their most preferred 
 
 ## The Runoff Assumptions
 
-This model essentially turns voters from robots, patient enough to thoughtfully evaluate and vote for all candidates, into messy humans who are often misinformed, fatigued, or otherwise unable to know which candidates would actually make them happiest. We would like to know how much of a difference a delayed runoff, with reduced cognitive load from there being just two finalists, can make in the overall accuracy of the election compared to a more granular system like STAR being used for a single-round election, taking in that poor data to perform an automatic runoff.
+This model essentially turns voters from robots, patient enough to thoughtfully evaluate and vote for all candidates, into messy, "[satisficing](https://en.wikipedia.org/wiki/Satisficing)" humans who are often misinformed, fatigued, or otherwise unable to know which candidates would actually make them happiest. We would like to know how much of a difference a delayed runoff, with reduced cognitive load from there being just two finalists, can make in the overall accuracy of the election compared to a more granular system like STAR being used for a single-round election, taking in that poor data to perform an automatic runoff.
 
 My hypothesis was that the runoff step can act as a corrective mechanism for misinformed and ignorant voters in the primary step, whereas the more complex single-round mechanism suffers from the previously mentioned "garbage in, garbage out" issues.
 
@@ -230,7 +230,7 @@ We first assume that fatigue is entirely removed in all delayed runoffs. With on
 
 ### The Coma Model
 
-Under the most pessimistic conditions, we could imagine that the voter has absolutely no time to update their beliefs. The voter essentially falls into a coma as soon as they submit their ballot, wakes up on election day in November, and then casts their runoff vote. We call this the "coma" runoff assumption, because I think that's kind of funny (and accurate). In Approval Top-2's coma variant, voters still have the opportunity to vote for their preferred finalist (according to their potentially misinformed preferences) *unless they were unaware of both candidates*.
+Under the most pessimistic conditions, we could imagine that the voter has absolutely no time to update their beliefs. The voter essentially falls into a coma as soon as they submit their ballot, wakes up on election day in November, and then casts their runoff vote. We call this the "coma" runoff assumption, because I think that's kind of funny (and accurate). In Approval Top-2's coma variant, voters still have the opportunity to vote for their preferred finalist (according to their potentially misinformed preferences) without fatigue, *unless they were unaware of both candidates*.
 
 This does mean that in a coma runoff, a voter will vote for any candidate they are aware of over any candidate they are not. That is, they might vote for the devil they know. The realism of this assumption is certainly debatable<d-footnote>It would be interesting to see alternative assumptions, such as only voting for a known candidate if they have above-average utility. That is, thinking "there's no way this other candidate can be as bad as the one I know."</d-footnote>.
 
@@ -245,7 +245,9 @@ Which turned out to be better was genuinely shocking to me.
 
 In contrast to the coma model, the remaining two models will simulate voters to have some extent of "wakefulness".
 
-Under slightly more optimistic conditions, we can suppose that in the time between the primary and runoff, voters at least know who will be on the ballot. In the months since the primary election, maybe they were bombarded by television ads and social media posts, drove by a yard sign every day for work, or were pelted with mailers on the exciting options for water commissioner, and now they at least know who the two finalists are, though their preferences could still be noisy and in the wrong direction (because how many will actually *read* those mailers).
+Under slightly more optimistic conditions, we can suppose that in the time between the primary and runoff, voters at least know who will be on the ballot. Like the coma model, they have no fatigue, but they also obtain awareness.
+
+In the months since the primary election, maybe they were bombarded by television ads and social media posts, drove by a yard sign every day for work, or were pelted with mailers on the exciting options for water commissioner, and now they at least know who the two finalists are, though their preferences could still be noisy and in the wrong direction (because how many will actually *read* those mailers).
 
 We'll call this the "groggy" runoff assumption, and it's how we define the baseline delayed runoff systems to work (Approval Top-2 and Plurality Top-2).
 
