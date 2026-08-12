@@ -41,7 +41,7 @@ toc:
     subsections:
       - name: The Approval-STAR Gap
       - name: How Much Does a Delayed Runoff Actually Help?
-      - name: STAR Runoff Betrayal
+      - name: STAR Silent Lock-in
   - name: Conclusion
     subsections:
       - name: The Broader Context
@@ -296,6 +296,16 @@ The way some parameters compound is multiplicative, so while 0.7 may not seem as
 
 I chose not to tune the parameters too much, and to use the simplest settings possible to avoid overfitting the model. I look forward to seeing how others might improve upon this model with even more realistic assumptions, use different parameter combinations, and perhaps even incorporate real-world data.
 
+We do a number of significance tests under 95% confidence intervals (usually involving gaps in VSE). We use these to evaluate "significant" gaps, and distinguish between statistical and practical significance. For example, if a system has a gap that we can be confident is between 0.3% and 0.5%, then it is statistically significant (we can be confident the gap is non-zero), but not practically significant. It feels disingenuous and unfair to say that one system is "better" than another if the gap is so small that it would not be noticeable in practice. The terminology we use is as follows:
+
+- Decisive: The gap is statistically significant and practically significant (greater than 1%). There is a clear and meaningful difference between the two systems.
+- Narrow edge: The gap is statistically significant, but not practically significant (less than 1%). There is likely a slight difference between the two systems, but it is not meaningful in practice.
+- Ambiguous edge: The gap is statistically significant, but the gap is not confidently within or outside the 1% practical significance threshold. There is a difference, but we cannot conclude whether it is meaningful in practice.
+- Indistinguishable: The gap is not statistically significant (the confidence interval includes 0), but even so the gap is confidently within the 1% practical significance threshold. If a difference exists, it's not worth worrying about in practice.
+- Inconclusive: The gap is not statistically significant, and the confidence interval includes both 0 and the 1% practical significance threshold. We cannot conclude anything about the gap.
+
+I will also discuss any important statistically significant gaps that do not persist under a 99% confidence interval.
+
 ## Findings
 
 The code is included in [the Appendix](#the-jupyter-notebook), but we will summarize the results here as it pertains to our primary focus. However, a number of other fascinating findings related to plurality voting will be discussed in the Appendix (and future parts of this series).
@@ -338,7 +348,7 @@ So far we have looked at fixed runoff awareness models (coma, groggy, clear-eyed
 
 We define a new parameter `kappa`, which ranges from 0 to 1. This parameter is the probability that a voter can become aware of a candidate they were not aware of before (rolled against for one or both candidates the voter is unaware of). When a voter successfully rolls to learn of a candidate, we use their (potentially noisy) perceived utility.
 
-When a voter learns about a candidate, they vote their real (potentially noisy) preference; otherwise, they fall back on their prior information, exactly as under the coma model. Under `kappa=0`, the coma model, STAR is significantly better than Approval Top-2. Eyeballing the graph, the crossing point seems to be approximately at $\kappa=0.2$, where Approval Top-2 overtakes STAR in VSE.
+When a voter learns about a candidate, they vote their real (potentially noisy) preference; otherwise, they fall back on their prior information, exactly as under the coma model. Under `kappa=0`, the coma model, STAR is significantly better than Approval Top-2. Eyeballing the graph, the crossing point seems to be approximately at $\kappa=0.1-0.2$ (depending on friction), where Approval Top-2 overtakes STAR in VSE.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-learn-sweep" mode="images" %}<br>
 
@@ -352,7 +362,7 @@ This could be more realistic than lowering the $\rho$ values further, but I won'
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-t-sweep" mode="images" %}
 
-### STAR Runoff Betrayal
+### STAR Silent Lock-in
 
 I know a few "SCORE is better than STAR" fanatics, and so I did compare STAR with plain SCORE under friction. They were basically identical, but STAR generally had the edge.
 
