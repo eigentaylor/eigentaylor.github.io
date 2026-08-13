@@ -446,13 +446,15 @@ When we step beyond the idealized assumptions of perfect voters, we find that th
 
 ### The Plurality Bump
 
-Earlier, I mentioned the surprising robustness of Plurality Top-2 under friction. Related to this was a general trend where mild friction seemed to make plurality methods *better*. Upon reflection on the model, I believe I know why: the fact that a plurality vote is just choosing a single candidate.
+Earlier, I mentioned the surprising robustness of Plurality Top-2 under friction. Related to this was a general trend where mild friction seemed to make plurality methods *better*. I have a few ideas for why this might be.
 
 Unlike every other voting system, choose-one voting is the only one where fatigue has no effect on outcomes. With the methodological adjustment that a voter always evaluates their favorite known candidate, plurality is functionally identical as fatigue is varied.
 
-In every other voting system, there's an attempt to extract *more* data from voters by allowing some sort of expression for other candidates. This makes plurality voting robust to fatigue and unawareness, the latter of which seems to *tighten* outcomes because voters are less likely to vote for a candidate who has no chance. The prominence model focuses votes on a smaller number of candidates, which appears to sort of accidentally simulate the strategic voting which makes plurality more effective.
+In every other voting system, there's an attempt to extract *more* data from voters by allowing some sort of expression for other candidates. This makes plurality voting robust to fatigue and unawareness, the latter of which might *tighten* outcomes because voters are less likely to vote for a candidate who has no chance. The prominence model focuses votes on a smaller number of candidates, which could sort of accidentally simulate the strategic voting which makes plurality more effective. The highest VSE for the unawareness sweep is exactly at 0.9, which is what we use for mild friction.
 
-However, the most paradoxical effect is sweeping the noise parameter $\rho$ downwards. This, somehow, maximizes the VSE of single-round plurality at $\rho=0.5$, around 80%. I have no robust explanation for this. But this might somehow scramble voter preferences further into a more "strategic" vote. This requires further investigation.
+However, the most paradoxical effect is sweeping the noise parameter $\rho$ downwards. This, somehow, maximizes the VSE of single-round plurality at $\rho=0.5$, to a VSE of around 80%. I have no robust explanation for this. But this might somehow scramble voter preferences further into a more "strategic" vote. This requires further investigation. A cursory investigation shows that under mild friction, there are indeed elections where the noise produces a worse outcome, but there are just *more* where it seems to produce a better outcome.
+
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="plurality-ideal-vs-friction" %}<br>
 
 The VSE of single-round plurality is never *good* under the defined scenarios, but mild friction decently improves the outcomes. Plurality Top-2 under mild friction is actually on par with some of the *good* systems under ideal conditions.
 
