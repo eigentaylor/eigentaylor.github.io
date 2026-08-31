@@ -94,6 +94,8 @@ While I was originally strongly against pairing Approval voting with a runoff, d
   Election accuracy (VSE) by voting method. <a href="https://www.starvoting.org/faq">Source</a>.
 </div>
 
+### The Contenders
+
 The Equal Vote Coalition supports three systems, which all have high VSE: the aforementioned STAR system that lost in Eugene, Approval voting which is currently being used with a top-2 runoff in St. Louis, and Condorcet methods (which will receive focus in part 2). The *stars* of this post are the first two:
 
 - **STAR voting** (Score Then Automatic Runoff): Voters score candidates on a scale (usually 0-5), and the two highest-scoring candidates go to an automatic runoff where a candidate gets one vote for every voter who scored them higher than the other candidate. This system has excellent VSE.
@@ -117,7 +119,7 @@ The narrative, which is generally supported by the data, seems to be that Approv
 
 On the [Equal Vote page for Approval](https://www.equal.vote/approval), they make a fair case for Approval as something that "should be the default voting method". But they also call it a "stepping stone", and say that "there's a good case to be made to upgrade further." Even though it's a "case for Approval", the text spends significant space pointing back to STAR:
 
-> In many cases it may be quicker and easier to just switch directly from the traditional Choose-One voting method to something top of the line like STAR Voting, but we understand that there may be some cases where that's unrealistic. ([Source](https://www.equal.vote/approval), Accessed 8/14/2026)
+> In many cases it may be quicker and easier to just switch directly from the traditional Choose-One voting method to something top of the line like STAR Voting, but we understand that there may be some cases where that's unrealistic. ([Source](https://www.equal.vote/approval), Accessed 8/30/2026)
 
 The wording "top of the line" paints a vivid picture, to be sure. But how robust is that edge? If we are to describe VSE simulations as "like how engineers can test the plans for a new skyscraper before actually building it," then I would hope that the engineers test the skyscraper in weather other than a perfect 72-degree sunny day with a mild breeze. Perhaps we should see how the plans fare when there's a hurricane, or an earthquake, or a flood. If the skyscraper is only tested in perfect conditions, then that does not make me feel particularly safe if I have to live on the eightieth floor. If I'm going to be sold on a Formula 1 race car as my new daily driver, I don't care how fast it is on a race track if it can't handle a little mud and rain on my way to the Wendy's drive-thru.
 
@@ -142,7 +144,7 @@ One particular concern I have with this is that the system is done all at once. 
   The actual sample ballot for the 2026 gubernatorial primary, showing all 61 candidates for Governor. Thank you to <a href="https://electowiki.org/wiki/File:CAGovernorOpenPrimaryBallot2026.jpg">Rob Lanphier for the image</a>.
 </div>
 
-It seems to me that any single-round system has a "garbage in, garbage out" problem: If the data STAR collects from voters is poor, then the automatic runoff has no way to correct for that. I hypothesized that under noisy and truncated data, the edge that more granular systems like STAR and Condorcet have over more coarse systems would diminish, and that a delayed top-2 runoff is more effective at improving outcomes than an automatic runoff when there's a chance for voters to improve their information on the narrowed set of two candidates. The average on a closed-notes exam will be much worse than if you had just let the students take it home and use their notes.
+It seems to me that any single-round system has a "garbage in, garbage out" problem: If the data a system like STAR collects from voters is poor, then the automatic runoff has no way to correct for that. I hypothesized that under noisy and truncated data, the edge that more granular systems like STAR and Condorcet have over more coarse systems would diminish, and that a delayed top-2 runoff is more effective at improving outcomes than an automatic runoff when there's a chance for voters to improve their information on the narrowed set of two candidates. The average on a closed-notes exam will be much worse than if you had just let the students take it home and use their notes.
 
 In this post, we evaluate the rejected single-round STAR system proposed in Eugene, Oregon against the currently in-place Approval Top-2 system in St. Louis, Missouri. My primary evidence is a [Jupyter notebook](#the-jupyter-notebook) that copies the original VSE simulation code with significant modifications to test these hypotheses. It was written with AI-assistance by Claude Code, but the full notebook is available for transparency and reproducibility. I look forward to someone who is a more skilled coder than I am to improve upon it, and perhaps extend the model<d-footnote>I have no doubt someone is going to find a bug in my code, or an assumption that is not particularly realistic. I welcome that, and hope that this post can be a jumping-off point for further research into the robustness of voting systems to imperfect voter knowledge.</d-footnote>.
 
@@ -465,7 +467,7 @@ The Top-2 variants were less clear-cut. Approval Top-2 clearly outperforms Plura
 
 I also did an analysis of the difference between Approval Top-2 and Plurality Top-2 when we vary the number of candidates. The idea is that for 6 candidates, the two may have similar performance, but vote splitting would become more of a problem for choose-one as the number of candidates increases. Under ideal conditions, AT2 stays fairly consistent, while PT2 declines rather quickly, and Approval Top-2 is substantially better than Plurality Top-2.
 
-This edge declines under friction and loses robustness. However, it seems that there is no evidence that Plurality Top-2 is better than Approval Top-2 under any scenario. The idea that Approval is a Pareto improvement over plurality seems reasonably supported: any flavor of Approval seems to be as good or better than that same flavor of Plurality.
+This edge declines under friction and loses robustness. However, it seems that there is no evidence that Plurality Top-2 is better than Approval Top-2 under any scenario. The idea that Approval is an improvement over plurality ("with basically no downsides") seems reasonably supported: any flavor of Approval seems to be as good or better than that same flavor of Plurality.
 
 {% proof Expand to see the candidate sweep analysis %}
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-pt2-candidate-sweep" %}
