@@ -82,6 +82,8 @@ When people think "close election", I would wager that the first election that c
   Animation of the 2000 election flip.
 </div>
 
+{% jupyter_cell_embed "assets/jupyter/flip_scenarios.ipynb" tag="2000" %}
+
 The 2004 election, by contrast, was not nearly as close in the popular vote, with George W. Bush defeating John Kerry by about 3 million votes, or roughly 2.5%. But that is misleading because it would not actually be that hard to destroy Bush's majority by flipping roughly 19,000 votes across three states: Nevada, New Mexico, and Iowa. This would leave the election as a 269-269 split, sending the decision to the House of Representatives once again. However, Bush would have likely won this anyway. To get Kerry across the finish line, you either have to flip about 60,000 votes in Ohio, or also flip Nebraska's second district, which Bush won by over 20 points. This election gets a 2/5 closeness rating from me.
 
 <div class="pswp-gallery mt-3" id="2004-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
@@ -110,19 +112,16 @@ The 2004 election, by contrast, was not nearly as close in the popular vote, wit
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 0.25rem;
+  scrollbar-width: thin;
 }
 .flip-swipe-gallery a {
-  flex: 0 0 92%;
-  scroll-snap-align: center;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 .flip-swipe-gallery img {
   width: 100%;
   display: block;
-}
-@media (min-width: 768px) {
-  .flip-swipe-gallery a {
-    flex-basis: 70%;
-  }
 }
 </style>
 
@@ -143,6 +142,8 @@ The 2004 election, by contrast, was not nearly as close in the popular vote, wit
 <div class="caption mt-2">
   Swipe to compare: the minimum flip needed to hand Kerry the win outright (left) vs. the minimum votes needed to strip Bush of a majority and send the election to the House (right).
 </div>
+
+{% jupyter_cell_embed "assets/jupyter/flip_scenarios.ipynb" tag="2004" %}
 
 These two elections provide an interesting contrast. 2000 was very clearly close, while 2004 was not particularly close in the popular vote, but still "fragile" in terms of the Electoral College. I would not call this election "close", however. But just looking at the Wikipedia page for the 2004 election, would not make it obvious how precarious Bush's victory actually was. The question we have to ask is "how many other elections were similarly fragile despite not appearing close in the popular vote?"
 
@@ -190,6 +191,8 @@ The most shocking fact about this election I found is that even if you give Haye
   Animation of the 1876 election flip.
 </div>
 
+{% jupyter_cell_embed "assets/jupyter/flip_scenarios.ipynb" tag="1876" %}
+
 ## The 1880s
 
 1876 wasn't the end of highly close elections in the later decades of the 19th century. In fact, all three subsequent presidential elections in the 1880s were also absurdly close and fraught with controversy. The most interesting aspect of these elections is that all three were decided by New York. New York was the largest state, and also frighteningly a swing state.
@@ -213,6 +216,8 @@ The most shocking fact about this election I found is that even if you give Haye
 <div class="caption mt-2">
   James A. Garfield (R), the 20th President of the United States, who served from March to September 1881, and Winfield Scott Hancock (D), the Democratic candidate in the 1880 presidential election.
 </div>
+
+{% jupyter_cell_embed "assets/jupyter/flip_scenarios.ipynb" tag="1880" %}
 
 Most think of the 1888 election as the most controversial because Grover Cleveland won the popular vote but lost the electoral vote to Benjamin Harrison, being the last time this would happen until 2000. However, 1884 was *significantly* closer electorally. Cleveland won New York by only about 1,000 votes. Flipping under 600 votes from Cleveland to Blaine and Cleveland would not have been elected. I give 1884 a 4/5 closeness rating.
 
@@ -246,6 +251,8 @@ Most think of the 1888 election as the most controversial because Grover Clevela
   Animation of the 1884 election flip.
 </div>
 
+{% jupyter_cell_embed "assets/jupyter/flip_scenarios.ipynb" tag="1884" %}
+
 New York gave Cleveland the presidency, but then it took it away in 1888. Funny enough, the percent of votes you need to flip this election is actually relatively high, especially compared to 1884. 1888 gets a 3/5 closeness rating.
 
 <div class="pswp-gallery mt-3" id="1888-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
@@ -265,6 +272,8 @@ New York gave Cleveland the presidency, but then it took it away in 1888. Funny 
 <div class="caption mt-2">
   Benjamin Harrison (R), the 23rd President of the United States, who served from 1889 to 1893, and Grover Cleveland (D), the incumbent president who narrowly lost his re-election bid in the 1888 presidential election.
 </div>
+
+{% jupyter_cell_embed "assets/jupyter/flip_scenarios.ipynb" tag="1888" %}
 
 ## 1916
 
@@ -303,6 +312,8 @@ Fun fact: While some complain about the Electoral College because of its lack of
 <div class="caption mt-2">
   Animation of the 1916 election flip.
 </div>
+
+{% jupyter_cell_embed "assets/jupyter/flip_scenarios.ipynb" tag="1916" %}
 
 ## 1948
 
@@ -348,6 +359,8 @@ However, relative to these other close elections, the 1948 election might be con
   Swipe to compare: the minimum flip needed to hand Dewey the win outright (left) vs. the minimum votes needed to strip Truman of a majority and send the election to the House (right).
 </div>
 
+{% jupyter_cell_embed "assets/jupyter/flip_scenarios.ipynb" tag="1948" %}
+
 ## 1960
 
 <div class="pswp-gallery mt-3" id="1960-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
@@ -390,6 +403,8 @@ Relatively speaking, this is a harder election to flip. Hawaii, newly a state, w
   Swipe to compare: the minimum flip needed to hand Nixon the win outright (left) vs. the minimum votes needed to strip Kennedy of a majority and send the election to the House (right).
 </div>
 
+{% jupyter_cell_embed "assets/jupyter/flip_scenarios.ipynb" tag="1960" %}
+
 ## 1976
 
 <div class="pswp-gallery mt-3" id="1976-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
@@ -429,6 +444,8 @@ This election gets a 3.5/5 closeness rating.
 <div class="caption mt-2">
   Animation of the 1976 election flip.
 </div>
+
+{% jupyter_cell_embed "assets/jupyter/flip_scenarios.ipynb" tag="1976" %}
 
 ## 2016
 
@@ -474,6 +491,8 @@ This election gets a 4/5 closeness rating.
   Swipe to compare: the minimum flip needed to hand Clinton the win outright (left) vs. the minimum votes needed to strip Trump of a majority and send the election to the House (right).
 </div>
 
+{% jupyter_cell_embed "assets/jupyter/flip_scenarios.ipynb" tag="2016" %}
+
 ## 2020
 
 <div class="pswp-gallery mt-3" id="2020-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
@@ -518,6 +537,8 @@ This election gets a 4/5 closeness rating.
   Swipe to compare: the minimum flip needed to hand Trump the win outright (left) vs. the minimum votes needed to strip Biden of a majority and send the election to the House (right).
 </div>
 
+{% jupyter_cell_embed "assets/jupyter/flip_scenarios.ipynb" tag="2020" %}
+
 ## An Honorable Mention of 2024
 
 <div class="pswp-gallery mt-3" id="2024-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
@@ -551,6 +572,8 @@ Relative to the absurdly close elections of 2016 and 2020, 2024 was relatively d
 <div class="caption mt-2">
   Animation of the 2024 election flip.
 </div>
+
+{% jupyter_cell_embed "assets/jupyter/flip_scenarios.ipynb" tag="2024" %}
 
 ## Conclusion
 
