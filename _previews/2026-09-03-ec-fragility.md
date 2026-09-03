@@ -23,6 +23,17 @@ toc:
   - name: Introduction
     subsections:
       - name: "2000 and 2004"
+      - name: Methodology
+  - name: "1876"
+  - name: The 1880s
+  - name: "1916"
+  - name: "1948"
+  - name: "1960"
+  - name: "1976"
+  - name: "2016"
+  - name: "2020"
+  - name: An Honorable Mention of 2024
+  - name: Conclusion
 ---
 
 ## Introduction
@@ -41,7 +52,97 @@ The candidate who wins a majority of all electoral votes is elected president. T
 
 When people think "close election", I would wager that the first election that comes to mind is the 2000 election. This race was decided entirely by a highly contested Florida. The final certified results had Bush winning by 537 votes, though many have argued that Gore was the rightful winner due to "hanging chads" and the confusing "butterfly ballots", as well as the fact that Ralph Nader may have siphoned off crucial votes. The final result was Bush winning the election, despite the fact that Gore had won the popular vote by over 500,000 votes! This was an exceptionally narrow popular vote margin of roughly 0.5%. I give this election a 5/5 closeness rating!
 
+<div class="pswp-gallery mt-3" id="2000-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
+  <a href="/assets/img/pres_flips/portraits/2000Bush.jpg"
+     data-pswp-width="1425"
+     data-pswp-height="1900"
+     target="_blank">
+    <img src="/assets/img/pres_flips/portraits/2000Bush.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="George W. Bush portrait" />
+  </a>
+  <a href="/assets/img/pres_flips/portraits/2000Gore.png"
+     data-pswp-width="1200"
+     data-pswp-height="1600"
+     target="_blank">
+    <img src="/assets/img/pres_flips/portraits/2000Gore.png" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Al Gore portrait" />
+  </a>
+</div>
+<div class="caption mt-2">
+  George W. Bush (R), the 43rd President of the United States, who served from 2001 to 2009, and Al Gore (D), the 45th Vice President of the United States, who was the Democratic candidate in the 2000 presidential election.
+</div>
+
+<div class="pswp-gallery mt-3" id="2000-animation">
+  <a href="/assets/img/pres_flips/2000_classic_votes.gif"
+     data-pswp-width="1080"
+     data-pswp-height="742"
+     target="_blank">
+    <img src="/assets/img/pres_flips/2000_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 2000 election classic votes" />
+  </a>
+</div>
+<div class="caption mt-2">
+  Animation of the 2000 election flip.
+</div>
+
 The 2004 election, by contrast, was not nearly as close in the popular vote, with George W. Bush defeating John Kerry by about 3 million votes, or roughly 2.5%. But that is misleading because it would not actually be that hard to destroy Bush's majority by flipping roughly 19,000 votes across three states: Nevada, New Mexico, and Iowa. This would leave the election as a 269-269 split, sending the decision to the House of Representatives once again. However, Bush would have likely won this anyway. To get Kerry across the finish line, you either have to flip about 60,000 votes in Ohio, or also flip Nebraska's second district, which Bush won by over 20 points. This election gets a 2/5 closeness rating from me.
+
+<div class="pswp-gallery mt-3" id="2004-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
+  <a href="/assets/img/pres_flips/portraits/2004Bush.jpg"
+     data-pswp-width="1968"
+     data-pswp-height="2489"
+     target="_blank">
+    <img src="/assets/img/pres_flips/portraits/2004Bush.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="George W. Bush portrait" />
+  </a>
+  <a href="/assets/img/pres_flips/portraits/2004Kerry.jpg"
+     data-pswp-width="1859"
+     data-pswp-height="2649"
+     target="_blank">
+    <img src="/assets/img/pres_flips/portraits/2004Kerry.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="John Kerry portrait" />
+  </a>
+</div>
+<div class="caption mt-2">
+  George W. Bush (R), the 43rd President of the United States, who served from 2001 to 2009, and John Kerry (D), the junior U.S. Senator from Massachusetts, who was the Democratic candidate in the 2004 presidential election.
+</div>
+
+<style>
+.flip-swipe-gallery {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.25rem;
+}
+.flip-swipe-gallery a {
+  flex: 0 0 92%;
+  scroll-snap-align: center;
+}
+.flip-swipe-gallery img {
+  width: 100%;
+  display: block;
+}
+@media (min-width: 768px) {
+  .flip-swipe-gallery a {
+    flex-basis: 70%;
+  }
+}
+</style>
+
+<div class="pswp-gallery flip-swipe-gallery mt-3" id="2004-animation">
+  <a href="/assets/img/pres_flips/2004_classic_votes.gif"
+     data-pswp-width="1080"
+     data-pswp-height="742"
+     target="_blank">
+    <img src="/assets/img/pres_flips/2004_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 2004 election classic votes: the minimum flip needed to hand Kerry the win outright" />
+  </a>
+  <a href="/assets/img/pres_flips/2004_no_majority_votes.gif"
+     data-pswp-width="1080"
+     data-pswp-height="742"
+     target="_blank">
+    <img src="/assets/img/pres_flips/2004_no_majority_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 2004 election no-majority votes: the minimum flip needed to strip Bush of a majority" />
+  </a>
+</div>
+<div class="caption mt-2">
+  Swipe to compare: the minimum flip needed to hand Kerry the win outright (left) vs. the minimum votes needed to strip Bush of a majority and send the election to the House (right).
+</div>
 
 These two elections provide an interesting contrast. 2000 was very clearly close, while 2004 was not particularly close in the popular vote, but still "fragile" in terms of the Electoral College. I would not call this election "close", however. But just looking at the Wikipedia page for the 2004 election, would not make it obvious how precarious Bush's victory actually was. The question we have to ask is "how many other elections were similarly fragile despite not appearing close in the popular vote?"
 
@@ -55,14 +156,14 @@ I ran a knapsack algorithm to determine the minimum number of votes that would n
 
 <div class="pswp-gallery mt-3" id="1876-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
   <a href="/assets/img/pres_flips/portraits/1876Hayes.jpg"
-     data-pswp-width="781"
-     data-pswp-height="1040"
+     data-pswp-width="1980"
+     data-pswp-height="2636"
      target="_blank">
     <img src="/assets/img/pres_flips/portraits/1876Hayes.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Rutherford B. Hayes portrait" />
   </a>
   <a href="/assets/img/pres_flips/portraits/1876Tilden.jpg"
-     data-pswp-width="781"
-     data-pswp-height="1040"
+     data-pswp-width="275"
+     data-pswp-height="366"
      target="_blank">
     <img src="/assets/img/pres_flips/portraits/1876Tilden.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Samuel Tilden portrait" />
   </a>
@@ -79,8 +180,8 @@ The most shocking fact about this election I found is that even if you give Haye
 
 <div class="pswp-gallery mt-3" id="1876-animation">
   <a href="/assets/img/pres_flips/1876_classic_votes.gif"
-     data-pswp-width="2500"
-     data-pswp-height="1617"
+     data-pswp-width="1080"
+     data-pswp-height="742"
      target="_blank">
     <img src="/assets/img/pres_flips/1876_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 1876 election classic votes" />
   </a>
@@ -95,22 +196,88 @@ The most shocking fact about this election I found is that even if you give Haye
 
 1880 had potentially the closest national popular vote in American history up to that point. Sources give the margin as between roughly 2,000 and 10,000 votes (approximately 0.1%). I give this a 2/5 closeness rating--this election is not quite as close as the following two elections involving Grover Cleveland in 1884 and 1888.
 
+<div class="pswp-gallery mt-3" id="1880-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
+  <a href="/assets/img/pres_flips/portraits/1880Garfield.jpg"
+     data-pswp-width="2250"
+     data-pswp-height="2999"
+     target="_blank">
+    <img src="/assets/img/pres_flips/portraits/1880Garfield.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="James A. Garfield portrait" />
+  </a>
+  <a href="/assets/img/pres_flips/portraits/1880Hancock.jpg"
+     data-pswp-width="2537"
+     data-pswp-height="3333"
+     target="_blank">
+    <img src="/assets/img/pres_flips/portraits/1880Hancock.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Winfield Scott Hancock portrait" />
+  </a>
+</div>
+<div class="caption mt-2">
+  James A. Garfield (R), the 20th President of the United States, who served from March to September 1881, and Winfield Scott Hancock (D), the Democratic candidate in the 1880 presidential election.
+</div>
+
 Most think of the 1888 election as the most controversial because Grover Cleveland won the popular vote but lost the electoral vote to Benjamin Harrison, being the last time this would happen until 2000. However, 1884 was *significantly* closer electorally. Cleveland won New York by only about 1,000 votes. Flipping under 600 votes from Cleveland to Blaine and Cleveland would not have been elected. I give 1884 a 4/5 closeness rating.
 
+<div class="pswp-gallery mt-3" id="1884-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
+  <a href="/assets/img/pres_flips/portraits/1884Cleveland.jpg"
+     data-pswp-width="542"
+     data-pswp-height="723"
+     target="_blank">
+    <img src="/assets/img/pres_flips/portraits/1884Cleveland.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Grover Cleveland portrait" />
+  </a>
+  <a href="/assets/img/pres_flips/portraits/1884Blaine.jpg"
+     data-pswp-width="2026"
+     data-pswp-height="2538"
+     target="_blank">
+    <img src="/assets/img/pres_flips/portraits/1884Blaine.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="James G. Blaine portrait" />
+  </a>
+</div>
+<div class="caption mt-2">
+  Grover Cleveland (D), the 22nd and 24th President of the United States, who served from 1885 to 1889 and 1893 to 1897, and James G. Blaine (R), the Republican candidate in the 1884 presidential election.
+</div>
+
+<div class="pswp-gallery mt-3" id="1884-animation">
+  <a href="/assets/img/pres_flips/1884_classic_votes.gif"
+     data-pswp-width="1080"
+     data-pswp-height="742"
+     target="_blank">
+    <img src="/assets/img/pres_flips/1884_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 1884 election classic votes" />
+  </a>
+</div>
+<div class="caption mt-2">
+  Animation of the 1884 election flip.
+</div>
+
 New York gave Cleveland the presidency, but then it took it away in 1888. Funny enough, the percent of votes you need to flip this election is actually relatively high, especially compared to 1884. 1888 gets a 3/5 closeness rating.
+
+<div class="pswp-gallery mt-3" id="1888-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
+  <a href="/assets/img/pres_flips/portraits/1888Harrison.jpg"
+     data-pswp-width="1509"
+     data-pswp-height="2012"
+     target="_blank">
+    <img src="/assets/img/pres_flips/portraits/1888Harrison.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Benjamin Harrison portrait" />
+  </a>
+  <a href="/assets/img/pres_flips/portraits/1884Cleveland.jpg"
+     data-pswp-width="542"
+     data-pswp-height="723"
+     target="_blank">
+    <img src="/assets/img/pres_flips/portraits/1884Cleveland.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Grover Cleveland portrait" />
+  </a>
+</div>
+<div class="caption mt-2">
+  Benjamin Harrison (R), the 23rd President of the United States, who served from 1889 to 1893, and Grover Cleveland (D), the incumbent president who narrowly lost his re-election bid in the 1888 presidential election.
+</div>
 
 ## 1916
 
 <div class="pswp-gallery mt-3" id="1916-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
  <a href="/assets/img/pres_flips/portraits/1916Wilson.jpg"
-     data-pswp-width="781"
-     data-pswp-height="1040"
+     data-pswp-width="2166"
+     data-pswp-height="2887"
      target="_blank">
     <img src="/assets/img/pres_flips/portraits/1916Wilson.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Woodrow Wilson portrait" />
   </a>
   <a href="/assets/img/pres_flips/portraits/1916Hughes.jpg"
-     data-pswp-width="781"
-     data-pswp-height="1040"
+     data-pswp-width="4567"
+     data-pswp-height="6395"
      target="_blank">
     <img src="/assets/img/pres_flips/portraits/1916Hughes.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Charles Evans Hughes portrait" />
   </a>
@@ -127,8 +294,8 @@ Fun fact: While some complain about the Electoral College because of its lack of
 
 <div class="pswp-gallery mt-3" id="1916-animation">
   <a href="/assets/img/pres_flips/1916_classic_votes.gif"
-     data-pswp-width="2500"
-     data-pswp-height="1617"
+     data-pswp-width="1080"
+     data-pswp-height="742"
      target="_blank">
     <img src="/assets/img/pres_flips/1916_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 1916 election classic votes" />
   </a>
@@ -141,14 +308,14 @@ Fun fact: While some complain about the Electoral College because of its lack of
 
 <div class="pswp-gallery mt-3" id="1948-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
   <a href="/assets/img/pres_flips/portraits/1948Truman.jpg"
-     data-pswp-width="781"
-     data-pswp-height="1040"
+     data-pswp-width="1947"
+     data-pswp-height="2597"
      target="_blank">
     <img src="/assets/img/pres_flips/portraits/1948Truman.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Harry S. Truman portrait" />
   </a>
   <a href="/assets/img/pres_flips/portraits/1948Dewey.jpg"
-     data-pswp-width="781"
-     data-pswp-height="1040"
+     data-pswp-width="2664"
+     data-pswp-height="3550"
      target="_blank">
     <img src="/assets/img/pres_flips/portraits/1948Dewey.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Thomas E. Dewey portrait" />
   </a>
@@ -159,24 +326,42 @@ Fun fact: While some complain about the Electoral College because of its lack of
 
 1916 was a blip between major landslides. It wasn't until 32 years later in 1948 that we saw another extremely close election. From 1920 to 1944, we had consecutive landslides. Republicans dominated the 1920's, and then FDR won by large margins in 1932, 1936, 1940, and 1944. It wasn't until Truman ran for reelection in 1948 that we found ourselves with another nail-biter.
 
-The 1948 election is a classic and iconic election to discuss. Thomas E. Dewey was running a second time, after losing the 1944 election to Franklin D. Roosevelt. Everyone expected Dewey to win easily, including Truman himself! He went to bed expecting to lose, just as the newspapers had predicted. However, Truman pulled off one of the greatest election upsets in American history, winning both the popular and electoral votes against all expectations. His popular vote victory wasn't narrow either, it was about 4.5% over Dewey. But the electoral college was a different story. California, and Ohio were both extremely close, and flipping both would have destroyed Truman's majority, due to the protesting southern states that had withheld their support from him. Flipping Illinois as well would have given Dewey the win outright. 
+The 1948 election is a classic and iconic election to discuss. Thomas E. Dewey was running a second time, after losing the 1944 election to Franklin D. Roosevelt. Everyone expected Dewey to win easily, including Truman himself! He went to bed expecting to lose, just as the newspapers had predicted. However, Truman pulled off one of the greatest election upsets in American history, winning both the popular and electoral votes against all expectations. His popular vote victory wasn't narrow either, it was about 4.5% over Dewey. But the electoral college was a different story. California, and Ohio were both extremely close, and flipping both would have destroyed Truman's majority, due to the protesting southern states that had withheld their support from him. Flipping Illinois as well would have given Dewey the win outright.
 
 However, relative to these other close elections, the 1948 election might be considered slightly less fragile. I give it a solid 2/5 closeness rating.
+
+<div class="pswp-gallery flip-swipe-gallery mt-3" id="1948-animation">
+  <a href="/assets/img/pres_flips/1948_classic_votes.gif"
+     data-pswp-width="1080"
+     data-pswp-height="742"
+     target="_blank">
+    <img src="/assets/img/pres_flips/1948_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 1948 election classic votes: the minimum flip needed to hand Dewey the win outright" />
+  </a>
+  <a href="/assets/img/pres_flips/1948_no_majority_votes.gif"
+     data-pswp-width="1080"
+     data-pswp-height="742"
+     target="_blank">
+    <img src="/assets/img/pres_flips/1948_no_majority_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 1948 election no-majority votes: the minimum flip needed to strip Truman of a majority" />
+  </a>
+</div>
+<div class="caption mt-2">
+  Swipe to compare: the minimum flip needed to hand Dewey the win outright (left) vs. the minimum votes needed to strip Truman of a majority and send the election to the House (right).
+</div>
 
 ## 1960
 
 <div class="pswp-gallery mt-3" id="1960-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
   <a href="/assets/img/pres_flips/portraits/1960Kennedy.jpg"
-     data-pswp-width="781"
-     data-pswp-height="1040"
+     data-pswp-width="937"
+     data-pswp-height="1317"
      target="_blank">
     <img src="/assets/img/pres_flips/portraits/1960Kennedy.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="John F. Kennedy portrait" />
   </a>
-  <a href="/assets/img/pres_flips/portraits/1960Nixon.jpg"
-     data-pswp-width="781"
-     data-pswp-height="1040"
+  <a href="/assets/img/pres_flips/portraits/1960Nixon.png"
+     data-pswp-width="433"
+     data-pswp-height="578"
      target="_blank">
-    <img src="/assets/img/pres_flips/portraits/1960Nixon.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Richard Nixon portrait" />
+    <img src="/assets/img/pres_flips/portraits/1960Nixon.png" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Richard Nixon portrait" />
   </a>
 </div>
 <div class="caption mt-2">
@@ -187,18 +372,36 @@ Eisenhower won his elections in the 50s comfortably, defeating Adlai Stevenson i
 
 Relatively speaking, this is a harder election to flip. Hawaii, newly a state, went to Kennedy by just 115 votes, making it the closest state in the election. Flipping Hawaii alone would not have changed the outcome, but flipping Nevada, New Mexico, and Illinois would have potentially broken Kennedy's majority, depending on what Alabama would do in response. But flipping Missouri as well gives Nixon a clear path to victory, assuming the other states remain as they were. Due to this ambiguity, and Kennedy's relatively spread out support across the country, I would rate the closeness of the 1960 election as 2.5/5.
 
+<div class="pswp-gallery flip-swipe-gallery mt-3" id="1960-animation">
+  <a href="/assets/img/pres_flips/1960_classic_votes.gif"
+     data-pswp-width="1080"
+     data-pswp-height="742"
+     target="_blank">
+    <img src="/assets/img/pres_flips/1960_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 1960 election classic votes: the minimum flip needed to hand Nixon the win outright" />
+  </a>
+  <a href="/assets/img/pres_flips/1960_no_majority_votes.gif"
+     data-pswp-width="1080"
+     data-pswp-height="742"
+     target="_blank">
+    <img src="/assets/img/pres_flips/1960_no_majority_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 1960 election no-majority votes: the minimum flip needed to strip Kennedy of a majority" />
+  </a>
+</div>
+<div class="caption mt-2">
+  Swipe to compare: the minimum flip needed to hand Nixon the win outright (left) vs. the minimum votes needed to strip Kennedy of a majority and send the election to the House (right).
+</div>
+
 ## 1976
 
 <div class="pswp-gallery mt-3" id="1976-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
   <a href="/assets/img/pres_flips/portraits/1976Carter.jpg"
-     data-pswp-width="781"
-     data-pswp-height="1040"
+     data-pswp-width="1805"
+     data-pswp-height="2408"
      target="_blank">
     <img src="/assets/img/pres_flips/portraits/1976Carter.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Jimmy Carter portrait" />
   </a>
   <a href="/assets/img/pres_flips/portraits/1976Ford.jpg"
-     data-pswp-width="781"
-     data-pswp-height="1040"
+     data-pswp-width="1125"
+     data-pswp-height="1501"
      target="_blank">
     <img src="/assets/img/pres_flips/portraits/1976Ford.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Gerald Ford portrait" />
   </a>
@@ -217,8 +420,8 @@ This election gets a 3.5/5 closeness rating.
 
 <div class="pswp-gallery mt-3" id="1976-animation">
   <a href="/assets/img/pres_flips/1976_classic_votes.gif"
-     data-pswp-width="2500"
-     data-pswp-height="1617"
+     data-pswp-width="1080"
+     data-pswp-height="742"
      target="_blank">
     <img src="/assets/img/pres_flips/1976_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 1976 election classic votes" />
   </a>
@@ -233,14 +436,14 @@ There wasn't a close election after 1976 until the previously discussed 2000 and
 
 <div class="pswp-gallery mt-3" id="2016-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
   <a href="/assets/img/pres_flips/portraits/2016Clinton.jpg"
-     data-pswp-width="781"
-     data-pswp-height="1040"
+     data-pswp-width="704"
+     data-pswp-height="976"
      target="_blank">
     <img src="/assets/img/pres_flips/portraits/2016Clinton.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Hillary Clinton portrait" />
   </a>
   <a href="/assets/img/pres_flips/portraits/2016Trump.jpg"
-     data-pswp-width="781"
-     data-pswp-height="1040"
+     data-pswp-width="1520"
+     data-pswp-height="2096"
      target="_blank">
     <img src="/assets/img/pres_flips/portraits/2016Trump.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Donald Trump portrait" />
   </a>
@@ -253,30 +456,36 @@ This is another highly scrutinized election. Despite Clinton's 2.1% popular vote
 
 This election gets a 4/5 closeness rating.
 
-<div class="pswp-gallery mt-3" id="2016-animation">
+<div class="pswp-gallery flip-swipe-gallery mt-3" id="2016-animation">
   <a href="/assets/img/pres_flips/2016_classic_votes.gif"
-     data-pswp-width="2500"
-     data-pswp-height="1617"
+     data-pswp-width="1080"
+     data-pswp-height="742"
      target="_blank">
-    <img src="/assets/img/pres_flips/2016_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 2016 election classic votes" />
+    <img src="/assets/img/pres_flips/2016_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 2016 election classic votes: the minimum flip needed to hand Clinton the win outright" />
+  </a>
+  <a href="/assets/img/pres_flips/2016_no_majority_votes.gif"
+     data-pswp-width="1080"
+     data-pswp-height="742"
+     target="_blank">
+    <img src="/assets/img/pres_flips/2016_no_majority_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 2016 election no-majority votes: the minimum flip needed to strip Trump of a majority" />
   </a>
 </div>
 <div class="caption mt-2">
-  Animation of the 2016 election flip.
+  Swipe to compare: the minimum flip needed to hand Clinton the win outright (left) vs. the minimum votes needed to strip Trump of a majority and send the election to the House (right).
 </div>
 
 ## 2020
 
 <div class="pswp-gallery mt-3" id="2020-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
   <a href="/assets/img/pres_flips/portraits/2020Biden.jpg"
-     data-pswp-width="781"
-     data-pswp-height="1040"
+     data-pswp-width="1491"
+     data-pswp-height="1988"
      target="_blank">
     <img src="/assets/img/pres_flips/portraits/2020Biden.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Joe Biden portrait" />
   </a>
   <a href="/assets/img/pres_flips/portraits/2016Trump.jpg"
-     data-pswp-width="781"
-     data-pswp-height="1040"
+     data-pswp-width="1520"
+     data-pswp-height="2096"
      target="_blank">
     <img src="/assets/img/pres_flips/portraits/2016Trump.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Donald Trump portrait" />
   </a>
@@ -291,18 +500,36 @@ Flipping roughly 22,000 votes across Arizona, Wisconsin, and Georgia would have 
 
 This election gets a 4/5 closeness rating.
 
+<div class="pswp-gallery flip-swipe-gallery mt-3" id="2020-animation">
+  <a href="/assets/img/pres_flips/2020_classic_votes.gif"
+     data-pswp-width="1080"
+     data-pswp-height="742"
+     target="_blank">
+    <img src="/assets/img/pres_flips/2020_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 2020 election classic votes: the minimum flip needed to hand Trump the win outright" />
+  </a>
+  <a href="/assets/img/pres_flips/2020_no_majority_votes.gif"
+     data-pswp-width="1080"
+     data-pswp-height="742"
+     target="_blank">
+    <img src="/assets/img/pres_flips/2020_no_majority_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 2020 election no-majority votes: the minimum flip needed to strip Biden of a majority" />
+  </a>
+</div>
+<div class="caption mt-2">
+  Swipe to compare: the minimum flip needed to hand Trump the win outright (left) vs. the minimum votes needed to strip Biden of a majority and send the election to the House (right).
+</div>
+
 ## An Honorable Mention of 2024
 
 <div class="pswp-gallery mt-3" id="2024-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
   <a href="/assets/img/pres_flips/portraits/2024Trump.jpg"
-     data-pswp-width="781"
-     data-pswp-height="1040"
+     data-pswp-width="1594"
+     data-pswp-height="2048"
      target="_blank">
     <img src="/assets/img/pres_flips/portraits/2024Trump.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Donald Trump portrait" />
   </a>
   <a href="/assets/img/pres_flips/portraits/2024Harris.jpg"
-     data-pswp-width="781"
-     data-pswp-height="1040"
+     data-pswp-width="1537"
+     data-pswp-height="2051"
      target="_blank">
     <img src="/assets/img/pres_flips/portraits/2024Harris.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Kamala Harris portrait" />
   </a>
@@ -315,8 +542,8 @@ Relative to the absurdly close elections of 2016 and 2020, 2024 was relatively d
 
 <div class="pswp-gallery mt-3" id="2024-animation">
   <a href="/assets/img/pres_flips/2024_classic_votes.gif"
-     data-pswp-width="2500"
-     data-pswp-height="1617"
+     data-pswp-width="1080"
+     data-pswp-height="742"
      target="_blank">
     <img src="/assets/img/pres_flips/2024_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 2024 election classic votes" />
   </a>
