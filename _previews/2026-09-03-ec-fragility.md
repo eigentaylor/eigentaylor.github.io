@@ -42,7 +42,7 @@ I have long been a nerd for presidential elections. I just find them super inter
 
 I know, it's a brave opinion to stand up and say, "we should just elect the winner of the national popular vote". Especially when people have elections like 2000 and 2016 at the front of their minds. But I don't know if many people appreciate just how close the Electoral College has been to breaking beyond the times it actually *did*.
 
-For those who do not know how the Electoral College actually works, let's go through it quickly. Voters do not vote directly for president, but rather for who their state will give its electoral votes to. With two exceptions, the candidate who gets the most votes in a state gets every single electoral college vote that state has. Even though George Bush only won Florida by 537 votes in 2000, he received all 27 electoral votes from the state, which resulted in his election.
+For those who do not know how the Electoral College actually works, let's go through it quickly. Voters do not vote directly for president, but rather for who their state will give its electoral votes to. With two exceptions, the candidate who gets the most votes in a state gets every single electoral college vote that state has. Even though George Bush only won Florida by 537 votes in 2000, he received all 25 electoral votes from the state, which resulted in his election.
 
 Nebraska and Maine are two exceptions, who give the overall winner in the state two votes, but give the winner in each district one electoral vote each. Thus, even though Republicans have recently won Nebraska by a landslide, it's second district is a blue dot that often somewhat narrowly votes for Demcorats. That means that Nebraska's five electoral votes often split with four going to Republicans and one going for Democrats. Maine similarly has a maverick second district which has recently been giving its electoral vote to Donald Trump in the last three elections.
 
@@ -173,7 +173,7 @@ I ran a knapsack algorithm to determine the minimum number of votes that would n
   Rutherford B. Hayes (R), the 19th President of the United States, who served from 1877 to 1881 and Samuel Tilden (D), the 25th Governor of New York, who was the Democratic candidate in the 1876 presidential election.
 </div>
 
-The 1876 election was one of the most disputed and controversial elections in American history. Rutherford B. Hayes, was only elected by overcoming all of the contested electoral votes in several states. Seven states were involved in the dispute, including South Carolina. In the end, Hayes win with the exact number of electoral votes needed to secure the presidency, 185 out of 369, and Samuel Tilden, his opponent, received 184 electoral votes. Even though Tilden won the national popular vote by 3% he still lost the election due to the distribution of electoral votes.
+The 1876 election was one of the most disputed and controversial elections in American history. Rutherford B. Hayes, was only elected by overcoming all of the contested electoral votes in several states. Four states were involved in the dispute, including South Carolina. In the end, Hayes win with the exact number of electoral votes needed to secure the presidency, 185 out of 369, and Samuel Tilden, his opponent, received 184 electoral votes. Even though Tilden won the national popular vote by 3% he still lost the election due to the distribution of electoral votes.
 
 South Carolina was the closest of the states, being flippable by roughly 500 votes. Hayes likely won this state, despite being the home of the Confederacy because of votes by newly freed slaves who were largely supportive of the Republican Party at the time, and had their right to vote protected by federal troops. This election resulted in the end of Reconstruction, which marked the withdrawal of federal troops from the South and the beginning of the Jim Crow era. This was thus the last time that South Carolina voted for a Republican for **88 years**, until it voted against Lyndon B. Johnson in 1964 because of the national Democratic Party's support for civil rights legislation.
 
@@ -429,7 +429,7 @@ Fun fact, from 1960 to 1976, every presidential election had a national popular 
 
 Despite Watergate, Carter almost didn't win the election. Losing the entire western United States, and instead flipping the south back to the Democrats, Carter's modest 2.1% popular vote margin hides how close he was to losing the electoral college.
 
-Flipping under 10,000 votes in Ohio and Hawaii would have given Ford exactly 270 electoral votes, securing a narrow victory in the 1976 presidential election. Hawaii wasn't particularly close, but the raw vote margin was small enough to make it the optimal flip. Wisconsin was also very narrow, and a small shift there along with Ohio would have required flipping smaller margins.
+Flipping under 10,000 votes in Ohio and Hawaii would have given Ford exactly 270 electoral votes, securing a narrow victory in the 1976 presidential election. Hawaii wasn't particularly close by percentage, but the raw vote margin was small enough to make it the optimal flip alongside Ohio. Wisconsin was narrower in percentage terms than Hawaii, but the raw vote margin was larger, making it a less optimal flip.
 
 This election gets a 3.5/5 closeness rating.
 
