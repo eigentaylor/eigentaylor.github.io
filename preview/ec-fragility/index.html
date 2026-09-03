@@ -1,0 +1,873 @@
+<!DOCTYPE html> <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta name="robots" content="noindex, nofollow"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> How Close? A History of Fragile Presidential Elections | Taylor Eigen Fisher </title> <meta name="author" content="Taylor Eigen Fisher"> <meta name="description" content="Analyzing the most " fragile presidential elections since and how consistently close to breaking the electoral college has truly been.> <meta name="keywords" content="math, blog, approval-voting, social-choice, voting, differential-equations, linear-algebra, taylor-eigen-fisher"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>:root{--max-content-width:930px}</style> <link rel="stylesheet" href="/assets/css/tailwind.css"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.20.0/dist/tabler-icons.min.css"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/lambdasigma.png"> <link rel="stylesheet" href="/assets/css/main.css"> <link rel="canonical" href="https://eigentaylor.github.io/preview/ec-fragility/"> <script src="/assets/js/theme.js"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.min.css" crossorigin="anonymous"> <script src="/assets/js/distillpub/template.v2.js"></script> <script src="/assets/js/distillpub/transforms.v2.js"></script> </head> <body> <d-front-matter> <script async type="text/json">
+      {
+            "title": "How Close? A History of Fragile Presidential Elections",
+            "description": "Analyzing the most "fragile" presidential elections since 1864, and how consistently close to breaking the electoral college has truly been.",
+            "published": "September 03, 2026",
+            "authors": [
+              
+              {
+                "author": "Taylor Eigen Fisher",
+                "authorURL": "",
+                "affiliations": [
+                  {
+                    "name": "Equal Vote Coalition (Volunteer)",
+                    "url": ""
+                  }
+                ]
+              }
+              
+            ],
+            "katex": {
+              "delimiters": [
+                {
+                  "left": "$",
+                  "right": "$",
+                  "display": false
+                },
+                {
+                  "left": "$$",
+                  "right": "$$",
+                  "display": true
+                }
+              ]
+            }
+          }
+    </script> </d-front-matter> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Taylor Eigen Fisher </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/teaching/">teaching </a> </li> <li class="nav-item"> <a class="nav-link nav-link-subscribe" href="https://buttondown.com/eigentaylor" target="_blank" rel="noopener"> subscribe </a> </li> <li class="nav-item"> <button id="search-toggle" title="Search" onclick="openSearchModal()"> <span class="nav-link">ctrl k <i class="ti ti-search"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="ti ti-sun-moon" id="light-toggle-system"></i> <i class="ti ti-moon-filled" id="light-toggle-dark"></i> <i class="ti ti-sun-filled" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="post distill"> <div class="draft-preview-banner" style="background: #141001; border: 1px solid #fbff07; border-radius: 8px; padding: 12px 20px; margin-bottom: 20px; text-align: center; font-size: 0.95rem; color: #f6bf19;"> 📝 <strong style="color: inherit;">Draft Preview</strong> — This post is not yet published. Please don't share this link widely. </div> <style>#live-update-banner{display:none;position:fixed;z-index:20;top:64px;right:12px;max-width:200px;padding:8px 12px;border:1px solid var(--global-theme-color);border-radius:10px;background:color-mix(in srgb,var(--global-bg-color) 80%,transparent);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:var(--global-text-color);font-size:.85rem;text-align:center;opacity:.6;transition:opacity .2s ease}#live-update-banner:hover,#live-update-banner:focus-within{opacity:1}#live-update-refresh-btn{display:inline-block;margin-top:6px;padding:4px 12px;border:1px solid var(--global-theme-color);border-radius:6px;background:var(--global-theme-color);color:var(--global-bg-color);cursor:pointer;font-size:.85rem}@media(min-width:1024px){#live-update-banner{top:50%;right:16px;transform:translateY(-50%);max-width:180px;padding:14px 16px;font-size:.9rem}}</style> <div id="live-update-banner"> 🔄 <strong style="color: inherit;">This page has been updated.</strong><br> <button type="button" id="live-update-refresh-btn">Refresh</button> </div> <d-title> <h1>How Close? A History of Fragile Presidential Elections</h1> <p>Analyzing the most "fragile" presidential elections since 1864, and how consistently close to breaking the electoral college has truly been.</p> </d-title> <d-byline data-read-time="26 min read"></d-byline> <d-article> <d-contents> <nav class="l-text figcaption"> <h3>Contents</h3> <div> <a href="#introduction">Introduction</a> </div> <ul> <li> <a href="#2000-and-2004">2000 and 2004</a> </li> <li> <a href="#methodology">Methodology</a> </li> </ul> <div> <a href="#1876">1876</a> </div> <div> <a href="#the-1880s">The 1880s</a> </div> <div> <a href="#1916">1916</a> </div> <div> <a href="#1948">1948</a> </div> <div> <a href="#1960">1960</a> </div> <div> <a href="#1976">1976</a> </div> <div> <a href="#2016">2016</a> </div> <div> <a href="#2020">2020</a> </div> <div> <a href="#an-honorable-mention-of-2024">An Honorable Mention of 2024</a> </div> <div> <a href="#conclusion">Conclusion</a> </div> </nav> </d-contents> <h2 id="introduction">Introduction</h2> <p>I have long been a nerd for presidential elections. I just find them super interesting! The Electoral College is one of the most fascinating terrible things we have.</p> <p>I know, it’s a brave opinion to stand up and say, “we should just elect the winner of the national popular vote”. Especially when people have elections like 2000 and 2016 at the front of their minds. But I don’t know if many people appreciate just how close the Electoral College has been to breaking beyond the times it actually <em>did</em>.</p> <p>For those who do not know how the Electoral College actually works, let’s go through it quickly. Voters do not vote directly for president, but rather for who their state will give its electoral votes to. With two exceptions, the candidate who gets the most votes in a state gets every single electoral college vote that state has. Even though George Bush only won Florida by 537 votes in 2000, he received all 27 electoral votes from the state, which resulted in his election.</p> <p>Nebraska and Maine are two exceptions, who give the overall winner in the state two votes, but give the winner in each district one electoral vote each. Thus, even though Republicans have recently won Nebraska by a landslide, it’s second district is a blue dot that often somewhat narrowly votes for Demcorats. That means that Nebraska’s five electoral votes often split with four going to Republicans and one going for Democrats. Maine similarly has a maverick second district which has recently been giving its electoral vote to Donald Trump in the last three elections.</p> <p>The candidate who wins a majority of all electoral votes is elected president. Today, that is 270 of the total 538. Each state gets one electoral vote per congressional district, plus two from its senate seats, which makes the electoral power of states fairly unproportional. If no candidate receives a majority, which has happened once in 1824, it goes to the House of Representatives, which is a mess that everyone would rather avoid.</p> <h3 id="2000-and-2004">2000 and 2004</h3> <p>When people think “close election”, I would wager that the first election that comes to mind is the 2000 election. This race was decided entirely by a highly contested Florida. The final certified results had Bush winning by 537 votes, though many have argued that Gore was the rightful winner due to “hanging chads” and the confusing “butterfly ballots”, as well as the fact that Ralph Nader may have siphoned off crucial votes. The final result was Bush winning the election, despite the fact that Gore had won the popular vote by over 500,000 votes! This was an exceptionally narrow popular vote margin of roughly 0.5%. I give this election a 5/5 closeness rating!</p> <div class="pswp-gallery mt-3" id="2000-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;"> <a href="/assets/img/pres_flips/portraits/2000Bush.jpg" data-pswp-width="1425" data-pswp-height="1900" target="_blank"> <img src="/assets/img/pres_flips/portraits/2000Bush.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="George W. Bush portrait"> </a> <a href="/assets/img/pres_flips/portraits/2000Gore.png" data-pswp-width="1200" data-pswp-height="1600" target="_blank"> <img src="/assets/img/pres_flips/portraits/2000Gore.png" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Al Gore portrait"> </a> </div> <div class="caption mt-2"> George W. Bush (R), the 43rd President of the United States, who served from 2001 to 2009, and Al Gore (D), the 45th Vice President of the United States, who was the Democratic candidate in the 2000 presidential election. </div> <div class="pswp-gallery mt-3" id="2000-animation"> <a href="/assets/img/pres_flips/2000_classic_votes.gif" data-pswp-width="1080" data-pswp-height="742" target="_blank"> <img src="/assets/img/pres_flips/2000_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 2000 election classic votes"> </a> </div> <div class="caption mt-2"> Animation of the 2000 election flip. </div> <p>The 2004 election, by contrast, was not nearly as close in the popular vote, with George W. Bush defeating John Kerry by about 3 million votes, or roughly 2.5%. But that is misleading because it would not actually be that hard to destroy Bush’s majority by flipping roughly 19,000 votes across three states: Nevada, New Mexico, and Iowa. This would leave the election as a 269-269 split, sending the decision to the House of Representatives once again. However, Bush would have likely won this anyway. To get Kerry across the finish line, you either have to flip about 60,000 votes in Ohio, or also flip Nebraska’s second district, which Bush won by over 20 points. This election gets a 2/5 closeness rating from me.</p> <div class="pswp-gallery mt-3" id="2004-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;"> <a href="/assets/img/pres_flips/portraits/2004Bush.jpg" data-pswp-width="1968" data-pswp-height="2489" target="_blank"> <img src="/assets/img/pres_flips/portraits/2004Bush.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="George W. Bush portrait"> </a> <a href="/assets/img/pres_flips/portraits/2004Kerry.jpg" data-pswp-width="1859" data-pswp-height="2649" target="_blank"> <img src="/assets/img/pres_flips/portraits/2004Kerry.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="John Kerry portrait"> </a> </div> <div class="caption mt-2"> George W. Bush (R), the 43rd President of the United States, who served from 2001 to 2009, and John Kerry (D), the junior U.S. Senator from Massachusetts, who was the Democratic candidate in the 2004 presidential election. </div> <style>.flip-swipe-gallery{display:flex;gap:.75rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:.25rem}.flip-swipe-gallery a{flex:0 0 92%;scroll-snap-align:center}.flip-swipe-gallery img{width:100%;display:block}@media(min-width:768px){.flip-swipe-gallery a{flex-basis:70%}}</style> <div class="pswp-gallery flip-swipe-gallery mt-3" id="2004-animation"> <a href="/assets/img/pres_flips/2004_classic_votes.gif" data-pswp-width="1080" data-pswp-height="742" target="_blank"> <img src="/assets/img/pres_flips/2004_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 2004 election classic votes: the minimum flip needed to hand Kerry the win outright"> </a> <a href="/assets/img/pres_flips/2004_no_majority_votes.gif" data-pswp-width="1080" data-pswp-height="742" target="_blank"> <img src="/assets/img/pres_flips/2004_no_majority_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 2004 election no-majority votes: the minimum flip needed to strip Bush of a majority"> </a> </div> <div class="caption mt-2"> Swipe to compare: the minimum flip needed to hand Kerry the win outright (left) vs. the minimum votes needed to strip Bush of a majority and send the election to the House (right). </div> <p>These two elections provide an interesting contrast. 2000 was very clearly close, while 2004 was not particularly close in the popular vote, but still “fragile” in terms of the Electoral College. I would not call this election “close”, however. But just looking at the Wikipedia page for the 2004 election, would not make it obvious how precarious Bush’s victory actually was. The question we have to ask is “how many other elections were similarly fragile despite not appearing close in the popular vote?”</p> <p>We will look back at the elections since the Civil war 1864, partially because that’s when the modern two-party system began to solidify, and also because that’s where my data set ends. I may do a follow up analysis for earlier elections some other time.</p> <h3 id="methodology">Methodology</h3> <p>I ran a knapsack algorithm to determine the minimum number of votes that would need to be flipped across states to change the outcome of the Electoral College, effectively identifying the “fragility” of each election. For example, Florida went to Bush by 537 votes, so flipping 269 votes from Bush to Gore would result in Gore winning by a single vote. This approach allows us to quantify how “fragile” an election was, even if the popular vote margin was relatively large.</p> <h2 id="1876">1876</h2> <div class="pswp-gallery mt-3" id="1876-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;"> <a href="/assets/img/pres_flips/portraits/1876Hayes.jpg" data-pswp-width="1980" data-pswp-height="2636" target="_blank"> <img src="/assets/img/pres_flips/portraits/1876Hayes.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Rutherford B. Hayes portrait"> </a> <a href="/assets/img/pres_flips/portraits/1876Tilden.jpg" data-pswp-width="275" data-pswp-height="366" target="_blank"> <img src="/assets/img/pres_flips/portraits/1876Tilden.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Samuel Tilden portrait"> </a> </div> <div class="caption mt-2"> Rutherford B. Hayes (R), the 19th President of the United States, who served from 1877 to 1881 and Samuel Tilden (D), the 25th Governor of New York, who was the Democratic candidate in the 1876 presidential election. </div> <p>The 1876 election was one of the most disputed and controversial elections in American history. Rutherford B. Hayes, was only elected by overcoming all of the contested electoral votes in several states. Seven states were involved in the dispute, including South Carolina. In the end, Hayes win with the exact number of electoral votes needed to secure the presidency, 185 out of 369, and Samuel Tilden, his opponent, received 184 electoral votes. Even though Tilden won the national popular vote by 3% he still lost the election due to the distribution of electoral votes.</p> <p>South Carolina was the closest of the states, being flippable by roughly 500 votes. Hayes likely won this state, despite being the home of the Confederacy because of votes by newly freed slaves who were largely supportive of the Republican Party at the time, and had their right to vote protected by federal troops. This election resulted in the end of Reconstruction, which marked the withdrawal of federal troops from the South and the beginning of the Jim Crow era. This was thus the last time that South Carolina voted for a Republican for <strong>88 years</strong>, until it voted against Lyndon B. Johnson in 1964 because of the national Democratic Party’s support for civil rights legislation.</p> <p>The most shocking fact about this election I found is that even if you give Hayes all of the contested electoral votes, Tilden would have <strong>still won</strong> if the apportionment of electoral votes had been <strong>done correctly by the legislated rules at the time</strong>.</p> <div class="pswp-gallery mt-3" id="1876-animation"> <a href="/assets/img/pres_flips/1876_classic_votes.gif" data-pswp-width="1080" data-pswp-height="742" target="_blank"> <img src="/assets/img/pres_flips/1876_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 1876 election classic votes"> </a> </div> <div class="caption mt-2"> Animation of the 1876 election flip. </div> <h2 id="the-1880s">The 1880s</h2> <p>1876 wasn’t the end of highly close elections in the later decades of the 19th century. In fact, all three subsequent presidential elections in the 1880s were also absurdly close and fraught with controversy. The most interesting aspect of these elections is that all three were decided by New York. New York was the largest state, and also frighteningly a swing state.</p> <p>1880 had potentially the closest national popular vote in American history up to that point. Sources give the margin as between roughly 2,000 and 10,000 votes (approximately 0.1%). I give this a 2/5 closeness rating–this election is not quite as close as the following two elections involving Grover Cleveland in 1884 and 1888.</p> <div class="pswp-gallery mt-3" id="1880-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;"> <a href="/assets/img/pres_flips/portraits/1880Garfield.jpg" data-pswp-width="2250" data-pswp-height="2999" target="_blank"> <img src="/assets/img/pres_flips/portraits/1880Garfield.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="James A. Garfield portrait"> </a> <a href="/assets/img/pres_flips/portraits/1880Hancock.jpg" data-pswp-width="2537" data-pswp-height="3333" target="_blank"> <img src="/assets/img/pres_flips/portraits/1880Hancock.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Winfield Scott Hancock portrait"> </a> </div> <div class="caption mt-2"> James A. Garfield (R), the 20th President of the United States, who served from March to September 1881, and Winfield Scott Hancock (D), the Democratic candidate in the 1880 presidential election. </div> <p>Most think of the 1888 election as the most controversial because Grover Cleveland won the popular vote but lost the electoral vote to Benjamin Harrison, being the last time this would happen until 2000. However, 1884 was <em>significantly</em> closer electorally. Cleveland won New York by only about 1,000 votes. Flipping under 600 votes from Cleveland to Blaine and Cleveland would not have been elected. I give 1884 a 4/5 closeness rating.</p> <div class="pswp-gallery mt-3" id="1884-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;"> <a href="/assets/img/pres_flips/portraits/1884Cleveland.jpg" data-pswp-width="542" data-pswp-height="723" target="_blank"> <img src="/assets/img/pres_flips/portraits/1884Cleveland.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Grover Cleveland portrait"> </a> <a href="/assets/img/pres_flips/portraits/1884Blaine.jpg" data-pswp-width="2026" data-pswp-height="2538" target="_blank"> <img src="/assets/img/pres_flips/portraits/1884Blaine.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="James G. Blaine portrait"> </a> </div> <div class="caption mt-2"> Grover Cleveland (D), the 22nd and 24th President of the United States, who served from 1885 to 1889 and 1893 to 1897, and James G. Blaine (R), the Republican candidate in the 1884 presidential election. </div> <div class="pswp-gallery mt-3" id="1884-animation"> <a href="/assets/img/pres_flips/1884_classic_votes.gif" data-pswp-width="1080" data-pswp-height="742" target="_blank"> <img src="/assets/img/pres_flips/1884_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 1884 election classic votes"> </a> </div> <div class="caption mt-2"> Animation of the 1884 election flip. </div> <p>New York gave Cleveland the presidency, but then it took it away in 1888. Funny enough, the percent of votes you need to flip this election is actually relatively high, especially compared to 1884. 1888 gets a 3/5 closeness rating.</p> <div class="pswp-gallery mt-3" id="1888-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;"> <a href="/assets/img/pres_flips/portraits/1888Harrison.jpg" data-pswp-width="1509" data-pswp-height="2012" target="_blank"> <img src="/assets/img/pres_flips/portraits/1888Harrison.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Benjamin Harrison portrait"> </a> <a href="/assets/img/pres_flips/portraits/1884Cleveland.jpg" data-pswp-width="542" data-pswp-height="723" target="_blank"> <img src="/assets/img/pres_flips/portraits/1884Cleveland.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Grover Cleveland portrait"> </a> </div> <div class="caption mt-2"> Benjamin Harrison (R), the 23rd President of the United States, who served from 1889 to 1893, and Grover Cleveland (D), the incumbent president who narrowly lost his re-election bid in the 1888 presidential election. </div> <h2 id="1916">1916</h2> <div class="pswp-gallery mt-3" id="1916-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;"> <a href="/assets/img/pres_flips/portraits/1916Wilson.jpg" data-pswp-width="2166" data-pswp-height="2887" target="_blank"> <img src="/assets/img/pres_flips/portraits/1916Wilson.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Woodrow Wilson portrait"> </a> <a href="/assets/img/pres_flips/portraits/1916Hughes.jpg" data-pswp-width="4567" data-pswp-height="6395" target="_blank"> <img src="/assets/img/pres_flips/portraits/1916Hughes.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Charles Evans Hughes portrait"> </a> </div> <div class="caption mt-2"> Woodrow Wilson (D), the 28th President of the United States, who served from 1913 to 1921 and Charles Evans Hughes (R), the losing candidate in the 1916 presidential election. </div> <p>A common theme of this post is that we’ll have a sort of cluster of close elections with long gaps of relatively uncontroversial ones in between. After Cleveland won back the presidency in 1892, Republicans dominated the electoral college for nearly the next two decades, until Woodrow Wilson “squeaked” in a landslide victory in 1912 when Teddy Roosevelt’s third-party run split the Republican vote.</p> <p>Wilson then was only narrowly reelected in 1916, defeating Charles Evans Hughes by a very slim margin in both the popular and electoral votes. The election was decided entirely by California, which went to Wilson by under 4,000 votes. Flipping under 2,000 votes from Wilson to Hughes in California would have given Hughes the presidency. I give the 1916 election a 4/5 closeness rating.</p> <p>Fun fact: While some complain about the Electoral College because of its lack of proportionally, there is actually some evidence that the senate seat bump actually <em>helps</em> national popular vote winners. Indeed, even if Wilson wins California, removing the two extra electoral votes each state gets from their Senate representation would have caused him to lose! Wilson won 30 states, and if you subtract the 60 extra electoral votes from his total, he would have lost the election despite winning the popular vote with 217 electoral votes out of the needed 218.</p> <div class="pswp-gallery mt-3" id="1916-animation"> <a href="/assets/img/pres_flips/1916_classic_votes.gif" data-pswp-width="1080" data-pswp-height="742" target="_blank"> <img src="/assets/img/pres_flips/1916_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 1916 election classic votes"> </a> </div> <div class="caption mt-2"> Animation of the 1916 election flip. </div> <h2 id="1948">1948</h2> <div class="pswp-gallery mt-3" id="1948-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;"> <a href="/assets/img/pres_flips/portraits/1948Truman.jpg" data-pswp-width="1947" data-pswp-height="2597" target="_blank"> <img src="/assets/img/pres_flips/portraits/1948Truman.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Harry S. Truman portrait"> </a> <a href="/assets/img/pres_flips/portraits/1948Dewey.jpg" data-pswp-width="2664" data-pswp-height="3550" target="_blank"> <img src="/assets/img/pres_flips/portraits/1948Dewey.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Thomas E. Dewey portrait"> </a> </div> <div class="caption mt-2"> Harry S. Truman (D), the 33rd President of the United States, who served from 1945 to 1953 and Thomas E. Dewey (R), the Republican candidate in the 1948 presidential election. </div> <p>1916 was a blip between major landslides. It wasn’t until 32 years later in 1948 that we saw another extremely close election. From 1920 to 1944, we had consecutive landslides. Republicans dominated the 1920’s, and then FDR won by large margins in 1932, 1936, 1940, and 1944. It wasn’t until Truman ran for reelection in 1948 that we found ourselves with another nail-biter.</p> <p>The 1948 election is a classic and iconic election to discuss. Thomas E. Dewey was running a second time, after losing the 1944 election to Franklin D. Roosevelt. Everyone expected Dewey to win easily, including Truman himself! He went to bed expecting to lose, just as the newspapers had predicted. However, Truman pulled off one of the greatest election upsets in American history, winning both the popular and electoral votes against all expectations. His popular vote victory wasn’t narrow either, it was about 4.5% over Dewey. But the electoral college was a different story. California, and Ohio were both extremely close, and flipping both would have destroyed Truman’s majority, due to the protesting southern states that had withheld their support from him. Flipping Illinois as well would have given Dewey the win outright.</p> <p>However, relative to these other close elections, the 1948 election might be considered slightly less fragile. I give it a solid 2/5 closeness rating.</p> <div class="pswp-gallery flip-swipe-gallery mt-3" id="1948-animation"> <a href="/assets/img/pres_flips/1948_classic_votes.gif" data-pswp-width="1080" data-pswp-height="742" target="_blank"> <img src="/assets/img/pres_flips/1948_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 1948 election classic votes: the minimum flip needed to hand Dewey the win outright"> </a> <a href="/assets/img/pres_flips/1948_no_majority_votes.gif" data-pswp-width="1080" data-pswp-height="742" target="_blank"> <img src="/assets/img/pres_flips/1948_no_majority_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 1948 election no-majority votes: the minimum flip needed to strip Truman of a majority"> </a> </div> <div class="caption mt-2"> Swipe to compare: the minimum flip needed to hand Dewey the win outright (left) vs. the minimum votes needed to strip Truman of a majority and send the election to the House (right). </div> <h2 id="1960">1960</h2> <div class="pswp-gallery mt-3" id="1960-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;"> <a href="/assets/img/pres_flips/portraits/1960Kennedy.jpg" data-pswp-width="937" data-pswp-height="1317" target="_blank"> <img src="/assets/img/pres_flips/portraits/1960Kennedy.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="John F. Kennedy portrait"> </a> <a href="/assets/img/pres_flips/portraits/1960Nixon.png" data-pswp-width="433" data-pswp-height="578" target="_blank"> <img src="/assets/img/pres_flips/portraits/1960Nixon.png" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Richard Nixon portrait"> </a> </div> <div class="caption mt-2"> John F. Kennedy (D), the 35th President of the United States, who served from 1961 to 1963 and Richard Nixon (R), the 37th Vice President of the United States, who was the Republican candidate in the 1960 presidential election. </div> <p>Eisenhower won his elections in the 50s comfortably, defeating Adlai Stevenson in both 1952 and 1956. However, the 1960 election between John F. Kennedy and Richard Nixon was much closer. We still have no idea who won the popular vote due to the absolutely convoluted insanity of Alabama. The common interpretation of the results gives Kennedy the win by about 0.2%, but it’s entirely possible Richard Nixon could be the third candidate, after Andrew Jackson and Grover Cleveland, to win the popular vote three times, but only serve two terms as president due to Electoral College shenanigans.</p> <p>Relatively speaking, this is a harder election to flip. Hawaii, newly a state, went to Kennedy by just 115 votes, making it the closest state in the election. Flipping Hawaii alone would not have changed the outcome, but flipping Nevada, New Mexico, and Illinois would have potentially broken Kennedy’s majority, depending on what Alabama would do in response. But flipping Missouri as well gives Nixon a clear path to victory, assuming the other states remain as they were. Due to this ambiguity, and Kennedy’s relatively spread out support across the country, I would rate the closeness of the 1960 election as 2.5/5.</p> <div class="pswp-gallery flip-swipe-gallery mt-3" id="1960-animation"> <a href="/assets/img/pres_flips/1960_classic_votes.gif" data-pswp-width="1080" data-pswp-height="742" target="_blank"> <img src="/assets/img/pres_flips/1960_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 1960 election classic votes: the minimum flip needed to hand Nixon the win outright"> </a> <a href="/assets/img/pres_flips/1960_no_majority_votes.gif" data-pswp-width="1080" data-pswp-height="742" target="_blank"> <img src="/assets/img/pres_flips/1960_no_majority_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 1960 election no-majority votes: the minimum flip needed to strip Kennedy of a majority"> </a> </div> <div class="caption mt-2"> Swipe to compare: the minimum flip needed to hand Nixon the win outright (left) vs. the minimum votes needed to strip Kennedy of a majority and send the election to the House (right). </div> <h2 id="1976">1976</h2> <div class="pswp-gallery mt-3" id="1976-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;"> <a href="/assets/img/pres_flips/portraits/1976Carter.jpg" data-pswp-width="1805" data-pswp-height="2408" target="_blank"> <img src="/assets/img/pres_flips/portraits/1976Carter.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Jimmy Carter portrait"> </a> <a href="/assets/img/pres_flips/portraits/1976Ford.jpg" data-pswp-width="1125" data-pswp-height="1501" target="_blank"> <img src="/assets/img/pres_flips/portraits/1976Ford.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Gerald Ford portrait"> </a> </div> <div class="caption mt-2"> Jimmy Carter (D), the 39th President of the United States, who served from 1977 to 1981 and Gerald Ford (R), the 38th President of the United States, who was the Republican candidate in the 1976 presidential election. </div> <p>Fun fact, from 1960 to 1976, every presidential election had a national popular vote swing of over 20 percentage points. Carter’s victory in 1976 is a blip in many ways. A single democratic victory amidst 5 Republican wins, sandwiched between Richard Nixon and Ronald Reagan, who had legendary reelection landslides. One may be surprised that the near-miss of 1968 is not being focused on, but Nixon actually won most of his states quite decisively, compared to the other elections, so I would only give it a 1/5 closeness.</p> <p>Despite Watergate, Carter almost didn’t win the election. Losing the entire western United States, and instead flipping the south back to the Democrats, Carter’s modest 2.1% popular vote margin hides how close he was to losing the electoral college.</p> <p>Flipping under 10,000 votes in Ohio and Hawaii would have given Ford exactly 270 electoral votes, securing a narrow victory in the 1976 presidential election. Hawaii wasn’t particularly close, but the raw vote margin was small enough to make it the optimal flip. Wisconsin was also very narrow, and a small shift there along with Ohio would have required flipping smaller margins.</p> <p>This election gets a 3.5/5 closeness rating.</p> <div class="pswp-gallery mt-3" id="1976-animation"> <a href="/assets/img/pres_flips/1976_classic_votes.gif" data-pswp-width="1080" data-pswp-height="742" target="_blank"> <img src="/assets/img/pres_flips/1976_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 1976 election classic votes"> </a> </div> <div class="caption mt-2"> Animation of the 1976 election flip. </div> <h2 id="2016">2016</h2> <p>There wasn’t a close election after 1976 until the previously discussed 2000 and 2004 elections. Barack Obama won both of his elections by comfortable margins, but the same cannot be said about the 2016 election, where Donald Trump won the Electoral College despite losing the popular vote.</p> <div class="pswp-gallery mt-3" id="2016-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;"> <a href="/assets/img/pres_flips/portraits/2016Clinton.jpg" data-pswp-width="704" data-pswp-height="976" target="_blank"> <img src="/assets/img/pres_flips/portraits/2016Clinton.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Hillary Clinton portrait"> </a> <a href="/assets/img/pres_flips/portraits/2016Trump.jpg" data-pswp-width="1520" data-pswp-height="2096" target="_blank"> <img src="/assets/img/pres_flips/portraits/2016Trump.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Donald Trump portrait"> </a> </div> <div class="caption mt-2"> Hillary Clinton (D), the Democratic candidate in the 2016 presidential election, and Donald Trump (R), the 45th and 47th President of the United States, who served from 2017 to 2021, and now 2025 to present. </div> <p>This is another highly scrutinized election. Despite Clinton’s 2.1% popular vote margin, Trump was able to secure a victory in the Electoral College by breaking the “blue wall”. Wisconsin, Michigan, and Pennsylvania, which had reliably voted Democratic for over 20 years, flipped to the Republicans by under a percentage point each. Under 40,000 votes would need to be flipped across these states to give the victory to Clinton.</p> <p>This election gets a 4/5 closeness rating.</p> <div class="pswp-gallery flip-swipe-gallery mt-3" id="2016-animation"> <a href="/assets/img/pres_flips/2016_classic_votes.gif" data-pswp-width="1080" data-pswp-height="742" target="_blank"> <img src="/assets/img/pres_flips/2016_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 2016 election classic votes: the minimum flip needed to hand Clinton the win outright"> </a> <a href="/assets/img/pres_flips/2016_no_majority_votes.gif" data-pswp-width="1080" data-pswp-height="742" target="_blank"> <img src="/assets/img/pres_flips/2016_no_majority_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 2016 election no-majority votes: the minimum flip needed to strip Trump of a majority"> </a> </div> <div class="caption mt-2"> Swipe to compare: the minimum flip needed to hand Clinton the win outright (left) vs. the minimum votes needed to strip Trump of a majority and send the election to the House (right). </div> <h2 id="2020">2020</h2> <div class="pswp-gallery mt-3" id="2020-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;"> <a href="/assets/img/pres_flips/portraits/2020Biden.jpg" data-pswp-width="1491" data-pswp-height="1988" target="_blank"> <img src="/assets/img/pres_flips/portraits/2020Biden.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Joe Biden portrait"> </a> <a href="/assets/img/pres_flips/portraits/2016Trump.jpg" data-pswp-width="1520" data-pswp-height="2096" target="_blank"> <img src="/assets/img/pres_flips/portraits/2016Trump.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Donald Trump portrait"> </a> </div> <div class="caption mt-2"> Joe Biden (D), the Democratic candidate in the 2020 presidential election, and Donald Trump (R), the 45th and 47th President of the United States, who served from 2017 to 2021, and now 2025 to present. </div> <p>Possibly the most controversial election in recent memory. The race was far closer than many anticipated, with Biden narrowly winning the electoral college despite his popular vote margin being the second largest in the 21st century.</p> <p>Flipping roughly 22,000 votes across Arizona, Wisconsin, and Georgia would have resulted in an electoral college tie, that Trump potentially wins. Flipping about 10,000 more votes in Nebraska’s 2nd congressional district would have given Trump an exact 270 electoral college vote victory.</p> <p>This election gets a 4/5 closeness rating.</p> <div class="pswp-gallery flip-swipe-gallery mt-3" id="2020-animation"> <a href="/assets/img/pres_flips/2020_classic_votes.gif" data-pswp-width="1080" data-pswp-height="742" target="_blank"> <img src="/assets/img/pres_flips/2020_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 2020 election classic votes: the minimum flip needed to hand Trump the win outright"> </a> <a href="/assets/img/pres_flips/2020_no_majority_votes.gif" data-pswp-width="1080" data-pswp-height="742" target="_blank"> <img src="/assets/img/pres_flips/2020_no_majority_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 2020 election no-majority votes: the minimum flip needed to strip Biden of a majority"> </a> </div> <div class="caption mt-2"> Swipe to compare: the minimum flip needed to hand Trump the win outright (left) vs. the minimum votes needed to strip Biden of a majority and send the election to the House (right). </div> <h2 id="an-honorable-mention-of-2024">An Honorable Mention of 2024</h2> <div class="pswp-gallery mt-3" id="2024-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;"> <a href="/assets/img/pres_flips/portraits/2024Trump.jpg" data-pswp-width="1594" data-pswp-height="2048" target="_blank"> <img src="/assets/img/pres_flips/portraits/2024Trump.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Donald Trump portrait"> </a> <a href="/assets/img/pres_flips/portraits/2024Harris.jpg" data-pswp-width="1537" data-pswp-height="2051" target="_blank"> <img src="/assets/img/pres_flips/portraits/2024Harris.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Kamala Harris portrait"> </a> </div> <div class="caption mt-2"> Donald Trump (R), the 45th and 47th President of the United States, who served from 2017 to 2021, and now 2025 to present, and Kamala Harris (D), the former Vice President of the United States, who served from 2021 to 2025. </div> <p>Relative to the absurdly close elections of 2016 and 2020, 2024 was relatively decisive in interesting ways. Since 1964, Trump’s 1.5% popular vote margin is the third weakest, above Nixon’s R+0.7 1968 and Gore’s D+0.5 2000. A margin under 2% is exceptionally narrow in the context of modern presidential elections. And yet, only one state was within 1 percentage point: Wisconsin with an R+0.9 margin. To flip the election to Kamala Harris, you need over 100,000 votes, which is far above 2004, 2016, and 2020.</p> <div class="pswp-gallery mt-3" id="2024-animation"> <a href="/assets/img/pres_flips/2024_classic_votes.gif" data-pswp-width="1080" data-pswp-height="742" target="_blank"> <img src="/assets/img/pres_flips/2024_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 2024 election classic votes"> </a> </div> <div class="caption mt-2"> Animation of the 2024 election flip. </div> <h2 id="conclusion">Conclusion</h2> <p>Hopefully, this post gives a bit of a better perspective of how fragile the electoral college truly is. And maybe a fun perspective of some of these presidential elections, which live in <em>my</em> head rent free.</p> <p>One aspect of these elections I did not talk about is electoral college “alignment”, which I want to discuss in-depth in a future post.</p> </d-article> <d-appendix> <d-footnote-list></d-footnote-list> <d-citation-list></d-citation-list> </d-appendix> <d-bibliography src="/assets/bibliography/voting.bib"></d-bibliography> <d-article> <h2 class="text-3xl font-semibold mb-4 mt-12">enjoy this article?</h2> <p class="mb-2" style="margin-top: 1.5rem !important">subscribe to be notified of future articles:</p> <div class="newsletter-form-container"> <div class="newsletter-card"> <div class="newsletter-main"> <p class="newsletter-eyebrow">newsletter</p> <h3 class="newsletter-title">join <a href="https://buttondown.com/eigentaylor" target="_blank" rel="noopener noreferrer"><b>the eigenletter</b></a> </h3> <p class="newsletter-subtitle">get an email when i publish something</p> <form class="newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/eigentaylor" method="POST" style="justify-content: flex-start"> <label class="newsletter-form-label" for="bd-email-eigentaylor-preview-ec-fragility">Email address</label> <input class="newsletter-form-input" name="email" id="bd-email-eigentaylor-preview-ec-fragility" type="email" placeholder="you@example.com" required=""> <button type="submit" class="newsletter-form-button" style="justify-content: flex-start"> Subscribe </button> <button type="button" class="newsletter-loading-button" style="justify-content: flex-start"> Please wait... </button> </form> <div class="newsletter-success" style="justify-content: flex-start"> <p class="newsletter-success-message">You're subscribed!</p> </div> <div class="newsletter-error" style="justify-content: flex-start"> <p class="newsletter-error-message">Oops! Something went wrong, please try again</p> </div> <button class="newsletter-back-button" type="button" onmouseout='this.style.textDecoration="none"' onmouseover='this.style.textDecoration="underline"'> ← Back </button> <p class="newsletter-powered-by"> <a href="https://buttondown.com/refer/eigentaylor" target="_blank" rel="noopener noreferrer"> powered by buttondown. </a> </p> </div> </div> </div> <noscript> <style>.newsletter-form-container{display:none}</style> </noscript> <p class="mb-2">and here are some related posts you might like to read next:</p> <ul class="list-disc pl-8"> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/uncap/">Uncapping the House Doesn't Have to Be Radical</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/better-choices-strategy/">Strategic Resilience of the Better Choices System</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/better-choices/">Better Choices Has a Neat Idea</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/ca-top-2/">Dear California, the Top-2 Is Not the Problem</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/leader-rule/">The Leader Rule in Approval Voting</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/av-stratproof/">Is Approval Voting Strategyproof?</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/arrows/">Arrow's Impossibility Theorem</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/iia/">Independence of Irrelevant Alternatives</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/why-condorcet/">Is the Condorcet Winner the True Compromise?</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/approval-only/">Why I Currently Only Support Approval</a> </li> </ul> <br> <hr> <br> <div class="author-bio-card"> <p class="author-bio-eyebrow">about the author</p> <div class="author-bio-text"> <p>Taylor Eigen Fisher is a mathematician, tutor, and advocate for Approval voting. They received their master’s degree in mathematics from UC Riverside and volunteer with the Equal Vote Coalition.</p> </div> </div> </d-article> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Taylor Eigen Fisher. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener noreferrer" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener noreferrer">GitHub Pages</a>. Last updated: September 03, 2026. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/nav-toggle.js"></script> <script src="/assets/js/distillpub/overrides.js"></script> <script src="/assets/js/distill-read-time.js"></script> <script defer src="/assets/js/proof-disclosure.js" type="text/javascript"></script> <script defer src="/assets/js/reload-state.js" type="text/javascript"></script> <script defer src="/assets/js/live-update-banner.js" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/plotly.js@3.0.1/dist/plotly.min.js" integrity="sha256-oy6Be7Eh6eiQFs5M7oXuPxxm9qbJXEtTpfSI93dW16Q=" crossorigin="anonymous"></script> <script defer src="/assets/al_charts/js/plotly-setup.js" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js"></script> <script src="/assets/js/no_defer.js"></script> <script defer src="/assets/js/common.js"></script> <script defer src="/assets/js/copy_code.js" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script type="module">
+  import PhotoSwipeLightbox from "https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js";
+  import PhotoSwipe from "https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js";
+  const photoswipe = new PhotoSwipeLightbox({
+    gallery: ".pswp-gallery",
+    children: "a",
+    pswpModule: PhotoSwipe,
+  });
+  photoswipe.init();
+</script> <script defer src="/assets/js/progress-bar.js" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "my random projects",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-teaching",
+          title: "teaching",
+          description: "Classes I have officially tutored or TA'd for",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/teaching/";
+          },
+        },{id: "post-uncapping-the-house-doesn-39-t-have-to-be-radical",
+        
+          title: "Uncapping the House Doesn't Have to Be Radical",
+        
+        description: "A simple deterministic way to increase the House size that solves a number of issues.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/uncap/";
+          
+        },
+      },{id: "post-strategic-resilience-of-the-better-choices-system",
+        
+          title: "Strategic Resilience of the Better Choices System",
+        
+        description: "A model of manipulability in the Better Choices voting system, and why it's so difficult to game.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/better-choices-strategy/";
+          
+        },
+      },{id: "post-better-choices-has-a-neat-idea",
+        
+          title: "Better Choices Has a Neat Idea",
+        
+        description: "What I like about the system proposed by Better Choices, and my concerns.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/better-choices/";
+          
+        },
+      },{id: "post-dear-california-the-top-2-is-not-the-problem",
+        
+          title: "Dear California, the Top-2 Is Not the Problem",
+        
+        description: "Many reforms are being proposed for California, but only Approval voting in the primary will address the real issue.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/ca-top-2/";
+          
+        },
+      },{id: "post-the-leader-rule-in-approval-voting",
+        
+          title: "The Leader Rule in Approval Voting",
+        
+        description: "An explanation of Laslier's leader rule strategy in Approval voting, and its positive ramifications.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/leader-rule/";
+          
+        },
+      },{id: "post-is-approval-voting-strategyproof",
+        
+          title: "Is Approval Voting Strategyproof?",
+        
+        description: "Well yes, but actually no. Unless...",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/av-stratproof/";
+          
+        },
+      },{id: "post-arrow-39-s-impossibility-theorem",
+        
+          title: "Arrow's Impossibility Theorem",
+        
+        description: "Walkthrough and proof of the theorem that proves ranked voting systems cannot satisfy seemingly reasonable properties, unless you have infinitely many voters!",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/arrows/";
+          
+        },
+      },{id: "post-independence-of-irrelevant-alternatives",
+        
+          title: "Independence of Irrelevant Alternatives",
+        
+        description: "A brief exploration of the Independence of Irrelevant Alternatives (IIA) condition in voting systems, and why its absence makes voting systems behave irrationally.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/iia/";
+          
+        },
+      },{id: "post-is-the-condorcet-winner-the-true-compromise",
+        
+          title: "Is the Condorcet Winner the True Compromise?",
+        
+        description: "A Condorcet winner may not be a true consensus candidate. Approval voting can find consensus with a simpler ballot.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/why-condorcet/";
+          
+        },
+      },{id: "post-why-i-currently-only-support-approval",
+        
+          title: "Why I Currently Only Support Approval",
+        
+        description: "Why Approval voting is the only system I trust to push for right now.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/approval-only/";
+          
+        },
+      },{id: "post-approval-is-the-perfect-condorcet-method",
+        
+          title: "Approval is the Perfect Condorcet Method",
+        
+        description: "Approval is a perfect Condorcet method, and I have permanently solved the Condorcet paradox. April Fools!",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/condorcet-approval/";
+          
+        },
+      },{id: "post-the-gibbard-satterthwaite-theorem",
+        
+          title: "The Gibbard-Satterthwaite Theorem",
+        
+        description: "A walkthrough and proof of the theorem that proves ranked voting systems must be susceptible to strategic voting.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/gibbard-satt/";
+          
+        },
+      },{id: "post-it-39-s-time-to-ditch-rcv-embrace-approval-voting",
+        
+          title: "It's Time to Ditch RCV, Embrace Approval Voting",
+        
+        description: "It has been tried, and it has failed. Ranked-choice voting must go before it poisons the well for all electoral reform.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/ditch-rcv/";
+          
+        },
+      },{id: "post-approval-voting-is-the-only-condorcet-consistent-score-method",
+        
+          title: "Approval voting is the Only Condorcet-Consistent SCORE Method",
+        
+        description: "A proof that Approval voting is the unique score aggregation voting method that always elects the Condorcet winner induced by the ballot data.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/consistentcardinal/";
+          
+        },
+      },{id: "post-a-practical-case-for-approval-voting",
+        
+          title: "A Practical Case for Approval Voting",
+        
+        description: "It's not just mathematically elegant, it's the most practical solution for our electoral problems.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/practicalapproval/";
+          
+        },
+      },{id: "post-the-lichtman-perception-paradox",
+        
+          title: "The Lichtman Perception Paradox",
+        
+        description: "A mathematician's take on Allan Lichtman's keys to the White House.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/lichtman/";
+          
+        },
+      },{id: "post-why-do-we-row-reduce-what-is-a-matrix",
+        
+          title: "Why do we row reduce? What IS a matrix?",
+        
+        description: "What does the RREF tell us, and why do we spend so much time on it? Why do we define matrix multiplication the way we do?",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/rref/";
+          
+        },
+      },{id: "post-introduction-to-least-squares-part-2-electric-boogaloo",
+        
+          title: "Introduction to Least Squares Part 2 (Electric Boogaloo)",
+        
+        description: "Why the heck do we multiply by the transpose",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/leastsquarespart2/";
+          
+        },
+      },{id: "post-the-wonderful-world-of-projectors",
+        
+          title: "The Wonderful World of Projectors",
+        
+        description: "They're cool, I promise!",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/projectors/";
+          
+        },
+      },{id: "post-constant-coefficient-odes-made-simple-with-linear-operators",
+        
+          title: "Constant Coefficient ODEs Made Simple with Linear Operators",
+        
+        description: "No more guessing. The linear algebra perspective makes everything obvious.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/linalglinconstcoef/";
+          
+        },
+      },{id: "post-in-defense-of-cramer-39-s-rule",
+        
+          title: "In Defense of Cramer's Rule",
+        
+        description: "(and determinants)",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/cramers/";
+          
+        },
+      },{id: "post-change-of-basis",
+        
+          title: "Change of Basis",
+        
+        description: "the most confusing thing in linear algebra (don't @ me)",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/changeofbasis/";
+          
+        },
+      },{id: "post-linear-constant-coefficient-odes",
+        
+          title: "Linear Constant Coefficient ODEs",
+        
+        description: "the most important topic in an ODE class",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/linconstcoef/";
+          
+        },
+      },{id: "post-integrating-factors-explained",
+        
+          title: "Integrating Factors Explained",
+        
+        description: "the most common way to solve first order linear ODE's",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/integratingfactor/";
+          
+        },
+      },{id: "post-bases-for-the-fundamental-spaces-of-a-matrix",
+        
+          title: "Bases for the fundamental spaces of a matrix",
+        
+        description: "a lot of students struggle with this so here. row space, column space, null space, and left null space.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/rowcolspace/";
+          
+        },
+      },{id: "post-series-solutions-done-quick",
+        
+          title: "Series Solutions Done Quick",
+        
+        description: "the fast way to do series solutions. no reindexing required.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/seriessolutions/";
+          
+        },
+      },{id: "post-column-and-row-perspective",
+        
+          title: "Column and Row Perspective",
+        
+        description: "How to simplify matrix multiplication with the best perspectives (and also find certain inverse matrices fast!)",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/columnperspective/";
+          
+        },
+      },{id: "post-new-ways-to-calculate-normalized-solutions-to-linear-constant-coefficient-differential-equations",
+        
+          title: "New Ways to Calculate Normalized Solutions to Linear Constant-Coefficient Differential Equations",
+        
+        description: "The fastest way for a computer, and a fast way by hand.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/newnormalized/";
+          
+        },
+      },{id: "post-systems-of-linear-difference-equations",
+        
+          title: "Systems of Linear Difference Equations",
+        
+        description: "Like systems of ODEs, but discrete 👀",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/discretesystems/";
+          
+        },
+      },{id: "post-matrix-exponential-formulas-for-2x2-matrices",
+        
+          title: "Matrix Exponential Formulas for 2x2 Matrices",
+        
+        description: "Who needs eigenvectors?",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2x2ezmatrixexp/";
+          
+        },
+      },{id: "post-2x2-matrix-exponential-formulas-with-differential-equations",
+        
+          title: "2x2 Matrix Exponential Formulas with Differential Equations",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2x2matrixexpwde/";
+          
+        },
+      },{id: "post-solving-systems-of-first-order-odes-like-a-baller",
+        
+          title: "Solving systems of first-order ODEs like a baller",
+        
+        description: "some ballin' tips and tricks",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/firstordersystemsquick/";
+          
+        },
+      },{id: "post-shortcuts-for-finding-eigenvalues-and-eigenvectors",
+        
+          title: "Shortcuts for Finding Eigenvalues and Eigenvectors",
+        
+        description: "diagonalization speedrun, let's go",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/eigentricks/";
+          
+        },
+      },{id: "post-easily-solving-autonomous-ivps-off-the-origin",
+        
+          title: "Easily Solving Autonomous IVPs Off the Origin",
+        
+        description: "Easily solving linear homogeneous constant coefficient initial problems when the initial point is not t=0",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/autonomousivps/";
+          
+        },
+      },{id: "post-introduction-to-least-squares",
+        
+          title: "Introduction to Least Squares",
+        
+        description: "How to find the best solution for an inconsistent system",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/leastsquares/";
+          
+        },
+      },{id: "post-finding-taylor-series-of-polynomials-using-synthetic-division",
+        
+          title: "Finding Taylor Series of Polynomials Using Synthetic Division",
+        
+        description: "Wait you can do that? YUP",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/synthetictaylor/";
+          
+        },
+      },{id: "post-a-formula-for-some-particular-solutions",
+        
+          title: "A Formula for Some Particular Solutions",
+        
+        description: "Yet another obnoxious formula for solutions to constant coefficient nonhomogeneous ODE's with common forcing functions.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/exppolynonhomo/";
+          
+        },
+      },{id: "post-matrix-exponentials-using-differential-equations",
+        
+          title: "Matrix Exponentials Using Differential Equations",
+        
+        description: "ok",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/matrixexpwde/";
+          
+        },
+      },{id: "post-exact-equations-done-quick",
+        
+          title: "Exact Equations Done Quick",
+        
+        description: "speedrun WR",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/exacteqs/";
+          
+        },
+      },{id: "post-function-interpolation",
+        
+          title: "Function Interpolation",
+        
+        description: "Find a function that matches your requirements",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/functioninterp/";
+          
+        },
+      },{id: "post-polynomial-interpolation",
+        
+          title: "Polynomial Interpolation",
+        
+        description: "Making your own custom polynomial.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/polyinterp/";
+          
+        },
+      },{id: "post-intro-to-solving-systems-of-first-order-differential-equations",
+        
+          title: "Intro To Solving Systems of First Order Differential Equations",
+        
+        description: "An attempt at an intuitive derivation",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/firstordersystemsolve/";
+          
+        },
+      },{id: "post-variation-of-parameters-using-linear-algebra",
+        
+          title: "Variation of Parameters Using Linear Algebra",
+        
+        description: "linear is best frend :)",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/voplinear/";
+          
+        },
+      },{id: "post-solving-second-order-systems-of-differential-equations",
+        
+          title: "Solving Second Order Systems of Differential Equations",
+        
+        description: "ye",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2ndordersystemsolve/";
+          
+        },
+      },{id: "post-tricks-for-remembering-laplace-transforms",
+        
+          title: "Tricks for Remembering Laplace Transforms",
+        
+        description: "for students and people who forgot",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/laplacetricks/";
+          
+        },
+      },{id: "post-skipping-integration-by-parts-using-euler-39-s-formula",
+        
+          title: "Skipping Integration by Parts Using Euler's Formula",
+        
+        description: "skip or simplify integrals involving trig functions multiplied by exponentials",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/eulersformulabyparts/";
+          
+        },
+      },{id: "post-introduction-to-euler-39-s-formula",
+        
+          title: "Introduction to Euler's Formula",
+        
+        description: "the best formula",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/eulersformula/";
+          
+        },
+      },{id: "post-constructing-integer-2x2-second-order-systems-of-differential-equations-with-integer-solutions",
+        
+          title: "Constructing Integer 2x2 Second Order Systems of Differential Equations with Integer Solutions",
+        
+        description: "It's a lot messier.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/secondordersystems/";
+          
+        },
+      },{id: "post-constructing-integer-2x2-first-order-systems-of-differential-equations-with-integer-solutions",
+        
+          title: "Constructing Integer 2x2 First Order Systems of Differential Equations with Integer Solutions",
+        
+        description: "Nice solutions? Nice.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/firstordersystems/";
+          
+        },
+      },{id: "post-matrix-exponential-formulas-for-2x2-matrices-using-laplace-transforms",
+        
+          title: "Matrix Exponential Formulas for 2x2 Matrices Using Laplace Transforms",
+        
+        description: "this has been rewritten",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/ezmatrixexp/";
+          
+        },
+      },{id: "post-eigendecomposition-of-real-matrices-with-complex-eigenvalues",
+        
+          title: "Eigendecomposition of Real Matrices with Complex Eigenvalues",
+        
+        description: "An attempt at an intuitive derivation.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/complexeigenvalues/";
+          
+        },
+      },{id: "post-solving-multiple-initial-value-problems-with-normalized-solutions",
+        
+          title: "Solving Multiple Initial Value Problems with Normalized Solutions",
+        
+        description: "Solve one, solve them all.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/normalized/";
+          
+        },
+      },{id: "post-constructing-2x2-markov-matrices",
+        
+          title: "Constructing 2x2 Markov Matrices",
+        
+        description: "Build a Markov Chain with desired behavior.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/markovbuild/";
+          
+        },
+      },{id: "post-linear-differential-equation-interpolation",
+        
+          title: "Linear Differential Equation Interpolation",
+        
+        description: "Linear Differential Equations with desired solutions using determinants.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/diffeqinterp/";
+          
+        },
+      },{id: "post-skew-symmetric-matrices-are-cool",
+        
+          title: "Skew-Symmetric Matrices Are Cool",
+        
+        description: "top 10 things YOU didn't know about real skew-symmetric matrices!!! (GONE WRONG) (COPS CALLED)",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/skewsymmetric/";
+          
+        },
+      },{id: "post-the-alpha-method-generalized-exponential-response-formula",
+        
+          title: "The Alpha Method (Generalized Exponential Response Formula)",
+        
+        description: "Easy particular solutions to nonhomoegenous constant coefficient linear differential equations with simple exponential/trigonometric forcing functions.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/alphamethod/";
+          
+        },
+      },{id: "post-implicit-solutions-to-2x2-systems-of-first-order-homogeneous-linear-differential-equations",
+        
+          title: "Implicit Solutions to 2x2 Systems of First-Order Homogeneous Linear Differential Equations",
+        
+        description: "Implicit and explicit solutions for all cases.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2x2implicit/";
+          
+        },
+      },{id: "post-exponentials-of-symmetric-matrices-using-the-spectral-theorem",
+        
+          title: "Exponentials of Symmetric Matrices Using the Spectral Theorem",
+        
+        description: "yeah",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/symmetric-exp/";
+          
+        },
+      },{id: "post-constructing-systems-of-nonlinear-first-order-differential-equations-to-model-population-dynamics",
+        
+          title: "Constructing Systems of Nonlinear First-Order Differential Equations to Model Population Dynamics",
+        
+        description: "Build a system with desired behavior.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/nonlinearbuild/";
+          
+        },
+      },{id: "post-a-different-perspective-of-diagonalization",
+        
+          title: "A Different Perspective of Diagonalization",
+        
+        description: "An (atttempt at an) intuitive approach to similar matrix decomposition.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/diagonalization/";
+          
+        },
+      },{id: "news-a-simple-inline-announcement",
+          title: 'A simple inline announcement.',
+          description: "",
+          section: "News",},{id: "news-a-long-announcement-with-details",
+          title: 'A long announcement with details',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_2/";
+            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
+          title: 'A simple inline announcement with Markdown emoji! <img class="emoji" title=":sparkles:" alt=":sparkles:" src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png" height="20" width="20"> <img class="emoji" title=":smile:" alt=":smile:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png" height="20" width="20">',
+          description: "",
+          section: "News",},{id: "news-new-news-now-upside-down-face",
+          title: 'new news now <img class="emoji" title=":upside_down_face:" alt=":upside_down_face:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f643.png" height="20" width="20">',
+          description: "",
+          section: "News",},{id: "news-updating-posts-to-the-distill-theme",
+          title: 'updating posts to the distill theme',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/distill1/";
+            },},{id: "news-2x2-matrix-exponentials-post-rewritten",
+          title: '2x2 matrix exponentials post rewritten',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/updateezmatrix/";
+            },},{id: "news-back-with-a-few-new-posts",
+          title: 'back with a few new posts',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/backin2022/";
+            },},{id: "projects-av-lab",
+          title: 'AV lab',
+          description: "lightweight lab for approval voting experiments.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/avlab/";
+            },},{id: "projects-margin-matters",
+          title: 'margin matters',
+          description: "interactive presidential election results from 1864-2024 plus too many features to list here!",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/margin-matters/";
+            },},{id: "projects-open-primary-sim",
+          title: 'open primary sim',
+          description: "simulation of plurality vs approval open primaries with different sized general election pools based on US state data",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/open-primary-sim/";
+            },},{id: "projects-president-sorter",
+          title: 'president sorter',
+          description: "sort and create a tier list for U.S. presidents",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/pres-sort/";
+            },},{id: "projects-runoff-av",
+          title: 'runoff AV',
+          description: "how does adding runoff affect strategy in approval voting?",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/runoff-av/";
+            },},{id: "projects-santa-hat-pfp",
+          title: 'santa hat pfp',
+          description: "put a santa hat on a picture",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/santahat/";
+            },},{id: "projects-satisficing-voter-sim",
+          title: 'satisficing voter sim',
+          description: "comparing voting methods when voters are misinformed and fatigued",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/satisficing-voter-sim/";
+            },},{id: "projects-star-pathology-generator",
+          title: 'STAR pathology generator',
+          description: "quickly generate edge cases and failure modes for STAR voting.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/star-pathology-gen/";
+            },},{id: "projects-title",
+          title: 'Title',
+          description: "desc",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/template/";
+            },},{id: "projects-weakest-link",
+          title: 'weakest link',
+          description: "a graph model of strategy in the better choices top 3 system",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/weakest-link/";
+            },},{
+        id: 'social-discord',
+        title: 'Discord',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://discord.com/users/196803594576592896", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%74%61%79%6C%6F%72%65%69%67%65%6E%66%69%73%68%65%72@%67%6D%61%69%6C.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/eigentaylor", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => { setThemeSetting("light"); },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => { setThemeSetting("dark"); },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => { setThemeSetting("system"); },
+    },];
+  </script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
