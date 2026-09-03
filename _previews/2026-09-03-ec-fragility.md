@@ -2,7 +2,7 @@
 layout: distill
 title: 'How Close? A History of Fragile Presidential Elections'
 date: 2026-09-03
-description: Analyzing the most "fragile" presidential elections since 1864, and how consistently close to breaking the electoral college has truly been.
+description: Analyzing the most fragile presidential elections since 1864, and how consistently close to breaking the electoral college has truly been.
 importance: 2
 tags: presidents
 category: polisci
