@@ -23,6 +23,7 @@ _layouts/post.liquid
 _sass/_distill.scss
 _sass/tabler-icons/**
 .vscode/tasks.json
+.vscode/settings.json
 assets/js/common.js
 assets/js/distillpub/overrides.js
 assets/js/proof-disclosure.js
