@@ -267,7 +267,7 @@ In this ideal case, we assume that the noise and unawareness have entirely evapo
 
 ### Justification
 
-I will not deny that the wakeful assumptions are particularly optimistic for a delayed runoff. Indeed, I might even call it "cheating"! However, it turns out that the groggy assumption is more than enough to make Approval Top-2 significantly more robust than STAR.
+I will not deny that the clear-eyed assumption is particularly optimistic for a delayed runoff. However, it turns out that the groggy assumption is more than enough to make Approval Top-2 significantly more robust than STAR.
 
 The proposal in Eugene *was* to eliminate the primary entirely, and have a one-shot expressive five-star score-based election for seats as prestigious and of consequence as "Commissioner for Eugene Water and Electric Board, Wards 6 and 7" (no offense to the person who actually holds that office, I'm sure Eugene's EWEB is wonderful).
 
