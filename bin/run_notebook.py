@@ -24,6 +24,7 @@ import re
 import sys
 import threading
 import time
+from datetime import datetime
 from pathlib import Path
 
 import nbformat
@@ -32,6 +33,7 @@ from nbclient.exceptions import CellExecutionError
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 JUPYTER_DIR = REPO_ROOT / "assets" / "jupyter"
+LOG_DIR = REPO_ROOT / "logs" / "notebooks"
 
 # On Windows, stdout/stderr default to the legacy ANSI codepage when not
 # attached to a real console (e.g. piped or redirected), which crashes on
@@ -63,6 +65,21 @@ def display_path(p: Path) -> Path:
         return p.relative_to(REPO_ROOT)
     except ValueError:
         return p
+
+
+class Tee:
+    """Writes to multiple streams at once (e.g. the real terminal and a log file)."""
+
+    def __init__(self, *streams):
+        self.streams = streams
+
+    def write(self, data):
+        for s in self.streams:
+            s.write(data)
+
+    def flush(self):
+        for s in self.streams:
+            s.flush()
 
 
 class ProgressNotebookClient(NotebookClient):
@@ -144,11 +161,23 @@ def main() -> int:
         default=60.0,
         help="Seconds between progress status lines (default: 60)",
     )
+    parser.add_argument("--no-log", action="store_true", help="Don't write a copy of the run to logs/notebooks/")
     args = parser.parse_args()
 
     nb_path = resolve_notebook_path(args.notebook)
     nb = nbformat.read(nb_path, as_version=4)
     code_cells = sum(1 for c in nb.cells if c.cell_type == "code")
+
+    log_file = None
+    orig_stdout, orig_stderr = sys.stdout, sys.stderr
+    if not args.no_log:
+        LOG_DIR.mkdir(parents=True, exist_ok=True)
+        stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        log_path = LOG_DIR / f"{nb_path.stem}_{stamp}.log"
+        log_file = open(log_path, "w", encoding="utf-8")
+        sys.stdout = Tee(orig_stdout, log_file)
+        sys.stderr = Tee(orig_stderr, log_file)
+        print(f"Logging this run to {display_path(log_path)}")
 
     print(f"Executing {display_path(nb_path)}: {len(nb.cells)} cells, {code_cells} code cells")
 
@@ -174,6 +203,9 @@ def main() -> int:
         nbformat.write(nb, nb_path)
         total = time.monotonic() - client.run_start if client.run_start else 0.0
         print(f"Notebook saved to {display_path(nb_path)} (total time {fmt_secs(total)})")
+        if log_file is not None:
+            sys.stdout, sys.stderr = orig_stdout, orig_stderr
+            log_file.close()
 
     return exit_code
 
