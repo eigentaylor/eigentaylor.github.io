@@ -11,9 +11,7 @@ const repoRoot = path.resolve(__dirname, "..");
 
 function findPython() {
   const venvPython =
-    process.platform === "win32"
-      ? path.join(repoRoot, ".venv", "Scripts", "python.exe")
-      : path.join(repoRoot, ".venv", "bin", "python");
+    process.platform === "win32" ? path.join(repoRoot, ".venv", "Scripts", "python.exe") : path.join(repoRoot, ".venv", "bin", "python");
   if (fs.existsSync(venvPython)) return venvPython;
   return process.platform === "win32" ? "python" : "python3";
 }
@@ -25,6 +23,9 @@ if (args.length === 0) {
 }
 
 const python = findPython();
+const usingVenv = python !== "python" && python !== "python3";
+console.log(usingVenv ? `Using .venv Python: ${python}` : `.venv not found, falling back to '${python}' on PATH`);
+
 const script = path.join(repoRoot, "bin", "run_notebook.py");
 const result = spawnSync(python, [script, ...args], {
   stdio: "inherit",
