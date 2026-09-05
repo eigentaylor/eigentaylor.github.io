@@ -1,5 +1,7 @@
 {
   "scripts": {
+    "start": "bundle exec jekyll serve --config _config.yml,_config_dev.yml --incremental",
+    "notebook": "node bin/run-notebook.js",
     "lint:prettier": "prettier . --check",
     "lint:style-contract": "node test/style_contract.js",
     "test:visual": "playwright test --config test/visual/playwright.config.js",
