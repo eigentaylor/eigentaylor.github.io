@@ -217,6 +217,18 @@ The most shocking fact about this election I found is that even if you give Haye
   James A. Garfield (R), the 20th President of the United States, who served from March to September 1881, and Winfield Scott Hancock (D), the Democratic candidate in the 1880 presidential election.
 </div>
 
+<div class="pswp-gallery mt-3" id="1880-animation">
+  <a href="/assets/img/pres_flips/1880_classic_margin.gif"
+     data-pswp-width="1080"
+     data-pswp-height="742"
+     target="_blank">
+    <img src="/assets/img/pres_flips/1880_classic_margin.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 1880 election classic margin" />
+  </a>
+</div>
+<div class="caption mt-2">
+  Animation of the 1880 election flip.
+</div>
+
 {% jupyter_cell_embed "assets/jupyter/flip_scenarios.ipynb" tag="1880" %}
 
 Most think of the 1888 election as the most controversial because Grover Cleveland won the popular vote but lost the electoral vote to Benjamin Harrison, being the last time this would happen until 2000. However, 1884 was *significantly* closer electorally. Cleveland won New York by only about 1,000 votes. Flipping under 600 votes from Cleveland to Blaine and Cleveland would not have been elected. I give 1884 a 4/5 closeness rating.
@@ -271,6 +283,18 @@ New York gave Cleveland the presidency, but then it took it away in 1888. Funny 
 </div>
 <div class="caption mt-2">
   Benjamin Harrison (R), the 23rd President of the United States, who served from 1889 to 1893, and Grover Cleveland (D), the incumbent president who narrowly lost his re-election bid in the 1888 presidential election.
+</div>
+
+<div class="pswp-gallery mt-3" id="1888-animation">
+  <a href="/assets/img/pres_flips/1888_classic_votes.gif"
+     data-pswp-width="1080"
+     data-pswp-height="742"
+     target="_blank">
+    <img src="/assets/img/pres_flips/1888_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 1888 election classic votes" />
+  </a>
+</div>
+<div class="caption mt-2">
+  Animation of the 1888 election flip.
 </div>
 
 {% jupyter_cell_embed "assets/jupyter/flip_scenarios.ipynb" tag="1888" %}
