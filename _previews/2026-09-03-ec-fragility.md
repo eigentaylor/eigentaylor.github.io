@@ -153,6 +153,8 @@ We will look back at the elections since the Civil war 1864, partially because t
 
 I ran a knapsack algorithm to determine the minimum number of votes that would need to be flipped across states to change the outcome of the Electoral College, effectively identifying the "fragility" of each election. For example, Florida went to Bush by 537 votes, so flipping 269 votes from Bush to Gore would result in Gore winning by a single vote. This approach allows us to quantify how "fragile" an election was, even if the popular vote margin was relatively large.
 
+You can imagine fragility as how difficult it would be to dig into the ballots, change one name to another, and thereby alter the outcome of the election.
+
 ## 1876
 
 <div class="pswp-gallery mt-3" id="1876-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
@@ -177,7 +179,7 @@ The 1876 election was one of the most disputed and controversial elections in Am
 
 South Carolina was the closest of the states, being flippable by roughly 500 votes. Hayes likely won this state, despite being the home of the Confederacy because of votes by newly freed slaves who were largely supportive of the Republican Party at the time, and had their right to vote protected by federal troops. This election resulted in the end of Reconstruction, which marked the withdrawal of federal troops from the South and the beginning of the Jim Crow era. This was thus the last time that South Carolina voted for a Republican for **88 years**, until it voted against Lyndon B. Johnson in 1964 because of the national Democratic Party's support for civil rights legislation.
 
-The most shocking fact about this election I found is that even if you give Hayes all of the contested electoral votes, Tilden would have **still won** if the apportionment of electoral votes had been **done correctly by the legislated rules at the time**.
+The most shocking fact about this election I found is that even if you give Hayes all of the contested electoral votes, Tilden would have **still won** if the apportionment of electoral votes had been **done correctly by the legislated rules at the time** <d-cite key="neubauer2012unpopular"></d-cite>.
 
 <div class="pswp-gallery mt-3" id="1876-animation">
   <a href="/assets/img/pres_flips/1876_classic_votes.gif"
@@ -323,7 +325,7 @@ A common theme of this post is that we'll have a sort of cluster of close electi
 
 Wilson then was only narrowly reelected in 1916, defeating Charles Evans Hughes by a very slim margin in both the popular and electoral votes. The election was decided entirely by California, which went to Wilson by under 4,000 votes. Flipping under 2,000 votes from Wilson to Hughes in California would have given Hughes the presidency. I give the 1916 election a 4/5 closeness rating.
 
-Fun fact: While some complain about the Electoral College because of its lack of proportionally, there is actually some evidence that the senate seat bump actually *helps* national popular vote winners. Indeed, even if Wilson wins California, removing the two extra electoral votes each state gets from their Senate representation would have caused him to lose! Wilson won 30 states, and if you subtract the 60 extra electoral votes from his total, he would have lost the election despite winning the popular vote with 217 electoral votes out of the needed 218.
+Fun fact: While some complain about the Electoral College because of its lack of proportionally, there is actually some evidence that the senate seat bump actually *helps* national popular vote winners because winning the NPV usually involves winning many states <d-cite key="neubauer2012unpopular"></d-cite>. Indeed, even if Wilson wins California, removing the two extra electoral votes each state gets from their Senate representation would have caused him to lose! Wilson won 30 states, and if you subtract the 60 extra electoral votes from his total, he would have lost the election despite winning the popular vote with 216 electoral votes out of the now 218 needed.
 
 <div class="pswp-gallery mt-3" id="1916-animation">
   <a href="/assets/img/pres_flips/1916_classic_votes.gif"
