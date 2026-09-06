@@ -34,6 +34,8 @@ toc:
   - name: "2020"
   - name: An Honorable Mention of 2024
   - name: Conclusion
+    subsections:
+      - name: The NPVIC
 ---
 
 ## Introduction
@@ -145,6 +147,13 @@ The 2004 election, by contrast, was not nearly as close in the popular vote, wit
 
 {% jupyter_cell_embed "assets/jupyter/flip_scenarios.ipynb" tag="2004" %}
 
+<div class="mt-3">
+  <iframe src="https://www.youtube.com/embed/hE8V22unwRo" class="rounded z-depth-1" style="width: 100%; aspect-ratio: 16 / 9; height: auto; display: block;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen title="JibJab's &quot;Second Term&quot;, a musical parody of Bush's 2004 reelection"></iframe>
+</div>
+<div class="caption mt-2">
+  JibJab's "Second Term", with Bush singing "This time I won the national election. Oh, thanks to you, Ohio, and dear brother Jebediah, we have four more years to rule in Washington."
+</div>
+
 These two elections provide an interesting contrast. 2000 was very clearly close, while 2004 was not particularly close in the popular vote, but still "fragile" in terms of the Electoral College. I would not call this election "close", however. But just looking at the Wikipedia page for the 2004 election, would not make it obvious how precarious Bush's victory actually was. The question we have to ask is "how many other elections were similarly fragile despite not necessarily appearing close in the popular vote?"
 
 We will look back at the elections since the Civil war 1864, partially because that's when the modern two-party system began to solidify, and also because that's where my data set ends. I may do a follow up analysis for earlier elections some other time.
@@ -173,13 +182,13 @@ I ran a knapsack algorithm to determine the minimum number of votes that would n
   Rutherford B. Hayes (R), the 19th President of the United States, who served from 1877 to 1881 and Samuel Tilden (D), the 25th Governor of New York, who was the Democratic candidate in the 1876 presidential election.
 </div>
 
-The 1876 election was one of the most disputed and controversial elections in American history. Rutherford B. Hayes, was only elected by overcoming all of the contested electoral votes in several states. Four states were involved in the dispute, including South Carolina. In the end, Hayes win with the exact number of electoral votes needed to secure the presidency, 185 out of 369, and Samuel Tilden, his opponent, received 184 electoral votes. Even though Tilden won the national popular vote by 3% he still lost the election due to the distribution of electoral votes.
+The 1876 election was one of the most disputed and controversial elections in American history. Rutherford B. Hayes, was only elected by overcoming all of the contested electoral votes in several states. Four states were involved in the dispute, including South Carolina. In the end, Hayes win with the exact number of electoral votes needed to secure the presidency, 185 out of 369, and Samuel Tilden, his opponent, received 184 electoral votes. Even though Tilden won the national popular vote by 3% he still lost the election due to the distribution of electoral votes. But there were also other oddities that gave Hayes the win: Colorado had just become a state that year, too late to hold a popular vote election. They simply decided to give their new 3 electoral votes to Hayes, and giving a single one to Tilden would have elected him.
 
-South Carolina was the closest of the states, being flippable by roughly 500 votes. Hayes likely won this state, despite being the home of the Confederacy because of votes by newly freed slaves who were largely supportive of the Republican Party at the time, and had their right to vote protected by federal troops. This election resulted in the end of Reconstruction, which marked the withdrawal of federal troops from the South and the beginning of the Jim Crow era. This was thus the last time that South Carolina voted for a Republican for **88 years**, until it voted against Lyndon B. Johnson in 1964 because of the national Democratic Party's support for civil rights legislation.
+Of those states which did hold a popular vote, South Carolina was the closest of the states, being flippable by roughly 500 votes. Hayes likely won this state, despite being the home of the Confederacy, because of votes by newly freed slaves who were largely supportive of the Republican Party at the time, and had their right to vote protected by federal troops. This election resulted in the end of Reconstruction, which marked the withdrawal of federal troops from the South and the beginning of the Jim Crow era<d-footnote>It should be noted that Reconstruction did not end <em>because</em> Hayes was elected. Tilden campaigned explicitly on ending Reconstruction and restoring "home rule" to the South. If the Black voters of South Carolina had any chance of protecting their voting rights, it was in voting for Hayes. The tragedy is that his win was not more decisive.</d-footnote>. This was thus the last time that South Carolina voted for a Republican for **88 years**, until it voted against Lyndon B. Johnson in 1964 because of the national Democratic Party's support for civil rights legislation.
 
-The most shocking fact about this election I found is that even if you give Hayes all of the contested electoral votes, Tilden would have **still won** if the apportionment of electoral votes had been **done correctly by the legislated rules at the time** <d-cite key="neubauer2012unpopular"></d-cite>.
+The most shocking fact about this election I found is that even if you give Hayes all of the contested electoral votes, Tilden would have **still won** if the apportionment of electoral votes had been **done correctly by the legislated rules at the time**<d-cite key="neubauer2012unpopular"></d-cite>.
 
-This is an easy 5/5 closeness rating. Tilden was so absurdly close to winning, just like Al Gore.
+This is an easy 5/5 closeness rating. Tilden, like Al Gore, was very likely cheated.
 
 <div class="pswp-gallery mt-3" id="1876-animation">
   <a href="/assets/img/pres_flips/1876_classic_votes.gif"
@@ -194,6 +203,13 @@ This is an easy 5/5 closeness rating. Tilden was so absurdly close to winning, j
 </div>
 
 {% jupyter_cell_embed "assets/jupyter/flip_scenarios.ipynb" tag="1876" %}
+
+<div class="mt-3">
+  <iframe src="https://www.youtube.com/embed/kq6zsuBZO5I" class="rounded z-depth-1" style="width: 100%; aspect-ratio: 16 / 9; height: auto; display: block;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen title="Larry David as Samuel Tilden reacting to losing the 1876 election"></iframe>
+</div>
+<div class="caption mt-2">
+  Larry David as Samuel Tilden, reacting to the news that he lost the 1876 election.
+</div>
 
 ## The 1880s
 
@@ -327,7 +343,7 @@ A common theme of this post is that we'll have a sort of cluster of close electi
 
 Wilson then was only narrowly reelected in 1916, defeating Charles Evans Hughes by a very slim margin in both the popular and electoral votes. The election was decided entirely by California, which went to Wilson by under 4,000 votes. Flipping under 2,000 votes from Wilson to Hughes in California would have given Hughes the presidency. I give the 1916 election a 4.5/5 closeness rating.
 
-Fun fact: While some complain about the Electoral College because of its lack of proportionally, there is actually some evidence that the senate seat bump actually *helps* national popular vote winners because winning the NPV usually involves winning many states <d-cite key="neubauer2012unpopular"></d-cite><d-footnote>How much this applies to modern times, compared to the simulations run in 2012 is debatable. States have become so solidified that a fairly strong NPV victory is not necessarily predictive of winning so many states anymore. Not counting DC, Biden only won 25 states in 2020, and Clinton only 20 states in 2016, despite having strong national popular vote showings.</d-footnote>. Indeed, even if Wilson wins California, removing the two extra electoral votes each state gets from their Senate representation would have caused him to lose! Wilson won 30 states, and if you subtract the 60 extra electoral votes from his total, he would have lost the election despite winning the popular vote with 216 electoral votes out of the now 218 needed.
+Fun fact: While some complain about the Electoral College because of its lack of proportionally, there is actually some evidence that the senate seat bump actually *helps* national popular vote winners because winning the NPV usually involves winning many states <d-cite key="neubauer2012unpopular"></d-cite><d-footnote>How much this applies to modern times, compared to the simulations run in 2012 is debatable. States have become so solidified that a fairly strong NPV victory is not necessarily predictive of winning so many states anymore. Not counting DC, Biden only won 25 states in 2020, and Clinton only 20 states in 2016, despite having strong national popular vote showings. There are unfortunate number of things in that paper which did not age well after</d-footnote>. Indeed, even if Wilson wins California, removing the two extra electoral votes each state gets from their Senate representation would have caused him to lose! Wilson won 30 states, and if you subtract the 60 extra electoral votes from his total, he would have lost the election despite winning the popular vote with 216 electoral votes out of the now 218 needed.
 
 <div class="pswp-gallery mt-3" id="1916-animation">
   <a href="/assets/img/pres_flips/1916_classic_votes.gif"
@@ -365,7 +381,21 @@ Fun fact: While some complain about the Electoral College because of its lack of
 
 1916 was a blip between major landslides. It wasn't until 32 years later in 1948 that we saw another extremely close election. From 1920 to 1944, we had consecutive landslides. Republicans dominated the 1920's, and then FDR won by large margins in 1932, 1936, 1940, and 1944. It wasn't until Truman ran for reelection in 1948 that we found ourselves with another nail-biter.
 
-The 1948 election is a classic and iconic election to discuss. Thomas E. Dewey was running a second time, after losing the 1944 election to Franklin D. Roosevelt. Everyone expected Dewey to win easily, including Truman himself! He went to bed expecting to lose, just as the newspapers had predicted. However, Truman pulled off one of the greatest election upsets in American history, winning both the popular and electoral votes against all expectations. His popular vote victory wasn't narrow either, it was about 4.5% over Dewey. But the electoral college was a different story. California, and Ohio were both extremely close, and flipping both would have destroyed Truman's majority, due to the protesting southern states that had withheld their support from him. Flipping Illinois as well would have given Dewey the win outright.
+The 1948 election is a classic and iconic election to discuss. Thomas E. Dewey was running a second time, after losing the 1944 election to Franklin D. Roosevelt. Everyone expected Dewey to win easily, including Truman himself! He went to bed expecting to lose, just as the newspapers had predicted. However, Truman pulled off one of the greatest election upsets in American history, winning both the popular and electoral votes against all expectations.
+
+<div class="pswp-gallery mt-3" id="1948-dewey-truman">
+  <a href="/assets/img/pres_flips/Dewey_Defeats_Truman.jpg"
+     data-pswp-width="3000"
+     data-pswp-height="2306"
+     target="_blank">
+    <img src="/assets/img/pres_flips/Dewey_Defeats_Truman.jpg" class="img-fluid rounded z-depth-1" style="width: 100%; display: block;" alt="Harry Truman holding up the Chicago Daily Tribune's erroneous 'DEWEY DEFEATS TRUMAN' headline" />
+  </a>
+</div>
+<div class="caption mt-2">
+  A jubilant Truman holds up the <em>Chicago Daily Tribune</em>'s famously premature "DEWEY DEFEATS TRUMAN" headline, printed before all the votes had been counted.
+</div>
+
+His popular vote victory wasn't narrow either, it was about 4.5% over Dewey. But the electoral college was a different story. California, and Ohio were both extremely close, and flipping both would have destroyed Truman's majority, due to the protesting southern states that had withheld their support from him. Flipping Illinois as well would have given Dewey the win outright.
 
 However, relative to these other close elections, the 1948 election might be considered slightly less fragile. I give it a solid 3/5 closeness rating. It would be exceptionally easy to break the majority here, but giving the win to Dewey could be hard.
 
@@ -409,9 +439,9 @@ However, relative to these other close elections, the 1948 election might be con
   John F. Kennedy (D), the 35th President of the United States, who served from 1961 to 1963 and Richard Nixon (R), the 37th Vice President of the United States, who was the Republican candidate in the 1960 presidential election.
 </div>
 
-Eisenhower won his elections in the 50s comfortably, defeating Adlai Stevenson in both 1952 and 1956. However, the 1960 election between John F. Kennedy and Richard Nixon was much closer. We still have no idea who won the popular vote due to the absolutely convoluted insanity of Alabama. The common interpretation of the results gives Kennedy the win by about 0.2%, but it's entirely possible Richard Nixon could be the third candidate, after Andrew Jackson and Grover Cleveland, to win the popular vote three times, but only serve two terms as president due to Electoral College shenanigans.
+Eisenhower won his elections in the 50s comfortably, defeating Adlai Stevenson in both 1952 and 1956. However, the 1960 election between John F. Kennedy and Richard Nixon was much closer. We still have no idea who won the popular vote due to the [absolutely convoluted insanity of Alabama](https://en.wikipedia.org/wiki/1960_United_States_presidential_election_in_Alabama) ([this is a fun video on the topic](https://youtu.be/NwRPqnxuOPo?is=pxHqrbPpOaW9DGJf)). The common interpretation of the results gives Kennedy the win by about 0.2%, but it's entirely possible Richard Nixon could be the third candidate, after Andrew Jackson and Grover Cleveland, to win the popular vote three times, but only serve two terms as president due to Electoral College shenanigans.
 
-Relatively speaking, this is a harder election to flip. Hawaii, newly a state, went to Kennedy by just 115 votes, making it the closest state in the election. Flipping Hawaii alone would not have changed the outcome, but flipping Nevada, New Mexico, and Illinois would have potentially broken Kennedy's majority, depending on what Alabama would do in response (Alabama could have easily given Kennedy three of its unpledged electors which would have maintained his majority). But flipping Missouri as well gives Nixon a clear path to victory, assuming the other states remain as they were. Due to this ambiguity, and Kennedy's relatively spread out support across the country, I would rate the closeness of the 1960 election as 3/5.
+Relatively speaking, this is a harder election to flip. Hawaii, newly a state, went to Kennedy by just 115 votes, making it the closest state in the election. Flipping Hawaii alone would not have changed the outcome, but flipping Nevada, New Mexico, and Illinois would have potentially broken Kennedy's majority, depending on what Alabama would do in response (Alabama could have easily given Kennedy enough of its unpledged electors which would have maintained his majority). But flipping Missouri as well gives Nixon a clear path to victory, assuming the other states remain as they were. Due to this ambiguity, and Kennedy's relatively spread out support across the country, I would rate the closeness of the 1960 election as 3/5.
 
 <div class="pswp-gallery flip-swipe-gallery mt-3" id="1960-animation">
   <a href="/assets/img/pres_flips/1960_classic_votes.gif"
@@ -609,10 +639,22 @@ Similar to 1968, where a narrow popular vote margin masks fairly significant sta
 
 Hopefully, this post gives a bit of a better perspective of how fragile the electoral college truly is. And maybe a fun perspective of some of these presidential elections, which live in *my* head rent free.
 
-Overall, the fragility of these elections to very small shifts in the vote of just a handful of states highlights the precarious nature of the electoral college system. This post isn't really focused on the arguments of why or why not to keep the electoral college, but hopefully it exposes that it's not *just* the five elections that the electoral college has nearly defied the will of the voters. 
+Overall, the fragility of these elections to very small shifts in the vote of just a handful of states highlights the precarious nature of the electoral college system. This post isn't really focused on the arguments of why or why not to keep the electoral college, but hopefully it exposes that it's not *just* the five elections that the electoral college has nearly defied the will of the voters.
 
 Further, it's not like the problems of the electoral college "went away" for the 112 years between 1888 and 2000. As we have seen, America had been cruisin' for a bruisin' for a number of elections throughout the 20th century. With states becoming more and more solidified in their partisan leanings, causing the utter collapse of the number of swing states down to just 7 states expected to be in play for 2028, we find that elections are now decided entirely by the voters in a very small number of states.
 
-One thing I think is worth noting is that the system as it is today is not at all what the founding fathers envisioned. The original design was to intentionally subvert the direct will of the people, with the electors having the ultimate authority to choose the president, rather than being bound by the will of those in their states. Now, we have a zombie abomination where small vote changes have massive outcomes on the final result.
+One thing I think is worth noting is that the system as it is today is not at all what the founding fathers envisioned. The original design was to intentionally subvert the direct will of the people, with the electors having the ultimate authority to choose the president, rather than being bound by the will of those in their states. Electors were supposed to be
 
-One aspect of these elections I did not talk about is electoral college "alignment", which I want to discuss in-depth in a future post. There are signs that the electoral college may be less of a problem in 2028 than it has been in recent years, but it is far too early to say that with any confidence. In general, there is really no robust justification to keep this antiquated system in place. Would it not be easier to just elect the president like *every other statewide office in the federal government*? Most votes wins.
+> "men most capable of analyzing the qualities adapted to the station... A small number of persons, selected by their fellow-citizens from the general mass, will be most likely to possess the information and discernment requisite to such complicated investigations." -Alexander Hamilton, Federalist 68<d-cite key="neubauer2012unpopular"></d-cite>
+
+The Constitution never mandated popular elections of electors at all. It used to be the state legislatures just picking people. As Colorado did in 1876: no election by the people was held; they just sent people to vote for Hayes. We didn't even use to directly vote for Senators until the 20th century. Over time, presidential elections have gotten closer and closer to popular elections, but we haven't made the leap just yet. But this isn't "what the founding fathers intended" by any stretch of the imagination. This is just a vestigial zombie abomination between popular will and the original system of having state legislatures decide who a state wants as president.
+
+In general, there is really [no robust justification to keep this antiquated system in place.](https://www.youtube.com/watch?v=6kWF2Rhxx-c) Would it not be easier to just elect the president like *every other statewide office in the federal government*? Most votes wins.
+
+### The NPVIC
+
+The [National Popular Vote Interstate Compact (NPVIC)](https://www.nationalpopularvote.com/) is a bit of a workaround to achieve a national popular vote without amending the Constitution. Essentially, once enough states join the compact to collectively hold a majority of the electoral votes (270), all the participating states agree pledge their electoral votes to the candidate who wins the national popular vote. This could theoretically end the electoral college shenanigans. However, even if it comes into effect, there are a lot of questions about its legality.
+
+What is interesting is that the NPVIC is closer than ever to reaching the threshold of 270 electoral votes needed for it to take effect. As of writing, Virginia has relatively recently joined the compact, bringing the total number of electoral votes among participating states to 222. If Democrats manage to seize trifecta control in states like Pennsylvania, Michigan, Wisconsin, Arizona, and Nevada, the compact could potentially reach the necessary threshold by 2028. With expectations of a Democratic wave in the upcoming midterm elections, the chances of this scenario occurring seem more plausible than ever<d-footnote>However, with such a conservative Supreme Court, the chances of the NPVIC surviving legal challenges remain uncertain.</d-footnote>.
+
+From my crunching of the numbers, it appears that to close the gap on the remaining 48 votes needed for the NPVIC to take effect, Pennsylvania (19) and Michigan (15) would be absolutely essential. After that, any two of Wisconsin (10), Arizona (11), and Nevada (6) would suffice to reach the threshold. North Carolina is also a state to look out for.
