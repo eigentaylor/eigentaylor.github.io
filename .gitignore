@@ -19,3 +19,4 @@ vendor
 /_previews/scrap
 /.github/prompts
 /%localappdata%
+*.pyc
