@@ -639,9 +639,11 @@ Similar to 1968, where a narrow popular vote margin masks fairly significant sta
 
 Hopefully, this post gives a bit of a better perspective of how fragile the electoral college truly is. And maybe a fun perspective of some of these presidential elections, which live in *my* head rent free.
 
-Overall, the fragility of these elections to very small shifts in the vote of just a handful of states highlights the precarious nature of the electoral college system. This post isn't really focused on the arguments of why or why not to keep the electoral college, but hopefully it exposes that it's not *just* the five elections that the electoral college has nearly defied the will of the voters.
+Overall, the fragility of these elections to very small shifts in the vote of just a handful of states highlights the precarious nature of the electoral college system. This post isn't really focused on the arguments of why or why not to keep the electoral college, but hopefully it exposes that it's not *just* the five elections that the popular vote winner lost that the electoral college has nearly defied the will of the voters.
 
-Further, it's not like the problems of the electoral college "went away" for the 112 years between 1888 and 2000. As we have seen, America had been cruisin' for a bruisin' for a number of elections throughout the 20th century. With states becoming more and more solidified in their partisan leanings, causing the utter collapse of the number of swing states down to just 7 states expected to be in play for 2028, we find that elections are now decided entirely by the voters in a very small number of states.
+Further, it's not like the problems of the electoral college "went away" for the 112 years between 1888 and 2000. As we have seen, America had been cruisin' for a bruisin' for a number of elections throughout the 20th century. 
+
+States becoming more and more solidified in their partisan leanings in the 2020s has caused the utter collapse of the number of swing states. 7 states were within 5 percentage points in 2020: Pennsylvania, Michigan, Wisconsin, Arizona, Nevada, Georgia, and North Carolina. Those were the only states expected to be in play in 2024, and those are the only states expected to be in play in 2028 as well.
 
 One thing I think is worth noting is that the system as it is today is not at all what the founding fathers envisioned. The original design was to intentionally subvert the direct will of the people, with the electors having the ultimate authority to choose the president, rather than being bound by the will of those in their states. Electors were supposed to be
 
