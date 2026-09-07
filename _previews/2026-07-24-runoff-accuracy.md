@@ -1,12 +1,12 @@
 ---
 layout: distill
 title: 'Coarse Correction Part 1: Is STAR Actually More Accurate than Approval?'
-date: 2026-09-06
+date: 2026-09-07
 description: Why Approval with a delayed runoff might be far more accurate than STAR voting when voters are misinformed and fatigued.
 importance: 1
 tags: voting
 category: polisci
-featured: false
+featured: true
 theorems: false
 bibliography: voting.bib
 chart:
@@ -39,7 +39,7 @@ toc:
       - name: The Groggy Model
       - name: The Clear-Eyed Model
       - name: Justification
-  - name: Other Relevant Methodology
+  - name: The Short Version of the Methodology
   - name: Findings
     subsections:
       - name: The Approval-STAR Gap
@@ -50,6 +50,7 @@ toc:
       - name: The Broader Context
   - name: Appendix
     subsections:
+      - name: Other Relevant Methodology
       - name: The Plurality Bump
       - name: Approval vs Plurality
       - name: A Stricter Confidence Interval
@@ -77,9 +78,9 @@ The overwhelming defeat of STAR in Eugene was a shock to many, and a devastating
 
 We must first establish what "accuracy" means in the context of voting systems, beyond "the candidate I like did or didn't win".
 
-Voter Satisfaction Efficiency (VSE)<d-cite key="quinn2017vseSummary"></d-cite> is an incredible metric used for evaluating the performance of voting systems, created by the late Jameson Quinn and championed by the Equal Vote Coalition. It gives a number to the "accuracy" of a voting system that can be used to directly compare methods. VSE is reported as a percentage with 0% being just a system that randomly chooses a candidate as the winner, and 100% being a system that always elects the "best" (highest utility) candidate<d-footnote>VSE isn't the frequency of electing the single-best candidate. Rather, it's a linear rescaling of average voter utility normalized to the scale between random (average of all candidate utilities) and best. A VSE of 50% would, for example, mean that the candidate it tends to elect provides utility halfway between the average and the best, potentially without ever picking the single best candidate. An illustrative, if slightly oversimplified, example would be that if the average provided utility of all candidates was 100, and the utility maximizer provided 110, then a VSE of 50% means we would expect the candidate that the system elects to provide 105 utility. Any positive VSE is better than random. There are also methods that do manage a negative VSE, like the Borda count under strategy.</d-footnote>.
+Voter Satisfaction Efficiency (VSE)<d-cite key="quinn2017vseSummary"></d-cite> is an incredible metric used for evaluating the performance of voting systems, created by the late Jameson Quinn and championed by the Equal Vote Coalition. It gives a number to the "accuracy" of a voting system that can be used to directly compare methods. VSE is reported as a percentage with 0% being just a system that randomly chooses a candidate as the winner, and 100% being a system that always elects the "best" (highest utility) candidate<d-footnote>VSE isn't the frequency of electing the single-best candidate. Rather, it's a linear rescaling of average voter utility normalized to the scale between random (average of all candidate utilities) and best. A VSE of 50% would, for example, mean that the candidate it tends to elect provides utility halfway between the average and the best, potentially without ever picking the single best candidate. An illustrative, if slightly oversimplified, example would be that if the average provided utility of all candidates in a specific election was 100, and the utility maximizer provided 110, then a VSE of 50% means we would expect the candidate that the system elects to provide approximately 105 utility (though it could still elect that best candidate as well). Any positive VSE is better than random. There are also methods that do manage a negative VSE, like the Borda count under strategy, which means it tends to actively elect bad candidates.</d-footnote>.
 
-I interpret VSE as just a simple measure of "aggregation competence": how well a voting system can aggregate the preferences that are fed into it<d-footnote>VSE does not measure a number of other important and practical considerations, but we will focus on what it says about strict "outcomes" on exogenous elections.</d-footnote>. If a system is *good*, then it almost surely has solid VSE. Choose-one voting, for example, has fairly poor VSE (about 60%) when voters are simulated to just vote honestly. This is because the system is so blind that it cannot look beyond the top choice of each voter, and thus consensus candidates are often buried by vote splitting. With strategic voting, it can rise to about 80%.
+I interpret VSE as just a simple measure of "aggregation competence": how well a voting system can aggregate the preferences that are fed into it. If a system is *good*, then it almost surely has solid VSE<d-footnote>VSE does not measure a number of other important and practical considerations, such as complexity, who even runs, campaign incentives, or "Any desirable characteristics of a voting method that do not directly relate to outcome (who wins)" (Quinn <d-cite key="quinn2017vseSummary"></d-cite>). We will focus on what my results say about outcomes, with the appropriate context that just because a system has comparatively good VSE does not make it a good system worth protecting or advocating for.</d-footnote>. Choose-one voting, for example, has fairly poor VSE (about 60%) when voters are simulated to just vote honestly. This is because the system is so blind that it cannot look beyond the top choice of each voter, and thus consensus candidates are often buried by vote splitting. With strategic voting, it can rise to about 80%.
 
 My status as a volunteer for the Equal Vote Coalition does not mean I speak for them. My views are often at odds with the official stances of the EVC, particularly with respect to STAR voting. My words in this post are my own. So when I call VSE excellent, that does not come lightly. Further, I will not pretend that I am not [partial to Approval voting over STAR voting](../approval-only/). In fact, one of the reasons is just how close the VSE of the simpler Approval is with STAR.
 
@@ -110,17 +111,17 @@ The following is the VSE range of the major reforms that are currently being con
 
 ### VSE in Context
 
-Already at this point, Approval's Top-2 variant looks accurate enough. But single-round Approval alone still falls short; to close the gap from single-round Approval to STAR, a second election *is* required. Therefore, saying STAR is "better" in terms of outcomes is not an unfair reading of the data.
+Already at this point, Approval's Top-2 variant looks accurate enough. But a single-round of Approval falls short; to close the gap from single-round Approval to STAR, a second election *is* required. Therefore, saying STAR is "better" than Approval in terms of outcomes is not an unfair reading of the data.
 
 In addition to measuring "aggregation competence," VSE can be used as advocacy evidence to demonstrate the robustness of a method to the public. In a recent [TEDx talk](https://youtu.be/xWQiy5VdwY0?si=ABEnMeAMKWSvMWjS), Sara Wolk, the Executive Director of the Equal Vote Coalition, introduced a version of the above chart and says:
 
 > "Today, experts can use computer models to see how different voting methods would actually perform. And it's pretty much just like how engineers can test the plans for a new skyscraper before actually building it." (Timestamp [7:10](https://youtu.be/xWQiy5VdwY0?si=9vzXt8aI6_beTKoi&t=430))
 
-Particularly when Ranked-Choice Voting, which is missing from this list of endorsed systems, has hogged the spotlight and attention ([at the cost of better reforms](../ditch-rcv/)), using VSE in this way is a powerful tool to demonstrate that there are far better alternatives to RCV. RCV will also receive focus in part 2, which will show exactly how abysmal it really is.
+Particularly when Ranked-Choice Voting, which is missing from the list of EVC endorsed systems, has hogged the spotlight and attention ([at the cost of better reforms](../ditch-rcv/)), using VSE in this way is a powerful tool to demonstrate that there are far better alternatives to RCV. RCV will also receive focus in part 2, which will show exactly how abysmal it really is.
 
 And when we look at the actual numbers, it is absolutely undeniable: In VSE, single-round Approval voting, while simple and reliable, underperforms STAR and Condorcet.
 
-The narrative, which is generally supported by the data, seems to be that Approval is the best "bang for the buck" reform, "with basically no downsides, which improves outcomes hugely" (Quinn, <d-cite key="quinn2017vseSummary"></d-cite>), but is lacking in other ways: It's not particularly "expressive", and its "accuracy" is comparatively lower than the more sophisticated alternatives like STAR and Condorcet.
+The narrative, which is generally supported by the data, seems to be that Approval is the best "bang for the buck" reform, "with basically no downsides, which improves outcomes hugely" (Quinn <d-cite key="quinn2017vseSummary"></d-cite>), but is lacking in other ways: It's not particularly "expressive", and its "accuracy" is comparatively lower than the more sophisticated alternatives like STAR and Condorcet.
 
 On the [Equal Vote page for Approval](https://www.equal.vote/approval), they make a fair case for Approval as something that "should be the default voting method". But they also call it a "stepping stone", and say that "there's a good case to be made to upgrade further." Even though it's a "case for Approval", the text spends significant space pointing back to STAR:
 
@@ -155,6 +156,8 @@ In this post, we evaluate the rejected single-round STAR system proposed in Euge
 
 Spoiler alert: Under even mild friction, the gap between single-round Approval and STAR is basically negligible. And the delayed runoff, even with only *modestly* improved information, completely blew all single-round systems out of the water.
 
+If you want to skip over the detailed explanation of the friction parameters, you can jump directly to a [short version](#the-short-version-of-the-methodology) or the [simulation results](#findings).
+
 ## The Friction Parameters
 
 We define three parameters that we can adjust to simulate friction for voters:
@@ -174,11 +177,11 @@ There is often an [unfortunate spike in "how to change my vote" web searches](ht
 
 We simulate this by adding noise to the voter's perceived utility of each candidate, reflecting the fact that voters are often misinformed or otherwise unable to accurately evaluate the candidates. We adjust this with the $\rho$ parameter, which is the correlation between the voter's true utility and their perceived utility.
 
-If $u_i(c)$ is the true utility of candidate $c$ for voter $i$, then we can define a voter's perceived utility as:
+If $u_i(c)$ is the true utility of candidate $c$ for voter $i$, then we define a voter's perceived utility as:
 
 $$u'_i(c) = \rho\cdot u_i(c) + \sqrt{1-\rho^2}\cdot \sigma_i \cdot \epsilon_{ic}$$
 
-Where $\epsilon_{ic} \sim N(0,1)$ and $\sigma_i$ is the standard deviation of voter $i$'s true utilities across the candidates, used to scale the injected noise to that voter's own utility range<d-footnote>$\rho$ is exactly the Pearson correlation coefficient between the true and perceived utilities.</d-footnote>. If $\rho=1$, then the voter is perfectly informed on their exact utilities, and if $\rho=0$, then the voter's perceived utilities are pure noise. We use one global $\rho$ for all voters.
+Simply put, the perceived utility is a noisy version of the true utility<d-footnote>Technically put, $\epsilon_{ic} \sim N(0,1)$ and $\sigma_i$ is the standard deviation of voter $i$'s true utilities across the candidates, used to scale the injected noise to that voter's own utility range. $\rho$ is thus exactly the Pearson correlation coefficient between the true and perceived utilities.</d-footnote>. If $\rho=1$, then the voter is perfectly informed on their exact utilities, and if $\rho=0$, then the voter's perceived utilities are pure noise. We use one global $\rho$ for all voters.
 
 ### Unfamiliarity
 
@@ -188,20 +191,20 @@ When a voter looks at the list of candidates, it is almost never the case that t
   <iframe src="https://www.youtube.com/embed/XCvC8pUI4ZA" class="rounded z-depth-1" style="width: 100%; aspect-ratio: 16 / 9; height: auto; display: block;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen title="Bobby Newport from Parks and Rec has the name recognition, but not the qualifications"></iframe>
 </div>
 <div class="caption mt-2">
-  Bobby Newport from Parks and Rec is Leslie Knope's opponent for city council. He has the name recognition and charisma, but not the qualifications. Even so, people won't vote for Leslie Knope if they don't know who she is.
+  Bobby Newport from Parks and Rec is Leslie Knope's opponent for city council. He has the name recognition and charisma, as the heir to his family's candy business who "employs half the town", which is enough to put him 70 points ahead in the polls the second he announces his candidacy. But he has no qualifications to be a city councilor. Even so, people won't vote for a "lifelong government bureaucrat who's well versed in the issues" like Leslie Knope if they don't know who she is.
 </div>
 
 We draw an awareness/prominence ranking for each election, simulating that everyone knows the frontrunner, but as you go down the ranking, the number of voters who are aware of each candidate decreases. For the selected $\alpha$ "awareness" parameter, the probability that a voter is aware of candidate $c$ is given by:
 
 $$P_{\text{aware}}(c) = \alpha^{\text{prominence_rank}(c)}$$
 
-At $\alpha=1$, all voters are aware of all candidates, while at lower values, fewer voters are aware of the candidates lower in the awareness ranking.
+At $\alpha=1$, all voters are aware of all candidates, while at lower values, fewer voters are aware of the candidates with a worse prominence ranking.
 
 ### Fatigue
 
 Even if a voter is vaguely aware of a candidate, if that candidate is number 40 on a list of 61, we cannot assume that voter will necessarily take the time to scan the whole list to find them. Perhaps if Leslie Knope is first on the list, they would easily give her a solid 3 stars, but if she is far lower down, the voter might forget about her and miss her name because their attention has waned.
 
-While prominence is global to the election, fatigue is local to the voter. We draw a random fatigue ranking for each voter, as a stand-in for ballot-order rotation. As voters go down the ballot, they are more likely to be fatigued and simply skip a name. Maybe they need to pick up their kids from soccer practice, or they're feeling rushed by the giant line of voters at the polling station, or they just came from a nine-hour nursing shift, or they just don't care enough about who their water commissioner is to fully evaluate every person they would recognize if they had read each name closely. For the "fatigue" parameter $\beta$, the probability that a voter is not fatigued enough to vote for candidate $c$ is given by:
+While prominence is global to the election, fatigue is local to the voter. We draw a random fatigue ranking for each voter, as a stand-in for ballot-order rotation. As voters go down the ballot, they are more likely to be fatigued and simply skip a name. Maybe they need to pick up their kids from soccer practice, or their eyes are glazing over from the long list of candidates, or they just came from a nine-hour nursing shift, or they just don't care enough about who their water commissioner is to fully evaluate every person they would recognize if they had read each name closely. For the "fatigue" parameter $\beta$, the probability that a voter is not fatigued enough to vote for candidate $c$ is given by:
 
 $$P_{\text{not fatigued}}(voter, c) = \beta^{\text{fatigue_position}(voter, c)}$$
 
@@ -213,7 +216,7 @@ Unfamiliarity and fatigue interact in an interesting way. To be able to vote for
 
 $$P_{\text{genuine}} = P_{\text{aware}} \times P_{\text{not fatigued}}= \alpha^{\text{prominence_rank}(c)} \times \beta^{\text{fatigue_position}(voter, c)}$$
 
-If either check fails, then the utility for that candidate on the input ballot is set to be just below that of their least liked known candidate. This simulates voters basically saying "I don't know or remember them, so I'll leave them off my ballot". For cardinal systems like STAR and Approval, this means giving them a score of 0.
+If either check fails, then the utility for that candidate on the input ballot is set to be just below that of their least liked known candidate. This simulates leaving that candidate off of their ballot. For cardinal systems like STAR and Approval, this means giving them a score of 0.
 
 In the simulation, we assume that a voter always votes for their most preferred candidate that they are aware of, and we skip the fatigue check for that candidate.<d-footnote>The original methodology was to always evaluate the candidate with the highest $P_{\text{genuine}}$ probability, but I found that unrealistic: I decided honest voters would scan the list for the one candidate they want to vote for before going back to the top of the list and scanning down. This change actually improved the accuracy of systems like STAR, and damaged the performance of systems like Plurality and flavors of Approval.</d-footnote>
 
@@ -227,14 +230,14 @@ We first assume that fatigue is entirely removed in all delayed top-2 runoffs. W
 
 ### The Coma Model
 
-Under the most pessimistic conditions, we could imagine that the voter has absolutely no time to update their beliefs. The voter essentially falls into a coma as soon as they submit their ballot, wakes up on election day in November, and then casts their runoff vote. We call this the "coma" runoff assumption, because I think that's kind of funny (and accurate). In Approval Top-2's coma variant, voters still have the opportunity to vote for their preferred finalist (according to their potentially misinformed preferences) without fatigue, *unless they were unaware of both candidates*.
+Under the most pessimistic conditions, we could imagine that the voter has absolutely no time to update their beliefs. The voter essentially falls into a coma as soon as they submit their ballot, wakes up on election day in November, and then casts their runoff vote. We call this the "coma" runoff assumption, because I think that's kind of funny (and illustrative). In Approval Top-2's coma variant, voters still have the opportunity to vote for their preferred finalist (according to their potentially misinformed preferences) without fatigue, *unless they were unaware of both candidates*.
 
-This does mean that in a coma runoff, a voter will vote for any candidate they are aware of over any candidate they are not. That is, they might vote for the devil they know. The realism of this assumption is certainly debatable<d-footnote>It would be interesting to see alternative assumptions, such as only voting for a known candidate if they have above-average utility. That is, thinking "there's no way this other candidate can be as bad as the one I know."</d-footnote>.
+This does mean that in a coma runoff, a voter will vote for any candidate they are aware of over any candidate they are not. That is, they might vote for the devil they know, even if they would never actually approve of that candidate. The realism of this assumption is certainly debatable, but functions as a maximally pessimistic reference point<d-footnote>It would be interesting to see alternative assumptions, such as only voting for a known candidate if they have above-average utility. That is, thinking "there's no way this other candidate can be as bad as the one I know."</d-footnote>.
 
-An automatic runoff is very different from the coma model, and it was not necessarily clear which is better. Both systems have the potential for voters to vote against their interests.
+An automatic runoff is very different from the coma model, and it was not necessarily clear which would be better. Both systems have the potential for voters to vote against their interests.
 
-- In STAR, a voter might give a corrupt incumbent 1 star, but be too fatigued to give a boring candidate their rightful 3 stars (or be unaware they exist). Then in the runoff, this voter's ballot will be cast for the 1-star candidate over the interpreted 0 stars.
-- In coma Approval Top-2, a voter might instead be unaware of that better candidate entirely, and vote for the corrupt incumbent they know (even though they didn't approve them in the primary).
+- In STAR, a voter might give a corrupt incumbent 1 star, but be too fatigued to give a boring candidate their rightful 3 stars (or be unaware they exist). Then in the automatic runoff, this voter's ballot will be cast for the 1-star candidate over the interpreted 0 stars.
+- In coma Approval Top-2, a voter might similarly be unaware of that better candidate and vote for the corrupt incumbent they know (even though they didn't approve them in the primary).
 
 Which turned out to be better was a real shock.
 
@@ -250,7 +253,7 @@ We'll call this the "groggy" runoff assumption, and it's how we define the basel
 
 ### The Clear-Eyed Model
 
-The most optimistic assumption is that voters have had time to research the candidates in the runoff step, watching the debates, reading the websites, and generally becoming more informed about the candidates.
+The most optimistic assumption is that voters have spent the time between elections to research the candidates, watching the debates, reading the websites, and generally becoming more informed.
 
 In this ideal case, we assume that the noise and unawareness have entirely evaporated, leaving the voters with the exact correct *direction* between the candidates, regardless of their previous ignorance in the primary election. We include "clear-eyed" alternates of each delayed runoff system which use this (absurdly optimistic) assumption.
 
@@ -262,34 +265,22 @@ The proposal in Eugene *was* to eliminate the primary entirely, and have a one-s
 
 On the Equal Vote Coalition's [STAR voting](https://www.equal.vote/star) page, they do present STAR as an alternative to primary elections. If replacing that [61-candidate choose-one primary we saw in California](../ca-top-2) with a single-round STAR general is an idea that is even being *considered* by STAR proponents, I feel entirely justified in rigorously testing that directly against the delayed runoff system that is already in place in St. Louis, Missouri. It is not wrong to compare apples and oranges if those are indeed the exact proposals that are competing for funding, attention, and implementation.
 
-## Other Relevant Methodology
+## The Short Version of the Methodology
 
-In the comparison, we used honest voting for all systems. This was the simplest choice, and is actually a potential disadvantage for Approval and Plurality, since strategic voting is usually what makes the outcomes of these systems more accurate. STAR and especially Condorcet generally have their best VSE under honest voting, so this is a conservative choice that likely favors STAR and Condorcet in the comparison.
+- We simulate misinformation by adding noise to voters' perceptions of candidates' utilities. As $\rho$ decreases, voters become more misinformed.
+- We simulate candidates as having different levels of "prominence", leading to some being better known than others. Voters don't vote for candidates they don't know. As $\alpha$ decreases, voters are less likely to know about less prominent candidates.
+- Voters get tired as they fill out the ballot and may skip names as they go down the list. As $\beta$ decreases, voters are more likely to skip candidates further down the ballot.
+- We simulate multiple runoff models:
+  - Coma: Voters don't learn anything between the primary and the runoff.
+  - Groggy: Voters are aware of the two finalists but remain misinformed.
+  - Clear-eyed: Voters are perfectly informed and vote for the candidate they truly prefer.
 
-I also defined "joint scenarios" of various friction levels where I set the $\rho=\alpha=\beta$ parameters to the same values:
+Finally, I also defined "joint scenarios" of various friction levels where I set the $\rho=\alpha=\beta$ parameters to the same values:
 
 - 1.0: Ideal (Typical VSE simulations)
 - 0.9: Mild
 - 0.8: Moderate
 - 0.7: Heavy
-
-The way some parameters compound is multiplicative, so while 0.7 may not seem as heavy as, say, 0.5 or 0.3, it is actually *quite* substantial (especially with only 6 candidates).
-
-{% proof Expand to see the friction probability table %}
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="friction-table" %}
-{% endproof %}
-
-I chose not to tune the parameters too much, and to use the simplest settings possible to avoid overfitting the model. I look forward to seeing how others might improve upon this model with even more realistic assumptions, use different parameter combinations, and perhaps even incorporate real-world data.
-
-We do a number of paired significance tests under 95% confidence intervals (usually involving gaps in VSE). We use these to evaluate "significant" gaps, and distinguish between statistical and practical significance. For example, if a system has a gap that we can be confident is between 0.3% and 0.5%, then it is statistically significant (we can be confident the gap is non-zero), but not practically significant. It feels disingenuous and unfair to say that one system is "better" than another if the gap is so small that it would not be noticeable in practice. The terminology we use is as follows:
-
-- Decisive: The gap is statistically significant and practically significant (greater than 1%). There is a clear and meaningful difference between the two systems.
-- Narrow edge: The gap is statistically significant, but not practically significant (less than 1%). There is likely a slight difference between the two systems, but it is not meaningful in practice.
-- Ambiguous edge: The gap is statistically significant, but the gap is not confidently within or outside the 1% practical significance threshold. There is a difference, but we cannot conclude whether it is meaningful in practice.
-- Indistinguishable: The gap is not statistically significant (the confidence interval includes 0), but even so the gap is confidently within the 1% practical significance threshold. If a difference exists, it's not worth worrying about in practice.
-- Inconclusive: The gap is not statistically significant, and the confidence interval includes both 0 and the 1% practical significance threshold. We cannot conclude anything about the gap.
-
-I will also discuss any important statistically significant gaps that do not persist under a 99% confidence interval.
 
 ## Findings
 
@@ -417,7 +408,9 @@ Research on ballot-marking errors<d-cite key="neelyMcDaniel2015overvoting"></d-c
 
 > "[The] evidence suggests it is not IRV per se but rather ballot complexity more generally that leads to such discrepancies in whose votes get counted."<d-cite key="neelyMcDaniel2015overvoting"></d-cite>
 
-STAR is a significant improvement in how difficult it is to spoil a ballot over RCV, but when you suggest anything more complex than choose-one or Approval, I think we have to be incredibly mindful of what the cost of complexity could be, and if the theoretical benefits of granularity and complexity justify it. I think it is safe to say, however, that Approval is easily the hardest ballot type to spoil, which is a benefit to consider. When a more granular ballot and system fails to justify itself in producing significantly better outcomes, it essentially just creates more ways to disenfranchise people who don't have the time to treat politics like a hobby.
+[STAR is a significant improvement in how difficult it is to spoil a ballot over RCV](https://www.starvoting.org/voter_behavior), because voters can give multiple candidates the same score. But it's still entirely possible to accidentally void your ballot by giving one candidate multiple scores. It's easy to *say* "just rank your candidates 1, 2, 3..." or "just score your candidates 0 to 5 stars," but when you suggest anything more complex than choose-one or Approval, I think we have to be incredibly mindful of what the cost of complexity could be, and if the theoretical benefits of granularity and complexity justify it. Especially if STAR is implemented without a primary, that means *more* candidates on your ballot, which can make it more intimidating and overwhelming for voters, and easier to make a mistake on that giant grid of bubbles.
+
+I think it is safe to say, however, that Approval is easily the hardest ballot type to spoil, which is a benefit to consider. When a more granular ballot and system fails to justify itself in producing significantly better outcomes, as my analysis suggests, it essentially just creates greater surface area to unintentionally disenfranchise people who don't have the time to treat politics like a hobby.
 
 The evidence in favor of STAR thus far is primarily in simulations done *by STAR proponents themselves*. And though I find their methodology excellent and without obvious flaws or a hint of bias<d-footnote>In the paper by Wolk, Quinn, and Ogren<d-cite key="wolk2023starVoting"></d-cite>, they mention that Quinn originally expected the model to find support for systems like Majority Judgment, but instead found that STAR had superior performance. They are also very up-front about their potential conflicts of interest regarding the fact that Wolk is the executive director for an organization advocating for the methods discussed in the paper. It is entirely above board, rigorous work by experts I have great respect for.</d-footnote>, the numbers so far have not swung me to becoming a STAR supporter.
 
@@ -431,7 +424,29 @@ When we step beyond the idealized assumptions of perfect voters, we find that th
 
 ## Appendix
 
-I would like to round off part 1 with a few surprising findings related to choose-one voting.
+### Other Relevant Methodology
+
+In the comparison, we used honest voting for all systems. This was the simplest choice, and is actually a potential disadvantage for Approval and Plurality, since strategic voting is usually what makes the outcomes of these systems more accurate. STAR and especially Condorcet generally have their best VSE under honest voting, so this is a conservative choice that likely favors STAR and Condorcet in the comparison.
+
+In regards to the joint friction scenarios, the way some parameters (particularly $\alpha$ and $\beta$) compound is multiplicative, so while 0.7 may not seem as heavy as, say, 0.5 or 0.3, it is actually *quite* substantial (especially with only 6 candidates). You may expand the following table to see just the exact probabilities for a voter to evaluate a candidate based on their prominence and fatigue ranking.
+
+{% proof Expand to see the friction probability table %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="friction-table" %}
+{% endproof %}
+
+I chose not to tune the parameters too much, and to use the simplest settings possible to avoid overfitting the model. I look forward to seeing how others might improve upon this model with even more realistic assumptions, use different parameter combinations, and perhaps even incorporate real-world data.
+
+We do a number of paired significance tests under 95% confidence intervals (usually involving gaps in VSE). We use these to evaluate "significant" gaps, and distinguish between statistical and practical significance. For example, if a system has a gap that we can be confident is between 0.3% and 0.5%, then it is statistically significant (we can be confident the gap is non-zero), but not practically significant. It feels disingenuous and unfair to say that one system is "better" than another if the gap is so small that it would not be noticeable in practice. The terminology we use is as follows:
+
+- Decisive: The gap is statistically significant and practically significant (greater than 1%). There is a clear and meaningful difference between the two systems.
+- Narrow edge: The gap is statistically significant, but not practically significant (less than 1%). There is likely a slight difference between the two systems, but it is not meaningful in practice.
+- Ambiguous edge: The gap is statistically significant, but the gap is not confidently within or outside the 1% practical significance threshold. There is a difference, but we cannot conclude whether it is meaningful in practice.
+- Indistinguishable: The gap is not statistically significant (the confidence interval includes 0), but even so the gap is confidently within the 1% practical significance threshold. If a difference exists, it's not worth worrying about in practice.
+- Inconclusive: The gap is not statistically significant, and the confidence interval includes both 0 and the 1% practical significance threshold. We cannot conclude anything about the gap.
+
+I also discuss any important statistically significant gaps that do not persist under a 99% confidence interval [here](#a-stricter-confidence-interval).
+
+Finally, I would like to round off part 1 with a few surprising findings related to choose-one voting.
 
 ### The Plurality Bump
 
