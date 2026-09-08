@@ -44,6 +44,14 @@ d-article {
     border-bottom-color: var(--global-divider-color) !important;
   }
 
+  // Distill's default hr uses `grid-column: screen` (full viewport bleed),
+  // which draws the rule across the sticky d-contents TOC sidebar. Confine
+  // it to the text column like the rest of the prose instead.
+  hr {
+    grid-column: text !important;
+    width: 100% !important;
+  }
+
   a {
     color: var(--global-theme-color) !important;
 
