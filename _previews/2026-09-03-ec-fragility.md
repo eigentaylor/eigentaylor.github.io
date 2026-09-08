@@ -29,6 +29,7 @@ toc:
   - name: "1916"
   - name: "1948"
   - name: "1960"
+  - name: "1968"
   - name: "1976"
   - name: "2016"
   - name: "2020"
@@ -463,6 +464,64 @@ Relatively speaking, this is a harder election to flip. Hawaii, newly a state, w
 
 {% jupyter_cell_embed "assets/jupyter/flip_scenarios.ipynb" tag="1960" %}
 
+## 1968
+
+<div class="pswp-gallery mt-3" id="1968-election" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem;">
+  <a href="/assets/img/pres_flips/portraits/1968Nixon.jpg"
+     data-pswp-width="1990"
+     data-pswp-height="2654"
+     target="_blank">
+    <img src="/assets/img/pres_flips/portraits/1968Nixon.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Richard Nixon portrait" />
+  </a>
+  <a href="/assets/img/pres_flips/portraits/1968Humphrey.jpg"
+     data-pswp-width="1658"
+     data-pswp-height="1904"
+     target="_blank">
+    <img src="/assets/img/pres_flips/portraits/1968Humphrey.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="Hubert Humphrey portrait" />
+  </a>
+  <a href="/assets/img/pres_flips/portraits/1968Wallace.jpg"
+     data-pswp-width="970"
+     data-pswp-height="1293"
+     target="_blank">
+    <img src="/assets/img/pres_flips/portraits/1968Wallace.jpg" class="img-fluid rounded z-depth-1" style="height: 400px; width: 100%; object-fit: cover; object-position: top;" alt="George Wallace portrait" />
+  </a>
+</div>
+<div class="caption mt-2">
+  Richard Nixon (R), the 37th President of the United States, who served from 1969 to 1974, Hubert Humphrey (D), the 38th Vice President of the United States, who was the Democratic candidate in the 1968 presidential election, and George Wallace (American Independent), the Governor of Alabama, who ran as a third-party candidate in the 1968 presidential election.
+</div>
+
+I think this is a really interesting election to analyze, because it was actually quite far from being close, relatively speaking. Despite Nixon's extremely small national popular vote margin, roughly 0.7%, his electoral college majority was fairly secure. The strong third party showing of George Wallace made some very concerned that nobody would reach an electoral college majority, and this was the closest the electoral college has been to getting repealed. However, the numbers are fairly surprising.
+
+Relatively speaking, you need to flip a *lot* of votes to break Nixon's majority. Unlike most years where you usually have a lot of states which are fairly close, robbing Nixon of the majority requires flipping a number of states with fairly beefy margins. You could flip over a hundred thousand votes in California, or go through a number of smaller states.
+
+Humphrey was nowhere close to winning, and you need to flip a lot of votes to get him there.This is sort of similar to 2004, but I would actually say that election was closer. This is a fairly easy 1/5 closeness margin.
+
+<div class="pswp-gallery flip-swipe-gallery mt-3" id="1968-animation">
+  <a href="/assets/img/pres_flips/1968_classic_votes.gif"
+     data-pswp-width="1080"
+     data-pswp-height="742"
+     target="_blank">
+    <img src="/assets/img/pres_flips/1968_classic_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 1968 election classic votes: the minimum flip needed to hand Humphrey the win outright" />
+  </a>
+  <a href="/assets/img/pres_flips/1968_no_majority_votes.gif"
+     data-pswp-width="1080"
+     data-pswp-height="742"
+     target="_blank">
+    <img src="/assets/img/pres_flips/1968_no_majority_votes.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 1968 election no-majority votes: the minimum votes needed to strip Nixon of a majority" />
+  </a>
+  <a href="/assets/img/pres_flips/1968_no_majority_margin.gif"
+     data-pswp-width="1080"
+     data-pswp-height="742"
+     target="_blank">
+    <img src="/assets/img/pres_flips/1968_no_majority_margin.gif" class="img-fluid rounded z-depth-1" alt="Animation of the 1968 election no-majority margin: the minimum margin-based flip needed to strip Nixon of a majority" />
+  </a>
+</div>
+<div class="caption mt-2">
+  Swipe to compare: the minimum flip needed to hand Humphrey the win outright (left), the minimum votes needed to strip Nixon of a majority (middle), and the minimum margin-based flip needed to strip Nixon of a majority (right).
+</div>
+
+{% jupyter_cell_embed "assets/jupyter/flip_scenarios.ipynb" tag="1968" %}
+
 ## 1976
 
 <div class="pswp-gallery mt-3" id="1976-election" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
@@ -641,7 +700,7 @@ Hopefully, this post gives a bit of a better perspective of how fragile the elec
 
 Overall, the fragility of these elections to very small shifts in the vote of just a handful of states highlights the precarious nature of the electoral college system. This post isn't really focused on the arguments of why or why not to keep the electoral college, but hopefully it exposes that it's not *just* the five elections that the popular vote winner lost that the electoral college has nearly defied the will of the voters.
 
-Further, it's not like the problems of the electoral college "went away" for the 112 years between 1888 and 2000. As we have seen, America had been cruisin' for a bruisin' for a number of elections throughout the 20th century. 
+Further, it's not like the problems of the electoral college "went away" for the 112 years between 1888 and 2000. As we have seen, America had been cruisin' for a bruisin' for a number of elections throughout the 20th century.
 
 States becoming more and more solidified in their partisan leanings in the 2020s has caused the utter collapse of the number of swing states. 7 states were within 5 percentage points in 2020: Pennsylvania, Michigan, Wisconsin, Arizona, Nevada, Georgia, and North Carolina. Those were the only states expected to be in play in 2024, and those are the only states expected to be in play in 2028 as well.
 
