@@ -18,7 +18,14 @@
 {% endif %}
 
 <!-- Custom overrides -->
-<script src="{{ '/assets/js/distillpub/overrides.js' | relative_url }}"></script>
+<!--
+  Named site-overrides.js (not overrides.js) so it doesn't collide with al_folio_distill's
+  bundled asset of the same name: that gem's AssetsGenerator re-registers its own
+  assets/js/distillpub/overrides.js on every build regardless of local overrides, and
+  Jekyll's last-write-wins static file handling let it silently clobber this file's
+  external-link/citation-popup fixes in the built _site output.
+-->
+<script src="{{ '/assets/js/distillpub/site-overrides.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/distill-read-time.js' | relative_url | bust_file_cache }}"></script>
 
 {% if page.theorems %}

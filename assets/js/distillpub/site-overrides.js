@@ -44,10 +44,8 @@ $(window).on("load", function () {
     cite.shadowRoot.querySelector("style").sheet.insertRule("ul li a {color: var(--global-text-color) !important; text-decoration: none;}");
     cite.shadowRoot.querySelector("style").sheet.insertRule("ul li a:hover {color: var(--global-theme-color) !important;}");
     const hoverBoxRoot = cite.shadowRoot.querySelector("d-hover-box").shadowRoot;
-    hoverBoxRoot.querySelector("style")
-      .sheet.insertRule(".panel {background-color: var(--global-bg-color) !important;}");
-    hoverBoxRoot.querySelector("style")
-      .sheet.insertRule(".panel {border-color: var(--global-divider-color) !important;}");
+    hoverBoxRoot.querySelector("style").sheet.insertRule(".panel {background-color: var(--global-bg-color) !important;}");
+    hoverBoxRoot.querySelector("style").sheet.insertRule(".panel {border-color: var(--global-divider-color) !important;}");
 
     // d-cite and its hover content are shadow DOM islands, so common.js cannot reach these links.
     enforceNewTabForExternalLinks(cite.shadowRoot);
