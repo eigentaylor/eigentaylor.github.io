@@ -118,6 +118,14 @@
   {% endif %}
   <script>
     addBackToTop();
+    var backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn) {
+      backToTopBtn.addEventListener('click', function () {
+        if (window.location.hash) {
+          history.replaceState(null, '', window.location.pathname + window.location.search);
+        }
+      });
+    }
   </script>
 {% endif %}
 
