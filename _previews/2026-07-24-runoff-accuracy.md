@@ -290,7 +290,7 @@ The code is included in [the Appendix](#the-jupyter-notebook), but we will summa
 
 ### The Approval-STAR Gap
 
-For an explanation of the terminology used in the significance columns, please refer to the [methodology section](#other-relevant-methodology), though the terminology is intended to be intuitive. In short, we distinguish between a statistically significant difference (confidence the gap is nonzero) and a practical difference (if the effect size is greater than a percentage point).
+For an explanation of the terminology used in the significance columns, please refer to the [methodology section](#other-relevant-methodology), though the terminology is intended to be intuitive. In short, we distinguish between a statistically significant difference (confidence the gap is nonzero) and a practical difference (if the effect size is confidently greater than or within a percentage point).
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="star-vse-gap-significant" %}
 
@@ -322,6 +322,8 @@ I believe the primary driver of the outcomes becoming so much worse in the coma 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-vs-baseline" %}
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="coma-diagnostic" %}
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="coma-vs-groggy" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-runoff-cost" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-primary-noise-cost" %}
 {% endproof %}
 
 So far we have looked at fixed runoff awareness models (coma, groggy, clear-eyed). This gives a very binary change in how much the runoff helps. But we are interested to see what the "in-between" looks like. Particularly, at what level of improved awareness does the delayed runoff start to outperform STAR?
