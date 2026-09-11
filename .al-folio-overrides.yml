@@ -1,119 +1,119 @@
 ---
 overrides:
   _includes:
-  - distill_scripts.liquid
-  - header.liquid
-  - metadata.liquid
-  - newsletter.liquid
-  - related_posts.liquid
-  - plugins/al_icons_styles.liquid
-  - plugins/al_search_assets.liquid
+    - distill_scripts.liquid
+    - header.liquid
+    - metadata.liquid
+    - newsletter.liquid
+    - related_posts.liquid
+    - plugins/al_icons_styles.liquid
+    - plugins/al_search_assets.liquid
   _includes/citation.liquid:
     owner: al_folio_core
     gem_version: 1.0.9
     upstream_path: _includes/citation.liquid
     upstream_sha256: 6a175755c6b80984038adb714980f77b0a092e4b33fcd263d13e47f0c0ff3792
     local_sha256: 93ca8b27f84f9d67543c47d121683a78a16a4e21a1bc479e8b790d6479262d42
-    acknowledged_at: '2026-09-07'
+    acknowledged_at: "2026-09-07"
   _includes/header.liquid:
     owner: al_folio_core
     gem_version: 1.0.9
     upstream_path: _includes/header.liquid
     upstream_sha256: c8663513baded68d9fa5fbe4d6363a976535bbe201efe5138243d0ff03101058
     local_sha256: 5579925a0f3591028667026abfd18c57cafb1da29dfd9a584959d22b3f263007
-    acknowledged_at: '2026-09-07'
+    acknowledged_at: "2026-09-07"
   _includes/metadata.liquid:
     owner: al_folio_core
     gem_version: 1.0.9
     upstream_path: _includes/metadata.liquid
     upstream_sha256: b9b8ea49980bb85109e344198a3b97818fcb6f5fec89e11f98e46af1529bc96a
     local_sha256: b6fbbea676c92aeba36b7ddb523f47d111d8ecdfd440547e022f07a48da383a1
-    acknowledged_at: '2026-09-07'
+    acknowledged_at: "2026-09-07"
   _includes/newsletter.liquid:
     owner: al_folio_core
     gem_version: 1.0.9
     upstream_path: _includes/newsletter.liquid
     upstream_sha256: 9c36dd5d9fe12681cdab99550eb19fe0285e4f00c0790c1505471c99e254a5c4
     local_sha256: c36ce8238fe48fabc8488c5f0388e44311ae069750fb26a1e4096b5f8a024aca
-    acknowledged_at: '2026-09-07'
+    acknowledged_at: "2026-09-07"
   _includes/plugins/al_icons_styles.liquid:
     owner: al_folio_core
     gem_version: 1.0.9
     upstream_path: _includes/plugins/al_icons_styles.liquid
     upstream_sha256: e3c567b0038de0e0fff7d6c0225bebeb276ede075b2cfc7098075c7361109832
     local_sha256: 2ddd0a13d9c82f76afd25ba9bfa0f3cfd480110eea1ce135d478ff91f80515d9
-    acknowledged_at: '2026-09-07'
+    acknowledged_at: "2026-09-07"
   _includes/plugins/al_search_assets.liquid:
     owner: al_folio_core
     gem_version: 1.0.9
     upstream_path: _includes/plugins/al_search_assets.liquid
     upstream_sha256: f502a9eefa1bbcff7cea239755b4144004b501cfd6c57a29b1c91866eb7805fe
     local_sha256: 1b667bc982503e3a2fc00fdb847bda77a410a3ce58a750e1557f3159a71513b6
-    acknowledged_at: '2026-09-07'
+    acknowledged_at: "2026-09-07"
   _includes/related_posts.liquid:
     owner: al_folio_core
     gem_version: 1.0.9
     upstream_path: _includes/related_posts.liquid
     upstream_sha256: 174b266356f943f8bc53eeeabde1e229436c8348ef38ac5b941a02ffd4192dda
     local_sha256: 82b69268e2b1016e236e94ab51293af480f4adeb7f895b1d52338c7c90f2caf5
-    acknowledged_at: '2026-09-07'
+    acknowledged_at: "2026-09-07"
   _layouts:
-  - about.liquid
-  - default.liquid
-  - distill.liquid
-  - post.liquid
+    - about.liquid
+    - default.liquid
+    - distill.liquid
+    - post.liquid
   _layouts/about.liquid:
     owner: al_folio_core
     gem_version: 1.0.9
     upstream_path: _layouts/about.liquid
     upstream_sha256: 2c28eb83b71fe65f252202c11f0b4a19a9b6f1faccdc870b4f91c4ea51d0c6f1
     local_sha256: 8457719b5a290acfe53ff1b46a853ff286e54e9e8a3a5903cde60bbda9fab1a6
-    acknowledged_at: '2026-09-07'
+    acknowledged_at: "2026-09-07"
   _layouts/default.liquid:
     owner: al_folio_core
     gem_version: 1.0.9
     upstream_path: _layouts/default.liquid
     upstream_sha256: 4b713c35f7383692b99f4f1086123acbc3cb247e775a4cebe39985b5302fb9b2
     local_sha256: 455207668612d4089593d305618cbd197249b07f644465035ea67f23a04ec859
-    acknowledged_at: '2026-09-07'
+    acknowledged_at: "2026-09-07"
   _layouts/distill.liquid:
     owner: al_folio_core
     gem_version: 1.0.9
     upstream_path: _layouts/distill.liquid
     upstream_sha256: 3610cdd2f384d05d2e30669ffc8e3696552b1fb22017a41a3224187d88f9d803
     local_sha256: 76d00089ece0e715f24831c2d09d9e0edb62c69a6b2d7e8e92e04fbaab59f631
-    acknowledged_at: '2026-09-07'
+    acknowledged_at: "2026-09-07"
   _layouts/post.liquid:
     owner: al_folio_core
     gem_version: 1.0.9
     upstream_path: _layouts/post.liquid
     upstream_sha256: b70376c20e97692e319650efd8db6e224439f4ea3257bc32a04b3299d54ad94b
     local_sha256: d4160a54f41269b47bc1d1394dc4e4f68537eb94ad5179fb08542805c452b81e
-    acknowledged_at: '2026-09-07'
+    acknowledged_at: "2026-09-07"
   _sass:
-  - _base.scss
-  - _distill.scss
-  - font-awesome/_functions.scss
-  - font-awesome/_icons.scss
-  - font-awesome/_mixins.scss
-  - font-awesome/brands.scss
-  - tabler-icons/tabler-icons-filled.scss
-  - tabler-icons/tabler-icons-outline.scss
-  - tabler-icons/tabler-icons.scss
+    - _base.scss
+    - _distill.scss
+    - font-awesome/_functions.scss
+    - font-awesome/_icons.scss
+    - font-awesome/_mixins.scss
+    - font-awesome/brands.scss
+    - tabler-icons/tabler-icons-filled.scss
+    - tabler-icons/tabler-icons-outline.scss
+    - tabler-icons/tabler-icons.scss
   _scripts:
-  - search.liquid.js
+    - search.liquid.js
   assets/css/main.scss:
     owner: al_folio_core
     gem_version: 1.0.9
     upstream_path: assets/css/main.scss
     upstream_sha256: 437c6c911c596391413e435dc0ea7095e682e85c572c1fd3fff69f9597455b3e
     local_sha256: a5b70b9fbedfb4fe4af06317b478caca68886874ec19945cbfb1af2da316bf34
-    acknowledged_at: '2026-09-07'
+    acknowledged_at: "2026-09-07"
   assets/js/common.js:
     owner: al_folio_core
     gem_version: 1.0.9
     upstream_path: assets/js/common.js
     upstream_sha256: 89e65df12a3473705b488338af00c08f4cf947e59dee22748afc1c3a1fcb99fe
     local_sha256: 6ed8383546b252b9ee98dd306d83cd4ef7d5ef871b887aea86c6429e67b18a5b
-    acknowledged_at: '2026-09-07'
+    acknowledged_at: "2026-09-07"
 version: 1
