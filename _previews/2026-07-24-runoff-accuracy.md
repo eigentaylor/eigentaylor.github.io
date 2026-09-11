@@ -290,7 +290,7 @@ The code is included in [the Appendix](#the-jupyter-notebook), but we will summa
 
 ### The Approval-STAR Gap
 
-For an explanation of the terminology used in the significance columns, please refer to the [methodology section](#other-relevant-methodology), though the terminology is intended to be intuitive. In short, we distinguish between a statistically significant difference (confidence the gap is nonzero) and a practical difference (if the effect size is confidently greater than or within a percentage point).
+For an explanation of the terminology used in the significance columns, please refer to the [methodology section](#other-relevant-methodology), though the terminology is intended to be intuitive. In short, we distinguish between a statistically significant difference (confidence the gap is nonzero) and a practical difference (if the effect size is confidently greater than a percentage point).
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="star-vse-gap-significant" %}
 
@@ -299,6 +299,7 @@ Under perfect conditions, STAR is objectively more accurate than single-round Ap
 Approval Top-2, on the other hand, clearly wins out in simulations over STAR except for the "coma model", under which Approval Top-2 performed significantly worse than STAR (and single-round Approval). But even under mild friction, Approval Top-2 is significantly more accurate than STAR so long as voters are "awake" to the runoff, and this grows as friction worsens. It's not even close. This is whether or not runoff noise is removed. Misinformed voters who at least are aware of the candidates are enough to outperform the automatic runoff.
 
 {% proof Expand to see significance tables %}
+This is the same set of tables as above, but just organized by the different friction scenarios rather than by the significance of the gaps.
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="approval-star-gap-scenarios" %}
 {% endproof %}
 
@@ -322,6 +323,7 @@ I believe the primary driver of the outcomes becoming so much worse in the coma 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-vs-baseline" %}
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="coma-diagnostic" %}
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="coma-vs-groggy" %}
+For the mathematical formulation of "VSE cost", see [the methodology section](#other-relevant-methodology).
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-runoff-cost" %}
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-primary-noise-cost" %}
 {% endproof %}
@@ -361,11 +363,7 @@ The true culprit is not the automatic runoff itself, but the data fed into it. T
 
 In fact, contrary to my hypothesis, the elections where the automatic runoff flips the winner from the candidate with the most stars actually appear to be *more good than bad* under the friction scenarios I tested.
 
-We measure the "VSE cost" of a particular case as follows:
-
-$$\text{cost}(\text{cases}) = \frac{\sum_{\text{cases}} \bigg(u(\text{counterfactual}) - u(\text{actual})\bigg)}{\sum_{\text{all elections}} \bigg(\text{max}(\text{utility})-\text{avg}(\text{utility})\bigg)}$$
-
-In the following table, we are defining the counterfactual as the outcome that would have occurred under STAR under ideal conditions, where voters are perfectly informed and there is no friction affecting their votes<d-footnote>Not from a delayed runoff, but from the automatic runoff applied to the quantized honest scores. For example, if a voter's honest rescaled score is 4.2 for A and 4.1 for B, their ballot in the counterfactual would give both a 4, compared to the actual ballot cast which might be different because of noise, unawareness, or fatigue.</d-footnote>.
+We are interested in quantifying the exact "VSE cost" of STAR's automatic runoff. The VSE cost is just the utility lost by not getting the counterfactual outcome (see the [other methodology section for a precise formulation of this](#other-relevant-methodology)). The counterfactual outcome, for the following table, is defined as the outcome that would have occurred under STAR under ideal conditions, where voters are perfectly informed and there is no friction affecting their votes<d-footnote>Not from a delayed runoff, but from the automatic runoff applied to the quantized honest scores. For example, if a voter's honest rescaled score is 4.2 for A and 4.1 for B, their ballot in the counterfactual would give both a 4, compared to the actual ballot cast which might be different because of noise, unawareness, or fatigue.</d-footnote>.
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="star-garbage" %}
 
@@ -439,6 +437,10 @@ When we step beyond the idealized assumptions of perfect voters, we find that th
 ### Other Relevant Methodology
 
 In the comparison, we used honest voting for all systems. This was the simplest choice, and is actually a potential disadvantage for Approval and Plurality, since strategic voting is usually what makes the outcomes of these systems more accurate. STAR and especially Condorcet generally have their best VSE under honest voting, so this is a conservative choice that likely favors STAR and Condorcet in the comparison.
+
+For some of the analyses, we measured "VSE cost". This is calculated for comparing a counterfactual outcome to the actual outcome in cases where the winner was different.
+
+$$\text{cost}(\text{cases}) = \frac{\sum_{\text{cases}} \bigg(u(\text{counterfactual}) - u(\text{actual})\bigg)}{\sum_{\text{all elections}} \bigg(\text{max}(\text{utility})-\text{avg}(\text{utility})\bigg)}$$
 
 In regards to the joint friction scenarios, the way some parameters (particularly $\alpha$ and $\beta$) compound is multiplicative, so while 0.7 may not seem as heavy as, say, 0.5 or 0.3, it is actually *quite* substantial (especially with only 6 candidates). You may expand the following table to see just the exact probabilities for a voter to evaluate a candidate based on their prominence and fatigue ranking.
 
