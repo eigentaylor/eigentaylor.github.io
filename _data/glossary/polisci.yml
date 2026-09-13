@@ -1,0 +1,11 @@
+# Glossary term data for `<d-glossary key="...">` tags on posts with `glossary: polisci`
+# in their front matter. Each entry: key (lookup id used by the tag), term (display
+# fallback/aria-label), definition (short plain text), link (optional "learn more" URL).
+- key: alabama_paradox
+  term: "Alabama Paradox"
+  definition: "A quirk of some apportionment methods (like Vinton's) where increasing the total number of House seats can cause a state to lose a seat, even though nothing about its population changed."
+  link: "https://en.wikipedia.org/wiki/Alabama_paradox"
+- key: agreeable_house_size
+  term: "Agreeable House Size"
+  definition: "A House size where Webster's and Vinton's apportionment methods agree, and no Alabama Paradox occurs."
+  link: "https://www.researchgate.net/publication/353810350_Fairness_in_Apportionment"
