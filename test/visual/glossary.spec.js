@@ -3,6 +3,13 @@ const { preparePage, stabilizeVisuals } = require("./helpers");
 
 const ROUTE = "/al-folio/blog/uncap/";
 
+// Playwright's default actionability scroll ("nearest edge") can land a target
+// right under this theme's fixed header/footer chrome, since terms sit deep in
+// the article body. Centering the target in the viewport first avoids that.
+async function centerOn(locator) {
+  await locator.evaluate((el) => el.scrollIntoView({ block: "center", inline: "center" }));
+}
+
 for (const theme of ["light", "dark"]) {
   test(`glossary repeat occurrences render muted vs active (${theme})`, async ({ page }) => {
     await preparePage(page, theme);
@@ -40,6 +47,7 @@ test.describe("glossary popover interactions", () => {
     const popover = term.locator(".popover");
 
     await expect(popover).toBeHidden();
+    await centerOn(button);
     await button.hover();
     await expect(popover).toBeVisible();
     await expect(popover).toContainText("apportionment");
@@ -57,6 +65,7 @@ test.describe("glossary popover interactions", () => {
     const button = term.locator("button");
     const popover = term.locator(".popover");
 
+    await centerOn(button);
     await button.focus();
     await expect(popover).toBeVisible();
     await button.evaluate((el) => el.blur());
@@ -72,6 +81,7 @@ test.describe("glossary popover interactions", () => {
     const button = term.locator("button");
     const popover = term.locator(".popover");
 
+    await centerOn(button);
     await button.click();
     await expect(popover).toBeVisible();
 
@@ -91,6 +101,7 @@ test.describe("glossary popover interactions", () => {
     const button = term.locator("button");
     const popover = term.locator(".popover");
 
+    await centerOn(button);
     await button.click();
     await expect(popover).toBeVisible();
 
@@ -107,6 +118,7 @@ test.describe("glossary popover interactions", () => {
     const button = term.locator("button");
     const popover = term.locator(".popover");
 
+    await centerOn(button);
     await button.click();
     await expect(popover).toBeVisible();
 
@@ -120,9 +132,11 @@ test.describe("glossary popover interactions", () => {
     await stabilizeVisuals(page);
 
     const term = page.locator('d-glossary[key="alabama_paradox"]').first();
+    const button = term.locator("button");
     const link = term.locator(".popover a");
 
-    await term.locator("button").click();
+    await centerOn(button);
+    await button.click();
     await expect(link).toHaveAttribute("target", "_blank");
     await expect(link).toHaveAttribute("rel", /noopener/);
   });
