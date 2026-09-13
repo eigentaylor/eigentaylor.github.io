@@ -141,3 +141,36 @@ test.describe("glossary popover interactions", () => {
     await expect(link).toHaveAttribute("rel", /noopener/);
   });
 });
+
+test.describe("glossary appendix summary", () => {
+  test("d-glossary-list renders every used term, alphabetically", async ({ page }) => {
+    await preparePage(page, "light");
+    await page.goto(ROUTE, { waitUntil: "networkidle" });
+    await stabilizeVisuals(page);
+
+    const list = page.locator("d-appendix d-glossary-list");
+    await list.scrollIntoViewIfNeeded();
+
+    await expect(list.locator("h3")).toHaveText("Glossary");
+    const items = list.locator("ol > li");
+    await expect(items).toHaveCount(12);
+
+    // Alphabetical by term: "Adams's Method" sorts first, "Webster's Method" last.
+    await expect(items.first().locator("strong")).toHaveText("Adams's Method");
+    await expect(items.last().locator("strong")).toHaveText("Webster's Method");
+
+    // Each entry with a link opens in a new tab, matching the inline popovers.
+    const linkedItem = list.locator("li", { hasText: "Alabama Paradox" });
+    await expect(linkedItem.locator("a")).toHaveAttribute("target", "_blank");
+  });
+
+  test("d-glossary-list stays hidden on a page with no glossary terms used", async ({ page }) => {
+    await preparePage(page, "light");
+    // A distill page without `page.glossary` set never loads glossary.js at
+    // all, so <d-glossary-list> stays an inert, invisible, undefined element.
+    await page.goto("/al-folio/blog/iia/", { waitUntil: "networkidle" });
+    await stabilizeVisuals(page);
+
+    await expect(page.locator("d-appendix d-glossary-list")).toBeHidden();
+  });
+});

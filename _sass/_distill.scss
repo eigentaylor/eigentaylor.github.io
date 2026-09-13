@@ -380,6 +380,13 @@ d-appendix {
   }
 }
 
+// The gem's own layout CSS lays out d-footnote-list/d-citation-list full-width
+// by enumerating those tag names directly; it can't know about this repo-local
+// d-glossary-list, so it needs the same rule here.
+d-appendix > d-glossary-list {
+  grid-column: screen;
+}
+
 @media (max-width: 1024px) {
   d-article {
     d-contents {

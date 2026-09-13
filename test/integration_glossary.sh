@@ -19,9 +19,11 @@ if [ ! -f "${glossary_page}" ]; then
 fi
 
 grep -q '<d-glossary' "${glossary_page}"
+grep -q '<d-glossary-list' "${glossary_page}"
 grep -q 'id="d-glossary-data"' "${glossary_page}"
 grep -q 'alabama_paradox' "${glossary_page}"
 grep -q 'agreeable_house_size' "${glossary_page}"
+grep -q 'huntington_hill_method' "${glossary_page}"
 grep -q '/assets/js/glossary.js' "${glossary_page}"
 
 # A distill post that does not set `glossary:` in its front matter must not pay
@@ -43,5 +45,10 @@ if grep -q 'id="d-glossary-data"' "${non_glossary_page}"; then
   echo "glossary data payload leaked onto a page without page.glossary set: ${non_glossary_page}" >&2
   exit 1
 fi
+
+# <d-glossary-list> is unconditional in _layouts/distill.liquid (matching its
+# d-footnote-list/d-citation-list siblings), so it should still appear -- inert,
+# since glossary.js never loads here -- on a page without page.glossary set.
+grep -q '<d-glossary-list' "${non_glossary_page}"
 
 echo "glossary integration checks passed"

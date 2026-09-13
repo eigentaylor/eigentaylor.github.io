@@ -9,3 +9,41 @@
   term: "Agreeable House Size"
   definition: "A House size where Webster's and Vinton's apportionment methods agree, and no Alabama Paradox occurs (no state would receive more seats for a smaller house size)."
   link: "https://www.researchgate.net/publication/353810350_Fairness_in_Apportionment"
+- key: apportionment
+  term: "Apportionment"
+  definition: "The process of allocating a fixed number of legislative seats (like the 435 in the U.S. House) among states based on population."
+  link: "https://en.wikipedia.org/wiki/United_States_congressional_apportionment"
+- key: divisor_method
+  term: "Divisor Method"
+  definition: "A family of apportionment methods that divide each state's population by a common divisor, then round the resulting quotients to whole seats using some fixed rounding rule."
+  link: "https://en.wikipedia.org/wiki/Highest_averages_method"
+- key: standard_divisor
+  term: "Standard Divisor"
+  definition: "The nationwide average population per seat: total population divided by the number of seats."
+- key: quota
+  term: "Quota"
+  definition: "A state's exact proportional share of seats -- its population divided by the standard divisor -- before rounding to a whole number."
+- key: websters_method
+  term: "Webster's Method"
+  definition: "A divisor method that rounds each state's quotient to the nearest whole number. Proven unbiased between large and small states, though it can occasionally violate a state's quota."
+  link: "https://en.wikipedia.org/wiki/Webster/Sainte-Lagu%C3%AB_method"
+- key: vintons_method
+  term: "Vinton's Method"
+  definition: "Also known as Hamilton's method: gives each state its rounded-down quota, then hands out remaining seats one at a time to the states with the largest leftover fractions. Guarantees quota compliance but can produce the Alabama Paradox."
+  link: "https://en.wikipedia.org/wiki/Largest_remainder_method"
+- key: jeffersons_method
+  term: "Jefferson's Method"
+  definition: "A divisor method that always rounds down, systematically favoring larger states. The first method used for U.S. House apportionment, also known internationally as the D'Hondt method."
+  link: "https://en.wikipedia.org/wiki/D%27Hondt_method"
+- key: adams_method
+  term: "Adams's Method"
+  definition: "A divisor method that always rounds up -- the mirror image of Jefferson's method, systematically favoring smaller states."
+  link: "https://en.wikipedia.org/wiki/Adams_method"
+- key: huntington_hill_method
+  term: "Huntington-Hill Method"
+  definition: "The divisor method currently used to apportion the U.S. House, rounding based on the geometric mean of the two nearest whole numbers. Despite claims of being bias-free, it's slightly biased toward smaller states."
+  link: "https://en.wikipedia.org/wiki/Huntington%E2%80%93Hill_method"
+- key: deans_method
+  term: "Dean's Method"
+  definition: "A divisor method that rounds based on the harmonic mean of the two nearest whole numbers -- similar in spirit to Huntington-Hill but more strongly biased toward smaller states."
+  link: "https://en.wikipedia.org/wiki/Dean%27s_method"

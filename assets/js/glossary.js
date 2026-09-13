@@ -239,4 +239,66 @@
   if (!customElements.get("d-glossary")) {
     customElements.define("d-glossary", DGlossary);
   }
+
+  // <d-glossary-list> -- summarizes every glossary term actually used on the
+  // page, alphabetically, inside <d-appendix> alongside <d-footnote-list> and
+  // <d-citation-list>. Rendered in light DOM (no shadow root) on purpose, so
+  // it inherits this repo's own `d-appendix h3, li, span, a` styling for free
+  // (see _sass/_distill.scss) exactly like its two gem-provided siblings do.
+  //
+  // Registration order matters: customElements.define() synchronously
+  // upgrades every already-parsed matching element (running connectedCallback)
+  // before returning, so defining d-glossary first guarantees `seenKeys` is
+  // fully populated by the time this element reads it, regardless of where
+  // <d-glossary-list> sits in the document.
+  class DGlossaryList extends HTMLElement {
+    connectedCallback() {
+      if (this.childNodes.length > 0) {
+        return;
+      }
+
+      if (seenKeys.size === 0) {
+        this.style.display = "none";
+        return;
+      }
+
+      var map = getGlossaryMap();
+      var entries = Array.from(seenKeys)
+        .map(function (key) {
+          return map.get(key);
+        })
+        .filter(Boolean);
+      entries.sort(function (a, b) {
+        return a.term.localeCompare(b.term);
+      });
+
+      var heading = document.createElement("h3");
+      heading.textContent = "Glossary";
+      this.appendChild(heading);
+
+      var list = document.createElement("ol");
+      entries.forEach(function (entry) {
+        var item = document.createElement("li");
+        var strong = document.createElement("strong");
+        strong.textContent = entry.term;
+        item.appendChild(strong);
+        item.appendChild(document.createTextNode(": " + entry.definition));
+        if (entry.link) {
+          item.appendChild(document.createTextNode(" "));
+          var link = document.createElement("a");
+          link.href = entry.link;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.textContent = "Learn more";
+          item.appendChild(link);
+        }
+        list.appendChild(item);
+      });
+      this.appendChild(list);
+    }
+  }
+
+  if (!customElements.get("d-glossary-list")) {
+    customElements.define("d-glossary-list", DGlossaryList);
+  }
 })();
