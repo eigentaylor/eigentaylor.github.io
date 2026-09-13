@@ -167,11 +167,18 @@
         "</span>";
 
       this.button = shadow.querySelector("button.term");
-      this.popover = shadow.querySelector(".popover");
+      // NOTE: must NOT be named `this.popover` -- HTMLElement has a native,
+      // reflected `popover` IDL property (the browser's own Popover API).
+      // Assigning a Node to it stringifies to "[object HTMLDivElement]" and
+      // writes that as the real `popover` content attribute, which makes the
+      // browser treat the whole custom element as a native popover: yanked
+      // into the top layer, given default browser chrome, and detached from
+      // its actual position in the article.
+      this.popoverEl = shadow.querySelector(".popover");
 
       var definitionText = document.createElement("p");
       definitionText.textContent = entry.definition || "";
-      this.popover.appendChild(definitionText);
+      this.popoverEl.appendChild(definitionText);
 
       if (entry.link) {
         var link = document.createElement("a");
@@ -181,7 +188,7 @@
         link.textContent = "Learn more";
         // The popover lives in shadow DOM, so common.js's site-wide external-link
         // handling can't reach it -- set target/rel here directly instead.
-        this.popover.appendChild(link);
+        this.popoverEl.appendChild(link);
       }
 
       this.button.addEventListener("mouseenter", () => this.show());
@@ -211,20 +218,20 @@
     }
 
     show() {
-      this.popover.hidden = false;
-      this.popover.classList.remove("align-right", "align-top");
-      var rect = this.popover.getBoundingClientRect();
+      this.popoverEl.hidden = false;
+      this.popoverEl.classList.remove("align-right", "align-top");
+      var rect = this.popoverEl.getBoundingClientRect();
       if (rect.right > window.innerWidth) {
-        this.popover.classList.add("align-right");
+        this.popoverEl.classList.add("align-right");
       }
       if (rect.bottom > window.innerHeight) {
-        this.popover.classList.add("align-top");
+        this.popoverEl.classList.add("align-top");
       }
       this.button.setAttribute("aria-expanded", "true");
     }
 
     hide() {
-      this.popover.hidden = true;
+      this.popoverEl.hidden = true;
       this.button.setAttribute("aria-expanded", "false");
     }
   }
