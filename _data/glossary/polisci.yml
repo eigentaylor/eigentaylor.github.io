@@ -3,7 +3,7 @@
 # fallback/aria-label), definition (short plain text), link (optional "learn more" URL).
 - key: alabama_paradox
   term: "Alabama Paradox"
-  definition: "A quirk of some apportionment methods (like Vinton's) where increasing the total number of House seats can cause a state to lose a seat, even though nothing about its population changed."
+  definition: "A quirk of some apportionment methods (like Vinton's) where increasing the total number of House seats can cause a state to lose a seat."
   link: "https://en.wikipedia.org/wiki/Alabama_paradox"
 - key: agreeable_house_size
   term: "Agreeable House Size"
