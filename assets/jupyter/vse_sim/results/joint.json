@@ -1,0 +1,1801 @@
+{
+ "code_version": "47a8b85d79fc8d5a",
+ "content_hash": "881bb20690b080cf337e0291d047a405bd5c1775c7cd42d84cc57314a3b951ae",
+ "data": {
+  "betrayal": [
+   {
+    "label": "STAR",
+    "n_aligned": 3466,
+    "n_bad_flips": 150,
+    "n_betrayals": 1884,
+    "n_decisive": 5703,
+    "n_elections": 6000,
+    "n_flips": 514,
+    "n_good_flips": 353,
+    "n_honest_tied_flips": 11,
+    "n_silent_lockin": 1734,
+    "n_voter_corrupt": 154322,
+    "n_voter_decisive": 431096,
+    "scenario": "Mild friction",
+    "sum_best_all": -4342.9814420783205,
+    "sum_best_decisive": -4124.895389875074,
+    "sum_rand_all": -5815.1132256389155,
+    "sum_rand_decisive": -5526.371120603923,
+    "sum_util_actual": -4318.51004936181,
+    "sum_util_actual_bad_flip": -131.04989480457593,
+    "sum_util_actual_lockin": -1376.841865698715,
+    "sum_util_honest": -4208.092409668501,
+    "sum_util_honest_bad_flip": -116.9143399075053,
+    "sum_util_honest_lockin": -1280.559780902486
+   },
+   {
+    "label": "STAR",
+    "n_aligned": 3348,
+    "n_bad_flips": 80,
+    "n_betrayals": 2271,
+    "n_decisive": 5770,
+    "n_elections": 6000,
+    "n_flips": 234,
+    "n_good_flips": 151,
+    "n_honest_tied_flips": 3,
+    "n_silent_lockin": 2191,
+    "n_voter_corrupt": 211156,
+    "n_voter_decisive": 467612,
+    "scenario": "Moderate friction",
+    "sum_best_all": -4342.9814420783205,
+    "sum_best_decisive": -4178.019428432386,
+    "sum_rand_all": -5815.1132256389155,
+    "sum_rand_decisive": -5592.37645294362,
+    "sum_util_actual": -4620.674066452546,
+    "sum_util_actual_bad_flip": -74.39509923504161,
+    "sum_util_actual_lockin": -1875.793737176144,
+    "sum_util_honest": -4384.5143923158,
+    "sum_util_honest_bad_flip": -61.54403261328061,
+    "sum_util_honest_lockin": -1652.4851296611562
+   },
+   {
+    "label": "STAR",
+    "n_aligned": 3217,
+    "n_bad_flips": 29,
+    "n_betrayals": 2540,
+    "n_decisive": 5818,
+    "n_elections": 6000,
+    "n_flips": 90,
+    "n_good_flips": 61,
+    "n_honest_tied_flips": 0,
+    "n_silent_lockin": 2511,
+    "n_voter_corrupt": 236714,
+    "n_voter_decisive": 484570,
+    "scenario": "Heavy friction",
+    "sum_best_all": -4342.9814420783205,
+    "sum_best_decisive": -4209.341919648005,
+    "sum_rand_all": -5815.1132256389155,
+    "sum_rand_decisive": -5636.963465199579,
+    "sum_util_actual": -4914.5375658733265,
+    "sum_util_actual_bad_flip": -34.21618969196552,
+    "sum_util_actual_lockin": -2325.0800808968397,
+    "sum_util_honest": -4529.425172505873,
+    "sum_util_honest_bad_flip": -25.319081089511297,
+    "sum_util_honest_lockin": -1948.8647961318272
+   }
+  ],
+  "ce_denominator": [
+   {
+    "cw_exists": 5942,
+    "scenario": "Mild friction"
+   },
+   {
+    "cw_exists": 5942,
+    "scenario": "Moderate friction"
+   },
+   {
+    "cw_exists": 5942,
+    "scenario": "Heavy friction"
+   }
+  ],
+  "ce_wins": [
+   {
+    "chooser": "honBallot",
+    "cw_wins": 2686,
+    "label": "Plurality",
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 3596,
+    "label": "Plurality Top-2",
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 4083,
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 2506,
+    "label": "RCV (IRV)",
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 2664,
+    "label": "Approval Top-2 (Coma)",
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 3690,
+    "label": "Approval Top-2",
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 4274,
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 2798,
+    "label": "STAR",
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 4222,
+    "label": "Score Top-2 (Clear-Eyed)",
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 2520,
+    "label": "Condorcet (Schulze)",
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 2705,
+    "label": "Approval",
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 2662,
+    "label": "Score5",
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1944,
+    "label": "Plurality",
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 2838,
+    "label": "Plurality Top-2",
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 3218,
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1647,
+    "label": "RCV (IRV)",
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1919,
+    "label": "Approval",
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1699,
+    "label": "Approval Top-2 (Coma)",
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 2784,
+    "label": "Approval Top-2",
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 3207,
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1923,
+    "label": "STAR",
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1881,
+    "label": "Score5",
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 3186,
+    "label": "Score Top-2 (Clear-Eyed)",
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1629,
+    "label": "Condorcet (Schulze)",
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1457,
+    "label": "Plurality",
+    "scenario": "Heavy friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 2253,
+    "label": "Plurality Top-2",
+    "scenario": "Heavy friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 2606,
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "scenario": "Heavy friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1271,
+    "label": "RCV (IRV)",
+    "scenario": "Heavy friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1462,
+    "label": "Approval",
+    "scenario": "Heavy friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1250,
+    "label": "Approval Top-2 (Coma)",
+    "scenario": "Heavy friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 2273,
+    "label": "Approval Top-2",
+    "scenario": "Heavy friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 2649,
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "scenario": "Heavy friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1470,
+    "label": "STAR",
+    "scenario": "Heavy friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1465,
+    "label": "Score5",
+    "scenario": "Heavy friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 2630,
+    "label": "Score Top-2 (Clear-Eyed)",
+    "scenario": "Heavy friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1272,
+    "label": "Condorcet (Schulze)",
+    "scenario": "Heavy friction"
+   }
+  ],
+  "coma": [
+   {
+    "abstained_awareness_fixable": 6713,
+    "abstained_noise_unfixable": 1771,
+    "aligned": 431425,
+    "both_correct": 3314,
+    "both_wrong": 455,
+    "coma_only_correct": 391,
+    "groggy_only_correct": 1840,
+    "label": "Approval Top-2 (Coma)",
+    "n_coma_bad_flip": 459,
+    "n_coma_silent_lockin": 1774,
+    "n_decisive_elections": 6000,
+    "n_decisive_voters": 606000,
+    "n_groggy_bad_flip": 391,
+    "n_groggy_silent_lockin": 455,
+    "scenario": "Mild friction",
+    "sum_best_all": -4342.9814420783205,
+    "sum_rand_all": -5815.1132256389155,
+    "sum_util_actual_coma_bad_flip": -411.8575321971163,
+    "sum_util_actual_coma_lockin": -1405.1906465100167,
+    "sum_util_actual_groggy_bad_flip": -291.8446475307201,
+    "sum_util_actual_groggy_lockin": -326.0350981673634,
+    "sum_util_groggy_vs_coma": 142.78923525979187,
+    "sum_util_true_coma_bad_flip": -359.7470247236066,
+    "sum_util_true_coma_lockin": -1302.652673568155,
+    "sum_util_true_groggy_bad_flip": -284.5664922198026,
+    "sum_util_true_groggy_lockin": -321.37011573808945,
+    "wrong_awareness_fixable": 59258,
+    "wrong_noise_unfixable": 106833
+   },
+   {
+    "abstained_awareness_fixable": 6158,
+    "abstained_noise_unfixable": 1577,
+    "aligned": 435745,
+    "both_correct": 3375,
+    "both_wrong": 441,
+    "coma_only_correct": 377,
+    "groggy_only_correct": 1807,
+    "label": "STAR",
+    "n_coma_bad_flip": 390,
+    "n_coma_silent_lockin": 1794,
+    "n_decisive_elections": 6000,
+    "n_decisive_voters": 606000,
+    "n_groggy_bad_flip": 383,
+    "n_groggy_silent_lockin": 435,
+    "scenario": "Mild friction",
+    "sum_best_all": -4342.9814420783205,
+    "sum_rand_all": -5815.1132256389155,
+    "sum_util_actual_coma_bad_flip": -354.8102346385297,
+    "sum_util_actual_coma_lockin": -1434.233755665417,
+    "sum_util_actual_groggy_bad_flip": -288.32351772081836,
+    "sum_util_actual_groggy_lockin": -312.47704087052233,
+    "sum_util_groggy_vs_coma": 144.53384416795447,
+    "sum_util_true_coma_bad_flip": -307.68719514075804,
+    "sum_util_true_coma_lockin": -1324.305059259609,
+    "sum_util_true_groggy_bad_flip": -281.24449731955207,
+    "sum_util_true_groggy_lockin": -306.95427695154734,
+    "wrong_awareness_fixable": 58354,
+    "wrong_noise_unfixable": 104166
+   },
+   {
+    "abstained_awareness_fixable": 8212,
+    "abstained_noise_unfixable": 2854,
+    "aligned": 401694,
+    "both_correct": 2659,
+    "both_wrong": 421,
+    "coma_only_correct": 433,
+    "groggy_only_correct": 2487,
+    "label": "Approval Top-2 (Coma)",
+    "n_coma_bad_flip": 586,
+    "n_coma_silent_lockin": 2296,
+    "n_decisive_elections": 6000,
+    "n_decisive_voters": 606000,
+    "n_groggy_bad_flip": 420,
+    "n_groggy_silent_lockin": 434,
+    "scenario": "Moderate friction",
+    "sum_best_all": -4342.9814420783205,
+    "sum_rand_all": -5815.1132256389155,
+    "sum_util_actual_coma_bad_flip": -575.1088915689818,
+    "sum_util_actual_coma_lockin": -1961.9024592700823,
+    "sum_util_actual_groggy_bad_flip": -325.0140757658992,
+    "sum_util_actual_groggy_lockin": -337.091929787454,
+    "sum_util_groggy_vs_coma": 349.5550089175826,
+    "sum_util_true_coma_bad_flip": -450.368451709176,
+    "sum_util_true_coma_lockin": -1718.860438947799,
+    "sum_util_true_groggy_bad_flip": -314.87052073066826,
+    "sum_util_true_groggy_lockin": -328.7255402237067,
+    "wrong_awareness_fixable": 79445,
+    "wrong_noise_unfixable": 113795
+   },
+   {
+    "abstained_awareness_fixable": 7799,
+    "abstained_noise_unfixable": 2687,
+    "aligned": 403836,
+    "both_correct": 2692,
+    "both_wrong": 410,
+    "coma_only_correct": 426,
+    "groggy_only_correct": 2472,
+    "label": "STAR",
+    "n_coma_bad_flip": 554,
+    "n_coma_silent_lockin": 2306,
+    "n_decisive_elections": 6000,
+    "n_decisive_voters": 606000,
+    "n_groggy_bad_flip": 409,
+    "n_groggy_silent_lockin": 427,
+    "scenario": "Moderate friction",
+    "sum_best_all": -4342.9814420783205,
+    "sum_rand_all": -5815.1132256389155,
+    "sum_util_actual_coma_bad_flip": -548.6395104404454,
+    "sum_util_actual_coma_lockin": -1983.673238354706,
+    "sum_util_actual_groggy_bad_flip": -317.89919882906963,
+    "sum_util_actual_groggy_lockin": -332.90349308796243,
+    "sum_util_groggy_vs_coma": 352.77362872005494,
+    "sum_util_true_coma_bad_flip": -426.5039672316998,
+    "sum_util_true_coma_lockin": -1735.1006849879072,
+    "sum_util_true_groggy_bad_flip": -308.20212085491573,
+    "sum_util_true_groggy_lockin": -324.383609872155,
+    "wrong_awareness_fixable": 78571,
+    "wrong_noise_unfixable": 113107
+   },
+   {
+    "abstained_awareness_fixable": 4178,
+    "abstained_noise_unfixable": 1867,
+    "aligned": 383846,
+    "both_correct": 2331,
+    "both_wrong": 413,
+    "coma_only_correct": 459,
+    "groggy_only_correct": 2797,
+    "label": "Approval Top-2 (Coma)",
+    "n_coma_bad_flip": 543,
+    "n_coma_silent_lockin": 2665,
+    "n_decisive_elections": 6000,
+    "n_decisive_voters": 606000,
+    "n_groggy_bad_flip": 447,
+    "n_groggy_silent_lockin": 425,
+    "scenario": "Heavy friction",
+    "sum_best_all": -4342.9814420783205,
+    "sum_rand_all": -5815.1132256389155,
+    "sum_util_actual_coma_bad_flip": -630.9322817917066,
+    "sum_util_actual_coma_lockin": -2471.7274303415725,
+    "sum_util_actual_groggy_bad_flip": -357.5583234064981,
+    "sum_util_actual_groggy_lockin": -345.08417589654596,
+    "sum_util_groggy_vs_coma": 571.8327643147719,
+    "sum_util_true_coma_bad_flip": -436.27291263710333,
+    "sum_util_true_coma_lockin": -2066.9650287443774,
+    "sum_util_true_groggy_bad_flip": -342.3055931520279,
+    "sum_util_true_groggy_lockin": -332.74789971398394,
+    "wrong_awareness_fixable": 91686,
+    "wrong_noise_unfixable": 124423
+   },
+   {
+    "abstained_awareness_fixable": 4080,
+    "abstained_noise_unfixable": 1822,
+    "aligned": 384866,
+    "both_correct": 2359,
+    "both_wrong": 409,
+    "coma_only_correct": 461,
+    "groggy_only_correct": 2771,
+    "label": "STAR",
+    "n_coma_bad_flip": 523,
+    "n_coma_silent_lockin": 2655,
+    "n_decisive_elections": 6000,
+    "n_decisive_voters": 606000,
+    "n_groggy_bad_flip": 449,
+    "n_groggy_silent_lockin": 421,
+    "scenario": "Heavy friction",
+    "sum_best_all": -4342.9814420783205,
+    "sum_rand_all": -5815.1132256389155,
+    "sum_util_actual_coma_bad_flip": -609.4325952411729,
+    "sum_util_actual_coma_lockin": -2472.5160810292678,
+    "sum_util_actual_groggy_bad_flip": -361.0325703598304,
+    "sum_util_actual_groggy_lockin": -344.0692667462435,
+    "sum_util_groggy_vs_coma": 566.3420096670166,
+    "sum_util_true_coma_bad_flip": -421.3156082783945,
+    "sum_util_true_coma_lockin": -2065.853002681277,
+    "sum_util_true_groggy_bad_flip": -345.4841173893214,
+    "sum_util_true_groggy_lockin": -331.1796640729942,
+    "wrong_awareness_fixable": 90924,
+    "wrong_noise_unfixable": 124308
+   }
+  ],
+  "paired_ce": [
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Plurality",
+    "n": 5942,
+    "scenario": "Mild friction",
+    "sum": 166.0,
+    "sum_sq": 1104.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Plurality Top-2",
+    "n": 5942,
+    "scenario": "Mild friction",
+    "sum": 1076.0,
+    "sum_sq": 1770.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 5942,
+    "scenario": "Mild friction",
+    "sum": 1563.0,
+    "sum_sq": 1879.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "RCV (IRV)",
+    "n": 5942,
+    "scenario": "Mild friction",
+    "sum": -14.0,
+    "sum_sq": 232.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Approval",
+    "n": 5942,
+    "scenario": "Mild friction",
+    "sum": 185.0,
+    "sum_sq": 695.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Approval Top-2 (Coma)",
+    "n": 5942,
+    "scenario": "Mild friction",
+    "sum": 144.0,
+    "sum_sq": 500.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Approval Top-2",
+    "n": 5942,
+    "scenario": "Mild friction",
+    "sum": 1170.0,
+    "sum_sq": 1776.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 5942,
+    "scenario": "Mild friction",
+    "sum": 1754.0,
+    "sum_sq": 1830.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "STAR",
+    "n": 5942,
+    "scenario": "Mild friction",
+    "sum": 278.0,
+    "sum_sq": 484.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Score5",
+    "n": 5942,
+    "scenario": "Mild friction",
+    "sum": 142.0,
+    "sum_sq": 542.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 5942,
+    "scenario": "Mild friction",
+    "sum": 1702.0,
+    "sum_sq": 1736.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Plurality",
+    "n": 5942,
+    "scenario": "Moderate friction",
+    "sum": 315.0,
+    "sum_sq": 419.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Plurality Top-2",
+    "n": 5942,
+    "scenario": "Moderate friction",
+    "sum": 1209.0,
+    "sum_sq": 1613.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 5942,
+    "scenario": "Moderate friction",
+    "sum": 1589.0,
+    "sum_sq": 1613.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "RCV (IRV)",
+    "n": 5942,
+    "scenario": "Moderate friction",
+    "sum": 18.0,
+    "sum_sq": 56.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Approval",
+    "n": 5942,
+    "scenario": "Moderate friction",
+    "sum": 290.0,
+    "sum_sq": 356.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Approval Top-2 (Coma)",
+    "n": 5942,
+    "scenario": "Moderate friction",
+    "sum": 70.0,
+    "sum_sq": 246.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Approval Top-2",
+    "n": 5942,
+    "scenario": "Moderate friction",
+    "sum": 1155.0,
+    "sum_sq": 1575.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 5942,
+    "scenario": "Moderate friction",
+    "sum": 1578.0,
+    "sum_sq": 1578.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "STAR",
+    "n": 5942,
+    "scenario": "Moderate friction",
+    "sum": 294.0,
+    "sum_sq": 332.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Score5",
+    "n": 5942,
+    "scenario": "Moderate friction",
+    "sum": 252.0,
+    "sum_sq": 316.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 5942,
+    "scenario": "Moderate friction",
+    "sum": 1557.0,
+    "sum_sq": 1559.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Plurality",
+    "n": 5942,
+    "scenario": "Heavy friction",
+    "sum": 185.0,
+    "sum_sq": 217.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Plurality Top-2",
+    "n": 5942,
+    "scenario": "Heavy friction",
+    "sum": 981.0,
+    "sum_sq": 1345.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 5942,
+    "scenario": "Heavy friction",
+    "sum": 1334.0,
+    "sum_sq": 1338.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "RCV (IRV)",
+    "n": 5942,
+    "scenario": "Heavy friction",
+    "sum": -1.0,
+    "sum_sq": 27.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Approval",
+    "n": 5942,
+    "scenario": "Heavy friction",
+    "sum": 190.0,
+    "sum_sq": 208.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Approval Top-2 (Coma)",
+    "n": 5942,
+    "scenario": "Heavy friction",
+    "sum": -22.0,
+    "sum_sq": 110.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Approval Top-2",
+    "n": 5942,
+    "scenario": "Heavy friction",
+    "sum": 1001.0,
+    "sum_sq": 1371.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 5942,
+    "scenario": "Heavy friction",
+    "sum": 1377.0,
+    "sum_sq": 1379.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "STAR",
+    "n": 5942,
+    "scenario": "Heavy friction",
+    "sum": 198.0,
+    "sum_sq": 208.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Score5",
+    "n": 5942,
+    "scenario": "Heavy friction",
+    "sum": 193.0,
+    "sum_sq": 211.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 5942,
+    "scenario": "Heavy friction",
+    "sum": 1358.0,
+    "sum_sq": 1358.0
+   }
+  ],
+  "paired_diff": [
+   {
+    "baseline": "STAR",
+    "label": "Plurality",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": -930.547826301861,
+    "sum_sq": 2447.4587502820004
+   },
+   {
+    "baseline": "STAR",
+    "label": "Plurality Top-2",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 289.8803767240072,
+    "sum_sq": 655.3632221338727
+   },
+   {
+    "baseline": "STAR",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 339.38118559691014,
+    "sum_sq": 639.0919537439871
+   },
+   {
+    "baseline": "STAR",
+    "label": "RCV (IRV)",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": -547.3547872471493,
+    "sum_sq": 846.7862940408849
+   },
+   {
+    "baseline": "STAR",
+    "label": "Approval",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": -15.051166471219794,
+    "sum_sq": 242.34457241637526
+   },
+   {
+    "baseline": "STAR",
+    "label": "Approval Top-2 (Coma)",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": -103.96950943901014,
+    "sum_sq": 245.13746178874078
+   },
+   {
+    "baseline": "STAR",
+    "label": "Approval Top-2",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 527.8283956911047,
+    "sum_sq": 410.6136673982339
+   },
+   {
+    "baseline": "STAR",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 580.9811959375659,
+    "sum_sq": 419.4782764847569
+   },
+   {
+    "baseline": "STAR",
+    "label": "Score5",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": -72.6656036281707,
+    "sum_sq": 162.94745450799257
+   },
+   {
+    "baseline": "STAR",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 573.6443188696259,
+    "sum_sq": 386.25856815820475
+   },
+   {
+    "baseline": "STAR",
+    "label": "Condorcet (Schulze)",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": -428.707046438454,
+    "sum_sq": 610.8347162696798
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "RCV (IRV)",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": -118.64774080869476,
+    "sum_sq": 379.7913536453193
+   },
+   {
+    "baseline": "Plurality",
+    "label": "Approval",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 915.4966598306413,
+    "sum_sq": 2470.5782191037556
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 237.94801896709728,
+    "sum_sq": 497.52782966386206
+   },
+   {
+    "baseline": "Plurality Top-2 (Clear-Eyed)",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 241.60001034065615,
+    "sum_sq": 469.9322995541299
+   },
+   {
+    "baseline": "Approval",
+    "label": "Approval Top-2 (Coma)",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": -88.91834296779045,
+    "sum_sq": 310.1152051923592
+   },
+   {
+    "baseline": "Approval",
+    "label": "Approval Top-2",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 542.8795621623241,
+    "sum_sq": 407.14908969268913
+   },
+   {
+    "baseline": "Approval",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 596.0323624087856,
+    "sum_sq": 405.5703554790178
+   },
+   {
+    "baseline": "Plurality",
+    "label": "Plurality Top-2",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 1220.428203025868,
+    "sum_sq": 2228.4501872380997
+   },
+   {
+    "baseline": "Plurality",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 1269.9290118987699,
+    "sum_sq": 2244.026793474212
+   },
+   {
+    "baseline": "Approval Top-2 (Clear-Eyed)",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": -7.336877067939537,
+    "sum_sq": 68.86209109702041
+   },
+   {
+    "baseline": "STAR",
+    "label": "Plurality",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": -209.12246374907795,
+    "sum_sq": 996.125966088937
+   },
+   {
+    "baseline": "STAR",
+    "label": "Plurality Top-2",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 994.8825245307723,
+    "sum_sq": 1160.906849772302
+   },
+   {
+    "baseline": "STAR",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 1047.3230917942565,
+    "sum_sq": 1200.5764404693896
+   },
+   {
+    "baseline": "STAR",
+    "label": "RCV (IRV)",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": -852.9045059727495,
+    "sum_sq": 1574.523753273467
+   },
+   {
+    "baseline": "STAR",
+    "label": "Approval",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 15.401037901080855,
+    "sum_sq": 298.1736563835652
+   },
+   {
+    "baseline": "STAR",
+    "label": "Approval Top-2 (Coma)",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": -468.9492860601357,
+    "sum_sq": 859.1551582678817
+   },
+   {
+    "baseline": "STAR",
+    "label": "Approval Top-2",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 1026.4003237345719,
+    "sum_sq": 1176.8934388515615
+   },
+   {
+    "baseline": "STAR",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 1103.6176238233224,
+    "sum_sq": 1178.8110676132244
+   },
+   {
+    "baseline": "STAR",
+    "label": "Score5",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": -56.559323879216024,
+    "sum_sq": 203.27035903850984
+   },
+   {
+    "baseline": "STAR",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 1090.521246643198,
+    "sum_sq": 1166.46323384533
+   },
+   {
+    "baseline": "STAR",
+    "label": "Condorcet (Schulze)",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": -910.6524023285538,
+    "sum_sq": 1679.9931140729718
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "RCV (IRV)",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 57.74789635580432,
+    "sum_sq": 299.94507450001
+   },
+   {
+    "baseline": "Plurality",
+    "label": "Approval",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 224.52350165015898,
+    "sum_sq": 963.8899970134491
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 31.517799203799424,
+    "sum_sq": 323.9765031260823
+   },
+   {
+    "baseline": "Plurality Top-2 (Clear-Eyed)",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 56.29453202906737,
+    "sum_sq": 338.7178346910372
+   },
+   {
+    "baseline": "Approval",
+    "label": "Approval Top-2 (Coma)",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": -484.3503239612171,
+    "sum_sq": 940.795195523724
+   },
+   {
+    "baseline": "Approval",
+    "label": "Approval Top-2",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 1010.9992858334925,
+    "sum_sq": 1157.883219768946
+   },
+   {
+    "baseline": "Approval",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 1088.216585922243,
+    "sum_sq": 1160.8550572842883
+   },
+   {
+    "baseline": "Plurality",
+    "label": "Plurality Top-2",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 1204.0049882798503,
+    "sum_sq": 1683.8296745817747
+   },
+   {
+    "baseline": "Plurality",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 1256.4455555433326,
+    "sum_sq": 1711.2088223116518
+   },
+   {
+    "baseline": "Approval Top-2 (Clear-Eyed)",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": -13.096377180125284,
+    "sum_sq": 136.5545105254095
+   },
+   {
+    "baseline": "STAR",
+    "label": "Plurality",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": -148.63172391438258,
+    "sum_sq": 605.5450683934783
+   },
+   {
+    "baseline": "STAR",
+    "label": "Plurality Top-2",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 1662.1527809621944,
+    "sum_sq": 2503.417681157403
+   },
+   {
+    "baseline": "STAR",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 1768.1058399750361,
+    "sum_sq": 2517.192526900747
+   },
+   {
+    "baseline": "STAR",
+    "label": "RCV (IRV)",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": -927.8110148286552,
+    "sum_sq": 2168.8220250121576
+   },
+   {
+    "baseline": "STAR",
+    "label": "Approval",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": -7.906908261093346,
+    "sum_sq": 289.05240346279277
+   },
+   {
+    "baseline": "STAR",
+    "label": "Approval Top-2 (Coma)",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": -774.05019947419,
+    "sum_sq": 1714.3211896759992
+   },
+   {
+    "baseline": "STAR",
+    "label": "Approval Top-2",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 1674.3079389284972,
+    "sum_sq": 2460.984924081037
+   },
+   {
+    "baseline": "STAR",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 1805.8099274186318,
+    "sum_sq": 2489.0432843299527
+   },
+   {
+    "baseline": "STAR",
+    "label": "Score5",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": -38.88984098366969,
+    "sum_sq": 178.00444344414177
+   },
+   {
+    "baseline": "STAR",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 1809.9293387613286,
+    "sum_sq": 2413.609664770884
+   },
+   {
+    "baseline": "STAR",
+    "label": "Condorcet (Schulze)",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": -955.7296440449359,
+    "sum_sq": 2252.5908010205985
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "RCV (IRV)",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 27.918629216280628,
+    "sum_sq": 317.6615925330158
+   },
+   {
+    "baseline": "Plurality",
+    "label": "Approval",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 140.72481565328923,
+    "sum_sq": 648.7157430903256
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 12.155157966301887,
+    "sum_sq": 249.0071883403523
+   },
+   {
+    "baseline": "Plurality Top-2 (Clear-Eyed)",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 37.70408744359366,
+    "sum_sq": 245.27798447947717
+   },
+   {
+    "baseline": "Approval",
+    "label": "Approval Top-2 (Coma)",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": -766.1432912130963,
+    "sum_sq": 1671.175771239954
+   },
+   {
+    "baseline": "Approval",
+    "label": "Approval Top-2",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 1682.2148471895914,
+    "sum_sq": 2487.1192415658697
+   },
+   {
+    "baseline": "Approval",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 1813.716835679726,
+    "sum_sq": 2471.593038743396
+   },
+   {
+    "baseline": "Plurality",
+    "label": "Plurality Top-2",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 1810.7845048765773,
+    "sum_sq": 2817.266794626012
+   },
+   {
+    "baseline": "Plurality",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 1916.7375638894182,
+    "sum_sq": 2842.8858190982364
+   },
+   {
+    "baseline": "Approval Top-2 (Clear-Eyed)",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 4.119411342696604,
+    "sum_sq": 105.4923116948669
+   }
+  ],
+  "primary_corruption": [
+   {
+    "aligned": 337442,
+    "awareness_caused": 87423,
+    "n_elections": 6000,
+    "n_voters": 606000,
+    "noise_caused": 181135,
+    "scenario": "Mild friction"
+   },
+   {
+    "aligned": 253062,
+    "awareness_caused": 129859,
+    "n_elections": 6000,
+    "n_voters": 606000,
+    "noise_caused": 223079,
+    "scenario": "Moderate friction"
+   },
+   {
+    "aligned": 200941,
+    "awareness_caused": 148543,
+    "n_elections": 6000,
+    "n_voters": 606000,
+    "noise_caused": 256516,
+    "scenario": "Heavy friction"
+   }
+  ],
+  "primary_cost": [
+   {
+    "label": "Approval Top-2",
+    "n_decisive": 6000,
+    "n_elections": 6000,
+    "n_finalist_set_changed": 3808,
+    "scenario": "Mild friction",
+    "sum_best_all": -4342.9814420783205,
+    "sum_rand_all": -5815.1132256389155,
+    "sum_util_actual": -4436.075846413422,
+    "sum_util_ideal": -4416.783660197583
+   },
+   {
+    "label": "Approval Top-2",
+    "n_decisive": 6000,
+    "n_elections": 6000,
+    "n_finalist_set_changed": 4905,
+    "scenario": "Moderate friction",
+    "sum_best_all": -4342.9814420783205,
+    "sum_rand_all": -5815.1132256389155,
+    "sum_util_actual": -4572.55439654797,
+    "sum_util_ideal": -4434.795185276417
+   },
+   {
+    "label": "Approval Top-2",
+    "n_decisive": 6000,
+    "n_elections": 6000,
+    "n_finalist_set_changed": 5283,
+    "scenario": "Heavy friction",
+    "sum_best_all": -4342.9814420783205,
+    "sum_rand_all": -5815.1132256389155,
+    "sum_util_actual": -4697.56658812755,
+    "sum_util_ideal": -4449.550528183953
+   }
+  ],
+  "vse": [
+   {
+    "chooser": "honBallot",
+    "label": "Plurality",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 4082.2669098058727,
+    "sum_sq": 5196.8114117557825
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 5302.695112831758,
+    "sum_sq": 5172.7483084681835
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 5352.195921704656,
+    "sum_sq": 5237.096664004794
+   },
+   {
+    "chooser": "honBallot",
+    "label": "RCV (IRV)",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 4465.459948860594,
+    "sum_sq": 4466.046466059111
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 4997.763569636528,
+    "sum_sq": 4603.244520916712
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2 (Coma)",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 4908.845226668729,
+    "sum_sq": 4538.395369731609
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 5540.643131798847,
+    "sum_sq": 5279.606755614671
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 5593.795932045313,
+    "sum_sq": 5373.882781092351
+   },
+   {
+    "chooser": "honBallot",
+    "label": "STAR",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 5012.814736107753,
+    "sum_sq": 4643.13960696203
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Score5",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 4940.149132479579,
+    "sum_sq": 4549.203533182362
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 5586.459054977363,
+    "sum_sq": 5353.284125980797
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Condorcet (Schulze)",
+    "n": 6000,
+    "scenario": "Mild friction",
+    "sum": 4584.107689669295,
+    "sum_sq": 4429.860780348712
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 3688.027343125196,
+    "sum_sq": 4197.613969267276
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 4892.032331405061,
+    "sum_sq": 4598.83551745855
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 4944.472898668545,
+    "sum_sq": 4710.771278860303
+   },
+   {
+    "chooser": "honBallot",
+    "label": "RCV (IRV)",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 3044.245300901524,
+    "sum_sq": 4094.6199965868773
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 3912.5508447753573,
+    "sum_sq": 3905.203957170245
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2 (Coma)",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 3428.2005208141377,
+    "sum_sq": 3783.608484981286
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 4923.550130608858,
+    "sum_sq": 4594.79904851379
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 5000.767430697608,
+    "sum_sq": 4708.547877146613
+   },
+   {
+    "chooser": "honBallot",
+    "label": "STAR",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 3897.1498068742776,
+    "sum_sq": 3910.7339047601386
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Score5",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 3840.590482995062,
+    "sum_sq": 3901.4652377654265
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 4987.671053517482,
+    "sum_sq": 4684.982610273802
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Condorcet (Schulze)",
+    "n": 6000,
+    "scenario": "Moderate friction",
+    "sum": 2986.497404545719,
+    "sum_sq": 4129.683989108754
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 2567.5528285497844,
+    "sum_sq": 4100.559918773157
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 4378.337333426365,
+    "sum_sq": 4150.54852038219
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 4484.290392439208,
+    "sum_sq": 4324.347439224444
+   },
+   {
+    "chooser": "honBallot",
+    "label": "RCV (IRV)",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 1788.37353763552,
+    "sum_sq": 4684.054162833405
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 2708.2776442030713,
+    "sum_sq": 3906.1417725065444
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2 (Coma)",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 1942.1343529899848,
+    "sum_sq": 4273.470854631225
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 4390.492491392669,
+    "sum_sq": 4146.457633074514
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 4521.9944798828,
+    "sum_sq": 4306.772533513476
+   },
+   {
+    "chooser": "honBallot",
+    "label": "STAR",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 2716.1845524641667,
+    "sum_sq": 3914.5984476190706
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Score5",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 2677.294711480495,
+    "sum_sq": 3940.2352790309883
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 4526.113891225494,
+    "sum_sq": 4292.635029623761
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Condorcet (Schulze)",
+    "n": 6000,
+    "scenario": "Heavy friction",
+    "sum": 1760.4549084192386,
+    "sum_sq": 4728.091752614323
+   }
+  ]
+ },
+ "generated_by": "python -m vse_sim.run --stage joint",
+ "meta": {
+  "elections": 18000,
+  "seconds": 294.3
+ },
+ "runs": 1,
+ "schema": 1,
+ "spec": {
+  "labels": [
+   "Plurality",
+   "Plurality Top-2",
+   "Plurality Top-2 (Clear-Eyed)",
+   "RCV (IRV)",
+   "Approval",
+   "Approval Top-2 (Coma)",
+   "Approval Top-2",
+   "Approval Top-2 (Clear-Eyed)",
+   "STAR",
+   "Score5",
+   "Score Top-2 (Clear-Eyed)",
+   "Condorcet (Schulze)"
+  ],
+  "media": "fuzzyMediaFor.<locals>.fuzzyMedia",
+  "model": "KSModel_1.5_1_3_1.5_3_3_1.5",
+  "ncand": 6,
+  "niter": 6000,
+  "nvot": 101,
+  "paired_ce_pairs": [
+   [
+    "Plurality",
+    "Condorcet (Schulze)"
+   ],
+   [
+    "Plurality Top-2",
+    "Condorcet (Schulze)"
+   ],
+   [
+    "Plurality Top-2 (Clear-Eyed)",
+    "Condorcet (Schulze)"
+   ],
+   [
+    "RCV (IRV)",
+    "Condorcet (Schulze)"
+   ],
+   [
+    "Approval",
+    "Condorcet (Schulze)"
+   ],
+   [
+    "Approval Top-2 (Coma)",
+    "Condorcet (Schulze)"
+   ],
+   [
+    "Approval Top-2",
+    "Condorcet (Schulze)"
+   ],
+   [
+    "Approval Top-2 (Clear-Eyed)",
+    "Condorcet (Schulze)"
+   ],
+   [
+    "STAR",
+    "Condorcet (Schulze)"
+   ],
+   [
+    "Score5",
+    "Condorcet (Schulze)"
+   ],
+   [
+    "Score Top-2 (Clear-Eyed)",
+    "Condorcet (Schulze)"
+   ]
+  ],
+  "paired_diff_pairs": [
+   [
+    "Plurality",
+    "STAR"
+   ],
+   [
+    "Plurality Top-2",
+    "STAR"
+   ],
+   [
+    "Plurality Top-2 (Clear-Eyed)",
+    "STAR"
+   ],
+   [
+    "RCV (IRV)",
+    "STAR"
+   ],
+   [
+    "Approval",
+    "STAR"
+   ],
+   [
+    "Approval Top-2 (Coma)",
+    "STAR"
+   ],
+   [
+    "Approval Top-2",
+    "STAR"
+   ],
+   [
+    "Approval Top-2 (Clear-Eyed)",
+    "STAR"
+   ],
+   [
+    "Score5",
+    "STAR"
+   ],
+   [
+    "Score Top-2 (Clear-Eyed)",
+    "STAR"
+   ],
+   [
+    "Condorcet (Schulze)",
+    "STAR"
+   ],
+   [
+    "RCV (IRV)",
+    "Condorcet (Schulze)"
+   ],
+   [
+    "Approval",
+    "Plurality"
+   ],
+   [
+    "Approval Top-2",
+    "Plurality Top-2"
+   ],
+   [
+    "Approval Top-2 (Clear-Eyed)",
+    "Plurality Top-2 (Clear-Eyed)"
+   ],
+   [
+    "Approval Top-2 (Coma)",
+    "Approval"
+   ],
+   [
+    "Approval Top-2",
+    "Approval"
+   ],
+   [
+    "Approval Top-2 (Clear-Eyed)",
+    "Approval"
+   ],
+   [
+    "Plurality Top-2",
+    "Plurality"
+   ],
+   [
+    "Plurality Top-2 (Clear-Eyed)",
+    "Plurality"
+   ],
+   [
+    "Score Top-2 (Clear-Eyed)",
+    "Approval Top-2 (Clear-Eyed)"
+   ]
+  ],
+  "pool_id": "joint",
+  "scenarios": {
+   "Heavy friction": {
+    "awareness_alpha": 0.7,
+    "epistemic_rho": 0.7,
+    "fatigue_beta": 0.7
+   },
+   "Mild friction": {
+    "awareness_alpha": 0.9,
+    "epistemic_rho": 0.9,
+    "fatigue_beta": 0.9
+   },
+   "Moderate friction": {
+    "awareness_alpha": 0.8,
+    "epistemic_rho": 0.8,
+    "fatigue_beta": 0.8
+   }
+  },
+  "seed": "VSE2026"
+ },
+ "spec_hash": "6ce4c1c9d69e8f73132080eaffac62c747b7254ed31f3e9c2997beeb71a8a818",
+ "stage": "joint"
+}

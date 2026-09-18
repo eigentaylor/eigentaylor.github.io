@@ -27,6 +27,22 @@ from vse_sim import electorates as el
 TINY = 6
 
 
+@pytest.fixture(scope="module", autouse=True)
+def scratch_cache(tmp_path_factory):
+    """Keep the test run out of the real electorate cache.
+
+    These tests draw pools at a tiny election count. Writing those into the shared cache
+    would be harmless (a pool smaller than requested is regrown, never reused), but
+    clearing it would throw away work someone else is mid-way through, so point the whole
+    module somewhere temporary instead.
+    """
+    import vse_sim.electorates
+    original = vse_sim.electorates.CACHE_DIR
+    vse_sim.electorates.CACHE_DIR = tmp_path_factory.mktemp("pools")
+    yield
+    vse_sim.electorates.CACHE_DIR = original
+
+
 @pytest.fixture(scope="module")
 def ran(tmp_path_factory):
     """Every stage, run once at a tiny size into a scratch results directory."""
@@ -104,7 +120,7 @@ def test_results_are_deterministic(tmp_path):
         assert a["data"] == b["data"]
 
 
-def test_results_do_not_depend_on_the_pool_cache(tmp_path):
+def test_results_do_not_depend_on_the_pool_cache(tmp_path, monkeypatch):
     """A cold run and a warm one must agree.
 
     Drawing a pool consumes randomness; loading one from cache does not. If a stage just
@@ -113,7 +129,7 @@ def test_results_do_not_depend_on_the_pool_cache(tmp_path):
     who happened to have a warm cache. Stages reseed before simulating (see
     `stages.seed_simulation`), which is what this pins down.
     """
-    el.clear_cache()
+    monkeypatch.setattr(el, "CACHE_DIR", tmp_path / "cache")   # never the real one
     cold, _ = stages.run_stage("ideal", results_dir=tmp_path / "cold", niter=TINY)
     warm, _ = stages.run_stage("ideal", results_dir=tmp_path / "warm", niter=TINY)
     assert json.loads(cold.read_text())["content_hash"] == \

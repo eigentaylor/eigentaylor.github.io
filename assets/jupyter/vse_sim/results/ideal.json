@@ -1,0 +1,1657 @@
+{
+ "code_version": "ed7c66257606cde0",
+ "content_hash": "8adc8ae93528a8d8f86c0d81af08f03d039337ec0f7c7742cf9d559b66d65529",
+ "data": {
+  "betrayal": [
+   {
+    "label": "STAR",
+    "n_aligned": 1716,
+    "n_bad_flips": 0,
+    "n_betrayals": 0,
+    "n_decisive": 1953,
+    "n_elections": 2000,
+    "n_flips": 237,
+    "n_good_flips": 237,
+    "n_honest_tied_flips": 0,
+    "n_silent_lockin": 0,
+    "n_voter_corrupt": 0,
+    "n_voter_decisive": 127281,
+    "sum_best_all": -1447.399704223675,
+    "sum_best_decisive": -1415.2139621197093,
+    "sum_rand_all": -1941.4534321480185,
+    "sum_rand_decisive": -1897.2327146015662,
+    "sum_util_actual": -1423.48207406351,
+    "sum_util_actual_bad_flip": 0.0,
+    "sum_util_actual_lockin": 0.0,
+    "sum_util_honest": -1423.48207406351,
+    "sum_util_honest_bad_flip": 0.0,
+    "sum_util_honest_lockin": 0.0
+   }
+  ],
+  "ce_denominator": [
+   {
+    "cw_exists": 1984
+   }
+  ],
+  "ce_wins": [
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "cw_wins": 1316,
+    "label": "Approval"
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "cw_wins": 1404,
+    "label": "Approval"
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "cw_wins": 1250,
+    "label": "RCV (IRV)"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1602,
+    "label": "STAR"
+   },
+   {
+    "chooser": "stratBallot",
+    "cw_wins": 1473,
+    "label": "STAR"
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "cw_wins": 1613,
+    "label": "STAR"
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "cw_wins": 1575,
+    "label": "STAR"
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "cw_wins": 1514,
+    "label": "STAR"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1417,
+    "label": "Score5"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1984,
+    "label": "Condorcet (Schulze)"
+   },
+   {
+    "chooser": "stratBallot",
+    "cw_wins": 1475,
+    "label": "Condorcet (Schulze)"
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "cw_wins": 1792,
+    "label": "Condorcet (Schulze)"
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "cw_wins": 1655,
+    "label": "Condorcet (Schulze)"
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "cw_wins": 1545,
+    "label": "Condorcet (Schulze)"
+   },
+   {
+    "chooser": "stratBallot",
+    "cw_wins": 1271,
+    "label": "Plurality Top-2"
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "cw_wins": 1246,
+    "label": "Plurality Top-2"
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "cw_wins": 1293,
+    "label": "Plurality Top-2"
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "cw_wins": 1338,
+    "label": "Plurality Top-2"
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "cw_wins": 1294,
+    "label": "Plurality Top-2"
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "cw_wins": 1281,
+    "label": "Plurality Top-2"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1652,
+    "label": "Approval Top-2"
+   },
+   {
+    "chooser": "stratBallot",
+    "cw_wins": 1829,
+    "label": "Approval Top-2"
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "cw_wins": 1396,
+    "label": "Approval Top-2"
+   },
+   {
+    "chooser": "smartOss",
+    "cw_wins": 1507,
+    "label": "Approval Top-2"
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "cw_wins": 1588,
+    "label": "Approval Top-2"
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "cw_wins": 1743,
+    "label": "Approval Top-2"
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "cw_wins": 1804,
+    "label": "Approval Top-2"
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "cw_wins": 1830,
+    "label": "Approval Top-2"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1655,
+    "label": "Approval Top-2 (Coma)"
+   },
+   {
+    "chooser": "stratBallot",
+    "cw_wins": 1840,
+    "label": "Approval Top-2 (Coma)"
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "cw_wins": 1413,
+    "label": "Approval Top-2 (Coma)"
+   },
+   {
+    "chooser": "smartOss",
+    "cw_wins": 1506,
+    "label": "Approval Top-2 (Coma)"
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "cw_wins": 1593,
+    "label": "Approval Top-2 (Coma)"
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "cw_wins": 1757,
+    "label": "Approval Top-2 (Coma)"
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "cw_wins": 1821,
+    "label": "Approval Top-2 (Coma)"
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "cw_wins": 1837,
+    "label": "Approval Top-2 (Coma)"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1653,
+    "label": "Approval Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "stratBallot",
+    "cw_wins": 1828,
+    "label": "Approval Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "cw_wins": 1426,
+    "label": "Approval Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "smartOss",
+    "cw_wins": 1540,
+    "label": "Approval Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "cw_wins": 1591,
+    "label": "Approval Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "cw_wins": 1742,
+    "label": "Approval Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "cw_wins": 1790,
+    "label": "Approval Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "cw_wins": 1817,
+    "label": "Approval Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1831,
+    "label": "Score Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "stratBallot",
+    "cw_wins": 1880,
+    "label": "Score Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "cw_wins": 1413,
+    "label": "Score Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "smartOss",
+    "cw_wins": 1594,
+    "label": "Score Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "cw_wins": 1686,
+    "label": "Score Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "cw_wins": 1876,
+    "label": "Score Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "cw_wins": 1883,
+    "label": "Score Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "cw_wins": 1885,
+    "label": "Score Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 858,
+    "label": "Plurality"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1149,
+    "label": "Approval"
+   },
+   {
+    "chooser": "stratBallot",
+    "cw_wins": 1514,
+    "label": "Approval"
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "cw_wins": 912,
+    "label": "Approval"
+   },
+   {
+    "chooser": "smartOss",
+    "cw_wins": 1126,
+    "label": "Approval"
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "cw_wins": 1095,
+    "label": "Approval"
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "cw_wins": 1466,
+    "label": "Approval"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1250,
+    "label": "RCV (IRV)"
+   },
+   {
+    "chooser": "stratBallot",
+    "cw_wins": 1059,
+    "label": "RCV (IRV)"
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "cw_wins": 1135,
+    "label": "RCV (IRV)"
+   },
+   {
+    "chooser": "smartOss",
+    "cw_wins": 1166,
+    "label": "RCV (IRV)"
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "cw_wins": 1203,
+    "label": "RCV (IRV)"
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "cw_wins": 1139,
+    "label": "RCV (IRV)"
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "cw_wins": 1085,
+    "label": "RCV (IRV)"
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "cw_wins": 1107,
+    "label": "STAR"
+   },
+   {
+    "chooser": "smartOss",
+    "cw_wins": 1387,
+    "label": "STAR"
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "cw_wins": 1402,
+    "label": "STAR"
+   },
+   {
+    "chooser": "stratBallot",
+    "cw_wins": 1575,
+    "label": "Score5"
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "cw_wins": 1524,
+    "label": "Score5"
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "cw_wins": 1539,
+    "label": "Score5"
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "cw_wins": 1539,
+    "label": "Score5"
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "cw_wins": 893,
+    "label": "Condorcet (Schulze)"
+   },
+   {
+    "chooser": "smartOss",
+    "cw_wins": 1042,
+    "label": "Condorcet (Schulze)"
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "cw_wins": 1305,
+    "label": "Condorcet (Schulze)"
+   },
+   {
+    "chooser": "smartOss",
+    "cw_wins": 1236,
+    "label": "Plurality Top-2"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1309,
+    "label": "Plurality Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "stratBallot",
+    "cw_wins": 1228,
+    "label": "Plurality Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "cw_wins": 1246,
+    "label": "Plurality Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "cw_wins": 1291,
+    "label": "Plurality Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "cw_wins": 1329,
+    "label": "Plurality Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "cw_wins": 1296,
+    "label": "Plurality Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "cw_wins": 1254,
+    "label": "Plurality Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "stratBallot",
+    "cw_wins": 1179,
+    "label": "Plurality"
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "cw_wins": 845,
+    "label": "Plurality"
+   },
+   {
+    "chooser": "smartOss",
+    "cw_wins": 861,
+    "label": "Plurality"
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "cw_wins": 911,
+    "label": "Plurality"
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "cw_wins": 1006,
+    "label": "Plurality"
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "cw_wins": 1072,
+    "label": "Plurality"
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "cw_wins": 1134,
+    "label": "Plurality"
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "cw_wins": 853,
+    "label": "Score5"
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "cw_wins": 1074,
+    "label": "Score5"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1310,
+    "label": "Plurality Top-2"
+   },
+   {
+    "chooser": "smartOss",
+    "cw_wins": 1240,
+    "label": "Plurality Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "smartOss",
+    "cw_wins": 1341,
+    "label": "Score5"
+   }
+  ],
+  "coma": [
+   {
+    "abstained_awareness_fixable": 0,
+    "abstained_noise_unfixable": 0,
+    "aligned": 202000,
+    "both_correct": 2000,
+    "both_wrong": 0,
+    "coma_only_correct": 0,
+    "groggy_only_correct": 0,
+    "label": "Approval Top-2 (Coma)",
+    "n_coma_bad_flip": 0,
+    "n_coma_silent_lockin": 0,
+    "n_decisive_elections": 2000,
+    "n_decisive_voters": 202000,
+    "n_groggy_bad_flip": 0,
+    "n_groggy_silent_lockin": 0,
+    "sum_best_all": -1447.399704223675,
+    "sum_rand_all": -1941.4534321480185,
+    "sum_util_actual_coma_bad_flip": 0.0,
+    "sum_util_actual_coma_lockin": 0.0,
+    "sum_util_actual_groggy_bad_flip": 0.0,
+    "sum_util_actual_groggy_lockin": 0.0,
+    "sum_util_groggy_vs_coma": 0.0,
+    "sum_util_true_coma_bad_flip": 0.0,
+    "sum_util_true_coma_lockin": 0.0,
+    "sum_util_true_groggy_bad_flip": 0.0,
+    "sum_util_true_groggy_lockin": 0.0,
+    "wrong_awareness_fixable": 0,
+    "wrong_noise_unfixable": 0
+   },
+   {
+    "abstained_awareness_fixable": 0,
+    "abstained_noise_unfixable": 0,
+    "aligned": 202000,
+    "both_correct": 2000,
+    "both_wrong": 0,
+    "coma_only_correct": 0,
+    "groggy_only_correct": 0,
+    "label": "STAR",
+    "n_coma_bad_flip": 0,
+    "n_coma_silent_lockin": 0,
+    "n_decisive_elections": 2000,
+    "n_decisive_voters": 202000,
+    "n_groggy_bad_flip": 0,
+    "n_groggy_silent_lockin": 0,
+    "sum_best_all": -1447.399704223675,
+    "sum_rand_all": -1941.4534321480185,
+    "sum_util_actual_coma_bad_flip": 0.0,
+    "sum_util_actual_coma_lockin": 0.0,
+    "sum_util_actual_groggy_bad_flip": 0.0,
+    "sum_util_actual_groggy_lockin": 0.0,
+    "sum_util_groggy_vs_coma": 0.0,
+    "sum_util_true_coma_bad_flip": 0.0,
+    "sum_util_true_coma_lockin": 0.0,
+    "sum_util_true_groggy_bad_flip": 0.0,
+    "sum_util_true_groggy_lockin": 0.0,
+    "wrong_awareness_fixable": 0,
+    "wrong_noise_unfixable": 0
+   }
+  ],
+  "paired_ce": [
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Plurality",
+    "n": 1984,
+    "sum": -1126.0,
+    "sum_sq": 1126.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Plurality Top-2",
+    "n": 1984,
+    "sum": -674.0,
+    "sum_sq": 674.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 1984,
+    "sum": -675.0,
+    "sum_sq": 675.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "RCV (IRV)",
+    "n": 1984,
+    "sum": -734.0,
+    "sum_sq": 734.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Approval",
+    "n": 1984,
+    "sum": -835.0,
+    "sum_sq": 835.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Approval Top-2 (Coma)",
+    "n": 1984,
+    "sum": -329.0,
+    "sum_sq": 329.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Approval Top-2",
+    "n": 1984,
+    "sum": -332.0,
+    "sum_sq": 332.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 1984,
+    "sum": -331.0,
+    "sum_sq": 331.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "STAR",
+    "n": 1984,
+    "sum": -382.0,
+    "sum_sq": 382.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Score5",
+    "n": 1984,
+    "sum": -567.0,
+    "sum_sq": 567.0
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 1984,
+    "sum": -153.0,
+    "sum_sq": 153.0
+   }
+  ],
+  "paired_diff": [
+   {
+    "baseline": "STAR",
+    "label": "Plurality",
+    "n": 2000,
+    "sum": -702.4189277991263,
+    "sum_sq": 1058.8256767903029
+   },
+   {
+    "baseline": "STAR",
+    "label": "Plurality Top-2",
+    "n": 2000,
+    "sum": -260.7393134215889,
+    "sum_sq": 309.34662783241384
+   },
+   {
+    "baseline": "STAR",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": -256.89965478436466,
+    "sum_sq": 290.56257854674345
+   },
+   {
+    "baseline": "STAR",
+    "label": "RCV (IRV)",
+    "n": 2000,
+    "sum": -192.63346112914886,
+    "sum_sq": 171.42053349023985
+   },
+   {
+    "baseline": "STAR",
+    "label": "Approval",
+    "n": 2000,
+    "sum": -171.47947239980078,
+    "sum_sq": 90.96870482627418
+   },
+   {
+    "baseline": "STAR",
+    "label": "Approval Top-2 (Coma)",
+    "n": 2000,
+    "sum": -33.680324784925936,
+    "sum_sq": 27.85706602855129
+   },
+   {
+    "baseline": "STAR",
+    "label": "Approval Top-2",
+    "n": 2000,
+    "sum": -36.6300729041583,
+    "sum_sq": 28.670060399202107
+   },
+   {
+    "baseline": "STAR",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": -36.48586087030197,
+    "sum_sq": 29.793039207256797
+   },
+   {
+    "baseline": "STAR",
+    "label": "Score5",
+    "n": 2000,
+    "sum": -30.800858771374884,
+    "sum_sq": 19.261518833727617
+   },
+   {
+    "baseline": "STAR",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 9.692226382783067,
+    "sum_sq": 3.2971522651962597
+   },
+   {
+    "baseline": "STAR",
+    "label": "Condorcet (Schulze)",
+    "n": 2000,
+    "sum": 15.689195931985857,
+    "sum_sq": 13.124710940908926
+   },
+   {
+    "baseline": "Condorcet (Schulze)",
+    "label": "RCV (IRV)",
+    "n": 2000,
+    "sum": -208.32265706113506,
+    "sum_sq": 170.1009484741114
+   },
+   {
+    "baseline": "Plurality",
+    "label": "Approval",
+    "n": 2000,
+    "sum": 530.9394553993244,
+    "sum_sq": 1058.6590830580565
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 2000,
+    "sum": 224.109240517431,
+    "sum_sq": 323.5537257810997
+   },
+   {
+    "baseline": "Plurality Top-2 (Clear-Eyed)",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 220.4137939140628,
+    "sum_sq": 306.83032552991904
+   },
+   {
+    "baseline": "Approval",
+    "label": "Approval Top-2 (Coma)",
+    "n": 2000,
+    "sum": 137.79914761487476,
+    "sum_sq": 68.57889436815657
+   },
+   {
+    "baseline": "Approval",
+    "label": "Approval Top-2",
+    "n": 2000,
+    "sum": 134.84939949564236,
+    "sum_sq": 67.97841769626986
+   },
+   {
+    "baseline": "Approval",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 134.99361152949876,
+    "sum_sq": 68.64704975882394
+   },
+   {
+    "baseline": "Plurality",
+    "label": "Plurality Top-2",
+    "n": 2000,
+    "sum": 441.6796143775364,
+    "sum_sq": 682.9448391518606
+   },
+   {
+    "baseline": "Plurality",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 445.51927301476076,
+    "sum_sq": 683.0775210432736
+   },
+   {
+    "baseline": "Approval Top-2 (Clear-Eyed)",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 46.178087253085,
+    "sum_sq": 29.74246727333217
+   }
+  ],
+  "primary_cost": [
+   {
+    "label": "Approval Top-2",
+    "n_decisive": 2000,
+    "n_elections": 2000,
+    "n_finalist_set_changed": 0,
+    "sum_best_all": -1447.399704223675,
+    "sum_rand_all": -1941.4534321480185,
+    "sum_util_actual": -1466.2009334532754,
+    "sum_util_ideal": -1466.2009334532754
+   }
+  ],
+  "vse": [
+   {
+    "chooser": "honBallot",
+    "label": "Plurality",
+    "n": 2000,
+    "sum": 1253.2363553002153,
+    "sum_sq": 1583.6318470117535
+   },
+   {
+    "chooser": "stratBallot",
+    "label": "Plurality",
+    "n": 2000,
+    "sum": 1626.928081569773,
+    "sum_sq": 1603.7449319594175
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "label": "Plurality",
+    "n": 2000,
+    "sum": 1159.4677707277083,
+    "sum_sq": 1632.295945884461
+   },
+   {
+    "chooser": "smartOss",
+    "label": "Plurality",
+    "n": 2000,
+    "sum": 1255.0851726375581,
+    "sum_sq": 1572.8631575739291
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "label": "Plurality",
+    "n": 2000,
+    "sum": 1328.3798953828534,
+    "sum_sq": 1614.7389254203076
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "label": "Plurality",
+    "n": 2000,
+    "sum": 1466.4257823076716,
+    "sum_sq": 1573.3785512587003
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "label": "Plurality",
+    "n": 2000,
+    "sum": 1561.0024890964644,
+    "sum_sq": 1569.491105008807
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "label": "Plurality",
+    "n": 2000,
+    "sum": 1612.2849354724062,
+    "sum_sq": 1597.4783502447058
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval",
+    "n": 2000,
+    "sum": 1784.1758106995399,
+    "sum_sq": 1663.2400693856086
+   },
+   {
+    "chooser": "stratBallot",
+    "label": "Approval",
+    "n": 2000,
+    "sum": 1891.3622494297415,
+    "sum_sq": 1831.3181182869055
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "label": "Approval",
+    "n": 2000,
+    "sum": 1663.0830400935333,
+    "sum_sq": 1498.5276628930994
+   },
+   {
+    "chooser": "smartOss",
+    "label": "Approval",
+    "n": 2000,
+    "sum": 1767.3221203044125,
+    "sum_sq": 1643.9230624684735
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "label": "Approval",
+    "n": 2000,
+    "sum": 1767.1179371030778,
+    "sum_sq": 1641.7989447349473
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "label": "Approval",
+    "n": 2000,
+    "sum": 1862.514653614608,
+    "sum_sq": 1777.1559858159128
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "label": "Approval",
+    "n": 2000,
+    "sum": 1895.2286899430997,
+    "sum_sq": 1825.8016206506115
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "label": "Approval",
+    "n": 2000,
+    "sum": 1901.8237402512611,
+    "sum_sq": 1843.1315845670067
+   },
+   {
+    "chooser": "honBallot",
+    "label": "RCV (IRV)",
+    "n": 2000,
+    "sum": 1763.0218219701903,
+    "sum_sq": 1699.411356649113
+   },
+   {
+    "chooser": "stratBallot",
+    "label": "RCV (IRV)",
+    "n": 2000,
+    "sum": 1553.3422608242545,
+    "sum_sq": 1617.9463445651515
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "label": "RCV (IRV)",
+    "n": 2000,
+    "sum": 1645.733265094656,
+    "sum_sq": 1598.587037410806
+   },
+   {
+    "chooser": "smartOss",
+    "label": "RCV (IRV)",
+    "n": 2000,
+    "sum": 1708.1137161422935,
+    "sum_sq": 1637.4272482869212
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "label": "RCV (IRV)",
+    "n": 2000,
+    "sum": 1705.3877995290422,
+    "sum_sq": 1650.7969724742122
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "label": "RCV (IRV)",
+    "n": 2000,
+    "sum": 1760.54531780268,
+    "sum_sq": 1688.8112928215305
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "label": "RCV (IRV)",
+    "n": 2000,
+    "sum": 1666.900495870745,
+    "sum_sq": 1630.8956215284131
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "label": "RCV (IRV)",
+    "n": 2000,
+    "sum": 1589.2508971015332,
+    "sum_sq": 1625.2926411051415
+   },
+   {
+    "chooser": "honBallot",
+    "label": "STAR",
+    "n": 2000,
+    "sum": 1955.6552830993398,
+    "sum_sq": 1926.3722194992931
+   },
+   {
+    "chooser": "stratBallot",
+    "label": "STAR",
+    "n": 2000,
+    "sum": 1887.7706430234643,
+    "sum_sq": 1825.1271459132315
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "label": "STAR",
+    "n": 2000,
+    "sum": 1784.83869440858,
+    "sum_sq": 1671.0719385292844
+   },
+   {
+    "chooser": "smartOss",
+    "label": "STAR",
+    "n": 2000,
+    "sum": 1888.939686729372,
+    "sum_sq": 1823.8802944765991
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "label": "STAR",
+    "n": 2000,
+    "sum": 1896.7770553450466,
+    "sum_sq": 1836.524037729495
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "label": "STAR",
+    "n": 2000,
+    "sum": 1955.4656743881385,
+    "sum_sq": 1927.1422268503409
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "label": "STAR",
+    "n": 2000,
+    "sum": 1942.6690516237245,
+    "sum_sq": 1906.9404194350661
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "label": "STAR",
+    "n": 2000,
+    "sum": 1912.5812692540385,
+    "sum_sq": 1861.1000829694651
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Score5",
+    "n": 2000,
+    "sum": 1924.8544243279648,
+    "sum_sq": 1869.5081034231732
+   },
+   {
+    "chooser": "stratBallot",
+    "label": "Score5",
+    "n": 2000,
+    "sum": 1914.9134790747064,
+    "sum_sq": 1865.3594594676238
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "label": "Score5",
+    "n": 2000,
+    "sum": 1658.3656043529136,
+    "sum_sq": 1491.8330883384003
+   },
+   {
+    "chooser": "smartOss",
+    "label": "Score5",
+    "n": 2000,
+    "sum": 1892.938927251779,
+    "sum_sq": 1822.8394948869436
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "label": "Score5",
+    "n": 2000,
+    "sum": 1796.7699225033912,
+    "sum_sq": 1674.6631746619394
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "label": "Score5",
+    "n": 2000,
+    "sum": 1938.4990494188191,
+    "sum_sq": 1895.8622962841373
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "label": "Score5",
+    "n": 2000,
+    "sum": 1934.9698850856903,
+    "sum_sq": 1892.8647426136072
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "label": "Score5",
+    "n": 2000,
+    "sum": 1923.0358487555525,
+    "sum_sq": 1872.5714677778726
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Condorcet (Schulze)",
+    "n": 2000,
+    "sum": 1971.3444790313251,
+    "sum_sq": 1959.285679420027
+   },
+   {
+    "chooser": "stratBallot",
+    "label": "Condorcet (Schulze)",
+    "n": 2000,
+    "sum": 1836.2823059939383,
+    "sum_sq": 1762.7862843174992
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "label": "Condorcet (Schulze)",
+    "n": 2000,
+    "sum": 1680.227409728498,
+    "sum_sq": 1547.6741191400656
+   },
+   {
+    "chooser": "smartOss",
+    "label": "Condorcet (Schulze)",
+    "n": 2000,
+    "sum": 1691.5271854221783,
+    "sum_sq": 1567.8211379283211
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "label": "Condorcet (Schulze)",
+    "n": 2000,
+    "sum": 1832.1323144861367,
+    "sum_sq": 1753.9087155361706
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "label": "Condorcet (Schulze)",
+    "n": 2000,
+    "sum": 1949.4994949409775,
+    "sum_sq": 1922.6755723253098
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "label": "Condorcet (Schulze)",
+    "n": 2000,
+    "sum": 1910.9140657917824,
+    "sum_sq": 1865.8998042947733
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "label": "Condorcet (Schulze)",
+    "n": 2000,
+    "sum": 1872.9004702215864,
+    "sum_sq": 1808.924766912205
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 2000,
+    "sum": 1694.9159696777492,
+    "sum_sq": 1703.023731965177
+   },
+   {
+    "chooser": "stratBallot",
+    "label": "Plurality Top-2",
+    "n": 2000,
+    "sum": 1751.2049850212145,
+    "sum_sq": 1676.394614715895
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "label": "Plurality Top-2",
+    "n": 2000,
+    "sum": 1706.6659431720964,
+    "sum_sq": 1654.6681790059115
+   },
+   {
+    "chooser": "smartOss",
+    "label": "Plurality Top-2",
+    "n": 2000,
+    "sum": 1682.2391881956598,
+    "sum_sq": 1656.9433754892898
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "label": "Plurality Top-2",
+    "n": 2000,
+    "sum": 1722.892156833228,
+    "sum_sq": 1679.2119118619878
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "label": "Plurality Top-2",
+    "n": 2000,
+    "sum": 1732.7255896658803,
+    "sum_sq": 1724.5227208075983
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "label": "Plurality Top-2",
+    "n": 2000,
+    "sum": 1737.945685197402,
+    "sum_sq": 1691.5519013304308
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "label": "Plurality Top-2",
+    "n": 2000,
+    "sum": 1745.2358717958596,
+    "sum_sq": 1682.8327956552234
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1698.7556283149736,
+    "sum_sq": 1691.2479774823953
+   },
+   {
+    "chooser": "stratBallot",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1743.2208424643925,
+    "sum_sq": 1672.5970475246015
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1716.2887797355447,
+    "sum_sq": 1674.302737506782
+   },
+   {
+    "chooser": "smartOss",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1687.2700249485463,
+    "sum_sq": 1655.3984286105865
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1710.3758644387265,
+    "sum_sq": 1687.6953834124472
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1735.3354788322408,
+    "sum_sq": 1712.7026652221018
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1740.1328503055845,
+    "sum_sq": 1696.0063616146363
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1734.125274594144,
+    "sum_sq": 1672.7832183552177
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 2000,
+    "sum": 1919.0252101951824,
+    "sum_sq": 1871.1630696887973
+   },
+   {
+    "chooser": "stratBallot",
+    "label": "Approval Top-2",
+    "n": 2000,
+    "sum": 1946.522878092012,
+    "sum_sq": 1918.7466407740703
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "label": "Approval Top-2",
+    "n": 2000,
+    "sum": 1832.5213941126965,
+    "sum_sq": 1755.009735733258
+   },
+   {
+    "chooser": "smartOss",
+    "label": "Approval Top-2",
+    "n": 2000,
+    "sum": 1875.7689904743572,
+    "sum_sq": 1812.5842147046096
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "label": "Approval Top-2",
+    "n": 2000,
+    "sum": 1903.0800454599414,
+    "sum_sq": 1852.53536497292
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "label": "Approval Top-2",
+    "n": 2000,
+    "sum": 1943.7798923709279,
+    "sum_sq": 1908.4369021397627
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "label": "Approval Top-2",
+    "n": 2000,
+    "sum": 1952.7804628826652,
+    "sum_sq": 1925.416628051588
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "label": "Approval Top-2",
+    "n": 2000,
+    "sum": 1952.6566548112298,
+    "sum_sq": 1925.5544017565278
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2 (Coma)",
+    "n": 2000,
+    "sum": 1921.9749583144146,
+    "sum_sq": 1875.911714326939
+   },
+   {
+    "chooser": "stratBallot",
+    "label": "Approval Top-2 (Coma)",
+    "n": 2000,
+    "sum": 1952.2260661753999,
+    "sum_sq": 1926.5256702398858
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "label": "Approval Top-2 (Coma)",
+    "n": 2000,
+    "sum": 1845.1263427986612,
+    "sum_sq": 1767.3503803283734
+   },
+   {
+    "chooser": "smartOss",
+    "label": "Approval Top-2 (Coma)",
+    "n": 2000,
+    "sum": 1876.5404545839533,
+    "sum_sq": 1809.2094585201085
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "label": "Approval Top-2 (Coma)",
+    "n": 2000,
+    "sum": 1906.413251730537,
+    "sum_sq": 1854.3604149085343
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "label": "Approval Top-2 (Coma)",
+    "n": 2000,
+    "sum": 1943.6107585337616,
+    "sum_sq": 1913.0377582252393
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "label": "Approval Top-2 (Coma)",
+    "n": 2000,
+    "sum": 1957.6036428789662,
+    "sum_sq": 1930.0640140338187
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "label": "Approval Top-2 (Coma)",
+    "n": 2000,
+    "sum": 1956.481976259619,
+    "sum_sq": 1930.3122523564546
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1919.1694222290387,
+    "sum_sq": 1872.4975213369453
+   },
+   {
+    "chooser": "stratBallot",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1948.0028851368609,
+    "sum_sq": 1919.8246014659087
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1852.783960454723,
+    "sum_sq": 1776.9187409783954
+   },
+   {
+    "chooser": "smartOss",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1889.39470637858,
+    "sum_sq": 1828.9100906345293
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1902.7368007907282,
+    "sum_sq": 1851.5814864472145
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1945.7558254953576,
+    "sum_sq": 1910.8466670629111
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1951.0322486872733,
+    "sum_sq": 1923.3614423666452
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1952.6923175812829,
+    "sum_sq": 1926.5275526940056
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1965.3475094821224,
+    "sum_sq": 1944.347635705282
+   },
+   {
+    "chooser": "stratBallot",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1953.451958911425,
+    "sum_sq": 1927.6555071616406
+   },
+   {
+    "chooser": "Oss.hon_strat.",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1853.3673869825739,
+    "sum_sq": 1769.872548468709
+   },
+   {
+    "chooser": "smartOss",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1906.7163003895448,
+    "sum_sq": 1849.8484779096323
+   },
+   {
+    "chooser": "Oss.hon_Prob.strat50_hon50..",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1930.4562332152645,
+    "sum_sq": 1886.9039547443308
+   },
+   {
+    "chooser": "Prob.strat25_hon75.",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1965.1855039914915,
+    "sum_sq": 1944.993571143236
+   },
+   {
+    "chooser": "Prob.strat50_hon50.",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1962.297583896232,
+    "sum_sq": 1942.7780929377866
+   },
+   {
+    "chooser": "Prob.strat75_hon25.",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "sum": 1958.1066024457518,
+    "sum_sq": 1936.3883972934343
+   }
+  ]
+ },
+ "generated_by": "python -m vse_sim.run --stage ideal",
+ "meta": {
+  "elections": 2000,
+  "seconds": 98.5
+ },
+ "runs": 1,
+ "schema": 1,
+ "spec": {
+  "media": "fuzzyMediaFor.<locals>.fuzzyMedia",
+  "methods": [
+   "Plurality",
+   "Approval",
+   "RCV (IRV)",
+   "STAR",
+   "Score5",
+   "Condorcet (Schulze)",
+   "Plurality Top-2",
+   "Plurality Top-2 (Clear-Eyed)",
+   "Approval Top-2",
+   "Approval Top-2 (Coma)",
+   "Approval Top-2 (Clear-Eyed)",
+   "Score Top-2 (Clear-Eyed)"
+  ],
+  "model": "KSModel_1.5_1_3_1.5_3_3_1.5",
+  "ncand": 6,
+  "niter": 2000,
+  "nvot": 101,
+  "paired_ce_pairs": [
+   [
+    "Plurality",
+    "Condorcet (Schulze)"
+   ],
+   [
+    "Plurality Top-2",
+    "Condorcet (Schulze)"
+   ],
+   [
+    "Plurality Top-2 (Clear-Eyed)",
+    "Condorcet (Schulze)"
+   ],
+   [
+    "RCV (IRV)",
+    "Condorcet (Schulze)"
+   ],
+   [
+    "Approval",
+    "Condorcet (Schulze)"
+   ],
+   [
+    "Approval Top-2 (Coma)",
+    "Condorcet (Schulze)"
+   ],
+   [
+    "Approval Top-2",
+    "Condorcet (Schulze)"
+   ],
+   [
+    "Approval Top-2 (Clear-Eyed)",
+    "Condorcet (Schulze)"
+   ],
+   [
+    "STAR",
+    "Condorcet (Schulze)"
+   ],
+   [
+    "Score5",
+    "Condorcet (Schulze)"
+   ],
+   [
+    "Score Top-2 (Clear-Eyed)",
+    "Condorcet (Schulze)"
+   ]
+  ],
+  "paired_diff_pairs": [
+   [
+    "Plurality",
+    "STAR"
+   ],
+   [
+    "Plurality Top-2",
+    "STAR"
+   ],
+   [
+    "Plurality Top-2 (Clear-Eyed)",
+    "STAR"
+   ],
+   [
+    "RCV (IRV)",
+    "STAR"
+   ],
+   [
+    "Approval",
+    "STAR"
+   ],
+   [
+    "Approval Top-2 (Coma)",
+    "STAR"
+   ],
+   [
+    "Approval Top-2",
+    "STAR"
+   ],
+   [
+    "Approval Top-2 (Clear-Eyed)",
+    "STAR"
+   ],
+   [
+    "Score5",
+    "STAR"
+   ],
+   [
+    "Score Top-2 (Clear-Eyed)",
+    "STAR"
+   ],
+   [
+    "Condorcet (Schulze)",
+    "STAR"
+   ],
+   [
+    "RCV (IRV)",
+    "Condorcet (Schulze)"
+   ],
+   [
+    "Approval",
+    "Plurality"
+   ],
+   [
+    "Approval Top-2",
+    "Plurality Top-2"
+   ],
+   [
+    "Approval Top-2 (Clear-Eyed)",
+    "Plurality Top-2 (Clear-Eyed)"
+   ],
+   [
+    "Approval Top-2 (Coma)",
+    "Approval"
+   ],
+   [
+    "Approval Top-2",
+    "Approval"
+   ],
+   [
+    "Approval Top-2 (Clear-Eyed)",
+    "Approval"
+   ],
+   [
+    "Plurality Top-2",
+    "Plurality"
+   ],
+   [
+    "Plurality Top-2 (Clear-Eyed)",
+    "Plurality"
+   ],
+   [
+    "Score Top-2 (Clear-Eyed)",
+    "Approval Top-2 (Clear-Eyed)"
+   ]
+  ],
+  "pool_id": "ideal",
+  "seed": "VSE2026"
+ },
+ "spec_hash": "d26d58f14a851ce2295231e315cdf01cc77125ac2b5e760e6f1525ed4373c307",
+ "stage": "ideal"
+}

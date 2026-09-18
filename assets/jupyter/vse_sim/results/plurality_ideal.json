@@ -1,0 +1,74 @@
+{
+ "code_version": "47a8b85d79fc8d5a",
+ "content_hash": "10c68a0b1423ba4aeca371bf7e7ac509b220c8a1b8dbfb60640e3e9e6948c663",
+ "data": {
+  "ce_denominator": [
+   {
+    "cw_exists": 5942
+   }
+  ],
+  "ce_wins": [
+   {
+    "chooser": "honBallot",
+    "cw_wins": 2700,
+    "label": "Plurality"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 3996,
+    "label": "Plurality Top-2"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 4006,
+    "label": "Plurality Top-2 (Clear-Eyed)"
+   }
+  ],
+  "vse": [
+   {
+    "chooser": "honBallot",
+    "label": "Plurality",
+    "n": 6000,
+    "sum": 3609.1020656542846,
+    "sum_sq": 4851.0958222987865
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 6000,
+    "sum": 4989.379992913202,
+    "sum_sq": 5099.190668993996
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "n": 6000,
+    "sum": 4993.669115565702,
+    "sum_sq": 5107.049534820038
+   }
+  ]
+ },
+ "generated_by": "python -m vse_sim.run --stage plurality_ideal",
+ "meta": {
+  "elections": 6000,
+  "seconds": 17.1
+ },
+ "runs": 1,
+ "schema": 1,
+ "spec": {
+  "labels": [
+   "Plurality",
+   "Plurality Top-2",
+   "Plurality Top-2 (Clear-Eyed)"
+  ],
+  "media": "fuzzyMediaFor.<locals>.fuzzyMedia",
+  "model": "KSModel_1.5_1_3_1.5_3_3_1.5",
+  "ncand": 6,
+  "niter": 6000,
+  "nvot": 101,
+  "pool_id": "joint",
+  "seed": "VSE2026"
+ },
+ "spec_hash": "64450b9014e19f980fe2ae01c485992414856fc2b36e9ad993fd778f3e1e3998",
+ "stage": "plurality_ideal"
+}

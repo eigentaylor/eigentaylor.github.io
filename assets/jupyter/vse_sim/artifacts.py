@@ -198,8 +198,13 @@ def path_for(stage, results_dir=RESULTS_DIR):
     return pathlib.Path(results_dir) / f"{stage}.json"
 
 
-def write(stage, spec, data, results_dir=RESULTS_DIR, runs=1):
-    """Write one stage's results. `data` maps a section name to a list of records."""
+def write(stage, spec, data, results_dir=RESULTS_DIR, runs=1, meta=None):
+    """Write one stage's results. `data` maps a section name to a list of records.
+
+    `meta` carries provenance the notebook reports but that must never affect
+    reproducibility -- how long the stage took, how many elections it simulated. It sits
+    outside both hashes deliberately: a slower machine must not make `--verify` fail.
+    """
     payload = {
         "schema": SCHEMA,
         "stage": stage,
@@ -209,6 +214,7 @@ def write(stage, spec, data, results_dir=RESULTS_DIR, runs=1):
         "spec_hash": sha256(spec),
         "content_hash": sha256(data),
         "code_version": code_version(),
+        "meta": meta or {},
         "data": data,
     }
     path = path_for(stage, results_dir)

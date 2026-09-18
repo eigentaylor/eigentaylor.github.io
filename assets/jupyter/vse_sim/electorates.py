@@ -60,9 +60,10 @@ def _fingerprint(pool_id, nvot, ncand):
     return hashlib.sha256(key.encode()).hexdigest()[:12]
 
 
-def _cache_path(pool_id, nvot, ncand, cache_dir):
+def _cache_path(pool_id, nvot, ncand, cache_dir=None):
     safe = pool_id.replace("/", "__")
-    return pathlib.Path(cache_dir) / f"{safe}-c{ncand}-{_fingerprint(pool_id, nvot, ncand)}.npy"
+    root = CACHE_DIR if cache_dir is None else cache_dir
+    return pathlib.Path(root) / f"{safe}-c{ncand}-{_fingerprint(pool_id, nvot, ncand)}.npy"
 
 
 def to_array(electorates):
@@ -83,7 +84,7 @@ def draw(pool_id, niter, ncand=None, nvot=None):
     return [cfg.MODEL(nvot, ncand) for _ in range(niter)]
 
 
-def pool(pool_id, niter, ncand=None, nvot=None, cache_dir=CACHE_DIR, use_cache=True):
+def pool(pool_id, niter, ncand=None, nvot=None, cache_dir=None, use_cache=True):
     """`niter` true electorates for `pool_id`, from the cache when one is big enough.
 
     A cached pool of at least `niter` elections is sliced rather than redrawn (see the
@@ -106,10 +107,15 @@ def pool(pool_id, niter, ncand=None, nvot=None, cache_dir=CACHE_DIR, use_cache=T
     return electorates
 
 
-def clear_cache(cache_dir=CACHE_DIR):
-    """Delete every cached pool. Safe: they are all regenerable from `config.SEED`."""
+def clear_cache(cache_dir=None):
+    """Delete every cached pool. Safe: they are all regenerable from `config.SEED`.
+
+    `cache_dir` is resolved at call time rather than bound as a default, so a test can
+    point `CACHE_DIR` somewhere temporary and not delete the real cache out from under
+    whoever is running it.
+    """
     removed = 0
-    for path in pathlib.Path(cache_dir).glob("*.npy"):
+    for path in pathlib.Path(CACHE_DIR if cache_dir is None else cache_dir).glob("*.npy"):
         path.unlink()
         removed += 1
     return removed

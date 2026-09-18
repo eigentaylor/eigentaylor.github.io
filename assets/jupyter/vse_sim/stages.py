@@ -173,7 +173,7 @@ def load_ideal(results_dir=artifacts.RESULTS_DIR, z=Z_95, niter=None):
         "coma": artifacts.from_records(d["coma"], [("label",)]),
         "primary_cost": artifacts.from_records(d["primary_cost"], [("label",)]),
         "raw_vse": _load_arrays("ideal", results_dir),
-        "niter": payload["spec"]["niter"],
+        "niter": payload["spec"]["niter"], "meta": payload.get("meta", {}), "meta": payload.get("meta", {}),
     }
 
 
@@ -224,7 +224,8 @@ def load_sweeps(results_dir=artifacts.RESULTS_DIR, z=Z_95, niter=None):
     payload = artifacts.load("sweeps", spec_sweeps(niter), results_dir)
     d = payload["data"]
     out = {"results": {}, "ce": {}, "paired_diff": {}, "raw_summary": {},
-           "betrayal": {}, "primary_corruption": {}, "niter": payload["spec"]["niter"]}
+           "betrayal": {}, "primary_corruption": {},
+           "niter": payload["spec"]["niter"], "meta": payload.get("meta", {})}
     vse = artifacts.from_records(d["vse"], ["param", "value", ("label", "chooser")])
     pdf = artifacts.from_records(d["paired_diff"], ["param", "value", ("label", "baseline")])
     wins = artifacts.from_records(d["ce_wins"], ["param", "value", ("label", "chooser")], scalar_name="cw_wins")
@@ -324,7 +325,7 @@ def load_joint(results_dir=artifacts.RESULTS_DIR, z=Z_95, niter=None):
         "primary_cost": artifacts.from_records(d["primary_cost"], ["scenario", ("label",)]),
         "primary_corruption": corruption,
         "raw_vse": _load_arrays("joint", results_dir, depth=3),
-        "niter": payload["spec"]["niter"],
+        "niter": payload["spec"]["niter"], "meta": payload.get("meta", {}), "meta": payload.get("meta", {}),
     }
 
 
@@ -369,7 +370,8 @@ def load_runoff_rho(results_dir=artifacts.RESULTS_DIR, z=Z_95, niter=None):
         ["baseline", "mode", "runoff_rho", ("label", "chooser")])
     return {"results": {b: {m: {rt: reduce_to_mean_ci(s, z) for rt, s in by_rt.items()}
                             for m, by_rt in by_mode.items()} for b, by_mode in nested.items()},
-            "raw_summary": nested, "niter": payload["spec"]["niter"]}
+            "raw_summary": nested, "niter": payload["spec"]["niter"],
+            "meta": payload.get("meta", {})}
 
 
 # ---------------------------------------------------------------------------------
@@ -420,7 +422,7 @@ def load_runoff_learn(results_dir=artifacts.RESULTS_DIR, z=Z_95, niter=None):
         "baseline": {b: {v: reduce_to_mean_ci({"_": s}, z)["_"] for v, s in by_v.items()}
                      for b, by_v in base.items()},
         "raw_summary": vse,
-        "niter": payload["spec"]["niter"],
+        "niter": payload["spec"]["niter"], "meta": payload.get("meta", {}), "meta": payload.get("meta", {}),
     }
 
 
@@ -458,7 +460,7 @@ def load_plurality_ideal(results_dir=artifacts.RESULTS_DIR, z=Z_95, niter=None):
     summary = artifacts.from_records(payload["data"]["vse"], LEVELS["vse"])
     return {"raw_summary": summary, "results": reduce_to_mean_ci(summary, z),
             "raw_vse": _load_arrays("plurality_ideal", results_dir),
-            "niter": payload["spec"]["niter"]}
+            "niter": payload["spec"]["niter"], "meta": payload.get("meta", {})}
 
 
 # ---------------------------------------------------------------------------------
@@ -510,7 +512,7 @@ def load_ncand(results_dir=artifacts.RESULTS_DIR, z=Z_95, niter=None):
                         for s, by_n in artifacts.from_records(
                             d["paired_diff"], ["scenario", "ncand", ("label", "baseline")]).items()},
         "raw_summary": vse,
-        "niter": payload["spec"]["niter"],
+        "niter": payload["spec"]["niter"], "meta": payload.get("meta", {}), "meta": payload.get("meta", {}),
     }
 
 
@@ -585,12 +587,16 @@ ORDER = ["ideal", "sweeps", "joint", "plurality_ideal", "runoff_rho", "runoff_le
 
 def run_stage(name, results_dir=artifacts.RESULTS_DIR, niter=None, use_cache=True, write=True):
     """Run one stage and (by default) write its results. Returns (payload_path, seconds)."""
+    import vse_sim.engine as _engine
     stage = STAGES[name]
     started = time.time()
+    elections_before = _engine.TOTAL_ELECTIONS_RUN
     spec, data, arrays = stage.run(niter=niter, use_cache=use_cache)
     elapsed = time.time() - started
+    meta = {"seconds": round(elapsed, 1),
+            "elections": _engine.TOTAL_ELECTIONS_RUN - elections_before}
     if not write:
         return (spec, data, arrays), elapsed
-    path = artifacts.write(name, spec, data, results_dir)
+    path = artifacts.write(name, spec, data, results_dir, meta=meta)
     _save_arrays(name, arrays, results_dir)
     return path, elapsed

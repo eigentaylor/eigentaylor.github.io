@@ -1,0 +1,1169 @@
+{
+ "code_version": "47a8b85d79fc8d5a",
+ "content_hash": "d1e501b5bbf648e1a0a3b6637f6365eaf1c9b2362f4b2821132f26cb7ab4edd2",
+ "data": {
+  "ce_denominator": [
+   {
+    "cw_exists": 1199,
+    "ncand": 3,
+    "scenario": "Ideal"
+   },
+   {
+    "cw_exists": 1189,
+    "ncand": 5,
+    "scenario": "Ideal"
+   },
+   {
+    "cw_exists": 1190,
+    "ncand": 6,
+    "scenario": "Ideal"
+   },
+   {
+    "cw_exists": 1182,
+    "ncand": 8,
+    "scenario": "Ideal"
+   },
+   {
+    "cw_exists": 1173,
+    "ncand": 10,
+    "scenario": "Ideal"
+   },
+   {
+    "cw_exists": 1154,
+    "ncand": 15,
+    "scenario": "Ideal"
+   },
+   {
+    "cw_exists": 1199,
+    "ncand": 3,
+    "scenario": "Mild friction"
+   },
+   {
+    "cw_exists": 1189,
+    "ncand": 5,
+    "scenario": "Mild friction"
+   },
+   {
+    "cw_exists": 1190,
+    "ncand": 6,
+    "scenario": "Mild friction"
+   },
+   {
+    "cw_exists": 1182,
+    "ncand": 8,
+    "scenario": "Mild friction"
+   },
+   {
+    "cw_exists": 1173,
+    "ncand": 10,
+    "scenario": "Mild friction"
+   },
+   {
+    "cw_exists": 1154,
+    "ncand": 15,
+    "scenario": "Mild friction"
+   },
+   {
+    "cw_exists": 1199,
+    "ncand": 3,
+    "scenario": "Moderate friction"
+   },
+   {
+    "cw_exists": 1189,
+    "ncand": 5,
+    "scenario": "Moderate friction"
+   },
+   {
+    "cw_exists": 1190,
+    "ncand": 6,
+    "scenario": "Moderate friction"
+   },
+   {
+    "cw_exists": 1182,
+    "ncand": 8,
+    "scenario": "Moderate friction"
+   },
+   {
+    "cw_exists": 1173,
+    "ncand": 10,
+    "scenario": "Moderate friction"
+   },
+   {
+    "cw_exists": 1154,
+    "ncand": 15,
+    "scenario": "Moderate friction"
+   },
+   {
+    "cw_exists": 1199,
+    "ncand": 3,
+    "scenario": "Heavy friction"
+   },
+   {
+    "cw_exists": 1189,
+    "ncand": 5,
+    "scenario": "Heavy friction"
+   },
+   {
+    "cw_exists": 1190,
+    "ncand": 6,
+    "scenario": "Heavy friction"
+   },
+   {
+    "cw_exists": 1182,
+    "ncand": 8,
+    "scenario": "Heavy friction"
+   },
+   {
+    "cw_exists": 1173,
+    "ncand": 10,
+    "scenario": "Heavy friction"
+   },
+   {
+    "cw_exists": 1154,
+    "ncand": 15,
+    "scenario": "Heavy friction"
+   }
+  ],
+  "ce_wins": [
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1191,
+    "label": "Approval Top-2",
+    "ncand": 3,
+    "scenario": "Ideal"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1051,
+    "label": "Plurality Top-2",
+    "ncand": 3,
+    "scenario": "Ideal"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1039,
+    "label": "Approval Top-2",
+    "ncand": 5,
+    "scenario": "Ideal"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 874,
+    "label": "Plurality Top-2",
+    "ncand": 5,
+    "scenario": "Ideal"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 971,
+    "label": "Approval Top-2",
+    "ncand": 6,
+    "scenario": "Ideal"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 827,
+    "label": "Plurality Top-2",
+    "ncand": 6,
+    "scenario": "Ideal"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 666,
+    "label": "Plurality Top-2",
+    "ncand": 8,
+    "scenario": "Ideal"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 858,
+    "label": "Approval Top-2",
+    "ncand": 8,
+    "scenario": "Ideal"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 578,
+    "label": "Plurality Top-2",
+    "ncand": 10,
+    "scenario": "Ideal"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 743,
+    "label": "Approval Top-2",
+    "ncand": 10,
+    "scenario": "Ideal"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 411,
+    "label": "Plurality Top-2",
+    "ncand": 15,
+    "scenario": "Ideal"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 550,
+    "label": "Approval Top-2",
+    "ncand": 15,
+    "scenario": "Ideal"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1078,
+    "label": "Approval Top-2",
+    "ncand": 3,
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1019,
+    "label": "Plurality Top-2",
+    "ncand": 3,
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 852,
+    "label": "Approval Top-2",
+    "ncand": 5,
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 830,
+    "label": "Plurality Top-2",
+    "ncand": 5,
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 749,
+    "label": "Approval Top-2",
+    "ncand": 6,
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 750,
+    "label": "Plurality Top-2",
+    "ncand": 6,
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 561,
+    "label": "Approval Top-2",
+    "ncand": 8,
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 565,
+    "label": "Plurality Top-2",
+    "ncand": 8,
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 454,
+    "label": "Approval Top-2",
+    "ncand": 10,
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 444,
+    "label": "Plurality Top-2",
+    "ncand": 10,
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 311,
+    "label": "Approval Top-2",
+    "ncand": 15,
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 307,
+    "label": "Plurality Top-2",
+    "ncand": 15,
+    "scenario": "Mild friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 993,
+    "label": "Approval Top-2",
+    "ncand": 3,
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 962,
+    "label": "Plurality Top-2",
+    "ncand": 3,
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 693,
+    "label": "Approval Top-2",
+    "ncand": 5,
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 686,
+    "label": "Plurality Top-2",
+    "ncand": 5,
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 574,
+    "label": "Plurality Top-2",
+    "ncand": 6,
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 571,
+    "label": "Approval Top-2",
+    "ncand": 6,
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 414,
+    "label": "Plurality Top-2",
+    "ncand": 8,
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 404,
+    "label": "Approval Top-2",
+    "ncand": 8,
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 299,
+    "label": "Approval Top-2",
+    "ncand": 10,
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 301,
+    "label": "Plurality Top-2",
+    "ncand": 10,
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 203,
+    "label": "Approval Top-2",
+    "ncand": 15,
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 216,
+    "label": "Plurality Top-2",
+    "ncand": 15,
+    "scenario": "Moderate friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 893,
+    "label": "Approval Top-2",
+    "ncand": 3,
+    "scenario": "Heavy friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 890,
+    "label": "Plurality Top-2",
+    "ncand": 3,
+    "scenario": "Heavy friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 600,
+    "label": "Approval Top-2",
+    "ncand": 5,
+    "scenario": "Heavy friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 604,
+    "label": "Plurality Top-2",
+    "ncand": 5,
+    "scenario": "Heavy friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 463,
+    "label": "Approval Top-2",
+    "ncand": 6,
+    "scenario": "Heavy friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 461,
+    "label": "Plurality Top-2",
+    "ncand": 6,
+    "scenario": "Heavy friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 336,
+    "label": "Approval Top-2",
+    "ncand": 8,
+    "scenario": "Heavy friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 343,
+    "label": "Plurality Top-2",
+    "ncand": 8,
+    "scenario": "Heavy friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 261,
+    "label": "Approval Top-2",
+    "ncand": 10,
+    "scenario": "Heavy friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 258,
+    "label": "Plurality Top-2",
+    "ncand": 10,
+    "scenario": "Heavy friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 194,
+    "label": "Approval Top-2",
+    "ncand": 15,
+    "scenario": "Heavy friction"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 196,
+    "label": "Plurality Top-2",
+    "ncand": 15,
+    "scenario": "Heavy friction"
+   }
+  ],
+  "paired_diff": [
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 3,
+    "scenario": "Ideal",
+    "sum": 111.73243794452613,
+    "sum_sq": 147.72040304609732
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 5,
+    "scenario": "Ideal",
+    "sum": 134.88857987754147,
+    "sum_sq": 205.53878141091533
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 6,
+    "scenario": "Ideal",
+    "sum": 135.08075110979166,
+    "sum_sq": 207.30835735977357
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 8,
+    "scenario": "Ideal",
+    "sum": 170.18926281536744,
+    "sum_sq": 268.00312153687673
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 10,
+    "scenario": "Ideal",
+    "sum": 160.10917078430464,
+    "sum_sq": 277.3735742529352
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 15,
+    "scenario": "Ideal",
+    "sum": 185.13398200247417,
+    "sum_sq": 326.7858738372087
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 3,
+    "scenario": "Mild friction",
+    "sum": 57.09082089153501,
+    "sum_sq": 96.291079093222
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 5,
+    "scenario": "Mild friction",
+    "sum": 43.95847483196876,
+    "sum_sq": 77.7615074768861
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 6,
+    "scenario": "Mild friction",
+    "sum": 38.454332022799726,
+    "sum_sq": 83.57451534941286
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 8,
+    "scenario": "Mild friction",
+    "sum": 43.210518331095095,
+    "sum_sq": 124.21043596980888
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 10,
+    "scenario": "Mild friction",
+    "sum": 37.43264175474291,
+    "sum_sq": 88.09258171072635
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 15,
+    "scenario": "Mild friction",
+    "sum": 44.532905770005094,
+    "sum_sq": 107.0482813969989
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 3,
+    "scenario": "Moderate friction",
+    "sum": 25.68109252968542,
+    "sum_sq": 71.62081839112535
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 5,
+    "scenario": "Moderate friction",
+    "sum": 8.139243047375995,
+    "sum_sq": 87.63712166896583
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 6,
+    "scenario": "Moderate friction",
+    "sum": -3.2566877131070457,
+    "sum_sq": 44.88527688631966
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 8,
+    "scenario": "Moderate friction",
+    "sum": 5.940537294718103,
+    "sum_sq": 48.06412045151982
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 10,
+    "scenario": "Moderate friction",
+    "sum": 6.669622923802857,
+    "sum_sq": 49.049784855822395
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 15,
+    "scenario": "Moderate friction",
+    "sum": -14.252527360483567,
+    "sum_sq": 33.228785101314294
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 3,
+    "scenario": "Heavy friction",
+    "sum": -5.7018637559975565,
+    "sum_sq": 61.531462502140315
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 5,
+    "scenario": "Heavy friction",
+    "sum": -15.26573652209484,
+    "sum_sq": 70.00750178475033
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 6,
+    "scenario": "Heavy friction",
+    "sum": 6.92620147461828,
+    "sum_sq": 57.29796488569944
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 8,
+    "scenario": "Heavy friction",
+    "sum": -3.6253043361917956,
+    "sum_sq": 40.36209465504925
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 10,
+    "scenario": "Heavy friction",
+    "sum": 5.6838989128137705,
+    "sum_sq": 49.006964173993175
+   },
+   {
+    "baseline": "Plurality Top-2",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 15,
+    "scenario": "Heavy friction",
+    "sum": -1.7633608395013427,
+    "sum_sq": 26.740628283679285
+   }
+  ],
+  "vse": [
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 3,
+    "scenario": "Ideal",
+    "sum": 1162.4476321691639,
+    "sum_sq": 1167.347111696702
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 3,
+    "scenario": "Ideal",
+    "sum": 1050.7151942246376,
+    "sum_sq": 1088.5277374726238
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 5,
+    "scenario": "Ideal",
+    "sum": 1159.273133675742,
+    "sum_sq": 1131.9391697244425
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 5,
+    "scenario": "Ideal",
+    "sum": 1024.3845537982002,
+    "sum_sq": 1052.2497479364536
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 6,
+    "scenario": "Ideal",
+    "sum": 1146.0102019081203,
+    "sum_sq": 1111.18417491998
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 6,
+    "scenario": "Ideal",
+    "sum": 1010.9294507983274,
+    "sum_sq": 1025.2490603735205
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 8,
+    "scenario": "Ideal",
+    "sum": 1129.4429280891277,
+    "sum_sq": 1085.9274960351102
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 8,
+    "scenario": "Ideal",
+    "sum": 959.2536652737599,
+    "sum_sq": 983.9224972820515
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 10,
+    "scenario": "Ideal",
+    "sum": 1115.2844688268224,
+    "sum_sq": 1062.313112027166
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 10,
+    "scenario": "Ideal",
+    "sum": 955.1752980425168,
+    "sum_sq": 978.4010091447534
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 15,
+    "scenario": "Ideal",
+    "sum": 1064.0579708651192,
+    "sum_sq": 988.6916617990202
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 15,
+    "scenario": "Ideal",
+    "sum": 878.9239888626468,
+    "sum_sq": 885.9697726292948
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 3,
+    "scenario": "Mild friction",
+    "sum": 1141.213348038469,
+    "sum_sq": 1151.8426091430563
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 3,
+    "scenario": "Mild friction",
+    "sum": 1084.122527146934,
+    "sum_sq": 1115.4236961433612
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 5,
+    "scenario": "Mild friction",
+    "sum": 1129.29980069598,
+    "sum_sq": 1089.0833519923647
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 5,
+    "scenario": "Mild friction",
+    "sum": 1085.3413258640114,
+    "sum_sq": 1061.6451995155012
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 6,
+    "scenario": "Mild friction",
+    "sum": 1107.0916758558164,
+    "sum_sq": 1054.4006554947168
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 6,
+    "scenario": "Mild friction",
+    "sum": 1068.6373438330154,
+    "sum_sq": 1031.3040033055097
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 8,
+    "scenario": "Mild friction",
+    "sum": 1059.3937069936642,
+    "sum_sq": 984.052928694997
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 8,
+    "scenario": "Mild friction",
+    "sum": 1016.1831886625689,
+    "sum_sq": 989.7530701421097
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 10,
+    "scenario": "Mild friction",
+    "sum": 1054.6172877324052,
+    "sum_sq": 974.1395766839867
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 10,
+    "scenario": "Mild friction",
+    "sum": 1017.1846459776615,
+    "sum_sq": 958.7862013995023
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 15,
+    "scenario": "Mild friction",
+    "sum": 1020.2135343398119,
+    "sum_sq": 920.9321159682045
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 15,
+    "scenario": "Mild friction",
+    "sum": 975.6806285698079,
+    "sum_sq": 905.4042710979201
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 3,
+    "scenario": "Moderate friction",
+    "sum": 1097.2264570428717,
+    "sum_sq": 1109.7910752137188
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 3,
+    "scenario": "Moderate friction",
+    "sum": 1071.5453645131865,
+    "sum_sq": 1084.7394271004914
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 5,
+    "scenario": "Moderate friction",
+    "sum": 1023.7844324452121,
+    "sum_sq": 981.06289018093
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 5,
+    "scenario": "Moderate friction",
+    "sum": 1015.6451893978355,
+    "sum_sq": 973.5234437358599
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 6,
+    "scenario": "Moderate friction",
+    "sum": 993.1577944777762,
+    "sum_sq": 925.9949450100528
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 6,
+    "scenario": "Moderate friction",
+    "sum": 996.4144821908833,
+    "sum_sq": 931.1217710760884
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 8,
+    "scenario": "Moderate friction",
+    "sum": 944.1729248693666,
+    "sum_sq": 853.5206973793655
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 8,
+    "scenario": "Moderate friction",
+    "sum": 938.2323875746491,
+    "sum_sq": 851.3006702833302
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 10,
+    "scenario": "Moderate friction",
+    "sum": 937.1119670638072,
+    "sum_sq": 825.9546729644061
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 10,
+    "scenario": "Moderate friction",
+    "sum": 930.4423441400049,
+    "sum_sq": 826.7268263125808
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 15,
+    "scenario": "Moderate friction",
+    "sum": 903.5728076972101,
+    "sum_sq": 796.7196293277651
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 15,
+    "scenario": "Moderate friction",
+    "sum": 917.8253350576936,
+    "sum_sq": 804.1530424694847
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 3,
+    "scenario": "Heavy friction",
+    "sum": 1000.2791193245112,
+    "sum_sq": 1041.2300981795318
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 3,
+    "scenario": "Heavy friction",
+    "sum": 1005.9809830805087,
+    "sum_sq": 1032.9720607518102
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 5,
+    "scenario": "Heavy friction",
+    "sum": 930.9488734636031,
+    "sum_sq": 909.6066496062142
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 5,
+    "scenario": "Heavy friction",
+    "sum": 946.2146099856981,
+    "sum_sq": 907.3092374978618
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 6,
+    "scenario": "Heavy friction",
+    "sum": 848.6037623916109,
+    "sum_sq": 814.9737184073902
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 6,
+    "scenario": "Heavy friction",
+    "sum": 841.6775609169921,
+    "sum_sq": 810.0336951017651
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 8,
+    "scenario": "Heavy friction",
+    "sum": 842.1359015018642,
+    "sum_sq": 783.7179362844539
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 8,
+    "scenario": "Heavy friction",
+    "sum": 845.7612058380563,
+    "sum_sq": 784.1076332016995
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 10,
+    "scenario": "Heavy friction",
+    "sum": 830.9567350085022,
+    "sum_sq": 757.1423338047065
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 10,
+    "scenario": "Heavy friction",
+    "sum": 825.2728360956884,
+    "sum_sq": 771.3323990692468
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 1200,
+    "ncand": 15,
+    "scenario": "Heavy friction",
+    "sum": 821.2031442719435,
+    "sum_sq": 747.3562332201022
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 1200,
+    "ncand": 15,
+    "scenario": "Heavy friction",
+    "sum": 822.9665051114445,
+    "sum_sq": 742.6284424913163
+   }
+  ]
+ },
+ "generated_by": "python -m vse_sim.run --stage ncand",
+ "meta": {
+  "elections": 28800,
+  "seconds": 242.1
+ },
+ "runs": 1,
+ "schema": 1,
+ "spec": {
+  "labels": [
+   "Approval Top-2",
+   "Plurality Top-2"
+  ],
+  "media": "fuzzyMediaFor.<locals>.fuzzyMedia",
+  "model": "KSModel_1.5_1_3_1.5_3_3_1.5",
+  "ncand": 6,
+  "ncand_values": [
+   3,
+   5,
+   6,
+   8,
+   10,
+   15
+  ],
+  "niter": 1200,
+  "nvot": 101,
+  "scenarios": {
+   "Heavy friction": {
+    "awareness_alpha": 0.7,
+    "epistemic_rho": 0.7,
+    "fatigue_beta": 0.7
+   },
+   "Ideal": {
+    "awareness_alpha": 1.0,
+    "epistemic_rho": 1.0,
+    "fatigue_beta": 1.0
+   },
+   "Mild friction": {
+    "awareness_alpha": 0.9,
+    "epistemic_rho": 0.9,
+    "fatigue_beta": 0.9
+   },
+   "Moderate friction": {
+    "awareness_alpha": 0.8,
+    "epistemic_rho": 0.8,
+    "fatigue_beta": 0.8
+   }
+  },
+  "seed": "VSE2026"
+ },
+ "spec_hash": "ccb4d2c331cb7aadb240af12bb0739f4f8b3b4d532d9d7a84c8d50b0451da457",
+ "stage": "ncand"
+}
