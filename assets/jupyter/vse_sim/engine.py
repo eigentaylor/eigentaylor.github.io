@@ -475,8 +475,14 @@ def run_vse_simulation(model, methods, nvot, ncand, niter, chooser_funs, media,
     return dict(summary), (cw_exists_count, dict(cw_wins)), dict(paired_diff_summary), dict(paired_ce_summary)
 
 
-def reduce_to_mean_ci(summary):
-    """Turn {(label, chooser): (count, sum, sum_sq)} into {(label, chooser): (mean, ci95_half_width)}."""
+def reduce_to_mean_ci(summary, z=1.96):
+    """Turn {(label, chooser): (count, sum, sum_sq)} into {(label, chooser): (mean, ci_half_width)}.
+
+    `z` is the normal multiplier, defaulting to 1.96 (a two-sided 95% interval) as in the
+    original notebook. It is a parameter only because the stored results keep the raw
+    accumulators: a reader can ask this same function for a 99% bound, or any other,
+    without re-running a simulation. Passing nothing reproduces the notebook exactly.
+    """
     reduced = {}
     for key, (count, total, total_sq) in summary.items():
         avg = total / count
@@ -484,7 +490,7 @@ def reduce_to_mean_ci(summary):
             ci = 0.0
         else:
             variance = max(0.0, (total_sq - total ** 2 / count) / (count - 1))
-            ci = 1.96 * math.sqrt(variance / count)
+            ci = z * math.sqrt(variance / count)
         reduced[key] = (avg, ci)
     return reduced
 

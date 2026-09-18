@@ -23,6 +23,7 @@ from .top2 import ApprovalTop2
 
 # ---- section 13: univariate parameter sweeps (cell 60) ----
 def sweep_methods(labels, sweep_param, sweep_values, niter, electorates=None,
+                   raw_summary_sink=None,
                    betrayal_targets=None, betrayal_sink_by_value=None,
                    paired_diff_pairs=None, paired_diff_chooser="honBallot",
                    primary_corruption_sink_by_value=None, **fixed_overrides):
@@ -51,6 +52,16 @@ def sweep_methods(labels, sweep_param, sweep_values, niter, electorates=None,
     dict per value when paired_diff_pairs is None/empty), so callers can unpack a 3-tuple
     unconditionally -- same convention run_vse_simulation itself uses for paired_diff_summary.
 
+
+    raw_summary_sink: optional caller-supplied dict to collect the UNREDUCED accumulators into,
+      same caller-owns-the-container convention this project already uses for
+      betrayal_sink/coma_sink (see run_vse_simulation's docstring). Each driver here
+      reduces its summaries to (mean, ci) before returning, which discards the count and
+      the sum of squares; `artifacts.py` needs those, both to recompute a CI at any
+      confidence level and to keep the stored result a lossless record of the run.
+      Populated in place; None (default) means no extra bookkeeping and no behavior
+      change. The returned values are identical either way.
+
     Returns (results_by_value, ce_by_value, paired_diff_by_value): each {value: {key: ...}}.
     results_by_value holds (mean, ci) VSE pairs; ce_by_value holds raw Condorcet efficiency.
     """
@@ -74,6 +85,8 @@ def sweep_methods(labels, sweep_param, sweep_values, niter, electorates=None,
         results_by_value[value] = reduce_to_mean_ci(summary)
         ce_by_value[value] = reduce_to_ce(ce_raw, results_by_value[value].keys())
         paired_diff_by_value[value] = reduce_to_mean_ci(paired_diff_raw)
+        if raw_summary_sink is not None:
+            raw_summary_sink[value] = {"vse": summary, "ce": ce_raw, "paired_diff": paired_diff_raw}
         if betrayal_sink_by_value is not None:
             betrayal_sink_by_value[value] = value_betrayal_sink
         if primary_corruption_sink_by_value is not None:
@@ -85,7 +98,8 @@ def sweep_methods(labels, sweep_param, sweep_values, niter, electorates=None,
 # ---- section 16: joint 'realistic conditions' scenarios (cell 73) ----
 
 
-def run_joint_scenarios(labels, scenarios, niter, electorates=None, paired_diff_pairs=None,
+def run_joint_scenarios(labels, scenarios, niter, electorates=None, raw_summary_sink=None,
+                         paired_diff_pairs=None,
                          paired_ce_pairs=None, raw_vse_by_scenario=None,
                          betrayal_targets=None, betrayal_sink_by_scenario=None,
                          coma_targets=None, coma_sink_by_scenario=None,
@@ -106,6 +120,15 @@ def run_joint_scenarios(labels, scenarios, niter, electorates=None, paired_diff_
     CW-hit[baseline_label]) difference for every pair in paired_ce_pairs -- both empty per
     scenario when the corresponding pairs arg is None/empty -- see run_vse_simulation's own
     docstring for what "paired" means here.
+
+    raw_summary_sink: optional caller-supplied dict to collect the UNREDUCED accumulators into,
+      same caller-owns-the-container convention this project already uses for
+      betrayal_sink/coma_sink (see run_vse_simulation's docstring). Each driver here
+      reduces its summaries to (mean, ci) before returning, which discards the count and
+      the sum of squares; `artifacts.py` needs those, both to recompute a CI at any
+      confidence level and to keep the stored result a lossless record of the run.
+      Populated in place; None (default) means no extra bookkeeping and no behavior
+      change. The returned values are identical either way.
 
     raw_vse_by_scenario: optional dict the caller pre-creates (e.g. {}); when given, populated
     as {scenario_name: {(label, chooser): [per-election vse, ...]}} -- same raw per-election
@@ -161,6 +184,9 @@ def run_joint_scenarios(labels, scenarios, niter, electorates=None, paired_diff_
         ce_by_scenario[name] = reduce_to_ce(ce_raw, results_by_scenario[name].keys())
         paired_diff_by_scenario[name] = reduce_to_mean_ci(paired_diff_raw)
         paired_ce_by_scenario[name] = reduce_to_mean_ci(paired_ce_raw)
+        if raw_summary_sink is not None:
+            raw_summary_sink[name] = {"vse": summary, "ce": ce_raw,
+                              "paired_diff": paired_diff_raw, "paired_ce": paired_ce_raw}
         if raw_vse_by_scenario is not None:
             raw_vse_by_scenario[name] = dict(raw_sink)
         if betrayal_sink_by_scenario is not None:
@@ -178,6 +204,7 @@ def run_joint_scenarios(labels, scenarios, niter, electorates=None, paired_diff_
 
 # ---- section 21: runoff information sweeps (cells 105 and 111) ----
 def sweep_runoff_rho(method_factories, runoff_rho_values, primary_params, niter, awareness_modes,
+                      raw_summary_sink=None,
                     electorates=None):
     """method_factories: {label: factory(runoff_rho, runoff_awareness_alpha) -> fresh method instance}.
     primary_params: epistemic_rho/awareness_alpha/fatigue_beta held FIXED for the primary. awareness_modes:
@@ -234,12 +261,16 @@ def sweep_runoff_rho(method_factories, runoff_rho_values, primary_params, niter,
                         acc[2] += row["vse"] ** 2
         if (i + 1) % 100 == 0:
             print(f"{i + 1}/{niter} elections done in {time.time() - sweep_start_time:.1f}s")
+    if raw_summary_sink is not None:
+        raw_summary_sink.update({mode_name: {rt: dict(summary[mode_name][rt]) for rt in runoff_rho_values}
+                         for mode_name in awareness_modes})
     return {mode_name: {rt: reduce_to_mean_ci(dict(summary[mode_name][rt])) for rt in runoff_rho_values}
             for mode_name in awareness_modes}
 
 
 def sweep_runoff_learn(method_factories, learn_kappa_values, primary_params, niter,
-                        runoff_rho_fixed, electorates=None, paired_baseline=None):
+                        runoff_rho_fixed, electorates=None, paired_baseline=None,
+                        raw_summary_sink=None):
     """Like sweep_runoff_rho, but holds runoff_rho FIXED at runoff_rho_fixed for every point and
     sweeps runoff_kappa instead -- isolates the "chance to learn" axis alone, holding the
     runoff's own epistemic-noise level constant throughout. At each swept point, a voter unaware
@@ -311,6 +342,11 @@ def sweep_runoff_learn(method_factories, learn_kappa_values, primary_params, nit
                         dacc[2] += d ** 2
         if (i + 1) % 100 == 0:
             print(f"{i + 1}/{niter} elections done in {time.time() - sweep_start_time:.1f}s")
+    if raw_summary_sink is not None:
+        raw_summary_sink["vse"] = {kappa: dict(summary[kappa]) for kappa in learn_kappa_values}
+        raw_summary_sink["paired_diff"] = ({kappa: paired_diff_summary[kappa] for kappa in learn_kappa_values}
+                                   if paired_baseline else {})
+        raw_summary_sink["baseline"] = baseline_summary if paired_baseline else None
     results_by_kappa = {kappa: reduce_to_mean_ci(dict(summary[kappa])) for kappa in learn_kappa_values}
     paired_diff_by_kappa = (
         {kappa: reduce_to_mean_ci({"_": paired_diff_summary[kappa]})["_"] for kappa in learn_kappa_values}
@@ -322,7 +358,7 @@ def sweep_runoff_learn(method_factories, learn_kappa_values, primary_params, nit
 
 # ---- section 25: candidate-count sweep (cell 166) ----
 def sweep_ncand(labels, ncand_values, niter, friction_params=None, electorates_by_ncand=None,
-                 paired_diff_pairs=None):
+                 paired_diff_pairs=None, raw_summary_sink=None):
     """Run niter elections per value of ncand, holding friction fixed.
 
     friction_params defaults to Ideal if omitted.
@@ -372,6 +408,8 @@ def sweep_ncand(labels, ncand_values, niter, friction_params=None, electorates_b
         results_by_ncand[ncand] = reduce_to_mean_ci(summary)
         ce_by_ncand[ncand] = reduce_to_ce(ce_raw, results_by_ncand[ncand].keys())
         paired_diff_by_ncand[ncand] = reduce_to_mean_ci(paired_diff_raw)
+        if raw_summary_sink is not None:
+            raw_summary_sink[ncand] = {"vse": summary, "ce": ce_raw, "paired_diff": paired_diff_raw}
         print(f"ncand={ncand} done in {time.time() - start_time_ncand:.1f}s (total elapsed: {time.time() - start_time:.1f}s)")
 
     return results_by_ncand, ce_by_ncand, paired_diff_by_ncand
@@ -384,6 +422,8 @@ def run_ncand_under_joint_scenarios(
     scenarios=None,
     use_common_random_numbers=True,
     paired_diff_pairs=None,
+    raw_summary_sink=None,
+    electorates_by_ncand=None,
 ):
     """Run sweep_ncand across all joint friction scenarios.
 
@@ -394,8 +434,7 @@ def run_ncand_under_joint_scenarios(
     """
     scenarios = JOINT_SCENARIOS if scenarios is None else scenarios
 
-    electorates_by_ncand = None
-    if use_common_random_numbers:
+    if electorates_by_ncand is None and use_common_random_numbers:
         electorates_by_ncand = {
             ncand: [MODEL(NVOT, ncand) for _ in range(niter)]
             for ncand in ncand_values
@@ -407,6 +446,7 @@ def run_ncand_under_joint_scenarios(
 
     for scenario_name, params in scenarios.items():
         print(f"{scenario_name}:")
+        scenario_raw = {} if raw_summary_sink is not None else None
         r_ncand, ce_ncand, paired_diff_ncand = sweep_ncand(
             labels,
             ncand_values,
@@ -414,7 +454,10 @@ def run_ncand_under_joint_scenarios(
             friction_params=params,
             electorates_by_ncand=electorates_by_ncand,
             paired_diff_pairs=paired_diff_pairs,
+            raw_summary_sink=scenario_raw,
         )
+        if raw_summary_sink is not None:
+            raw_summary_sink[scenario_name] = scenario_raw
         results_by_scenario[scenario_name] = r_ncand
         ce_by_scenario[scenario_name] = ce_ncand
         paired_diff_by_scenario[scenario_name] = paired_diff_ncand
