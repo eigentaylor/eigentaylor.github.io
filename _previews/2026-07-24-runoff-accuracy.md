@@ -107,7 +107,7 @@ The Equal Vote Coalition supports three systems, which all have high VSE: the af
 
 The following is the VSE range of the major reforms that are currently being considered in the United States.
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="evc-vse" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="evc-vse" %}
 
 ### VSE in Context
 
@@ -292,7 +292,7 @@ The code is included in [the Appendix](#the-jupyter-notebook), but we will summa
 
 For an explanation of the terminology used in the significance columns, please refer to the [methodology section](#other-relevant-methodology), though the terminology is intended to be intuitive. In short, we distinguish between a statistically significant difference (confidence the gap is nonzero) and a practical difference (if the effect size is confidently greater than a percentage point).
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="star-vse-gap-significant" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="star-vse-gap-significant" %}
 
 Under perfect conditions, STAR is objectively more accurate than single-round Approval and Approval Top-2 (under honest ballots). For single-round Approval specifically, however, the VSE gap of about 8 points narrows under all friction scenarios. The gap is generally under about 1.5 points, and occasionally reaches significance at one friction level or another, but it's not particularly robust or consistent.
 
@@ -300,32 +300,32 @@ Approval Top-2, on the other hand, clearly wins out in simulations over STAR exc
 
 {% proof Expand to see significance tables %}
 This is the same set of tables as above, but just organized by the different friction scenarios rather than by the significance of the gaps.
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="approval-star-gap-scenarios" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="approval-star-gap-scenarios" %}
 {% endproof %}
 
 Perhaps the most sobering statistic is how solid groggy Plurality Top-2 was in VSE compared to STAR under the sweeps and scenarios (with the clear-eyed variant being even further ahead). Despite Plurality Top-2 having completely mediocre ~80% VSE in the ideal case, it stays robust compared to all other single-round systems.
 
 I would never advocate for Plurality Top-2<d-footnote>Technically, Plurality Top-2 is the exact system being used in California right now, including for that 61-candidate gubernatorial race. As previously mentioned, there are a number of things that VSE does not measure. For example, <em>who runs in the first place</em>. What a strong VSE for PT2 really shows is that "if the candidates are fixed and you run the election under different methods, PT2 would tend to elect a better candidate than a single-round STAR election". Plurality voting has a number of really nasty effects on the dynamics of elections beyond who wins.</d-footnote>, but this model seems to highlight that the potential corrective mechanism of a delayed runoff can somewhat salvage even the worst primary elections, whereas ignorance decimates the accuracy of all single-round systems.
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="part-1-scenarios" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="part-1-scenarios" %}
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-help-sweep" mode="images" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="runoff-help-sweep" mode="images" %}
 
 ### How Much Does a Delayed Runoff Actually Help?
 
 First, I think we should highlight that the coma model actually ends up doing *significantly* worse than just single-round Approval and STAR. This is important because it shows that the runoff itself is not inherently a cheat to improve outcomes. Approval Top-2 is a strict improvement over single-round Approval in the ideal case, but that's not a guarantee when voters lack awareness of candidates, and the runoff step gives them no way to correct that.
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="coma-vs-approval" %}<br>
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="coma-vs-approval" %}<br>
 
 I believe the primary driver of the outcomes becoming so much worse in the coma model than even single-round Approval is the fact that we simulate that a voter always votes for the candidate they know, if they don't know the other. This can lead to voters casting votes for someone they hate because that candidate has better name recognition than a candidate they would actually prefer, whereas under single-round Approval, they would just never approve that candidate. The groggy model, on the other hand, performs far beyond STAR and single-round Approval.
 
 {% proof Expand to see the single-round vs runoff variants %}
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-vs-baseline" %}
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="coma-diagnostic" %}
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="coma-vs-groggy" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="runoff-vs-baseline" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="coma-diagnostic" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="coma-vs-groggy" %}
 For the mathematical formulation of "VSE cost", see [the methodology section](#other-relevant-methodology).
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-runoff-cost" %}
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-primary-noise-cost" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="at2-runoff-cost" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="at2-primary-noise-cost" %}
 {% endproof %}
 
 So far we have looked at fixed runoff awareness models (coma, groggy, clear-eyed). This gives a very binary change in how much the runoff helps. But we are interested to see what the "in-between" looks like. Particularly, at what level of improved awareness does the delayed runoff start to outperform STAR?
@@ -334,29 +334,29 @@ We define a new parameter $\kappa$, which ranges from 0 to 1. This parameter is 
 
 When a voter learns about a candidate, they vote their real (potentially noisy) preference; otherwise, they fall back on their prior information, exactly as under the coma model. Under $\kappa=0$, the coma model, STAR is significantly better than Approval Top-2. At $\kappa=1$, we have the groggy model. We find the value of $\kappa$ at which the gap between Approval Top-2 and STAR becomes statistically significant.
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-learn-sweep" mode="images" %}<br>
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="runoff-learn-sweep" mode="images" %}<br>
 
 The values where the gap is significant depend on the level of friction and the level of confidence. However, it seems that you really just need at most about a one in three chance to learn about a candidate for the delayed runoff to have a significant advantage.
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="p-learn-ci-table" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="p-learn-ci-table" %}
 
 As we sweep the runoff noise $\rho$, and keep the awareness fixed between the primary and runoff, the performance does not change much for the values of $\rho$ used for the scenarios, and the dropoff in quality seems to be primarily for $\rho < 0.4$. Further investigation on scenarios where the $\rho$ values are lower would be required to say more.
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="runoff-t-sweep" mode="images" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="runoff-t-sweep" mode="images" %}
 
 ### STAR Silent Lock-in
 
 I know a few "SCORE is better than STAR" fanatics, and so I did compare STAR with plain SCORE under friction. They were basically identical, but STAR generally had the edge.
 
 {% proof Expand to see the STAR vs SCORE tables %}
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="score-vs-star" mode="images" %}
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="score-vs-star-scenarios" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="score-vs-star" mode="images" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="score-vs-star-scenarios" %}
 {% endproof %}
 
 Thus, it's not that STAR is losing VSE solely because of noise that is flipping which candidate wins in the runoff. Instead, it seems that the candidate who wins the runoff is generally still the one with the most stars.
 
 {% proof Expand to see the STAR runoff betrayal breakdown %}
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="star-diagnostic" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="star-diagnostic" %}
 {% endproof %}
 
 The true culprit is not the automatic runoff itself, but the data fed into it. The times that STAR's automatic runoff "betrays" the voters in a way where SCORE would be better are very rare. Instead, it's the "silent lock-in" that drives the collapse of its VSE. The candidate who gets the most stars usually also wins the runoff, and this is often the worse of the two finalists under friction.
@@ -365,11 +365,11 @@ In fact, contrary to my hypothesis, the elections where the automatic runoff fli
 
 We are interested in quantifying the exact "VSE cost" of STAR's automatic runoff. The VSE cost is just the utility lost by not getting the counterfactual outcome (see the [other methodology section for a precise formulation of this](#other-relevant-methodology)). The counterfactual outcome, for the following table, is defined as the outcome that would have occurred under STAR under ideal conditions, where voters are perfectly informed and there is no friction affecting their votes<d-footnote>Not from a delayed runoff, but from the automatic runoff applied to the quantized honest scores. For example, if a voter's honest rescaled score is 4.2 for A and 4.1 for B, their ballot in the counterfactual would give both a 4, compared to the actual ballot cast which might be different because of noise, unawareness, or fatigue.</d-footnote>.
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="star-garbage" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="star-garbage" %}
 
 We measure the difference between the actual automatic runoff and a hypothetical "perfect" clear-eyed runoff (i.e. 0-5 SCORE voting with a delayed runoff compared to STAR's automatic runoff), where voters are perfectly informed and vote for the candidate they truly prefer. This is a measure of how much the automatic runoff hurts voters who are misinformed in the primary step compared to a perfect clear-eyed runoff. We find that even under mild friction, STAR's automatic runoff is significantly worse than a clear-eyed runoff, and this gap grows as friction worsens.
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="scoret2-vs-star" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="scoret2-vs-star" %}
 
 This is perhaps not too surprising given that we are modeling voters as not necessarily filling out the entire ballot. Of course a delayed runoff would improve the outcomes! But it's by *how much* that makes me really concerned about STAR voting. Rather than a "cost-saving" mechanism, it could instead "cost" outcomes, and give voters who have limited time to research candidates less of a voice in the outcomes. The automatic runoff may just rubberstamp the candidate with the most stars, even if that candidate is not the one that voters would have chosen if they had more time to learn about the finalists.
 
@@ -377,7 +377,7 @@ Ultimately, I expected the automatic runoff to be the biggest factor in making S
 
 Finally, I decided to directly test the efficacy of using a more granular five-star SCORE ballot as an alternative to Approval Top-2 as the primary voting method. If we grant the expressive SCORE ballot its own delayed runoff, can it put the blunter Approval Top-2 to shame?
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="scoret2-vs-at2" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="scoret2-vs-at2" %}
 
 Under ideal conditions SCORE appears significantly better, but under friction it is no more accurate than Approval Top-2<d-footnote>Under some runs, Approval Top-2 gets a significant (but narrow) edge under a 95% confidence interval in some friction scenario, but it hasn't yet persisted under a 99% confidence interval. I don't feel comfortable making any claims that Approval Top-2 is actually strictly better than SCORE Top-2 in the models I have tested.</d-footnote>. They are simply indistinguishable under friction scenarios.
 
@@ -445,7 +445,7 @@ $$\text{cost}(\text{cases}) = \frac{\sum_{\text{cases}} \bigg(u(\text{counterfac
 In regards to the joint friction scenarios, the way some parameters (particularly $\alpha$ and $\beta$) compound is multiplicative, so while 0.7 may not seem as heavy as, say, 0.5 or 0.3, it is actually *quite* substantial (especially with only 6 candidates). You may expand the following table to see just the exact probabilities for a voter to evaluate a candidate based on their prominence and fatigue ranking.
 
 {% proof Expand to see the friction probability table %}
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="friction-table" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="friction-table" %}
 {% endproof %}
 
 I chose not to tune the parameters too much, and to use the simplest settings possible to avoid overfitting the model. I look forward to seeing how others might improve upon this model with even more realistic assumptions, use different parameter combinations, and perhaps even incorporate real-world data.
@@ -474,11 +474,11 @@ In every other voting system, there's an attempt to extract *more* data from vot
 
 However, the most paradoxical effect is sweeping the noise parameter $\rho$ downwards. This, somehow, maximizes the VSE of single-round plurality around $\rho=0.5$, to a VSE of around 80%. I have no robust explanation for this. But this might somehow scramble voter preferences further into a more "strategic" vote. This requires further investigation. A cursory investigation shows that under mild friction, there are indeed elections where the noise produces a worse outcome, but there are just *more* where it seems to produce a better outcome.
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="plurality-ideal-vs-friction" %}<br>
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="plurality-ideal-vs-friction" %}<br>
 
 The VSE of single-round plurality is never *good* under the defined scenarios, but mild friction decently improves the outcomes. Plurality Top-2 under mild friction is actually on par with some of the *good* systems under ideal conditions.
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="plurality-bump" %}<br>
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="plurality-bump" %}<br>
 
 This leads me to an uncomfortable conclusion that choose-one voting, for as flawed as its outcomes are, might actually be in some ways well-suited to our tired human brains. The mental shortcuts that we take might actually hone the outcomes of our terrible voting system to some extent. If nothing else, choose-one voting is simple to use and simple to count. But Approval maintains that same simplicity, while improving candidate incentives and reducing problems like the spoiler effect and vote splitting.
 
@@ -486,22 +486,22 @@ This leads me to an uncomfortable conclusion that choose-one voting, for as flaw
 
 Despite the plurality bump, Approval still strongly outperforms plurality voting under friction.
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="plurality-vs-approval" %}<br>
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="plurality-vs-approval" %}<br>
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="plurality-approval-ci" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="plurality-approval-ci" %}
 
 The Top-2 variants were less clear-cut. Approval Top-2 clearly outperforms Plurality Top-2 under mild friction. However, this edge does not remain robust or consistent under higher friction scenarios.
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-pt2-ci" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="at2-pt2-ci" %}
 
 I also did an analysis of the difference between Approval Top-2 and Plurality Top-2 when we vary the number of candidates. The idea is that for 6 candidates, the two may have similar performance, but vote splitting would become more of a problem for choose-one as the number of candidates increases. Under ideal conditions, AT2 stays fairly consistent, while PT2 declines rather quickly, and Approval Top-2 is substantially better than Plurality Top-2.
 
 This edge declines under friction and loses robustness. However, it seems that there is no evidence that Plurality Top-2 is better than Approval Top-2 under any scenario. The idea that Approval is an improvement over plurality ("with basically no downsides") seems reasonably supported: any flavor of Approval seems to be as good or better than that same flavor of Plurality.
 
 {% proof Expand to see the candidate sweep analysis %}
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-pt2-candidate-sweep" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="at2-pt2-candidate-sweep" %}
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="at2-pt2-candidate-ci" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="at2-pt2-candidate-ci" %}
 {% endproof %}
 
 ### A Stricter Confidence Interval
@@ -509,7 +509,7 @@ This edge declines under friction and loses robustness. However, it seems that t
 These are the results which did not hold statistically significant under a 99% confidence interval. None change the major headlines of the post, and are generally quite borderline or inconsequential.
 
 {% proof Click to expand %}
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="not-sig-at-99-part1" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="not-sig-at-99-part1" %}
 {% endproof %}
 
 ### Jameson Quinn
