@@ -31,7 +31,7 @@ from .vendored.voter_models import KSModel
 NVOT = 101            # voters per simulated election
 NCAND = 6            # candidates per simulated election
 NITER = 5000          # elections to simulate
-SEED = 42            # random seed for reproducibility
+SEED = "42"            # random seed for reproducibility
 
 # Every other section's own election count, gathered here rather than left scattered across
 # the notebook -- this is the one place to look when trading precision off against runtime.
