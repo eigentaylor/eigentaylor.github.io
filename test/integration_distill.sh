@@ -30,7 +30,7 @@ fi
 grep -q 'd-front-matter' "${distill_page}"
 grep -q '/assets/js/distillpub/template.v2.js' "${distill_page}"
 grep -q '/assets/js/distillpub/transforms.v2.js' "${distill_page}"
-grep -q '/assets/js/distillpub/overrides.js' "${distill_page}"
+grep -q '/assets/js/distillpub/site-overrides.js' "${distill_page}"
 grep -q '/assets/al_math/js/mathjax-setup.js' "${distill_page}"
 grep -q 'id="giscus_thread"' "${distill_page}"
 transforms_runtime="${tmp_site}/assets/js/distillpub/transforms.v2.js"
