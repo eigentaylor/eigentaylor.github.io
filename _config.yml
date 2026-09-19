@@ -240,6 +240,8 @@ exclude:
   - vendor
   - old-site/
   - template.md
+  - "**/__pycache__"
+  - "**/*.pyc"
 keep_files:
   - CNAME
   - .nojekyll
