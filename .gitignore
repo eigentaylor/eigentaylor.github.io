@@ -20,3 +20,7 @@ vendor
 /.github/prompts
 /%localappdata%
 *.pyc
+
+# Electorate pools cached by assets/jupyter/vse_sim/electorates.py. Regenerated
+# deterministically from config.SEED, so there is nothing here worth committing.
+assets/jupyter/vse_sim/.cache/

@@ -1,0 +1,876 @@
+{
+ "code_version": "f5ebe76af540f746",
+ "content_hash": "2a38bbfb533fdd9c0769478505731793d8eb906100b391b5d1c8af9d1fddf6b0",
+ "data": {
+  "baseline": [
+   {
+    "baseline": "Mild friction",
+    "n": 4000,
+    "sum": 3315.099522083486,
+    "sum_sq": 3087.5368927337054,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "n": 4000,
+    "sum": 2613.4473699848486,
+    "sum_sq": 2563.5426125689523,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "n": 4000,
+    "sum": 1725.6895600052937,
+    "sum_sq": 2596.575029965908,
+    "variant": "primary's own noise (runoff_rho=None)"
+   }
+  ],
+  "paired_diff": [
+   {
+    "baseline": "Mild friction",
+    "kappa": 0.0,
+    "n": 4000,
+    "pair": "_",
+    "sum": -63.16082046742336,
+    "sum_sq": 161.7059080839762,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "kappa": 0.1,
+    "n": 4000,
+    "pair": "_",
+    "sum": -1.0679549345793686,
+    "sum_sq": 152.10966310122808,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "kappa": 0.13333333333333333,
+    "n": 4000,
+    "pair": "_",
+    "sum": 16.842689876009278,
+    "sum_sq": 165.86024029844393,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "kappa": 0.16666666666666669,
+    "n": 4000,
+    "pair": "_",
+    "sum": 36.37851870373061,
+    "sum_sq": 158.52597817538557,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "kappa": 0.2,
+    "n": 4000,
+    "pair": "_",
+    "sum": 59.35618720843289,
+    "sum_sq": 169.97171949903003,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "kappa": 0.23333333333333334,
+    "n": 4000,
+    "pair": "_",
+    "sum": 88.78150686558799,
+    "sum_sq": 165.53422256239296,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "kappa": 0.25,
+    "n": 4000,
+    "pair": "_",
+    "sum": 90.17163187852687,
+    "sum_sq": 184.5497779914854,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "kappa": 0.26666666666666666,
+    "n": 4000,
+    "pair": "_",
+    "sum": 112.2762890009469,
+    "sum_sq": 169.80865705536516,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "kappa": 0.3,
+    "n": 4000,
+    "pair": "_",
+    "sum": 121.41844184290895,
+    "sum_sq": 185.6116595594474,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "kappa": 0.3333333333333333,
+    "n": 4000,
+    "pair": "_",
+    "sum": 145.49713729757795,
+    "sum_sq": 196.57507816940011,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "kappa": 0.4,
+    "n": 4000,
+    "pair": "_",
+    "sum": 180.01898557018842,
+    "sum_sq": 221.52468446072626,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "kappa": 0.6000000000000001,
+    "n": 4000,
+    "pair": "_",
+    "sum": 284.24974583430946,
+    "sum_sq": 247.11543081362896,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "kappa": 0.8,
+    "n": 4000,
+    "pair": "_",
+    "sum": 338.61878813036867,
+    "sum_sq": 289.1914148702007,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "kappa": 1.0,
+    "n": 4000,
+    "pair": "_",
+    "sum": 369.8878811063806,
+    "sum_sq": 304.8058580163827,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "kappa": 0.0,
+    "n": 4000,
+    "pair": "_",
+    "sum": -339.1476149913384,
+    "sum_sq": 572.5666490243284,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "kappa": 0.1,
+    "n": 4000,
+    "pair": "_",
+    "sum": -222.2102634786571,
+    "sum_sq": 474.3561601218429,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "kappa": 0.13333333333333333,
+    "n": 4000,
+    "pair": "_",
+    "sum": -191.79347615987174,
+    "sum_sq": 448.00955010353346,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "kappa": 0.16666666666666669,
+    "n": 4000,
+    "pair": "_",
+    "sum": -116.65063172487646,
+    "sum_sq": 409.3495491199171,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "kappa": 0.2,
+    "n": 4000,
+    "pair": "_",
+    "sum": -93.04035882354886,
+    "sum_sq": 437.99134288059406,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "kappa": 0.23333333333333334,
+    "n": 4000,
+    "pair": "_",
+    "sum": -34.96210261306297,
+    "sum_sq": 376.4734209412577,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "kappa": 0.25,
+    "n": 4000,
+    "pair": "_",
+    "sum": -36.56878726364195,
+    "sum_sq": 397.7679706955985,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "kappa": 0.26666666666666666,
+    "n": 4000,
+    "pair": "_",
+    "sum": -11.18540838992494,
+    "sum_sq": 389.70255897269305,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "kappa": 0.3,
+    "n": 4000,
+    "pair": "_",
+    "sum": 79.316411110769,
+    "sum_sq": 396.1686732980912,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "kappa": 0.3333333333333333,
+    "n": 4000,
+    "pair": "_",
+    "sum": 119.87169288878437,
+    "sum_sq": 374.7273053924231,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "kappa": 0.4,
+    "n": 4000,
+    "pair": "_",
+    "sum": 224.14379501105108,
+    "sum_sq": 451.47185103023,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "kappa": 0.6000000000000001,
+    "n": 4000,
+    "pair": "_",
+    "sum": 478.63217180908197,
+    "sum_sq": 599.0355397406513,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "kappa": 0.8,
+    "n": 4000,
+    "pair": "_",
+    "sum": 616.9571901488455,
+    "sum_sq": 696.0984756695502,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "kappa": 1.0,
+    "n": 4000,
+    "pair": "_",
+    "sum": 667.2313916317631,
+    "sum_sq": 730.1456595104243,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "kappa": 0.0,
+    "n": 4000,
+    "pair": "_",
+    "sum": -468.4103581719637,
+    "sum_sq": 1024.9830060114657,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "kappa": 0.1,
+    "n": 4000,
+    "pair": "_",
+    "sum": -263.9474032428205,
+    "sum_sq": 764.7325840841071,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "kappa": 0.13333333333333333,
+    "n": 4000,
+    "pair": "_",
+    "sum": -163.08300500004043,
+    "sum_sq": 664.1634658008313,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "kappa": 0.16666666666666669,
+    "n": 4000,
+    "pair": "_",
+    "sum": -140.69660063239633,
+    "sum_sq": 713.0126506822226,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "kappa": 0.2,
+    "n": 4000,
+    "pair": "_",
+    "sum": -34.75579699259938,
+    "sum_sq": 694.5728544521596,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "kappa": 0.23333333333333334,
+    "n": 4000,
+    "pair": "_",
+    "sum": 32.14668527133701,
+    "sum_sq": 758.3716981048073,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "kappa": 0.25,
+    "n": 4000,
+    "pair": "_",
+    "sum": 60.55523910743545,
+    "sum_sq": 642.0245913336099,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "kappa": 0.26666666666666666,
+    "n": 4000,
+    "pair": "_",
+    "sum": 93.25176601074513,
+    "sum_sq": 671.9439117146734,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "kappa": 0.3,
+    "n": 4000,
+    "pair": "_",
+    "sum": 170.30193305778354,
+    "sum_sq": 765.0451343814517,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "kappa": 0.3333333333333333,
+    "n": 4000,
+    "pair": "_",
+    "sum": 257.56797291967933,
+    "sum_sq": 748.8067724099479,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "kappa": 0.4,
+    "n": 4000,
+    "pair": "_",
+    "sum": 420.4275177640844,
+    "sum_sq": 890.3930027852331,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "kappa": 0.6000000000000001,
+    "n": 4000,
+    "pair": "_",
+    "sum": 831.0803765657754,
+    "sum_sq": 1351.4587449851829,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "kappa": 0.8,
+    "n": 4000,
+    "pair": "_",
+    "sum": 1086.8203458935368,
+    "sum_sq": 1642.707051674116,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "kappa": 1.0,
+    "n": 4000,
+    "pair": "_",
+    "sum": 1170.280695849989,
+    "sum_sq": 1748.5706260522907,
+    "variant": "primary's own noise (runoff_rho=None)"
+   }
+  ],
+  "vse": [
+   {
+    "baseline": "Mild friction",
+    "chooser": "honBallot",
+    "kappa": 0.0,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 3251.938701616063,
+    "sum_sq": 3010.0860739521995,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "chooser": "honBallot",
+    "kappa": 0.1,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 3314.0315671489066,
+    "sum_sq": 3084.801836546463,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "chooser": "honBallot",
+    "kappa": 0.13333333333333333,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 3331.9422119594974,
+    "sum_sq": 3101.628157718006,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "chooser": "honBallot",
+    "kappa": 0.16666666666666669,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 3351.478040787216,
+    "sum_sq": 3125.8755503447323,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "chooser": "honBallot",
+    "kappa": 0.2,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 3374.455709291919,
+    "sum_sq": 3147.955309758719,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "chooser": "honBallot",
+    "kappa": 0.23333333333333334,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 3403.8810289490734,
+    "sum_sq": 3176.363838239402,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "chooser": "honBallot",
+    "kappa": 0.25,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 3405.2711539620127,
+    "sum_sq": 3170.9651097652823,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "chooser": "honBallot",
+    "kappa": 0.26666666666666666,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 3427.3758110844324,
+    "sum_sq": 3217.7838402512098,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "chooser": "honBallot",
+    "kappa": 0.3,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 3436.517963926395,
+    "sum_sq": 3215.194529621001,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "chooser": "honBallot",
+    "kappa": 0.3333333333333333,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 3460.5966593810663,
+    "sum_sq": 3238.863953647633,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "chooser": "honBallot",
+    "kappa": 0.4,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 3495.118507653675,
+    "sum_sq": 3290.276741914181,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "chooser": "honBallot",
+    "kappa": 0.6000000000000001,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 3599.3492679177934,
+    "sum_sq": 3404.0979654695197,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "chooser": "honBallot",
+    "kappa": 0.8,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 3653.718310213852,
+    "sum_sq": 3480.837131310232,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Mild friction",
+    "chooser": "honBallot",
+    "kappa": 1.0,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 3684.987403189865,
+    "sum_sq": 3526.8565824879834,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "chooser": "honBallot",
+    "kappa": 0.0,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 2274.2997549935094,
+    "sum_sq": 2487.2804965472546,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "chooser": "honBallot",
+    "kappa": 0.1,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 2391.2371065061875,
+    "sum_sq": 2537.416956451548,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "chooser": "honBallot",
+    "kappa": 0.13333333333333333,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 2421.6538938249746,
+    "sum_sq": 2532.6588784276137,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "chooser": "honBallot",
+    "kappa": 0.16666666666666669,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 2496.7967382599704,
+    "sum_sq": 2556.8100137173296,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "chooser": "honBallot",
+    "kappa": 0.2,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 2520.4070111612964,
+    "sum_sq": 2591.508908342129,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "chooser": "honBallot",
+    "kappa": 0.23333333333333334,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 2578.4852673717864,
+    "sum_sq": 2591.9611878190167,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "chooser": "honBallot",
+    "kappa": 0.25,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 2576.8785827212073,
+    "sum_sq": 2611.620779177373,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "chooser": "honBallot",
+    "kappa": 0.26666666666666666,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 2602.261961594925,
+    "sum_sq": 2625.070054054235,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "chooser": "honBallot",
+    "kappa": 0.3,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 2692.7637810956185,
+    "sum_sq": 2647.436012762034,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "chooser": "honBallot",
+    "kappa": 0.3333333333333333,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 2733.3190628736315,
+    "sum_sq": 2676.0191756495665,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "chooser": "honBallot",
+    "kappa": 0.4,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 2837.5911649959003,
+    "sum_sq": 2739.9920260968115,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "chooser": "honBallot",
+    "kappa": 0.6000000000000001,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 3092.0795417939303,
+    "sum_sq": 2913.4350747279486,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "chooser": "honBallot",
+    "kappa": 0.8,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 3230.4045601336957,
+    "sum_sq": 3057.129787291995,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Moderate friction",
+    "chooser": "honBallot",
+    "kappa": 1.0,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 3280.678761616612,
+    "sum_sq": 3095.9966249387467,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "chooser": "honBallot",
+    "kappa": 0.0,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 1257.2792018333328,
+    "sum_sq": 2811.7824589401353,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "chooser": "honBallot",
+    "kappa": 0.1,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 1461.7421567624729,
+    "sum_sq": 2675.6818161396386,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "chooser": "honBallot",
+    "kappa": 0.13333333333333333,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 1562.606555005253,
+    "sum_sq": 2661.717630959928,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "chooser": "honBallot",
+    "kappa": 0.16666666666666669,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 1584.9929593728975,
+    "sum_sq": 2644.6263228751413,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "chooser": "honBallot",
+    "kappa": 0.2,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 1690.9337630126934,
+    "sum_sq": 2568.572037925031,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "chooser": "honBallot",
+    "kappa": 0.23333333333333334,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 1757.8362452766307,
+    "sum_sq": 2557.7926802940856,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "chooser": "honBallot",
+    "kappa": 0.25,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 1786.2447991127299,
+    "sum_sq": 2548.4493084980536,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "chooser": "honBallot",
+    "kappa": 0.26666666666666666,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 1818.9413260160375,
+    "sum_sq": 2549.8281354499372,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "chooser": "honBallot",
+    "kappa": 0.3,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 1895.9914930630773,
+    "sum_sq": 2537.1204614444828,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "chooser": "honBallot",
+    "kappa": 0.3333333333333333,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 1983.2575329249712,
+    "sum_sq": 2472.992426030686,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "chooser": "honBallot",
+    "kappa": 0.4,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 2146.117077769378,
+    "sum_sq": 2470.6882989494725,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "chooser": "honBallot",
+    "kappa": 0.6000000000000001,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 2556.769936571067,
+    "sum_sq": 2566.862130224362,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "chooser": "honBallot",
+    "kappa": 0.8,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 2812.509905898828,
+    "sum_sq": 2675.9418965024192,
+    "variant": "primary's own noise (runoff_rho=None)"
+   },
+   {
+    "baseline": "Heavy friction",
+    "chooser": "honBallot",
+    "kappa": 1.0,
+    "label": "Approval Top-2",
+    "n": 4000,
+    "sum": 2895.9702558552813,
+    "sum_sq": 2748.5193027433907,
+    "variant": "primary's own noise (runoff_rho=None)"
+   }
+  ]
+ },
+ "generated_by": "python -m vse_sim.run --stage runoff_learn",
+ "meta": {
+  "elections": 0,
+  "seconds": 579.2
+ },
+ "runs": 1,
+ "schema": 1,
+ "spec": {
+  "baselines": [
+   "Mild friction",
+   "Moderate friction",
+   "Heavy friction"
+  ],
+  "kappa_values": [
+   0.0,
+   0.1,
+   0.13333333333333333,
+   0.16666666666666669,
+   0.2,
+   0.23333333333333334,
+   0.25,
+   0.26666666666666666,
+   0.3,
+   0.3333333333333333,
+   0.4,
+   0.6000000000000001,
+   0.8,
+   1.0
+  ],
+  "media": "fuzzyMediaFor.<locals>.fuzzyMedia",
+  "methods": [
+   "Approval Top-2"
+  ],
+  "model": "KSModel_1.5_1_3_1.5_3_3_1.5",
+  "ncand": 6,
+  "niter": 4000,
+  "nvot": 101,
+  "paired_baseline": "STAR",
+  "seed": "42",
+  "variants": {
+   "primary's own noise (runoff_rho=None)": null
+  }
+ },
+ "spec_hash": "8eada4a592131d4fb277e87c1d62e7d1daf83220507346b50dbedf1d9c4124f5",
+ "stage": "runoff_learn"
+}
