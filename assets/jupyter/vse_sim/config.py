@@ -30,12 +30,12 @@ from .vendored.voter_models import KSModel
 
 NVOT = 101            # voters per simulated election
 NCAND = 6            # candidates per simulated election
-NITER = 2000          # elections to simulate
-SEED = "VSE2026"     # random seed for reproducibility
+NITER = 5000          # elections to simulate
+SEED = 42            # random seed for reproducibility
 
 # Every other section's own election count, gathered here rather than left scattered across
 # the notebook -- this is the one place to look when trading precision off against runtime.
-SWEEP_NITER = 1000                # Section 13: the epistemic_rho/awareness_alpha/fatigue_beta sweeps, takes very long to run
+SWEEP_NITER = 2000                # Section 13: the epistemic_rho/awareness_alpha/fatigue_beta sweeps, takes very long to run
 SWEEP_VALUES = [0.3, 0.5, 0.7, 0.8, 0.9, 1.0]  # Section 13's sweep grid -- 0.7/0.8/0.9/1.0 match
                                   # the joint-friction scenario values (Heavy/Moderate/Mild/Ideal)
                                   # exactly, so the univariate-sweep and joint-scenario stories read
@@ -45,10 +45,10 @@ SWEEP_VALUES = [0.3, 0.5, 0.7, 0.8, 0.9, 1.0]  # Section 13's sweep grid -- 0.7/
                                   # breakdowns, all read this same list rather than each hardcoding
                                   # their own copy.
 JOINT_NITER = 6000                # Section 16: joint realistic-conditions scenarios -- only 4 runs total here (vs. Section 13's 18), so we can afford tighter CIs
-RUNOFF_RHO_SWEEP_NITER = 1000       # Section 21: runoff_rho sweep -- flatter curve, doesn't need the same precision
-RUNOFF_SWEEP_NITER = 3500        # Section 21: runoff learn-sweep + its electorate-pool sizing
+RUNOFF_RHO_SWEEP_NITER = 2000       # Section 21: runoff_rho sweep -- flatter curve, doesn't need the same precision
+RUNOFF_SWEEP_NITER = 4000        # Section 21: runoff learn-sweep + its electorate-pool sizing
 SECONDARY_SWEEP_NITER = 100      # Section 21's secondary/curiosity sweep: neither variant there brackets a named runoff model, so it doesn't need the main sections' precision -- reuses the first SECONDARY_SWEEP_NITER elections of the same per-baseline pools (paired with, not independent of, the main runs) rather than drawing a fresh batch.
-NCAND_SWEEP_NITER = 1200          # Section 25: Approval Top-2 vs Plurality Top-2 across candidate counts. This takes significant time.
+NCAND_SWEEP_NITER = 1500          # Section 25: Approval Top-2 vs Plurality Top-2 across candidate counts. This takes significant time.
 
 MODEL = KSModel(dcdecay=(1, 3), wcdecay=(1.5, 3), dccut=.2, wcalpha=1.5)  # published "kitchen sink" model
 MEDIA = fuzzyMediaFor()   # gaussian noise on polls, as used for all published numbers
