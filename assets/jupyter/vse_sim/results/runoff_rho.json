@@ -1,6 +1,6 @@
 {
- "code_version": "47a8b85d79fc8d5a",
- "content_hash": "dfea609ff072917ecf7a1125897e906a9d629f253246c1094e8f90af849031c6",
+ "code_version": "f5ebe76af540f746",
+ "content_hash": "467d5905219c1f3e6c2d104796884401fb3d4cf16716d4da0e5ec6a6fa8dd34c",
  "data": {
   "vse": [
    {
@@ -8,327 +8,327 @@
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": null,
-    "sum": 927.4509257663016,
-    "sum_sq": 888.0551352573293
+    "sum": 1855.6044611576622,
+    "sum_sq": 1775.0390746987775
    },
    {
     "baseline": "Mild friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.0,
-    "sum": 752.9980956305134,
-    "sum_sq": 673.4363058240191
+    "sum": 1494.1392609025272,
+    "sum_sq": 1360.6009300250248
    },
    {
     "baseline": "Mild friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.2,
-    "sum": 812.1283552658693,
-    "sum_sq": 740.3506465905164
+    "sum": 1611.7099266595392,
+    "sum_sq": 1481.4859954989315
    },
    {
     "baseline": "Mild friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.4,
-    "sum": 868.2901326458924,
-    "sum_sq": 803.7261612923886
+    "sum": 1699.8348494959068,
+    "sum_sq": 1580.2544023798332
    },
    {
     "baseline": "Mild friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.6000000000000001,
-    "sum": 888.3269820063844,
-    "sum_sq": 830.309246745906
+    "sum": 1770.5977377954985,
+    "sum_sq": 1661.9484347844198
    },
    {
     "baseline": "Mild friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.8,
-    "sum": 914.2294815963094,
-    "sum_sq": 868.3737101740785
+    "sum": 1828.417714509199,
+    "sum_sq": 1738.6567942389754
    },
    {
     "baseline": "Mild friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.9,
-    "sum": 926.4090782398864,
-    "sum_sq": 886.4529149582319
+    "sum": 1850.7820936932194,
+    "sum_sq": 1770.233735483664
    },
    {
     "baseline": "Mild friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.925,
-    "sum": 930.1579330753233,
-    "sum_sq": 893.1745374444321
+    "sum": 1858.2893503961452,
+    "sum_sq": 1782.4907243252894
    },
    {
     "baseline": "Mild friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.95,
-    "sum": 931.3758154729702,
-    "sum_sq": 895.5424914722005
+    "sum": 1862.0807804265785,
+    "sum_sq": 1791.617729407621
    },
    {
     "baseline": "Mild friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.975,
-    "sum": 930.9259038381682,
-    "sum_sq": 896.2079442913368
+    "sum": 1865.455643341034,
+    "sum_sq": 1797.1929854976145
    },
    {
     "baseline": "Mild friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 1.0,
-    "sum": 935.3183922446584,
-    "sum_sq": 902.6916006005628
+    "sum": 1864.1556308001007,
+    "sum_sq": 1797.8696178422636
    },
    {
     "baseline": "Moderate friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": null,
-    "sum": 818.2942430263004,
-    "sum_sq": 766.3472530442285
+    "sum": 1668.2341408313575,
+    "sum_sq": 1554.0640795392933
    },
    {
     "baseline": "Moderate friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.0,
-    "sum": 528.3828206822452,
-    "sum_sq": 591.4461545867719
+    "sum": 1112.3589607351785,
+    "sum_sq": 1310.2976115377444
    },
    {
     "baseline": "Moderate friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.2,
-    "sum": 670.9494446610146,
-    "sum_sq": 648.9290548711106
+    "sum": 1392.7680165177728,
+    "sum_sq": 1394.6385368940173
    },
    {
     "baseline": "Moderate friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.4,
-    "sum": 748.4926396224322,
-    "sum_sq": 705.5614580434675
+    "sum": 1554.9533564231717,
+    "sum_sq": 1450.5927556769752
    },
    {
     "baseline": "Moderate friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.6000000000000001,
-    "sum": 793.9882948774999,
-    "sum_sq": 747.6621654142936
+    "sum": 1627.84983578601,
+    "sum_sq": 1505.2123030726052
    },
    {
     "baseline": "Moderate friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.8,
-    "sum": 819.3271348555525,
-    "sum_sq": 767.2126850591645
+    "sum": 1666.368803256574,
+    "sum_sq": 1552.267066433745
    },
    {
     "baseline": "Moderate friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.8500000000000001,
-    "sum": 819.1006853857509,
-    "sum_sq": 772.7591549144323
+    "sum": 1680.051725930199,
+    "sum_sq": 1566.8374245063796
    },
    {
     "baseline": "Moderate friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.9,
-    "sum": 822.2044052033998,
-    "sum_sq": 781.3307471445366
+    "sum": 1687.6707572692442,
+    "sum_sq": 1575.3192051495594
    },
    {
     "baseline": "Moderate friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.95,
-    "sum": 831.0397885935562,
-    "sum_sq": 783.9652209519973
+    "sum": 1694.2341509517835,
+    "sum_sq": 1587.5698332461618
    },
    {
     "baseline": "Moderate friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 1.0,
-    "sum": 827.9938268222734,
-    "sum_sq": 790.5651541206413
+    "sum": 1692.390791266596,
+    "sum_sq": 1594.6440564015343
    },
    {
     "baseline": "Heavy friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": null,
-    "sum": 738.9211698920866,
-    "sum_sq": 695.6883688202016
+    "sum": 1460.2756306796155,
+    "sum_sq": 1376.6097520438389
    },
    {
     "baseline": "Heavy friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.0,
-    "sum": 336.8464670723039,
-    "sum_sq": 731.9067705816037
+    "sum": 654.257902959444,
+    "sum_sq": 1506.7699970782764
    },
    {
     "baseline": "Heavy friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.2,
-    "sum": 576.7264250130216,
-    "sum_sq": 656.7280683328173
+    "sum": 1182.1417762962083,
+    "sum_sq": 1337.6182219281898
    },
    {
     "baseline": "Heavy friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.4,
-    "sum": 699.6063164056806,
-    "sum_sq": 668.5890471580032
+    "sum": 1354.050226295605,
+    "sum_sq": 1336.452487159251
    },
    {
     "baseline": "Heavy friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.6000000000000001,
-    "sum": 730.3169319304078,
-    "sum_sq": 688.5947112975067
+    "sum": 1433.3421786020983,
+    "sum_sq": 1359.732534476711
    },
    {
     "baseline": "Heavy friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.7,
-    "sum": 739.8272967758738,
-    "sum_sq": 697.132628724985
+    "sum": 1457.303749475939,
+    "sum_sq": 1376.5481155157843
    },
    {
     "baseline": "Heavy friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.7749999999999999,
-    "sum": 742.0972794176429,
-    "sum_sq": 697.2323980689811
+    "sum": 1467.0598089946657,
+    "sum_sq": 1385.9401143534017
    },
    {
     "baseline": "Heavy friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.8,
-    "sum": 750.2381110048278,
-    "sum_sq": 705.8695699065296
+    "sum": 1472.8158502623921,
+    "sum_sq": 1385.97894258523
    },
    {
     "baseline": "Heavy friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.85,
-    "sum": 752.1902040722395,
-    "sum_sq": 710.835282946929
+    "sum": 1481.0475472763023,
+    "sum_sq": 1406.0531295378619
    },
    {
     "baseline": "Heavy friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 0.925,
-    "sum": 755.4786072549947,
-    "sum_sq": 717.2196237836738
+    "sum": 1489.1116814763236,
+    "sum_sq": 1408.8668440105264
    },
    {
     "baseline": "Heavy friction",
     "chooser": "honBallot",
     "label": "Approval Top-2",
     "mode": "Awareness resets to 1.0",
-    "n": 1000,
+    "n": 2000,
     "runoff_rho": 1.0,
-    "sum": 757.7642711088099,
-    "sum_sq": 722.3739565611065
+    "sum": 1492.580733150426,
+    "sum_sq": 1420.948679970382
    }
   ]
  },
  "generated_by": "python -m vse_sim.run --stage runoff_rho",
  "meta": {
   "elections": 0,
-  "seconds": 105.3
+  "seconds": 373.6
  },
  "runs": 1,
  "schema": 1,
@@ -347,7 +347,7 @@
    "Awareness resets to 1.0"
   ],
   "ncand": 6,
-  "niter": 1000,
+  "niter": 2000,
   "nvot": 101,
   "rho_values": {
    "Heavy friction": [
@@ -389,8 +389,8 @@
     1.0
    ]
   },
-  "seed": "VSE2026"
+  "seed": "42"
  },
- "spec_hash": "6f4396d546df7d8e359506a104d0a89ffec001d5555f04c53ef677e06ec40b49",
+ "spec_hash": "6a807ea762c05d4e77d59d87eac4fb216dafafc167b0d75eb0188f6251418469",
  "stage": "runoff_rho"
 }

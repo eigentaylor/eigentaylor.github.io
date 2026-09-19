@@ -1,472 +1,472 @@
 {
- "code_version": "8b54b85e9c1fa1dd",
- "content_hash": "7eae2a22ff684c1f99351c800a6e50f262149774a94e5dab3cd99305f1f6905d",
+ "code_version": "f5ebe76af540f746",
+ "content_hash": "a62690f22fde38e82ee819ffbbae0617569b65c7fb76c375c9c1c2f7a153d6a8",
  "data": {
   "betrayal": [
    {
     "label": "STAR",
-    "n_aligned": 480,
-    "n_bad_flips": 90,
-    "n_betrayals": 357,
-    "n_decisive": 926,
-    "n_elections": 1000,
-    "n_flips": 182,
-    "n_good_flips": 89,
-    "n_honest_tied_flips": 3,
-    "n_silent_lockin": 267,
-    "n_voter_corrupt": 34528,
-    "n_voter_decisive": 70216,
+    "n_aligned": 982,
+    "n_bad_flips": 183,
+    "n_betrayals": 716,
+    "n_decisive": 1865,
+    "n_elections": 2000,
+    "n_flips": 356,
+    "n_good_flips": 167,
+    "n_honest_tied_flips": 6,
+    "n_silent_lockin": 533,
+    "n_voter_corrupt": 71754,
+    "n_voter_decisive": 146274,
     "param": "epistemic_rho",
-    "sum_best_all": -727.5537987119621,
-    "sum_best_decisive": -675.0814187172062,
-    "sum_rand_all": -968.7436529246359,
-    "sum_rand_decisive": -899.1493657576256,
-    "sum_util_actual": -712.0305934397542,
-    "sum_util_actual_bad_flip": -74.68251144433918,
-    "sum_util_actual_lockin": -209.87726547823328,
-    "sum_util_honest": -688.4703155346473,
-    "sum_util_honest_bad_flip": -67.94732497074321,
-    "sum_util_honest_lockin": -193.05217404672334,
+    "sum_best_all": -1470.7144306415398,
+    "sum_best_decisive": -1368.0923594192093,
+    "sum_rand_all": -1966.460623157794,
+    "sum_rand_decisive": -1832.844677984358,
+    "sum_util_actual": -1445.7690419972816,
+    "sum_util_actual_bad_flip": -160.26767738637352,
+    "sum_util_actual_lockin": -431.98724399130515,
+    "sum_util_honest": -1392.5901786604584,
+    "sum_util_honest_bad_flip": -142.93193920024024,
+    "sum_util_honest_lockin": -396.14411884061747,
     "value": 0.3
    },
    {
     "label": "STAR",
-    "n_aligned": 549,
-    "n_bad_flips": 76,
-    "n_betrayals": 295,
-    "n_decisive": 916,
-    "n_elections": 1000,
-    "n_flips": 153,
-    "n_good_flips": 72,
-    "n_honest_tied_flips": 5,
-    "n_silent_lockin": 219,
-    "n_voter_corrupt": 29093,
-    "n_voter_decisive": 66454,
+    "n_aligned": 1138,
+    "n_bad_flips": 124,
+    "n_betrayals": 583,
+    "n_decisive": 1864,
+    "n_elections": 2000,
+    "n_flips": 275,
+    "n_good_flips": 143,
+    "n_honest_tied_flips": 8,
+    "n_silent_lockin": 459,
+    "n_voter_corrupt": 59705,
+    "n_voter_decisive": 136058,
     "param": "epistemic_rho",
-    "sum_best_all": -727.5537987119621,
-    "sum_best_decisive": -665.9411917178535,
-    "sum_rand_all": -968.7436529246359,
-    "sum_rand_decisive": -887.8640608452395,
-    "sum_util_actual": -687.0226208710027,
-    "sum_util_actual_bad_flip": -64.17595621092396,
-    "sum_util_actual_lockin": -166.63809433150763,
-    "sum_util_honest": -673.3655743655631,
-    "sum_util_honest_bad_flip": -59.6447647572997,
-    "sum_util_honest_lockin": -157.5122392796927,
+    "sum_best_all": -1470.7144306415398,
+    "sum_best_decisive": -1375.1786851344104,
+    "sum_rand_all": -1966.460623157794,
+    "sum_rand_decisive": -1838.557533708627,
+    "sum_util_actual": -1413.3064766762182,
+    "sum_util_actual_bad_flip": -95.30708733691289,
+    "sum_util_actual_lockin": -365.58572887601997,
+    "sum_util_honest": -1387.0909111132921,
+    "sum_util_honest_bad_flip": -88.9112479061608,
+    "sum_util_honest_lockin": -345.76600274384674,
     "value": 0.5
    },
    {
     "label": "STAR",
-    "n_aligned": 608,
-    "n_bad_flips": 66,
-    "n_betrayals": 255,
-    "n_decisive": 931,
-    "n_elections": 1000,
-    "n_flips": 136,
-    "n_good_flips": 68,
-    "n_honest_tied_flips": 2,
-    "n_silent_lockin": 189,
-    "n_voter_corrupt": 24144,
-    "n_voter_decisive": 64377,
+    "n_aligned": 1256,
+    "n_bad_flips": 131,
+    "n_betrayals": 501,
+    "n_decisive": 1867,
+    "n_elections": 2000,
+    "n_flips": 252,
+    "n_good_flips": 110,
+    "n_honest_tied_flips": 11,
+    "n_silent_lockin": 370,
+    "n_voter_corrupt": 50182,
+    "n_voter_decisive": 134046,
     "param": "epistemic_rho",
-    "sum_best_all": -727.5537987119621,
-    "sum_best_decisive": -676.0778885929944,
-    "sum_rand_all": -968.7436529246359,
-    "sum_rand_decisive": -901.5041105159847,
-    "sum_util_actual": -687.3936138119128,
-    "sum_util_actual_bad_flip": -49.80244391255743,
-    "sum_util_actual_lockin": -139.93951380922226,
-    "sum_util_honest": -681.1127925689613,
-    "sum_util_honest_bad_flip": -47.961034851098404,
-    "sum_util_honest_lockin": -135.50010162772986,
+    "sum_best_all": -1470.7144306415398,
+    "sum_best_decisive": -1375.0816792949508,
+    "sum_rand_all": -1966.460623157794,
+    "sum_rand_decisive": -1839.2864416770713,
+    "sum_util_actual": -1398.1887528783861,
+    "sum_util_actual_bad_flip": -102.63341549320009,
+    "sum_util_actual_lockin": -280.5298901175294,
+    "sum_util_honest": -1384.5012110309544,
+    "sum_util_honest_bad_flip": -97.77645700109264,
+    "sum_util_honest_lockin": -271.699306762206,
     "value": 0.7
    },
    {
     "label": "STAR",
-    "n_aligned": 640,
-    "n_bad_flips": 41,
-    "n_betrayals": 214,
-    "n_decisive": 928,
-    "n_elections": 1000,
-    "n_flips": 119,
-    "n_good_flips": 74,
-    "n_honest_tied_flips": 4,
-    "n_silent_lockin": 173,
-    "n_voter_corrupt": 20726,
-    "n_voter_decisive": 63341,
+    "n_aligned": 1348,
+    "n_bad_flips": 84,
+    "n_betrayals": 409,
+    "n_decisive": 1878,
+    "n_elections": 2000,
+    "n_flips": 215,
+    "n_good_flips": 121,
+    "n_honest_tied_flips": 10,
+    "n_silent_lockin": 325,
+    "n_voter_corrupt": 43416,
+    "n_voter_decisive": 131712,
     "param": "epistemic_rho",
-    "sum_best_all": -727.5537987119621,
-    "sum_best_decisive": -675.3347464206169,
-    "sum_rand_all": -968.7436529246359,
-    "sum_rand_decisive": -900.8899617559711,
-    "sum_util_actual": -682.340079720445,
-    "sum_util_actual_bad_flip": -28.445881054300113,
-    "sum_util_actual_lockin": -130.61822114556406,
-    "sum_util_honest": -678.7290354505013,
-    "sum_util_honest_bad_flip": -27.740565128372353,
-    "sum_util_honest_lockin": -127.71249280154844,
+    "sum_best_all": -1470.7144306415398,
+    "sum_best_decisive": -1381.44102377557,
+    "sum_rand_all": -1966.460623157794,
+    "sum_rand_decisive": -1847.308462434444,
+    "sum_util_actual": -1396.4115273125542,
+    "sum_util_actual_bad_flip": -63.815437947964334,
+    "sum_util_actual_lockin": -244.80854310981275,
+    "sum_util_honest": -1388.6461815660914,
+    "sum_util_honest_bad_flip": -61.685770301875344,
+    "sum_util_honest_lockin": -239.1728650094403,
     "value": 0.8
    },
    {
     "label": "STAR",
-    "n_aligned": 691,
-    "n_bad_flips": 36,
-    "n_betrayals": 182,
-    "n_decisive": 939,
-    "n_elections": 1000,
-    "n_flips": 109,
-    "n_good_flips": 66,
-    "n_honest_tied_flips": 7,
-    "n_silent_lockin": 146,
-    "n_voter_corrupt": 16554,
-    "n_voter_decisive": 62117,
+    "n_aligned": 1406,
+    "n_bad_flips": 62,
+    "n_betrayals": 346,
+    "n_decisive": 1883,
+    "n_elections": 2000,
+    "n_flips": 202,
+    "n_good_flips": 131,
+    "n_honest_tied_flips": 9,
+    "n_silent_lockin": 284,
+    "n_voter_corrupt": 34542,
+    "n_voter_decisive": 129435,
     "param": "epistemic_rho",
-    "sum_best_all": -727.5537987119621,
-    "sum_best_decisive": -684.1657676696506,
-    "sum_rand_all": -968.7436529246359,
-    "sum_rand_decisive": -910.7563147588994,
-    "sum_util_actual": -689.4958521362713,
-    "sum_util_actual_bad_flip": -26.085243302100533,
-    "sum_util_actual_lockin": -103.15463731016516,
-    "sum_util_honest": -688.4698538318183,
-    "sum_util_honest_bad_flip": -25.712077397699414,
-    "sum_util_honest_lockin": -102.50180491011382,
+    "sum_best_all": -1470.7144306415398,
+    "sum_best_decisive": -1384.6902077793438,
+    "sum_rand_all": -1966.460623157794,
+    "sum_rand_decisive": -1850.5101600489422,
+    "sum_util_actual": -1395.0918851812403,
+    "sum_util_actual_bad_flip": -43.833257733593896,
+    "sum_util_actual_lockin": -209.52479667653458,
+    "sum_util_honest": -1391.2242033661882,
+    "sum_util_honest_bad_flip": -42.9603543753528,
+    "sum_util_honest_lockin": -206.53001821972546,
     "value": 0.9
    },
    {
     "label": "STAR",
-    "n_aligned": 445,
+    "n_aligned": 853,
     "n_bad_flips": 0,
-    "n_betrayals": 542,
-    "n_decisive": 987,
-    "n_elections": 1000,
+    "n_betrayals": 1121,
+    "n_decisive": 1974,
+    "n_elections": 2000,
     "n_flips": 0,
     "n_good_flips": 0,
     "n_honest_tied_flips": 0,
-    "n_silent_lockin": 542,
-    "n_voter_corrupt": 33305,
-    "n_voter_decisive": 83166,
+    "n_silent_lockin": 1121,
+    "n_voter_corrupt": 67587,
+    "n_voter_decisive": 166589,
     "param": "awareness_alpha",
-    "sum_best_all": -730.9466947383551,
-    "sum_best_decisive": -720.8405234916507,
-    "sum_rand_all": -982.6862649339532,
-    "sum_rand_decisive": -969.6377860000517,
-    "sum_util_actual": -988.9578823584284,
+    "sum_best_all": -1465.5188937565563,
+    "sum_best_decisive": -1445.8102147522034,
+    "sum_rand_all": -1955.37337747452,
+    "sum_rand_decisive": -1929.9092561418554,
+    "sum_util_actual": -1928.5348360275334,
     "sum_util_actual_bad_flip": 0.0,
-    "sum_util_actual_lockin": -628.4454735771268,
-    "sum_util_honest": -808.6378090347445,
+    "sum_util_actual_lockin": -1235.649861817766,
+    "sum_util_honest": -1608.836355213652,
     "sum_util_honest_bad_flip": 0.0,
-    "sum_util_honest_lockin": -448.1254002534412,
+    "sum_util_honest_lockin": -915.951381003892,
     "value": 0.3
    },
    {
     "label": "STAR",
-    "n_aligned": 411,
+    "n_aligned": 920,
     "n_bad_flips": 0,
-    "n_betrayals": 553,
-    "n_decisive": 982,
-    "n_elections": 1000,
-    "n_flips": 18,
-    "n_good_flips": 18,
+    "n_betrayals": 1007,
+    "n_decisive": 1954,
+    "n_elections": 2000,
+    "n_flips": 27,
+    "n_good_flips": 27,
     "n_honest_tied_flips": 0,
-    "n_silent_lockin": 553,
-    "n_voter_corrupt": 28479,
-    "n_voter_decisive": 82713,
+    "n_silent_lockin": 1007,
+    "n_voter_corrupt": 53982,
+    "n_voter_decisive": 163067,
     "param": "awareness_alpha",
-    "sum_best_all": -730.9466947383551,
-    "sum_best_decisive": -717.878773624507,
-    "sum_rand_all": -982.6862649339532,
-    "sum_rand_decisive": -964.9748937781663,
-    "sum_util_actual": -916.0529020903869,
+    "sum_best_all": -1465.5188937565563,
+    "sum_best_decisive": -1433.1490380316618,
+    "sum_rand_all": -1955.37337747452,
+    "sum_rand_decisive": -1911.0524400187414,
+    "sum_util_actual": -1793.505638301519,
     "sum_util_actual_bad_flip": 0.0,
-    "sum_util_actual_lockin": -572.8367960947455,
-    "sum_util_honest": -791.2390267953319,
+    "sum_util_actual_lockin": -1033.341283516284,
+    "sum_util_honest": -1574.1508189820931,
     "sum_util_honest_bad_flip": 0.0,
-    "sum_util_honest_lockin": -448.0229207996907,
+    "sum_util_honest_lockin": -813.9864641968583,
     "value": 0.5
    },
    {
     "label": "STAR",
-    "n_aligned": 528,
-    "n_bad_flips": 7,
-    "n_betrayals": 391,
-    "n_decisive": 972,
-    "n_elections": 1000,
-    "n_flips": 60,
-    "n_good_flips": 53,
+    "n_aligned": 1041,
+    "n_bad_flips": 15,
+    "n_betrayals": 829,
+    "n_decisive": 1950,
+    "n_elections": 2000,
+    "n_flips": 95,
+    "n_good_flips": 80,
     "n_honest_tied_flips": 0,
-    "n_silent_lockin": 384,
-    "n_voter_corrupt": 21223,
-    "n_voter_decisive": 76734,
+    "n_silent_lockin": 814,
+    "n_voter_corrupt": 42082,
+    "n_voter_decisive": 156419,
     "param": "awareness_alpha",
-    "sum_best_all": -730.9466947383551,
-    "sum_best_decisive": -710.5497438367421,
-    "sum_rand_all": -982.6862649339532,
-    "sum_rand_decisive": -954.6029567351468,
-    "sum_util_actual": -803.0899953678811,
-    "sum_util_actual_bad_flip": -7.242521694761362,
-    "sum_util_actual_lockin": -344.12906531655756,
-    "sum_util_honest": -753.8017269498506,
-    "sum_util_honest_bad_flip": -5.445109085832548,
-    "sum_util_honest_lockin": -296.6382095074567,
+    "sum_best_all": -1465.5188937565563,
+    "sum_best_decisive": -1428.26745041321,
+    "sum_rand_all": -1955.37337747452,
+    "sum_rand_decisive": -1905.3315090866813,
+    "sum_util_actual": -1621.8977421389047,
+    "sum_util_actual_bad_flip": -16.651898680129804,
+    "sum_util_actual_lockin": -734.7347147859372,
+    "sum_util_honest": -1521.5624982073534,
+    "sum_util_honest_bad_flip": -12.788310447397377,
+    "sum_util_honest_lockin": -638.2630590871196,
     "value": 0.7
    },
    {
     "label": "STAR",
-    "n_aligned": 558,
-    "n_bad_flips": 16,
-    "n_betrayals": 336,
-    "n_decisive": 969,
-    "n_elections": 1000,
-    "n_flips": 91,
-    "n_good_flips": 75,
+    "n_aligned": 1098,
+    "n_bad_flips": 36,
+    "n_betrayals": 686,
+    "n_decisive": 1931,
+    "n_elections": 2000,
+    "n_flips": 183,
+    "n_good_flips": 147,
     "n_honest_tied_flips": 0,
-    "n_silent_lockin": 320,
-    "n_voter_corrupt": 16896,
-    "n_voter_decisive": 73277,
+    "n_silent_lockin": 650,
+    "n_voter_corrupt": 33975,
+    "n_voter_decisive": 149109,
     "param": "awareness_alpha",
-    "sum_best_all": -730.9466947383551,
-    "sum_best_decisive": -707.7665142359306,
-    "sum_rand_all": -982.6862649339532,
-    "sum_rand_decisive": -952.6888946249592,
-    "sum_util_actual": -767.7998885943084,
-    "sum_util_actual_bad_flip": -14.361811252178594,
-    "sum_util_actual_lockin": -270.59590141655883,
-    "sum_util_honest": -736.9881403795503,
-    "sum_util_honest_bad_flip": -11.822213839427244,
-    "sum_util_honest_lockin": -242.32375061455173,
+    "sum_best_all": -1465.5188937565563,
+    "sum_best_decisive": -1411.993317491909,
+    "sum_rand_all": -1955.37337747452,
+    "sum_rand_decisive": -1886.2117004948825,
+    "sum_util_actual": -1538.8000171321135,
+    "sum_util_actual_bad_flip": -34.01291374141955,
+    "sum_util_actual_lockin": -559.8684400503312,
+    "sum_util_honest": -1474.2054919188577,
+    "sum_util_honest_bad_flip": -28.361962874403797,
+    "sum_util_honest_lockin": -500.92486570409085,
     "value": 0.8
    },
    {
     "label": "STAR",
-    "n_aligned": 567,
-    "n_bad_flips": 34,
-    "n_betrayals": 238,
-    "n_decisive": 954,
-    "n_elections": 1000,
-    "n_flips": 185,
-    "n_good_flips": 149,
-    "n_honest_tied_flips": 2,
-    "n_silent_lockin": 204,
-    "n_voter_corrupt": 10654,
-    "n_voter_decisive": 69895,
+    "n_aligned": 1142,
+    "n_bad_flips": 47,
+    "n_betrayals": 542,
+    "n_decisive": 1925,
+    "n_elections": 2000,
+    "n_flips": 289,
+    "n_good_flips": 241,
+    "n_honest_tied_flips": 1,
+    "n_silent_lockin": 495,
+    "n_voter_corrupt": 22369,
+    "n_voter_decisive": 141288,
     "param": "awareness_alpha",
-    "sum_best_all": -730.9466947383551,
-    "sum_best_decisive": -697.3567819543816,
-    "sum_rand_all": -982.6862649339532,
-    "sum_rand_decisive": -937.3994637646555,
-    "sum_util_actual": -729.9356779872205,
-    "sum_util_actual_bad_flip": -30.286120101842155,
-    "sum_util_actual_lockin": -163.17122786446154,
-    "sum_util_honest": -715.9375951167525,
-    "sum_util_honest_bad_flip": -26.842687354221816,
-    "sum_util_honest_lockin": -152.61657774161446,
+    "sum_best_all": -1465.5188937565563,
+    "sum_best_decisive": -1410.0737683348025,
+    "sum_rand_all": -1955.37337747452,
+    "sum_rand_decisive": -1882.185304372423,
+    "sum_util_actual": -1467.5791090267335,
+    "sum_util_actual_bad_flip": -41.72832296323573,
+    "sum_util_actual_lockin": -402.1716136257367,
+    "sum_util_honest": -1438.7436716081736,
+    "sum_util_honest_bad_flip": -37.71043348806904,
+    "sum_util_honest_lockin": -377.3540656823438,
     "value": 0.9
    },
    {
     "label": "STAR",
-    "n_aligned": 563,
-    "n_bad_flips": 10,
-    "n_betrayals": 371,
-    "n_decisive": 953,
-    "n_elections": 1000,
-    "n_flips": 30,
-    "n_good_flips": 19,
-    "n_honest_tied_flips": 1,
-    "n_silent_lockin": 361,
-    "n_voter_corrupt": 33302,
-    "n_voter_decisive": 82815,
+    "n_aligned": 1180,
+    "n_bad_flips": 13,
+    "n_betrayals": 695,
+    "n_decisive": 1903,
+    "n_elections": 2000,
+    "n_flips": 41,
+    "n_good_flips": 28,
+    "n_honest_tied_flips": 0,
+    "n_silent_lockin": 682,
+    "n_voter_corrupt": 64897,
+    "n_voter_decisive": 162533,
     "param": "fatigue_beta",
-    "sum_best_all": -733.0471565652057,
-    "sum_best_decisive": -698.4885533627668,
-    "sum_rand_all": -974.7714050913645,
-    "sum_rand_decisive": -928.9549753113779,
-    "sum_util_actual": -758.1595408530226,
-    "sum_util_actual_bad_flip": -10.666480355938026,
-    "sum_util_actual_lockin": -314.58391316158844,
-    "sum_util_honest": -714.8450738717216,
-    "sum_util_honest_bad_flip": -8.470398236214676,
-    "sum_util_honest_lockin": -273.46552830000985,
+    "sum_best_all": -1452.6980911088847,
+    "sum_best_decisive": -1382.1704385528283,
+    "sum_rand_all": -1953.447674106531,
+    "sum_rand_decisive": -1859.3890174376434,
+    "sum_util_actual": -1480.8097100044517,
+    "sum_util_actual_bad_flip": -9.811001138733317,
+    "sum_util_actual_lockin": -582.9657439151316,
+    "sum_util_honest": -1415.3100846411542,
+    "sum_util_honest_bad_flip": -8.085474072438986,
+    "sum_util_honest_lockin": -519.191645618128,
     "value": 0.3
    },
    {
     "label": "STAR",
-    "n_aligned": 578,
-    "n_bad_flips": 22,
-    "n_betrayals": 343,
-    "n_decisive": 952,
-    "n_elections": 1000,
-    "n_flips": 53,
-    "n_good_flips": 31,
-    "n_honest_tied_flips": 0,
-    "n_silent_lockin": 321,
-    "n_voter_corrupt": 28749,
-    "n_voter_decisive": 80182,
+    "n_aligned": 1170,
+    "n_bad_flips": 35,
+    "n_betrayals": 683,
+    "n_decisive": 1899,
+    "n_elections": 2000,
+    "n_flips": 82,
+    "n_good_flips": 46,
+    "n_honest_tied_flips": 1,
+    "n_silent_lockin": 648,
+    "n_voter_corrupt": 56527,
+    "n_voter_decisive": 156267,
     "param": "fatigue_beta",
-    "sum_best_all": -733.0471565652057,
-    "sum_best_decisive": -696.9950264925939,
-    "sum_rand_all": -974.7714050913645,
-    "sum_rand_decisive": -927.0409951833019,
-    "sum_util_actual": -740.4116151285673,
-    "sum_util_actual_bad_flip": -18.20853473905111,
-    "sum_util_actual_lockin": -270.94611489579006,
-    "sum_util_honest": -709.7880563746128,
-    "sum_util_honest_bad_flip": -15.968155231434164,
-    "sum_util_honest_lockin": -242.56293564945125,
+    "sum_best_all": -1452.6980911088847,
+    "sum_best_decisive": -1379.2844425352184,
+    "sum_rand_all": -1953.447674106531,
+    "sum_rand_decisive": -1853.2931502944384,
+    "sum_util_actual": -1455.956248007164,
+    "sum_util_actual_bad_flip": -28.10083490845409,
+    "sum_util_actual_lockin": -538.7874002944436,
+    "sum_util_honest": -1402.2397364960016,
+    "sum_util_honest_bad_flip": -23.791468443969336,
+    "sum_util_honest_lockin": -489.3802552477658,
     "value": 0.5
    },
    {
     "label": "STAR",
-    "n_aligned": 602,
-    "n_bad_flips": 35,
-    "n_betrayals": 292,
-    "n_decisive": 945,
-    "n_elections": 1000,
-    "n_flips": 88,
-    "n_good_flips": 51,
-    "n_honest_tied_flips": 2,
-    "n_silent_lockin": 257,
-    "n_voter_corrupt": 21418,
-    "n_voter_decisive": 75207,
+    "n_aligned": 1228,
+    "n_bad_flips": 42,
+    "n_betrayals": 589,
+    "n_decisive": 1907,
+    "n_elections": 2000,
+    "n_flips": 136,
+    "n_good_flips": 90,
+    "n_honest_tied_flips": 4,
+    "n_silent_lockin": 547,
+    "n_voter_corrupt": 41941,
+    "n_voter_decisive": 147523,
     "param": "fatigue_beta",
-    "sum_best_all": -733.0471565652057,
-    "sum_best_decisive": -694.7424811165308,
-    "sum_rand_all": -974.7714050913645,
-    "sum_rand_decisive": -923.0464777749014,
-    "sum_util_actual": -716.7886052647942,
-    "sum_util_actual_bad_flip": -30.360507010985764,
-    "sum_util_actual_lockin": -198.94847825614602,
-    "sum_util_honest": -701.3864518289004,
-    "sum_util_honest_bad_flip": -27.031785746705022,
-    "sum_util_honest_lockin": -186.87504608453187,
+    "sum_best_all": -1452.6980911088847,
+    "sum_best_decisive": -1388.4982631137605,
+    "sum_rand_all": -1953.447674106531,
+    "sum_rand_decisive": -1865.711683746038,
+    "sum_util_actual": -1427.970310600683,
+    "sum_util_actual_bad_flip": -32.58539491699479,
+    "sum_util_actual_lockin": -433.58018302995026,
+    "sum_util_honest": -1401.2253326260604,
+    "sum_util_honest_bad_flip": -29.832129855536,
+    "sum_util_honest_lockin": -409.5884701167862,
     "value": 0.7
    },
    {
     "label": "STAR",
-    "n_aligned": 637,
-    "n_bad_flips": 42,
-    "n_betrayals": 238,
-    "n_decisive": 945,
-    "n_elections": 1000,
-    "n_flips": 116,
-    "n_good_flips": 70,
-    "n_honest_tied_flips": 4,
-    "n_silent_lockin": 196,
-    "n_voter_corrupt": 15591,
-    "n_voter_decisive": 72066,
+    "n_aligned": 1286,
+    "n_bad_flips": 80,
+    "n_betrayals": 475,
+    "n_decisive": 1894,
+    "n_elections": 2000,
+    "n_flips": 216,
+    "n_good_flips": 133,
+    "n_honest_tied_flips": 3,
+    "n_silent_lockin": 395,
+    "n_voter_corrupt": 31342,
+    "n_voter_decisive": 142025,
     "param": "fatigue_beta",
-    "sum_best_all": -733.0471565652057,
-    "sum_best_decisive": -692.8449917977865,
-    "sum_rand_all": -974.7714050913645,
-    "sum_rand_decisive": -920.6805047716635,
-    "sum_util_actual": -705.48411645568,
-    "sum_util_actual_bad_flip": -34.07134114519799,
-    "sum_util_actual_lockin": -149.5386333439124,
-    "sum_util_honest": -697.0438504093785,
-    "sum_util_honest_bad_flip": -31.65147348567204,
-    "sum_util_honest_lockin": -143.51823495713583,
+    "sum_best_all": -1452.6980911088847,
+    "sum_best_decisive": -1375.9442800706574,
+    "sum_rand_all": -1953.447674106531,
+    "sum_rand_decisive": -1851.949440722006,
+    "sum_util_actual": -1400.6251677973703,
+    "sum_util_actual_bad_flip": -63.64496749589761,
+    "sum_util_actual_lockin": -306.4747697697929,
+    "sum_util_honest": -1383.8922399148114,
+    "sum_util_honest_bad_flip": -58.68472298274577,
+    "sum_util_honest_lockin": -294.7020864003867,
     "value": 0.8
    },
    {
     "label": "STAR",
-    "n_aligned": 703,
-    "n_bad_flips": 37,
-    "n_betrayals": 139,
-    "n_decisive": 937,
-    "n_elections": 1000,
-    "n_flips": 136,
-    "n_good_flips": 95,
-    "n_honest_tied_flips": 4,
-    "n_silent_lockin": 102,
-    "n_voter_corrupt": 8892,
-    "n_voter_decisive": 66804,
+    "n_aligned": 1394,
+    "n_bad_flips": 53,
+    "n_betrayals": 288,
+    "n_decisive": 1885,
+    "n_elections": 2000,
+    "n_flips": 261,
+    "n_good_flips": 203,
+    "n_honest_tied_flips": 5,
+    "n_silent_lockin": 235,
+    "n_voter_corrupt": 17156,
+    "n_voter_decisive": 131955,
     "param": "fatigue_beta",
-    "sum_best_all": -733.0471565652057,
-    "sum_best_decisive": -687.0118342751728,
-    "sum_rand_all": -974.7714050913645,
-    "sum_rand_decisive": -915.3773368612144,
-    "sum_util_actual": -692.5743761915437,
-    "sum_util_actual_bad_flip": -28.79749857454791,
-    "sum_util_actual_lockin": -73.81162819783661,
-    "sum_util_honest": -689.8110065465879,
-    "sum_util_honest_bad_flip": -27.084890957052647,
-    "sum_util_honest_lockin": -72.76086617037576,
+    "sum_best_all": -1452.6980911088847,
+    "sum_best_decisive": -1370.5412863904514,
+    "sum_rand_all": -1953.447674106531,
+    "sum_rand_decisive": -1843.7444724376492,
+    "sum_util_actual": -1380.0644412437732,
+    "sum_util_actual_bad_flip": -41.42620775512848,
+    "sum_util_actual_lockin": -175.00721850687634,
+    "sum_util_honest": -1376.4799391790816,
+    "sum_util_honest_bad_flip": -39.87515317195758,
+    "sum_util_honest_lockin": -172.97377102535452,
     "value": 0.9
    }
   ],
   "ce_denominator": [
    {
-    "cw_exists": 995,
+    "cw_exists": 1978,
     "param": "epistemic_rho",
     "value": 0.3
    },
    {
-    "cw_exists": 995,
+    "cw_exists": 1978,
     "param": "epistemic_rho",
     "value": 0.5
    },
    {
-    "cw_exists": 995,
+    "cw_exists": 1978,
     "param": "epistemic_rho",
     "value": 0.7
    },
    {
-    "cw_exists": 995,
+    "cw_exists": 1978,
     "param": "epistemic_rho",
     "value": 0.8
    },
    {
-    "cw_exists": 995,
+    "cw_exists": 1978,
     "param": "epistemic_rho",
     "value": 0.9
    },
    {
-    "cw_exists": 987,
+    "cw_exists": 1975,
     "param": "awareness_alpha",
     "value": 0.3
    },
    {
-    "cw_exists": 987,
+    "cw_exists": 1975,
     "param": "awareness_alpha",
     "value": 0.5
    },
    {
-    "cw_exists": 987,
+    "cw_exists": 1975,
     "param": "awareness_alpha",
     "value": 0.7
    },
    {
-    "cw_exists": 987,
+    "cw_exists": 1975,
     "param": "awareness_alpha",
     "value": 0.8
    },
    {
-    "cw_exists": 987,
+    "cw_exists": 1975,
     "param": "awareness_alpha",
     "value": 0.9
    },
    {
-    "cw_exists": 991,
+    "cw_exists": 1973,
     "param": "fatigue_beta",
     "value": 0.3
    },
    {
-    "cw_exists": 991,
+    "cw_exists": 1973,
     "param": "fatigue_beta",
     "value": 0.5
    },
    {
-    "cw_exists": 991,
+    "cw_exists": 1973,
     "param": "fatigue_beta",
     "value": 0.7
    },
    {
-    "cw_exists": 991,
+    "cw_exists": 1973,
     "param": "fatigue_beta",
     "value": 0.8
    },
    {
-    "cw_exists": 991,
+    "cw_exists": 1973,
     "param": "fatigue_beta",
     "value": 0.9
    }
@@ -474,1051 +474,1156 @@
   "ce_wins": [
    {
     "chooser": "honBallot",
-    "cw_wins": 619,
-    "label": "Plurality Top-2 (Clear-Eyed)",
-    "param": "epistemic_rho",
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 672,
-    "label": "Approval Top-2 (Clear-Eyed)",
-    "param": "epistemic_rho",
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 724,
-    "label": "Score Top-2 (Clear-Eyed)",
-    "param": "epistemic_rho",
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 436,
-    "label": "Approval",
-    "param": "epistemic_rho",
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 440,
-    "label": "STAR",
-    "param": "epistemic_rho",
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 447,
-    "label": "Score5",
-    "param": "epistemic_rho",
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 415,
-    "label": "Condorcet (Schulze)",
-    "param": "epistemic_rho",
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 412,
-    "label": "Approval Top-2",
-    "param": "epistemic_rho",
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 366,
+    "cw_wins": 772,
     "label": "Plurality",
     "param": "epistemic_rho",
     "value": 0.3
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 404,
+    "cw_wins": 884,
+    "label": "Approval",
+    "param": "epistemic_rho",
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 874,
     "label": "RCV (IRV)",
     "param": "epistemic_rho",
     "value": 0.3
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 399,
-    "label": "Plurality Top-2",
+    "cw_wins": 906,
+    "label": "STAR",
     "param": "epistemic_rho",
     "value": 0.3
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 466,
-    "label": "Plurality",
-    "param": "epistemic_rho",
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 549,
-    "label": "Approval",
-    "param": "epistemic_rho",
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 487,
-    "label": "RCV (IRV)",
-    "param": "epistemic_rho",
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 558,
+    "cw_wins": 928,
     "label": "Score5",
     "param": "epistemic_rho",
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 512,
-    "label": "Condorcet (Schulze)",
-    "param": "epistemic_rho",
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 504,
-    "label": "Plurality Top-2",
-    "param": "epistemic_rho",
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 718,
-    "label": "Plurality Top-2 (Clear-Eyed)",
-    "param": "epistemic_rho",
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 810,
-    "label": "Score Top-2 (Clear-Eyed)",
-    "param": "epistemic_rho",
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 546,
-    "label": "STAR",
-    "param": "epistemic_rho",
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 518,
-    "label": "Approval Top-2",
-    "param": "epistemic_rho",
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 790,
-    "label": "Approval Top-2 (Clear-Eyed)",
-    "param": "epistemic_rho",
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 609,
-    "label": "Approval",
-    "param": "epistemic_rho",
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 573,
-    "label": "RCV (IRV)",
-    "param": "epistemic_rho",
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 633,
-    "label": "STAR",
-    "param": "epistemic_rho",
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 632,
-    "label": "Score5",
-    "param": "epistemic_rho",
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 624,
-    "label": "Condorcet (Schulze)",
-    "param": "epistemic_rho",
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 594,
-    "label": "Plurality Top-2",
-    "param": "epistemic_rho",
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 731,
-    "label": "Plurality Top-2 (Clear-Eyed)",
-    "param": "epistemic_rho",
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 622,
-    "label": "Approval Top-2",
-    "param": "epistemic_rho",
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 848,
-    "label": "Approval Top-2 (Clear-Eyed)",
-    "param": "epistemic_rho",
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 875,
-    "label": "Score Top-2 (Clear-Eyed)",
-    "param": "epistemic_rho",
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 487,
-    "label": "Plurality",
-    "param": "epistemic_rho",
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 619,
-    "label": "Approval",
-    "param": "epistemic_rho",
-    "value": 0.8
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 703,
-    "label": "STAR",
-    "param": "epistemic_rho",
-    "value": 0.8
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 675,
-    "label": "Score5",
-    "param": "epistemic_rho",
-    "value": 0.8
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 679,
-    "label": "Condorcet (Schulze)",
-    "param": "epistemic_rho",
-    "value": 0.8
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 609,
-    "label": "Plurality Top-2",
-    "param": "epistemic_rho",
-    "value": 0.8
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 742,
-    "label": "Plurality Top-2 (Clear-Eyed)",
-    "param": "epistemic_rho",
-    "value": 0.8
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 667,
-    "label": "Approval Top-2",
-    "param": "epistemic_rho",
-    "value": 0.8
+    "value": 0.3
    },
    {
     "chooser": "honBallot",
     "cw_wins": 871,
+    "label": "Condorcet (Schulze)",
+    "param": "epistemic_rho",
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 840,
+    "label": "Plurality Top-2",
+    "param": "epistemic_rho",
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1247,
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "param": "epistemic_rho",
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 872,
+    "label": "Approval Top-2",
+    "param": "epistemic_rho",
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1414,
     "label": "Approval Top-2 (Clear-Eyed)",
     "param": "epistemic_rho",
-    "value": 0.8
+    "value": 0.3
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 913,
+    "cw_wins": 1459,
     "label": "Score Top-2 (Clear-Eyed)",
     "param": "epistemic_rho",
-    "value": 0.8
+    "value": 0.3
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 484,
+    "cw_wins": 901,
+    "label": "Schulze (equal ranks)",
+    "param": "epistemic_rho",
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 932,
+    "label": "Plurality",
+    "param": "epistemic_rho",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1093,
+    "label": "Approval",
+    "param": "epistemic_rho",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1061,
+    "label": "RCV (IRV)",
+    "param": "epistemic_rho",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1153,
+    "label": "STAR",
+    "param": "epistemic_rho",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1127,
+    "label": "Score5",
+    "param": "epistemic_rho",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1111,
+    "label": "Condorcet (Schulze)",
+    "param": "epistemic_rho",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1040,
+    "label": "Plurality Top-2",
+    "param": "epistemic_rho",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1420,
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "param": "epistemic_rho",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1108,
+    "label": "Approval Top-2",
+    "param": "epistemic_rho",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1601,
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "param": "epistemic_rho",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1664,
+    "label": "Score Top-2 (Clear-Eyed)",
+    "param": "epistemic_rho",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1138,
+    "label": "Schulze (equal ranks)",
+    "param": "epistemic_rho",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1235,
+    "label": "Approval",
+    "param": "epistemic_rho",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1181,
+    "label": "RCV (IRV)",
+    "param": "epistemic_rho",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1299,
+    "label": "STAR",
+    "param": "epistemic_rho",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1314,
+    "label": "Score5",
+    "param": "epistemic_rho",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1481,
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "param": "epistemic_rho",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1727,
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "param": "epistemic_rho",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1779,
+    "label": "Score Top-2 (Clear-Eyed)",
+    "param": "epistemic_rho",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1292,
+    "label": "Schulze (equal ranks)",
+    "param": "epistemic_rho",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1275,
+    "label": "Condorcet (Schulze)",
+    "param": "epistemic_rho",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1169,
+    "label": "Plurality Top-2",
+    "param": "epistemic_rho",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1262,
+    "label": "Approval Top-2",
+    "param": "epistemic_rho",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 973,
+    "label": "Plurality",
+    "param": "epistemic_rho",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 984,
     "label": "Plurality",
     "param": "epistemic_rho",
     "value": 0.8
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 603,
+    "cw_wins": 1277,
+    "label": "Approval",
+    "param": "epistemic_rho",
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1364,
+    "label": "Score5",
+    "param": "epistemic_rho",
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1473,
+    "label": "Plurality Top-2 (Clear-Eyed)",
+    "param": "epistemic_rho",
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1756,
+    "label": "Approval Top-2 (Clear-Eyed)",
+    "param": "epistemic_rho",
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1813,
+    "label": "Score Top-2 (Clear-Eyed)",
+    "param": "epistemic_rho",
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1408,
+    "label": "STAR",
+    "param": "epistemic_rho",
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1386,
+    "label": "Condorcet (Schulze)",
+    "param": "epistemic_rho",
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1354,
+    "label": "Approval Top-2",
+    "param": "epistemic_rho",
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1424,
+    "label": "Schulze (equal ranks)",
+    "param": "epistemic_rho",
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1210,
     "label": "RCV (IRV)",
     "param": "epistemic_rho",
     "value": 0.8
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 643,
-    "label": "Approval",
+    "cw_wins": 1236,
+    "label": "Plurality Top-2",
+    "param": "epistemic_rho",
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 949,
+    "label": "Plurality",
     "param": "epistemic_rho",
     "value": 0.9
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 626,
+    "cw_wins": 1256,
     "label": "RCV (IRV)",
     "param": "epistemic_rho",
     "value": 0.9
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 739,
+    "cw_wins": 1475,
     "label": "STAR",
     "param": "epistemic_rho",
     "value": 0.9
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 689,
+    "cw_wins": 1395,
     "label": "Score5",
     "param": "epistemic_rho",
     "value": 0.9
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 738,
+    "cw_wins": 1524,
     "label": "Condorcet (Schulze)",
     "param": "epistemic_rho",
     "value": 0.9
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 626,
+    "cw_wins": 1289,
     "label": "Plurality Top-2",
     "param": "epistemic_rho",
     "value": 0.9
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 704,
+    "cw_wins": 1431,
     "label": "Plurality Top-2 (Clear-Eyed)",
     "param": "epistemic_rho",
     "value": 0.9
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 712,
+    "cw_wins": 1444,
     "label": "Approval Top-2",
     "param": "epistemic_rho",
     "value": 0.9
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 850,
+    "cw_wins": 1725,
     "label": "Approval Top-2 (Clear-Eyed)",
     "param": "epistemic_rho",
     "value": 0.9
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 908,
+    "cw_wins": 1820,
     "label": "Score Top-2 (Clear-Eyed)",
     "param": "epistemic_rho",
     "value": 0.9
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 459,
-    "label": "Plurality",
+    "cw_wins": 1265,
+    "label": "Approval",
     "param": "epistemic_rho",
     "value": 0.9
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 165,
+    "cw_wins": 1499,
+    "label": "Schulze (equal ranks)",
+    "param": "epistemic_rho",
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 320,
     "label": "Plurality",
     "param": "awareness_alpha",
     "value": 0.3
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 165,
+    "cw_wins": 320,
     "label": "Approval",
     "param": "awareness_alpha",
     "value": 0.3
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 165,
+    "cw_wins": 320,
     "label": "RCV (IRV)",
     "param": "awareness_alpha",
     "value": 0.3
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 165,
+    "cw_wins": 320,
     "label": "STAR",
     "param": "awareness_alpha",
     "value": 0.3
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 165,
+    "cw_wins": 320,
     "label": "Score5",
     "param": "awareness_alpha",
     "value": 0.3
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 165,
+    "cw_wins": 320,
     "label": "Condorcet (Schulze)",
     "param": "awareness_alpha",
     "value": 0.3
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 353,
+    "cw_wins": 693,
     "label": "Plurality Top-2",
     "param": "awareness_alpha",
     "value": 0.3
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 352,
+    "cw_wins": 689,
     "label": "Approval Top-2",
     "param": "awareness_alpha",
     "value": 0.3
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 165,
+    "cw_wins": 320,
     "label": "Approval Top-2 (Coma)",
     "param": "awareness_alpha",
     "value": 0.3
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 351,
-    "label": "Score Top-2 (Clear-Eyed)",
+    "cw_wins": 320,
+    "label": "Schulze (equal ranks)",
     "param": "awareness_alpha",
     "value": 0.3
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 379,
-    "label": "Plurality Top-2",
+    "cw_wins": 688,
+    "label": "Score Top-2 (Clear-Eyed)",
     "param": "awareness_alpha",
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 379,
-    "label": "Approval Top-2",
-    "param": "awareness_alpha",
-    "value": 0.5
+    "value": 0.3
    },
    {
     "chooser": "honBallot",
     "cw_wins": 378,
-    "label": "Score Top-2 (Clear-Eyed)",
-    "param": "awareness_alpha",
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 159,
     "label": "Plurality",
     "param": "awareness_alpha",
     "value": 0.5
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 162,
+    "cw_wins": 391,
     "label": "Approval",
     "param": "awareness_alpha",
     "value": 0.5
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 152,
+    "cw_wins": 356,
     "label": "RCV (IRV)",
     "param": "awareness_alpha",
     "value": 0.5
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 163,
+    "cw_wins": 389,
     "label": "STAR",
     "param": "awareness_alpha",
     "value": 0.5
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 162,
+    "cw_wins": 388,
     "label": "Score5",
     "param": "awareness_alpha",
     "value": 0.5
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 152,
+    "cw_wins": 356,
     "label": "Condorcet (Schulze)",
     "param": "awareness_alpha",
     "value": 0.5
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 153,
+    "cw_wins": 805,
+    "label": "Plurality Top-2",
+    "param": "awareness_alpha",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 815,
+    "label": "Approval Top-2",
+    "param": "awareness_alpha",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 357,
     "label": "Approval Top-2 (Coma)",
     "param": "awareness_alpha",
     "value": 0.5
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 284,
+    "cw_wins": 390,
+    "label": "Schulze (equal ranks)",
+    "param": "awareness_alpha",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 808,
+    "label": "Score Top-2 (Clear-Eyed)",
+    "param": "awareness_alpha",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 528,
     "label": "Plurality",
     "param": "awareness_alpha",
     "value": 0.7
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 276,
+    "cw_wins": 504,
     "label": "Approval",
     "param": "awareness_alpha",
     "value": 0.7
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 237,
+    "cw_wins": 454,
     "label": "RCV (IRV)",
     "param": "awareness_alpha",
     "value": 0.7
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 281,
+    "cw_wins": 518,
     "label": "STAR",
     "param": "awareness_alpha",
     "value": 0.7
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 263,
+    "cw_wins": 490,
     "label": "Score5",
     "param": "awareness_alpha",
     "value": 0.7
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 234,
+    "cw_wins": 448,
     "label": "Condorcet (Schulze)",
     "param": "awareness_alpha",
     "value": 0.7
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 495,
+    "cw_wins": 939,
     "label": "Plurality Top-2",
     "param": "awareness_alpha",
     "value": 0.7
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 509,
+    "cw_wins": 940,
     "label": "Approval Top-2",
     "param": "awareness_alpha",
     "value": 0.7
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 246,
+    "cw_wins": 466,
     "label": "Approval Top-2 (Coma)",
     "param": "awareness_alpha",
     "value": 0.7
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 496,
+    "cw_wins": 523,
+    "label": "Schulze (equal ranks)",
+    "param": "awareness_alpha",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 929,
     "label": "Score Top-2 (Clear-Eyed)",
     "param": "awareness_alpha",
     "value": 0.7
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 374,
+    "cw_wins": 1120,
+    "label": "Plurality Top-2",
+    "param": "awareness_alpha",
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 715,
     "label": "Plurality",
     "param": "awareness_alpha",
     "value": 0.8
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 334,
+    "cw_wins": 650,
     "label": "Approval",
     "param": "awareness_alpha",
     "value": 0.8
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 325,
+    "cw_wins": 625,
     "label": "RCV (IRV)",
     "param": "awareness_alpha",
     "value": 0.8
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 366,
+    "cw_wins": 693,
     "label": "STAR",
     "param": "awareness_alpha",
     "value": 0.8
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 326,
+    "cw_wins": 630,
     "label": "Score5",
     "param": "awareness_alpha",
     "value": 0.8
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 325,
+    "cw_wins": 621,
     "label": "Condorcet (Schulze)",
     "param": "awareness_alpha",
     "value": 0.8
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 588,
-    "label": "Plurality Top-2",
-    "param": "awareness_alpha",
-    "value": 0.8
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 589,
+    "cw_wins": 1109,
     "label": "Approval Top-2",
     "param": "awareness_alpha",
-    "value": 0.8
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 336,
-    "label": "Approval Top-2 (Coma)",
-    "param": "awareness_alpha",
-    "value": 0.8
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 574,
-    "label": "Score Top-2 (Clear-Eyed)",
-    "param": "awareness_alpha",
-    "value": 0.8
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 699,
-    "label": "Approval Top-2",
-    "param": "awareness_alpha",
-    "value": 0.9
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 462,
-    "label": "Plurality",
-    "param": "awareness_alpha",
-    "value": 0.9
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 491,
-    "label": "Condorcet (Schulze)",
-    "param": "awareness_alpha",
-    "value": 0.9
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 680,
-    "label": "Plurality Top-2",
-    "param": "awareness_alpha",
-    "value": 0.9
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 422,
-    "label": "Approval",
-    "param": "awareness_alpha",
-    "value": 0.9
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 445,
-    "label": "RCV (IRV)",
-    "param": "awareness_alpha",
-    "value": 0.9
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 481,
-    "label": "STAR",
-    "param": "awareness_alpha",
-    "value": 0.9
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 411,
-    "label": "Score5",
-    "param": "awareness_alpha",
-    "value": 0.9
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 481,
-    "label": "Approval Top-2 (Coma)",
-    "param": "awareness_alpha",
-    "value": 0.9
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 674,
-    "label": "Score Top-2 (Clear-Eyed)",
-    "param": "awareness_alpha",
-    "value": 0.9
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 653,
-    "label": "Plurality Top-2",
-    "param": "fatigue_beta",
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 706,
-    "label": "Approval Top-2",
-    "param": "fatigue_beta",
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 710,
-    "label": "Score Top-2 (Clear-Eyed)",
-    "param": "fatigue_beta",
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 416,
-    "label": "Plurality",
-    "param": "fatigue_beta",
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 455,
-    "label": "Approval",
-    "param": "fatigue_beta",
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 432,
-    "label": "RCV (IRV)",
-    "param": "fatigue_beta",
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 460,
-    "label": "STAR",
-    "param": "fatigue_beta",
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 460,
-    "label": "Score5",
-    "param": "fatigue_beta",
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 433,
-    "label": "Condorcet (Schulze)",
-    "param": "fatigue_beta",
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 654,
-    "label": "Plurality Top-2",
-    "param": "fatigue_beta",
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 752,
-    "label": "Approval Top-2",
-    "param": "fatigue_beta",
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 754,
-    "label": "Score Top-2 (Clear-Eyed)",
-    "param": "fatigue_beta",
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 416,
-    "label": "Plurality",
-    "param": "fatigue_beta",
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 512,
-    "label": "Approval",
-    "param": "fatigue_beta",
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 487,
-    "label": "RCV (IRV)",
-    "param": "fatigue_beta",
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 526,
-    "label": "STAR",
-    "param": "fatigue_beta",
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 513,
-    "label": "Score5",
-    "param": "fatigue_beta",
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 483,
-    "label": "Condorcet (Schulze)",
-    "param": "fatigue_beta",
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 655,
-    "label": "Plurality Top-2",
-    "param": "fatigue_beta",
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 824,
-    "label": "Approval Top-2",
-    "param": "fatigue_beta",
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 823,
-    "label": "Score Top-2 (Clear-Eyed)",
-    "param": "fatigue_beta",
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 415,
-    "label": "Plurality",
-    "param": "fatigue_beta",
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 606,
-    "label": "Approval",
-    "param": "fatigue_beta",
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 531,
-    "label": "RCV (IRV)",
-    "param": "fatigue_beta",
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 604,
-    "label": "STAR",
-    "param": "fatigue_beta",
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 600,
-    "label": "Score5",
-    "param": "fatigue_beta",
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 560,
-    "label": "Condorcet (Schulze)",
-    "param": "fatigue_beta",
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 851,
-    "label": "Approval Top-2",
-    "param": "fatigue_beta",
-    "value": 0.8
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 655,
-    "label": "Plurality Top-2",
-    "param": "fatigue_beta",
-    "value": 0.8
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 856,
-    "label": "Score Top-2 (Clear-Eyed)",
-    "param": "fatigue_beta",
-    "value": 0.8
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 412,
-    "label": "Plurality",
-    "param": "fatigue_beta",
     "value": 0.8
    },
    {
     "chooser": "honBallot",
     "cw_wins": 648,
+    "label": "Approval Top-2 (Coma)",
+    "param": "awareness_alpha",
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 701,
+    "label": "Schulze (equal ranks)",
+    "param": "awareness_alpha",
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1084,
+    "label": "Score Top-2 (Clear-Eyed)",
+    "param": "awareness_alpha",
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 884,
+    "label": "Plurality",
+    "param": "awareness_alpha",
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 870,
+    "label": "Approval",
+    "param": "awareness_alpha",
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 867,
+    "label": "RCV (IRV)",
+    "param": "awareness_alpha",
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 966,
+    "label": "STAR",
+    "param": "awareness_alpha",
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 847,
+    "label": "Score5",
+    "param": "awareness_alpha",
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 959,
+    "label": "Condorcet (Schulze)",
+    "param": "awareness_alpha",
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1326,
+    "label": "Plurality Top-2",
+    "param": "awareness_alpha",
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1395,
+    "label": "Approval Top-2",
+    "param": "awareness_alpha",
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 934,
+    "label": "Approval Top-2 (Coma)",
+    "param": "awareness_alpha",
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1004,
+    "label": "Schulze (equal ranks)",
+    "param": "awareness_alpha",
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1386,
+    "label": "Score Top-2 (Clear-Eyed)",
+    "param": "awareness_alpha",
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1365,
+    "label": "Plurality Top-2",
+    "param": "fatigue_beta",
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1434,
+    "label": "Approval Top-2",
+    "param": "fatigue_beta",
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1431,
+    "label": "Score Top-2 (Clear-Eyed)",
+    "param": "fatigue_beta",
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 901,
+    "label": "Plurality",
+    "param": "fatigue_beta",
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 961,
+    "label": "Approval",
+    "param": "fatigue_beta",
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 930,
+    "label": "RCV (IRV)",
+    "param": "fatigue_beta",
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 968,
+    "label": "STAR",
+    "param": "fatigue_beta",
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 956,
+    "label": "Score5",
+    "param": "fatigue_beta",
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 941,
+    "label": "Condorcet (Schulze)",
+    "param": "fatigue_beta",
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 966,
+    "label": "Schulze (equal ranks)",
+    "param": "fatigue_beta",
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1366,
+    "label": "Plurality Top-2",
+    "param": "fatigue_beta",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1530,
+    "label": "Approval Top-2",
+    "param": "fatigue_beta",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1534,
+    "label": "Score Top-2 (Clear-Eyed)",
+    "param": "fatigue_beta",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1046,
+    "label": "Approval",
+    "param": "fatigue_beta",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 990,
+    "label": "RCV (IRV)",
+    "param": "fatigue_beta",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1058,
+    "label": "STAR",
+    "param": "fatigue_beta",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1048,
+    "label": "Score5",
+    "param": "fatigue_beta",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1005,
+    "label": "Condorcet (Schulze)",
+    "param": "fatigue_beta",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1063,
+    "label": "Schulze (equal ranks)",
+    "param": "fatigue_beta",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 903,
+    "label": "Plurality",
+    "param": "fatigue_beta",
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1369,
+    "label": "Plurality Top-2",
+    "param": "fatigue_beta",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1664,
+    "label": "Approval Top-2",
+    "param": "fatigue_beta",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1671,
+    "label": "Score Top-2 (Clear-Eyed)",
+    "param": "fatigue_beta",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1239,
+    "label": "Approval",
+    "param": "fatigue_beta",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1101,
+    "label": "RCV (IRV)",
+    "param": "fatigue_beta",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1251,
+    "label": "STAR",
+    "param": "fatigue_beta",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1225,
+    "label": "Score5",
+    "param": "fatigue_beta",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1161,
+    "label": "Condorcet (Schulze)",
+    "param": "fatigue_beta",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1249,
+    "label": "Schulze (equal ranks)",
+    "param": "fatigue_beta",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 901,
+    "label": "Plurality",
+    "param": "fatigue_beta",
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1364,
+    "label": "Plurality Top-2",
+    "param": "fatigue_beta",
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1719,
+    "label": "Approval Top-2",
+    "param": "fatigue_beta",
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1735,
+    "label": "Score Top-2 (Clear-Eyed)",
+    "param": "fatigue_beta",
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 908,
+    "label": "Plurality",
+    "param": "fatigue_beta",
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1351,
     "label": "Approval",
     "param": "fatigue_beta",
     "value": 0.8
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 576,
+    "cw_wins": 1180,
     "label": "RCV (IRV)",
     "param": "fatigue_beta",
     "value": 0.8
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 680,
+    "cw_wins": 1378,
     "label": "STAR",
     "param": "fatigue_beta",
     "value": 0.8
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 667,
+    "cw_wins": 1347,
     "label": "Score5",
     "param": "fatigue_beta",
     "value": 0.8
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 651,
+    "cw_wins": 1325,
     "label": "Condorcet (Schulze)",
     "param": "fatigue_beta",
     "value": 0.8
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 763,
+    "cw_wins": 1383,
+    "label": "Schulze (equal ranks)",
+    "param": "fatigue_beta",
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1251,
+    "label": "RCV (IRV)",
+    "param": "fatigue_beta",
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1531,
     "label": "STAR",
     "param": "fatigue_beta",
     "value": 0.9
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 728,
+    "cw_wins": 1465,
     "label": "Score5",
     "param": "fatigue_beta",
     "value": 0.9
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 862,
-    "label": "Approval Top-2",
-    "param": "fatigue_beta",
-    "value": 0.9
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 912,
-    "label": "Score Top-2 (Clear-Eyed)",
-    "param": "fatigue_beta",
-    "value": 0.9
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 795,
+    "cw_wins": 1561,
     "label": "Condorcet (Schulze)",
     "param": "fatigue_beta",
     "value": 0.9
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 657,
+    "cw_wins": 1367,
     "label": "Plurality Top-2",
     "param": "fatigue_beta",
     "value": 0.9
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 417,
-    "label": "Plurality",
+    "cw_wins": 1746,
+    "label": "Approval Top-2",
     "param": "fatigue_beta",
     "value": 0.9
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 635,
+    "cw_wins": 1527,
+    "label": "Schulze (equal ranks)",
+    "param": "fatigue_beta",
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1828,
+    "label": "Score Top-2 (Clear-Eyed)",
+    "param": "fatigue_beta",
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 1342,
     "label": "Approval",
     "param": "fatigue_beta",
     "value": 0.9
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 609,
-    "label": "RCV (IRV)",
+    "cw_wins": 906,
+    "label": "Plurality",
     "param": "fatigue_beta",
     "value": 0.9
    }
@@ -1527,106 +1632,106 @@
    {
     "baseline": "STAR",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 111.44020060823351,
-    "sum_sq": 73.10359679108501,
+    "sum": 248.15244031925275,
+    "sum_sq": 179.73265454078816,
     "value": 0.3
    },
    {
     "baseline": "STAR",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": -1.3188878055595072,
-    "sum_sq": 45.09307652523637,
+    "sum": 17.533890774504172,
+    "sum_sq": 115.76034924995737,
     "value": 0.3
    },
    {
     "baseline": "STAR",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 71.37624253665801,
-    "sum_sq": 43.94966747594707,
+    "sum": 129.90927672313813,
+    "sum_sq": 69.5075015439024,
     "value": 0.5
    },
    {
     "baseline": "STAR",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 6.884378618380255,
-    "sum_sq": 22.372425269733164,
+    "sum": -6.764468258610993,
+    "sum_sq": 39.84736994332949,
     "value": 0.5
    },
    {
     "baseline": "STAR",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 34.908325513401294,
-    "sum_sq": 12.606051819400252,
+    "sum": 71.45724657052432,
+    "sum_sq": 30.472201717449533,
     "value": 0.7
    },
    {
     "baseline": "STAR",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": -6.007176166898484,
-    "sum_sq": 10.675263606357017,
+    "sum": 2.972604434001156,
+    "sum_sq": 20.977482337846006,
     "value": 0.7
    },
    {
     "baseline": "STAR",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 22.867664906062586,
-    "sum_sq": 8.93004718443116,
+    "sum": 49.49048552198395,
+    "sum_sq": 26.69574379853681,
     "value": 0.8
    },
    {
     "baseline": "STAR",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": -8.005681451947654,
-    "sum_sq": 6.64048098091196,
+    "sum": -12.352527020665892,
+    "sum_sq": 18.120679406348632,
     "value": 0.8
    },
    {
     "baseline": "STAR",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 13.026473996342618,
-    "sum_sq": 3.6748380746780005,
+    "sum": 27.74893286793855,
+    "sum_sq": 11.209564159614926,
     "value": 0.9
    },
    {
     "baseline": "STAR",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": -11.870423405607372,
-    "sum_sq": 7.6874032594317026,
+    "sum": -22.468459344507487,
+    "sum_sq": 14.770974220395399,
     "value": 0.9
    },
    {
     "baseline": "STAR",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 676.8606334137379,
-    "sum_sq": 1522.485346728128,
+    "sum": 1332.5799952475193,
+    "sum_sq": 2883.6132047016554,
     "value": 0.3
    },
    {
     "baseline": "STAR",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
     "sum": 0.0,
     "sum_sq": 0.0,
@@ -1635,298 +1740,298 @@
    {
     "baseline": "STAR",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 572.7419916519686,
-    "sum_sq": 1089.5357125012872,
+    "sum": 957.3960753475901,
+    "sum_sq": 1744.0361308906881,
     "value": 0.5
    },
    {
     "baseline": "STAR",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": -25.949840553863943,
-    "sum_sq": 52.84280488960241,
+    "sum": -39.97669062687117,
+    "sum_sq": 81.56978096656766,
     "value": 0.5
    },
    {
     "baseline": "STAR",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 202.5861818872364,
-    "sum_sq": 202.58315376309824,
+    "sum": 457.3845525242203,
+    "sum_sq": 502.81934984878194,
     "value": 0.7
    },
    {
     "baseline": "STAR",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": -28.66139563458101,
-    "sum_sq": 43.60989445046219,
+    "sum": -36.220598552881484,
+    "sum_sq": 62.889100925450606,
     "value": 0.7
    },
    {
     "baseline": "STAR",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 129.78773943762258,
-    "sum_sq": 105.40728052997096,
+    "sum": 285.1414350346408,
+    "sum_sq": 230.4819722283526,
     "value": 0.8
    },
    {
     "baseline": "STAR",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": -22.597470125069908,
-    "sum_sq": 40.415197363204875,
+    "sum": -54.16610703086082,
+    "sum_sq": 93.38254727117662,
     "value": 0.8
    },
    {
     "baseline": "STAR",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 68.12441742329266,
-    "sum_sq": 50.838057552464974,
+    "sum": 141.66091855571344,
+    "sum_sq": 91.57563583781989,
     "value": 0.9
    },
    {
     "baseline": "STAR",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": -26.78695780081632,
-    "sum_sq": 38.912791300048475,
+    "sum": -67.41214551068533,
+    "sum_sq": 62.93474982489986,
     "value": 0.9
    },
    {
     "baseline": "STAR",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "fatigue_beta",
-    "sum": 240.4216916896128,
-    "sum_sq": 356.2971428243654,
+    "sum": 375.86233623734876,
+    "sum_sq": 525.5728569908606,
     "value": 0.3
    },
    {
     "baseline": "STAR",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "fatigue_beta",
-    "sum": -2.6900799382083536,
-    "sum_sq": 37.684536269010216,
+    "sum": -9.501111904837126,
+    "sum_sq": 29.801650764797206,
     "value": 0.3
    },
    {
     "baseline": "STAR",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "fatigue_beta",
-    "sum": 170.29725176422616,
-    "sum_sq": 228.7094299127374,
+    "sum": 324.62432121134515,
+    "sum_sq": 427.1152244341231,
     "value": 0.5
    },
    {
     "baseline": "STAR",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "fatigue_beta",
-    "sum": -11.747374438611477,
-    "sum_sq": 46.7278836228203,
+    "sum": -11.15631819261001,
+    "sum_sq": 83.44008116932768,
     "value": 0.5
    },
    {
     "baseline": "STAR",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "fatigue_beta",
-    "sum": 98.98589685106477,
-    "sum_sq": 104.86443198234029,
+    "sum": 170.45888050881348,
+    "sum_sq": 182.01072865963647,
     "value": 0.7
    },
    {
     "baseline": "STAR",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "fatigue_beta",
-    "sum": -6.732379206280952,
-    "sum_sq": 48.44561997422351,
+    "sum": -14.906725269991112,
+    "sum_sq": 46.99459282138402,
     "value": 0.7
    },
    {
     "baseline": "STAR",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "fatigue_beta",
-    "sum": 53.11008179839696,
-    "sum_sq": 35.672473282146704,
+    "sum": 117.3541195547003,
+    "sum_sq": 114.80830130990142,
     "value": 0.8
    },
    {
     "baseline": "STAR",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "fatigue_beta",
-    "sum": -3.4476204778504256,
-    "sum_sq": 25.024823044168393,
+    "sum": 0.6083335631673494,
+    "sum_sq": 43.04010624474456,
     "value": 0.8
    },
    {
     "baseline": "STAR",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "fatigue_beta",
-    "sum": 16.49316534122176,
-    "sum_sq": 15.91957016032734,
+    "sum": 26.106709513417492,
+    "sum_sq": 14.423732910142567,
     "value": 0.9
    },
    {
     "baseline": "STAR",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "fatigue_beta",
-    "sum": -2.4625154440576713,
-    "sum_sq": 11.533060015885269,
+    "sum": -16.044226999375564,
+    "sum_sq": 15.38849735384558,
     "value": 0.9
    }
   ],
   "primary_corruption": [
    {
-    "aligned": 28060,
+    "aligned": 56040,
     "awareness_caused": 0,
-    "n_elections": 1000,
-    "n_voters": 101000,
-    "noise_caused": 72940,
+    "n_elections": 2000,
+    "n_voters": 202000,
+    "noise_caused": 145960,
     "param": "epistemic_rho",
     "value": 0.3
    },
    {
-    "aligned": 37328,
+    "aligned": 74655,
     "awareness_caused": 0,
-    "n_elections": 1000,
-    "n_voters": 101000,
-    "noise_caused": 63672,
+    "n_elections": 2000,
+    "n_voters": 202000,
+    "noise_caused": 127345,
     "param": "epistemic_rho",
     "value": 0.5
    },
    {
-    "aligned": 48848,
+    "aligned": 98213,
     "awareness_caused": 0,
-    "n_elections": 1000,
-    "n_voters": 101000,
-    "noise_caused": 52152,
+    "n_elections": 2000,
+    "n_voters": 202000,
+    "noise_caused": 103787,
     "param": "epistemic_rho",
     "value": 0.7
    },
    {
-    "aligned": 56056,
+    "aligned": 113268,
     "awareness_caused": 0,
-    "n_elections": 1000,
-    "n_voters": 101000,
-    "noise_caused": 44944,
+    "n_elections": 2000,
+    "n_voters": 202000,
+    "noise_caused": 88732,
     "param": "epistemic_rho",
     "value": 0.8
    },
    {
-    "aligned": 66011,
+    "aligned": 133534,
     "awareness_caused": 0,
-    "n_elections": 1000,
-    "n_voters": 101000,
-    "noise_caused": 34989,
+    "n_elections": 2000,
+    "n_voters": 202000,
+    "noise_caused": 68466,
     "param": "epistemic_rho",
     "value": 0.9
    },
    {
-    "aligned": 23475,
-    "awareness_caused": 77525,
-    "n_elections": 1000,
-    "n_voters": 101000,
+    "aligned": 47935,
+    "awareness_caused": 154065,
+    "n_elections": 2000,
+    "n_voters": 202000,
     "noise_caused": 0,
     "param": "awareness_alpha",
     "value": 0.3
    },
    {
-    "aligned": 33292,
-    "awareness_caused": 67708,
-    "n_elections": 1000,
-    "n_voters": 101000,
+    "aligned": 66645,
+    "awareness_caused": 135355,
+    "n_elections": 2000,
+    "n_voters": 202000,
     "noise_caused": 0,
     "param": "awareness_alpha",
     "value": 0.5
    },
    {
-    "aligned": 49261,
-    "awareness_caused": 51739,
-    "n_elections": 1000,
-    "n_voters": 101000,
+    "aligned": 99134,
+    "awareness_caused": 102866,
+    "n_elections": 2000,
+    "n_voters": 202000,
     "noise_caused": 0,
     "param": "awareness_alpha",
     "value": 0.7
    },
    {
-    "aligned": 62049,
-    "awareness_caused": 38951,
-    "n_elections": 1000,
-    "n_voters": 101000,
+    "aligned": 123720,
+    "awareness_caused": 78280,
+    "n_elections": 2000,
+    "n_voters": 202000,
     "noise_caused": 0,
     "param": "awareness_alpha",
     "value": 0.8
    },
    {
-    "aligned": 78608,
-    "awareness_caused": 22392,
-    "n_elections": 1000,
-    "n_voters": 101000,
+    "aligned": 157619,
+    "awareness_caused": 44381,
+    "n_elections": 2000,
+    "n_voters": 202000,
     "noise_caused": 0,
     "param": "awareness_alpha",
     "value": 0.9
    },
    {
-    "aligned": 101000,
+    "aligned": 202000,
     "awareness_caused": 0,
-    "n_elections": 1000,
-    "n_voters": 101000,
+    "n_elections": 2000,
+    "n_voters": 202000,
     "noise_caused": 0,
     "param": "fatigue_beta",
     "value": 0.3
    },
    {
-    "aligned": 101000,
+    "aligned": 202000,
     "awareness_caused": 0,
-    "n_elections": 1000,
-    "n_voters": 101000,
+    "n_elections": 2000,
+    "n_voters": 202000,
     "noise_caused": 0,
     "param": "fatigue_beta",
     "value": 0.5
    },
    {
-    "aligned": 101000,
+    "aligned": 202000,
     "awareness_caused": 0,
-    "n_elections": 1000,
-    "n_voters": 101000,
+    "n_elections": 2000,
+    "n_voters": 202000,
     "noise_caused": 0,
     "param": "fatigue_beta",
     "value": 0.7
    },
    {
-    "aligned": 101000,
+    "aligned": 202000,
     "awareness_caused": 0,
-    "n_elections": 1000,
-    "n_voters": 101000,
+    "n_elections": 2000,
+    "n_voters": 202000,
     "noise_caused": 0,
     "param": "fatigue_beta",
     "value": 0.8
    },
    {
-    "aligned": 101000,
+    "aligned": 202000,
     "awareness_caused": 0,
-    "n_elections": 1000,
-    "n_voters": 101000,
+    "n_elections": 2000,
+    "n_voters": 202000,
     "noise_caused": 0,
     "param": "fatigue_beta",
     "value": 0.9
@@ -1936,1359 +2041,1494 @@
    {
     "chooser": "honBallot",
     "label": "Plurality",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 695.9557375189794,
-    "sum_sq": 704.5319686851589,
+    "sum": 1392.5371284707337,
+    "sum_sq": 1446.5029622778645,
     "value": 0.3
    },
    {
     "chooser": "honBallot",
     "label": "Approval",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 804.8643251542069,
-    "sum_sq": 737.14376084812,
+    "sum": 1588.20192812747,
+    "sum_sq": 1478.5569870413328,
     "value": 0.3
    },
    {
     "chooser": "honBallot",
     "label": "RCV (IRV)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 770.732780768897,
-    "sum_sq": 713.5570963522954,
+    "sum": 1537.4611511787914,
+    "sum_sq": 1454.607328084325,
     "value": 0.3
    },
    {
     "chooser": "honBallot",
     "label": "STAR",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 818.9756773019229,
-    "sum_sq": 755.5730050885307,
+    "sum": 1615.9352899704725,
+    "sum_sq": 1496.682330853195,
     "value": 0.3
    },
    {
     "chooser": "honBallot",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 817.6567894963633,
-    "sum_sq": 753.5357071271405,
+    "sum": 1633.4691807449747,
+    "sum_sq": 1520.2256641177892,
     "value": 0.3
    },
    {
     "chooser": "honBallot",
     "label": "Condorcet (Schulze)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 790.452018564587,
-    "sum_sq": 727.9451092097536,
+    "sum": 1583.189163733796,
+    "sum_sq": 1473.901656141613,
     "value": 0.3
    },
    {
     "chooser": "honBallot",
     "label": "Plurality Top-2",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 757.6385637311104,
-    "sum_sq": 702.4830299560892,
+    "sum": 1501.3484577794698,
+    "sum_sq": 1445.2279865754049,
     "value": 0.3
    },
    {
     "chooser": "honBallot",
     "label": "Plurality Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 867.6543161925355,
-    "sum_sq": 834.4936403700704,
+    "sum": 1742.3643157499807,
+    "sum_sq": 1653.4535946006495,
     "value": 0.3
    },
    {
     "chooser": "honBallot",
     "label": "Approval Top-2",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 798.6534402123303,
-    "sum_sq": 731.7164339850002,
+    "sum": 1572.0753111957727,
+    "sum_sq": 1464.633560513558,
     "value": 0.3
    },
    {
     "chooser": "honBallot",
     "label": "Approval Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 906.7584183162342,
-    "sum_sq": 872.6280070548505,
+    "sum": 1840.5391491148823,
+    "sum_sq": 1760.0470455543866,
     "value": 0.3
    },
    {
     "chooser": "honBallot",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 930.4158779101564,
-    "sum_sq": 898.3913734513241,
+    "sum": 1864.0877302897227,
+    "sum_sq": 1790.2673518914373,
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Schulze (equal ranks)",
+    "n": 2000,
+    "param": "epistemic_rho",
+    "sum": 1604.3094606537536,
+    "sum_sq": 1490.2039152560997,
     "value": 0.3
    },
    {
     "chooser": "honBallot",
     "label": "Plurality",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 788.1150234049094,
-    "sum_sq": 812.383831847418,
+    "sum": 1546.6375461666955,
+    "sum_sq": 1576.7568076336745,
     "value": 0.5
    },
    {
     "chooser": "honBallot",
     "label": "Approval",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 892.0487792235333,
-    "sum_sq": 833.8487848975968,
+    "sum": 1767.3634747244657,
+    "sum_sq": 1652.928020341629,
     "value": 0.5
    },
    {
     "chooser": "honBallot",
     "label": "RCV (IRV)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 849.2783938150175,
-    "sum_sq": 794.6487607927737,
+    "sum": 1735.7351249642256,
+    "sum_sq": 1621.9911297762815,
     "value": 0.5
    },
    {
     "chooser": "honBallot",
     "label": "STAR",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 888.0736202654027,
-    "sum_sq": 835.8403060569419,
+    "sum": 1803.2725685183136,
+    "sum_sq": 1699.9288433192874,
     "value": 0.5
    },
    {
     "chooser": "honBallot",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 894.9579988837831,
-    "sum_sq": 839.7002686893443,
+    "sum": 1796.5081002597026,
+    "sum_sq": 1692.7485545274344,
     "value": 0.5
    },
    {
     "chooser": "honBallot",
     "label": "Condorcet (Schulze)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 874.6514032601432,
-    "sum_sq": 814.7339606128992,
+    "sum": 1776.2973668154461,
+    "sum_sq": 1659.797637384722,
     "value": 0.5
    },
    {
     "chooser": "honBallot",
     "label": "Plurality Top-2",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 854.7828962297546,
-    "sum_sq": 799.7354562092763,
+    "sum": 1709.3816103532135,
+    "sum_sq": 1610.4193451399437,
     "value": 0.5
    },
    {
     "chooser": "honBallot",
     "label": "Plurality Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 928.386587773523,
-    "sum_sq": 893.5993112084896,
+    "sum": 1829.8415047296935,
+    "sum_sq": 1781.7839731663444,
     "value": 0.5
    },
    {
     "chooser": "honBallot",
     "label": "Approval Top-2",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 871.2693305696627,
-    "sum_sq": 812.9556895076804,
+    "sum": 1773.9586168741414,
+    "sum_sq": 1659.770952706333,
     "value": 0.5
    },
    {
     "chooser": "honBallot",
     "label": "Approval Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 953.6795439716324,
-    "sum_sq": 925.706204289696,
+    "sum": 1910.4689860593912,
+    "sum_sq": 1859.6024634523515,
     "value": 0.5
    },
    {
     "chooser": "honBallot",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 959.4498628020605,
-    "sum_sq": 934.0740957961852,
+    "sum": 1933.1818452414507,
+    "sum_sq": 1893.0425875395022,
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Schulze (equal ranks)",
+    "n": 2000,
+    "param": "epistemic_rho",
+    "sum": 1788.7672984021176,
+    "sum_sq": 1685.3647625463352,
     "value": 0.5
    },
    {
     "chooser": "honBallot",
     "label": "Plurality",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 732.4031348748557,
-    "sum_sq": 835.3419387075144,
+    "sum": 1440.8419017149367,
+    "sum_sq": 1721.0284043599165,
     "value": 0.7
    },
    {
     "chooser": "honBallot",
     "label": "Approval",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 929.1134488373845,
-    "sum_sq": 883.5671779700331,
+    "sum": 1852.7978465157296,
+    "sum_sq": 1759.6416940068475,
     "value": 0.7
    },
    {
     "chooser": "honBallot",
     "label": "RCV (IRV)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 903.3805131451686,
-    "sum_sq": 858.8519320353821,
+    "sum": 1807.7395490635413,
+    "sum_sq": 1716.719578874921,
     "value": 0.7
    },
    {
     "chooser": "honBallot",
     "label": "STAR",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 941.8992536831425,
-    "sum_sq": 902.8976601138811,
+    "sum": 1881.6793357539727,
+    "sum_sq": 1802.970054789465,
     "value": 0.7
    },
    {
     "chooser": "honBallot",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 935.8920775162435,
-    "sum_sq": 894.8309136859733,
+    "sum": 1884.6519401879743,
+    "sum_sq": 1808.5262495960442,
     "value": 0.7
    },
    {
     "chooser": "honBallot",
     "label": "Condorcet (Schulze)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 936.1522021861464,
-    "sum_sq": 893.6077897096616,
+    "sum": 1869.411193879333,
+    "sum_sq": 1785.9120563620615,
     "value": 0.7
    },
    {
     "chooser": "honBallot",
     "label": "Plurality Top-2",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 900.7265335531947,
-    "sum_sq": 858.659854871376,
+    "sum": 1774.1834983439003,
+    "sum_sq": 1705.0525731584062,
     "value": 0.7
    },
    {
     "chooser": "honBallot",
     "label": "Plurality Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 924.8967814963139,
-    "sum_sq": 898.5538371478998,
+    "sum": 1832.77810501523,
+    "sum_sq": 1790.73147956581,
     "value": 0.7
    },
    {
     "chooser": "honBallot",
     "label": "Approval Top-2",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 929.3404728493218,
-    "sum_sq": 884.1435933441983,
+    "sum": 1864.2437476006003,
+    "sum_sq": 1776.8582133550283,
     "value": 0.7
    },
    {
     "chooser": "honBallot",
     "label": "Approval Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 967.9183335456615,
-    "sum_sq": 947.4422081964063,
+    "sum": 1941.0875248517057,
+    "sum_sq": 1902.677093267666,
     "value": 0.7
    },
    {
     "chooser": "honBallot",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 976.8075791965434,
-    "sum_sq": 960.4518470646381,
+    "sum": 1953.1365823244973,
+    "sum_sq": 1922.1129318871137,
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Schulze (equal ranks)",
+    "n": 2000,
+    "param": "epistemic_rho",
+    "sum": 1879.4954033313224,
+    "sum_sq": 1799.4334943180336,
     "value": 0.7
    },
    {
     "chooser": "honBallot",
     "label": "Plurality",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 657.7767880277913,
-    "sum_sq": 890.3182268661446,
+    "sum": 1350.7431331001617,
+    "sum_sq": 1756.2238232711481,
     "value": 0.8
    },
    {
     "chooser": "honBallot",
     "label": "Approval",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 935.1012358188746,
-    "sum_sq": 892.8550004157021,
+    "sum": 1868.560757837599,
+    "sum_sq": 1789.7098368864633,
     "value": 0.8
    },
    {
     "chooser": "honBallot",
     "label": "RCV (IRV)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 907.2591697938119,
-    "sum_sq": 874.413840145987,
+    "sum": 1806.039430734814,
+    "sum_sq": 1725.1203022856887,
     "value": 0.8
    },
    {
     "chooser": "honBallot",
     "label": "STAR",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 959.6604153782982,
-    "sum_sq": 931.5512158548579,
+    "sum": 1912.340415312696,
+    "sum_sq": 1855.6647221701262,
     "value": 0.8
    },
    {
     "chooser": "honBallot",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 951.6547339263508,
-    "sum_sq": 918.8046667862188,
+    "sum": 1899.9878882920307,
+    "sum_sq": 1831.5132249008122,
     "value": 0.8
    },
    {
     "chooser": "honBallot",
     "label": "Condorcet (Schulze)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 954.8231731032923,
-    "sum_sq": 923.0114109737209,
+    "sum": 1908.3722088236225,
+    "sum_sq": 1848.8632922910717,
     "value": 0.8
    },
    {
     "chooser": "honBallot",
     "label": "Plurality Top-2",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 886.1639728595404,
-    "sum_sq": 868.1806642108099,
+    "sum": 1772.6672212953574,
+    "sum_sq": 1728.2020392605314,
     "value": 0.8
    },
    {
     "chooser": "honBallot",
     "label": "Plurality Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 905.8427400127772,
-    "sum_sq": 889.0871044001296,
+    "sum": 1801.1253856634223,
+    "sum_sq": 1782.4488030131072,
     "value": 0.8
    },
    {
     "chooser": "honBallot",
     "label": "Approval Top-2",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 949.1767924690681,
-    "sum_sq": 914.6980330782791,
+    "sum": 1898.5787581567906,
+    "sum_sq": 1833.5473365517335,
     "value": 0.8
    },
    {
     "chooser": "honBallot",
     "label": "Approval Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 976.4204253537697,
-    "sum_sq": 959.6524947386772,
+    "sum": 1953.8558076645058,
+    "sum_sq": 1921.8778708029229,
     "value": 0.8
    },
    {
     "chooser": "honBallot",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 982.5280802843606,
-    "sum_sq": 970.4638003441177,
+    "sum": 1961.8309008346816,
+    "sum_sq": 1935.3964303187636,
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Schulze (equal ranks)",
+    "n": 2000,
+    "param": "epistemic_rho",
+    "sum": 1918.2383435606637,
+    "sum_sq": 1863.9290166780936,
     "value": 0.8
    },
    {
     "chooser": "honBallot",
     "label": "Plurality",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 606.3905528413198,
-    "sum_sq": 893.0328598550218,
+    "sum": 1242.5239478840235,
+    "sum_sq": 1828.7227767119182,
     "value": 0.9
    },
    {
     "chooser": "honBallot",
     "label": "Approval",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 937.1288488786128,
-    "sum_sq": 896.3251747825494,
+    "sum": 1870.423078398046,
+    "sum_sq": 1784.1705168641922,
     "value": 0.9
    },
    {
     "chooser": "honBallot",
     "label": "RCV (IRV)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 915.7385598653217,
-    "sum_sq": 879.1871516118678,
+    "sum": 1800.560334311026,
+    "sum_sq": 1736.8508461769266,
     "value": 0.9
    },
    {
     "chooser": "honBallot",
     "label": "STAR",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 968.6673366451245,
-    "sum_sq": 944.6041703242415,
+    "sum": 1939.0823120499808,
+    "sum_sq": 1893.1815700088955,
     "value": 0.9
    },
    {
     "chooser": "honBallot",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 956.7969132395173,
-    "sum_sq": 926.3774528396599,
+    "sum": 1916.613852705473,
+    "sum_sq": 1857.439262745219,
     "value": 0.9
    },
    {
     "chooser": "honBallot",
     "label": "Condorcet (Schulze)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 970.449593782854,
-    "sum_sq": 948.5202485628269,
+    "sum": 1947.124147899775,
+    "sum_sq": 1906.7821109585707,
     "value": 0.9
    },
    {
     "chooser": "honBallot",
     "label": "Plurality Top-2",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 870.7160753685188,
-    "sum_sq": 864.2819294272751,
+    "sum": 1741.2705057141966,
+    "sum_sq": 1730.9796272480667,
     "value": 0.9
    },
    {
     "chooser": "honBallot",
     "label": "Plurality Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 872.2793028222621,
-    "sum_sq": 896.7087711671103,
+    "sum": 1749.1011228832788,
+    "sum_sq": 1759.6062023695001,
     "value": 0.9
    },
    {
     "chooser": "honBallot",
     "label": "Approval Top-2",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 961.6869606361223,
-    "sum_sq": 934.2588927674835,
+    "sum": 1919.2939836195485,
+    "sum_sq": 1864.088194916712,
     "value": 0.9
    },
    {
     "chooser": "honBallot",
     "label": "Approval Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 970.5196011799886,
-    "sum_sq": 950.0874410284721,
+    "sum": 1941.2824376448425,
+    "sum_sq": 1901.988399557721,
     "value": 0.9
    },
    {
     "chooser": "honBallot",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "epistemic_rho",
-    "sum": 981.6938106414664,
-    "sum_sq": 968.3522354283008,
+    "sum": 1966.8312449179202,
+    "sum_sq": 1942.7112252514335,
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Schulze (equal ranks)",
+    "n": 2000,
+    "param": "epistemic_rho",
+    "sum": 1944.252033861467,
+    "sum_sq": 1901.8733367668724,
     "value": 0.9
    },
    {
     "chooser": "honBallot",
     "label": "Plurality",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": -30.246329311030745,
-    "sum_sq": 1220.6777056030612,
+    "sum": -26.482603932126576,
+    "sum_sq": 2310.5804947043034,
     "value": 0.3
    },
    {
     "chooser": "honBallot",
     "label": "Approval",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": -30.246329311030745,
-    "sum_sq": 1220.6777056030612,
+    "sum": -26.482603932126576,
+    "sum_sq": 2310.5804947043034,
     "value": 0.3
    },
    {
     "chooser": "honBallot",
     "label": "RCV (IRV)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": -30.246329311030745,
-    "sum_sq": 1220.6777056030612,
+    "sum": -26.482603932126576,
+    "sum_sq": 2310.5804947043034,
     "value": 0.3
    },
    {
     "chooser": "honBallot",
     "label": "STAR",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": -30.246329311030745,
-    "sum_sq": 1220.6777056030612,
+    "sum": -26.482603932126576,
+    "sum_sq": 2310.5804947043034,
     "value": 0.3
    },
    {
     "chooser": "honBallot",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": -30.246329311030745,
-    "sum_sq": 1220.6777056030612,
+    "sum": -26.482603932126576,
+    "sum_sq": 2310.5804947043034,
     "value": 0.3
    },
    {
     "chooser": "honBallot",
     "label": "Condorcet (Schulze)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": -30.246329311030745,
-    "sum_sq": 1220.6777056030612,
+    "sum": -26.482603932126576,
+    "sum_sq": 2310.5804947043034,
     "value": 0.3
    },
    {
     "chooser": "honBallot",
     "label": "Plurality Top-2",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 646.5991616844358,
-    "sum_sq": 648.1608661001442,
+    "sum": 1306.2668181932656,
+    "sum_sq": 1300.6075025296811,
     "value": 0.3
    },
    {
     "chooser": "honBallot",
     "label": "Approval Top-2",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 646.6947082997749,
-    "sum_sq": 647.8315139201771,
+    "sum": 1305.8185156597867,
+    "sum_sq": 1296.101050993813,
     "value": 0.3
    },
    {
     "chooser": "honBallot",
     "label": "Approval Top-2 (Coma)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": -30.246329311030745,
-    "sum_sq": 1220.6777056030612,
+    "sum": -26.482603932126576,
+    "sum_sq": 2310.5804947043034,
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Schulze (equal ranks)",
+    "n": 2000,
+    "param": "awareness_alpha",
+    "sum": -26.482603932126576,
+    "sum_sq": 2310.5804947043034,
     "value": 0.3
    },
    {
     "chooser": "honBallot",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 646.614304102708,
-    "sum_sq": 647.6771703609494,
+    "sum": 1306.0973913153919,
+    "sum_sq": 1296.2862948978802,
     "value": 0.3
    },
    {
     "chooser": "honBallot",
     "label": "Plurality",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 27.33184660795516,
-    "sum_sq": 1051.3464459931408,
+    "sum": 286.5444560420754,
+    "sum_sq": 1905.3545694444206,
     "value": 0.5
    },
    {
     "chooser": "honBallot",
     "label": "Approval",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 109.43121181613766,
-    "sum_sq": 901.0750927843368,
+    "sum": 388.8405786707655,
+    "sum_sq": 1747.8416069576479,
     "value": 0.5
    },
    {
     "chooser": "honBallot",
     "label": "RCV (IRV)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": -35.936878488570954,
-    "sum_sq": 1132.3405376194685,
+    "sum": 170.25079097721863,
+    "sum_sq": 2031.233965085943,
     "value": 0.5
    },
    {
     "chooser": "honBallot",
     "label": "STAR",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 125.34091488737558,
-    "sum_sq": 887.332282484428,
+    "sum": 417.3292589287045,
+    "sum_sq": 1703.5448667023422,
     "value": 0.5
    },
    {
     "chooser": "honBallot",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 99.3910743335116,
-    "sum_sq": 925.3410076613869,
+    "sum": 377.35256830183357,
+    "sum_sq": 1759.0906591629212,
     "value": 0.5
    },
    {
     "chooser": "honBallot",
     "label": "Condorcet (Schulze)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": -35.936878488570954,
-    "sum_sq": 1132.3405376194685,
+    "sum": 170.25079097721863,
+    "sum_sq": 2031.233965085943,
     "value": 0.5
    },
    {
     "chooser": "honBallot",
     "label": "Plurality Top-2",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 689.3551457008989,
-    "sum_sq": 665.9816145772218,
+    "sum": 1368.735829786156,
+    "sum_sq": 1363.2570291583827,
     "value": 0.5
    },
    {
     "chooser": "honBallot",
     "label": "Approval Top-2",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 699.1202345805826,
-    "sum_sq": 666.4991594625087,
+    "sum": 1378.4982283233253,
+    "sum_sq": 1357.9156797366295,
     "value": 0.5
    },
    {
     "chooser": "honBallot",
     "label": "Approval Top-2 (Coma)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": -29.13812980361526,
-    "sum_sq": 1128.8755586688917,
+    "sum": 176.0170002600971,
+    "sum_sq": 2027.635816783204,
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Schulze (equal ranks)",
+    "n": 2000,
+    "param": "awareness_alpha",
+    "sum": 415.7381299964837,
+    "sum_sq": 1705.2476178895593,
     "value": 0.5
    },
    {
     "chooser": "honBallot",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 698.082906539345,
-    "sum_sq": 665.3027195207954,
+    "sum": 1374.7253342762951,
+    "sum_sq": 1351.1329511991673,
     "value": 0.5
    },
    {
     "chooser": "honBallot",
     "label": "Plurality",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 518.5226758615277,
-    "sum_sq": 729.0084989798601,
+    "sum": 956.3331176635448,
+    "sum_sq": 1401.6101404691756,
     "value": 0.7
    },
    {
     "chooser": "honBallot",
     "label": "Approval",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 595.4584044236294,
-    "sum_sq": 614.5298624418612,
+    "sum": 1106.7035478079658,
+    "sum_sq": 1210.5338422867308,
     "value": 0.7
    },
    {
     "chooser": "honBallot",
     "label": "RCV (IRV)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 391.3154530547563,
-    "sum_sq": 758.7553760584868,
+    "sum": 814.4397494029088,
+    "sum_sq": 1411.2209473432017,
     "value": 0.7
    },
    {
     "chooser": "honBallot",
     "label": "STAR",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 605.7780385908977,
-    "sum_sq": 615.1611416534893,
+    "sum": 1117.236598646016,
+    "sum_sq": 1212.5601713632157,
     "value": 0.7
    },
    {
     "chooser": "honBallot",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 577.1166429563169,
-    "sum_sq": 597.1384540274746,
+    "sum": 1081.0160000931344,
+    "sum_sq": 1184.110709369887,
     "value": 0.7
    },
    {
     "chooser": "honBallot",
     "label": "Condorcet (Schulze)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 394.6948304699462,
-    "sum_sq": 741.8392126647173,
+    "sum": 817.8366539825626,
+    "sum_sq": 1400.938595122829,
     "value": 0.7
    },
    {
     "chooser": "honBallot",
     "label": "Plurality Top-2",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 795.0251043541164,
-    "sum_sq": 756.7793822357845,
+    "sum": 1558.5821869584324,
+    "sum_sq": 1477.396491625254,
     "value": 0.7
    },
    {
     "chooser": "honBallot",
     "label": "Approval Top-2",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 810.5001096411764,
-    "sum_sq": 759.8855731016266,
+    "sum": 1576.7199100005805,
+    "sum_sq": 1479.0475954668404,
     "value": 0.7
    },
    {
     "chooser": "honBallot",
     "label": "Approval Top-2 (Coma)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 459.0658658555763,
-    "sum_sq": 670.6631902356743,
+    "sum": 912.5326386019904,
+    "sum_sq": 1301.007939163131,
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Schulze (equal ranks)",
+    "n": 2000,
+    "param": "awareness_alpha",
+    "sum": 1124.5869489521674,
+    "sum_sq": 1211.9278020461718,
     "value": 0.7
    },
    {
     "chooser": "honBallot",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 808.3642204781348,
-    "sum_sq": 753.856927756418,
+    "sum": 1574.6211511702368,
+    "sum_sq": 1468.6790043395924,
     "value": 0.7
    },
    {
     "chooser": "honBallot",
     "label": "Plurality",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 639.858906066967,
-    "sum_sq": 748.8153661997355,
+    "sum": 1233.0723201926871,
+    "sum_sq": 1466.7064491455926,
     "value": 0.8
    },
    {
     "chooser": "honBallot",
     "label": "Approval",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 723.4495674632126,
-    "sum_sq": 649.2542598908996,
+    "sum": 1397.7703904599946,
+    "sum_sq": 1267.9403785731793,
     "value": 0.8
    },
    {
     "chooser": "honBallot",
     "label": "RCV (IRV)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 593.368591322697,
-    "sum_sq": 681.7727190240287,
+    "sum": 1162.222497330044,
+    "sum_sq": 1353.2221661023293,
     "value": 0.8
    },
    {
     "chooser": "honBallot",
     "label": "STAR",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 736.1249070004936,
-    "sum_sq": 674.2977007710855,
+    "sum": 1412.2193852007413,
+    "sum_sq": 1304.7937137036622,
     "value": 0.8
    },
    {
     "chooser": "honBallot",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 713.5274368754236,
-    "sum_sq": 638.1257212142275,
+    "sum": 1358.0532781698796,
+    "sum_sq": 1245.6953105873342,
     "value": 0.8
    },
    {
     "chooser": "honBallot",
     "label": "Condorcet (Schulze)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 615.0725568679718,
-    "sum_sq": 669.5950428979304,
+    "sum": 1205.3202808145397,
+    "sum_sq": 1306.997969810499,
     "value": 0.8
    },
    {
     "chooser": "honBallot",
     "label": "Plurality Top-2",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 848.9752602379863,
-    "sum_sq": 810.1869610522627,
+    "sum": 1665.6645433015797,
+    "sum_sq": 1595.6647331903494,
     "value": 0.8
    },
    {
     "chooser": "honBallot",
     "label": "Approval Top-2",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 866.0015827708341,
-    "sum_sq": 814.1972067140872,
+    "sum": 1710.0626037695627,
+    "sum_sq": 1596.5289330848736,
     "value": 0.8
    },
    {
     "chooser": "honBallot",
     "label": "Approval Top-2 (Coma)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 671.0325049519548,
-    "sum_sq": 652.8784379583008,
+    "sum": 1312.3155333193306,
+    "sum_sq": 1268.5756170792238,
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Schulze (equal ranks)",
+    "n": 2000,
+    "param": "awareness_alpha",
+    "sum": 1424.0002950587404,
+    "sum_sq": 1311.4381653754422,
     "value": 0.8
    },
    {
     "chooser": "honBallot",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 865.9126464381158,
-    "sum_sq": 810.2407997311979,
+    "sum": 1697.3608202353832,
+    "sum_sq": 1580.6707358009905,
     "value": 0.8
    },
    {
     "chooser": "honBallot",
     "label": "Plurality",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 689.6744454773321,
-    "sum_sq": 809.9968920035578,
+    "sum": 1345.1743650281312,
+    "sum_sq": 1584.3035354955382,
     "value": 0.9
    },
    {
     "chooser": "honBallot",
     "label": "Approval",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 826.3059846963064,
-    "sum_sq": 745.8676409208591,
+    "sum": 1659.5300614837508,
+    "sum_sq": 1496.9908828417322,
     "value": 0.9
    },
    {
     "chooser": "honBallot",
     "label": "RCV (IRV)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 747.5125206775926,
-    "sum_sq": 748.8442011159642,
+    "sum": 1518.8263697139018,
+    "sum_sq": 1511.37471718645,
     "value": 0.9
    },
    {
     "chooser": "honBallot",
     "label": "STAR",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 845.2488432094842,
-    "sum_sq": 780.4535058938034,
+    "sum": 1714.4686570921465,
+    "sum_sq": 1584.1053283527933,
     "value": 0.9
    },
    {
     "chooser": "honBallot",
     "label": "Score5",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 818.4618854086682,
-    "sum_sq": 737.6735980067403,
+    "sum": 1647.0565115814604,
+    "sum_sq": 1491.355828011446,
     "value": 0.9
    },
    {
     "chooser": "honBallot",
     "label": "Condorcet (Schulze)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 822.7785522866,
-    "sum_sq": 774.0657688830553,
+    "sum": 1652.9157816034733,
+    "sum_sq": 1564.5460172345302,
     "value": 0.9
    },
    {
     "chooser": "honBallot",
     "label": "Plurality Top-2",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 874.5242568132205,
-    "sum_sq": 856.8667070647742,
+    "sum": 1737.6593868289249,
+    "sum_sq": 1700.256474999358,
     "value": 0.9
    },
    {
     "chooser": "honBallot",
     "label": "Approval Top-2",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 925.7794225397218,
-    "sum_sq": 889.4490803184614,
+    "sum": 1852.2051713610683,
+    "sum_sq": 1771.7348996110272,
     "value": 0.9
    },
    {
     "chooser": "honBallot",
     "label": "Approval Top-2 (Coma)",
-    "n": 1000,
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 837.5790569495417,
-    "sum_sq": 779.1576838223522,
+    "sum": 1675.7732464963804,
+    "sum_sq": 1548.8783591869374,
     "value": 0.9
    },
    {
     "chooser": "honBallot",
-    "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "label": "Schulze (equal ranks)",
+    "n": 2000,
     "param": "awareness_alpha",
-    "sum": 913.3732606327759,
-    "sum_sq": 868.9535423089798,
-    "value": 0.9
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Plurality",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 564.1082084268545,
-    "sum_sq": 789.4824088662697,
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Approval",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 627.5661359047465,
-    "sum_sq": 801.1466652919005,
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "label": "RCV (IRV)",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 601.008530615236,
-    "sum_sq": 800.8038659303356,
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "label": "STAR",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 631.4133486827535,
-    "sum_sq": 807.3177998924753,
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Score5",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 628.7232687445452,
-    "sum_sq": 804.3994616850621,
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Condorcet (Schulze)",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 599.0237881661614,
-    "sum_sq": 793.9175019026812,
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Plurality Top-2",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 827.2624352630165,
-    "sum_sq": 845.8086830945449,
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Approval Top-2",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 868.4890068566802,
-    "sum_sq": 860.7211868079975,
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 871.8350403723657,
-    "sum_sq": 866.1109622682432,
-    "value": 0.3
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Plurality",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 566.4293799970162,
-    "sum_sq": 782.8102465737707,
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Approval",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 722.1625622568176,
-    "sum_sq": 816.3051044628909,
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "label": "RCV (IRV)",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 674.7115110981911,
-    "sum_sq": 787.9692326972994,
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "label": "STAR",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 721.7251344416021,
-    "sum_sq": 817.2707491134927,
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Score5",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 709.9777600029904,
-    "sum_sq": 819.6298306132041,
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Condorcet (Schulze)",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 667.7958649006957,
-    "sum_sq": 794.9564262122025,
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Plurality Top-2",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 835.4129197476727,
-    "sum_sq": 836.5660973023402,
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Approval Top-2",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 891.2684220857924,
-    "sum_sq": 890.7957676256601,
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 892.0223862058273,
-    "sum_sq": 885.4495204025143,
-    "value": 0.5
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Plurality",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 568.8186920483812,
-    "sum_sq": 782.383531214915,
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Approval",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 853.3879741608188,
-    "sum_sq": 842.189211447416,
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "label": "RCV (IRV)",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 741.0132380239163,
-    "sum_sq": 792.5701968485918,
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "label": "STAR",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 846.2445309812492,
-    "sum_sq": 840.96729160353,
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Score5",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 839.5121517749683,
-    "sum_sq": 831.4684794284436,
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Condorcet (Schulze)",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 776.6490699665602,
-    "sum_sq": 814.7237129478314,
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Plurality Top-2",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 834.0684071603779,
-    "sum_sq": 836.1399853150386,
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Approval Top-2",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 944.5685002169455,
-    "sum_sq": 931.8097108074697,
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 945.2304278323134,
-    "sum_sq": 931.0083405028577,
-    "value": 0.7
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Plurality",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 569.5171450004676,
-    "sum_sq": 777.3596978386299,
-    "value": 0.8
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Approval",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 905.2809643859047,
-    "sum_sq": 875.4336370467612,
-    "value": 0.8
-   },
-   {
-    "chooser": "honBallot",
-    "label": "RCV (IRV)",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 799.3901827723882,
-    "sum_sq": 819.2481775628322,
-    "value": 0.8
-   },
-   {
-    "chooser": "honBallot",
-    "label": "STAR",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 914.2595527990688,
-    "sum_sq": 883.2418838462993,
-    "value": 0.8
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Score5",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 910.8119323212185,
-    "sum_sq": 886.6382381214949,
-    "value": 0.8
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Condorcet (Schulze)",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 863.7844702454455,
-    "sum_sq": 869.5220695844986,
-    "value": 0.8
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Plurality Top-2",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 829.7475062002944,
-    "sum_sq": 846.8340291796575,
-    "value": 0.8
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Approval Top-2",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 963.4992904258709,
-    "sum_sq": 947.9972173165032,
-    "value": 0.8
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 967.3696345974653,
-    "sum_sq": 950.7335765784893,
-    "value": 0.8
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Plurality",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 572.7641925106632,
-    "sum_sq": 791.3969242524356,
-    "value": 0.9
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Approval",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 920.5611329648846,
-    "sum_sq": 878.5020756363211,
-    "value": 0.9
-   },
-   {
-    "chooser": "honBallot",
-    "label": "RCV (IRV)",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 835.1999932380337,
-    "sum_sq": 824.2358755913959,
-    "value": 0.9
-   },
-   {
-    "chooser": "honBallot",
-    "label": "STAR",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 961.9607690397269,
-    "sum_sq": 946.4923946350561,
-    "value": 0.9
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Score5",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 959.4982535956692,
-    "sum_sq": 939.3859937432169,
-    "value": 0.9
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Condorcet (Schulze)",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 944.4602870882342,
-    "sum_sq": 924.9638404644276,
-    "value": 0.9
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Plurality Top-2",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 830.536764709089,
-    "sum_sq": 848.0423541549691,
-    "value": 0.9
-   },
-   {
-    "chooser": "honBallot",
-    "label": "Approval Top-2",
-    "n": 1000,
-    "param": "fatigue_beta",
-    "sum": 970.0502002714819,
-    "sum_sq": 952.6150557152162,
+    "sum": 1728.1614413049017,
+    "sum_sq": 1605.1473041879112,
     "value": 0.9
    },
    {
     "chooser": "honBallot",
     "label": "Score Top-2 (Clear-Eyed)",
-    "n": 1000,
+    "n": 2000,
+    "param": "awareness_alpha",
+    "sum": 1856.1295756478585,
+    "sum_sq": 1772.2801781970968,
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality",
+    "n": 2000,
     "param": "fatigue_beta",
-    "sum": 978.4539343809485,
-    "sum_sq": 965.6615162459984,
+    "sum": 1240.2296550033932,
+    "sum_sq": 1652.1320584436753,
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1350.9308103098203,
+    "sum_sq": 1662.0965473934175,
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "label": "RCV (IRV)",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1271.348547942298,
+    "sum_sq": 1658.5990874647546,
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "label": "STAR",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1353.7208612544805,
+    "sum_sq": 1668.840899365973,
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Score5",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1344.2197493496428,
+    "sum_sq": 1663.9793374837102,
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Condorcet (Schulze)",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1286.8696602623909,
+    "sum_sq": 1644.2228289622208,
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1680.2039614684436,
+    "sum_sq": 1758.8943425609086,
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1719.0760354827544,
+    "sum_sq": 1796.1746744188197,
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Schulze (equal ranks)",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1351.1996059416033,
+    "sum_sq": 1657.9326506194404,
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1729.58319749183,
+    "sum_sq": 1791.9138039189172,
+    "value": 0.3
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1250.3710570759215,
+    "sum_sq": 1642.737489332194,
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1469.4810416171154,
+    "sum_sq": 1689.4548274645563,
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "label": "RCV (IRV)",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1346.9250987176486,
+    "sum_sq": 1649.6166990113443,
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "label": "STAR",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1480.4824644306598,
+    "sum_sq": 1685.2226435355778,
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Score5",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1469.3261462380494,
+    "sum_sq": 1684.9633976750683,
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Condorcet (Schulze)",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1378.8695351596339,
+    "sum_sq": 1654.6317561242815,
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1673.6889156185784,
+    "sum_sq": 1769.037278187546,
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1792.6364581502692,
+    "sum_sq": 1840.4436628889102,
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Schulze (equal ranks)",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1484.500927833219,
+    "sum_sq": 1681.7753409763861,
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1805.1067856420054,
+    "sum_sq": 1835.6977028479942,
+    "value": 0.5
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1249.2556388608511,
+    "sum_sq": 1646.0712180417165,
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1729.4986714730182,
+    "sum_sq": 1736.8429696025444,
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "label": "RCV (IRV)",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1522.6428153017487,
+    "sum_sq": 1687.7578560789595,
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "label": "STAR",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1727.897868277555,
+    "sum_sq": 1740.8166007764964,
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Score5",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1712.9911430075638,
+    "sum_sq": 1726.9058455611382,
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Condorcet (Schulze)",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1596.264626562692,
+    "sum_sq": 1701.392983790484,
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1682.3259376903277,
+    "sum_sq": 1758.8570028899637,
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1907.6558041998364,
+    "sum_sq": 1885.7414169032002,
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Schulze (equal ranks)",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1734.8446011555927,
+    "sum_sq": 1731.9561817205954,
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1898.3567487863697,
+    "sum_sq": 1888.0829706833904,
+    "value": 0.7
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1248.353365067267,
+    "sum_sq": 1657.3281266054707,
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1831.5264272213449,
+    "sum_sq": 1803.8871272023118,
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "label": "RCV (IRV)",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1610.8078810959616,
+    "sum_sq": 1678.3711793880434,
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "label": "STAR",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1827.1985555936562,
+    "sum_sq": 1802.0980309615531,
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Score5",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1827.8068891568232,
+    "sum_sq": 1795.1269861685475,
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Condorcet (Schulze)",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1743.075808026914,
+    "sum_sq": 1742.3650516775851,
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1676.5957493931564,
+    "sum_sq": 1752.864446032681,
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1943.0815468851195,
+    "sum_sq": 1912.6808607971177,
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Schulze (equal ranks)",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1826.212278106524,
+    "sum_sq": 1802.6273805910669,
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1944.552675148356,
+    "sum_sq": 1917.6320890758163,
+    "value": 0.8
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1259.098722543028,
+    "sum_sq": 1639.6650512455046,
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1865.9045400799337,
+    "sum_sq": 1786.4501630731452,
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "label": "RCV (IRV)",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1725.4097796130739,
+    "sum_sq": 1718.8456428726968,
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "label": "STAR",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1940.176582665715,
+    "sum_sq": 1897.843656011627,
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Score5",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1924.1323556663397,
+    "sum_sq": 1873.8446441387168,
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Condorcet (Schulze)",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1904.5631875247927,
+    "sum_sq": 1867.0018292162038,
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Plurality Top-2",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1680.209441333179,
+    "sum_sq": 1760.343063509568,
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Approval Top-2",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1950.1270297019769,
+    "sum_sq": 1914.913916223903,
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Schulze (equal ranks)",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1933.0722520567026,
+    "sum_sq": 1890.7705827319016,
+    "value": 0.9
+   },
+   {
+    "chooser": "honBallot",
+    "label": "Score Top-2 (Clear-Eyed)",
+    "n": 2000,
+    "param": "fatigue_beta",
+    "sum": 1966.2832921791332,
+    "sum_sq": 1941.7574061018368,
     "value": 0.9
    }
   ]
  },
  "generated_by": "python -m vse_sim.run --stage sweeps",
  "meta": {
-  "elections": 15000,
-  "seconds": 160.4
+  "elections": 30000,
+  "seconds": 783.4
  },
  "runs": 1,
  "schema": 1,
@@ -3302,7 +3542,7 @@
   "media": "fuzzyMediaFor.<locals>.fuzzyMedia",
   "model": "KSModel_1.5_1_3_1.5_3_3_1.5",
   "ncand": 6,
-  "niter": 1000,
+  "niter": 2000,
   "nvot": 101,
   "paired_diff_pairs": [
    [
@@ -3325,6 +3565,7 @@
     "Plurality Top-2",
     "Approval Top-2",
     "Approval Top-2 (Coma)",
+    "Schulze (equal ranks)",
     "Score Top-2 (Clear-Eyed)"
    ],
    "epistemic_rho": [
@@ -3338,7 +3579,8 @@
     "Plurality Top-2 (Clear-Eyed)",
     "Approval Top-2",
     "Approval Top-2 (Clear-Eyed)",
-    "Score Top-2 (Clear-Eyed)"
+    "Score Top-2 (Clear-Eyed)",
+    "Schulze (equal ranks)"
    ],
    "fatigue_beta": [
     "Plurality",
@@ -3349,10 +3591,11 @@
     "Condorcet (Schulze)",
     "Plurality Top-2",
     "Approval Top-2",
+    "Schulze (equal ranks)",
     "Score Top-2 (Clear-Eyed)"
    ]
   },
-  "seed": "VSE2026",
+  "seed": "42",
   "values": [
    0.3,
    0.5,
@@ -3361,6 +3604,6 @@
    0.9
   ]
  },
- "spec_hash": "24ad1ee1351821b73345de11e29b664b6ace11f3dbad4f95dceded754d5f92b8",
+ "spec_hash": "92f1553fba93c21367e91bba0cee8c82d6c98be946e334267a25f9c15384f13d",
  "stage": "sweeps"
 }

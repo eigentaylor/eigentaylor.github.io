@@ -1,27 +1,27 @@
 {
- "code_version": "47a8b85d79fc8d5a",
- "content_hash": "10c68a0b1423ba4aeca371bf7e7ac509b220c8a1b8dbfb60640e3e9e6948c663",
+ "code_version": "f5ebe76af540f746",
+ "content_hash": "33dab757b57860a80fa8a2196ce2212ee34360684c7952e7000a4701bbfca014",
  "data": {
   "ce_denominator": [
    {
-    "cw_exists": 5942
+    "cw_exists": 5930
    }
   ],
   "ce_wins": [
    {
     "chooser": "honBallot",
-    "cw_wins": 2700,
-    "label": "Plurality"
-   },
-   {
-    "chooser": "honBallot",
-    "cw_wins": 3996,
+    "cw_wins": 3958,
     "label": "Plurality Top-2"
    },
    {
     "chooser": "honBallot",
-    "cw_wins": 4006,
+    "cw_wins": 3971,
     "label": "Plurality Top-2 (Clear-Eyed)"
+   },
+   {
+    "chooser": "honBallot",
+    "cw_wins": 2700,
+    "label": "Plurality"
    }
   ],
   "vse": [
@@ -29,29 +29,29 @@
     "chooser": "honBallot",
     "label": "Plurality",
     "n": 6000,
-    "sum": 3609.1020656542846,
-    "sum_sq": 4851.0958222987865
+    "sum": 3684.5722478519842,
+    "sum_sq": 4904.466771507028
    },
    {
     "chooser": "honBallot",
     "label": "Plurality Top-2",
     "n": 6000,
-    "sum": 4989.379992913202,
-    "sum_sq": 5099.190668993996
+    "sum": 5031.4934539201795,
+    "sum_sq": 5102.981348355257
    },
    {
     "chooser": "honBallot",
     "label": "Plurality Top-2 (Clear-Eyed)",
     "n": 6000,
-    "sum": 4993.669115565702,
-    "sum_sq": 5107.049534820038
+    "sum": 5033.918662058732,
+    "sum_sq": 5116.285116623256
    }
   ]
  },
  "generated_by": "python -m vse_sim.run --stage plurality_ideal",
  "meta": {
   "elections": 6000,
-  "seconds": 17.1
+  "seconds": 42.5
  },
  "runs": 1,
  "schema": 1,
@@ -67,8 +67,8 @@
   "niter": 6000,
   "nvot": 101,
   "pool_id": "joint",
-  "seed": "VSE2026"
+  "seed": "42"
  },
- "spec_hash": "64450b9014e19f980fe2ae01c485992414856fc2b36e9ad993fd778f3e1e3998",
+ "spec_hash": "8df1eab08ad2bf98ce03c7fbd23313aa37c068f9525353c1527c811bba6fa4d4",
  "stage": "plurality_ideal"
 }
