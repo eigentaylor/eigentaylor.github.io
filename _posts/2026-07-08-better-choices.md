@@ -10,6 +10,7 @@ featured: false
 theorems: true
 pretty_table: true
 bibliography: voting.bib
+glossary: polisci
 chart:
   plotly: true
 authors:  
@@ -40,25 +41,25 @@ toc:
 
 For a while now, Condorcet methods have gotten the short end of the stick in the reform space. The disaster known as [Ranked Choice Voting](../ditch-rcv/) has dominated the space as a whole, but particularly ranked ballots. Cardinal methods like Approval and STAR have been the main challengers, and while the Equal Vote Coalition "approves" of their flavor of Condorcet (["Ranked Robin"](https://www.equal.vote/ranked_robin)), Condorcet has not yet gained much traction.
 
-Now, if you are reading this blog, you probably know I am a huge fan of Approval voting. I think it is [the most practical and effective reform we should be advocating for right now](../approval-only/), and the only system that I currently support. However, I would like to share my positive thoughts on this neat new proposal by [Better Choices](https://www.betterchoices.vote/top3).
+Now, if you are reading this blog, you probably know I am a huge fan of <d-glossary key="approval_voting">Approval voting</d-glossary>. I think it is [the most practical and effective reform we should be advocating for right now](../approval-only/), and the only system that I currently support. However, I would like to share my positive thoughts on this neat new proposal by [Better Choices](https://www.betterchoices.vote/top3).
 
-I first heard about this system through a bill in [Ohio](https://www.betterchoicesohio.org/) which would implement a "Top-3 Condorcet" system, where a jungle primary would be held and the top three candidates would advance to a final election conducted using a kind of Condorcet method. They call this system "Consensus Choice Voting". But before we start getting too lost in the jargon, let's ensure we are clear about what I'm even talking about.
+I first heard about this system through a bill in [Ohio](https://www.betterchoicesohio.org/) which would implement a "Top-3 Condorcet" system, where a <d-glossary key="jungle_primary">jungle primary</d-glossary> would be held and the top three candidates would advance to a final election conducted using a kind of Condorcet method. They call this system "Consensus Choice Voting". But before we start getting too lost in the jargon, let's ensure we are clear about what I'm even talking about.
 
 ### Condorcet Methods
 
-> A **Condorcet winner** is a candidate who would win a head-to-head matchup against every other candidate.
+> A **<d-glossary key="condorcet_winner">Condorcet winner</d-glossary>** is a candidate who would win a head-to-head matchup against every other candidate.
 
 Simple, right? It's just like a round-robin tournament, where every candidate faces off against every other candidate--and the one who wins every bout is the Condorcet winner.
 
-I have [my issues with the idea of the Condorcet winner as a measure of "consensus"](../why-condorcet/), but *in practice* all "good" methods (Approval, STAR, Score, etc.), even if they do not explicitly satisfy the Condorcet criterion, are going to agree on the best candidate, who is likely a Condorcet winner.
+I have [my issues with the idea of the Condorcet winner as a measure of "consensus"](../why-condorcet/), but *in practice* all "good" methods (Approval, STAR, Score, etc.), even if they do not explicitly satisfy the <d-glossary key="condorcet_criterion">Condorcet criterion</d-glossary>, are going to agree on the best candidate, who is likely a <d-glossary key="condorcet_winner">Condorcet winner</d-glossary>.
 
-A Condorcet method is just a voting system (that usually takes in a ranked ballot) and then evaluates the head-to-head matchups between every pair of candidates to determine if there is a Condorcet winner, electing them if so. The many Condorcet methods differ only in how they handle the case where there is no Condorcet winner (a "Condorcet cycle").
+A <d-glossary key="condorcet_method">Condorcet method</d-glossary> is just a voting system (that usually takes in a ranked ballot) and then evaluates the head-to-head matchups between every pair of candidates to determine if there is a Condorcet winner, electing them if so. The many Condorcet methods differ only in how they handle the case where there is no Condorcet winner (a "Condorcet cycle").
 
 ### Jungle Primaries
 
 I just [published a post about California's Top-2 system](../ca-top-2/) in which I talk about the issues with jungle primaries and vote splitting. The fundamental idea of a jungle primary is this:
 
-> A **jungle primary** puts all candidates, from all parties, on a single primary ballot. Voters from every party can participate, and then the top vote-getters advance to a final runoff<d-footnote>This is technically a "nonpartisan blanket primary" but that's so wordy, let's just call it a "jungle".</d-footnote>.
+> A **<d-glossary key="jungle_primary">jungle primary</d-glossary>** puts all candidates, from all parties, on a single primary ballot. Voters from every party can participate, and then the top vote-getters advance to a final runoff<d-footnote>This is technically a "nonpartisan blanket primary" but that's so wordy, let's just call it a "jungle".</d-footnote>.
 
 The idea is to force candidates to be held accountable to all voters, rather than just those from their party<d-footnote>For example, in a state like California, the election would often be decided entirely in the Democratic primary, with Republicans getting effectively no say in the outcome.</d-footnote>. The *hope* is that this would elevate consensus candidates with low visibility and boost third parties. These lofty aspirations have largely not materialized because voters can still only choose a single candidate--more on that shortly.
 
@@ -133,7 +134,7 @@ RCV utterly fails to deliver on its promises. Voters assume that ranking a secon
 
 ### Cognitive Simplicity
 
-The choice of three is a good move, I think. A two-candidate runoff is nice because the race is cognitively simple. You just pick who you like better, and the delayed second round means you get more time to decide who you think is genuinely better. It's fully strategyproof ([in the runoff step](https://en.wikipedia.org/wiki/Strategyproofness#Examples)), and your vote absolutely counts.
+The choice of three is a good move, I think. A two-candidate runoff is nice because the race is cognitively simple. You just pick who you like better, and the delayed second round means you get more time to decide who you think is genuinely better. It's fully <d-glossary key="strategyproofness">strategyproof</d-glossary> ([in the runoff step](https://en.wikipedia.org/wiki/Strategyproofness#Examples)), and your vote absolutely counts.
 
 With three candidates, it's only *slightly* worse in that respect, in my opinion. Three is arguably not *too many*, and means that voting in each matchup is entirely tractable! Asking voters directly "who do you prefer out of these two?" is still a simple question. Four is kind of pushing it, and would require six matchups, effectively forcing a return to the ranked ballot<d-footnote>On <a href="https://www.betterchoices.vote/consensus-choice">the Better Choices website</a>, their proposal for Top 4 uses a ranked ballot. Voting in each matchup only really works with three candidates.</d-footnote>. Three candidates is a sweet spot.
 
@@ -157,7 +158,7 @@ This system essentially guarantees the *perfect* conditions where Condorcet meth
 
 In practice, voting in this system is pretty straightforward. If you have a favorite, you vote for them in both their matchups. Then you can *also* vote for your second choice against your third choice. Easy-peasy.
 
-No system is going to be strategyproof in general, but I think Condorcet methods like this are about as robust as you can get. I do not see any realistic case where a voter has serious incentive to lie on their ballot. Especially when there isn't a cycle. As far as voting systems go, this is probably the most honest system you can get, and that's genuinely nice.
+No system is going to be <d-glossary key="strategyproofness">strategyproof</d-glossary> in general, but I think <d-glossary key="condorcet_method">Condorcet methods</d-glossary> like this are about as robust as you can get. I do not see any realistic case where a voter has serious incentive to lie on their ballot. Especially when there isn't a cycle. As far as voting systems go, this is probably the most honest system you can get, and that's genuinely nice.
 
 I made [a simple model you can check out here](https://eigentaylor.github.io/weakest-link/graph.html) which shows how insincere deviations can affect the outcome of a Condorcet election if a coalition is able to coordinate and change the relative size of the margins, and I'm going to write a whole post about this model and my findings<d-footnote>In short: the cases where lying is profitable are rare and specific. You'd need to start in a cycle with a very particular structure and/or have a massive coordinated effort to make a difference. Most lies lead to the same or a worse outcome.</d-footnote>. Look forward to that!
 

@@ -9,6 +9,7 @@ category: polisci
 featured: false
 theorems: true
 bibliography: voting.bib
+glossary: polisci
 chart:
   plotly: true
 authors:  
@@ -50,15 +51,15 @@ The [system proposed by Better Choices for Democracy](../better-choices/) lets v
 
 [Better Choices for Democracy](https://www.betterchoices.vote/top3) ([more details here](../better-choices/)) is pushing a very interesting flavor of Condorcet where voters vote in all three head-to-head matchups between the candidates who make it to a top-3 runoff. I wrote about my complex thoughts on it in my last post, but here I want to expound on the strategic resilience of the system.
 
-The winner in this system is the candidate who wins both of their head-to-head matchups (a "Condorcet winner"). If there is a "tie"--where every candidate wins and loses exactly one matchup, and nobody wins both--the winner is determined by "minimax" (the candidate with the least bad loss wins if every candidate loses at least one matchup)<d-footnote>This is not the proper definition of minimax for $n>3$ candidates. However, it is a short and practical definition for the three-candidate case considered here. It should also be noted that at $n=3$, this definition matches with both the Ranked Pairs and Schulze methods.<d-cite key="brandt2025condorcet"></d-cite></d-footnote>.
+The winner in this system is the candidate who wins both of their head-to-head matchups (a "<d-glossary key="condorcet_winner">Condorcet winner</d-glossary>"). If there is a "tie"--where every candidate wins and loses exactly one matchup, and nobody wins both--the winner is determined by "minimax" (the candidate with the least bad loss wins if every candidate loses at least one matchup)<d-footnote>This is not the proper definition of minimax for $n>3$ candidates. However, it is a short and practical definition for the three-candidate case considered here. It should also be noted that at $n=3$, this definition matches with both the Ranked Pairs and Schulze methods.<d-cite key="brandt2025condorcet"></d-cite></d-footnote>.
 
 For example, if Alice wins both of her head-to-head matchups against Bob and Clark, then Alice is the winner outright. Suppose instead that Alice beats Bob by 10%, Bob beats Clark by 5%, and Clark beats Alice by 1%. Then Alice loses by the least amount (1%) and is the winner by the minimax tiebreaker.
 
-As with any voting system, we can ask how manipulable the system is. That is, how much strategic pressure there is to spend the night before the election scheming up a complex strategy to game the election, or avoid walking into a trap where voting for your favorite candidate actually causes your least favorite candidate to win, as has happened in [Ranked-Choice Voting](../ditch-rcv/) elections. Comparatively, Condorcet methods are generally more robust.
+As with any voting system, we can ask how manipulable the system is. That is, how much strategic pressure there is to spend the night before the election scheming up a complex strategy to game the election, or avoid walking into a trap where voting for your favorite candidate actually causes your least favorite candidate to win, as has happened in [Ranked-Choice Voting](../ditch-rcv/) elections. Comparatively, <d-glossary key="condorcet_method">Condorcet methods</d-glossary> are generally more robust.
 
 But unlike a typical Condorcet method, where voters submit rankings, voters in the Better Choices system can submit much more complex preferences that cannot be expressed on a typical ranked ballot. For example, a voter can say they vote for Rock over Scissors, Scissors over Paper, and Paper over Rock. This is a perfectly valid ballot in the Better Choices system, but it is not a valid ranking because it is not transitive.
 
-One might wonder if this system is *more* manipulable than a typical Condorcet method, since voters can submit more complex preferences. I will show that this system is no more manipulable than a typical Condorcet method--that is to say that an intransitive ballot creates no advantageous position for a voter with transitive preferences.
+One might wonder if this system is *more* manipulable than a typical Condorcet method, since voters can submit more complex preferences. I will show that this system is no more manipulable than a typical <d-glossary key="condorcet_method">Condorcet method</d-glossary>--that is to say that an intransitive ballot creates no advantageous position for a voter with transitive preferences.
 
 In this post, I define a model of strategic manipulation in this system and show that it is *very* difficult to manipulate. In practice, there is essentially no reason to vote in any way but with complete honesty. It should be noted that this is not a question of "if voters act strategically (for no good reason), how good are the outcomes<d-footnote>This is often what VSE<d-cite key="quinn2017vseSummary"></d-cite> and other <a href="https://www.equal.vote/gaming_the_vote">"gameability" simulations</a> do: If voters apply a specific, coded strategy, how do the outcomes fare?</d-footnote>?" Think of this model as measuring how successful a heist, executed by a perfectly coordinated omniscient voter bloc, can possibly be.
 
@@ -110,7 +111,7 @@ We define a directed graph on the set of all possible election states, where two
 
 We can understand this intuitively as $P$ being some sincere state of an election (where every voter is casting a fully honest ballot), and $Q$ being the result where a coalition of voters has insincerely changed their votes (deviated) such that they have successfully changed the relative sizes of the matchups. If $P$ and $Q$ are connected by an edge, then we say that $Q$ is achieved by a "simple manipulation" of $P$.
 
-Our question is when a coalition of voters can manipulate the election to change the winner profitably. That is, if $f(P)=X$ and $f(Q)=Y$, then we say that the coalition can manipulate the election from $P$ to $Q$ if $Y$ is preferred to $X$ by the coalition ($f(Q)\succ f(P)$, where we use $\succ$ to denote the manipulating coalition's preference). The work of Gibbard<d-cite key="gibbard1973manipulation"></d-cite> ensures that no reasonable voting rule can escape manipulability entirely, but we will show how narrow the openings are here.
+Our question is when a coalition of voters can manipulate the election to change the winner profitably. That is, if $f(P)=X$ and $f(Q)=Y$, then we say that the coalition can manipulate the election from $P$ to $Q$ if $Y$ is preferred to $X$ by the coalition ($f(Q)\succ f(P)$, where we use $\succ$ to denote the manipulating coalition's preference). The work of <d-glossary key="gibbard_satterthwaite">Gibbard</d-glossary><d-cite key="gibbard1973manipulation"></d-cite> ensures that no reasonable voting rule can escape manipulability entirely, but we will show how narrow the openings are here.
 
 ## Simple Manipulations
 
@@ -146,7 +147,7 @@ If we call a matchup which is in-line with your true preferences "concordant", a
 
 We start with an extremely cheery theorem.
 
-> **Theorem:** (Condorcet Stability) For any $n\geq 3$, if $P$ has a Condorcet winner $W$, then there is no simple manipulation of $P$ that can profitably change the winner. That is, if $f(P)=W$ and $Q$ is connected to $P$ by an edge, then either $f(Q)=W$ or $f(P)\succ f(Q)$ ($f(P)\succeq f(\sigma P)$).\label{condorcet-stability}
+> **Theorem:** (Condorcet Stability) For any $n\geq 3$, if $P$ has a <d-glossary key="condorcet_winner">Condorcet winner</d-glossary> $W$, then there is no simple manipulation of $P$ that can profitably change the winner. That is, if $f(P)=W$ and $Q$ is connected to $P$ by an edge, then either $f(Q)=W$ or $f(P)\succ f(Q)$ ($f(P)\succeq f(\sigma P)$).\label{condorcet-stability}
 
 {% proof Click to expand proof %}
 **Proof:** Suppose $P$ has a Condorcet winner $W$. Then $W$ wins all of its head-to-head matchups against the other candidates. Hence, a swap of the first kind cannot change the winner, since it preserves all current winners and losers of the matchups. We thus only need to consider a swap of the second kind, which reverses the smallest matchup.
@@ -410,13 +411,13 @@ Betrayal is only profitable if you happen to be in $G_2$, or its single cyclic a
 
 ### Generalizing to More Candidates
 
-Some of these theorems do generalize beyond $n=3$, but many do not. If you can use this model to say more interesting things about minimax for $n>3$, or perhaps generalize this model to say some interesting things about Ranked Pairs, let me know in the comments below! I developed a somewhat analogous model for IRV (Ranked-Choice Voting) and STAR voting, which I plan to write about in a future post.
+Some of these theorems do generalize beyond $n=3$, but many do not. If you can use this model to say more interesting things about minimax for $n>3$, or perhaps generalize this model to say some interesting things about Ranked Pairs, let me know in the comments below! I developed a somewhat analogous model for <d-glossary key="rcv_irv">IRV (Ranked-Choice Voting)</d-glossary> and <d-glossary key="star_voting">STAR voting</d-glossary>, which I plan to write about in a future post.
 
 ## Conclusion
 
 I came up with this model to investigate whether being able to vote in a cycle would give voters an opportunity to subvert the election. The answer, as we have proved, is a clear **no**. We have shown the stability of a Condorcet winner to simple manipulation, the 2/48 states where a profitable simple manipulation is possible for a coalition, and the modest addition of 4 additional states where a more complex (but likely infeasible--see [the appendix](#appendix)) manipulation could occur. We also proved that outside of the betrayal chain, the system satisfies No Favorite Betrayal.
 
-To subvert an election, one must first start in or push the sincere election state into a cycle. And even then, the result can only be moved up a single step in the preference ordering. Though a perfectly strategyproof voting system does not exist with three or more candidates<d-cite key="gibbard1973manipulation"></d-cite>, this system is potentially the closest one can get in practice.
+To subvert an election, one must first start in or push the sincere election state into a cycle. And even then, the result can only be moved up a single step in the preference ordering. Though a perfectly <d-glossary key="strategyproofness">strategyproof</d-glossary> voting system does not exist with three or more candidates<d-cite key="gibbard1973manipulation"></d-cite>, this system is potentially the closest one can get in practice.
 
 Just vote honestly. Vote for your favorite in its matchups. Vote for your second choice against your last choice. This system gives you the opportunity to have a say in every single race, whether it is competitive or not. Don't think about strategy, just vote.
 

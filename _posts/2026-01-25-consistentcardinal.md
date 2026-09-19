@@ -15,6 +15,7 @@ exclude_footnotes_from_word_count: true
 exclude_proof_blocks_from_word_count: true
 citation: true
 bibliography: voting.bib
+glossary: polisci
 authors:  
   - name: Taylor Eigen Fisher
     url: ""
@@ -45,9 +46,9 @@ I am personally a stickler for legitimacy in a voting system. I do not like it w
 
 If a system gives its selected winner an unassailable claim to victory, then I would describe it as "internally consistent". However, this is a very subjective notion. In this post, I focus on a particular nicety of "single-ballot nonranked voting systems"<d-cite key="bramsFishburn1978approval"></d-cite> which proves them to be uniquely Condorcet-consistent with their ballot data.
 
-> **Definition:** A single-ballot nonranked voting system is a voting system where voters can cast one vote for some number of candidates. For example, **Choose-one** plurality voting, where each voter can cast one vote for one candidate, or **Approval voting**, where each voter can cast one vote for as many candidates as they approve of. But this can include systems where, say, voters could cast either exactly one, or exactly three votes.
+> **Definition:** A single-ballot nonranked voting system is a voting system where voters can cast one vote for some number of candidates. For example, **Choose-one** plurality voting, where each voter can cast one vote for one candidate, or **<d-glossary key="approval_voting">Approval voting</d-glossary>**, where each voter can cast one vote for as many candidates as they approve of. But this can include systems where, say, voters could cast either exactly one, or exactly three votes.
 
-In 1978, Brams and Fishburn published a seminal paper on Approval voting<d-cite key="bramsFishburn1978approval"></d-cite>, where they prove that Approval voting is the unique single-ballot nonranked voting system that is Condorcet-consistent on the Dichotomous domain. However, if we define Condorcet-consistency based purely on the ballot data, then this property extends to all single-ballot nonranked voting systems, not just Approval voting.<d-footnote>For example, in Choose-one voting, there is no possibility for a candidate to be preferred over another candidate (in the ballot data) without getting more votes than that other candidate.</d-footnote>
+In 1978, Brams and Fishburn published a seminal paper on Approval voting<d-cite key="bramsFishburn1978approval"></d-cite>, where they prove that Approval voting is the unique single-ballot nonranked voting system that is Condorcet-consistent on the <d-glossary key="dichotomous_preferences">Dichotomous domain</d-glossary>. However, if we define Condorcet-consistency based purely on the ballot data, then this property extends to all single-ballot nonranked voting systems, not just Approval voting.<d-footnote>For example, in Choose-one voting, there is no possibility for a candidate to be preferred over another candidate (in the ballot data) without getting more votes than that other candidate.</d-footnote>
 
 Approval voting is often called a "two-tiered SCORE method" because, like a cardinal voting system, it allows voters to express numerical values independently for all candidates (just within the range of 0 to 1, where 0 represents disapproval and 1 represents approval). We will show that no other SCORE method, with a range more expressive than a binary 0 or 1, can be Condorcet-consistent based on its ballot data.
 
@@ -195,14 +196,14 @@ In this profile, we have that:
 | $B$ vs $C$ | $B$ | 2 to 1 |
 | $C$ vs $A$ | $C$ | 2 to 1 |
 
-Thus, we have a Condorcet cycle $A > B > C > A$ induced by the ballots. **QED**
+Thus, we have a <d-glossary key="condorcet_cycle">Condorcet cycle</d-glossary> $A > B > C > A$ induced by the ballots. **QED**
 {% endproof %}
 
 This is quite straightforward: by allowing just a third level of preference intensity, we can create a rock-paper-scissors style cycle among three candidates. By contrast, SCC guarantees a transitive pairwise ordering because the pairwise matchups are directly tied to the numerical scores. The transitive order of the real numbers ensures a transitive ordering of the candidates based on their pairwise scores, preventing cycles.
 
 ## STAR Is Not SCC
 
-STAR voting is a popular cardinal-esque voting system that seems to attempt to fix this issue with score methods, by injecting in some majority rule. It is a 0 to 5 score system, where the winner is chosen by adding an additional runoff step: take the top two candidates by total score and then choose the winner by majority runoff between them (based on voters who gave them different scores). This protects it from some particularly damning examples, but it does not fix the underlying problem.
+<d-glossary key="star_voting">STAR voting</d-glossary> is a popular cardinal-esque voting system that seems to attempt to fix this issue with score methods, by injecting in some majority rule. It is a 0 to 5 score system, where the winner is chosen by adding an additional runoff step: take the top two candidates by total score and then choose the winner by majority runoff between them (based on voters who gave them different scores). This protects it from some particularly damning examples, but it does not fix the underlying problem.
 
 Since STAR voting is a 0 to 5 score system, by the above theorem, it is not SCC in the score aggregation step. However, we can show that the runoff still does not guarantee that the Condorcet winner induced by the ballots will win.
 
@@ -222,7 +223,7 @@ If we look at the head-to-head match-ups:
 | $A$ vs $C$ | $A$ | 6 to 5 |
 | $B$ vs $C$ | $B$ | 6 to 5 |
 
-Therefore, $A$ is the Condorcet winner and $C$ is the Condorcet loser.
+Therefore, $A$ is the <d-glossary key="condorcet_winner">Condorcet winner</d-glossary> and $C$ is the Condorcet loser.
 
 When we add up the scores, however, something odd happens:
 
@@ -328,7 +329,7 @@ Which gives us one upper bound on the head-to-head win size achievable for a giv
 
 ## Caveats
 
-There are [systems](https://electowiki.org/wiki/Smith//Score) that attempt to make cardinal systems Condorcet-consistent by electing Condorcet winners when they exist based on the ballot data, or eliminating candidates outside the Smith set (which we will not get into here). In [this post](../condorcet-approval/) I define them as "Generalized Condorcet Methods". However, they are not SCC, as the above proof shows that no non-Approval SCORE system can be. That is, they cannot encode the head-to-head preferences of voters into the scores.
+There are [systems](https://electowiki.org/wiki/Smith//Score) that attempt to make cardinal systems Condorcet-consistent by electing Condorcet winners when they exist based on the ballot data, or eliminating candidates outside the <d-glossary key="smith_set">Smith set</d-glossary> (which we will not get into here). In [this post](../condorcet-approval/) I define them as "Generalized Condorcet Methods". However, they are not SCC, as the above proof shows that no non-Approval SCORE system can be. That is, they cannot encode the head-to-head preferences of voters into the scores.
 
 One can rightly argue this property is absurdly restrictive, and a ridiculous constraint to stubbornly impose on a voting system, limiting its flexibility and the ways in which it can aggregate voter preferences.
 
@@ -346,8 +347,8 @@ Given Approval's simplicity, logistical ease of implementation, the bulletproof 
 
 I would like to briefly note that, of the systems commonly being proposed right now, I have concerns about the legitimacy of their ballot data.
 
-We have already discussed STAR in-depth, which can fail to elect both the Condorcet winner *and* the highest scoring candidate simultaneously.
-In past posts, I've discussed [RCV](../ditch-rcv/)'s real-life failures in Burlington, Alaska, and Oakland. Further, we have touched on the notion of a Condorcet cycle. In any cyclic election, some candidate can point to the ballot data and rightly claim they were preferred by a pairwise majority over the actual winner.
+We have already discussed <d-glossary key="star_voting">STAR</d-glossary> in-depth, which can fail to elect both the <d-glossary key="condorcet_winner">Condorcet winner</d-glossary> *and* the highest scoring candidate simultaneously.
+In past posts, I've discussed [RCV](../ditch-rcv/)'s real-life failures in Burlington, Alaska, and Oakland. Further, we have touched on the notion of a <d-glossary key="condorcet_cycle">Condorcet cycle</d-glossary>. In any cyclic election, some candidate can point to the ballot data and rightly claim they were preferred by a pairwise majority over the actual winner.
 
 In Lemma \ref{single-ballot-nonranked}, we established that every single-ballot nonranked voting system is Condorcet-consistent with its ballot data, including Choose-one voting. But I think it's quite apparent that our Choose-one system is not exactly the holy grail of legitimacy. Cases like the 2000 US Presidential election had spoiler candidates who almost surely changed the outcome. So while there are no Condorcet-failures in Choose-one, there's still the issue that we can infer that had the restriction of one vote been lifted--with voters freed to express their preferences more fully--the result could have changed.
 
@@ -363,4 +364,4 @@ There's no ranked data to pour through, to see if maybe those who approved both 
 
 Perhaps I'm just a worrywart. But I think minimizing opportunities for bad actors to rile up voters and convince them that the system elected the wrong candidate, and their favorite candidate had the election stolen from them, is crucial. Because despite the legitimacy guarantees proven for Choose-one voting here, we still had Stop the Steal in 2020, and doubts of Trump's victory in 2024. Thus, I think there are great arguments that the SCC property, and Condorcet-consistency in general, is overrated. But I'm concerned about transitioning to a system with *less* legitimacy rather than *more*.<d-footnote>In fairness, there is opportunity that bad actors would claim that the election was stolen by adding bubbles after voters have cast their ballot. Changing the ballot to Yes/No could mitigate this concern.</d-footnote>
 
-That said, in an age where trust in our institutions and elections are at an all-time low, having a voting system that can provide such a guarantee is invaluable, in my view. Approval voting is not just mathematically elegant, it's not just [the most practical and cost-effective solution for our electoral problems](../practicalapproval/), it is the only voting reform (cardinal or otherwise) in conversation that can guarantee an unassailable claim to victory for its winners in *all* non-tied elections.
+That said, in an age where trust in our institutions and elections are at an all-time low, having a voting system that can provide such a guarantee is invaluable, in my view. <d-glossary key="approval_voting">Approval voting</d-glossary> is not just mathematically elegant, it's not just [the most practical and cost-effective solution for our electoral problems](../practicalapproval/), it is the only voting reform (cardinal or otherwise) in conversation that can guarantee an unassailable claim to victory for its winners in *all* non-tied elections.

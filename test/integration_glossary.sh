@@ -28,8 +28,10 @@ grep -q '/assets/js/glossary.js' "${glossary_page}"
 
 # A distill post that does not set `glossary:` in its front matter must not pay
 # for the glossary script or data payload -- proves the {% if page.glossary %}
-# guards in distill.liquid/distill_scripts.liquid actually gate loading.
-non_glossary_page="${tmp_site}/blog/iia/index.html"
+# guards in distill.liquid/distill_scripts.liquid actually gate loading. Uses a
+# non-polisci post so it stays a valid control as the polisci glossary rollout
+# covers more posts over time.
+non_glossary_page="${tmp_site}/blog/rref/index.html"
 
 if [ ! -f "${non_glossary_page}" ]; then
   echo "control (non-glossary) distill page was not generated at ${non_glossary_page}" >&2

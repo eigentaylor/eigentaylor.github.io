@@ -13,6 +13,7 @@ published: true
 exclude_appendix_from_word_count: true
 collapse_appendix: false
 bibliography: voting.bib
+glossary: polisci
 thumbnail: /assets/img/wellyesbutactuallyno.jpg
 authors:  
   - name: Taylor Eigen Fisher
@@ -40,7 +41,7 @@ toc:
 
 This is a redo of my second post on Approval voting from November 2025. I was early in my journey learning about Approval voting, and I think I can explain this concept more clearly and concisely now. This post is primarily based on the seminal 1978 paper by Brams and Fishburn<d-cite key="bramsFishburn1978approval"></d-cite>.
 
-Approval voting lets voters approve (vote for) as many candidates as they like. It's like the standard choose-one plurality system, except it removes the arbitrary restriction of voting for only one candidate. Surprisingly, despite being such a simple change, the system is [on par with the best of the most popular proposed systems](../approval-only/).
+<d-glossary key="approval_voting">Approval voting</d-glossary> lets voters approve (vote for) as many candidates as they like. It's like the standard choose-one plurality system, except it removes the arbitrary restriction of voting for only one candidate. Surprisingly, despite being such a simple change, the system is [on par with the best of the most popular proposed systems](../approval-only/).
 
 The question we are trying to answer in this post is a simple one:
 
@@ -52,13 +53,13 @@ The short answer is:
 
 ## What is strategyproofness?
 
-Strategyproofness is slippery and hard to define rigorously. Everyone can easily *grasp* the idea, but writing it down as a mathematical property is harder.
+<d-glossary key="strategyproofness">Strategyproofness</d-glossary> is slippery and hard to define rigorously. Everyone can easily *grasp* the idea, but writing it down as a mathematical property is harder.
 
 Brams and Fishburn<d-cite key="bramsFishburn1978approval"></d-cite> give a somewhat tailored definition in the context of Approval voting, which is what we use here. The following is a little oversimplified for pedagogical purposes.
 
-> **Definition:** A strategy in Approval voting is **sincere** if there are no "holes" in the ballot. In other words, a voter draws a "line of acceptability" in their ranking and approves everyone above that line.
+> **Definition:** A strategy in Approval voting is **<d-glossary key="sincerity">sincere</d-glossary>** if there are no "holes" in the ballot. In other words, a voter draws a "line of acceptability" in their ranking and approves everyone above that line.
 >
-> A voting system is **strategyproof** for a given preference order if there is always only one "rational" strategy for any voter with that preference order to use in any scenario, and that strategy is sincere.
+> A voting system is **<d-glossary key="strategyproofness">strategyproof</d-glossary>** for a given preference order if there is always only one "rational" strategy for any voter with that preference order to use in any scenario, and that strategy is sincere.
 
 For example, you cannot approve of your first and third choices without approving your second choice on a sincere ballot, because that would imply a "hole" in your ballot.
 
@@ -66,7 +67,7 @@ I know some people, particularly [Condorcetists](../condorcet-approval/), who di
 
 One positive aspect of this definition is that two voters who rank $A>B>C$ can vote exclusively for $A$ or for both $A$ and $B$ to show a meaningful difference in how they feel about $B$ relative to $A$. Is $B$ an acceptable backup for $A$, which you are happy to approve of, or is $B$ a lesser evil that you only approve of if you have to? Both of these are sincere strategies, and Approval allows them both to be expressed without forcing the voters to share only the ordinal information which cannot capture that distinction. This is a feature, not a bug, in my view.
 
-Either way, this is the usage of the word "sincerity" in the literature, so we'll stick with it: a voter can be both sincere and strategic. For the pedants in the audience, the following blocks provides the formal definitions.
+Either way, this is the usage of the word "<d-glossary key="sincerity">sincerity</d-glossary>" in the literature, so we'll stick with it: a voter can be both sincere and strategic. For the pedants in the audience, the following blocks provides the formal definitions.
 
 {% proof A remark on "rationality" %}
 What we are calling "rational" is called "admissible" in the literature. Formally, it just means a strategy or ballot that is not "dominated" by any other strategy or ballot. In other words, there is no other ballot that would give you at least as good in all possible scenarios and strictly better in at least one scenario. So you can just ignore dominated strategies, since they are never optimal.
@@ -114,9 +115,9 @@ These two scenarios show that a voter with the same preference order may need to
 
 Okay, why isn't the post over? We just proved that Approval voting is not strategyproof! Well, it turns out there's a little more to the story.
 
-In 1978, Brams and Fishburn proved in their seminal paper on Approval voting that it is strategyproof for a voter if and only if that voter has dichotomous preferences.<d-cite key="bramsFishburn1978approval"></d-cite>
+In 1978, Brams and Fishburn proved in their seminal paper on Approval voting that it is strategyproof for a voter if and only if that voter has <d-glossary key="dichotomous_preferences">dichotomous preferences</d-glossary>.<d-cite key="bramsFishburn1978approval"></d-cite>
 
-> **Definition:** A voter's preferences are **dichotomous** if they can partition the candidates into two tiers: a top tier of "good" candidates, and a bottom tier of "bad" candidates. The voter is indifferent between all the candidates in the top tier, and also indifferent between all the candidates in the bottom tier, but they strictly prefer all the candidates in the top tier to all the candidates in the bottom tier.
+> **Definition:** A voter's preferences are **<d-glossary key="dichotomous_preferences">dichotomous</d-glossary>** if they can partition the candidates into two tiers: a top tier of "good" candidates, and a bottom tier of "bad" candidates. The voter is indifferent between all the candidates in the top tier, and also indifferent between all the candidates in the bottom tier, but they strictly prefer all the candidates in the top tier to all the candidates in the bottom tier.
 
 Strategyproofness follows from a result they prove in the paper:
 
@@ -142,7 +143,7 @@ Under such a goal, you are in the dichotomous domain where Approval is strategyp
 
 We haven't escaped strategy entirely: it's still prudent to consider the viability of your acceptable candidates. There is still the risk of "passive inefficiency": your acceptable set might be too narrow (you fail to approve any viable candidates) or too broad (you fail to distinguish between top contenders).
 
-Even so, this is usually preferable to the kind of "active betrayal" that can occur in other systems. Laslier's leader rule is one such approach to drawing an informed acceptability line<d-cite key="laslier2009leaderRule"></d-cite>. To explain it extremely briefly, a voter identifies the expected winner (the "leader", based on polling or other information) and approves of all candidates they prefer to the leader. If the voter prefers the leader to the expected runner-up, they also approve of the leader, but no other candidates they prefer strictly less than the leader. I will discuss this strategy in more detail in a future post.
+Even so, this is usually preferable to the kind of "active betrayal" that can occur in other systems. <d-glossary key="leader_rule">Laslier's leader rule</d-glossary> is one such approach to drawing an informed acceptability line<d-cite key="laslier2009leaderRule"></d-cite>. To explain it extremely briefly, a voter identifies the expected winner (the "leader", based on polling or other information) and approves of all candidates they prefer to the leader. If the voter prefers the leader to the expected runner-up, they also approve of the leader, but no other candidates they prefer strictly less than the leader. I will discuss this strategy in more detail in a future post.
 
 However, if you feel you can only approve a small set of candidates in good conscience, Approval lets you express that honestly without penalty. And unlike some more complex systems, Approval [won't betray you for that choice (see the appendix)](#ballot-level-strategyproofness): your ballot can only help elect someone you voted for.
 
@@ -154,7 +155,7 @@ The truth is that, although we *could* ask voters to rank candidates, many peopl
 
 "Vote blue no matter who" is an example of a dichotomous preference. A voter who would approve every candidate with an "R" next to their name and disapprove everyone else is effectively operating in the dichotomous domain. This applies to single-issue voters as well.
 
-Many voters can readily categorize candidates into "acceptable" and "unacceptable" buckets without much thought, based on the criteria that matter to them. I have also [argued that compromise](../why-condorcet/) and consent are inherently binary concepts. "Acceptable" and "unacceptable" is precisely what Approval voting captures, which makes it a natural fit for these voters and these goals.
+Many voters can readily categorize candidates into "acceptable" and "unacceptable" buckets without much thought, based on the criteria that matter to them. I have also [argued that compromise](../why-condorcet/) and consent are inherently binary concepts. "Acceptable" and "unacceptable" is precisely what <d-glossary key="approval_voting">Approval voting</d-glossary> captures, which makes it a natural fit for these voters and these goals.
 
 ## Conclusion
 
@@ -187,9 +188,9 @@ Under Approval, such voters could simply approve both Palin and Begich and get B
 
 If a sufficient number of voters find Begich acceptable, he wins. Given that both hardcore Palin supporters and Democrats found Begich more acceptable than their alternatives, it's plausible Begich would have won under Approval.
 
-In RCV, Begich arguably already had the numbers to beat Peltola, but the ballot mechanics prevented that preference from being expressed without strategic distortion. Approval voting avoids that problem: if Begich has the numbers to win, a vote for him won't backfire and cause him to lose. Simplicity here is an advantage.
+In <d-glossary key="rcv_irv">RCV</d-glossary>, Begich arguably already had the numbers to beat Peltola, but the ballot mechanics prevented that preference from being expressed without strategic distortion. Approval voting avoids that problem: if Begich has the numbers to win, a vote for him won't backfire and cause him to lose. Simplicity here is an advantage.
 
-Condorcet methods can fail this way--where insincerity is required to get the most preferred outcome (see [this post](../iia/)), and [this post](../approval-only/) shows a case in STAR where participation backfires. Approval's strict monotonicity prevents these pathologies.
+<d-glossary key="condorcet_method">Condorcet methods</d-glossary> can fail this way--where insincerity is required to get the most preferred outcome (see [this post](../iia/)), and [this post](../approval-only/) shows a case in <d-glossary key="star_voting">STAR</d-glossary> where participation backfires. Approval's strict monotonicity prevents these pathologies.
 
 However, you might still get a *better* outcome in Approval by extending or reducing your approval threshold, as in Example \ref{strategy-not-proof}. This is a **passive inefficiency** rather than the **active betrayal** seen in some ranked systems. So Approval is not perfectly strategyproof, but it does offer a valuable guarantee.
 
