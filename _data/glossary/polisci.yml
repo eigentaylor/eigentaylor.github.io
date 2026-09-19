@@ -38,7 +38,6 @@
 - key: adams_method
   term: "Adams's Method"
   definition: "A divisor method that always rounds up -- the mirror image of Jefferson's method, systematically favoring smaller states."
-  link: "https://en.wikipedia.org/wiki/Highest_averages_method"
 - key: huntington_hill_method
   term: "Huntington-Hill Method"
   definition: "The divisor method currently used to apportion the U.S. House, rounding based on the geometric mean of the two nearest whole numbers. Despite claims of being bias-free, it's slightly biased toward smaller states."
@@ -46,4 +45,4 @@
 - key: deans_method
   term: "Dean's Method"
   definition: "A divisor method that rounds based on the harmonic mean of the two nearest whole numbers -- similar in spirit to Huntington-Hill but more strongly biased toward smaller states."
-  link: "https://en.wikipedia.org/wiki/Highest_averages_method"
+  
