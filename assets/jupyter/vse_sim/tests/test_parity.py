@@ -92,14 +92,25 @@ def _run_notebook(nb, pool, params):
     return out, sinks
 
 
+# Methods the package added on top of the original notebook. The original stays untouched as the
+# reference, so parity is checked over the ORIGINAL methods only: the extras are filtered out of
+# every package-side input below. (Adding a method still perturbs the shared RNG stream, which is
+# why the extras must be excluded from the run itself, not just from the comparison.)
+EXTRA_LABELS = {"Schulze (equal ranks)"}
+
+
+def _orig(pairs):
+    return [p for p in pairs if not EXTRA_LABELS & set(p)]
+
+
 def _run_package(pool, params):
     seedRandomGenerators(PARITY_SEED)
     sinks = dict(betrayal={}, coma={}, primary_cost={}, primary_corruption={},
                  raw=defaultdict(list))
     out = run_vse_simulation(
-        cfg.MODEL, cfg.METHODS, cfg.NVOT, cfg.NCAND, PARITY_NITER,
-        cfg.CHOOSER_FUNS, cfg.MEDIA, electorates=pool,
-        paired_diff_pairs=cfg.PAIRED_DIFF_PAIRS, paired_ce_pairs=cfg.PAIRED_CE_PAIRS,
+        cfg.MODEL, [m for m in cfg.METHODS if m[0] not in EXTRA_LABELS], cfg.NVOT, cfg.NCAND,
+        PARITY_NITER, cfg.CHOOSER_FUNS, cfg.MEDIA, electorates=pool,
+        paired_diff_pairs=_orig(cfg.PAIRED_DIFF_PAIRS), paired_ce_pairs=_orig(cfg.PAIRED_CE_PAIRS),
         raw_vse_sink=sinks["raw"], honest_only=True,
         betrayal_targets=cfg.BETRAYAL_TARGETS, betrayal_sink=sinks["betrayal"],
         coma_targets=cfg.COMA_TARGETS, coma_sink=sinks["coma"],
@@ -116,13 +127,16 @@ def test_config_matches_notebook_parameters(nb):
                  "AWARENESS_ALPHA", "FATIGUE_BETA", "GAP_THRESHOLD_PP", "STAR_TOP_RANK",
                  "COMPARE_LABELS", "NCAND_VALUES", "HIST_LABELS", "SCENARIO_VALUES",
                  "JOINT_SCENARIOS", "RUNOFF_BASELINE_NAMES"]:
-        assert getattr(cfg, name) == nb[name], f"config.{name} drifted from the notebook"
+        val = getattr(cfg, name)
+        if isinstance(val, list):
+            val = [v for v in val if v not in EXTRA_LABELS]
+        assert val == nb[name], f"config.{name} drifted from the notebook"
     assert str(cfg.MODEL) == str(nb["MODEL"])
-    assert [label for label, _ in cfg.METHODS] == [label for label, _ in nb["METHODS"]]
-    assert cfg.METHOD_COLORS == nb["METHOD_COLORS"]
-    assert cfg.METHOD_LINESTYLES == nb["METHOD_LINESTYLES"]
-    assert cfg.PAIRED_DIFF_PAIRS == nb["_paired_diff_pairs"]
-    assert cfg.PAIRED_CE_PAIRS == nb["_paired_ce_pairs"]
+    assert [label for label, _ in cfg.METHODS if label not in EXTRA_LABELS] == [label for label, _ in nb["METHODS"]]
+    assert {k: v for k, v in cfg.METHOD_COLORS.items() if k not in EXTRA_LABELS} == nb["METHOD_COLORS"]
+    assert {k: v for k, v in cfg.METHOD_LINESTYLES.items() if k not in EXTRA_LABELS} == nb["METHOD_LINESTYLES"]
+    assert _orig(cfg.PAIRED_DIFF_PAIRS) == nb["_paired_diff_pairs"]
+    assert _orig(cfg.PAIRED_CE_PAIRS) == nb["_paired_ce_pairs"]
     assert cfg.BETRAYAL_TARGETS == nb["_betrayal_targets"]
     assert cfg.COMA_TARGETS == nb["_coma_targets"]
     assert cfg.PRIMARY_COST_TARGETS == nb["_primary_cost_targets"]
@@ -131,7 +145,7 @@ def test_config_matches_notebook_parameters(nb):
         assert np.array_equal(getattr(cfg, name), nb[name]), f"config.{name} drifted"
     assert [p for p, _ in cfg.SWEEP_PARAMS] == [p for p, _ in nb["SWEEP_PARAMS"]]
     for (_, pkg_methods), (_, nb_methods) in zip(cfg.SWEEP_PARAMS, nb["SWEEP_PARAMS"]):
-        assert [l for l, _ in pkg_methods] == [l for l, _ in nb_methods]
+        assert [l for l, _ in pkg_methods if l not in EXTRA_LABELS] == [l for l, _ in nb_methods]
 
 
 @pytest.mark.parametrize("params", PARAMS)

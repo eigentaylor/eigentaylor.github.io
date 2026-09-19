@@ -3,6 +3,7 @@ https://github.com/electionscience/vse-sim. Extracted verbatim from section 1 of
 `vse_simulation.ipynb` (cell 19); see that notebook for the original prose.
 """
 
+from ..core import rememberBallot
 from .ranked import RankedMethod
 
 
@@ -13,7 +14,35 @@ from numpy import sign as _sign2
 class Schulze(RankedMethod):
     """Condorcet method via the Schulze (strongest-path) rule: candidate
     pairs are compared by ballot rank, then cycles are resolved by comparing
-    strongest paths through the pairwise preference graph."""
+    strongest paths through the pairwise preference graph.
+
+    Schulze(quantize=True) returns a SchulzeEqualRanks: same tally, but each honest ballot is a
+    min-max-normalized score ballot with one level per candidate (0..n-1), so near-equal
+    utilities share a level and are ranked equally. Methods are invoked through their CLASS
+    (chooser(self.__class__, ...)), so the flag lives on a subclass, not the instance.
+    """
+
+    quantize = False
+
+    def __new__(cls, quantize=False):
+        return super().__new__(SchulzeEqualRanks if quantize and cls is Schulze else cls)
+
+    def __init__(self, quantize=False):
+        super().__init__()
+
+    @staticmethod  # cls is provided explicitly, not through binding
+    @rememberBallot
+    def honBallot(cls, utils):
+        if not cls.quantize:
+            ballot = [0] * len(utils)
+            cls.fillPrefOrder(utils, ballot)
+            return ballot
+        top = len(utils) - 1
+        bot = min(utils)
+        scale = max(utils) - bot
+        if scale == 0:
+            return [top] * len(utils)
+        return [int((top + .99) * (u - bot) / scale) for u in utils]
 
     def resolveCycle(self, cmat, n):
         beatStrength = [[0] * n for _ in range(n)]
@@ -105,3 +134,9 @@ class Schulze(RankedMethod):
         else:
             ballot[frontId] = n - 1
             cls.fillPrefOrder(voter, ballot, whichCands=[c for (c, r) in places[1:]], lowSlot=0)
+
+
+class SchulzeEqualRanks(Schulze):
+    """Schulze on n-level quantized ballots (equal ranks allowed); see Schulze(quantize=True)."""
+
+    quantize = True

@@ -90,6 +90,8 @@ METHODS = [
     ("Approval Top-2 (Coma)", ApprovalTop2(runoff_rho=None, runoff_coma=True)),
     ("Approval Top-2 (Clear-Eyed)", ApprovalTop2(runoff_rho=1.0)),
     ("Score Top-2 (Clear-Eyed)", ScoreTop2(STAR_TOP_RANK, runoff_rho=1.0)),
+    # Appended last so existing methods' RNG draws stay bit-identical to the original notebook.
+    ("Schulze (equal ranks)", Schulze(quantize=True)),
 ]
 
 # Fixed per-method colors (a validated colorblind-safe categorical palette -- run
@@ -112,6 +114,7 @@ METHOD_COLORS = {
     "STAR": "#eda100",
     "Score5": "#ecbe5b",
     "Condorcet (Schulze)": "#e87ba4",
+    "Schulze (equal ranks)": "#e87ba4",
     "Plurality Top-2": "#008300",
     "Plurality Top-2 (Clear-Eyed)": "#008300",
     "Approval Top-2": "#4a3aa7",
@@ -122,6 +125,7 @@ METHOD_COLORS = {
 METHOD_LINESTYLES = {label: ("--" if "Clear-Eyed" in label else "-") for label, _ in METHODS}
 METHOD_LINESTYLES["Score5"] = ":"  # same hue as STAR, dotted to mark "runoff switched off"
 METHOD_LINESTYLES["Approval Top-2 (Coma)"] = "-."  # same hue as AT2, dash-dot to mark "coma"
+METHOD_LINESTYLES["Schulze (equal ranks)"] = "-."  # same hue as Schulze, dash-dot to mark "equal ranks allowed"
 
 # label -> method instance, for the reusable comparison tooling in Sections 14 onward -- lets any
 # comparison pull any of these methods by name without constructing anything new.
@@ -150,7 +154,7 @@ PRE_NOISE_METHODS = [(label, m) for label, m in METHODS if "Clear-Eyed" not in l
 # its own narrower STAR-only pairs. compare_by_param (Section 13.5) uses this same COMPARE_LABELS
 # again once those sweeps exist.
 COMPARE_LABELS = ["Plurality", "Plurality Top-2", "Plurality Top-2 (Clear-Eyed)", "RCV (IRV)", "Approval", "Approval Top-2 (Coma)", "Approval Top-2",
-                   "Approval Top-2 (Clear-Eyed)", "STAR", "Score5", "Score Top-2 (Clear-Eyed)", "Condorcet (Schulze)"]
+                   "Approval Top-2 (Clear-Eyed)", "STAR", "Score5", "Score Top-2 (Clear-Eyed)", "Condorcet (Schulze)", "Schulze (equal ranks)"]
 
 
 # Every COMPARE_LABELS method gets its usual diff-vs-STAR (feeds Section 18's "Quantifying the
@@ -159,6 +163,7 @@ COMPARE_LABELS = ["Plurality", "Plurality Top-2", "Plurality Top-2 (Clear-Eyed)"
 # own separate JOINT_NITER-election simulation over the same labels/electorates a second time.
 PAIRED_DIFF_PAIRS = [(label, "STAR") for label in COMPARE_LABELS if label != "STAR"] + [
     ("RCV (IRV)", "Condorcet (Schulze)"),
+    ("Schulze (equal ranks)", "Condorcet (Schulze)"),
     ("Approval", "Plurality"),
     ("Approval Top-2", "Plurality Top-2"),
     ("Approval Top-2 (Clear-Eyed)", "Plurality Top-2 (Clear-Eyed)"),
