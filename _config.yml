@@ -242,6 +242,7 @@ exclude:
   - template.md
   - "**/__pycache__"
   - "**/*.pyc"
+  - assets/jupyter/.pytest_cache/
 keep_files:
   - CNAME
   - .nojekyll

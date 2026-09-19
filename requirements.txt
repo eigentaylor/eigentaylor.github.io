@@ -18,3 +18,6 @@ requests
 beautifulsoup4
 lxml
 sqlalchemy
+
+# Testing the vse_sim package (assets/jupyter/vse_sim)
+pytest

@@ -57,26 +57,26 @@ I would not consider myself a cardinalist, but this has given me new appreciatio
 I may investigate the [Better Choices](../better-choices/) model of a delayed top-3 Condorcet runoff in a follow-up, to see if reducing Condorcet to three candidates, following a choose-one or Approval all-candidate primary, would be more robust than just doing Schulze on all 6 candidates in a single round<d-footnote>At the suggestion of Sass, I did a cursory test of Schulze with tied rankings for candidates with very close utilities. This seemed to cushion the major VSE drop that Schulze experiences due to friction, like flipped rankings from noise. That is, the true preference of a voter could be $A$ over $B$, but noise might flip it to $B$ over $A$. If the utilities are close, then ranking $A$ and $B$ equally does not cast a vote in the wrong direction, even if it doesn't cast a vote in the right direction. This was not tested rigorously, and requires further investigation. However, it seems to potentially put Schulze on par with STAR under friction, rather than significantly worse than both STAR and plurality.</d-footnote>.
 
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="ranked-implosion" %}<br>
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="ranked-implosion" %}<br>
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="rcv-schulze-ci" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="rcv-schulze-ci" %}
 
 ### Condorcet Efficiency
 
 This is a little funnier. Under ideal conditions, Schulze has perfect 100% Condorcet efficiency, as expected. It's far beyond all other systems in doing this exact job:
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="ideal-honest-ce-table" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="ideal-honest-ce-table" %}
 
 Surprisingly, Approval Top-2 is the best non-Condorcet method at electing the Condorcet winner, ahead of even STAR under ideal conditions.
 
 However, under friction, the system designed specifically to elect the Condorcet winner becomes worse at electing the true Condorcet winner than basically every other method. It seems that cardinal and runoff systems, at least in this model, are actually better at electing the Condorcet winner than a system designed specifically to do that exact task.
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="condorcet-joint" %}<br>
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="condorcet-joint" %}<br>
 
 With only a few exceptions, there is sufficient evidence to conclude that Schulze is worse at electing the Condorcet winner than basically all other methods (except RCV) under all levels of friction.
 
 {% proof Expand to see the Condorcet efficiency significance tables %}
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="ce-ci-table" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="ce-ci-table" %}
 {% endproof %}
 
 It appears that if your desire is truly to elect the Condorcet winner no matter the cost, then a runoff method is the way to go if voters are not ideal. In fact, it seems your *last* choice should be a Condorcet method like Schulze.
@@ -97,7 +97,7 @@ Under ideal conditions, Approval Top-2 actually tops the ranks overall, with STA
 When we looked at the robustness across friction scenarios, Approval Top-2 (Groggy and Clear-Eyed) is consistently the most robust. The flavors of Plurality Top-2 generally take up second place collectively.
 
 {% proof Expand to see the robustness rankings tables %}
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="robustness-rankings" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="robustness-rankings" %}
 {% endproof %}
 
 ### The Shape of the Data
@@ -117,17 +117,17 @@ The most important thing to note is that the mode is 100% for all plots. Despite
 Horrifically, exactly one of the six examined systems has negative values more common than the election of the utility maximizer when looking at the joint scenarios: Schulze under heavy friction. That is, Schulze elects someone worse than randomly choosing a candidate more often than it elects the best candidate.
 
 {% proof Expand to see the histograms %}
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="histogram-data" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="histogram-data" %}
 {% endproof %}
 
 ### A Stricter Confidence Interval
 
 To evaluate the robustness of the results, I checked the results that were marked as significant under a 95% confidence interval, and re-evaluated them under a 99% confidence interval. Absence of evidence is not evidence of absence, so this does not mean that a difference or edge does not actually exist, it just shows which results are more robust and persistent.
 
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="not-sig-at-99-part2" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="not-sig-at-99-part2" %}
 
 {% proof Expand to see the results that hold under a 99% confidence interval %}
-{% jupyter_cell_embed "assets/jupyter/vse_simulation.ipynb" tag="still-sig-at-99-part2" %}
+{% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="still-sig-at-99-part2" %}
 {% endproof %}
 
 ## Conclusion
