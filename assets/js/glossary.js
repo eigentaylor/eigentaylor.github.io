@@ -10,6 +10,9 @@
 
   var DATA_ELEMENT_ID = "d-glossary-data";
   var ANCHOR_PREFIX = "d-glossary-";
+  // Same reading width as the distill footnote hover box (d-hover-box).
+  var POPOVER_WIDTH = 704;
+  var VIEWPORT_MARGIN = 8;
   var glossaryMap = null;
   var seenKeys = new Set();
   var openInstances = new Set();
@@ -98,16 +101,19 @@
     "  top: 100%;",
     "  left: 0;",
     "  margin-top: 4px;",
-    "  z-index: 30;",
-    "  max-width: 260px;",
-    "  padding: 10px 12px;",
-    "  font-size: 0.85rem;",
-    "  line-height: 1.4;",
+    "  z-index: 10000;",
+    "  box-sizing: border-box;",
+    "  width: 704px;",
+    "  max-width: 100vw;",
+    "  padding: 12px 16px;",
+    "  font-size: 1rem;",
+    "  line-height: 1.5;",
     "  background: var(--global-bg-color);",
     "  color: var(--global-text-color);",
     "  border: 1px solid var(--global-divider-color);",
-    "  border-radius: 6px;",
-    "  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);",
+    "  border-radius: 4px;",
+    "  box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);",
+    "  backdrop-filter: blur(2px);",
     "  word-wrap: break-word;",
     "  white-space: normal;",
     "}",
@@ -117,7 +123,6 @@
     "  0%, 40% { background: color-mix(in srgb, var(--global-theme-color) 35%, transparent); }",
     "  100% { background: transparent; }",
     "}",
-    ".popover.align-right { left: auto; right: 0; }",
     ".popover.align-top { top: auto; bottom: 100%; margin-top: 0; margin-bottom: 4px; }",
     ".popover p { margin: 0; }",
     ".popover a {",
@@ -203,13 +208,17 @@
         this.popoverEl.appendChild(link);
       }
 
-      this.button.addEventListener("mouseenter", () => this.show());
-      this.button.addEventListener("focus", () => this.show());
-      this.button.addEventListener("mouseleave", () => {
-        if (!this.pinned) {
-          this.hide();
-        }
-      });
+      // Like the footnote hover box, hiding is delayed so the mouse can travel
+      // from the term into the popover (e.g. to click "Learn more").
+      var enter = () => {
+        this.cancelHide();
+        this.show();
+      };
+      this.button.addEventListener("mouseenter", enter);
+      this.popoverEl.addEventListener("mouseenter", enter);
+      this.button.addEventListener("focus", enter);
+      this.button.addEventListener("mouseleave", () => this.scheduleHide(300));
+      this.popoverEl.addEventListener("mouseleave", () => this.scheduleHide(500));
       this.button.addEventListener("blur", () => {
         if (!this.pinned) {
           this.hide();
@@ -231,11 +240,16 @@
 
     show() {
       this.popoverEl.hidden = false;
-      this.popoverEl.classList.remove("align-right", "align-top");
+      this.popoverEl.classList.remove("align-top");
+      // Center the box in the viewport like the footnote hover box, rather than
+      // hugging the (often short) term it belongs to. `.wrap` is the containing
+      // block, so offset by its left edge.
+      var viewportWidth = document.documentElement.clientWidth;
+      var width = Math.min(POPOVER_WIDTH, viewportWidth - 2 * VIEWPORT_MARGIN);
+      var wrapLeft = this.popoverEl.parentElement.getBoundingClientRect().left;
+      this.popoverEl.style.width = width + "px";
+      this.popoverEl.style.left = (viewportWidth - width) / 2 - wrapLeft + "px";
       var rect = this.popoverEl.getBoundingClientRect();
-      if (rect.right > window.innerWidth) {
-        this.popoverEl.classList.add("align-right");
-      }
       if (rect.bottom > window.innerHeight) {
         this.popoverEl.classList.add("align-top");
       }
@@ -243,8 +257,21 @@
     }
 
     hide() {
+      this.cancelHide();
       this.popoverEl.hidden = true;
       this.button.setAttribute("aria-expanded", "false");
+    }
+
+    scheduleHide(delay) {
+      this.cancelHide();
+      if (this.pinned) {
+        return;
+      }
+      this.hideTimer = setTimeout(() => this.hide(), delay);
+    }
+
+    cancelHide() {
+      clearTimeout(this.hideTimer);
     }
   }
 

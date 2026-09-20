@@ -56,6 +56,27 @@ test.describe("glossary popover interactions", () => {
     await expect(popover).toBeHidden();
   });
 
+  test("popover is a wide footnote-style box that stays within the viewport", async ({ page }) => {
+    await preparePage(page, "light");
+    await page.goto(ROUTE, { waitUntil: "networkidle" });
+    await stabilizeVisuals(page);
+
+    const term = page.locator('d-glossary[key="alabama_paradox"]').first();
+    const button = term.locator("button");
+    const popover = term.locator(".popover");
+
+    await centerOn(button);
+    await button.hover();
+    await expect(popover).toBeVisible();
+
+    const box = await popover.boundingBox();
+    const viewportWidth = page.viewportSize().width;
+    expect(box.width).toBeGreaterThan(300);
+    expect(box.width).toBeLessThanOrEqual(704);
+    expect(box.x).toBeGreaterThanOrEqual(0);
+    expect(box.x + box.width).toBeLessThanOrEqual(viewportWidth);
+  });
+
   test("focus reveals and blur hides an unpinned popover", async ({ page }) => {
     await preparePage(page, "light");
     await page.goto(ROUTE, { waitUntil: "networkidle" });
