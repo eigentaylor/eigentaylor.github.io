@@ -47,7 +47,7 @@
   definition: "A divisor method that rounds based on the harmonic mean of the two nearest whole numbers -- similar in spirit to Huntington-Hill but more strongly biased toward smaller states."
 - key: approval_voting
   term: "Approval Voting"
-  definition: "A voting method where each voter can approve of (vote for) as many candidates as they like, and the candidate approved by the most voters wins."
+  definition: "A voting method where each voter can approve of (vote for) as many candidates as they like, and the candidate approved by the most voters wins. Often paired with a delayed runoff in multi-stage elections (sometimes called Approval Top-2 when two candidates advance to the runoff)."
   link: "https://en.wikipedia.org/wiki/Approval_voting"
 - key: condorcet_winner
   term: "Condorcet Winner"

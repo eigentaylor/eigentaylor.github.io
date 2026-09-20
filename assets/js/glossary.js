@@ -88,13 +88,14 @@
     "button.term:hover, button.term:focus-visible {",
     "  border-bottom-style: solid;",
     "}",
+    // Repeats keep the normal text color (graying out reads as a distraction)
+    // and just get a quieter dotted underline.
     "button.term.muted {",
-    "  color: var(--global-text-color-light);",
-    "  border-bottom-color: var(--global-text-color-light);",
+    "  border-bottom: 1px dotted var(--global-text-color-light);",
     "}",
     "button.term.muted:hover, button.term.muted:focus-visible {",
-    "  color: var(--global-text-color);",
-    "  border-bottom-color: var(--global-text-color);",
+    "  border-bottom-style: solid;",
+    "  border-bottom-color: var(--global-theme-color);",
     "}",
     ".popover {",
     "  position: absolute;",
