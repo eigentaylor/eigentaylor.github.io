@@ -1,6 +1,6 @@
 /*
  * <d-glossary key="..."> -- inline term popovers for distill posts that set
- * `glossary: <topic>` in their front matter (see `_includes/glossary_data.liquid`
+ * `glossary: <topic>` in their front matter (see `_plugins/glossary_data_tag.rb`
  * and `_data/glossary/<topic>.yml`). Deliberately independent of the vendored
  * assets/js/distillpub/* runtime (d-cite/d-footnote), which is gem-owned and not
  * editable here, so this keeps working across al_folio_distill upgrades.

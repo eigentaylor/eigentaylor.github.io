@@ -1,12 +1,24 @@
 # Glossary Instructions (v1.x)
 
-Scope: `_data/glossary/**`, `assets/js/glossary.js`, `_includes/glossary_data.liquid`, `_sass/_distill.scss`
+Scope: `_data/glossary/**`, `assets/js/glossary.js`, `_plugins/glossary_data_tag.rb`, `_sass/_distill.scss`
 
 ## What this is
 
 An inline term-popover component for distill posts, independent of the
 gem-vendored `assets/js/distillpub/*` runtime (`d-cite`/`d-footnote`), so it
 survives `al_folio_distill`/`al_folio_core` upgrades untouched.
+
+`_plugins/glossary_data_tag.rb` defines the `{% glossary_data %}` Liquid tag
+that emits the `<script id="d-glossary-data">` JSON payload (wired into
+`_layouts/distill.liquid` as `{% if page.glossary %}{% glossary_data %}{% endif %}`).
+It's a Ruby tag rather than a plain `{% include %}` specifically so it can
+call `site.regenerator.add_dependency` and register `_data/glossary/<topic>.yml`
+as an explicit dependency of the page at render time -- without that, editing
+only the YAML data file (not the post's own `.md`) doesn't trigger a
+re-render under `--incremental`/`jekyll serve --watch`, so the page keeps
+serving stale glossary JSON. `jekyll-scholar`'s `{% bibliography %}` tag
+solves the identical problem for `.bib` files the same way; `_plugins/jupyter_cell_embed.rb`
+in this repo does it for notebook files.
 
 ## Authoring a glossary
 
@@ -52,7 +64,7 @@ is fine (confirmed working in practice).
 ## Validation
 
 Use the validated command set in `AGENTS.md`. `assets/js/glossary.js` and
-`_includes/glossary_data.liquid` are new files (not gem-owned overrides), but
+`_plugins/glossary_data_tag.rb` are new files (not gem-owned overrides), but
 `_layouts/distill.liquid`, `_includes/distill_scripts.liquid`, and
 `_sass/_distill.scss` each carry one small addition wiring this feature in —
 all three are already tracked in `.al-folio-overrides.yml`; re-run
