@@ -73,7 +73,7 @@
   link: "https://en.wikipedia.org/wiki/Independence_of_irrelevant_alternatives"
 - key: vse
   term: "Voter Satisfaction Efficiency (VSE)"
-  definition: "Jameson Quinn's simulation-based measure of a voting method's accuracy: across thousands of simulated elections with known voter utilities, how much average voter satisfaction the method's winners deliver. 0% is the same as picking a winner at random and 100% is always electing the highest-utility candidate. It measures outcomes only, not practical considerations like complexity or campaign incentives."
+  definition: "Jameson Quinn's simulation-based measure of a voting method's accuracy: across thousands of simulated elections with known voter utilities, how much average voter satisfaction the method's winners deliver. 0% is the same as picking a winner at random and 100% is always electing the highest-utility candidate. It is not a probability of electing the highest-utility candidate, but a linear scale between random choice and perfect accuracy."
   link: "https://electionscience.github.io/vse-sim/VSEbasic"
 - key: leader_rule
   term: "The Leader Rule"
