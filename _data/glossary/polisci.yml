@@ -1,0 +1,124 @@
+# Glossary term data for `<d-glossary key="...">` tags on posts with `glossary: polisci`
+# in their front matter. Each entry: key (lookup id used by the tag), term (display
+# fallback/aria-label), definition (short plain text), link (optional "learn more" URL).
+- key: alabama_paradox
+  term: "Alabama Paradox"
+  definition: "A quirk of some apportionment methods (like Vinton's) where increasing the total number of House seats can cause a state to lose a seat."
+  link: "https://en.wikipedia.org/wiki/Alabama_paradox"
+- key: agreeable_house_size
+  term: "Agreeable House Size"
+  definition: "A House size where Webster's and Vinton's apportionment methods agree, and no Alabama Paradox occurs (no state would receive more seats for a smaller house size)."
+  link: "https://www.researchgate.net/publication/353810350_Fairness_in_Apportionment"
+- key: apportionment
+  term: "Apportionment"
+  definition: "The process of allocating a fixed number of legislative seats (like the 435 in the U.S. House) among states based on population."
+  link: "https://en.wikipedia.org/wiki/United_States_congressional_apportionment"
+- key: divisor_method
+  term: "Divisor Method"
+  definition: "A family of apportionment methods that divide each state's population by a common divisor, then round the resulting quotients to whole seats using some fixed rounding rule."
+  link: "https://en.wikipedia.org/wiki/Highest_averages_method"
+- key: standard_divisor
+  term: "Standard Divisor"
+  definition: "The nationwide average population per seat: total population divided by the number of seats."
+- key: quota
+  term: "Quota"
+  definition: "A state's exact proportional share of seats -- its population divided by the standard divisor -- before rounding to a whole number."
+- key: websters_method
+  term: "Webster's Method"
+  definition: "A divisor method that rounds each state's quotient to the nearest whole number. Proven unbiased between large and small states, though it can occasionally violate a state's quota."
+  link: "https://en.wikipedia.org/wiki/Webster/Sainte-Lagu%C3%AB_method"
+- key: vintons_method
+  term: "Vinton's Method"
+  definition: "Also known as Hamilton's method: gives each state its rounded-down quota, then hands out remaining seats one at a time to the states with the largest leftover fractions. Guarantees quota compliance but can produce the Alabama Paradox."
+  link: "https://en.wikipedia.org/wiki/Largest_remainder_method"
+- key: jeffersons_method
+  term: "Jefferson's Method"
+  definition: "A divisor method that always rounds down, systematically favoring larger states. The first method used for U.S. House apportionment, also known internationally as the D'Hondt method."
+  link: "https://en.wikipedia.org/wiki/D%27Hondt_method"
+- key: adams_method
+  term: "Adams's Method"
+  definition: "A divisor method that always rounds up -- the mirror image of Jefferson's method, systematically favoring smaller states."
+- key: huntington_hill_method
+  term: "Huntington-Hill Method"
+  definition: "The divisor method currently used to apportion the U.S. House, rounding based on the geometric mean of the two nearest whole numbers. Despite claims of being bias-free, it's slightly biased toward smaller states."
+  link: "https://en.wikipedia.org/wiki/Huntington%E2%80%93Hill_method"
+- key: deans_method
+  term: "Dean's Method"
+  definition: "A divisor method that rounds based on the harmonic mean of the two nearest whole numbers -- similar in spirit to Huntington-Hill but more strongly biased toward smaller states."
+- key: approval_voting
+  term: "Approval Voting"
+  definition: "A voting method where each voter can approve of (vote for) as many candidates as they like, and the candidate approved by the most voters wins. Often paired with a delayed runoff in multi-stage elections (sometimes called Approval Top-2 when two candidates advance to the runoff)."
+  link: "https://en.wikipedia.org/wiki/Approval_voting"
+- key: condorcet_winner
+  term: "Condorcet Winner"
+  definition: "A candidate who would defeat every other candidate in a head-to-head matchup, based on how voters rank them."
+- key: condorcet_criterion
+  term: "Condorcet Criterion"
+  definition: "The requirement that a voting system elect the Condorcet winner whenever one exists. A system that satisfies this criterion is said to be Condorcet-consistent."
+- key: condorcet_method
+  term: "Condorcet Method"
+  definition: "Any voting method that tries to satisfy the Condorcet criterion by inducing a societal ranking from head-to-head comparisons between candidates (Minimax, Ranked Pairs, and Schulze are common examples)."
+  link: "https://en.wikipedia.org/wiki/Condorcet_method"
+- key: rcv_irv
+  term: "Ranked-Choice Voting (RCV)"
+  definition: 'A ranked voting method that repeatedly eliminates the last-place candidate and transfers their votes until someone has a majority. "Instant-runoff voting" was the original, older name for this method; "ranked-choice voting" is a newer rebrand of the exact same method, now more common in U.S. reform circles.'
+  link: "https://en.wikipedia.org/wiki/Instant-runoff_voting"
+- key: star_voting
+  term: "STAR Voting"
+  definition: '"Score Then Automatic Runoff": voters score every candidate 0-5, then the two highest-scoring candidates face a final head-to-head runoff decided by those same scores.'
+  link: "https://en.wikipedia.org/wiki/STAR_voting"
+- key: iia
+  term: "Independence of Irrelevant Alternatives (IIA)"
+  definition: "The property that a voting system's relative ranking of two candidates shouldn't change just because other, unrelated candidates enter or leave the race."
+  link: "https://en.wikipedia.org/wiki/Independence_of_irrelevant_alternatives"
+- key: vse
+  term: "Voter Satisfaction Efficiency (VSE)"
+  definition: "Jameson Quinn's simulation-based measure of a voting method's accuracy: across thousands of simulated elections with known voter utilities, how much average voter satisfaction the method's winners deliver. 0% is the same as picking a winner at random and 100% is always electing the highest-utility candidate. It is not a probability of electing the highest-utility candidate, but a linear scale between random choice and perfect accuracy."
+  link: "https://electionscience.github.io/vse-sim/VSEbasic"
+- key: leader_rule
+  term: "The Leader Rule"
+  definition: 'Jean-Francois Laslier''s Approval voting strategy: identify the top two frontrunners (the "leader" and the "challenger"), approve everyone you prefer to the leader, and approve the leader only if you prefer them to the challenger.'
+- key: electoral_college
+  term: "Electoral College"
+  definition: "The U.S. system that elects the president indirectly: each state's voters choose electors, who then cast the votes that actually decide the winner, rather than a direct nationwide popular vote."
+  link: "https://en.wikipedia.org/wiki/United_States_Electoral_College"
+- key: jungle_primary
+  term: "Jungle Primary"
+  definition: 'A primary system (formally a "nonpartisan blanket primary") where every candidate from every party appears on one ballot, and the top vote-getters advance to a final runoff, regardless of party.'
+  link: "https://en.wikipedia.org/wiki/Nonpartisan_blanket_primary"
+- key: sincerity
+  term: "Sincerity (Sincere Voting)"
+  definition: 'In Approval voting, a ballot is sincere if it has no "gaps": once a voter approves a candidate, they also approve every candidate they prefer even more.'
+- key: strategyproofness
+  term: "Strategyproofness"
+  definition: "A voting system is strategyproof if voting honestly is always at least as good a strategy as voting dishonestly, for every voter in every scenario."
+  link: "https://en.wikipedia.org/wiki/Strategyproofness"
+- key: precinct_summability
+  term: "Precinct Summability"
+  definition: "A counting method is precinct summable if each precinct can count and report its own totals independently, with the final winner determined by simple summation -- no central re-tabulation needed."
+- key: condorcet_cycle
+  term: "Condorcet Cycle"
+  definition: "A rock-paper-scissors-style situation where A beats B, B beats C, and C beats A head-to-head, so no Condorcet winner exists."
+  link: "https://en.wikipedia.org/wiki/Condorcet_paradox"
+- key: spoiler_effect
+  term: "Spoiler Effect"
+  definition: "When a candidate with little chance of winning still changes who wins by splitting votes away from a similar, more viable candidate."
+  link: "https://en.wikipedia.org/wiki/Spoiler_effect"
+- key: center_squeeze
+  term: "Center Squeeze"
+  definition: "A pathology (mainly in RCV/IRV) where a broadly-acceptable moderate candidate is eliminated early for lacking enough first-choice votes, even though they'd beat either finalist head-to-head."
+- key: gibbard_satterthwaite
+  term: "Gibbard-Satterthwaite Theorem"
+  definition: "The result that no reasonable ranked voting system can be fully strategyproof for three or more candidates: there is always some situation where a voter benefits from voting dishonestly."
+  link: "https://en.wikipedia.org/wiki/Gibbard%E2%80%93Satterthwaite_theorem"
+- key: smith_set
+  term: "Smith Set"
+  definition: "The smallest group of candidates who all beat every candidate outside the group head-to-head -- a generalization of the Condorcet winner for elections with a Condorcet cycle."
+  link: "https://en.wikipedia.org/wiki/Smith_set"
+- key: pareto_efficiency
+  term: "Pareto Efficiency (voting)"
+  definition: "A voting system is Pareto efficient if, whenever every voter ranks candidate A above candidate B, B never wins."
+  link: "https://en.wikipedia.org/wiki/Pareto_efficiency"
+- key: dichotomous_preferences
+  term: "Dichotomous Preferences"
+  definition: "A simplified model where each voter splits candidates into just two tiers, acceptable or unacceptable, rather than a full ranking -- the natural assumption for analyzing Approval voting."

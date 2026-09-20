@@ -9,6 +9,7 @@ category: polisci
 featured: true
 theorems: false
 bibliography: voting.bib
+glossary: polisci
 chart:
   plotly: true
 images:
@@ -60,7 +61,7 @@ toc:
 
 ## Introduction
 
-Welcome to the beginning of my most ambitious project yet: Coarse Correction, a multi-part series on the robustness of voting systems to imperfect voters based on a simulation model I developed as a modification of Jameson Quinn's Voter Satisfaction Efficiency (VSE) simulation code<d-cite key="quinn2017vseSummary"></d-cite>. In part 1, we will focus on comparing the automatic runoff of STAR voting to the delayed runoff of Approval Top-2. Can a more expressive ballot really produce better outcomes in a single round than a simpler ballot with a second? The answer may surprise you.
+Welcome to the beginning of my most ambitious project yet: Coarse Correction, a multi-part series on the robustness of voting systems to imperfect voters based on a simulation model I developed as a modification of Jameson Quinn's <d-glossary key="vse">Voter Satisfaction Efficiency (VSE)</d-glossary> simulation code<d-cite key="quinn2017vseSummary"></d-cite>. In part 1, we will focus on comparing the automatic runoff of <d-glossary key="star_voting">STAR voting</d-glossary> to the delayed runoff of <d-glossary key="approval_voting">Approval Top-2</d-glossary>. Can a more expressive ballot really produce better outcomes in a single round than a simpler ballot with a second? The answer may surprise you.
 
 ### A Tale of Two Cities
 
@@ -78,7 +79,7 @@ The overwhelming defeat of STAR in Eugene was a shock to many, and a devastating
 
 We must first establish what "accuracy" means in the context of voting systems, beyond "the candidate I like did or didn't win".
 
-Voter Satisfaction Efficiency (VSE)<d-cite key="quinn2017vseSummary"></d-cite> is an incredible metric used for evaluating the performance of voting systems, created by the late Jameson Quinn and championed by the Equal Vote Coalition. It gives a number to the "accuracy" of a voting system that can be used to directly compare methods. VSE is reported as a percentage with 0% being just a system that randomly chooses a candidate as the winner, and 100% being a system that always elects the "best" (highest utility) candidate<d-footnote>VSE isn't the frequency of electing the single-best candidate. Rather, it's a linear rescaling of average voter utility normalized to the scale between random (average of all candidate utilities) and best. A VSE of 50% would, for example, mean that the candidate it tends to elect provides utility halfway between the average and the best, potentially without ever picking the single best candidate. An illustrative, if slightly oversimplified, example would be that if the average provided utility of all candidates in a specific election was 100, and the utility maximizer provided 110, then a VSE of 50% means we would expect the candidate that the system elects to provide approximately 105 utility (though it could still elect that best candidate as well). Any positive VSE is better than random. There are also methods that do manage a negative VSE, like the Borda count under strategy, which means it tends to actively elect bad candidates.</d-footnote>.
+<d-glossary key="vse">Voter Satisfaction Efficiency (VSE)</d-glossary><d-cite key="quinn2017vseSummary"></d-cite> is an incredible metric used for evaluating the performance of voting systems, created by the late Jameson Quinn and championed by the Equal Vote Coalition. It gives a number to the "accuracy" of a voting system that can be used to directly compare methods. VSE is reported as a percentage with 0% being just a system that randomly chooses a candidate as the winner, and 100% being a system that always elects the "best" (highest utility) candidate<d-footnote>VSE isn't the frequency of electing the single-best candidate. Rather, it's a linear rescaling of average voter utility normalized to the scale between random (average of all candidate utilities) and best. A VSE of 50% would, for example, mean that the candidate it tends to elect provides utility halfway between the average and the best, potentially without ever picking the single best candidate. An illustrative, if slightly oversimplified, example would be that if the average provided utility of all candidates in a specific election was 100, and the utility maximizer provided 110, then a VSE of 50% means we would expect the candidate that the system elects to provide approximately 105 utility (though it could still elect that best candidate as well). Any positive VSE is better than random. There are also methods that do manage a negative VSE, like the Borda count under strategy, which means it tends to actively elect bad candidates.</d-footnote>.
 
 I interpret VSE as just a simple measure of "aggregation competence": how well a voting system can aggregate the preferences that are fed into it. If a system is *good*, then it almost surely has solid VSE<d-footnote>VSE does not measure a number of other important and practical considerations, such as complexity, who even runs, campaign incentives, or "Any desirable characteristics of a voting method that do not directly relate to outcome (who wins)" (Quinn <d-cite key="quinn2017vseSummary"></d-cite>). We will focus on what my results say about outcomes, with the appropriate context that just because a system has comparatively good VSE does not make it a good system worth protecting or advocating for.</d-footnote>. Choose-one voting, for example, has fairly poor VSE (about 60%) when voters are simulated to just vote honestly. This is because the system is so blind that it cannot look beyond the top choice of each voter, and thus consensus candidates are often buried by vote splitting. With strategic voting, it can rise to about 80%.
 
@@ -100,10 +101,10 @@ While I was originally strongly against pairing Approval voting with a runoff, d
 
 ### The Contenders
 
-The Equal Vote Coalition supports three systems, which all have high VSE: the aforementioned STAR system that lost in Eugene, Approval voting which is currently being used with a top-2 runoff in St. Louis, and Condorcet methods (which will receive focus in part 2). The *stars* of this post are the first two:
+The Equal Vote Coalition supports three systems, which all have high VSE: the aforementioned STAR system that lost in Eugene, Approval voting which is currently being used with a top-2 runoff in St. Louis, and <d-glossary key="condorcet_method">Condorcet methods</d-glossary> (which will receive focus in part 2). The *stars* of this post are the first two:
 
-- **STAR voting** (Score Then Automatic Runoff): Voters score candidates on a scale (usually 0-5), and the two highest-scoring candidates go to an automatic runoff where a candidate gets one vote for every voter who scored them strictly higher than the other finalist. This system has excellent VSE.
-- **Approval voting**: Voters can approve of as many candidates as they like, and the candidate with the most approvals wins. This is a system with surprisingly high VSE for its refreshing simplicity, which becomes much higher with strategic voting. With a top-2 runoff, which is what St. Louis uses, Approval improves its VSE to be quite competitive with more granular alternatives.
+- **<d-glossary key="star_voting">STAR voting</d-glossary>** (Score Then Automatic Runoff): Voters score candidates on a scale (usually 0-5), and the two highest-scoring candidates go to an automatic runoff where a candidate gets one vote for every voter who scored them strictly higher than the other finalist. This system has excellent VSE.
+- **<d-glossary key="approval_voting">Approval voting</d-glossary>**: Voters can approve of as many candidates as they like, and the candidate with the most approvals wins. This is a system with surprisingly high VSE for its refreshing simplicity, which becomes much higher with strategic voting. With a top-2 runoff, which is what St. Louis uses, Approval improves its VSE to be quite competitive with more granular alternatives.
 
 The following is the VSE range of the major reforms that are currently being considered in the United States.
 
@@ -117,9 +118,9 @@ In addition to measuring "aggregation competence," VSE can be used as advocacy e
 
 > "Today, experts can use computer models to see how different voting methods would actually perform. And it's pretty much just like how engineers can test the plans for a new skyscraper before actually building it." (Timestamp [7:10](https://youtu.be/xWQiy5VdwY0?si=9vzXt8aI6_beTKoi&t=430))
 
-Particularly when Ranked-Choice Voting, which is missing from the list of EVC endorsed systems, has hogged the spotlight and attention ([at the cost of better reforms](../ditch-rcv/)), using VSE in this way is a powerful tool to demonstrate that there are far better alternatives to RCV. RCV will also receive focus in part 2, which will show exactly how abysmal it really is.
+Particularly when <d-glossary key="rcv_irv">Ranked-Choice Voting</d-glossary>, which is missing from the list of EVC endorsed systems, has hogged the spotlight and attention ([at the cost of better reforms](../ditch-rcv/)), using VSE in this way is a powerful tool to demonstrate that there are far better alternatives to RCV. RCV will also receive focus in part 2, which will show exactly how abysmal it really is.
 
-And when we look at the simulation numbers, it is tough to argue: In VSE, single-round Approval voting, while simple and reliable, absolutely underperforms STAR and Condorcet.
+And when we look at the simulation numbers, it is tough to argue: In VSE, single-round <d-glossary key="approval_voting">Approval voting</d-glossary>, while simple and reliable, absolutely underperforms STAR and <d-glossary key="condorcet_method">Condorcet</d-glossary>.
 
 The narrative, which is generally supported by the data, seems to be that Approval is the best "bang for the buck" reform, "with basically no downsides, which improves outcomes hugely" (Quinn <d-cite key="quinn2017vseSummary"></d-cite>), but is lacking in other ways: It's not particularly "expressive", and its "accuracy" is comparatively lower than the more sophisticated alternatives like STAR and Condorcet.
 
@@ -480,7 +481,7 @@ The VSE of single-round plurality is never *good* under the defined scenarios, b
 
 {% jupyter_cell_embed "assets/jupyter/vse_simulation_modular.ipynb" tag="plurality-bump" %}<br>
 
-This leads me to an uncomfortable conclusion that choose-one voting, for as flawed as its outcomes are, might actually be in some ways well-suited to our tired human brains. The mental shortcuts that we take might actually hone the outcomes of our terrible voting system to some extent. If nothing else, choose-one voting is simple to use and simple to count. But Approval maintains that same simplicity, while improving candidate incentives and reducing problems like the spoiler effect and vote splitting.
+This leads me to an uncomfortable conclusion that choose-one voting, for as flawed as its outcomes are, might actually be in some ways well-suited to our tired human brains. The mental shortcuts that we take might actually hone the outcomes of our terrible voting system to some extent. If nothing else, choose-one voting is simple to use and simple to count. But Approval maintains that same simplicity, while improving candidate incentives and reducing problems like the <d-glossary key="spoiler_effect">spoiler effect</d-glossary> and vote splitting.
 
 ### Approval vs Plurality
 

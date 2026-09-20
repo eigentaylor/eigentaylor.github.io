@@ -83,6 +83,9 @@ jobs:
       - name: Run distill integration test 📄
         run: bash test/integration_distill.sh
 
+      - name: Run glossary integration test 📖
+        run: bash test/integration_glossary.sh
+
       - name: Run bootstrap compatibility integration test 🧩
         run: bash test/integration_bootstrap_compat.sh
 

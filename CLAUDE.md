@@ -10,6 +10,12 @@ When editing an existing `.ipynb` file in this repo, always make targeted per-ce
 
 This checkout has `core.autocrlf=true`, so files sit as CRLF on disk locally while the committed blob is LF (`git show HEAD:<path>` confirms it) — Windows-only local `--check` runs can report a "warn" on a file that is otherwise correctly formatted, purely from that EOL mismatch, and it will check out and pass fine in CI. Don't take a local `--check` warning at face value: diff `npx prettier <path>` output against the file's real content (or run `--write` and check `git diff` afterward) to see whether anything besides line endings actually changed before concluding there's a real formatting issue.
 
+## Adding Wikipedia links to glossary entries
+
+When adding a `link:` field to a `_data/glossary/*.yml` entry, only add one when confident the exact article title exists and isn't a redirect to something unrelated — outbound access to en.wikipedia.org may not be available in this sandbox, so links can't be verified live before they're written. A past pass shipped several confidently-guessed links (apportionment method pages) that turned out wrong this way. When unsure, leave `link:` off rather than guess, and call out whichever links were added so the user can spot-check them before merging.
+
+Separately, when tagging `<d-glossary>` occurrences in a post's prose: tag a term's first meaningful appearance, and only tag it again later if it resurfaces after a real gap (a different section, not the next sentence or paragraph) — per Wikipedia's [MOS:DL "duplicate and repeat links"](https://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style/Linking#Duplicate_and_repeat_links) convention. See `.github/instructions/glossary.instructions.md` for the full authoring guide (data format, front matter wiring, appendix summary behavior).
+
 ## Editing blog post prose
 
 Don't make significant changes to the prose/argument in blog posts (e.g. `_posts/`, `_previews/`) unless explicitly asked. Small, pre-approved edits are fine — fixing typos or factual errors, wording tweaks, adding citations/links/numbers when asked. Anything more substantive (new arguments, reframed sections, rewritten paragraphs) should be offered as suggested language in chat for the user to adopt or adapt themselves, not written directly into the file. The words in a post should stay the user's own, even when the surrounding technical work (data, simulations, notebooks) is AI-assisted.

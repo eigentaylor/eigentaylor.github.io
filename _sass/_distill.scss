@@ -359,7 +359,8 @@ d-appendix {
 
   h3,
   li,
-  span {
+  span,
+  strong {
     color: var(--global-distill-app-color) !important;
   }
 
@@ -377,6 +378,67 @@ d-appendix {
     &:hover {
       color: var(--global-hover-color) !important;
     }
+  }
+}
+
+// The gem's own layout CSS lays out d-footnote-list/d-citation-list full-width
+// by enumerating those tag names directly; it can't know about this repo-local
+// d-glossary-list, so it needs the same rule here.
+d-appendix > d-glossary-list {
+  grid-column: screen;
+}
+
+// d-footnote-list/d-citation-list are themselves CSS Grid containers sharing
+// the exact same named grid-template-columns as d-appendix/d-article at every
+// breakpoint (defined once in the gem's template.v2.js for a fixed tag list
+// that can't include this repo-local d-glossary-list). That shared named grid
+// is what lets their own <h3> ("Footnotes"/"References") sit in the narrow
+// left margin column via the gem's `d-appendix h3 { grid-column: page-start /
+// text-start; }` rule, while their <ol> uses the main text column via their
+// own `d-footnote-list > * { grid-column: text; }`. Without an identical grid
+// here, d-glossary-list's <h3>/<ol> just stack in plain block flow instead.
+//
+// NOTE: these four breakpoints are copied from al_folio_distill's own
+// template.v2.js and must be kept in sync if that gem's grid ever changes --
+// check this block against `bundle exec al-folio upgrade overrides audit`
+// output (or the gem's changelog) after an al_folio_distill version bump.
+d-glossary-list {
+  display: grid;
+  justify-items: stretch;
+  grid-template-columns:
+    [screen-start] 8px [page-start kicker-start text-start gutter-start middle-start] 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+    1fr [text-end page-end gutter-end kicker-end middle-end] 8px [screen-end];
+  grid-column-gap: 8px;
+
+  > * {
+    grid-column: text;
+  }
+}
+
+@media (min-width: 768px) {
+  d-glossary-list {
+    grid-template-columns:
+      [screen-start] 1fr [page-start kicker-start middle-start text-start] 45px 45px 45px 45px 45px 45px 45px 45px
+      [kicker-end text-end gutter-start] 45px [middle-end] 45px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 16px;
+  }
+}
+
+@media (min-width: 1000px) {
+  d-glossary-list {
+    grid-template-columns:
+      [screen-start] 1fr [page-start kicker-start] 50px [middle-start] 50px [text-start kicker-end] 50px 50px 50px
+      50px 50px 50px 50px 50px [text-end gutter-start] 50px [middle-end] 50px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 16px;
+  }
+}
+
+@media (min-width: 1180px) {
+  d-glossary-list {
+    grid-template-columns:
+      [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px
+      60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 32px;
   }
 }
 

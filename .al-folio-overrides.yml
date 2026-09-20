@@ -81,8 +81,8 @@ overrides:
     gem_version: 1.0.9
     upstream_path: _layouts/distill.liquid
     upstream_sha256: 3610cdd2f384d05d2e30669ffc8e3696552b1fb22017a41a3224187d88f9d803
-    local_sha256: 76d00089ece0e715f24831c2d09d9e0edb62c69a6b2d7e8e92e04fbaab59f631
-    acknowledged_at: "2026-09-07"
+    local_sha256: d3e85ffee1cb2112237271d537b031ad30f7bafb327982e3342a08550fd9026b
+    acknowledged_at: "2026-09-20"
   _layouts/post.liquid:
     owner: al_folio_core
     gem_version: 1.0.9

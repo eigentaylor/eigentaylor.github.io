@@ -30,13 +30,14 @@ toc:
     subsections:
       - name: The Approval Voting Exception
 bibliography: voting.bib
+glossary: polisci
 ---
 
 ## Introduction
 
 Based primarily on the proof included in W.D. Wallis' *The Mathematics of Elections and Voting* <d-cite key="wallis2014mathElections"></d-cite>, with more detail. I also referenced lecture notes from Ashish Goel's course at Stanford <d-cite key="goel2021gibbardLecture"></d-cite>, and this "simple proof" by Andrew C. Eggers <d-cite key="eggers2015simpleProofGS"></d-cite>.
 
-The Gibbard-Satterthwaite theorem is a fundamental result in social choice theory, which loosely states that no "reasonable" ranked voting system can be strategyproof — there can always be a situation where a voter can get a better result by voting dishonestly. The exception is a "dictatorship", where the whole election is decided by a single voter, and all other ballots are ignored.
+The <d-glossary key="gibbard_satterthwaite">Gibbard-Satterthwaite theorem</d-glossary> is a fundamental result in social choice theory, which loosely states that no "reasonable" ranked voting system can be <d-glossary key="strategyproofness">strategyproof</d-glossary> — there can always be a situation where a voter can get a better result by voting dishonestly. The exception is a "dictatorship", where the whole election is decided by a single voter, and all other ballots are ignored.
 
 Similar to Arrow's impossibility theorem, the intuition is "If we have a voting system that has this nice property, then it's either absurdly undemocratic or must be a dictatorship". In other words, seemingly obvious or desirable properties of a voting system are actually extremely difficult to satisfy when you must aggregate the preferences of multiple voters. The Gibbard-Satterthwaite theorem is focused on the inevitability of strategic voting in ranked voting systems.
 
@@ -56,7 +57,7 @@ This may seem like an absurdly weak assumption that any voting system would sati
 
 ### Strategyproofness
 
-We now define the key property of strategyproofness.
+We now define the key property of <d-glossary key="strategyproofness">strategyproofness</d-glossary>.
 
 > **Definition:** We call $$f$$ **strategyproof** if the following is satisfied.
 >
@@ -132,7 +133,7 @@ Strategyproofness therefore strongly restricts the effects of moving a candidate
 
 Note that this is technically "strong monotonicity", but we will simply call it "monotonicity".
 
-This is a very natural property to expect from a voting system, which is not satisfied by many in common use. For example, Ranked Choice Voting or IRV is famously not monotonic. If a voter moves the current winner up to the top of their ranking, then that can change the elimination order, which can result in a previously eliminated candidate defeating the previous winner.
+This is a very natural property to expect from a voting system, which is not satisfied by many in common use. For example, <d-glossary key="rcv_irv">Ranked Choice Voting or IRV</d-glossary> is famously not monotonic. If a voter moves the current winner up to the top of their ranking, then that can change the elimination order, which can result in a previously eliminated candidate defeating the previous winner.
 
 For example, say that, initially, Clark gets the fewest number of votes, and his votes transfer to Alice to make her win. If a Bob supporter moves their votes to Alice, then that might make Bob get last place instead, and his votes may transfer to Clark. Therefore, more support for Alice can make her lose.
 
@@ -152,7 +153,7 @@ Further, we can make the observation that moving $$X$$ up can only *possibly* ma
 
 Finally, we show another useful consequence of monotonicity.
 
-> **Definition:** We say that a voting system is **Pareto efficient** if whenever every voter ranks candidate $$A$$ above candidate $$B$$, then $$B$$ cannot win.
+> **Definition:** We say that a voting system is **<d-glossary key="pareto_efficiency">Pareto efficient</d-glossary>** if whenever every voter ranks candidate $$A$$ above candidate $$B$$, then $$B$$ cannot win.
 
 In particular, if every voter ranks $$A$$ first, then $$A$$ must win (which is a property called unanimity).
 
@@ -170,7 +171,7 @@ By citizen sovereignty, there exists a profile $$P$$ where $$A$$ wins. By monoto
 Next, we show Pareto efficiency. Assume for contradiction there exists a profile $P_2$ where every voter ranks $A$ above $B$, but $B$ wins. By Corollary \ref{monotone-lemma}, we can move $A$ to the top of all voters' rankings to a profile $P_2'$, and $B$ must still win. However, by unanimity, $A$ must win in such a profile. Contradiction. Therefore, $B$ cannot win in profile $P_2$. $\square$.
 {% endproof %}
 
-Essentially, we know any candidate *can* win by citizen sovereignty. By monotonicity, we can move that winning candidate above any other candidate, and preserve the winner. Thus, we very easily get Pareto efficiency.
+Essentially, we know any candidate *can* win by citizen sovereignty. By monotonicity, we can move that winning candidate above any other candidate, and preserve the winner. Thus, we very easily get <d-glossary key="pareto_efficiency">Pareto efficiency</d-glossary>.
 
 ## Blocking Sets and Their Properties
 
@@ -417,9 +418,9 @@ Strategyproofness therefore implies a strong lack of responsiveness to ranked ba
 
 ### The Approval Voting Exception
 
-We conclude the post with an informal discussion of Approval voting. I have discussed [the nuances of "strategyproofness" in Approval voting](../av-stratproof) in a previous post, but I think it warrants a discussion here as well, since it is an interesting exception to the Gibbard-Satterthwaite theorem.
+We conclude the post with an informal discussion of <d-glossary key="approval_voting">Approval voting</d-glossary>. I have discussed [the nuances of "strategyproofness" in Approval voting](../av-stratproof) in a previous post, but I think it warrants a discussion here as well, since it is an interesting exception to the Gibbard-Satterthwaite theorem.
 
-Gibbard-Satterthwaite only applies to ranked voting systems. But there are other types of voting systems, such as approval voting, where voters can give independent votes to candidates. Although Gibbard's more general theorem still applies to Approval voting, Approval in particular has been proven to be strategyproof under a strict assumption about voter preferences <d-cite key="bramsFishburn1978approval"></d-cite>, which is that voters have "dichotomous preferences": they have a set of candidates they approve of and a set they disapprove of, and are indifferent between all candidates within each group.
+Gibbard-Satterthwaite only applies to ranked voting systems. But there are other types of voting systems, such as approval voting, where voters can give independent votes to candidates. Although Gibbard's more general theorem still applies to Approval voting, Approval in particular has been proven to be strategyproof under a strict assumption about voter preferences <d-cite key="bramsFishburn1978approval"></d-cite>, which is that voters have "<d-glossary key="dichotomous_preferences">dichotomous preferences</d-glossary>": they have a set of candidates they approve of and a set they disapprove of, and are indifferent between all candidates within each group.
 
 The key is that Approval is also strictly monotonic. If a voter approves of a candidate, then that candidate is strictly better off than if the voter disapproves of that candidate. Voting for that candidate can break any tie in their favor, push them into a tie with first place, increase their winning margin, or fail to help them win. But it can never make them go from winning to losing. The optimal strategy, then, is to approve all acceptable candidates and disapprove of all unacceptable candidates. This is strategyproof under the dichotomous preferences assumption, but does not apply when voters have three or more levels of preference.
 
@@ -428,7 +429,7 @@ The intuition for the proof of this is relatively straightforward. If a voter ha
 1. Not voting for an acceptable candidate can lead to them losing by one vote to an unacceptable candidate, which is a worse outcome. Therefore, the voter should approve of all acceptable candidates.
 2. Voting for an unacceptable candidate can lead to them winning by one vote over an acceptable candidate, which is a worse outcome. Therefore, the voter should disapprove of all unacceptable candidates.
 
-Therefore, there is only one optimal strategy under the dichotomous assumption, which is to approve of all acceptable candidates and disapprove of all unacceptable candidates, which is a sincere strategy. Thus, approval voting is strategyproof under the dichotomous preferences assumption.
+Therefore, there is only one optimal strategy under the dichotomous assumption, which is to approve of all acceptable candidates and disapprove of all unacceptable candidates, which is a <d-glossary key="sincerity">sincere</d-glossary> strategy. Thus, approval voting is strategyproof under the dichotomous preferences assumption.
 
 This can be extended slightly further, however. If you [decide that, as a voter, your only goal is to elect **any** candidate you deem "acceptable", and no other candidates, then approval voting is strategyproof even if you have more than two levels of preference](../av-stratproof). You essentially adopt dichotomous preferences by treating all candidates you deem "acceptable" as equally good and all candidates you deem "unacceptable" as equally bad. This is an obviously very strong assumption about voter preferences, but it is a framing that any voter can choose to adopt.
 

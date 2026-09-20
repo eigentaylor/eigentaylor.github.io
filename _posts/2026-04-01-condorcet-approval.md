@@ -36,6 +36,7 @@ toc:
       - name: Domain Restriction
   - name: Conclusion
 bibliography: voting.bib
+glossary: polisci
 ---
 
 ## Introduction
@@ -46,7 +47,7 @@ This post was extremely long and pedantic and I decided to significantly shorten
 
 Merry April Foolsmas, everyone! I have seen the light of the math, and I am now a *true* Condorcet purist.
 
-Fellow Condorcetists, I come bearing a gift: I have permanently solved the Condorcet paradox. There is in fact a *perfect* voting system! It is called *Approval voting*, and it *is* indeed a Condorcet method.
+Fellow Condorcetists, I come bearing a gift: I have permanently solved the <d-glossary key="condorcet_cycle">Condorcet paradox</d-glossary>. There is in fact a *perfect* voting system! It is called *<d-glossary key="approval_voting">Approval voting</d-glossary>*, and it *is* indeed a <d-glossary key="condorcet_method">Condorcet method</d-glossary>.
 
 [For an actually serious argument on the fact that Approval is a practical Condorcet approximation, see this post.](../practicalapproval) However, the math I am about to present is *dead serious*, even if *I* am not.
 
@@ -54,13 +55,13 @@ Fellow Condorcetists, I come bearing a gift: I have permanently solved the Condo
 
 During the time of the French Revolution, a titan came up with an idea that changed the way we think about voting systems forever. This was Marie Jean Antoine Nicolas de Caritat, Marquis de Condorcet. While that is an *awesome* name, we will just call him Condorcet.
 
-Condorcet believed that we should always elect what we now call a *Condorcet winner*--a candidate who would defeat every other candidate in a one-on-one election. This is often held as the *gold* standard for a voting system (by *cool* people).
+Condorcet believed that we should always elect what we now call a *<d-glossary key="condorcet_winner">Condorcet winner</d-glossary>*--a candidate who would defeat every other candidate in a one-on-one election. This is often held as the *gold* standard for a voting system (by *cool* people).
 
-But it is impractical to hold an election for every $\frac{n(n-1)}{2}$ pair of candidates, or to put all possible one-on-one matchups for all candidates on the ballot given to each voter<d-footnote>Since writing this post, I've learned that Better Choices is proposing <em>exactly this</em> for the general election of a Top-3 runoff. That is the exact number of candidates where this actually works. So that's really cool. But this stands for larger elections: a 19 candidate race, such as the 2024 Portland mayoral race would need 171 matchups.</d-footnote>. So we need a voting system that can be used in a single election, is not absurdly hostile to voters, and still satisfies the *spirit* of the Condorcet criterion: if there is a Condorcet winner, *and voters express this through their ballots*, then they should win.
+But it is impractical to hold an election for every $\frac{n(n-1)}{2}$ pair of candidates, or to put all possible one-on-one matchups for all candidates on the ballot given to each voter<d-footnote>Since writing this post, I've learned that Better Choices is proposing <em>exactly this</em> for the general election of a Top-3 runoff. That is the exact number of candidates where this actually works. So that's really cool. But this stands for larger elections: a 19 candidate race, such as the 2024 Portland mayoral race would need 171 matchups.</d-footnote>. So we need a voting system that can be used in a single election, is not absurdly hostile to voters, and still satisfies the *spirit* of the <d-glossary key="condorcet_criterion">Condorcet criterion</d-glossary>: if there is a <d-glossary key="condorcet_winner">Condorcet winner</d-glossary>, *and voters express this through their ballots*, then they should win.
 
 > **Definition:** A *Condorcet winner* is a candidate who would defeat every other candidate in a one-on-one election, based purely on the ballot data of voters who express an explicit preference.\label{condorcet-winner}
 
-We compromise on the idea that we can simulate how voters would vote in each theoretical matchup by ranking candidates and assuming a transitive order. If I rank Alice first, Bob and Clark tied for second, and Dylan last, then a Condorcet method interprets this *only* as me saying that
+We compromise on the idea that we can simulate how voters would vote in each theoretical matchup by ranking candidates and assuming a transitive order. If I rank Alice first, Bob and Clark tied for second, and Dylan last, then a <d-glossary key="condorcet_method">Condorcet method</d-glossary> interprets this *only* as me saying that
 
 - I would vote for Alice over Bob, Alice over Clark, and Alice over Dylan.
 - I would vote for Bob over Dylan, and Clark over Dylan.
@@ -76,7 +77,7 @@ If there is a candidate who would defeat every other candidate in a head-to-head
 
 Condorcet's solution sounds perfect, theoretically. I mean, if we can tell voters "this is the candidate who would have won against *every* other", then that would be amazing!
 
-As with all things in voting theory, there's a catch. While a Condorcet winner exists *quite* often, it's still less than 100% of the time.
+As with all things in voting theory, there's a catch. While a <d-glossary key="condorcet_winner">Condorcet winner</d-glossary> exists *quite* often, it's still less than 100% of the time.
 
 **Example:** Consider the following profile of 3 voters:\label{cycle}
 
@@ -98,7 +99,7 @@ If you do not elect such a candidate in a ranked system, then **what are you eve
 
 We also cannot guarantee that even if we elect the Condorcet winner induced by the ballots, that candidate would truly defeat every other candidate in a head-to-head matchup, because we are not directly asking all of those head-to-head questions, especially when ties or ballot truncation are allowed.<d-footnote>A commonly cited example of a Condorcet failure is Alaska's 2022 House special election. But due to ballot truncation, it's not even 100% guaranteed that Nick Begich was actually the Condorcet winner.</d-footnote>
 
-As Condorcetists, we have to rely exclusively on the expressed ballot data, and trust that among those who *did* express a preference between two candidates, the majority preference accurately reflects who would win in a head-to-head matchup among the entire electorate. Just as ranked-choice voting exhausts ballots from voters who failed to rank any remaining candidates, Condorcetists also value expressed preferences over potential unexpressed preferences. The only sane way to implement a Condorcet method is to
+As Condorcetists, we have to rely exclusively on the expressed ballot data, and trust that among those who *did* express a preference between two candidates, the majority preference accurately reflects who would win in a head-to-head matchup among the entire electorate. Just as <d-glossary key="rcv_irv">ranked-choice voting</d-glossary> exhausts ballots from voters who failed to rank any remaining candidates, Condorcetists also value expressed preferences over potential unexpressed preferences. The only sane way to implement a Condorcet method is to
 
 1. Allow ties in a voter's ranking, and truncation, for the sake of the voter
 2. Define a Condorcet winner purely based on the ballot data, and Condorcet efficiency based on electing a candidate who is a Condorcet winner (based on the ballot data) when one exists
@@ -160,7 +161,7 @@ Beyond the algebra, the key and intuition of this proof is extraordinarily simpl
 
 We now define Approval voting.
 
-> **Definition:** Approval voting is a voting method in which each voter can approve any number of candidates. The candidate who is approved by the most voters wins. <d-cite key="bramsFishburn1978approval"></d-cite>
+> **Definition:** <d-glossary key="approval_voting">Approval voting</d-glossary> is a voting method in which each voter can approve any number of candidates. The candidate who is approved by the most voters wins. <d-cite key="bramsFishburn1978approval"></d-cite>
 
 And come to our main result.
 
@@ -208,7 +209,7 @@ Note: As I was writing this post, I was researching related arguments and I foun
 
 ## You can't prove it's not Condorcet
 
-As proved above, Approval voting is indeed a Condorcet method, just restricted to two tiers. As a Condorcet method, it always elects the candidate who would win all pairwise matchups against other candidates based on the preferences expressed in the ballot data.
+As proved above, <d-glossary key="approval_voting">Approval voting</d-glossary> is indeed a <d-glossary key="condorcet_method">Condorcet method</d-glossary>, just restricted to two tiers. As a Condorcet method, it always elects the candidate who would win all pairwise matchups against other candidates based on the preferences expressed in the ballot data.
 
 As with *any* Condorcet method, all we have to go on is what voters express.
 
@@ -262,7 +263,7 @@ What $C_k$ (including $C_\infty$) *really* does, mathematically, is ask voters t
 
 We have established that Approval is a simplified, two-tiered Condorcet method. While those like Munger would argue that this simplification comes at the cost of outcomes, I would argue that the cost is minimal for the benefits we get in return.
 
-The surprising thing is that Approval has been shown to have [essentially the same level of outcomes](https://electionscience.github.io/vse-sim/VSEbasic/) <d-cite key="quinn2017vseSummary"></d-cite> as more complex Condorcet methods in "Voter Satisfaction Efficiency" (VSE).
+The surprising thing is that Approval has been shown to have [essentially the same level of outcomes](https://electionscience.github.io/vse-sim/VSEbasic/) <d-cite key="quinn2017vseSummary"></d-cite> as more complex Condorcet methods in "<d-glossary key="vse">Voter Satisfaction Efficiency</d-glossary>" (VSE).
 
 [I recommend taking a look at some Yee diagrams](http://zesty.ca/voting/sim/) <d-cite key="yee2005simulations"></d-cite>, and tell me if you can truly tell the difference between the Approval and Condorcet diagrams without your reading glasses<d-footnote>In the same vein, [Gary Cox](https://doi.org/10.2307/2111325) <d-cite key="cox1987electoralEquilibrium"></d-cite> has a paper that shows both Approval and Condorcet have strong median pulls. Munger's criticisms that Approval elects "fringe" candidates, based purely on ordinal preferences that have no information about intensity, just do not hold up to scrutiny in my opinion.</d-footnote>.
 

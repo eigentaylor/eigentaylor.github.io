@@ -332,7 +332,7 @@ We shall analyze three elections using ranked.vote pairwise data, to see what th
 
 Alaska's 2022 House Special Election was a controversial election where the IRV winner, Mary Peltola (D), was not the Condorcet winner, while the true Condorcet winner, Nick Begich III (R), was eliminated in the first round. The third candidate, Sarah Palin (R), was the Condorcet loser. The election was widely seen as a failure of IRV, and led to a backlash against IRV in Alaska, with the state failing to repeal it by only about 700 voters out of over 320,000 votes cast in the 2024 ballot measure. Another repeal effort is currently underway in 2026.
 
-An aspect of the pathology was the unintuitive vote splitting and spoiler effect that occured between the Republican candidates. The voters who sincerely voted for Palin first and Begich second managed to get themselves their least preferred candidate, Peltola, elected. By voting first for Palin, the Condorcet loser, they kept her in the race long enough to eliminate the only viable Republican candidate, Begich. Thus, Peltola was able to win the final round since an insufficient number of Begich voters had Palin as their second choice.
+An aspect of the pathology was the unintuitive vote splitting and spoiler effect that occurred between the Republican candidates. The voters who sincerely voted for Palin first and Begich second managed to get themselves their least preferred candidate, Peltola, elected. By voting first for Palin, the Condorcet loser, they kept her in the race long enough to eliminate the only viable Republican candidate, Begich. Thus, Peltola was able to win the final round since an insufficient number of Begich voters had Palin as their second choice.
 
 The actual first round results were:
 

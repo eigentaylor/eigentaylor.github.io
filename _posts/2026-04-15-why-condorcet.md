@@ -11,6 +11,7 @@ related_posts: true
 theorems: false
 pretty_table: true
 bibliography: voting.bib
+glossary: polisci
 chart:
   plotly: true
 authors:  
@@ -35,13 +36,13 @@ When I was in grad school, I had a friend who was vegan, and he convinced me to 
 
 If both pizza lovers find Veg n' Go to be 99% as good as Pizza Palace, then Veg n' Go is a choice that literally 100% of voters would be content with, while Pizza Palace would result in the minority being unable to eat anything at all. Which of these sounds like the compromise to you?
 
-This example highlights my major issue with the Condorcet criterion.
+This example highlights my major issue with the <d-glossary key="condorcet_criterion">Condorcet criterion</d-glossary>.
 
-> The *Condorcet winner* is the candidate who would win a head-to-head matchup against every other candidate. A voting system satisfies the *Condorcet criterion* if it always elects the Condorcet winner when one exists.
+> The *<d-glossary key="condorcet_winner">Condorcet winner</d-glossary>* is the candidate who would win a head-to-head matchup against every other candidate. A voting system satisfies the *Condorcet criterion* if it always elects the Condorcet winner when one exists.
 
 Many Condorcetists will argue that if you don't elect the Condorcet winner, then you are not electing the true compromise of the electorate. But I think this is a complete fallacy and misunderstanding of what a compromise is.
 
-The Condorcet winner is something defined by *ordinal* preferences. That is, it only looks at a comparison of orderings of candidates by the voters. Why should consensus be defined by ordinal preferences?
+The <d-glossary key="condorcet_winner">Condorcet winner</d-glossary> is something defined by *ordinal* preferences. That is, it only looks at a comparison of orderings of candidates by the voters. Why should consensus be defined by ordinal preferences?
 
 When we talk about compromise, or negotiation, or consensus, we don't evaluate things simply by how many people prefer one option to another, or even necessarily by majority rule. We tend to try to find an agreement that allows everyone to leave feeling like they got something out of the deal, even if it wasn't their first choice.
 
@@ -76,7 +77,7 @@ I am thus left with two propositions:
 
 Fortunately for me, there is a simple solution: Approval voting.
 
-> Approval voting is a voting system where voters can approve of as many candidates as they like, and the candidate with the most approvals wins.
+> <d-glossary key="approval_voting">Approval voting</d-glossary> is a voting system where voters can approve of as many candidates as they like, and the candidate with the most approvals wins.
 
 In Approval voting, I do not have to express that I *technically* prefer Pizza Palace to Veg n' Go. Instead, I can express that I would be satisfied with either outcome. And if a consensus option like Veg n' Go racks up approvals from all voters, then it will win without anyone being any the wiser about the fact that there was a polarizing Condorcet winner that would have left fewer people overall satisfied.
 
@@ -86,7 +87,7 @@ The number of voters who approved of Veg n' Go but not Pizza Palace is 1. The nu
 
 Approval, therefore, gives us the best of both worlds. It can select the true compromise candidate while also giving the winner absolute legitimacy, by being [the Condorcet winner of the ballot data](../consistentcardinal/). It does this without being *beholden* to the ranked Condorcet winner, which may not be the ultimate compromise choice.
 
-There are things I like about Condorcet methods, but what really pushes me towards Approval voting is [the practical consideration of how we run each election](../approval-only/). It's simply far easier to run an Approval election than a Condorcet election, particularly when we're trying to find a consensus for a much larger group. We can simply ask each voter to raise their hand for each option they would be happy with, and the option with the most raised hands wins. We don't need to collect ranked ballots from every voter and then run pairwise comparisons between every candidate to find the Condorcet winner, or run a majority rule election for all three matchups. We can just count approvals and be done with it.
+There are things I like about <d-glossary key="condorcet_method">Condorcet methods</d-glossary>, but what really pushes me towards Approval voting is [the practical consideration of how we run each election](../approval-only/). It's simply far easier to run an Approval election than a Condorcet election, particularly when we're trying to find a consensus for a much larger group. We can simply ask each voter to raise their hand for each option they would be happy with, and the option with the most raised hands wins. We don't need to collect ranked ballots from every voter and then run pairwise comparisons between every candidate to find the Condorcet winner, or run a majority rule election for all three matchups. We can just count approvals and be done with it.
 
 The Condorcet winner and approval winner generally coincide <d-cite key="yee2005simulations"></d-cite>. However, when they don't, there is usually good reason. The [1985 Institute of Management Sciences (TIMS) election](https://www.jstor.org/stable/2632078) <d-cite key="fishburnLittle1988approvalExperiment"></d-cite> is a good example where they potentially didn't. See [this post](../practicalapproval) where I discuss it in more detail.
 
@@ -94,4 +95,4 @@ In this election, they collected both approval and ranked data. The approval win
 
 Would a 901 to 900 majority really give as much legitimacy to the Condorcet winner as the 1,038 to 908 majority that Approval voting gave to its winner? I don't think so. Instead, we can definitively conclude that many of the voters who said they preferred the Condorcet winner to the Approval winner explicitly approved of both candidates. You can have an ordinal preference but still be perfectly happy with either candidate. To pretend this is some sort of impossibility, and that tiny ordinal distances make a non-Condorcet winner somehow "fringe", is to completely misunderstand the nature of compromise and acceptability.
 
-The lesson is simple: majority preference and broad consent are not the same thing, and a voting system should make room for both. Condorcet logic captures pairwise legitimacy, but it can still miss the candidate most people can genuinely agree on. Approval voting closes that gap by letting voters signal acceptable outcomes directly, while still preserving a coherent notion of legitimacy in the ballot data. It is easier to run, easier to explain, and often yields the same winner when the Condorcet case is clear, yet it behaves better when preferences are close, ambiguous, or weakly held. If our goal is not just to crown a winner but to produce outcomes people can accept as fair, then approval voting is the better compromise between mathematical rigor and democratic reality.
+The lesson is simple: majority preference and broad consent are not the same thing, and a voting system should make room for both. Condorcet logic captures pairwise legitimacy, but it can still miss the candidate most people can genuinely agree on. <d-glossary key="approval_voting">Approval voting</d-glossary> closes that gap by letting voters signal acceptable outcomes directly, while still preserving a coherent notion of legitimacy in the ballot data. It is easier to run, easier to explain, and often yields the same winner when the Condorcet case is clear, yet it behaves better when preferences are close, ambiguous, or weakly held. If our goal is not just to crown a winner but to produce outcomes people can accept as fair, then approval voting is the better compromise between mathematical rigor and democratic reality.
