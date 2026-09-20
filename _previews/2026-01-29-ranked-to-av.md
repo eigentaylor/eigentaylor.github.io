@@ -109,7 +109,7 @@ This gives us a way to analyze ranked ballots and deduce whether a particular ca
 
 ## Application to Ranked Ballots
 
-While the AVCSP is a theoretical tool used by Brams to pove properties of Approval voting, we can take the fundamental idea and apply it to analyze real-world elections that use ranked ballots.
+While the AVCSP is a theoretical tool used by Brams to prove properties of Approval voting, we can take the fundamental idea and apply it to analyze real-world elections that use ranked ballots.
 
 > **Definition**: We say that a candidate X is **implicitly ranked** above candidate Y on a given voter's ranked ballot if either:
 >
