@@ -68,6 +68,16 @@ Avoid tagging inside headings or direct quotations — it can read as
 editorializing inside someone else's words. Tagging inside a `<blockquote>`
 is fine (confirmed working in practice).
 
+## Tags at the start of a line
+
+Kramdown treats unknown HTML tags as block-level, which used to break any
+paragraph (or blockquote/list item) that *began* with `<d-glossary>`,
+`<d-cite>` or `<d-footnote>`: no `<p>` was emitted and each tag/text run landed
+on its own line inside `<d-article>`'s grid.
+`_plugins/kramdown_inline_distill_tags.rb` teaches kramdown to treat those three
+tags as inline, so no `<p>` workaround is needed in posts. Restart `jekyll serve`
+after editing it (plugins load once at startup).
+
 ## Validation
 
 Use the validated command set in `AGENTS.md`. `assets/js/glossary.js` and
