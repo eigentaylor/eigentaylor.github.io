@@ -9,6 +9,7 @@
   "use strict";
 
   var DATA_ELEMENT_ID = "d-glossary-data";
+  var ANCHOR_PREFIX = "d-glossary-";
   var glossaryMap = null;
   var seenKeys = new Set();
   var openInstances = new Set();
@@ -111,6 +112,11 @@
     "  white-space: normal;",
     "}",
     ".popover[hidden] { display: none; }",
+    ":host(:target) button.term { animation: target-flash 2s ease-out; }",
+    "@keyframes target-flash {",
+    "  0%, 40% { background: color-mix(in srgb, var(--global-theme-color) 35%, transparent); }",
+    "  100% { background: transparent; }",
+    "}",
     ".popover.align-right { left: auto; right: 0; }",
     ".popover.align-top { top: auto; bottom: 100%; margin-top: 0; margin-bottom: 4px; }",
     ".popover p { margin: 0; }",
@@ -145,6 +151,12 @@
       // link-once convention -- but stays just as interactive.
       var variant = seenKeys.has(key) ? "muted" : "active";
       seenKeys.add(key);
+
+      // Anchor for deep links (#d-glossary-<key>), first occurrence only so
+      // ids stay unique; the appendix list links back here.
+      if (variant === "active" && !this.id) {
+        this.id = ANCHOR_PREFIX + key;
+      }
 
       this.pinned = false;
 
@@ -292,6 +304,12 @@
           link.textContent = "Learn more";
           item.appendChild(link);
         }
+        var back = document.createElement("a");
+        back.href = "#" + ANCHOR_PREFIX + entry.key;
+        back.title = "Jump to first use";
+        back.textContent = "↩";
+        item.appendChild(document.createTextNode(" "));
+        item.appendChild(back);
         list.appendChild(item);
       });
       this.appendChild(list);
@@ -301,4 +319,19 @@
   if (!customElements.get("d-glossary-list")) {
     customElements.define("d-glossary-list", DGlossaryList);
   }
+
+  // Native fragment scrolling can fire before these elements exist/upgrade and
+  // layout shifts after load, so re-scroll to #d-glossary-<key> explicitly.
+  function scrollToGlossaryHash() {
+    var hash = window.location.hash;
+    if (hash.indexOf("#" + ANCHOR_PREFIX) !== 0) {
+      return;
+    }
+    var target = document.getElementById(decodeURIComponent(hash.slice(1)));
+    if (target) {
+      target.scrollIntoView({ block: "center" });
+    }
+  }
+  window.addEventListener("load", scrollToGlossaryHash);
+  window.addEventListener("hashchange", scrollToGlossaryHash);
 })();

@@ -47,6 +47,13 @@ If a post never uses `<d-glossary>` (or doesn't set `glossary:` in its front
 matter at all), the element stays invisible, exactly like an empty footnote
 list — no extra guarding needed when adding new tags to a post.
 
+## Anchors
+
+The first occurrence of each key gets `id="d-glossary-<key>"`, so
+`post-url#d-glossary-<key>` jumps to (and briefly highlights) it -- handy for
+spot-checking tags. Later occurrences get no id. Each appendix entry ends with
+a `↩` link back to that anchor, like the footnote list.
+
 ## Repeat-occurrence convention
 
 Tag a term's first meaningful appearance, and only tag it again later if it

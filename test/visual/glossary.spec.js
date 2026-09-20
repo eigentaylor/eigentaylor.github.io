@@ -161,7 +161,22 @@ test.describe("glossary appendix summary", () => {
 
     // Each entry with a link opens in a new tab, matching the inline popovers.
     const linkedItem = list.locator("li", { hasText: "Alabama Paradox" });
-    await expect(linkedItem.locator("a")).toHaveAttribute("target", "_blank");
+    await expect(linkedItem.locator("a").first()).toHaveAttribute("target", "_blank");
+  });
+
+  test("first occurrence has a #d-glossary-<key> anchor and the appendix links back to it", async ({ page }) => {
+    await preparePage(page, "light");
+    await page.goto(ROUTE + "#d-glossary-alabama_paradox", { waitUntil: "networkidle" });
+    await stabilizeVisuals(page);
+
+    // Only the first of the two occurrences carries the id.
+    const terms = page.locator('d-glossary[key="alabama_paradox"]');
+    await expect(terms.nth(0)).toHaveAttribute("id", "d-glossary-alabama_paradox");
+    await expect(terms.nth(1)).not.toHaveAttribute("id", /.+/);
+    await expect(terms.nth(0)).toBeInViewport();
+
+    const back = page.locator("d-glossary-list li", { hasText: "Alabama Paradox" }).locator('a[href="#d-glossary-alabama_paradox"]');
+    await expect(back).toHaveCount(1);
   });
 
   test("d-glossary-list stays hidden on a page with no glossary terms used", async ({ page }) => {
