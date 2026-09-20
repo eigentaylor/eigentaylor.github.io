@@ -73,7 +73,8 @@
   link: "https://en.wikipedia.org/wiki/Independence_of_irrelevant_alternatives"
 - key: vse
   term: "Voter Satisfaction Efficiency (VSE)"
-  definition: "A simulation-based metric estimating how well a voting method's actual winners match the outcome voters would collectively most prefer."
+  definition: "Jameson Quinn's simulation-based measure of a voting method's accuracy: across thousands of simulated elections with known voter utilities, how much average voter satisfaction the method's winners deliver. 0% is the same as picking a winner at random and 100% is always electing the highest-utility candidate. It measures outcomes only, not practical considerations like complexity or campaign incentives."
+  link: "https://electionscience.github.io/vse-sim/VSEbasic"
 - key: leader_rule
   term: "The Leader Rule"
   definition: 'Jean-Francois Laslier''s Approval voting strategy: identify the top two frontrunners (the "leader" and the "challenger"), approve everyone you prefer to the leader, and approve the leader only if you prefer them to the challenger.'
