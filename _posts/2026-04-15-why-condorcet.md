@@ -38,7 +38,7 @@ If both pizza lovers find Veg n' Go to be 99% as good as Pizza Palace, then Veg 
 
 This example highlights my major issue with the <d-glossary key="condorcet_criterion">Condorcet criterion</d-glossary>.
 
-> The *Condorcet winner* is the candidate who would win a head-to-head matchup against every other candidate. A voting system satisfies the *Condorcet criterion* if it always elects the Condorcet winner when one exists.
+> The *<d-glossary key="condorcet_winner">Condorcet winner</d-glossary>* is the candidate who would win a head-to-head matchup against every other candidate. A voting system satisfies the *Condorcet criterion* if it always elects the Condorcet winner when one exists.
 
 Many Condorcetists will argue that if you don't elect the Condorcet winner, then you are not electing the true compromise of the electorate. But I think this is a complete fallacy and misunderstanding of what a compromise is.
 

@@ -48,7 +48,7 @@ If a system gives its selected winner an unassailable claim to victory, then I w
 
 > **Definition:** A single-ballot nonranked voting system is a voting system where voters can cast one vote for some number of candidates. For example, **Choose-one** plurality voting, where each voter can cast one vote for one candidate, or **<d-glossary key="approval_voting">Approval voting</d-glossary>**, where each voter can cast one vote for as many candidates as they approve of. But this can include systems where, say, voters could cast either exactly one, or exactly three votes.
 
-In 1978, Brams and Fishburn published a seminal paper on Approval voting<d-cite key="bramsFishburn1978approval"></d-cite>, where they prove that Approval voting is the unique single-ballot nonranked voting system that is Condorcet-consistent on the <d-glossary key="dichotomous_preferences">Dichotomous domain</d-glossary>. However, if we define Condorcet-consistency based purely on the ballot data, then this property extends to all single-ballot nonranked voting systems, not just Approval voting.<d-footnote>For example, in Choose-one voting, there is no possibility for a candidate to be preferred over another candidate (in the ballot data) without getting more votes than that other candidate.</d-footnote>
+In 1978, Brams and Fishburn published a seminal paper on Approval voting<d-cite key="bramsFishburn1978approval"></d-cite>, where they prove that Approval voting is the unique single-ballot nonranked voting system that is <d-glossary key="condorcet_criterion">Condorcet-consistent</d-glossary> on the <d-glossary key="dichotomous_preferences">Dichotomous domain</d-glossary>. However, if we define Condorcet-consistency based purely on the ballot data, then this property extends to all single-ballot nonranked voting systems, not just Approval voting.<d-footnote>For example, in Choose-one voting, there is no possibility for a candidate to be preferred over another candidate (in the ballot data) without getting more votes than that other candidate.</d-footnote>
 
 Approval voting is often called a "two-tiered SCORE method" because, like a cardinal voting system, it allows voters to express numerical values independently for all candidates (just within the range of 0 to 1, where 0 represents disapproval and 1 represents approval). We will show that no other SCORE method, with a range more expressive than a binary 0 or 1, can be Condorcet-consistent based on its ballot data.
 
@@ -99,7 +99,7 @@ Hence, we have that $$S(X) > S(Y)$$ if and only if $$T(X>Y) > T(Y>X)$$. We can t
 
 The Theorem for Approval voting follows directly from the Lemma, since Approval voting is both a single-ballot nonranked voting system and a SCORE voting method.
 
-> **Corollary:** There can be no Condorcet cycles induced by the ballots in Approval voting.
+> **Corollary:** There can be no <d-glossary key="condorcet_cycle">Condorcet cycles</d-glossary> induced by the ballots in Approval voting.
 
 **Proof:** Since Approval voting is SCC, if $$T(A>B) > T(B>A)$$, and $$T(B>C) > T(C>B)$$, then we have that $$S(A) > S(B)$$ and $$S(B) > S(C)$$, implying that $$S(A) > S(C)$$, and thus $$T(A>C) > T(C>A)$$. Therefore, there can be no cycles of the form $$A>B>C>A$$. **QED**
 
@@ -205,7 +205,7 @@ This is quite straightforward: by allowing just a third level of preference inte
 
 <d-glossary key="star_voting">STAR voting</d-glossary> is a popular cardinal-esque voting system that seems to attempt to fix this issue with score methods, by injecting in some majority rule. It is a 0 to 5 score system, where the winner is chosen by adding an additional runoff step: take the top two candidates by total score and then choose the winner by majority runoff between them (based on voters who gave them different scores). This protects it from some particularly damning examples, but it does not fix the underlying problem.
 
-Since STAR voting is a 0 to 5 score system, by the above theorem, it is not SCC in the score aggregation step. However, we can show that the runoff still does not guarantee that the Condorcet winner induced by the ballots will win.
+Since STAR voting is a 0 to 5 score system, by the above theorem, it is not SCC in the score aggregation step. However, we can show that the runoff still does not guarantee that the <d-glossary key="condorcet_winner">Condorcet winner</d-glossary> induced by the ballots will win.
 
 **Example:** Take this particular example with three candidates $A$, $B$, and $C$, and 11 voters:
 

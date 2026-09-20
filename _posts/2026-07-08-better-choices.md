@@ -39,7 +39,7 @@ toc:
 
 ## Introduction
 
-For a while now, Condorcet methods have gotten the short end of the stick in the reform space. The disaster known as [Ranked Choice Voting](../ditch-rcv/) has dominated the space as a whole, but particularly ranked ballots. Cardinal methods like Approval and STAR have been the main challengers, and while the Equal Vote Coalition "approves" of their flavor of Condorcet (["Ranked Robin"](https://www.equal.vote/ranked_robin)), Condorcet has not yet gained much traction.
+For a while now, <d-glossary key="condorcet_method">Condorcet methods</d-glossary> have gotten the short end of the stick in the reform space. The disaster known as [Ranked Choice Voting](../ditch-rcv/) has dominated the space as a whole, but particularly ranked ballots. Cardinal methods like <d-glossary key="approval_voting">Approval</d-glossary> and <d-glossary key="star_voting">STAR</d-glossary> have been the main challengers, and while the Equal Vote Coalition "approves" of their flavor of Condorcet (["Ranked Robin"](https://www.equal.vote/ranked_robin)), Condorcet has not yet gained much traction.
 
 Now, if you are reading this blog, you probably know I am a huge fan of <d-glossary key="approval_voting">Approval voting</d-glossary>. I think it is [the most practical and effective reform we should be advocating for right now](../approval-only/), and the only system that I currently support. However, I would like to share my positive thoughts on this neat new proposal by [Better Choices](https://www.betterchoices.vote/top3).
 
@@ -53,7 +53,7 @@ Simple, right? It's just like a round-robin tournament, where every candidate fa
 
 I have [my issues with the idea of the Condorcet winner as a measure of "consensus"](../why-condorcet/), but *in practice* all "good" methods (Approval, STAR, Score, etc.), even if they do not explicitly satisfy the <d-glossary key="condorcet_criterion">Condorcet criterion</d-glossary>, are going to agree on the best candidate, who is likely a <d-glossary key="condorcet_winner">Condorcet winner</d-glossary>.
 
-A <d-glossary key="condorcet_method">Condorcet method</d-glossary> is just a voting system (that usually takes in a ranked ballot) and then evaluates the head-to-head matchups between every pair of candidates to determine if there is a Condorcet winner, electing them if so. The many Condorcet methods differ only in how they handle the case where there is no Condorcet winner (a "Condorcet cycle").
+A <d-glossary key="condorcet_method">Condorcet method</d-glossary> is just a voting system (that usually takes in a ranked ballot) and then evaluates the head-to-head matchups between every pair of candidates to determine if there is a Condorcet winner, electing them if so. The many Condorcet methods differ only in how they handle the case where there is no Condorcet winner (a "<d-glossary key="condorcet_cycle">Condorcet cycle</d-glossary>").
 
 ### Jungle Primaries
 
@@ -112,7 +112,7 @@ Alright, I'm just gonna kind of nerd out here.
 
 ### Ballot Design
 
-I have many problems with ranked methods, and there are studies that RCV negatively impacts voter confidence and satisfaction with the election process<d-cite key="mit2021maineRcv"></d-cite>. But one issue that I've come to find especially serious is that voters have no idea how their ranked ballot is going to be counted. Ask a voter if they understand how RCV works (even people who vote in RCV elections), or how their ballot is counted, and they will almost certainly say yes. [But if you ask them to explain it, most reveal a fundamental misunderstanding](https://web.archive.org/web/20190219005105mp_/https://sites.google.com/a/electology.org/www/approval-score-sf#TOC-Intuitive-understanding)--and are often horrified when told how it actually works.
+I have many problems with ranked methods, and there are studies that <d-glossary key="rcv_irv">RCV</d-glossary> negatively impacts voter confidence and satisfaction with the election process<d-cite key="mit2021maineRcv"></d-cite>. But one issue that I've come to find especially serious is that voters have no idea how their ranked ballot is going to be counted. Ask a voter if they understand how RCV works (even people who vote in RCV elections), or how their ballot is counted, and they will almost certainly say yes. [But if you ask them to explain it, most reveal a fundamental misunderstanding](https://web.archive.org/web/20190219005105mp_/https://sites.google.com/a/electology.org/www/approval-score-sf#TOC-Intuitive-understanding)--and are often horrified when told how it actually works.
 
 I think this is a *big problem with ranked ballots*. Each voter arrives with their own idea of how the ballot is going to be counted, and many of them will be understandably wrong<d-footnote>When I once tried to explain to a friend that a Condorcet winner was not elected in Alaska, they invented the Borda count on the spot, assuming that was the correct way to elect a candidate who wins all pairwise matchups. The fact that many voters seem to assume a weighted average (in the same vein as the Borda count) is how all ranked voting methods work makes me think that ranked ballots are just inherently confusing.</d-footnote>. It should, in my view, be obvious to voters how their ballot is going to be counted.
 
@@ -170,7 +170,7 @@ Oh, and if you're feeling mischievous: you can vote intransitively. Rock over Sc
 
 ## Where I'm Skeptical
 
-As I said before, my biggest issue is the choose-one primary. If this system uses the choose-one primary, we will still be plagued by vote splitting and spoilers, with no [nursery effect for broadly acceptable candidates](../ca-top-2/).
+As I said before, my biggest issue is the choose-one primary. If this system uses the choose-one primary, we will still be plagued by vote splitting and <d-glossary key="spoiler_effect">spoilers</d-glossary>, with no [nursery effect for broadly acceptable candidates](../ca-top-2/).
 
 Taking in more candidates does not fix vote splitting; it only expands the chaos. The Duvergerian abandonment dynamics will expand from three to four or more candidates<d-cite key="cox1994sntv"></d-cite>, and voters will still be pushed towards the safest established names of the major parties. The lockout problem might be fixed, but the spoiler problem won't. The broad "consensus choice", who would naturally be elevated by Approval voting, might not even make it into the "Consensus Choice" part of the election because voters are not free to support anyone beyond their safest bet in the primary.
 

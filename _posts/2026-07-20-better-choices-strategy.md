@@ -45,7 +45,7 @@ toc:
 
 ## Abstract
 
-The [system proposed by Better Choices for Democracy](../better-choices/) lets voters submit intransitive preferences that no ranked ballot could express. I model the system purely in terms of outcomes--a directed graph over the 48 possible outcome states for three candidates, with edges standing in for the only moves a coalition can make--and use it to show that manipulation is extraordinarily narrow: a Condorcet winner can never be unseated by a single move, the system satisfies No Favorite Betrayal when the sincere state of the election has a Condorcet winner, only 2 of 48 states admit any profitable one-step manipulation, chaining moves together never gains more than one preference notch, and intransitive ballots never help at all. Simulations against several voter models confirm these scenarios are either too rare, too small-margin to detect, or too costly to organize in practice. The upshot: just vote honestly.
+The [system proposed by Better Choices for Democracy](../better-choices/) lets voters submit intransitive preferences that no ranked ballot could express. I model the system purely in terms of outcomes--a directed graph over the 48 possible outcome states for three candidates, with edges standing in for the only moves a coalition can make--and use it to show that manipulation is extraordinarily narrow: a <d-glossary key="condorcet_winner">Condorcet winner</d-glossary> can never be unseated by a single move, the system satisfies No Favorite Betrayal when the sincere state of the election has a Condorcet winner, only 2 of 48 states admit any profitable one-step manipulation, chaining moves together never gains more than one preference notch, and intransitive ballots never help at all. Simulations against several voter models confirm these scenarios are either too rare, too small-margin to detect, or too costly to organize in practice. The upshot: just vote honestly.
 
 ## Introduction
 
@@ -167,7 +167,7 @@ We note that this theorem is only about *simple manipulations*--that is, a singl
 
 From another perspective, if we view this from the perspective that, as an individual voter, changing our one vote to something insincere is at most going to change the result via a single swap, then the theorem assures us that if there is a Condorcet winner, there is no reason not to just vote sincerely according to our true preferences. Any deviation from sincere voting, if it can only enact a simple manipulation, will lead to an outcome that is no better, or worse, than voting sincerely.
 
-The contrapositive of this theorem is that any profitable simple manipulation must start with a state that has no Condorcet winner (a cycle). Cycles are empirically rare (in RCV elections, at least), and hence these scenarios are unlikely to occur. However, we can further show that the exact requirements for a cycle with profitable manipulations are even stricter still.
+The contrapositive of this theorem is that any profitable simple manipulation must start with a state that has no Condorcet winner (a cycle). Cycles are empirically rare (in <d-glossary key="rcv_irv">RCV</d-glossary> elections, at least), and hence these scenarios are unlikely to occur. However, we can further show that the exact requirements for a cycle with profitable manipulations are even stricter still.
 
 > **Lemma:** A simple manipulation using a swap of the second kind (reversing the smallest matchup) is never profitable for any $n\geq3$.\label{second-kind-manipulation}
 

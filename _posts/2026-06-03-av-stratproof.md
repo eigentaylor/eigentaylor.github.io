@@ -39,13 +39,13 @@ toc:
 
 ## Introduction
 
-This is a redo of my second post on Approval voting from November 2025. I was early in my journey learning about Approval voting, and I think I can explain this concept more clearly and concisely now. This post is primarily based on the seminal 1978 paper by Brams and Fishburn<d-cite key="bramsFishburn1978approval"></d-cite>.
+This is a redo of my second post on <d-glossary key="approval_voting">Approval voting</d-glossary> from November 2025. I was early in my journey learning about Approval voting, and I think I can explain this concept more clearly and concisely now. This post is primarily based on the seminal 1978 paper by Brams and Fishburn<d-cite key="bramsFishburn1978approval"></d-cite>.
 
 <d-glossary key="approval_voting">Approval voting</d-glossary> lets voters approve (vote for) as many candidates as they like. It's like the standard choose-one plurality system, except it removes the arbitrary restriction of voting for only one candidate. Surprisingly, despite being such a simple change, the system is [on par with the best of the most popular proposed systems](../approval-only/).
 
 The question we are trying to answer in this post is a simple one:
 
-> **Is Approval voting strategyproof?**
+> **Is Approval voting <d-glossary key="strategyproofness">strategyproof</d-glossary>?**
 
 The short answer is:
 
