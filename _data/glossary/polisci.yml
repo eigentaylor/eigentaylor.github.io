@@ -60,7 +60,7 @@
   definition: "Any voting method that tries to satisfy the Condorcet criterion by inducing a societal ranking from head-to-head comparisons between candidates (Minimax, Ranked Pairs, and Schulze are common examples)."
   link: "https://en.wikipedia.org/wiki/Condorcet_method"
 - key: rcv_irv
-  term: "Ranked-Choice Voting (RCV) / Instant-Runoff Voting (IRV)"
+  term: "Ranked-Choice Voting (RCV)"
   definition: 'A ranked voting method that repeatedly eliminates the last-place candidate and transfers their votes until someone has a majority. "Instant-runoff voting" was the original, older name for this method; "ranked-choice voting" is a newer rebrand of the exact same method, now more common in U.S. reform circles.'
   link: "https://en.wikipedia.org/wiki/Instant-runoff_voting"
 - key: star_voting

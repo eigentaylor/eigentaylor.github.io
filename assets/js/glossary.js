@@ -195,7 +195,11 @@
       this.popoverEl = shadow.querySelector(".popover");
 
       var definitionText = document.createElement("p");
-      definitionText.textContent = entry.definition || "";
+      // "Term: definition", matching the appendix glossary list format.
+      var termLabel = document.createElement("strong");
+      termLabel.textContent = entry.term || "";
+      definitionText.appendChild(termLabel);
+      definitionText.appendChild(document.createTextNode(": " + (entry.definition || "")));
       this.popoverEl.appendChild(definitionText);
 
       if (entry.link) {
