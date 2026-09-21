@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: 'Coarse Correction Part 1: Is STAR Actually More Accurate than Approval?'
-date: 2026-09-07
+date: 2026-09-21
 description: Why Approval with a delayed runoff might be far more accurate than STAR voting when voters are misinformed and fatigued.
 importance: 1
 tags: voting
