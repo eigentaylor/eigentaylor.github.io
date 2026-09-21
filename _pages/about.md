@@ -26,6 +26,8 @@ latest_posts:
 
 my current obsession is approval voting and electoral reform. i also like linear algebra.
 
+if you are a californian who wants to bring approval voting to the golden state, please pledge your support [to the california approves ballot initiative](https://californiaapproves.org/our-reforms/approval-primary/). i am actively involved in this effort and would greatly appreciate your support. see our [press release here!](https://californiaapproves.org/press/2026-09-15-approval-primary-measure-filed/)
+
 [here are some posts ive written if you want to look at them i guess](./blog)
 
 feel free to [email me](mailto:tayloreigenfisher@gmail.com) if you want to get in touch.
