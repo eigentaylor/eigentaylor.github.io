@@ -30,7 +30,7 @@ my current obsession is approval voting and electoral reform. i also like linear
 
 feel free to [email me](mailto:tayloreigenfisher@gmail.com) if you want to get in touch.
 
----
+[subscribe to my newsletter](https://buttondown.com/eigentaylor) to never miss a post.
 
 <!-- insert newsletter signup form here -->
 {% if site.newsletter and site.newsletter.enabled %}
