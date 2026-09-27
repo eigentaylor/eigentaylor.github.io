@@ -4,16 +4,21 @@
   <br>
 {% endunless %}
 
-if you found this useful, please cite this as:
+<div
+  class="citation-block"
+  data-built-iso="{{ "now" | date: "%Y-%m-%d" }}"
+  data-built-long="{{ "now" | date: "%b %d, %Y" }}"
+>
+  if you found this useful, please cite this as:
 
-{% capture citation_quote -%}
+  {% capture citation_quote -%}
 > {{ site.last_name }}, {{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} ({{ page.date | date: "%b %Y" }}). {{ page.title }}. {{ site.url }}{{ page.url }}. Accessed {{ "now" | date: "%b %d, %Y" }}.
-{%- endcapture %}
-{{ citation_quote | markdownify }}
+  {%- endcapture %}
+  {{ citation_quote | markdownify }}
 
-<p>or as a BibTeX entry:</p>
+  <p>or as a BibTeX entry:</p>
 
-{% capture citation_code -%}
+  {% capture citation_code -%}
 ```bibtex
 @article{ {{- site.last_name | downcase }}{{ page.date | date: "%Y" }}{{ page.title | slugify }},
   title        = { {{- page.title -}} },
@@ -25,5 +30,34 @@ if you found this useful, please cite this as:
   urldate      = { {{- "now" | date: "%Y-%m-%d" -}} }
 }
 ```
-{%- endcapture %}
-{{ citation_code | markdownify }}
+  {%- endcapture %}
+  {{ citation_code | markdownify }}
+</div>
+
+<script>
+  // The "now" dates above are baked in at build time; swap them for the reader's local date.
+  (function () {
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    var today = new Date();
+    var pad = function (n) {
+      return (n < 10 ? '0' : '') + n;
+    };
+    var iso = today.getFullYear() + '-' + pad(today.getMonth() + 1) + '-' + pad(today.getDate());
+    var long = months[today.getMonth()] + ' ' + pad(today.getDate()) + ', ' + today.getFullYear();
+
+    var blocks = document.querySelectorAll('.citation-block:not([data-date-localized])');
+    for (var i = 0; i < blocks.length; i++) {
+      var block = blocks[i];
+      var builtIso = block.getAttribute('data-built-iso');
+      var builtLong = block.getAttribute('data-built-long');
+      var walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT);
+      var node;
+      while ((node = walker.nextNode())) {
+        var text = node.nodeValue;
+        var updated = text.split(builtIso).join(iso).split(builtLong).join(long);
+        if (updated !== text) node.nodeValue = updated;
+      }
+      block.setAttribute('data-date-localized', 'true');
+    }
+  })();
+</script>
