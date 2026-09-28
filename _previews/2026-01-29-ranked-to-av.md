@@ -30,7 +30,7 @@ toc:
 
 I have previously discussed the mathematical properties of AV, how a voter might be able to frame their vote as [sincere and strategyproof](../av-stratproof), given a [practical case](../practicalapproval) for its use in US elections, and also recently proven that [AV is the only internally consistent cardinal method](../consistentcardinal).
 
-In this post, I want to explore a particular and very fun exercise in deducing possible AV outcomes from ranked ballots. This is based on Chapter 2 of [Steven Brams' 2008 text *Mathematics and Democracy*](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy).
+In this post, I want to explore a particular and very fun exercise in deducing possible AV outcomes from ranked ballots. This is based on [Brams and Sanver's 2006 paper *Critical strategies under approval voting*](https://doi.org/10.1016/j.electstud.2005.05.007).
 
 ## The Indeterminacy of Approval Voting
 
@@ -90,7 +90,7 @@ In this way, every candidate has a path to victory under Approval voting, depend
 
 ## The AV Critical Strategy Profile
 
-Steven Brams in *Mathematics and Democracy* describes a particular strategy profile for Approval voting that can be deduced from ranked ballots, called the "AV Critical Strategy Profile." This strategy profile is designed to essentially maximize the performance of a particular candidate assuming sincere strategies.
+Brams and Sanver (2006) describe a particular strategy profile for Approval voting that can be deduced from ranked ballots, called the "AV Critical Strategy Profile." This strategy profile is designed to essentially maximize the performance of a particular candidate assuming sincere strategies.
 
 > Given a set of full candidate rankings, the **AV Critical Strategy Profile** (AVCSP) for candidate X is defined as follows:
 >
@@ -99,7 +99,7 @@ Steven Brams in *Mathematics and Democracy* describes a particular strategy prof
 
 This gives an upper bound on the success of a candidate X under Approval voting, assuming all voters who don't rank X last find X acceptable enough to approve of them, and all voters who do rank X last minimize their approvals to only their top choice.
 
-Brams proves the following results:
+Brams and Sanver prove the following results:
 
 1. The AVCSP for candidate X maximizes the difference in the number of votes that candidate X receives over any other candidate y, assuming sincere strategies.
 2. If a candidate X does not win under their AVCSP, then there is no way for X to win under Approval voting assuming sincere strategies.
@@ -109,7 +109,7 @@ This gives us a way to analyze ranked ballots and deduce whether a particular ca
 
 ## Application to Ranked Ballots
 
-While the AVCSP is a theoretical tool used by Brams to prove properties of Approval voting, we can take the fundamental idea and apply it to analyze real-world elections that use ranked ballots.
+While the AVCSP is a theoretical tool used by Brams and Sanver to prove properties of Approval voting, we can take the fundamental idea and apply it to analyze real-world elections that use ranked ballots.
 
 > **Definition**: We say that a candidate X is **implicitly ranked** above candidate Y on a given voter's ranked ballot if either:
 >
@@ -197,7 +197,7 @@ Keep in mind that this is an **upper bound** on Begich's performance under Appro
 
 ## References
 
-Brams, S. J. (2008). *Mathematics and Democracy: Designing Better Voting and Fair-Division Procedures*. Princeton University Press. [https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy)
+Brams, S. J., & Sanver, M. R. (2006). Critical strategies under approval voting: Who gets ruled in and ruled out. *Electoral Studies*, 25(2), 287–305. [https://doi.org/10.1016/j.electstud.2005.05.007](https://doi.org/10.1016/j.electstud.2005.05.007)
 
 Mahlendorf, A. (2026). Fear of Vote Splitting. Substack. [https://substack.com/@whelmedcitizen/p-182659376](https://substack.com/@whelmedcitizen/p-182659376)
 

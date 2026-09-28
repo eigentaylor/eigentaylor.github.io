@@ -270,7 +270,7 @@ This highlights the contrast between an approval winner and a ranked Condorcet w
 
 Approval voting has high fidelity to the true Condorcet winner, without being beholden to them in every case. In my view, this makes it *better* than Condorcet methods in practice, because I am not convinced that the true Condorcet winner is always the best candidate to elect in every case.
 
-Brams proves in his 2008 book ["Mathematics and Democracy"](https://press.princeton.edu/books/paperback/9780691133218/mathematics-and-democracy) <d-cite key="brams2008mathDemocracy"></d-cite> (pg 39) that Approval voting outcomes are "strongly stable" if and only if the winner is a unique Condorcet winner. Stability here refers to the ability for coalitions or groups of voters to manipulate the outcome in a favorable way by changing their strategies.
+Brams and Sanver prove in their 2006 paper ["Critical strategies under approval voting"](https://doi.org/10.1016/j.electstud.2005.05.007) <d-cite key="bramsSanver2006critical"></d-cite> (pg 301) that Approval voting outcomes are "strongly stable" if and only if the winner is a unique Condorcet winner. Stability here refers to the ability for coalitions or groups of voters to manipulate the outcome in a favorable way by changing their strategies.
 
 Further, [certain intuitive strategies (Laslier)](https://journals.sagepub.com/doi/10.1177/0951629808097286) <d-cite key="laslier2009leaderRule"></d-cite> paradoxically increase the efficiency (potentially up to 100%), only requiring knowledge of the top two viable candidates.
 
