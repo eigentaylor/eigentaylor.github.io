@@ -114,6 +114,6 @@ overrides:
     gem_version: 1.0.9
     upstream_path: assets/js/common.js
     upstream_sha256: 89e65df12a3473705b488338af00c08f4cf947e59dee22748afc1c3a1fcb99fe
-    local_sha256: 6ed8383546b252b9ee98dd306d83cd4ef7d5ef871b887aea86c6429e67b18a5b
-    acknowledged_at: "2026-09-07"
+    local_sha256: f3677ecfedd51c5af52db78e71fb62f08bff57fae7f777fc7805692a4f6d9c83
+    acknowledged_at: "2026-11-23"
 version: 1

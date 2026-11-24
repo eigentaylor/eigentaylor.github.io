@@ -16,7 +16,9 @@ output/playwright/
 logs/
 test-results/
 vendor
-/_previews/scrap
+# Local-only drafts, synced to pCloud by bin/sync_scratch.py instead of git (see _previews/README.md)
+/_scratch/
+/.scratch-sync/
 /.github/prompts
 /%localappdata%
 *.pyc

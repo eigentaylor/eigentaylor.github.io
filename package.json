@@ -2,6 +2,9 @@
   "scripts": {
     "start": "bundle exec jekyll serve --config _config.yml,_config_dev.yml --incremental",
     "notebook": "node bin/run-notebook.js",
+    "pull": "python bin/sync_scratch.py pull",
+    "sync": "python bin/sync_scratch.py sync",
+    "promote": "python bin/promote.py",
     "lint:prettier": "prettier . --check",
     "lint:style-contract": "node test/style_contract.js",
     "test:visual": "playwright test --config test/visual/playwright.config.js",

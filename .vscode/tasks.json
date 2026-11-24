@@ -8,6 +8,18 @@
 			"isBackground": true,
 			"problemMatcher": [],
 			"group": "build"
+		},
+		{
+			"label": "Pull scratch drafts from pCloud",
+			"type": "shell",
+			"command": "python bin/sync_scratch.py pull",
+			"problemMatcher": []
+		},
+		{
+			"label": "Sync scratch drafts with pCloud",
+			"type": "shell",
+			"command": "python bin/sync_scratch.py sync",
+			"problemMatcher": []
 		}
 	]
 }

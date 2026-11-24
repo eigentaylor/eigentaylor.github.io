@@ -1,3 +1,7 @@
 {
-	"python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe"
+	"python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+	// _previews posts are copies written by bin/promote.py; edit the draft in _scratch/ instead
+	"files.readonlyInclude": {
+		"_previews/20*.md": true
+	}
 }

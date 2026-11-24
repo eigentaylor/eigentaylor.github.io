@@ -13,10 +13,10 @@ imagemagick:
 lsi: false # produce an index for related posts
 log_read_time_to_console: true
 
-# Show _previews posts mixed into the /blog/ listing locally (still served at
-# /preview/<title>/ same as prod; RSS feed and sitemap remain posts-only)
+# Show _previews and _scratch drafts mixed into the /blog/ listing locally (still served at
+# /preview/<title>/ and /scratch/<title>/; RSS feed and sitemap remain posts-only)
 pagination:
-  collection: posts,previews
+  collection: posts,previews,scratch
 
 # Remove terser from plugins list to disable JS minification
 plugins:

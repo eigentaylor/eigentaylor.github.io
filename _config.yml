@@ -189,6 +189,11 @@ collections:
   previews:
     output: true
     permalink: /preview/:title/
+  # Local-only drafts: _scratch/ is gitignored and synced to pCloud by bin/sync_scratch.py (run by
+  # _plugins/scratch_sync.rb), so this collection only ever has documents on a dev machine.
+  scratch:
+    output: true
+    permalink: /scratch/:title/
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
@@ -211,6 +216,7 @@ kramdown:
 include: ["_pages"]
 exclude:
   - .venv/
+  - .scratch-sync/ # also keeps the dev server's watcher from rebuilding when sync state is written
   - "%localappdata%/"
   - al-folio-upgrade-report.md
   - bibliography/
@@ -315,6 +321,25 @@ defaults:
       feed: false
       draft_preview: true
       preview_redirect: true
+      live_update: true
+      pretty_table: true
+      exclude_appendix_from_word_count: true
+      exclude_footnotes_from_word_count: true
+      exclude_proof_blocks_from_word_count: true
+      collapse_appendix: false
+      citation: false
+      giscus_comments: false
+      related_posts: true
+      author_bio: true
+  # Same as _previews (without the redirect, which only applies to /preview/ URLs). Has to live here rather
+  # than in _config_dev.yml: `defaults` is a list, and a second config file replaces lists instead of merging.
+  - scope:
+      path: "_scratch"
+      type: "scratch"
+    values:
+      sitemap: false
+      feed: false
+      draft_preview: true
       live_update: true
       pretty_table: true
       exclude_appendix_from_word_count: true

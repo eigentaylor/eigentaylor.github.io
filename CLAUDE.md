@@ -16,6 +16,10 @@ When adding a `link:` field to a `_data/glossary/*.yml` entry, only add one when
 
 Separately, when tagging `<d-glossary>` occurrences in a post's prose: tag a term's first meaningful appearance, and only tag it again later if it resurfaces after a real gap (a different section, not the next sentence or paragraph) — per Wikipedia's [MOS:DL "duplicate and repeat links"](https://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style/Linking#Duplicate_and_repeat_links) convention. See `.github/instructions/glossary.instructions.md` for the full authoring guide (data format, front matter wiring, appendix summary behavior).
 
+## Drafts live in `_scratch/`, not `_previews/`
+
+Work-in-progress posts live in the gitignored `_scratch/` folder, which is synced to pCloud by `bin/sync_scratch.py` (run automatically by `_plugins/scratch_sync.rb` while the dev server is up) and never committed. Each `_previews/*.md` file is a generated copy written by `bin/promote.py`, with a `# promoted from _scratch/...` marker line in its front matter. Make draft edits in the `_scratch/` file and rerun promote; never edit the `_previews/` copy, or the next promote will refuse to run until the two are reconciled. Old drafts and notes sit in `_scratch/_scraps/`, which is synced but not built. See `_previews/README.md` for the full workflow.
+
 ## Editing blog post prose
 
 Don't make significant changes to the prose/argument in blog posts (e.g. `_posts/`, `_previews/`) unless explicitly asked. Small, pre-approved edits are fine — fixing typos or factual errors, wording tweaks, adding citations/links/numbers when asked. Anything more substantive (new arguments, reframed sections, rewritten paragraphs) should be offered as suggested language in chat for the user to adopt or adapt themselves, not written directly into the file. The words in a post should stay the user's own, even when the surrounding technical work (data, simulations, notebooks) is AI-assisted.

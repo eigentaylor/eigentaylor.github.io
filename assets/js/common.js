@@ -1,8 +1,9 @@
 $(document).ready(function () {
-  // On preview pages, map ../post-slug links to the published /blog/post-slug/ route.
+  // On preview pages (and local-only /scratch/ drafts), map ../post-slug links to the published /blog/post-slug/ route.
   const baseurl = document.body.dataset.baseurl || "";
-  const previewRoot = `${baseurl}/preview/`;
-  const isPreviewPage = document.body.classList.contains("is-preview") || window.location.pathname.startsWith(previewRoot);
+  const previewRoots = [`${baseurl}/preview/`, `${baseurl}/scratch/`];
+  const isPreviewPage =
+    document.body.classList.contains("is-preview") || previewRoots.some((root) => window.location.pathname.startsWith(root));
 
   if (isPreviewPage) {
 
